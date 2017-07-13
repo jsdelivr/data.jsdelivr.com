@@ -1,0 +1,5 @@
+.idea/
+.local/
+logs/
+node_modules/
+config/local.js

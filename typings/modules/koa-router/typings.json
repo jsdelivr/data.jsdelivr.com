@@ -1,0 +1,10 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/types/npm-koa-router/e3c331736a61db84495efc551273dfdc2d7beccb/typings.json",
+    "raw": "registry:npm/koa-router#7.0.1+20160925140624",
+    "main": "lib/router.d.ts",
+    "version": "7.0.1",
+    "name": "koa-router"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/types/npm-koa/a8dd0ae91ff03ff133ae9a04f7432a42fa7c05e8/typings.json",
+    "raw": "registry:npm/koa#2.0.0+20161018080506",
+    "main": "lib/application.d.ts",
+    "version": "2.0.0",
+    "dependencies": {
+      "cookies": {
+        "src": "https://raw.githubusercontent.com/jstype/typed-npm-cookies/d7a6a9ca89a62960caaf53aa890594afa1829a3c/typings.json",
+        "raw": "registry:npm/cookies#0.6.1+20160830164239",
+        "main": "lib/cookies.d.ts",
+        "version": "0.6.1",
+        "dependencies": {
+          "keygrip": {
+            "src": "https://raw.githubusercontent.com/jstype/typed-npm-keygrip/1d5b66d22c3932a75f583c62a70b4e634144a0bd/typings.json",
+            "raw": "registry:npm/keygrip#1.0.1+20160828004953",
+            "main": "index.d.ts",
+            "version": "1.0.1",
+            "name": "keygrip"
+          }
+        },
+        "name": "cookies"
+      },
+      "http-assert": {
+        "src": "https://raw.githubusercontent.com/jstype/typed-npm-http-assert/2bc21f22d4f0de78a2ad19ac5980cf22c6463732/typings.json",
+        "raw": "registry:npm/http-assert#1.2.0+20160831052916",
+        "main": "index.d.ts",
+        "version": "1.2.0",
+        "name": "http-assert"
+      },
+      "keygrip": {
+        "src": "https://raw.githubusercontent.com/jstype/typed-npm-keygrip/1d5b66d22c3932a75f583c62a70b4e634144a0bd/typings.json",
+        "raw": "registry:npm/keygrip#1.0.1+20160828004953",
+        "main": "index.d.ts",
+        "version": "1.0.1",
+        "name": "keygrip"
+      },
+      "koa-compose": {
+        "src": "https://raw.githubusercontent.com/types/npm-koa-compose/b3c3a1e7e41a0de8939f46efac1c8a4737bec699/typings.json",
+        "raw": "registry:npm/koa-compose#3.0.0+20160723033700",
+        "main": "index.d.ts",
+        "version": "^3.0.0",
+        "dependencies": {
+          "es6-promise": {
+            "src": "https://raw.githubusercontent.com/typed-typings/npm-es6-promise/fb04188767acfec1defd054fc8024fafa5cd4de7/typings.json",
+            "raw": "registry:npm/es6-promise#3.0.0+20160211003958",
+            "main": "dist/es6-promise.d.ts",
+            "name": "es6-promise"
+          }
+        },
+        "name": "koa-compose"
+      }
+    },
+    "name": "koa"
+  }
+}

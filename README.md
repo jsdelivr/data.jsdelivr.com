@@ -1,1 +1,1 @@
-# api-v2
+# jsDelivr API
