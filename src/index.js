@@ -19,6 +19,7 @@ const Koa = require('koa');
 const koaFavicon = require('koa-favicon');
 const koaResponseTime = require('koa-response-time');
 const koaConditionalGet = require('koa-conditional-get');
+const koaLogger = require('koa-logger');
 const koaETag = require('koa-etag');
 const koaJson = require('koa-json');
 const Router = require('koa-router');
@@ -44,6 +45,13 @@ server.silent = server.env === 'production';
  * Handle favicon requests before anything else.
  */
 server.use(koaFavicon(__dirname + '/public/favicon.ico'));
+
+/**
+ * Log requests during development.
+ */
+if (server.env === 'development') {
+	server.use(koaLogger());
+}
 
 /**
  * Add a X-Response-Time header.
