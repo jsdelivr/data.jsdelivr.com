@@ -9,7 +9,9 @@ module.exports = redis.createClient({
 	auth_pass: redisConfig.password,
 });
 
-module.exports.flushallAsync().catch(() => {});
+if (process.env.NODE_ENV === 'development') {
+	module.exports.flushallAsync().catch(() => {});
+}
 
 if (process.env.NO_CACHE) {
 	setInterval(() => {
