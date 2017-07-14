@@ -19,6 +19,7 @@ module.exports = {
 		},
 	},
 	redis: {
+		db: 'REDIS_DB', // defaults to 0
 		host: 'REDIS_HOST',
 		port: 'REDIS_PORT',
 		password: 'REDIS_PASSWORD',

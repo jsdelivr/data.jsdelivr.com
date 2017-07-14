@@ -3,6 +3,7 @@ const config = require('config');
 const redisConfig = config.get('redis');
 
 module.exports = redis.createClient({
+	db: redisConfig.db,
 	host: redisConfig.host,
 	port: redisConfig.port,
 	auth_pass: redisConfig.password,

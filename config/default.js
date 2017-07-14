@@ -23,6 +23,7 @@ module.exports = {
 		},
 	},
 	redis: {
+		db: 0,
 		host: '',
 		port: '',
 		password: '',
