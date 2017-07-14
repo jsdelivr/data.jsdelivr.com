@@ -30,7 +30,6 @@ module.exports = {
 	v1: {
 		cdn: {
 			sourceUrl: 'https://cdn.jsdelivr.net',
-			maxAge: 365 * 24 * 60 * 60,
 		},
 		npm: {
 			sourceUrl: [ 'https://registry.npmjs.org', 'https://registry.npmjs.cf' ],
@@ -41,5 +40,7 @@ module.exports = {
 			sourceUrl: 'api.github.com',
 			maxAge: 10 * 60,
 		},
+		maxAgeStatic: 365 * 24 * 60 * 60,
+		maxAgeStats: 60,
 	},
 };

@@ -67,7 +67,7 @@ class PackageRequest {
 		return this.getMetadata().then((metadata) => {
 			let versions = metadata.versions.filter(v => semver.valid(v) && !semver.prerelease(v)).sort(semver.rcompare);
 
-			if (versions.includes(this.params.version)) {
+			if (metadata.versions.includes(this.params.version)) {
 				return this.params.version;
 			} else if (metadata.tags.hasOwnProperty(this.params.version)) {
 				return metadata.tags[this.params.version];
@@ -98,7 +98,6 @@ class PackageRequest {
 	async handleResolveVersion (ctx) {
 		try {
 			ctx.body = { version: await this.getResolvedVersion() };
-			ctx.maxAge = v1Config[this.params.type].maxAge;
 		} catch (e) {
 			return this.responseNotFound(ctx);
 		}
@@ -107,19 +106,13 @@ class PackageRequest {
 	async handleVersions (ctx) {
 		try {
 			ctx.body = await this.getMetadataAsJson();
-			ctx.maxAge = v1Config[this.params.type].maxAge;
 		} catch (e) {
 			return this.responseNotFound(ctx);
 		}
 	}
 
 	async handlePackageStats (ctx) {
-		try {
-			// TODO
-			ctx.body = await this.getMetadataAsJson();
-		} catch (e) {
-			return this.responseNotFound(ctx);
-		}
+		return this.responseNotFound(ctx); // TODO
 	}
 
 	async handleVersionFiles (ctx) {
@@ -139,16 +132,11 @@ class PackageRequest {
 		}
 
 		ctx.body = await this.getFilesAsJson();
-		ctx.maxAge = v1Config.cdn.maxAge;
+		ctx.maxAge = v1Config.maxAgeStatic;
 	}
 
 	async handleVersionStats (ctx) {
-		try {
-			// TODO
-			ctx.body = await this.getMetadataAsJson();
-		} catch (e) {
-			return this.responseNotFound(ctx);
-		}
+		return this.responseNotFound(ctx); // TODO
 	}
 
 	async responseNotFound (ctx) {
