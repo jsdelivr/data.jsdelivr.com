@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"description": "jsDelivr API",
 	"private": true,
+	"main": "./src/index.js",
 	"scripts": {
 		"lint": "eslint src test"
 	},
