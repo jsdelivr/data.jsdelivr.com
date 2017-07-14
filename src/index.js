@@ -152,31 +152,27 @@ server.on('error', (err, ctx) => {
 	logger.error({ err, ctx }, 'Koa server error.');
 });
 
-if (require.main === module) {
-	/**
-	 * Start listening on the configured port.
-	 */
-	server.listen(process.env.PORT || serverConfig.port, () => {
-		logger.info(`Web server started on port ${process.env.PORT || serverConfig.port}.`);
-	});
+/**
+ * Start listening on the configured port.
+ */
+server.listen(process.env.PORT || serverConfig.port, () => {
+	logger.info(`Web server started on port ${process.env.PORT || serverConfig.port}.`);
+});
 
-	/**
-	 * Always log before exit.
-	 */
-	signalExit((code, signal) => {
-		logger[code === 0 ? 'info' : 'fatal']({ code, signal }, 'Web server stopped.');
-	});
+/**
+ * Always log before exit.
+ */
+signalExit((code, signal) => {
+	logger[code === 0 ? 'info' : 'fatal']({ code, signal }, 'Web server stopped.');
+});
 
-	/**
-	 * If we exit because of an uncaught exception, log the error details as well.
-	 */
-	process.on('uncaughtException', (error) => {
-		logger.fatal(error, `Fatal error. Exiting.`);
+/**
+ * If we exit because of an uncaught exception, log the error details as well.
+ */
+process.on('uncaughtException', (error) => {
+	logger.fatal(error, `Fatal error. Exiting.`);
 
-		setTimeout(() => {
-			process.exit(1);
-		}, 10000);
-	});
-}
-
-module.exports = server;
+	setTimeout(() => {
+		process.exit(1);
+	}, 10000);
+});
