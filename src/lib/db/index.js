@@ -4,5 +4,8 @@ const dbConfig = config.get('db');
 
 module.exports = knex({
 	client: dbConfig.type,
-	connection: dbConfig.connection,
+	connection: Object.assign({
+		timezone: 'UTC',
+	}, dbConfig.connection),
+	pool: { min: 0, max: 100 },
 });
