@@ -24,10 +24,10 @@ class PackageRequest {
 		this.url = url;
 		this.params = params;
 		this.keys = {
-			files: `package/${this.params.name}@${this.params.version}/files`,
-			metadata: `package/${this.params.name}/metadata`,
-			packageStats: `package/${this.params.name}/stats`,
-			versionsStats: `package/${this.params.name}@${this.params.version}/stats`,
+			files: `package/${this.params.type}/${this.params.name}@${this.params.version}/files`,
+			metadata: `package/${this.params.type}/${this.params.name}/metadata`,
+			packageStats: `package/${this.params.type}/${this.params.name}/stats`,
+			versionsStats: `package/${this.params.type}/${this.params.name}@${this.params.version}/stats`,
 		};
 	}
 
