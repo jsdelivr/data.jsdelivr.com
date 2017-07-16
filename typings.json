@@ -2,6 +2,7 @@
 	"dependencies": {
 		"bunyan": "registry:dt/bunyan#0.0.0+20170311003516",
 		"config": "registry:dt/config#0.0.0+20170202035819",
+		"joi": "registry:dt/joi#10.0.0+20170211105955",
 		"koa": "registry:npm/koa#2.0.0+20161018080506",
 		"koa-router": "registry:npm/koa-router#7.0.1+20160925140624",
 		"redis": "registry:npm/redis#2.6.0+20160901110043"
