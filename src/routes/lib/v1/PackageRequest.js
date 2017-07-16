@@ -9,7 +9,7 @@ const githubApi = new GitHubApi({
 	protocol: 'https',
 	host: v1Config.gh.sourceUrl,
 	headers: { 'user-agent': 'jsDelivr API backend' },
-	timeout: 10000,
+	timeout: 30000,
 });
 
 if (v1Config.gh.apiToken) {
@@ -186,10 +186,10 @@ async function fetchNpmMetadata (name) {
 	let response;
 
 	if (typeof v1Config.npm.sourceUrl === 'string') {
-		response = await got(`${v1Config.npm.sourceUrl}/${name}`, { json: true, timeout: 10000 });
+		response = await got(`${v1Config.npm.sourceUrl}/${name}`, { json: true, timeout: 30000 });
 	} else {
 		response = await Promise.any(_.map(v1Config.npm.sourceUrl, (sourceUrl) => {
-			return got(`${sourceUrl}/${name}`, { json: true, timeout: 10000 });
+			return got(`${sourceUrl}/${name}`, { json: true, timeout: 30000 });
 		}));
 	}
 
