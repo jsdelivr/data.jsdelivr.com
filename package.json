@@ -33,6 +33,7 @@
 		"mysql": "^2.13.0",
 		"opbeat": "^4.14.0",
 		"redis": "^2.7.1",
+		"relative-day-utc": "^1.1.1",
 		"semver": "^5.3.0",
 		"serve-favicon": "^2.4.3",
 		"signal-exit": "^3.0.2",

@@ -2,14 +2,14 @@ const Joi = require('joi');
 const BaseModel = require('./BaseModel');
 
 const schema = {
-	fileId: Joi.number().integer().min(0).required().allow(null),
 	date: Joi.date().required(),
-	hits: Joi.number().integer().min(0).required(),
+	lines: Joi.number().integer().min(0).required(),
+	bytes: Joi.number().integer().min(0).required(),
 };
 
-class FileHits extends BaseModel {
+class Logs extends BaseModel {
 	static get table () {
-		return 'file_hits';
+		return 'logs';
 	}
 
 	static get schema () {
@@ -17,24 +17,24 @@ class FileHits extends BaseModel {
 	}
 
 	static get unique () {
-		return [ 'fileId', 'date' ];
+		return [ 'date' ];
 	}
 
 	constructor (properties = {}) {
 		super();
 
-		/** @type {number} */
-		this.fileId = null;
-
 		/** @type {Date} */
 		this.date = null;
 
 		/** @type {number} */
-		this.hits = 0;
+		this.lines = 0;
+
+		/** @type {number} */
+		this.bytes = 0;
 
 		Object.assign(this, properties);
 		return new Proxy(this, BaseModel.ProxyHandler);
 	}
 }
 
-module.exports = FileHits;
+module.exports = Logs;
