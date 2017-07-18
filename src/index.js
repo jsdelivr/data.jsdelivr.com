@@ -95,6 +95,8 @@ server.use(async (ctx, next) => {
 			status: ctx.status,
 			message: statuses[ctx.status],
 		};
+	} else if (!ctx.body.status) {
+		ctx.status = 200;
 	}
 
 	if (ctx.body.status) {
@@ -111,6 +113,7 @@ server.use(async (ctx, next) => {
  */
 server.use(async (ctx, next) => {
 	try {
+		ctx.status = 400;
 		await next();
 	} catch (e) {
 		ctx.status = 500;
