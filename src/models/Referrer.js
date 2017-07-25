@@ -26,7 +26,7 @@ class Referrer extends BaseModel {
 		this.id = null;
 
 		/** @type {string} */
-		this.referrer = null;
+		this.referrer = '';
 
 		Object.assign(this, properties);
 		return new Proxy(this, BaseModel.ProxyHandler);
