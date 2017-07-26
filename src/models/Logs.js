@@ -4,7 +4,7 @@ const BaseModel = require('./BaseModel');
 const schema = {
 	date: Joi.date().required(),
 	lines: Joi.number().integer().min(0).required(),
-	bytes: Joi.number().integer().min(0).required(),
+	megabytes: Joi.number().integer().min(0).required(),
 };
 
 class Logs extends BaseModel {
@@ -30,7 +30,7 @@ class Logs extends BaseModel {
 		this.lines = 0;
 
 		/** @type {number} */
-		this.bytes = 0;
+		this.megabytes = 0;
 
 		Object.assign(this, properties);
 		return new Proxy(this, BaseModel.ProxyHandler);
