@@ -131,8 +131,19 @@ class PackageRequest {
 			};
 		}
 
-		ctx.body = await this.getFilesAsJson();
-		ctx.maxAge = v1Config.maxAgeStatic;
+		try {
+			ctx.body = await this.getFilesAsJson();
+			ctx.maxAge = v1Config.maxAgeStatic;
+		} catch (e) {
+			if (e instanceof got.ParseError) {
+				return ctx.body = {
+					status: e.response.statusCode || 502,
+					message: e.response.body,
+				};
+			}
+
+			throw e;
+		}
 	}
 
 	async handleVersionStats (ctx) {
