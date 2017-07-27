@@ -4,9 +4,6 @@
 	"description": "jsDelivr API",
 	"private": true,
 	"main": "./src/index.js",
-	"scripts": {
-		"lint": "eslint src test"
-	},
 	"dependencies": {
 		"@risingstack/trace": "^3.14.0",
 		"bluebird": "^3.5.0",
@@ -20,6 +17,7 @@
 		"joi": "^10.6.0",
 		"knex": "^0.13.0",
 		"koa": "^2.3.0",
+		"koa-compress": "^2.0.0",
 		"koa-conditional-get": "^2.0.0",
 		"koa-etag": "^3.0.0",
 		"koa-favicon": "^2.0.0",
@@ -39,14 +37,25 @@
 		"signal-exit": "^3.0.2",
 		"statuses": "^1.3.1"
 	},
+	"devDependencies": {
+		"chai": "^4.1.0",
+		"chai-http": "^3.0.0",
+		"eslint": "^4.2.0",
+		"mocha": "^3.4.2",
+		"nock": "^9.0.14",
+		"nyc": "^11.0.3"
+	},
+	"scripts": {
+		"coverage": "nyc mocha test/tests.js",
+		"lint": "eslint src test",
+		"mocha": "mocha test/tests.js",
+		"test": "npm run lint && npm run coverage"
+	},
 	"repository": {
 		"type": "git",
 		"url": "git@github.com:jsdelivr/data.jsdelivr.com.git"
 	},
 	"bugs": {
 		"url": "https://github.com/jsdelivr/data.jsdelivr.com/issues"
-	},
-	"devDependencies": {
-		"eslint": "^4.2.0"
 	}
 }

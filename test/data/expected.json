@@ -1,0 +1,2751 @@
+{
+	"/v1/package/npm/jquery": {
+		"tags": {
+			"beta": "3.2.1",
+			"latest": "3.2.1"
+		},
+		"versions": [
+			"3.2.1",
+			"3.2.0",
+			"3.1.1",
+			"3.1.0",
+			"3.0.0",
+			"3.0.0-rc1",
+			"3.0.0-beta1",
+			"3.0.0-alpha1",
+			"2.2.4",
+			"2.2.3",
+			"2.2.2",
+			"2.2.1",
+			"2.2.0",
+			"2.1.4",
+			"2.1.3",
+			"2.1.2",
+			"2.1.1",
+			"2.1.1-rc2",
+			"2.1.1-rc1",
+			"2.1.1-beta1",
+			"2.1.0",
+			"2.1.0-rc1",
+			"2.1.0-beta3",
+			"2.1.0-beta2",
+			"1.12.4",
+			"1.12.3",
+			"1.12.2",
+			"1.12.1",
+			"1.12.0",
+			"1.11.3",
+			"1.11.2",
+			"1.11.1",
+			"1.11.1-rc2",
+			"1.11.1-rc1",
+			"1.11.1-beta1",
+			"1.11.0",
+			"1.11.0-rc1",
+			"1.11.0-beta3",
+			"1.9.1",
+			"1.8.3",
+			"1.8.2",
+			"1.7.3",
+			"1.7.2",
+			"1.6.3",
+			"1.6.2",
+			"1.5.1"
+		]
+	},
+	"/v1/package/npm/jquery@3.2.1": {
+		"default": "/dist/jquery.min.js",
+		"files": [
+			{
+				"name": "/AUTHORS.txt",
+				"size": 11218,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/bower.json",
+				"size": 190,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/dist/core.js",
+				"size": 11197,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/dist/jquery.js",
+				"size": 268039,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/dist/jquery.min.js",
+				"size": 86659,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/dist/jquery.min.map",
+				"size": 131666,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/dist/jquery.slim.js",
+				"size": 215256,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/dist/jquery.slim.min.js",
+				"size": 69597,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/dist/jquery.slim.min.map",
+				"size": 104583,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/external/sizzle/dist/sizzle.js",
+				"size": 65363,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/external/sizzle/dist/sizzle.min.js",
+				"size": 19909,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/external/sizzle/dist/sizzle.min.map",
+				"size": 30763,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/external/sizzle/LICENSE.txt",
+				"size": 1606,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/LICENSE.txt",
+				"size": 1605,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/package.json",
+				"size": 2353,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/README.md",
+				"size": 2002,
+				"time": "2017-03-20T19:01:58.000Z"
+			},
+			{
+				"name": "/src/.eslintrc.json",
+				"size": 60,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/ajax.js",
+				"size": 22254,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/ajax/jsonp.js",
+				"size": 2728,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/ajax/load.js",
+				"size": 1877,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/ajax/parseXML.js",
+				"size": 559,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/ajax/script.js",
+				"size": 1583,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/ajax/var/location.js",
+				"size": 67,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/ajax/var/nonce.js",
+				"size": 91,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/ajax/var/rquery.js",
+				"size": 60,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/ajax/xhr.js",
+				"size": 4298,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/attributes.js",
+				"size": 217,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/attributes/attr.js",
+				"size": 3271,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/attributes/classes.js",
+				"size": 4270,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/attributes/prop.js",
+				"size": 3004,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/attributes/support.js",
+				"size": 786,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/attributes/val.js",
+				"size": 4207,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/callbacks.js",
+				"size": 5505,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/core.js",
+				"size": 11197,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/core/access.js",
+				"size": 1262,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/core/DOMEval.js",
+				"size": 292,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/core/init.js",
+				"size": 3317,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/core/nodeName.js",
+				"size": 178,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/core/parseHTML.js",
+				"size": 1604,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/core/ready.js",
+				"size": 2097,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/core/ready-no-deferred.js",
+				"size": 2237,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/core/readyException.js",
+				"size": 168,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/core/stripAndCollapse.js",
+				"size": 384,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/core/support.js",
+				"size": 631,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/core/var/rsingleTag.js",
+				"size": 148,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/css.js",
+				"size": 11684,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/css/addGetHookIf.js",
+				"size": 530,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/css/adjustCSS.js",
+				"size": 1897,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/css/curCSS.js",
+				"size": 1681,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/css/hiddenVisibleSelectors.js",
+				"size": 317,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/css/showHide.js",
+				"size": 2304,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/css/support.js",
+				"size": 2453,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/css/var/cssExpand.js",
+				"size": 88,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/css/var/getStyles.js",
+				"size": 401,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/css/var/isHiddenWithinTree.js",
+				"size": 1290,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/css/var/rmargin.js",
+				"size": 65,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/css/var/rnumnonpx.js",
+				"size": 131,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/css/var/swap.js",
+				"size": 520,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/data.js",
+				"size": 4296,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/data/Data.js",
+				"size": 3954,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/data/var/acceptData.js",
+				"size": 318,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/data/var/dataPriv.js",
+				"size": 84,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/data/var/dataUser.js",
+				"size": 84,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/deferred.js",
+				"size": 10862,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/deferred/exceptionHook.js",
+				"size": 640,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/deprecated.js",
+				"size": 801,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/dimensions.js",
+				"size": 1729,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/effects.js",
+				"size": 17398,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/effects/animatedSelector.js",
+				"size": 244,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/effects/Tween.js",
+				"size": 3252,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/event.js",
+				"size": 19415,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/event/ajax.js",
+				"size": 346,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/event/alias.js",
+				"size": 649,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/event/focusin.js",
+				"size": 1512,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/event/support.js",
+				"size": 133,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/event/trigger.js",
+				"size": 5002,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/exports/amd.js",
+				"size": 1024,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/exports/global.js",
+				"size": 608,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/jquery.js",
+				"size": 640,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/manipulation.js",
+				"size": 12506,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/manipulation/_evalUrl.js",
+				"size": 356,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/manipulation/buildFragment.js",
+				"size": 2454,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/manipulation/getAll.js",
+				"size": 650,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/manipulation/setGlobalEval.js",
+				"size": 381,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/manipulation/support.js",
+				"size": 1034,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/manipulation/var/rcheckableType.js",
+				"size": 79,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/manipulation/var/rscriptType.js",
+				"size": 83,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/manipulation/var/rtagName.js",
+				"size": 88,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/manipulation/wrapMap.js",
+				"size": 798,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/offset.js",
+				"size": 6266,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/queue.js",
+				"size": 3091,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/queue/delay.js",
+				"size": 636,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/selector.js",
+				"size": 66,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/selector-native.js",
+				"size": 6394,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/selector-sizzle.js",
+				"size": 411,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/serialize.js",
+				"size": 3170,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/traversing.js",
+				"size": 4549,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/traversing/findFilter.js",
+				"size": 2671,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/traversing/var/dir.js",
+				"size": 371,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/traversing/var/rneedsContext.js",
+				"size": 128,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/traversing/var/siblings.js",
+				"size": 218,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/var/arr.js",
+				"size": 54,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/var/class2type.js",
+				"size": 82,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/var/concat.js",
+				"size": 81,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/var/document.js",
+				"size": 67,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/var/documentElement.js",
+				"size": 105,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/var/fnToString.js",
+				"size": 92,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/var/getProto.js",
+				"size": 73,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/var/hasOwn.js",
+				"size": 110,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/var/indexOf.js",
+				"size": 82,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/var/ObjectFunctionString.js",
+				"size": 110,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/var/pnum.js",
+				"size": 100,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/var/push.js",
+				"size": 79,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/var/rcssNum.js",
+				"size": 136,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/var/rnothtmlwhite.js",
+				"size": 229,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/var/slice.js",
+				"size": 80,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/var/support.js",
+				"size": 117,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/var/toString.js",
+				"size": 104,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"name": "/src/wrap.js",
+				"size": 1457,
+				"time": "2017-03-20T19:01:15.000Z"
+			}
+		]
+	},
+	"/v1/package/gh/jquery/jquery": {
+		"tags": [ ],
+		"versions": [
+			"3.2.1",
+			"3.2.0",
+			"3.1.1",
+			"3.1.0",
+			"3.0.0",
+			"3.0.0-rc1",
+			"3.0.0-beta1",
+			"3.0.0-alpha1",
+			"3.0.0-alpha1+compat",
+			"2.2.4",
+			"2.2.3",
+			"2.2.2",
+			"2.2.1",
+			"2.2.0",
+			"2.1.4",
+			"2.1.3",
+			"2.1.2",
+			"2.1.1",
+			"2.1.1-rc2",
+			"2.1.1-rc1",
+			"2.1.1-beta1",
+			"2.1.0",
+			"2.1.0-rc1",
+			"2.1.0-beta3",
+			"2.1.0-beta2",
+			"2.1.0-beta1",
+			"2.0.3",
+			"2.0.2",
+			"2.0.1",
+			"2.0.0"
+		]
+	},
+	"/v1/package/gh/jquery/jquery@3.2.1": {
+		"default": null,
+		"files": [
+			{
+				"name": "/.babelrc",
+				"size": 28,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/.editorconfig",
+				"size": 279,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/.eslintignore",
+				"size": 315,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/.eslintrc.json",
+				"size": 56,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/.eslintrc-browser.json",
+				"size": 687,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/.eslintrc-node.json",
+				"size": 115,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/.gitattributes",
+				"size": 127,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/.github/ISSUE_TEMPLATE.md",
+				"size": 749,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/.github/PULL_REQUEST_TEMPLATE.md",
+				"size": 647,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/.gitignore",
+				"size": 255,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/.mailmap",
+				"size": 5205,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/.npmignore",
+				"size": 172,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/.npmrc",
+				"size": 16,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/.travis.yml",
+				"size": 57,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/AUTHORS.txt",
+				"size": 11218,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/build/release.js",
+				"size": 2275,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/build/release/cdn.js",
+				"size": 3198,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/build/release/dist.js",
+				"size": 4028,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/build/release/ensure-sizzle.js",
+				"size": 1350,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/build/tasks/build.js",
+				"size": 11014,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/build/tasks/dist.js",
+				"size": 1933,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/build/tasks/lib/spawn_test.js",
+				"size": 458,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/build/tasks/node_smoke_tests.js",
+				"size": 1102,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/build/tasks/promises_aplus_tests.js",
+				"size": 614,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/build/tasks/sourcemap.js",
+				"size": 559,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/build/tasks/testswarm.js",
+				"size": 1619,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/CONTRIBUTING.md",
+				"size": 7923,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/dist/.eslintrc.json",
+				"size": 490,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/dist/jquery.js",
+				"size": 268039,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/dist/jquery.min.js",
+				"size": 86659,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/dist/jquery.min.map",
+				"size": 131666,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/dist/jquery.slim.js",
+				"size": 215256,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/dist/jquery.slim.min.js",
+				"size": 69597,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/dist/jquery.slim.min.map",
+				"size": 104583,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/external/npo/npo.js",
+				"size": 3608,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/external/qunit/LICENSE.txt",
+				"size": 1590,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/external/qunit/MIT-LICENSE.txt",
+				"size": 1099,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/external/qunit/qunit.css",
+				"size": 5349,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/external/qunit/qunit.js",
+				"size": 112454,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/external/qunit-assert-step/MIT-LICENSE.txt",
+				"size": 1094,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/external/qunit-assert-step/qunit-assert-step.js",
+				"size": 758,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/external/requirejs/require.js",
+				"size": 85921,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/external/sinon/LICENSE.txt",
+				"size": 1572,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/external/sinon/sinon.js",
+				"size": 207592,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/external/sizzle/dist/sizzle.js",
+				"size": 65363,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/external/sizzle/dist/sizzle.min.js",
+				"size": 19909,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/external/sizzle/dist/sizzle.min.map",
+				"size": 30763,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/external/sizzle/LICENSE.txt",
+				"size": 1606,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/Gruntfile.js",
+				"size": 5265,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/LICENSE.txt",
+				"size": 1605,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/package.json",
+				"size": 2353,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/README.md",
+				"size": 13117,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/.eslintrc.json",
+				"size": 60,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/ajax.js",
+				"size": 22254,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/ajax/jsonp.js",
+				"size": 2728,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/ajax/load.js",
+				"size": 1877,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/ajax/parseXML.js",
+				"size": 559,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/ajax/script.js",
+				"size": 1583,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/ajax/var/location.js",
+				"size": 67,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/ajax/var/nonce.js",
+				"size": 91,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/ajax/var/rquery.js",
+				"size": 60,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/ajax/xhr.js",
+				"size": 4298,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/attributes.js",
+				"size": 217,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/attributes/attr.js",
+				"size": 3271,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/attributes/classes.js",
+				"size": 4270,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/attributes/prop.js",
+				"size": 3004,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/attributes/support.js",
+				"size": 786,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/attributes/val.js",
+				"size": 4207,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/callbacks.js",
+				"size": 5505,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/core.js",
+				"size": 11197,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/core/access.js",
+				"size": 1262,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/core/DOMEval.js",
+				"size": 292,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/core/init.js",
+				"size": 3317,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/core/nodeName.js",
+				"size": 178,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/core/parseHTML.js",
+				"size": 1604,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/core/ready.js",
+				"size": 2097,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/core/ready-no-deferred.js",
+				"size": 2237,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/core/readyException.js",
+				"size": 168,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/core/stripAndCollapse.js",
+				"size": 384,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/core/support.js",
+				"size": 631,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/core/var/rsingleTag.js",
+				"size": 148,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/css.js",
+				"size": 11684,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/css/addGetHookIf.js",
+				"size": 530,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/css/adjustCSS.js",
+				"size": 1897,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/css/curCSS.js",
+				"size": 1681,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/css/hiddenVisibleSelectors.js",
+				"size": 317,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/css/showHide.js",
+				"size": 2304,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/css/support.js",
+				"size": 2453,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/css/var/cssExpand.js",
+				"size": 88,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/css/var/getStyles.js",
+				"size": 401,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/css/var/isHiddenWithinTree.js",
+				"size": 1290,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/css/var/rmargin.js",
+				"size": 65,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/css/var/rnumnonpx.js",
+				"size": 131,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/css/var/swap.js",
+				"size": 520,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/data.js",
+				"size": 4296,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/data/Data.js",
+				"size": 3954,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/data/var/acceptData.js",
+				"size": 318,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/data/var/dataPriv.js",
+				"size": 84,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/data/var/dataUser.js",
+				"size": 84,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/deferred.js",
+				"size": 10862,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/deferred/exceptionHook.js",
+				"size": 640,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/deprecated.js",
+				"size": 801,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/dimensions.js",
+				"size": 1729,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/effects.js",
+				"size": 17398,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/effects/animatedSelector.js",
+				"size": 244,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/effects/Tween.js",
+				"size": 3252,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/event.js",
+				"size": 19415,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/event/ajax.js",
+				"size": 346,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/event/alias.js",
+				"size": 649,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/event/focusin.js",
+				"size": 1512,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/event/support.js",
+				"size": 133,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/event/trigger.js",
+				"size": 5002,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/exports/amd.js",
+				"size": 1024,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/exports/global.js",
+				"size": 608,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/jquery.js",
+				"size": 640,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/manipulation.js",
+				"size": 12506,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/manipulation/_evalUrl.js",
+				"size": 356,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/manipulation/buildFragment.js",
+				"size": 2454,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/manipulation/getAll.js",
+				"size": 650,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/manipulation/setGlobalEval.js",
+				"size": 381,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/manipulation/support.js",
+				"size": 1034,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/manipulation/var/rcheckableType.js",
+				"size": 79,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/manipulation/var/rscriptType.js",
+				"size": 83,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/manipulation/var/rtagName.js",
+				"size": 88,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/manipulation/wrapMap.js",
+				"size": 798,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/offset.js",
+				"size": 6266,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/queue.js",
+				"size": 3091,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/queue/delay.js",
+				"size": 636,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/selector.js",
+				"size": 66,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/selector-native.js",
+				"size": 6394,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/selector-sizzle.js",
+				"size": 411,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/serialize.js",
+				"size": 3170,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/traversing.js",
+				"size": 4549,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/traversing/findFilter.js",
+				"size": 2671,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/traversing/var/dir.js",
+				"size": 371,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/traversing/var/rneedsContext.js",
+				"size": 128,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/traversing/var/siblings.js",
+				"size": 218,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/var/arr.js",
+				"size": 54,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/var/class2type.js",
+				"size": 82,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/var/concat.js",
+				"size": 81,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/var/document.js",
+				"size": 67,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/var/documentElement.js",
+				"size": 105,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/var/fnToString.js",
+				"size": 92,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/var/getProto.js",
+				"size": 73,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/var/hasOwn.js",
+				"size": 110,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/var/indexOf.js",
+				"size": 82,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/var/ObjectFunctionString.js",
+				"size": 110,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/var/pnum.js",
+				"size": 100,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/var/push.js",
+				"size": 79,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/var/rcssNum.js",
+				"size": 136,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/var/rnothtmlwhite.js",
+				"size": 229,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/var/slice.js",
+				"size": 80,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/var/support.js",
+				"size": 117,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/var/toString.js",
+				"size": 104,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/wrap.js",
+				"size": 1457,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/src/wrapper.js",
+				"size": 1611,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/.eslintrc.json",
+				"size": 1272,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/1x1.jpg",
+				"size": 693,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/ajax/content-type.php",
+				"size": 105,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/ajax/evalScript.php",
+				"size": 121,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/ajax/method.php",
+				"size": 41,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/ajax/onunload.html",
+				"size": 699,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/ajax/unreleasedXHR.html",
+				"size": 642,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/atom+xml.php",
+				"size": 69,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/badcall.js",
+				"size": 13,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/badjson.js",
+				"size": 17,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/cleanScript.html",
+				"size": 157,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/core/aliased.html",
+				"size": 547,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/core/cc_on.html",
+				"size": 472,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/core/dont_return.php",
+				"size": 20,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/core/dynamic_ready.html",
+				"size": 823,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/core/onready.html",
+				"size": 544,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/css/cssWidthBeforeDocReady.html",
+				"size": 374,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/dashboard.xml",
+				"size": 298,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/data/dataAttrs.html",
+				"size": 441,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/dimensions/documentLarge.html",
+				"size": 540,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/echoData.php",
+				"size": 48,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/echoQuery.php",
+				"size": 39,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/errorWithJSON.php",
+				"size": 134,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/errorWithText.php",
+				"size": 70,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/etag.php",
+				"size": 490,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/event/focusElem.html",
+				"size": 397,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/event/focusinCrossFrame.html",
+				"size": 480,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/event/interactiveReady.html",
+				"size": 737,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/event/onbeforeunload.html",
+				"size": 426,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/event/promiseReady.html",
+				"size": 529,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/event/syncReady.html",
+				"size": 766,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/event/triggerunload.html",
+				"size": 454,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/headers.php",
+				"size": 522,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/if_modified_since.php",
+				"size": 378,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/iframe.html",
+				"size": 109,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/iframeTest.js",
+				"size": 255,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/jquery-1.9.1.js",
+				"size": 270158,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/json.php",
+				"size": 276,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/json_obj.js",
+				"size": 41,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/jsonp.php",
+				"size": 383,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/longLoadScript.php",
+				"size": 77,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/manipulation/iframe-denied.html",
+				"size": 910,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/manipulation/scripts-context.html",
+				"size": 275,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/name.html",
+				"size": 81,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/name.php",
+				"size": 493,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/nocontent.php",
+				"size": 45,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/offset/absolute.html",
+				"size": 1836,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/offset/body.html",
+				"size": 906,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/offset/fixed.html",
+				"size": 1337,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/offset/relative.html",
+				"size": 1608,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/offset/scroll.html",
+				"size": 1531,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/offset/static.html",
+				"size": 1488,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/offset/table.html",
+				"size": 1297,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/params_html.php",
+				"size": 199,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/readywait.html",
+				"size": 1806,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/script.php",
+				"size": 248,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/selector/html5_selector.html",
+				"size": 2066,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/selector/sizzle_cache.html",
+				"size": 589,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/statusText.php",
+				"size": 58,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/support/bodyBackground.html",
+				"size": 743,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/support/csp.js",
+				"size": 84,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/support/csp.log",
+				"size": 0,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/support/csp.php",
+				"size": 565,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/support/csp-clean.php",
+				"size": 53,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/support/csp-log.php",
+				"size": 58,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/support/getComputedSupport.js",
+				"size": 257,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/test.html",
+				"size": 208,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/test.php",
+				"size": 252,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/test2.html",
+				"size": 126,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/test3.html",
+				"size": 245,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/testbar.php",
+				"size": 84,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/testinit.js",
+				"size": 9237,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/testrunner.js",
+				"size": 5625,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/testsuite.css",
+				"size": 2044,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/text.php",
+				"size": 287,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/with_fries.xml",
+				"size": 740,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/data/with_fries_over_jsonp.php",
+				"size": 193,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/delegatetest.html",
+				"size": 6401,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/hovertest.html",
+				"size": 3966,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/index.html",
+				"size": 12407,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/integration/data/gh-1764-fullscreen.js",
+				"size": 3085,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/integration/data/gh-1764-fullscreen-iframe.css",
+				"size": 197,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/integration/data/gh-1764-fullscreen-iframe.html",
+				"size": 572,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/integration/gh-1764-fullscreen.html",
+				"size": 817,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/integration/gh-2343-ie-radio-click.html",
+				"size": 844,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/jquery.js",
+				"size": 1586,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/localfile.html",
+				"size": 1912,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/networkerror.html",
+				"size": 1552,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/node_smoke_tests/.eslintrc.json",
+				"size": 133,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/node_smoke_tests/document_missing.js",
+				"size": 316,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/node_smoke_tests/document_passed.js",
+				"size": 392,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/node_smoke_tests/document_present_originally.js",
+				"size": 452,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/node_smoke_tests/iterable_with_native_symbol.js",
+				"size": 182,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/node_smoke_tests/iterable_with_symbol_polyfill.js",
+				"size": 320,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/node_smoke_tests/lib/ensure_global_not_created.js",
+				"size": 494,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/node_smoke_tests/lib/ensure_iterability_es6.js",
+				"size": 547,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/node_smoke_tests/lib/ensure_jquery.js",
+				"size": 303,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/promises_aplus_adapters/.eslintrc.json",
+				"size": 60,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/promises_aplus_adapters/deferred.js",
+				"size": 401,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/promises_aplus_adapters/when.js",
+				"size": 1116,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/unit/ajax.js",
+				"size": 74187,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/unit/animation.js",
+				"size": 8483,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/unit/attributes.js",
+				"size": 71585,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/unit/basic.js",
+				"size": 9661,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/unit/callbacks.js",
+				"size": 11683,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/unit/core.js",
+				"size": 62834,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/unit/css.js",
+				"size": 60026,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/unit/data.js",
+				"size": 32302,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/unit/deferred.js",
+				"size": 33811,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/unit/deprecated.js",
+				"size": 5021,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/unit/dimensions.js",
+				"size": 28225,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/unit/effects.js",
+				"size": 77118,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/unit/event.js",
+				"size": 92907,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/unit/exports.js",
+				"size": 211,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/unit/manipulation.js",
+				"size": 101905,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/unit/offset.js",
+				"size": 25786,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/unit/queue.js",
+				"size": 8557,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/unit/ready.js",
+				"size": 4804,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/unit/selector.js",
+				"size": 25282,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/unit/serialize.js",
+				"size": 9382,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/unit/support.js",
+				"size": 6633,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/unit/traversing.js",
+				"size": 50233,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/unit/tween.js",
+				"size": 10535,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/unit/wrap.js",
+				"size": 15015,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"name": "/test/xhtml.php",
+				"size": 136,
+				"time": "2017-03-20T19:00:06.000Z"
+			}
+		]
+	},
+	"/v1/package/npm/package-1/stats?from=2017-06-26&to=2017-07-25": {
+		"total": 36000,
+		"versions": {
+			"1.1.0": {
+				"1498435200000": 400,
+				"1498521600000": 400,
+				"1498608000000": 400,
+				"1498694400000": 400,
+				"1498780800000": 400,
+				"1498867200000": 400,
+				"1498953600000": 400,
+				"1499040000000": 400,
+				"1499126400000": 400,
+				"1499212800000": 400,
+				"1499299200000": 400,
+				"1499385600000": 400,
+				"1499472000000": 400,
+				"1499558400000": 400,
+				"1499644800000": 400,
+				"1499731200000": 400,
+				"1499817600000": 400,
+				"1499904000000": 400,
+				"1499990400000": 400,
+				"1500076800000": 400,
+				"1500163200000": 400,
+				"1500249600000": 400,
+				"1500336000000": 400,
+				"1500422400000": 400,
+				"1500508800000": 400,
+				"1500595200000": 400,
+				"1500681600000": 400,
+				"1500768000000": 400,
+				"1500854400000": 400,
+				"1500940800000": 400
+			},
+			"1.1.1": {
+				"1498435200000": 400,
+				"1498521600000": 400,
+				"1498608000000": 400,
+				"1498694400000": 400,
+				"1498780800000": 400,
+				"1498867200000": 400,
+				"1498953600000": 400,
+				"1499040000000": 400,
+				"1499126400000": 400,
+				"1499212800000": 400,
+				"1499299200000": 400,
+				"1499385600000": 400,
+				"1499472000000": 400,
+				"1499558400000": 400,
+				"1499644800000": 400,
+				"1499731200000": 400,
+				"1499817600000": 400,
+				"1499904000000": 400,
+				"1499990400000": 400,
+				"1500076800000": 400,
+				"1500163200000": 400,
+				"1500249600000": 400,
+				"1500336000000": 400,
+				"1500422400000": 400,
+				"1500508800000": 400,
+				"1500595200000": 400,
+				"1500681600000": 400,
+				"1500768000000": 400,
+				"1500854400000": 400,
+				"1500940800000": 400
+			},
+			"1.1.2": {
+				"1498435200000": 400,
+				"1498521600000": 400,
+				"1498608000000": 400,
+				"1498694400000": 400,
+				"1498780800000": 400,
+				"1498867200000": 400,
+				"1498953600000": 400,
+				"1499040000000": 400,
+				"1499126400000": 400,
+				"1499212800000": 400,
+				"1499299200000": 400,
+				"1499385600000": 400,
+				"1499472000000": 400,
+				"1499558400000": 400,
+				"1499644800000": 400,
+				"1499731200000": 400,
+				"1499817600000": 400,
+				"1499904000000": 400,
+				"1499990400000": 400,
+				"1500076800000": 400,
+				"1500163200000": 400,
+				"1500249600000": 400,
+				"1500336000000": 400,
+				"1500422400000": 400,
+				"1500508800000": 400,
+				"1500595200000": 400,
+				"1500681600000": 400,
+				"1500768000000": 400,
+				"1500854400000": 400,
+				"1500940800000": 400
+			}
+		}
+	},
+	"/v1/package/npm/package-1/stats?from=2017-07-24&to=2017-07-25": {
+		"total": 2400,
+		"versions": {
+			"1.1.0": {
+				"1500854400000": 400,
+				"1500940800000": 400
+			},
+			"1.1.1": {
+				"1500854400000": 400,
+				"1500940800000": 400
+			},
+			"1.1.2": {
+				"1500854400000": 400,
+				"1500940800000": 400
+			}
+		}
+	},
+	"/v1/package/npm/package-1@1.1.1/stats?from=2017-07-24&to=2017-07-25": {
+		"total": 800,
+		"files": {
+			"file-0.js": {
+				"1500854400000": 100,
+				"1500940800000": 100
+			},
+			"file-1.js": {
+				"1500854400000": 100,
+				"1500940800000": 100
+			},
+			"file-2.js": {
+				"1500854400000": 100,
+				"1500940800000": 100
+			},
+			"file-3.js": {
+				"1500854400000": 100,
+				"1500940800000": 100
+			}
+		}
+	},
+	"/v1/stats/packages?from=2017-07-24&to=2017-07-25": [
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-57"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-13"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-28"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-42"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-8"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-18"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-32"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-47"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-0"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-23"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-38"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-52"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-57"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-13"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-28"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-42"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-9"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-19"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-33"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-48"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-0"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-23"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-38"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-52"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-58"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-14"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-29"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-43"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-9"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-19"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-33"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-48"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-1"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-24"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-39"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-53"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-58"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-14"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-29"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-43"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-2"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-34"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-49"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-1"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-24"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-39"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-53"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-59"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-15"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-3"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-44"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-2"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-34"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-49"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-54"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-10"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-25"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-4"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-59"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-15"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-3"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-44"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-20"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-35"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-5"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-54"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-10"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-25"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-4"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-6"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-16"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-30"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-45"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-20"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-35"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-5"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-55"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-11"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-26"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-40"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-6"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-16"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-30"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-45"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-21"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-36"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-50"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-55"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-11"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-26"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-40"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-7"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-17"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-31"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-46"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-21"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-36"
+		},
+		{
+			"hits": 2400,
+			"type": "npm",
+			"name": "package-50"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-56"
+		},
+		{
+			"hits": 2400,
+			"type": "gh",
+			"name": "package-12"
+		}
+	],
+	"/v1/stats/network?from=2017-07-24&to=2017-07-25": {
+		"total": {
+			"hits": 288000
+		},
+		"meta": {
+			"records": 2000000000,
+			"megabytes": 20000
+		}
+	}
+}

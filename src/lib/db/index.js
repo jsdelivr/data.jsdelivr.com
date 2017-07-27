@@ -6,6 +6,7 @@ module.exports = knex({
 	client: dbConfig.type,
 	connection: Object.assign({
 		timezone: 'UTC',
+		multipleStatements: true,
 	}, dbConfig.connection),
 	pool: { min: 0, max: 100 },
 });

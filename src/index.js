@@ -1,18 +1,21 @@
 // This needs to run before any require() call.
-const trace = require('@risingstack/trace');
-global.OPBEAT_CLIENT = require('opbeat').start({
-	appId: '9bedaa8213',
-	organizationId: '091f361b83f64dbcbac3d3c318636efc',
-	secretToken: process.env.OPBEAT_TOKEN,
-	logLevel: 'fatal',
-	active: process.env.NODE_ENV === 'production',
-	captureExceptions: false,
-	ignoreUrls: [ '/favicon.ico', '/heartbeat' ],
-	timeoutErrorThreshold: 35000,
-});
+// istanbul ignore next
+if (require.main === module) {
+	const trace = require('@risingstack/trace');
+	global.OPBEAT_CLIENT = require('opbeat').start({
+		appId: '9bedaa8213',
+		organizationId: '091f361b83f64dbcbac3d3c318636efc',
+		secretToken: process.env.OPBEAT_TOKEN,
+		logLevel: 'fatal',
+		active: process.env.NODE_ENV === 'production',
+		captureExceptions: false,
+		ignoreUrls: [ '/favicon.ico', '/heartbeat' ],
+		timeoutErrorThreshold: 35000,
+	});
 
-require('./lib/startup');
-require('./lib/trace-cpu')(trace);
+	require('./lib/startup');
+	require('./lib/trace-cpu')(trace);
+}
 
 const config = require('config');
 const signalExit = require('signal-exit');
@@ -20,6 +23,7 @@ const Koa = require('koa');
 const koaFavicon = require('koa-favicon');
 const koaResponseTime = require('koa-response-time');
 const koaConditionalGet = require('koa-conditional-get');
+const koaCompress = require('koa-compress');
 const koaLogger = require('koa-logger');
 const koaETag = require('koa-etag');
 const koaJson = require('koa-json');
@@ -78,6 +82,11 @@ server.use((ctx, next) => {
 	ctx.status = 301;
 	ctx.redirect(path.replace(/\/+$/, '') + (querystring ? `?${querystring}` : ''));
 });
+
+/**
+ * Gzip compression.
+ */
+server.use(koaCompress());
 
 /**
  * Pretty-print JSON.
@@ -159,27 +168,32 @@ server.on('error', (err, ctx) => {
 	logger.error({ err, ctx }, 'Koa server error.');
 });
 
-/**
- * Start listening on the configured port.
- */
-server.listen(process.env.PORT || serverConfig.port, () => {
-	logger.info(`Web server started on port ${process.env.PORT || serverConfig.port}.`);
-});
+// istanbul ignore next
+if (require.main === module) {
+	/**
+	 * Start listening on the configured port.
+	 */
+	server.listen(process.env.PORT || serverConfig.port, () => {
+		logger.info(`Web server started on port ${process.env.PORT || serverConfig.port}.`);
+	});
 
-/**
- * Always log before exit.
- */
-signalExit((code, signal) => {
-	logger[code === 0 ? 'info' : 'fatal']({ code, signal }, 'Web server stopped.');
-});
+	/**
+	 * Always log before exit.
+	 */
+	signalExit((code, signal) => {
+		logger[code === 0 ? 'info' : 'fatal']({ code, signal }, 'Web server stopped.');
+	});
 
-/**
- * If we exit because of an uncaught exception, log the error details as well.
- */
-process.on('uncaughtException', (error) => {
-	logger.fatal(error, `Fatal error. Exiting.`);
+	/**
+	 * If we exit because of an uncaught exception, log the error details as well.
+	 */
+	process.on('uncaughtException', (error) => {
+		logger.fatal(error, `Fatal error. Exiting.`);
 
-	setTimeout(() => {
-		process.exit(1);
-	}, 10000);
-});
+		setTimeout(() => {
+			process.exit(1);
+		}, 10000);
+	});
+}
+
+module.exports = server.callback();

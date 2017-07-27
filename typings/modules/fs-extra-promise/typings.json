@@ -1,0 +1,8 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/e3885ed339aaa8b4fdf4a4380416c8d70b6929ef/fs-extra-promise/index.d.ts",
+    "raw": "registry:dt/fs-extra-promise#0.0.0+20161224095540",
+    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/e3885ed339aaa8b4fdf4a4380416c8d70b6929ef/fs-extra-promise/index.d.ts"
+  }
+}

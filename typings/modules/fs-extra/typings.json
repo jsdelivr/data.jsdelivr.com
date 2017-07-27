@@ -1,0 +1,8 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/416210d5bbfba701abb723c8c7855d9bcd56258e/fs-extra/index.d.ts",
+    "raw": "registry:dt/fs-extra#2.0.0+20170306033830",
+    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/416210d5bbfba701abb723c8c7855d9bcd56258e/fs-extra/index.d.ts"
+  }
+}

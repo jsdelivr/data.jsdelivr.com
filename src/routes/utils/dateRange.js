@@ -30,7 +30,7 @@ module.exports = (from, to, defaultDays = 30) => {
 
 	if (!range.length) {
 		let date = relativeDayUtc(-2);
-		range.push(new Date(date - defaultDays * 86400000), date);
+		range.push(relativeDayUtc(-2 - defaultDays + 1), date);
 	} else if (range.length === 1) {
 		range.push(relativeDayUtc(-2));
 	}

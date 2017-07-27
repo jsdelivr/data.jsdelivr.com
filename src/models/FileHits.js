@@ -38,7 +38,7 @@ class FileHits extends BaseModel {
 
 	static async getTotal (from, to) {
 		let sql = db(this.table)
-			.sum(`${this.table}.hits as hits`)
+			.sum(`${this.table}.hits as hits`);
 
 		if (from instanceof Date) {
 			sql.where(`${this.table}.date`, '>=', from);

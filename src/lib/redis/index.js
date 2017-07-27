@@ -9,7 +9,7 @@ module.exports = redis.createClient({
 	auth_pass: redisConfig.password,
 });
 
-if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test') {
 	module.exports.flushallAsync().catch(() => {});
 }
 
