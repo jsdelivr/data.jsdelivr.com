@@ -6,7 +6,7 @@ const schema = {
 	id: Joi.number().integer().min(0).required().allow(null),
 	filename: Joi.string().max(255).required(),
 	updatedAt: Joi.date().required(),
-	processed: Joi.boolean().required(),
+	processed: Joi.number().required(),
 };
 
 class LogFile extends BaseModel {
@@ -34,8 +34,8 @@ class LogFile extends BaseModel {
 		/** @type {Date} */
 		this.updatedAt = null;
 
-		/** @type {boolean} */
-		this.processed = false;
+		/** @type {number} */
+		this.processed = 0;
 
 		Object.assign(this, properties);
 		return new Proxy(this, BaseModel.ProxyHandler);

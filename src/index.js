@@ -8,7 +8,7 @@ global.OPBEAT_CLIENT = require('opbeat').start({
 	active: process.env.NODE_ENV === 'production',
 	captureExceptions: false,
 	ignoreUrls: [ '/favicon.ico', '/heartbeat' ],
-	timeoutErrorThreshold: 60000,
+	timeoutErrorThreshold: 35000,
 });
 
 require('./lib/startup');
