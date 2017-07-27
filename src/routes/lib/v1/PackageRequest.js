@@ -52,10 +52,6 @@ class PackageRequest extends BaseRequest {
 		throw new Error(`Unknown package type ${this.params.type}.`);
 	}
 
-	async getFiles () {
-		return JSON.parse(await this.getFilesAsJson());
-	}
-
 	async getFilesAsJson () {
 		let files = await redis.getAsync(this.keys.files);
 

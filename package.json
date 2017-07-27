@@ -49,7 +49,7 @@
 		"coverage": "nyc mocha test/tests.js",
 		"lint": "eslint src test",
 		"mocha": "mocha test/tests.js",
-		"test": "npm run lint && npm run coverage"
+		"test": "npm run lint && npm run mocha"
 	},
 	"repository": {
 		"type": "git",
