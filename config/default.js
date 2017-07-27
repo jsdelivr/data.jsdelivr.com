@@ -42,6 +42,5 @@ module.exports = {
 			maxAge: 10 * 60,
 		},
 		maxAgeStatic: 365 * 24 * 60 * 60,
-		maxAgeStats: 60,
 	},
 };

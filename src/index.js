@@ -105,6 +105,9 @@ server.use(async (ctx, next) => {
 
 	if (ctx.maxAge) {
 		ctx.set('Cache-Control', `public, max-age=${ctx.maxAge}`);
+	} else if (ctx.expires) {
+		ctx.set('Cache-Control', `public`);
+		ctx.set('Expires', ctx.expires);
 	}
 });
 

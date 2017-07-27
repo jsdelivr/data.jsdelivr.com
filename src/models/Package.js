@@ -36,7 +36,7 @@ class Package extends BaseModel {
 		return new Proxy(this, BaseModel.ProxyHandler);
 	}
 
-	static async getSumVersionHitsByName (name, from, to) {
+	static async getSumVersionHitsPerFileAndDateByName (name, from, to) {
 		let sql = db(this.table)
 			.where({ name })
 			.join(PackageVersion.table, `${this.table}.id`, '=', `${PackageVersion.table}.packageId`)
@@ -53,9 +53,31 @@ class Package extends BaseModel {
 			sql.where(`${FileHits.table}.date`, '<=', to);
 		}
 
-		return _.mapValues(_.groupBy(await sql.select([ `${PackageVersion.table}.version`, `${FileHits.table}.date`, 'hits' ]), 'version'), (versionHits) => {
+		return _.mapValues(_.groupBy(await sql.select([ `${PackageVersion.table}.version`, `${FileHits.table}.date` ]), 'version'), (versionHits) => {
 			return _.fromPairs(_.map(versionHits, entry => [ entry.date.valueOf(), entry.hits ]));
 		});
+	}
+
+	static async getTopPackages (from, to, limit = 100, page = 1) {
+		let sql = db(this.table)
+			.join(PackageVersion.table, `${this.table}.id`, '=', `${PackageVersion.table}.packageId`)
+			.join(File.table, `${PackageVersion.table}.id`, '=', `${File.table}.packageVersionId`)
+			.join(FileHits.table, `${File.table}.id`, '=', `${FileHits.table}.fileId`)
+			.groupBy(`${Package.table}.id`)
+			.sum(`${FileHits.table}.hits as hits`)
+			.orderBy('hits', 'DESC')
+			.limit(limit)
+			.offset((page - 1) * limit);
+
+		if (from instanceof Date) {
+			sql.where(`${FileHits.table}.date`, '>=', from);
+		}
+
+		if (to instanceof Date) {
+			sql.where(`${FileHits.table}.date`, '<=', to);
+		}
+
+		return sql.select([ `${Package.table}.type`, `${Package.table}.name` ]);
 	}
 }
 

@@ -35,6 +35,22 @@ class Logs extends BaseModel {
 		Object.assign(this, properties);
 		return new Proxy(this, BaseModel.ProxyHandler);
 	}
+
+	static async getStats (from, to) {
+		let sql = db(this.table)
+			.sum(`${this.table}.lines as records`)
+			.sum(`${this.table}.megabytes as megabytes`);
+
+		if (from instanceof Date) {
+			sql.where(`${this.table}.date`, '>=', from);
+		}
+
+		if (to instanceof Date) {
+			sql.where(`${this.table}.date`, '<=', to);
+		}
+
+		return sql.select().first();
+	}
 }
 
 module.exports = Logs;

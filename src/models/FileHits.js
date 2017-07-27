@@ -35,6 +35,21 @@ class FileHits extends BaseModel {
 		Object.assign(this, properties);
 		return new Proxy(this, BaseModel.ProxyHandler);
 	}
+
+	static async getTotal (from, to) {
+		let sql = db(this.table)
+			.sum(`${this.table}.hits as hits`)
+
+		if (from instanceof Date) {
+			sql.where(`${this.table}.date`, '>=', from);
+		}
+
+		if (to instanceof Date) {
+			sql.where(`${this.table}.date`, '<=', to);
+		}
+
+		return sql.select().first();
+	}
 }
 
 module.exports = FileHits;

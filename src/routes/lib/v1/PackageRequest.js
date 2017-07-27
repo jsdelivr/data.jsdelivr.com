@@ -3,6 +3,11 @@ const semver = require('semver');
 const config = require('config');
 const GitHubApi = require('github');
 
+const BaseRequest = require('./BaseRequest');
+const Package = require('../../../models/Package');
+const PackageVersion = require('../../../models/PackageVersion');
+const sumDeep = require('../../utils/sumDeep');
+
 const v1Config = config.get('v1');
 const githubApi = new GitHubApi({
 	Promise,
@@ -19,10 +24,10 @@ if (v1Config.gh.apiToken) {
 	});
 }
 
-class PackageRequest {
-	constructor (url, params) {
-		this.url = url;
-		this.params = params;
+class PackageRequest extends BaseRequest {
+	constructor (ctx) {
+		super(ctx);
+
 		this.keys = {
 			files: `package/${this.params.type}/${this.params.name}@${this.params.version}/files`,
 			metadata: `package/${this.params.type}/${this.params.name}/metadata`,
@@ -95,63 +100,79 @@ class PackageRequest {
 		return metadata;
 	}
 
-	async handleResolveVersion (ctx) {
+	async handleResolveVersion () {
 		try {
-			ctx.body = { version: await this.getResolvedVersion() };
+			this.ctx.body = { version: await this.getResolvedVersion() };
 		} catch (e) {
-			return this.responseNotFound(ctx);
+			return this.responseNotFound();
 		}
 	}
 
-	async handleVersions (ctx) {
+	async handleVersions () {
 		try {
-			ctx.body = await this.getMetadataAsJson();
+			this.ctx.body = await this.getMetadataAsJson();
 		} catch (e) {
-			return this.responseNotFound(ctx);
+			return this.responseNotFound();
 		}
 	}
 
-	async handlePackageStats (ctx) {
-		return this.responseNotFound(ctx); // TODO
+	async handlePackageStats () {
+		let data = await Package.getSumVersionHitsPerFileAndDateByName(this.params.name, ...this.dateRange);
+
+		this.ctx.body = {
+			total: sumDeep(data, 2),
+			versions: data,
+		};
+
+		this.setCacheHeader();
 	}
 
-	async handleVersionFiles (ctx) {
+	async handleVersionFiles () {
 		let metadata;
 
 		try {
 			metadata = await this.getMetadata();
 		} catch (e) {
-			return this.responseNotFound(ctx);
+			return this.responseNotFound();
 		}
 
-		if (!metadata.versions.includes(ctx.params.version)) {
-			return ctx.body = {
+		if (!metadata.versions.includes(this.params.version)) {
+			return this.ctx.body = {
 				status: 404,
-				message: `Couldn't find version ${ctx.params.version} for ${ctx.params.name}. Make sure you use a specific version number, and not a version range or a tag.`,
+				message: `Couldn't find version ${this.params.version} for ${this.params.name}. Make sure you use a specific version number, and not a version range or a tag.`,
 			};
 		}
 
 		try {
-			ctx.body = await this.getFilesAsJson();
-			ctx.maxAge = v1Config.maxAgeStatic;
-		} catch (e) {
-			if (e instanceof got.ParseError) {
-				return ctx.body = {
-					status: e.response.statusCode || 502,
-					message: e.response.body,
+			this.ctx.body = await this.getFilesAsJson();
+			this.ctx.maxAge = v1Config.maxAgeStatic;
+		} catch (error) {
+			if (error instanceof got.ParseError) {
+				return this.ctx.body = {
+					status: error.response.statusCode || 502,
+					message: error.response.body,
 				};
 			}
 
-			throw e;
+			throw error;
 		}
 	}
 
-	async handleVersionStats (ctx) {
-		return this.responseNotFound(ctx); // TODO
+	async handleVersionStats () {
+		let data = _.mapValues(await PackageVersion.findAllFileHitsByNameAndVersion(this.params.name, this.params.version, ...this.dateRange), (fileHits) => {
+			return _.fromPairs(_.map(fileHits, fileHits => [ fileHits.date.valueOf(), fileHits.hits ]));
+		});
+
+		this.ctx.body = {
+			total: sumDeep(data, 2),
+			files: data,
+		};
+
+		this.setCacheHeader();
 	}
 
-	async responseNotFound (ctx) {
-		ctx.body = {
+	async responseNotFound () {
+		this.ctx.body = {
 			status: 404,
 			message: `Couldn't find ${this.params.name}@${this.params.version}.`,
 		};
