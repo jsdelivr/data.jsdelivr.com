@@ -130,7 +130,7 @@ class PackageRequest extends BaseRequest {
 
 		this.ctx.body = {
 			total: sumDeep(data, 2),
-			versions: data,
+			versions: _.mapValues(data, dates => ({ total: sumDeep(dates), dates })),
 		};
 
 		this.setCacheHeader();
@@ -169,11 +169,16 @@ class PackageRequest extends BaseRequest {
 
 	async handleVersionStats () {
 		let data = _.mapValues(await PackageVersion.findAllFileHitsByNameAndVersion(this.params.name, this.params.version, ...this.dateRange), (fileHits) => {
-			return _.fromPairs(_.map(fileHits, fileHits => [ fileHits.date.valueOf(), fileHits.hits ]));
+			let dates = _.fromPairs(_.map(fileHits, fileHits => [ fileHits.date.valueOf(), fileHits.hits ] ));
+
+			return {
+				total: sumDeep(dates),
+				dates,
+			};
 		});
 
 		this.ctx.body = {
-			total: sumDeep(data, 2),
+			total: sumDeep(data, 3),
 			files: data,
 		};
 
