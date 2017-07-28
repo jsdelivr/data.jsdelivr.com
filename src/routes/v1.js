@@ -1,4 +1,5 @@
 const Router = require('koa-router');
+const relativeDayUtc = require('relative-day-utc');
 const PackageRequest = require('./lib/v1/PackageRequest');
 const StatsRequest = require('./lib/v1/StatsRequest');
 const router = new Router();
@@ -15,6 +16,28 @@ router.param('user', async (value, ctx, next) => {
 	return next();
 });
 
+router.param('range', async (value, ctx, next) => {
+	switch (value) {
+		case 'day':
+			ctx.query.from = relativeDayUtc(-2).toISOString().substr(0, 10);
+			break;
+
+		case 'week':
+			ctx.query.from = relativeDayUtc(-8).toISOString().substr(0, 10);
+			break;
+
+		case 'month':
+			ctx.query.from = relativeDayUtc(-31).toISOString().substr(0, 10);
+			break;
+
+		case 'year':
+			ctx.query.from = relativeDayUtc(-366).toISOString().substr(0, 10);
+			break;
+	}
+
+	return next();
+});
+
 router.get([
 	'/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)',
 	'/package/:type(gh)/:user([^/@]+)/:name([^/@]+)',
@@ -23,8 +46,8 @@ router.get([
 });
 
 router.get([
-	'/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/stats',
-	'/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/stats',
+	'/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/stats/:range(day|week|month|year)?',
+	'/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/stats/:range(day|week|month|year)?',
 ], async (ctx) => {
 	return new PackageRequest(ctx).handlePackageStats();
 });
@@ -37,8 +60,8 @@ router.get([
 });
 
 router.get([
-	'/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version/stats',
-	'/package/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version/stats',
+	'/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version/stats/:range(day|week|month|year)?',
+	'/package/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version/stats/:range(day|week|month|year)?',
 ], async (ctx) => {
 	return new PackageRequest(ctx).handleVersionStats();
 });
@@ -52,11 +75,11 @@ router.get([
 	return new PackageRequest(ctx).handleResolveVersion();
 });
 
-router.get('/stats/packages', async (ctx) => {
+router.get('/stats/packages/:range(day|week|month|year)?', async (ctx) => {
 	return new StatsRequest(ctx).handlePackages();
 });
 
-router.get('/stats/network', async (ctx) => {
+router.get('/stats/network/:range(day|week|month|year)?', async (ctx) => {
 	return new StatsRequest(ctx).handleNetwork();
 });
 
