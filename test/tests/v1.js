@@ -3,6 +3,7 @@ const chai = require('chai');
 const chaiHttp = require('chai-http');
 const nock = require('nock');
 const expect = chai.expect;
+const relativeDayUtc = require('relative-day-utc');
 
 const server = require('../../src');
 const upstreamGitHubResponses = require('../data/github.json');
@@ -60,6 +61,14 @@ describe('v1', function () {
 		nock('https://cdn.jsdelivr.net')
 			.get('/gh/jquery/jquery@3.2.1/+json')
 			.reply(200, upstreamCdnResponses['/gh/jquery/jquery@3.2.1/+json']);
+
+		nock('https://registry.npmjs.cf')
+			.get('/emojione')
+			.reply(200, upstreamNpmResponses['/emojione']);
+
+		nock('https://cdn.jsdelivr.net')
+			.get('/npm/emojione@3.1.1/+json')
+			.reply(403, upstreamCdnResponses['/npm/emojione@3.1.1/+json']);
 
 		nock('https://registry.npmjs.org')
 			.get(/.*/)
@@ -370,6 +379,25 @@ describe('v1', function () {
 			});
 	});
 
+	it('GET /v1/package/npm/emojione@3.1.1', () => {
+		return chai.request(server)
+			.get('/v1/package/npm/emojione@3.1.1')
+			.then((b) => {
+				console.log(b.body);
+				expect(1).to.equal(0);
+			})
+			.catch((error) => {
+				expect(error.response).to.have.status(403);
+				expect(error.response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(error.response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(error.response).to.have.header('Timing-Allow-Origin', '*');
+				expect(error.response).to.have.header('Vary', 'Accept-Encoding');
+				expect(error.response).to.be.json;
+				expect(error.response.body).to.have.property('status', 403);
+				expect(error.response.body).to.have.property('message', 'Package size exceeded the configured limit of 50 MB.');
+			});
+	});
+
 	it('GET /v1/package/resolve/npm/foo', () => {
 		return chai.request(server)
 			.get('/v1/package/resolve/npm/foo')
@@ -440,7 +468,11 @@ describe('v1', function () {
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
-				expect(response.body).to.deep.equal(expectedResponses['/v1/stats/packages?from=2017-07-24&to=2017-07-25']);
+				expect(response.body[0]).to.deep.equal({
+					type: 'npm',
+					name: 'package-9',
+					hits: 3300,
+				});
 			});
 	});
 
@@ -465,7 +497,7 @@ describe('v1', function () {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
 				expect(response).to.have.header('Cache-Control', 'public');
-				expect(response).to.have.header('Expires', 'Fri, 28 Jul 2017 00:00:00 GMT');
+				expect(response).to.have.header('Expires', relativeDayUtc(1).toUTCString());
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;

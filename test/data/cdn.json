@@ -2010,5 +2010,6 @@
 				"time": "2017-03-20T19:00:06.000Z"
 			}
 		]
-	}
+	},
+	"/npm/emojione@3.1.1/+json": "Package size exceeded the configured limit of 50 MB."
 }

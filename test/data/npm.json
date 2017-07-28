@@ -4701,5 +4701,2782 @@
 		},
 		"license": "MIT",
 		"_attachments": { }
+	},
+	"/emojione": {
+		"_id": "emojione",
+		"_rev": "68-b66391f37d70287c2d34072f49d5d32b",
+		"name": "emojione",
+		"description": "EmojiOne is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG formats provided for the emoji images.",
+		"dist-tags": {
+			"latest": "3.1.1"
+		},
+		"versions": {
+			"1.0.0": {
+				"name": "emojione",
+				"version": "1.0.0",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main:": "lib/js/emojione.min.js",
+				"keywords": [
+					"emojione, Emoji One, emoji, emojis, emoticons, smileys, smilies, unicode"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and GPL-2.0+)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": [
+					{
+						"type": "git",
+						"url": "https://github.com/Ranks/emojione.git"
+					}
+				],
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"_id": "emojione@1.0.0",
+				"dist": {
+					"shasum": "938703181dd7f1dd1d0cd38cec66403db14ec0d7",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-1.0.0.tgz"
+				},
+				"_from": "./",
+				"_npmVersion": "1.4.3",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"directories": { }
+			},
+			"1.0.1": {
+				"name": "emojione",
+				"version": "1.0.1",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main:": "lib/js/emojione.min.js",
+				"keywords": [
+					"emojione, Emoji One, emoji, emojis, emoticons, smileys, smilies, unicode"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and GPL-2.0+)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": [
+					{
+						"type": "git",
+						"url": "https://github.com/Ranks/emojione.git"
+					}
+				],
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"_id": "emojione@1.0.1",
+				"dist": {
+					"shasum": "57b14bbc241818fa7c54531e6bfbc8cdbb1d6758",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-1.0.1.tgz"
+				},
+				"_from": "./",
+				"_npmVersion": "1.4.3",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"directories": { }
+			},
+			"1.0.2": {
+				"name": "emojione",
+				"version": "1.0.2",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main:": "lib/js/emojione.min.js",
+				"keywords": [
+					"emojione, Emoji One, emoji, emojis, emoticons, smileys, smilies, unicode"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and GPL-2.0+)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"_id": "emojione@1.0.2",
+				"dist": {
+					"shasum": "db35e8580a9309d5c3fab7be2075e109280271f6",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-1.0.2.tgz"
+				},
+				"_from": "./",
+				"_npmVersion": "1.4.3",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"directories": { }
+			},
+			"1.0.3": {
+				"name": "emojione",
+				"version": "1.0.3",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main:": "lib/js/emojione.min.js",
+				"keywords": [
+					"emojione, Emoji One, emoji, emojis, emoticons, smileys, smilies, unicode"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and GPL-2.0+)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"_id": "emojione@1.0.3",
+				"dist": {
+					"shasum": "508ea75f7d05b6eaddd85c787ad4ddbc82d6a0bd",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-1.0.3.tgz"
+				},
+				"_from": "./",
+				"_npmVersion": "1.4.3",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"directories": { }
+			},
+			"1.0.4": {
+				"name": "emojione",
+				"version": "1.0.4",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main:": "lib/js/emojione.min.js",
+				"keywords": [
+					"emojione, Emoji One, emoji, emojis, emoticons, smileys, smilies, unicode"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and GPL-2.0+)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"_id": "emojione@1.0.4",
+				"dist": {
+					"shasum": "27daf33ff80e10ecde1ce6aae5247fe137a348dc",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-1.0.4.tgz"
+				},
+				"_from": "./",
+				"_npmVersion": "1.4.3",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"directories": { }
+			},
+			"1.0.5": {
+				"name": "emojione",
+				"version": "1.0.5",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main:": "lib/js/emojione.min.js",
+				"keywords": [
+					"emojione, Emoji One, emoji, emojis, emoticons, smileys, smilies, unicode"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and GPL-2.0+)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"_id": "emojione@1.0.5",
+				"dist": {
+					"shasum": "816a3675f8989476056012bf1c8673d1896c43f9",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-1.0.5.tgz"
+				},
+				"_from": "./",
+				"_npmVersion": "1.4.3",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"directories": { }
+			},
+			"1.0.6": {
+				"name": "emojione",
+				"version": "1.0.6",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main:": "lib/js/emojione.min.js",
+				"keywords": [
+					"emojione, Emoji One, emoji, emojis, emoticons, smileys, smilies, unicode"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and GPL-2.0+)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"dependencies": {
+					"grunt": "^0.4.0",
+					"grunt-contrib-sass": "^0.8.1",
+					"grunt-spritesmith": "^2.1.1"
+				},
+				"_id": "emojione@1.0.6",
+				"dist": {
+					"shasum": "649dabd9a886a2b984d22228c5eb3ac8c09401e1",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-1.0.6.tgz"
+				},
+				"_from": "./",
+				"_npmVersion": "1.4.3",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"directories": { }
+			},
+			"1.0.7": {
+				"name": "emojione",
+				"version": "1.0.7",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main:": "lib/js/emojione.min.js",
+				"keywords": [
+					"emojione, Emoji One, emoji, emojis, emoticons, smileys, smilies, unicode"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and GPL-2.0+)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"_id": "emojione@1.0.7",
+				"dist": {
+					"shasum": "ee1d5a648d26f359f82512875941e78de45515d9",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-1.0.7.tgz"
+				},
+				"_from": "./",
+				"_npmVersion": "1.4.3",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"directories": { }
+			},
+			"1.1.0": {
+				"name": "emojione",
+				"version": "1.1.0",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main:": "lib/js/emojione.min.js",
+				"keywords": [
+					"emojione, Emoji One, emoji, emojis, emoticons, smileys, smilies, unicode"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and GPL-2.0+)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"_id": "emojione@1.1.0",
+				"dist": {
+					"shasum": "593d90b7de03651446d73ad38c846b68e601813f",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-1.1.0.tgz"
+				},
+				"_from": "./",
+				"_npmVersion": "1.4.3",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"directories": { }
+			},
+			"1.2.0": {
+				"name": "emojione",
+				"version": "1.2.0",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main:": "lib/js/emojione.js",
+				"keywords": [
+					"emojione",
+					"Emoji One",
+					"emoji",
+					"emojis",
+					"emoticons",
+					"smileys",
+					"smilies",
+					"unicode",
+					"emoji set"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and MIT)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"_id": "emojione@1.2.0",
+				"dist": {
+					"shasum": "70a68c7e13c41dce319190e898a9dcf8af063eb9",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-1.2.0.tgz"
+				},
+				"_from": "./",
+				"_npmVersion": "1.4.3",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"directories": { }
+			},
+			"1.2.2": {
+				"name": "emojione",
+				"version": "1.2.2",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main:": "lib/js/emojione.js",
+				"keywords": [
+					"emojione",
+					"Emoji One",
+					"emoji",
+					"emojis",
+					"emoticons",
+					"smileys",
+					"smilies",
+					"unicode",
+					"emoji set"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and MIT)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"_id": "emojione@1.2.2",
+				"dist": {
+					"shasum": "413ff3dd46407d9d7e5cb07db56a62e7b7732eec",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-1.2.2.tgz"
+				},
+				"_from": "./",
+				"_npmVersion": "1.4.3",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"directories": { }
+			},
+			"1.2.3": {
+				"name": "emojione",
+				"version": "1.2.3",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main:": "lib/js/emojione.js",
+				"keywords": [
+					"emojione",
+					"Emoji One",
+					"emoji",
+					"emojis",
+					"emoticons",
+					"smileys",
+					"smilies",
+					"unicode",
+					"emoji set"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and MIT)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"gitHead": "02e556a66fa915eac88b1500ebb3d89046c1a769",
+				"_id": "emojione@1.2.3",
+				"scripts": { },
+				"_shasum": "a012ce2c7b5d7264a66a3bf64de9b8614a8f87cf",
+				"_from": "./",
+				"_npmVersion": "1.4.28",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"dist": {
+					"shasum": "a012ce2c7b5d7264a66a3bf64de9b8614a8f87cf",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-1.2.3.tgz"
+				},
+				"directories": { }
+			},
+			"1.2.4": {
+				"name": "emojione",
+				"version": "1.2.4",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main": "lib/js/emojione.js",
+				"keywords": [
+					"emojione",
+					"Emoji One",
+					"emoji",
+					"emojis",
+					"emoticons",
+					"smileys",
+					"smilies",
+					"unicode",
+					"emoji set"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and MIT)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"gitHead": "f316a8ae204e4b220e54a19112d3602043d78d1d",
+				"_id": "emojione@1.2.4",
+				"scripts": { },
+				"_shasum": "324363e32e971152acb6bac0b6bd078107fb1b75",
+				"_from": "./",
+				"_npmVersion": "1.4.28",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"dist": {
+					"shasum": "324363e32e971152acb6bac0b6bd078107fb1b75",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-1.2.4.tgz"
+				},
+				"directories": { }
+			},
+			"1.2.5": {
+				"name": "emojione",
+				"version": "1.2.5",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main": "lib/js/emojione.js",
+				"keywords": [
+					"emojione",
+					"Emoji One",
+					"emoji",
+					"emojis",
+					"emoticons",
+					"smileys",
+					"smilies",
+					"unicode",
+					"emoji set"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and MIT)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"gitHead": "818886cf676f9769be97947e230b218ce408bc54",
+				"_id": "emojione@1.2.5",
+				"scripts": { },
+				"_shasum": "4a0e3eb7d7b6b9b34b47ad70f89f01cf30e263d9",
+				"_from": "./",
+				"_npmVersion": "1.4.28",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"dist": {
+					"shasum": "4a0e3eb7d7b6b9b34b47ad70f89f01cf30e263d9",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-1.2.5.tgz"
+				},
+				"directories": { }
+			},
+			"1.3.0": {
+				"name": "emojione",
+				"version": "1.3.0",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main": "lib/js/emojione.js",
+				"keywords": [
+					"emojione",
+					"Emoji One",
+					"emoji",
+					"emojis",
+					"emoticons",
+					"smileys",
+					"smilies",
+					"unicode",
+					"emoji set"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and MIT)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"gitHead": "2a34acf3771a219045e133063aa759035d4f842c",
+				"_id": "emojione@1.3.0",
+				"scripts": { },
+				"_shasum": "6ec057a4506c8d4e13f0cba3046d8ae07e24fa3a",
+				"_from": "./",
+				"_npmVersion": "1.4.28",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"dist": {
+					"shasum": "6ec057a4506c8d4e13f0cba3046d8ae07e24fa3a",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-1.3.0.tgz"
+				},
+				"directories": { }
+			},
+			"1.3.1": {
+				"name": "emojione",
+				"version": "1.3.1",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main": "lib/js/emojione.js",
+				"keywords": [
+					"emojione",
+					"Emoji One",
+					"emoji",
+					"emojis",
+					"emoticons",
+					"smileys",
+					"smilies",
+					"unicode",
+					"emoji set"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and MIT)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"devDependencies": {
+					"grunt": "^0.4.5",
+					"grunt-contrib-jshint": "^0.11.0",
+					"grunt-contrib-qunit": "^0.5.2",
+					"grunt-contrib-uglify": "^0.8.0",
+					"grunt-contrib-watch": "^0.6.1",
+					"grunt-jsonlint": "^1.0.4"
+				},
+				"gitHead": "613079b16c00e47fb3c44744a67ed88a9295afb1",
+				"_id": "emojione@1.3.1",
+				"scripts": { },
+				"_shasum": "3c7f7b3578bb6dcde4785575d2b5bbc9ef793c2c",
+				"_from": "./",
+				"_npmVersion": "1.4.28",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"dist": {
+					"shasum": "3c7f7b3578bb6dcde4785575d2b5bbc9ef793c2c",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-1.3.1.tgz"
+				},
+				"directories": { }
+			},
+			"1.4.0": {
+				"name": "emojione",
+				"version": "1.4.0",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main": "lib/js/emojione.js",
+				"keywords": [
+					"emojione",
+					"Emoji One",
+					"emoji",
+					"emojis",
+					"emoticons",
+					"smileys",
+					"smilies",
+					"unicode",
+					"emoji set"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and MIT)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"devDependencies": {
+					"grunt": "^0.4.5",
+					"grunt-contrib-jshint": "^0.11.0",
+					"grunt-contrib-qunit": "^0.5.2",
+					"grunt-contrib-uglify": "^0.8.0",
+					"grunt-contrib-watch": "^0.6.1",
+					"grunt-jsonlint": "^1.0.4"
+				},
+				"gitHead": "7273e26679248214b433e1d32727f38e8330c34d",
+				"_id": "emojione@1.4.0",
+				"scripts": { },
+				"_shasum": "be25c720d96f5bc33a2eb91729b0d67f29158e9a",
+				"_from": "./",
+				"_npmVersion": "1.4.28",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"dist": {
+					"shasum": "be25c720d96f5bc33a2eb91729b0d67f29158e9a",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-1.4.0.tgz"
+				},
+				"directories": { }
+			},
+			"1.4.1": {
+				"name": "emojione",
+				"version": "1.4.1",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main": "lib/js/emojione.js",
+				"keywords": [
+					"emojione",
+					"Emoji One",
+					"emoji",
+					"emojis",
+					"emoticons",
+					"smileys",
+					"smilies",
+					"unicode",
+					"emoji set"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and MIT)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"devDependencies": {
+					"grunt": "^0.4.5",
+					"grunt-contrib-cssmin": "^0.12.2",
+					"grunt-contrib-jshint": "^0.11.0",
+					"grunt-contrib-qunit": "^0.5.2",
+					"grunt-contrib-sass": "^0.9.2",
+					"grunt-contrib-uglify": "^0.8.0",
+					"grunt-contrib-watch": "^0.6.1",
+					"grunt-imageoptim": "^1.4.1",
+					"grunt-jsonlint": "^1.0.4",
+					"grunt-spritesmith": "^4.6.0",
+					"grunt-svgstore": "^0.5.0"
+				},
+				"gitHead": "81373eda34614389dde82aa79ffa7f137b516423",
+				"_id": "emojione@1.4.1",
+				"scripts": { },
+				"_shasum": "df64287908a6ad566d604c08df47d571d4258882",
+				"_from": ".",
+				"_npmVersion": "2.7.4",
+				"_nodeVersion": "0.12.2",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"dist": {
+					"shasum": "df64287908a6ad566d604c08df47d571d4258882",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-1.4.1.tgz"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"directories": { }
+			},
+			"1.5.0": {
+				"name": "emojione",
+				"version": "1.5.0",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main": "lib/js/emojione.js",
+				"keywords": [
+					"emojione",
+					"Emoji One",
+					"emoji",
+					"emojis",
+					"emoticons",
+					"smileys",
+					"smilies",
+					"unicode",
+					"emoji set"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and MIT)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"devDependencies": {
+					"grunt": "^0.4.5",
+					"grunt-contrib-cssmin": "^0.12.2",
+					"grunt-contrib-jshint": "^0.11.0",
+					"grunt-contrib-qunit": "^0.5.2",
+					"grunt-contrib-sass": "^0.9.2",
+					"grunt-contrib-uglify": "^0.8.0",
+					"grunt-contrib-watch": "^0.6.1",
+					"grunt-imageoptim": "^1.4.1",
+					"grunt-jsonlint": "^1.0.4",
+					"grunt-spritesmith": "^4.6.0",
+					"grunt-svgstore": "^0.5.0"
+				},
+				"gitHead": "45148d1a82ad377cdcdd4598963db7fe1e939512",
+				"_id": "emojione@1.5.0",
+				"scripts": { },
+				"_shasum": "c5f7eead115af846f1f9f42c93a29fe7943a8dd2",
+				"_from": ".",
+				"_npmVersion": "2.7.4",
+				"_nodeVersion": "0.12.2",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"dist": {
+					"shasum": "c5f7eead115af846f1f9f42c93a29fe7943a8dd2",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-1.5.0.tgz"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"directories": { }
+			},
+			"1.5.1": {
+				"name": "emojione",
+				"version": "1.5.1",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main": "lib/js/emojione.js",
+				"keywords": [
+					"emojione",
+					"Emoji One",
+					"emoji",
+					"emojis",
+					"emoticons",
+					"smileys",
+					"smilies",
+					"unicode",
+					"emoji set"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and MIT)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "git+https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"devDependencies": {
+					"grunt": "^0.4.5",
+					"grunt-contrib-cssmin": "^0.12.2",
+					"grunt-contrib-jshint": "^0.11.0",
+					"grunt-contrib-qunit": "^0.5.2",
+					"grunt-contrib-sass": "^0.9.2",
+					"grunt-contrib-uglify": "^0.8.0",
+					"grunt-contrib-watch": "^0.6.1",
+					"grunt-imageoptim": "^1.4.1",
+					"grunt-jsonlint": "^1.0.4",
+					"grunt-spritesmith": "^4.6.0",
+					"grunt-svgstore": "^0.5.0"
+				},
+				"gitHead": "c8b5c51a6c4a19a2ab4f91159ec17534f63a789e",
+				"_id": "emojione@1.5.1",
+				"scripts": { },
+				"_shasum": "2e33e980a36dc3e07ea89352a3d151c1e5dc2ace",
+				"_from": ".",
+				"_npmVersion": "2.14.4",
+				"_nodeVersion": "4.1.2",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"dist": {
+					"shasum": "2e33e980a36dc3e07ea89352a3d151c1e5dc2ace",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-1.5.1.tgz"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"directories": { }
+			},
+			"1.5.2": {
+				"name": "emojione",
+				"version": "1.5.2",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main": "lib/js/emojione.js",
+				"keywords": [
+					"emojione",
+					"Emoji One",
+					"emoji",
+					"emojis",
+					"emoticons",
+					"smileys",
+					"smilies",
+					"unicode",
+					"emoji set"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and MIT)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "git+https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"devDependencies": {
+					"grunt": "^0.4.5",
+					"grunt-contrib-cssmin": "^0.12.2",
+					"grunt-contrib-jshint": "^0.11.0",
+					"grunt-contrib-qunit": "^0.5.2",
+					"grunt-contrib-sass": "^0.9.2",
+					"grunt-contrib-uglify": "^0.8.0",
+					"grunt-contrib-watch": "^0.6.1",
+					"grunt-imageoptim": "^1.4.1",
+					"grunt-jsonlint": "^1.0.4",
+					"grunt-spritesmith": "^4.6.0",
+					"grunt-svgstore": "^0.5.0"
+				},
+				"gitHead": "2ead9dfd2a4ad78882c618ebde926683d7373df5",
+				"_id": "emojione@1.5.2",
+				"scripts": { },
+				"_shasum": "c0306711290b2ee21ef0fb47c7abecea92565faa",
+				"_from": ".",
+				"_npmVersion": "2.14.4",
+				"_nodeVersion": "4.1.2",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"dist": {
+					"shasum": "c0306711290b2ee21ef0fb47c7abecea92565faa",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-1.5.2.tgz"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"directories": { }
+			},
+			"2.0.0": {
+				"name": "emojione",
+				"version": "2.0.0",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main": "lib/js/emojione.js",
+				"keywords": [
+					"emojione",
+					"Emoji One",
+					"emoji",
+					"emojis",
+					"emoticons",
+					"smileys",
+					"smilies",
+					"unicode",
+					"emoji set"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and MIT)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "git+https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"devDependencies": {
+					"grunt": "^0.4.5",
+					"grunt-contrib-cssmin": "^0.12.2",
+					"grunt-contrib-jshint": "^0.11.0",
+					"grunt-contrib-qunit": "^0.5.2",
+					"grunt-contrib-sass": "^0.9.2",
+					"grunt-contrib-uglify": "^0.8.0",
+					"grunt-contrib-watch": "^0.6.1",
+					"grunt-imageoptim": "^1.4.1",
+					"grunt-jsonlint": "^1.0.4",
+					"grunt-spritesmith": "^4.6.0",
+					"grunt-svgstore": "^0.5.0"
+				},
+				"gitHead": "f7fa01f08df42424b3ad0f82db82ebf6974a06bb",
+				"_id": "emojione@2.0.0",
+				"scripts": { },
+				"_shasum": "0c24db0f4fe96e0d2e12a3fba5f85c15eafd2beb",
+				"_from": ".",
+				"_npmVersion": "2.14.4",
+				"_nodeVersion": "4.1.2",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"dist": {
+					"shasum": "0c24db0f4fe96e0d2e12a3fba5f85c15eafd2beb",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-2.0.0.tgz"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"directories": { }
+			},
+			"2.0.1": {
+				"name": "emojione",
+				"version": "2.0.1",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main": "lib/js/emojione.js",
+				"keywords": [
+					"emojione",
+					"Emoji One",
+					"emoji",
+					"emojis",
+					"emoticons",
+					"smileys",
+					"smilies",
+					"unicode",
+					"emoji set"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and MIT)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "git+https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"devDependencies": {
+					"grunt": "^0.4.5",
+					"grunt-contrib-cssmin": "^0.12.2",
+					"grunt-contrib-jshint": "^0.11.0",
+					"grunt-contrib-qunit": "^0.5.2",
+					"grunt-contrib-sass": "^0.9.2",
+					"grunt-contrib-uglify": "^0.8.0",
+					"grunt-contrib-watch": "^0.6.1",
+					"grunt-imageoptim": "^1.4.1",
+					"grunt-jsonlint": "^1.0.4",
+					"grunt-spritesmith": "^4.6.0",
+					"grunt-svgstore": "^0.5.0"
+				},
+				"scripts": {
+					"test": "grunt travis"
+				},
+				"gitHead": "187f157314e21aff3ae45faccd72ce9605c8933e",
+				"_id": "emojione@2.0.1",
+				"_shasum": "07db1aa8f59a46a210d6c1eeed4115791ef183b5",
+				"_from": ".",
+				"_npmVersion": "2.14.4",
+				"_nodeVersion": "4.1.2",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"dist": {
+					"shasum": "07db1aa8f59a46a210d6c1eeed4115791ef183b5",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-2.0.1.tgz"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"directories": { }
+			},
+			"2.1.0": {
+				"name": "emojione",
+				"version": "2.1.0",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main": "lib/js/emojione.js",
+				"keywords": [
+					"emojione",
+					"Emoji One",
+					"emoji",
+					"emojis",
+					"emoticons",
+					"smileys",
+					"smilies",
+					"unicode",
+					"emoji set"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and MIT)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "git+https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"devDependencies": {
+					"grunt": "^0.4.5",
+					"grunt-contrib-cssmin": "^0.12.2",
+					"grunt-contrib-jshint": "^0.11.0",
+					"grunt-contrib-qunit": "^0.5.2",
+					"grunt-contrib-sass": "^0.9.2",
+					"grunt-contrib-uglify": "^0.8.0",
+					"grunt-contrib-watch": "^0.6.1",
+					"grunt-imageoptim": "^1.4.1",
+					"grunt-jsonlint": "^1.0.4",
+					"grunt-spritesmith": "^4.6.0",
+					"grunt-svgstore": "^0.5.0"
+				},
+				"scripts": {
+					"test": "grunt travis"
+				},
+				"gitHead": "fd4bb7a26a39e93d0cb4ed90934e9e3f73ebca4b",
+				"_id": "emojione@2.1.0",
+				"_shasum": "d0100d67661baaba2258e7033e3b0c614c722f5b",
+				"_from": ".",
+				"_npmVersion": "2.14.4",
+				"_nodeVersion": "4.1.2",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"dist": {
+					"shasum": "d0100d67661baaba2258e7033e3b0c614c722f5b",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-2.1.0.tgz"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"directories": { }
+			},
+			"2.1.1": {
+				"name": "emojione",
+				"version": "2.1.1",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main": "lib/js/emojione.js",
+				"keywords": [
+					"emojione",
+					"Emoji One",
+					"emoji",
+					"emojis",
+					"emoticons",
+					"smileys",
+					"smilies",
+					"unicode",
+					"emoji set"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and MIT)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "git+https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"devDependencies": {
+					"grunt": "^0.4.5",
+					"grunt-contrib-cssmin": "^0.12.2",
+					"grunt-contrib-jshint": "^0.11.0",
+					"grunt-contrib-qunit": "^0.5.2",
+					"grunt-contrib-sass": "^0.9.2",
+					"grunt-contrib-uglify": "^0.8.0",
+					"grunt-contrib-watch": "^0.6.1",
+					"grunt-imageoptim": "^1.4.1",
+					"grunt-jsonlint": "^1.0.4",
+					"grunt-spritesmith": "^4.6.0",
+					"grunt-svgstore": "^0.5.0"
+				},
+				"scripts": {
+					"test": "grunt travis"
+				},
+				"gitHead": "5f776924f4f649b064e030a4cd597ecf4899fe46",
+				"_id": "emojione@2.1.1",
+				"_shasum": "ab8a019f3b2e10b8a194ecac3f1d5725af315401",
+				"_from": ".",
+				"_npmVersion": "2.14.4",
+				"_nodeVersion": "4.1.2",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"dist": {
+					"shasum": "ab8a019f3b2e10b8a194ecac3f1d5725af315401",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-2.1.1.tgz"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"_npmOperationalInternal": {
+					"host": "packages-5-east.internal.npmjs.com",
+					"tmp": "tmp/emojione-2.1.1.tgz_1456278170874_0.7516890140250325"
+				},
+				"directories": { }
+			},
+			"2.1.2": {
+				"name": "emojione",
+				"version": "2.1.2",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main": "lib/js/emojione.js",
+				"keywords": [
+					"emojione",
+					"Emoji One",
+					"emoji",
+					"emojis",
+					"emoticons",
+					"smileys",
+					"smilies",
+					"unicode",
+					"emoji set"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and MIT)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "git+https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"devDependencies": {
+					"grunt": "^0.4.5",
+					"grunt-contrib-cssmin": "^0.12.2",
+					"grunt-contrib-jshint": "^0.11.0",
+					"grunt-contrib-qunit": "^0.5.2",
+					"grunt-contrib-sass": "^0.9.2",
+					"grunt-contrib-uglify": "^0.8.0",
+					"grunt-contrib-watch": "^0.6.1",
+					"grunt-imageoptim": "^1.4.1",
+					"grunt-jsonlint": "^1.0.4",
+					"grunt-spritesmith": "^4.6.0",
+					"grunt-svgstore": "^0.5.0"
+				},
+				"scripts": {
+					"test": "grunt travis"
+				},
+				"gitHead": "6a17f05781837b5379a4c02e81c674c47b199cce",
+				"_id": "emojione@2.1.2",
+				"_shasum": "dce80ae0ba15b6516fd7b8cb2e2b052bebbc92d1",
+				"_from": ".",
+				"_npmVersion": "2.14.4",
+				"_nodeVersion": "4.1.2",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"dist": {
+					"shasum": "dce80ae0ba15b6516fd7b8cb2e2b052bebbc92d1",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-2.1.2.tgz"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"_npmOperationalInternal": {
+					"host": "packages-13-west.internal.npmjs.com",
+					"tmp": "tmp/emojione-2.1.2.tgz_1458026624480_0.51616146764718"
+				},
+				"directories": { }
+			},
+			"2.1.3": {
+				"name": "emojione",
+				"version": "2.1.3",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main": "lib/js/emojione.js",
+				"keywords": [
+					"emojione",
+					"Emoji One",
+					"emoji",
+					"emojis",
+					"emoticons",
+					"smileys",
+					"smilies",
+					"unicode",
+					"emoji set"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and MIT)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "git+https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"devDependencies": {
+					"grunt": "^0.4.5",
+					"grunt-contrib-cssmin": "^0.12.2",
+					"grunt-contrib-jshint": "^0.11.0",
+					"grunt-contrib-qunit": "^0.5.2",
+					"grunt-contrib-sass": "^0.9.2",
+					"grunt-contrib-uglify": "^0.8.0",
+					"grunt-contrib-watch": "^0.6.1",
+					"grunt-imageoptim": "^1.4.1",
+					"grunt-jsonlint": "^1.0.4",
+					"grunt-spritesmith": "^4.6.0",
+					"grunt-svgstore": "^0.5.0"
+				},
+				"scripts": {
+					"test": "grunt travis"
+				},
+				"gitHead": "4d0e9c287b1c9e2a034f33a04611fc82fd9b3e88",
+				"_id": "emojione@2.1.3",
+				"_shasum": "9e9f0c3e8eb724070fad45b5d0fb65da0e4cfcb4",
+				"_from": ".",
+				"_npmVersion": "2.14.4",
+				"_nodeVersion": "4.1.2",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"dist": {
+					"shasum": "9e9f0c3e8eb724070fad45b5d0fb65da0e4cfcb4",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-2.1.3.tgz"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"_npmOperationalInternal": {
+					"host": "packages-12-west.internal.npmjs.com",
+					"tmp": "tmp/emojione-2.1.3.tgz_1458961728626_0.6127428493928164"
+				},
+				"directories": { }
+			},
+			"2.1.4": {
+				"name": "emojione",
+				"version": "2.1.4",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main": "lib/js/emojione.js",
+				"keywords": [
+					"emojione",
+					"Emoji One",
+					"emoji",
+					"emojis",
+					"emoticons",
+					"smileys",
+					"smilies",
+					"unicode",
+					"emoji set"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and MIT)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "git+https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"devDependencies": {
+					"grunt": "^0.4.5",
+					"grunt-contrib-cssmin": "^0.12.2",
+					"grunt-contrib-jshint": "^0.11.0",
+					"grunt-contrib-qunit": "^0.5.2",
+					"grunt-contrib-sass": "^0.9.2",
+					"grunt-contrib-uglify": "^0.8.0",
+					"grunt-contrib-watch": "^0.6.1",
+					"grunt-imageoptim": "^1.4.1",
+					"grunt-jsonlint": "^1.0.4",
+					"grunt-spritesmith": "^4.6.0",
+					"grunt-svgstore": "^0.5.0"
+				},
+				"scripts": {
+					"test": "grunt travis"
+				},
+				"gitHead": "c3fea224479cea82e87125f41a097d52a58d281b",
+				"_id": "emojione@2.1.4",
+				"_shasum": "a6ab589ba1bf18cc0e1ca9a5302777670acca79c",
+				"_from": ".",
+				"_npmVersion": "2.14.4",
+				"_nodeVersion": "4.1.2",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"dist": {
+					"shasum": "a6ab589ba1bf18cc0e1ca9a5302777670acca79c",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-2.1.4.tgz"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"_npmOperationalInternal": {
+					"host": "packages-12-west.internal.npmjs.com",
+					"tmp": "tmp/emojione-2.1.4.tgz_1459894589267_0.0018971245735883713"
+				},
+				"directories": { }
+			},
+			"2.2.0": {
+				"name": "emojione",
+				"version": "2.2.0",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main": "lib/js/emojione.js",
+				"keywords": [
+					"emojione",
+					"Emoji One",
+					"emoji",
+					"emojis",
+					"emoticons",
+					"smileys",
+					"smilies",
+					"unicode",
+					"emoji set"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and MIT)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "git+https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"devDependencies": {
+					"grunt": "^1.0.1",
+					"grunt-contrib-cssmin": "^0.12.2",
+					"grunt-contrib-jshint": "^0.11.0",
+					"grunt-contrib-qunit": "^0.5.2",
+					"grunt-contrib-sass": "^0.9.2",
+					"grunt-contrib-uglify": "^0.8.0",
+					"grunt-contrib-watch": "^0.6.1",
+					"grunt-imageoptim": "^1.4.1",
+					"grunt-jsonlint": "^1.0.4",
+					"grunt-spritesmith": "^5.1.0",
+					"grunt-svgstore": "^0.5.0"
+				},
+				"scripts": {
+					"test": "grunt travis"
+				},
+				"gitHead": "eba75e9a1e69cbe7ddce758b77a73e9edb6e1c30",
+				"_id": "emojione@2.2.0",
+				"_shasum": "ae2dace8eb447b697a408d350a12dcb9248b4436",
+				"_from": ".",
+				"_npmVersion": "2.15.5",
+				"_nodeVersion": "4.4.5",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"dist": {
+					"shasum": "ae2dace8eb447b697a408d350a12dcb9248b4436",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-2.2.0.tgz"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"_npmOperationalInternal": {
+					"host": "packages-16-east.internal.npmjs.com",
+					"tmp": "tmp/emojione-2.2.0.tgz_1464749815454_0.46860247291624546"
+				},
+				"directories": { }
+			},
+			"2.2.1": {
+				"name": "emojione",
+				"version": "2.2.1",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main": "lib/js/emojione.js",
+				"keywords": [
+					"emojione",
+					"Emoji One",
+					"emoji",
+					"emojis",
+					"emoticons",
+					"smileys",
+					"smilies",
+					"unicode",
+					"emoji set"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and MIT)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "git+https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"devDependencies": {
+					"grunt": "^1.0.1",
+					"grunt-contrib-cssmin": "^0.12.2",
+					"grunt-contrib-jshint": "^0.11.0",
+					"grunt-contrib-qunit": "^0.5.2",
+					"grunt-contrib-sass": "^0.9.2",
+					"grunt-contrib-uglify": "^0.8.0",
+					"grunt-contrib-watch": "^0.6.1",
+					"grunt-imageoptim": "^1.4.1",
+					"grunt-jsonlint": "^1.0.4",
+					"grunt-spritesmith": "^5.1.0",
+					"grunt-svgstore": "^0.5.0"
+				},
+				"scripts": {
+					"test": "grunt travis"
+				},
+				"gitHead": "97892b7217f1a707ed34618acca44b3af84bef65",
+				"_id": "emojione@2.2.1",
+				"_shasum": "b6b5c9e250c972f1e94a209e5bdfc0d13f2034e3",
+				"_from": ".",
+				"_npmVersion": "2.14.12",
+				"_nodeVersion": "4.3.1",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"dist": {
+					"shasum": "b6b5c9e250c972f1e94a209e5bdfc0d13f2034e3",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-2.2.1.tgz"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"_npmOperationalInternal": {
+					"host": "packages-16-east.internal.npmjs.com",
+					"tmp": "tmp/emojione-2.2.1.tgz_1465503423082_0.3091648316476494"
+				},
+				"directories": { }
+			},
+			"2.2.2": {
+				"name": "emojione",
+				"version": "2.2.2",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main": "lib/js/emojione.js",
+				"keywords": [
+					"emojione",
+					"Emoji One",
+					"emoji",
+					"emojis",
+					"emoticons",
+					"smileys",
+					"smilies",
+					"unicode",
+					"emoji set"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and MIT)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "git+https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"devDependencies": {
+					"grunt": "^1.0.1",
+					"grunt-contrib-cssmin": "^0.12.2",
+					"grunt-contrib-jshint": "^0.11.0",
+					"grunt-contrib-qunit": "^0.5.2",
+					"grunt-contrib-sass": "^0.9.2",
+					"grunt-contrib-uglify": "^0.8.0",
+					"grunt-contrib-watch": "^0.6.1",
+					"grunt-imageoptim": "^1.4.1",
+					"grunt-jsonlint": "^1.0.4",
+					"grunt-spritesmith": "^5.1.0",
+					"grunt-svgstore": "^0.5.0"
+				},
+				"scripts": {
+					"test": "grunt travis"
+				},
+				"gitHead": "669caa73ba2851515c0995078960690d00b2678c",
+				"_id": "emojione@2.2.2",
+				"_shasum": "3551f7d5dd5f364078e4624156f4bbea41313f6d",
+				"_from": ".",
+				"_npmVersion": "2.14.12",
+				"_nodeVersion": "4.3.1",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"dist": {
+					"shasum": "3551f7d5dd5f364078e4624156f4bbea41313f6d",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-2.2.2.tgz"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"_npmOperationalInternal": {
+					"host": "packages-12-west.internal.npmjs.com",
+					"tmp": "tmp/emojione-2.2.2.tgz_1465596059593_0.07966490113176405"
+				},
+				"directories": { }
+			},
+			"2.2.3": {
+				"name": "emojione",
+				"version": "2.2.3",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main": "lib/js/emojione.js",
+				"keywords": [
+					"emojione",
+					"Emoji One",
+					"emoji",
+					"emojis",
+					"emoticons",
+					"smileys",
+					"smilies",
+					"unicode",
+					"emoji set"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and MIT)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "git+https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"devDependencies": {
+					"grunt": "^1.0.1",
+					"grunt-contrib-cssmin": "^0.12.2",
+					"grunt-contrib-jshint": "^0.11.0",
+					"grunt-contrib-qunit": "^0.5.2",
+					"grunt-contrib-sass": "^0.9.2",
+					"grunt-contrib-uglify": "^0.8.0",
+					"grunt-contrib-watch": "^0.6.1",
+					"grunt-imageoptim": "^1.4.1",
+					"grunt-jsonlint": "^1.0.4",
+					"grunt-spritesmith": "^5.1.0",
+					"grunt-svgstore": "^0.5.0"
+				},
+				"scripts": {
+					"test": "grunt travis"
+				},
+				"gitHead": "52bb99193179fc65c7196d950deb3e30ff1b38e5",
+				"_id": "emojione@2.2.3",
+				"_shasum": "04383203bf51e6a6c00f1fbddc3309e9543ce78f",
+				"_from": ".",
+				"_npmVersion": "2.14.12",
+				"_nodeVersion": "4.3.1",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"dist": {
+					"shasum": "04383203bf51e6a6c00f1fbddc3309e9543ce78f",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-2.2.3.tgz"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"_npmOperationalInternal": {
+					"host": "packages-16-east.internal.npmjs.com",
+					"tmp": "tmp/emojione-2.2.3.tgz_1466543366959_0.5788044726941735"
+				},
+				"directories": { }
+			},
+			"2.2.4": {
+				"name": "emojione",
+				"version": "2.2.4",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main": "lib/js/emojione.js",
+				"keywords": [
+					"emojione",
+					"Emoji One",
+					"emoji",
+					"emojis",
+					"emoticons",
+					"smileys",
+					"smilies",
+					"unicode",
+					"emoji set"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and MIT)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "git+https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"devDependencies": {
+					"grunt": "^1.0.1",
+					"grunt-contrib-cssmin": "^0.12.2",
+					"grunt-contrib-jshint": "^0.11.0",
+					"grunt-contrib-qunit": "^0.5.2",
+					"grunt-contrib-sass": "^0.9.2",
+					"grunt-contrib-uglify": "^0.8.0",
+					"grunt-contrib-watch": "^0.6.1",
+					"grunt-imageoptim": "^1.4.1",
+					"grunt-jsonlint": "^1.0.4",
+					"grunt-spritesmith": "^5.1.0",
+					"grunt-svgstore": "^0.5.0"
+				},
+				"scripts": {
+					"test": "grunt travis"
+				},
+				"gitHead": "c40e86a39391b65c53f2fc57f101819ef8036237",
+				"_id": "emojione@2.2.4",
+				"_shasum": "d8da83aa67699d0cdcd4331d78a9f76781a58fbe",
+				"_from": ".",
+				"_npmVersion": "2.14.12",
+				"_nodeVersion": "4.3.1",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"dist": {
+					"shasum": "d8da83aa67699d0cdcd4331d78a9f76781a58fbe",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-2.2.4.tgz"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"_npmOperationalInternal": {
+					"host": "packages-16-east.internal.npmjs.com",
+					"tmp": "tmp/emojione-2.2.4.tgz_1466618288040_0.28947933204472065"
+				},
+				"directories": { }
+			},
+			"2.2.5": {
+				"name": "emojione",
+				"version": "2.2.5",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main": "lib/js/emojione.js",
+				"keywords": [
+					"emojione",
+					"Emoji One",
+					"emoji",
+					"emojis",
+					"emoticons",
+					"smileys",
+					"smilies",
+					"unicode",
+					"emoji set"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and MIT)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "git+https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"devDependencies": {
+					"grunt": "^1.0.1",
+					"grunt-contrib-cssmin": "^0.12.2",
+					"grunt-contrib-jshint": "^0.11.0",
+					"grunt-contrib-qunit": "^0.5.2",
+					"grunt-contrib-sass": "^0.9.2",
+					"grunt-contrib-uglify": "^0.8.0",
+					"grunt-contrib-watch": "^0.6.1",
+					"grunt-imageoptim": "^1.4.1",
+					"grunt-jsonlint": "^1.0.4",
+					"grunt-spritesmith": "^5.1.0",
+					"grunt-svgstore": "^0.5.0"
+				},
+				"scripts": {
+					"test": "grunt travis"
+				},
+				"gitHead": "48ab43b4af82f752a84065913ee6b47b01398b86",
+				"_id": "emojione@2.2.5",
+				"_shasum": "4f774ff8ef3a16ca51b4ce93a6f7e3f33750e8cd",
+				"_from": ".",
+				"_npmVersion": "2.14.12",
+				"_nodeVersion": "4.3.1",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"dist": {
+					"shasum": "4f774ff8ef3a16ca51b4ce93a6f7e3f33750e8cd",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-2.2.5.tgz"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"_npmOperationalInternal": {
+					"host": "packages-16-east.internal.npmjs.com",
+					"tmp": "tmp/emojione-2.2.5.tgz_1467157558637_0.457048507174477"
+				},
+				"directories": { }
+			},
+			"2.2.6": {
+				"name": "emojione",
+				"version": "2.2.6",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main": "lib/js/emojione.js",
+				"keywords": [
+					"emojione",
+					"Emoji One",
+					"emoji",
+					"emojis",
+					"emoticons",
+					"smileys",
+					"smilies",
+					"unicode",
+					"emoji set"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and MIT)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "git+https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"devDependencies": {
+					"grunt": "^1.0.1",
+					"grunt-contrib-cssmin": "^0.12.2",
+					"grunt-contrib-jshint": "^0.11.0",
+					"grunt-contrib-qunit": "^0.5.2",
+					"grunt-contrib-sass": "^0.9.2",
+					"grunt-contrib-uglify": "^0.8.0",
+					"grunt-contrib-watch": "^0.6.1",
+					"grunt-imageoptim": "^1.4.1",
+					"grunt-jsonlint": "^1.0.4",
+					"grunt-spritesmith": "^5.1.0",
+					"grunt-svgstore": "^0.5.0"
+				},
+				"scripts": {
+					"test": "grunt travis"
+				},
+				"gitHead": "b7735017f97aeea9e2fa9e35adbf25b81deda2ad",
+				"_id": "emojione@2.2.6",
+				"_shasum": "67dec452937d5b14ee669207ea41cdb1f69fb8f6",
+				"_from": ".",
+				"_npmVersion": "2.14.12",
+				"_nodeVersion": "4.3.1",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"dist": {
+					"shasum": "67dec452937d5b14ee669207ea41cdb1f69fb8f6",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-2.2.6.tgz"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"_npmOperationalInternal": {
+					"host": "packages-12-west.internal.npmjs.com",
+					"tmp": "tmp/emojione-2.2.6.tgz_1468687410628_0.8198398887179792"
+				},
+				"directories": { }
+			},
+			"2.2.7": {
+				"name": "emojione",
+				"version": "2.2.7",
+				"description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+				"author": {
+					"name": "Emoji One",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main": "lib/js/emojione.js",
+				"keywords": [
+					"emojione",
+					"Emoji One",
+					"emoji",
+					"emojis",
+					"emoticons",
+					"smileys",
+					"smilies",
+					"unicode",
+					"emoji set"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and MIT)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "git+https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"devDependencies": {
+					"grunt": "^1.0.1",
+					"grunt-contrib-cssmin": "^0.12.2",
+					"grunt-contrib-jshint": "^0.11.0",
+					"grunt-contrib-qunit": "^0.5.2",
+					"grunt-contrib-sass": "^0.9.2",
+					"grunt-contrib-uglify": "^0.8.0",
+					"grunt-contrib-watch": "^0.6.1",
+					"grunt-imageoptim": "^1.4.1",
+					"grunt-jsonlint": "^1.0.4",
+					"grunt-spritesmith": "^5.1.0",
+					"grunt-svgstore": "^0.5.0"
+				},
+				"scripts": {
+					"test": "grunt travis"
+				},
+				"gitHead": "dbf2df55150fbcce295e480aede2c603fb51ec12",
+				"_id": "emojione@2.2.7",
+				"_shasum": "46457cf6b9b2f8da13ae8a2e4e547de06ee15e96",
+				"_from": ".",
+				"_npmVersion": "2.14.12",
+				"_nodeVersion": "4.3.1",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"dist": {
+					"shasum": "46457cf6b9b2f8da13ae8a2e4e547de06ee15e96",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-2.2.7.tgz"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"_npmOperationalInternal": {
+					"host": "packages-18-east.internal.npmjs.com",
+					"tmp": "tmp/emojione-2.2.7.tgz_1480724723122_0.3998816872481257"
+				},
+				"directories": { }
+			},
+			"3.0.0": {
+				"name": "emojione",
+				"version": "3.0.0",
+				"description": "EmojiOne is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG formats provided for the emoji images.",
+				"author": {
+					"name": "EmojiOne",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main": "lib/js/emojione.js",
+				"keywords": [
+					"emojione",
+					"EmojiOne",
+					"emoji",
+					"emojis",
+					"emoticons",
+					"smileys",
+					"smilies",
+					"unicode",
+					"emoji set"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and MIT)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "git+https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"devDependencies": {
+					"grunt": "^1.0.1",
+					"grunt-contrib-cssmin": "^0.12.2",
+					"grunt-contrib-jshint": "^0.11.0",
+					"grunt-contrib-qunit": "^0.5.2",
+					"grunt-contrib-sass": "^0.9.2",
+					"grunt-contrib-uglify": "^0.8.0",
+					"grunt-contrib-watch": "^0.6.1",
+					"grunt-jsonlint": "^1.0.4"
+				},
+				"scripts": {
+					"test": "grunt travis"
+				},
+				"gitHead": "5c36ef43834d6da36efd14ee33ecac9d10ec758e",
+				"_id": "emojione@3.0.0",
+				"_shasum": "b294883d641caf22acc7acdb02d11abbda7d4c9b",
+				"_from": ".",
+				"_npmVersion": "4.1.2",
+				"_nodeVersion": "7.5.0",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"dist": {
+					"shasum": "b294883d641caf22acc7acdb02d11abbda7d4c9b",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-3.0.0.tgz"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"_npmOperationalInternal": {
+					"host": "packages-12-west.internal.npmjs.com",
+					"tmp": "tmp/emojione-3.0.0.tgz_1492624459943_0.8415503003634512"
+				},
+				"directories": { }
+			},
+			"3.0.1": {
+				"name": "emojione",
+				"version": "3.0.1",
+				"description": "EmojiOne is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG formats provided for the emoji images.",
+				"author": {
+					"name": "EmojiOne",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main": "lib/js/emojione.js",
+				"keywords": [
+					"emojione",
+					"EmojiOne",
+					"emoji",
+					"emojis",
+					"emoticons",
+					"smileys",
+					"smilies",
+					"unicode",
+					"emoji set"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and MIT)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "git+https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"devDependencies": {
+					"grunt": "^1.0.1",
+					"grunt-contrib-cssmin": "^0.12.2",
+					"grunt-contrib-jshint": "^0.11.0",
+					"grunt-contrib-qunit": "^0.5.2",
+					"grunt-contrib-sass": "^0.9.2",
+					"grunt-contrib-uglify": "^0.8.0",
+					"grunt-contrib-watch": "^0.6.1",
+					"grunt-jsonlint": "^1.0.4"
+				},
+				"scripts": {
+					"test": "grunt travis"
+				},
+				"gitHead": "07955d394c9f2e80dd43445fd2eb6bb4fd460d54",
+				"_id": "emojione@3.0.1",
+				"_shasum": "4106306d842deee9de170f45c372988afea1262c",
+				"_from": ".",
+				"_npmVersion": "4.1.2",
+				"_nodeVersion": "7.5.0",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"dist": {
+					"shasum": "4106306d842deee9de170f45c372988afea1262c",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-3.0.1.tgz"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"_npmOperationalInternal": {
+					"host": "packages-12-west.internal.npmjs.com",
+					"tmp": "tmp/emojione-3.0.1.tgz_1493070589608_0.6221630785148591"
+				},
+				"directories": { }
+			},
+			"3.0.2": {
+				"name": "emojione",
+				"version": "3.0.2",
+				"description": "EmojiOne is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG formats provided for the emoji images.",
+				"author": {
+					"name": "EmojiOne",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main": "lib/js/emojione.js",
+				"keywords": [
+					"emojione",
+					"EmojiOne",
+					"emoji",
+					"emojis",
+					"emoticons",
+					"smileys",
+					"smilies",
+					"unicode",
+					"emoji set"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and MIT)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "git+https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"devDependencies": {
+					"grunt": "^1.0.1",
+					"grunt-contrib-cssmin": "^0.12.2",
+					"grunt-contrib-jshint": "^0.11.0",
+					"grunt-contrib-qunit": "^0.5.2",
+					"grunt-contrib-sass": "^0.9.2",
+					"grunt-contrib-uglify": "^0.8.0",
+					"grunt-contrib-watch": "^0.6.1",
+					"grunt-jsonlint": "^1.0.4"
+				},
+				"scripts": {
+					"test": "grunt travis"
+				},
+				"gitHead": "bbdeceabb443d671c5a9577dc4b63af3155df4f3",
+				"_id": "emojione@3.0.2",
+				"_shasum": "7036b8b654e7d5f9da8db5d43de041719b4cb5f0",
+				"_from": ".",
+				"_npmVersion": "4.1.2",
+				"_nodeVersion": "7.5.0",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"dist": {
+					"shasum": "7036b8b654e7d5f9da8db5d43de041719b4cb5f0",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-3.0.2.tgz"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"_npmOperationalInternal": {
+					"host": "packages-18-east.internal.npmjs.com",
+					"tmp": "tmp/emojione-3.0.2.tgz_1493760771868_0.2407481090631336"
+				},
+				"directories": { }
+			},
+			"3.0.3": {
+				"name": "emojione",
+				"version": "3.0.3",
+				"description": "EmojiOne is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG formats provided for the emoji images.",
+				"author": {
+					"name": "EmojiOne",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main": "lib/js/emojione.js",
+				"keywords": [
+					"emojione",
+					"EmojiOne",
+					"emoji",
+					"emojis",
+					"emoticons",
+					"smileys",
+					"smilies",
+					"unicode",
+					"emoji set"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and MIT)",
+					"url": "https://github.com/Ranks/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "git+https://github.com/Ranks/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/Ranks/emojione/issues"
+				},
+				"devDependencies": {
+					"grunt": "^1.0.1",
+					"grunt-contrib-cssmin": "^0.12.2",
+					"grunt-contrib-jshint": "^0.11.0",
+					"grunt-contrib-qunit": "^0.5.2",
+					"grunt-contrib-sass": "^0.9.2",
+					"grunt-contrib-uglify": "^0.8.0",
+					"grunt-contrib-watch": "^0.6.1",
+					"grunt-jsonlint": "^1.0.4"
+				},
+				"scripts": {
+					"test": "grunt travis"
+				},
+				"gitHead": "648da9980688dfd2be469dcef5dff61a9d165198",
+				"_id": "emojione@3.0.3",
+				"_shasum": "7b4c61210bf6949f0ac16803889ea1abf2b285ea",
+				"_from": ".",
+				"_npmVersion": "4.1.2",
+				"_nodeVersion": "7.5.0",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"dist": {
+					"shasum": "7b4c61210bf6949f0ac16803889ea1abf2b285ea",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-3.0.3.tgz"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"_npmOperationalInternal": {
+					"host": "packages-18-east.internal.npmjs.com",
+					"tmp": "tmp/emojione-3.0.3.tgz_1493854318671_0.8759117163717747"
+				},
+				"directories": { }
+			},
+			"3.1.0": {
+				"name": "emojione",
+				"version": "3.1.0",
+				"description": "EmojiOne is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG formats provided for the emoji images.",
+				"author": {
+					"name": "EmojiOne",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main": "lib/js/emojione.js",
+				"keywords": [
+					"emojione",
+					"EmojiOne",
+					"emoji",
+					"emojis",
+					"emoticons",
+					"smileys",
+					"smilies",
+					"unicode",
+					"emoji set"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and MIT)",
+					"url": "https://github.com/emojione/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "git+https://github.com/emojione/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/emojione/emojione/issues"
+				},
+				"devDependencies": {
+					"grunt": "^1.0.1",
+					"grunt-contrib-cssmin": "^0.12.2",
+					"grunt-contrib-jshint": "^0.11.0",
+					"grunt-contrib-qunit": "^0.5.2",
+					"grunt-contrib-sass": "^0.9.2",
+					"grunt-contrib-uglify": "^0.8.0",
+					"grunt-contrib-watch": "^0.6.1",
+					"grunt-jsonlint": "^1.0.4"
+				},
+				"scripts": {
+					"test": "grunt travis"
+				},
+				"gitHead": "4a166f9334809b5044ecf493f7decf47d50e0a8a",
+				"_id": "emojione@3.1.0",
+				"_shasum": "015a6740f91ce7742b588f9f97977be8c6200e0e",
+				"_from": ".",
+				"_npmVersion": "4.1.2",
+				"_nodeVersion": "7.5.0",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"dist": {
+					"shasum": "015a6740f91ce7742b588f9f97977be8c6200e0e",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-3.1.0.tgz"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"_npmOperationalInternal": {
+					"host": "s3://npm-registry-packages",
+					"tmp": "tmp/emojione-3.1.0.tgz_1498842943613_0.1478968681767583"
+				},
+				"directories": { }
+			},
+			"3.1.1": {
+				"name": "emojione",
+				"version": "3.1.1",
+				"description": "EmojiOne is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG formats provided for the emoji images.",
+				"author": {
+					"name": "EmojiOne",
+					"email": "ryan@emojione.com",
+					"url": "http://emojione.com"
+				},
+				"main": "lib/js/emojione.js",
+				"keywords": [
+					"emojione",
+					"EmojiOne",
+					"emoji",
+					"emojis",
+					"emoticons",
+					"smileys",
+					"smilies",
+					"unicode",
+					"emoji set"
+				],
+				"homepage": "http://www.emojione.com",
+				"licenses": {
+					"type": "(CC-BY-SA-4.0 and MIT)",
+					"url": "https://github.com/emojione/emojione/blob/master/LICENSE.md"
+				},
+				"repository": {
+					"type": "git",
+					"url": "git+https://github.com/emojione/emojione.git"
+				},
+				"bugs": {
+					"url": "https://github.com/emojione/emojione/issues"
+				},
+				"devDependencies": {
+					"grunt": "^1.0.1",
+					"grunt-contrib-cssmin": "^0.12.2",
+					"grunt-contrib-jshint": "^0.11.0",
+					"grunt-contrib-qunit": "^0.5.2",
+					"grunt-contrib-sass": "^0.9.2",
+					"grunt-contrib-uglify": "^0.8.0",
+					"grunt-contrib-watch": "^0.6.1",
+					"grunt-jsonlint": "^1.0.4"
+				},
+				"scripts": {
+					"test": "grunt travis"
+				},
+				"gitHead": "9a81e8462ea5c1efc8e4f2947944d0a248b8ec73",
+				"_id": "emojione@3.1.1",
+				"_shasum": "f5680fbee2cb2a56e99042b14d935e3eb861b300",
+				"_from": ".",
+				"_npmVersion": "4.1.2",
+				"_nodeVersion": "7.5.0",
+				"_npmUser": {
+					"name": "emojione",
+					"email": "ryan@emojione.com"
+				},
+				"dist": {
+					"shasum": "f5680fbee2cb2a56e99042b14d935e3eb861b300",
+					"tarball": "https://registry.npmjs.org/emojione/-/emojione-3.1.1.tgz"
+				},
+				"maintainers": [
+					{
+						"name": "emojione",
+						"email": "ryan@emojione.com"
+					}
+				],
+				"_npmOperationalInternal": {
+					"host": "s3://npm-registry-packages",
+					"tmp": "tmp/emojione-3.1.1.tgz_1499882776509_0.48595153517089784"
+				},
+				"directories": { }
+			}
+		},
+		"readme": "# ![EmojiOne Logo](https://www.emojione.com/images/vectors/emojione-typeface.svg)\n\n> [![npm version](https://img.shields.io/npm/v/emojione.svg)](https://www.npmjs.com/package/emojione) [![npm downloads](https://img.shields.io/npm/dt/emojione.svg)](https://www.npmjs.com/package/emojione)\n\nThe web's first and only complete open source emoji set. It is 100% free for digital use and super easy to integrate.\n\n\n## What's Included?\n\n - This project includes libraries used to convert emoji into various formats, including conversion to EmojiOne emoji images.\n - All libraries included here are available free under the MIT license.\n \n \n ## License to Use EmojiOne Images\n \n### EmojiOne Version 3\n \n EmojiOne launched version 3.0 in 2017, which has several licensing options available. PNG 32px, 64px, and 128px as well as 32px and 64px sprites are available for digital use, with attribution. See [emojione.com/developers/free-license](https://www.emojione.com/developers/free-license) for more information on usage and attribution requirements.\n \n *Premium Licenses are available for larger PNG assets and SVG assets, for digital and print use.* See [emojione.com/developers/premium-license](https://www.emojione.com/developers/premium-license) for more information or to obtain a Premium License.\n \n ### EmojiOne Version 2\n \n EmojiOne version 2 assets (all SVG and PNG) are available in [the 2.2.7 branch](https://github.com/emojione/emojione/tree/2.2.7), and they remain available for digital use (with attribution) under the Creative Commons license. Please see [INSTALLATION.md](INSTALLATION.md) for instructions on installing version 2, and [UPGRADE.md](UPGRADE.md) for instructions on upgrading from version 2 to version 3.\n\n\n## Installation\nTo install emojione, please refer to the guide at [INSTALLATION.md](INSTALLATION.md). **Version 3 introduces many  potentially-breaking changes.** Refer to the [UPGRADE.md](UPGRADE.md) documentation for more details.\n\n\n## Contributing\nPlease see [CONTRIBUTING.md](CONTRIBUTING.md) for more info on contributing to the emojione project. For artwork comments and questions please see the emojione-assets repo.\n\n## Usage\nYou'll find basic usage examples here in the [/examples/](examples/) directory, and links to usage demos in [USAGE.md](USAGE.md).\n\n\n## Information\n\n### Bug reports\n\nIf you discover any bugs, feel free to create an issue on GitHub. We also welcome the open-source community to contribute to the project by forking it and issuing pull requests.\n\n *  https://github.com/emojione/emojione/issues\n\n\n### Contact\n\nIf you have any questions, comments, or concerns you are welcome to contact us.\n\n*  [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/emojione/emojione?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)\n* [support@emojione.com](mailto:support@emojione.com)\n* http://emojione.com\n* https://twitter.com/emojione\n\n\n### Alternatives\nWe sincerely hope that you choose to use EmojiOne and support our project, but if you feel like it's not for you, please have a look at these possible alternatives:\n\n* https://github.com/hassankhan/emojify.js\n* https://github.com/emojidex/ (used to be known as [Phantom Open Emoji](https://github.com/Genshin/PhantomOpenEmoji))\n* https://github.com/iamcal/emoji-data (with [PHP](https://github.com/iamcal/php-emoji) and [Javascript](https://github.com/iamcal/js-emoji) interfaces)\n* https://github.com/node-modules/emoji\n* https://github.com/steveklabnik/emoji\n* https://github.com/rockerhieu/emojicon\n* https://github.com/HenrikJoreteg/emoji-images\n* https://github.com/frissdiegurke/emoji-parser\n* https://github.com/muan/emojilib\n* https://github.com/kcthota/emoji4j\n",
+		"maintainers": [
+			{
+				"name": "emojione",
+				"email": "ryan@emojione.com"
+			}
+		],
+		"time": {
+			"modified": "2017-07-16T17:20:29.212Z",
+			"created": "2014-09-04T05:09:14.683Z",
+			"1.0.0": "2014-09-04T05:09:14.683Z",
+			"1.0.1": "2014-09-04T05:14:48.777Z",
+			"1.0.2": "2014-09-04T18:24:39.110Z",
+			"1.0.3": "2014-09-04T22:48:22.624Z",
+			"1.0.4": "2014-09-05T01:11:11.782Z",
+			"1.0.5": "2014-09-05T17:11:48.980Z",
+			"1.0.6": "2014-09-10T01:48:12.205Z",
+			"1.0.7": "2014-09-11T03:08:34.028Z",
+			"1.1.0": "2014-09-11T15:00:23.080Z",
+			"1.2.0": "2014-09-24T19:16:32.115Z",
+			"1.2.2": "2014-09-26T23:06:21.821Z",
+			"1.2.3": "2014-10-05T20:54:16.793Z",
+			"1.2.4": "2014-10-06T21:16:14.711Z",
+			"1.2.5": "2014-10-21T18:12:39.576Z",
+			"1.3.0": "2014-10-31T19:35:04.617Z",
+			"1.3.1": "2015-04-13T23:04:35.465Z",
+			"1.4.0": "2015-04-16T22:26:28.209Z",
+			"1.4.1": "2015-06-05T20:03:28.996Z",
+			"1.5.0": "2015-07-17T09:07:35.221Z",
+			"1.5.1": "2015-10-20T04:29:24.897Z",
+			"1.5.2": "2015-10-30T04:50:45.317Z",
+			"2.0.0": "2015-12-17T20:12:31.161Z",
+			"2.0.1": "2016-01-07T23:06:26.060Z",
+			"2.1.0": "2016-01-29T19:46:05.980Z",
+			"2.1.1": "2016-02-24T01:43:10.168Z",
+			"2.1.2": "2016-03-15T07:23:45.628Z",
+			"2.1.3": "2016-03-26T03:08:49.575Z",
+			"2.1.4": "2016-04-05T22:16:30.360Z",
+			"2.2.0": "2016-06-01T02:57:12.832Z",
+			"2.2.1": "2016-06-09T20:17:05.982Z",
+			"2.2.2": "2016-06-10T22:01:14.317Z",
+			"2.2.3": "2016-06-21T21:09:28.511Z",
+			"2.2.4": "2016-06-22T17:58:10.826Z",
+			"2.2.5": "2016-06-28T23:46:00.397Z",
+			"2.2.6": "2016-07-16T16:43:47.725Z",
+			"2.2.7": "2016-12-03T00:25:31.242Z",
+			"3.0.0": "2017-04-19T17:54:20.938Z",
+			"3.0.1": "2017-04-24T21:49:51.616Z",
+			"3.0.2": "2017-05-02T21:33:03.464Z",
+			"3.0.3": "2017-05-03T23:32:12.987Z",
+			"3.1.0": "2017-06-30T17:15:47.889Z",
+			"3.1.1": "2017-07-12T18:06:23.693Z"
+		},
+		"homepage": "http://www.emojione.com",
+		"keywords": [
+			"emojione",
+			"EmojiOne",
+			"emoji",
+			"emojis",
+			"emoticons",
+			"smileys",
+			"smilies",
+			"unicode",
+			"emoji set"
+		],
+		"repository": {
+			"type": "git",
+			"url": "git+https://github.com/emojione/emojione.git"
+		},
+		"author": {
+			"name": "EmojiOne",
+			"email": "ryan@emojione.com",
+			"url": "http://emojione.com"
+		},
+		"bugs": {
+			"url": "https://github.com/emojione/emojione/issues"
+		},
+		"readmeFilename": "README.md",
+		"users": {
+			"kikobeats": true,
+			"zxbud": true,
+			"lucasmciruzzi": true,
+			"kkk123321": true,
+			"naitsy": true,
+			"tickner": true,
+			"rwizard": true,
+			"lukkyjoe": true,
+			"shuoshubao": true,
+			"1980meggan": true,
+			"psbolden": true
+		},
+		"_attachments": { }
 	}
 }

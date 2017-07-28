@@ -38,7 +38,16 @@ class PackageRequest extends BaseRequest {
 
 	async fetchFiles () {
 		return got(`${v1Config.cdn.sourceUrl}/${this.params.type}/${this.params.name}@${this.params.version}/+json`, { json: true, timeout: 30000 }).then((response) => {
-			return response.body;
+			return _.pick(response.body, [ 'default', 'files' ]);
+		}).catch((error) => {
+			if (/*error instanceof got.HTTPError && */error.response.statusCode === 403) {
+				return {
+					status: error.response.statusCode,
+					message: error.response.body,
+				};
+			}
+
+			throw error;
 		});
 	}
 
@@ -52,6 +61,10 @@ class PackageRequest extends BaseRequest {
 		throw new Error(`Unknown package type ${this.params.type}.`);
 	}
 
+	async getFiles () {
+		return JSON.parse(await this.getFilesAsJson());
+	}
+
 	async getFilesAsJson () {
 		let files = await redis.getAsync(this.keys.files);
 
@@ -59,7 +72,7 @@ class PackageRequest extends BaseRequest {
 			return files;
 		}
 
-		files = JSON.stringify(_.pick(await this.fetchFiles(), [ 'default', 'files' ]), null, '\t');
+		files = JSON.stringify(await this.fetchFiles(), null, '\t');
 		await redis.setAsync(this.keys.files, files);
 		return files;
 	}
@@ -140,10 +153,10 @@ class PackageRequest extends BaseRequest {
 		}
 
 		try {
-			this.ctx.body = await this.getFilesAsJson();
+			this.ctx.body = await this.getFiles(); // Can't use AsJson() version here because we need to set correct status code on cached errors.
 			this.ctx.maxAge = v1Config.maxAgeStatic;
 		} catch (error) {
-			if (error instanceof got.ParseError) {
+			if (error instanceof got.ParseError/*error instanceof got.HTTPError*/) {
 				return this.ctx.body = {
 					status: error.response.statusCode || 502,
 					message: error.response.body,
