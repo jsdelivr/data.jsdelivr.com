@@ -16,7 +16,7 @@ router.param('user', async (value, ctx, next) => {
 	return next();
 });
 
-router.param('range', async (value, ctx, next) => {
+router.param('period', async (value, ctx, next) => {
 	switch (value) {
 		case 'day':
 			ctx.query.from = relativeDayUtc(-2).toISOString().substr(0, 10);
@@ -46,8 +46,8 @@ router.get([
 });
 
 router.get([
-	'/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/stats/:range(day|week|month|year)?',
-	'/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/stats/:range(day|week|month|year)?',
+	'/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/stats/:period(day|week|month|year)?',
+	'/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/stats/:period(day|week|month|year)?',
 ], async (ctx) => {
 	return new PackageRequest(ctx).handlePackageStats();
 });
@@ -60,8 +60,8 @@ router.get([
 });
 
 router.get([
-	'/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version/stats/:range(day|week|month|year)?',
-	'/package/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version/stats/:range(day|week|month|year)?',
+	'/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version/stats/:period(day|week|month|year)?',
+	'/package/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version/stats/:period(day|week|month|year)?',
 ], async (ctx) => {
 	return new PackageRequest(ctx).handleVersionStats();
 });
@@ -75,11 +75,11 @@ router.get([
 	return new PackageRequest(ctx).handleResolveVersion();
 });
 
-router.get('/stats/packages/:range(day|week|month|year)?', async (ctx) => {
+router.get('/stats/packages/:period(day|week|month|year)?', async (ctx) => {
 	return new StatsRequest(ctx).handlePackages();
 });
 
-router.get('/stats/network/:range(day|week|month|year)?', async (ctx) => {
+router.get('/stats/network/:period(day|week|month|year)?', async (ctx) => {
 	return new StatsRequest(ctx).handleNetwork();
 });
 

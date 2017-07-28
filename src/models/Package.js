@@ -54,7 +54,7 @@ class Package extends BaseModel {
 		}
 
 		return _.mapValues(_.groupBy(await sql.select([ `${PackageVersion.table}.version`, `${FileHits.table}.date` ]), 'version'), (versionHits) => {
-			return _.fromPairs(_.map(versionHits, entry => [ entry.date.valueOf(), entry.hits ]));
+			return _.fromPairs(_.map(versionHits, entry => [ entry.date.toISOString(), entry.hits ]));
 		});
 	}
 
