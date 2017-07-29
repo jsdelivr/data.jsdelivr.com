@@ -209,7 +209,7 @@ https://data.jsdelivr.com/v1/package/npm/jquery@3.2.1/stats
 ### Get the most popular packages
 
 ```
-/stats/packages:period?
+/stats/packages/:period?
  - period: "day", "week", "month", or "year"; defaults to "month"
 ```
 
