@@ -19,7 +19,7 @@ and data older than one year may not be available.
 
  - All responses are in JSON.
  - All error responses have `status` and `message` properties.
- - Additional [query string options](query-string-options) are supported where appropriate
+ - Additional [query string options](#query-string-options) are supported where appropriate
 
 ### List package versions
 
@@ -32,7 +32,7 @@ and data older than one year may not be available.
  - repo: GitHub repository name
 ```
 
-Example:
+**Example**
 ```
 https://data.jsdelivr.com/v1/package/npm/jquery
 
@@ -64,7 +64,7 @@ https://data.jsdelivr.com/v1/package/npm/jquery
  - version: exact package version (not a version range)
 ```
 
-Example:
+**Example**
 ```
 https://data.jsdelivr.com/v1/package/npm/jquery@3.2.1
 
@@ -105,7 +105,7 @@ https://data.jsdelivr.com/v1/package/npm/jquery@3.2.1
  - range: any valid semver version range
 ```
 
-Example:
+**Example**
 ```
 https://data.jsdelivr.com/v1/package/resolve/npm/jquery@3
 
@@ -128,7 +128,7 @@ https://data.jsdelivr.com/v1/package/resolve/npm/jquery@3
  - period: "day", "week", "month", or "year"; defaults to "month"
 ```
 
-Example:
+**Example**
 ```
 https://data.jsdelivr.com/v1/package/npm/jquery/stats
 
@@ -174,7 +174,7 @@ https://data.jsdelivr.com/v1/package/npm/jquery/stats
  - period: "day", "week", "month", or "year"; defaults to "month"
 ```
 
-Example:
+**Example**
 ```
 https://data.jsdelivr.com/v1/package/npm/jquery@3.2.1/stats
 
@@ -213,7 +213,7 @@ https://data.jsdelivr.com/v1/package/npm/jquery@3.2.1/stats
  - period: "day", "week", "month", or "year"; defaults to "month"
 ```
 
-Example:
+**Example**
 ```
 https://data.jsdelivr.com/v1/stats/packages
 
