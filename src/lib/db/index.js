@@ -8,5 +8,5 @@ module.exports = knex({
 		timezone: 'UTC',
 		multipleStatements: true,
 	}, dbConfig.connection),
-	pool: { min: 0, max: 100 },
+	pool: { min: 0, max: 50 },
 });
