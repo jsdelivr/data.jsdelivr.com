@@ -169,7 +169,7 @@ class PackageRequest extends BaseRequest {
 
 	async handleVersionStats () {
 		let data = _.mapValues(await PackageVersion.findAllFileHitsByNameAndVersion(this.params.name, this.params.version, ...this.dateRange), (fileHits) => {
-			let dates = _.fromPairs(_.map(fileHits, fileHits => [ fileHits.date.toISOString(), fileHits.hits ] ));
+			let dates = _.fromPairs(_.map(fileHits, fileHits => [ fileHits.date.toISOString().substr(0, 10), fileHits.hits ] ));
 
 			return {
 				total: sumDeep(dates),

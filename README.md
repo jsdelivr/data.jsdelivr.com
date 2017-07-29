@@ -19,7 +19,7 @@ and data older than one year may not be available.
 
  - All responses are in JSON.
  - All error responses have `status` and `message` properties.
- - Additional [query string options](#query-string-options) are supported where appropriate
+ - Additional [query string options](#query-string-options) are supported where appropriate.
 
 ### List package versions
 
@@ -139,18 +139,18 @@ https://data.jsdelivr.com/v1/package/npm/jquery/stats
         "2.2.4": {
             "total": 39473984,
             "dates": {
-                "2017-07-16T00:00:00.000Z": 2013667,
-                "2017-07-17T00:00:00.000Z": 4136315,
-                "2017-07-18T00:00:00.000Z": 4006439,
+                "2017-07-16": 2013667,
+                "2017-07-17": 4136315,
+                "2017-07-18": 4006439,
                 ...
             }
         },
         "3.0.0-rc1": {
             "total": 14547754,
             "dates": {
-                "2017-07-16T00:00:00.000Z": 891674,
-                "2017-07-17T00:00:00.000Z": 1852922,
-                "2017-07-18T00:00:00.000Z": 1571811,
+                "2017-07-16": 891674,
+                "2017-07-17": 1852922,
+                "2017-07-18": 1571811,
                 ...
             }
         },
@@ -185,19 +185,19 @@ https://data.jsdelivr.com/v1/package/npm/jquery@3.2.1/stats
         "/dist/jquery.js": {
             "total": 987,
             "dates": {
-                "2017-07-16T00:00:00.000Z": 19,
-                "2017-07-17T00:00:00.000Z": 108,
-                "2017-07-18T00:00:00.000Z": 84,
-                "2017-07-19T00:00:00.000Z": 158,
+                "2017-07-16": 19,
+                "2017-07-17": 108,
+                "2017-07-18": 84,
+                "2017-07-19": 158,
                 ...
             }
         },
         "/dist/jquery.min.js": {
             "total": 732301,
             "dates": {
-                "2017-07-16T00:00:00.000Z": 25844,
-                "2017-07-17T00:00:00.000Z": 72004,
-                "2017-07-18T00:00:00.000Z": 70519,
+                "2017-07-16": 25844,
+                "2017-07-17": 72004,
+                "2017-07-18": 70519,
                 ...
             }
         },
