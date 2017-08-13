@@ -182,7 +182,7 @@ class PackageRequest extends BaseRequest {
 
 			this.ctx.body = {
 				total: sumDeep(data, 2),
-				dates: _.mapValues(data, versions => ({ total: sumDeep(versions), versions })),
+				dates: _.mapValues(data, files => ({ total: sumDeep(files), files })),
 			};
 		} else {
 			let data = await PackageVersion.getSumFileHitsPerDateByName(this.params.type, this.params.name, this.params.version, ...this.dateRange);

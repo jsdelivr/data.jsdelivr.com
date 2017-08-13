@@ -2538,7 +2538,7 @@
 		"dates": {
 			"2017-07-24": {
 				"total": 400,
-				"versions": {
+				"files": {
 					"file-0.js": 100,
 					"file-1.js": 100,
 					"file-2.js": 100,
@@ -2547,7 +2547,7 @@
 			},
 			"2017-07-25": {
 				"total": 400,
-				"versions": {
+				"files": {
 					"file-0.js": 100,
 					"file-1.js": 100,
 					"file-2.js": 100,
