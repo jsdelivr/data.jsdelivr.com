@@ -46,8 +46,8 @@ router.get([
 });
 
 router.get([
-	'/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/stats/:period(day|week|month|year)?',
-	'/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/stats/:period(day|week|month|year)?',
+	'/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/stats/:groupBy(version|date)?/:period(day|week|month|year)?',
+	'/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/stats/:groupBy(version|date)?/:period(day|week|month|year)?',
 ], async (ctx) => {
 	return new PackageRequest(ctx).handlePackageStats();
 });
@@ -60,8 +60,8 @@ router.get([
 });
 
 router.get([
-	'/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version/stats/:period(day|week|month|year)?',
-	'/package/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version/stats/:period(day|week|month|year)?',
+	'/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version/stats/:groupBy(file|date)?/:period(day|week|month|year)?',
+	'/package/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version/stats/:groupBy(file|date)?/:period(day|week|month|year)?',
 ], async (ctx) => {
 	return new PackageRequest(ctx).handleVersionStats();
 });

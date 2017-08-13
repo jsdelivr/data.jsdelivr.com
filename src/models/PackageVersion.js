@@ -36,7 +36,7 @@ class PackageVersion extends BaseModel {
 		return new Proxy(this, BaseModel.ProxyHandler);
 	}
 
-	static async findAllFileHitsByNameAndVersion (name, version, from, to) {
+	static async getHitsByNameAndVersion (name, version, from, to) {
 		let sql = db(this.table)
 			.where({ name, version })
 			.join(Package.table, `${this.table}.packageId`, '=', `${Package.table}.id`)
@@ -51,10 +51,18 @@ class PackageVersion extends BaseModel {
 			sql.where(`${FileHits.table}.date`, '<=', to);
 		}
 
-		return _.mapValues(_.groupBy(await Promise.map(sql.select(FileHits.columnsPrefixed.concat(`${File.table}.filename`)), async (data) => {
-			return [ data.filename, await new FileHits(_.pick(data, FileHits.columns)).dbOut() ];
-		}), 0), (fileHits) => {
-			return _.map(fileHits, 1);
+		return await sql.select(FileHits.columnsPrefixed.concat(`${File.table}.filename`));
+	}
+
+	static async getSumDateHitsPerFileByName (name, version, from, to) {
+		return _.mapValues(_.groupBy(await PackageVersion.getHitsByNameAndVersion(name, version, from, to), item => item.date.toISOString().substr(0, 10)), (versionHits) => {
+			return _.fromPairs(_.map(versionHits, entry => [ entry.filename, entry.hits ]));
+		});
+	}
+
+	static async getSumFileHitsPerDateByName (name, version, from, to) {
+		return _.mapValues(_.groupBy(await PackageVersion.getHitsByNameAndVersion(name, version, from, to), 'filename'), (versionHits) => {
+			return _.fromPairs(_.map(versionHits, entry => [ entry.date.toISOString().substr(0, 10), entry.hits ]));
 		});
 	}
 }

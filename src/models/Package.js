@@ -36,7 +36,7 @@ class Package extends BaseModel {
 		return new Proxy(this, BaseModel.ProxyHandler);
 	}
 
-	static async getSumVersionHitsPerFileAndDateByName (name, from, to) {
+	static async getHitsByName (name, from, to) {
 		let sql = db(this.table)
 			.where({ name })
 			.join(PackageVersion.table, `${this.table}.id`, '=', `${PackageVersion.table}.packageId`)
@@ -53,7 +53,17 @@ class Package extends BaseModel {
 			sql.where(`${FileHits.table}.date`, '<=', to);
 		}
 
-		return _.mapValues(_.groupBy(await sql.select([ `${PackageVersion.table}.version`, `${FileHits.table}.date` ]), 'version'), (versionHits) => {
+		return await sql.select([ `${PackageVersion.table}.version`, `${FileHits.table}.date` ]);
+	}
+
+	static async getSumDateHitsPerVersionByName (name, from, to) {
+		return _.mapValues(_.groupBy(await Package.getHitsByName(name, from, to), item => item.date.toISOString().substr(0, 10)), (versionHits) => {
+			return _.fromPairs(_.map(versionHits, entry => [ entry.version, entry.hits ]));
+		});
+	}
+
+	static async getSumVersionHitsPerDateByName (name, from, to) {
+		return _.mapValues(_.groupBy(await Package.getHitsByName(name, from, to), 'version'), (versionHits) => {
 			return _.fromPairs(_.map(versionHits, entry => [ entry.date.toISOString().substr(0, 10), entry.hits ]));
 		});
 	}

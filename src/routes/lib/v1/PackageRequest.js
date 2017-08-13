@@ -126,12 +126,21 @@ class PackageRequest extends BaseRequest {
 	}
 
 	async handlePackageStats () {
-		let data = await Package.getSumVersionHitsPerFileAndDateByName(this.params.name, ...this.dateRange);
+		if (this.params.groupBy === 'date') {
+			let data = await Package.getSumDateHitsPerVersionByName(this.params.name, ...this.dateRange);
 
-		this.ctx.body = {
-			total: sumDeep(data, 2),
-			versions: _.mapValues(data, dates => ({ total: sumDeep(dates), dates })),
-		};
+			this.ctx.body = {
+				total: sumDeep(data, 2),
+				dates: _.mapValues(data, versions => ({ total: sumDeep(versions), versions })),
+			};
+		} else {
+			let data = await Package.getSumVersionHitsPerDateByName(this.params.name, ...this.dateRange);
+
+			this.ctx.body = {
+				total: sumDeep(data, 2),
+				versions: _.mapValues(data, dates => ({ total: sumDeep(dates), dates })),
+			};
+		}
 
 		this.setCacheHeader();
 	}
@@ -168,19 +177,21 @@ class PackageRequest extends BaseRequest {
 	}
 
 	async handleVersionStats () {
-		let data = _.mapValues(await PackageVersion.findAllFileHitsByNameAndVersion(this.params.name, this.params.version, ...this.dateRange), (fileHits) => {
-			let dates = _.fromPairs(_.map(fileHits, fileHits => [ fileHits.date.toISOString().substr(0, 10), fileHits.hits ] ));
+		if (this.params.groupBy === 'date') {
+			let data = await PackageVersion.getSumDateHitsPerFileByName(this.params.name, this.params.version, ...this.dateRange);
 
-			return {
-				total: sumDeep(dates),
-				dates,
+			this.ctx.body = {
+				total: sumDeep(data, 2),
+				dates: _.mapValues(data, versions => ({ total: sumDeep(versions), versions })),
 			};
-		});
+		} else {
+			let data = await PackageVersion.getSumFileHitsPerDateByName(this.params.name, this.params.version, ...this.dateRange);
 
-		this.ctx.body = {
-			total: sumDeep(data, 3),
-			files: data,
-		};
+			this.ctx.body = {
+				total: sumDeep(data, 2),
+				files: _.mapValues(data, dates => ({ total: sumDeep(dates), dates })),
+			};
+		}
 
 		this.setCacheHeader();
 	}
