@@ -10,7 +10,7 @@ if (require.main === module) {
 		active: process.env.NODE_ENV === 'production',
 		captureExceptions: false,
 		ignoreUrls: [ '/favicon.ico', '/heartbeat' ],
-		timeoutErrorThreshold: 35000,
+		timeoutErrorThreshold: 30000,
 	});
 
 	require('./lib/startup');

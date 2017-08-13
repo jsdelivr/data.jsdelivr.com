@@ -40,7 +40,7 @@ class PackageRequest extends BaseRequest {
 		return got(`${v1Config.cdn.sourceUrl}/${this.params.type}/${this.params.name}@${this.params.version}/+json`, { json: true, timeout: 30000 }).then((response) => {
 			return _.pick(response.body, [ 'default', 'files' ]);
 		}).catch((error) => {
-			if (/*error instanceof got.HTTPError && */error.response.statusCode === 403) {
+			if (error instanceof got.HTTPError && error.response.statusCode === 403) {
 				return {
 					status: error.response.statusCode,
 					message: error.response.body,
@@ -127,14 +127,14 @@ class PackageRequest extends BaseRequest {
 
 	async handlePackageStats () {
 		if (this.params.groupBy === 'date') {
-			let data = await Package.getSumDateHitsPerVersionByName(this.params.name, ...this.dateRange);
+			let data = await Package.getSumDateHitsPerVersionByName(this.params.type, this.params.name, ...this.dateRange);
 
 			this.ctx.body = {
 				total: sumDeep(data, 2),
 				dates: _.mapValues(data, versions => ({ total: sumDeep(versions), versions })),
 			};
 		} else {
-			let data = await Package.getSumVersionHitsPerDateByName(this.params.name, ...this.dateRange);
+			let data = await Package.getSumVersionHitsPerDateByName(this.params.type, this.params.name, ...this.dateRange);
 
 			this.ctx.body = {
 				total: sumDeep(data, 2),
@@ -165,7 +165,7 @@ class PackageRequest extends BaseRequest {
 			this.ctx.body = await this.getFiles(); // Can't use AsJson() version here because we need to set correct status code on cached errors.
 			this.ctx.maxAge = v1Config.maxAgeStatic;
 		} catch (error) {
-			if (error instanceof got.ParseError/*error instanceof got.HTTPError*/) {
+			if (error instanceof got.HTTPError) {
 				return this.ctx.body = {
 					status: error.response.statusCode || 502,
 					message: error.response.body,
@@ -178,14 +178,14 @@ class PackageRequest extends BaseRequest {
 
 	async handleVersionStats () {
 		if (this.params.groupBy === 'date') {
-			let data = await PackageVersion.getSumDateHitsPerFileByName(this.params.name, this.params.version, ...this.dateRange);
+			let data = await PackageVersion.getSumDateHitsPerFileByName(this.params.type, this.params.name, this.params.version, ...this.dateRange);
 
 			this.ctx.body = {
 				total: sumDeep(data, 2),
 				dates: _.mapValues(data, versions => ({ total: sumDeep(versions), versions })),
 			};
 		} else {
-			let data = await PackageVersion.getSumFileHitsPerDateByName(this.params.name, this.params.version, ...this.dateRange);
+			let data = await PackageVersion.getSumFileHitsPerDateByName(this.params.type, this.params.name, this.params.version, ...this.dateRange);
 
 			this.ctx.body = {
 				total: sumDeep(data, 2),
