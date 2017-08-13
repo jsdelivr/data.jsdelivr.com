@@ -2,7 +2,7 @@ const Joi = require('joi');
 const BaseModel = require('./BaseModel');
 
 const schema = {
-	referrerId: Joi.number().integer().min(0).required().allow(null),
+	referrerId: [ Joi.number().integer().min(0).required().allow(null), Joi.string().regex(/^@/) ],
 	date: Joi.date().required(),
 	hits: Joi.number().integer().min(0).required(),
 };

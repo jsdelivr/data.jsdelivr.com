@@ -3,7 +3,7 @@ const BaseModel = require('./BaseModel');
 
 const schema = {
 	id: Joi.number().integer().min(0).required().allow(null),
-	packageId: Joi.number().integer().min(0).required(),
+	packageId: [ Joi.number().integer().min(0).required(), Joi.string().regex(/^@/) ],
 	version: Joi.string().max(255).required(),
 };
 
