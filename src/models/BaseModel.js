@@ -115,6 +115,16 @@ class BaseModel {
 		return true;
 	}
 
+	async isValid () {
+		try {
+			await this.validate();
+		} catch (e) {
+			return false;
+		}
+
+		return true;
+	}
+
 	/**
 	 * @returns {Promise<number>}
 	 */
