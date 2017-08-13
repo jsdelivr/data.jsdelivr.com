@@ -118,13 +118,15 @@ https://data.jsdelivr.com/v1/package/resolve/npm/jquery@3
 ### Get package usage stats
 
 ```
-/package/npm/:name/stats/:period?
+/package/npm/:name/stats/:groupBy?/:period?
  - name: npm package name
+ - groupBy: "version" or "date"; defaults to "version"
  - period: "day", "week", "month", or "year"; defaults to "month"
 
-/package/gh/:user/:repo/stats/:period?
+/package/gh/:user/:repo/stats/:groupBy?/:period?
  - user: GitHub username
  - repo: GitHub repository name
+ - groupBy: "version" or "date"; defaults to "version"
  - period: "day", "week", "month", or "year"; defaults to "month"
 ```
 
@@ -162,15 +164,17 @@ https://data.jsdelivr.com/v1/package/npm/jquery/stats
 ### Get package version usage stats
 
 ```
-/package/npm/:name@:version/stats/:period?
+/package/npm/:name@:version/stats/:groupBy?/:period?
  - name: npm package name
  - version: exact package version (not a version range)
+ - groupBy: "file" or "date"; defaults to "file"
  - period: "day", "week", "month", or "year"; defaults to "month"
 
-/package/gh/:user/:repo@:version/stats/:period?
+/package/gh/:user/:repo@:version/stats/:groupBy?/:period?
  - user: GitHub username
  - repo: GitHub repository name
  - version: exact package version (not a version range)
+ - groupBy: "file" or "date"; defaults to "file"
  - period: "day", "week", "month", or "year"; defaults to "month"
 ```
 
