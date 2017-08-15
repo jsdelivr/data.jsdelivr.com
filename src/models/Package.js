@@ -41,9 +41,7 @@ class Package extends BaseModel {
 			.where({ type, name })
 			.join(PackageVersion.table, `${this.table}.id`, '=', `${PackageVersion.table}.packageId`)
 			.join(File.table, `${PackageVersion.table}.id`, '=', `${File.table}.packageVersionId`)
-			.join(FileHits.table, `${File.table}.id`, '=', `${FileHits.table}.fileId`)
-			.groupBy([ `${PackageVersion.table}.id`, `${FileHits.table}.date` ])
-			.sum(`${FileHits.table}.hits as hits`);
+			.join(FileHits.table, `${File.table}.id`, '=', `${FileHits.table}.fileId`);
 
 		if (from instanceof Date) {
 			sql.where(`${FileHits.table}.date`, '>=', from);
@@ -53,7 +51,7 @@ class Package extends BaseModel {
 			sql.where(`${FileHits.table}.date`, '<=', to);
 		}
 
-		return _.map(_.groupBy(await sql.select([ `${PackageVersion.table}.version`, `${PackageVersion.table}.id`, `${FileHits.table}.date` ]), (record) => {
+		return _.map(_.groupBy(await sql.select([ `${PackageVersion.table}.version`, `${PackageVersion.table}.id`, `${FileHits.table}.date`, `${FileHits.table}.hits` ]), (record) => {
 			return `${record.id}:${record.date}`;
 		}), (record) => {
 			return _.reduce(record, (t, c) => {
