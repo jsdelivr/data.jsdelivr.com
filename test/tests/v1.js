@@ -11,6 +11,9 @@ const upstreamNpmResponses = require('../data/npm.json');
 const upstreamCdnResponses = require('../data/cdn.json');
 const expectedResponses = require('../data/expected.json');
 
+const config = require('config');
+const dbConfig = config.get('db');
+
 chai.use(chaiHttp);
 
 describe('v1', function () {
@@ -18,6 +21,7 @@ describe('v1', function () {
 
 	before(async () => {
 		await db.raw('SET @@foreign_key_checks = 0;');
+		await db.raw(`CREATE DATABASE IF NOT EXISTS \`${dbConfig.connection.database}\`;`);
 		await db.schema.dropTableIfExists('file');
 		await db.schema.dropTableIfExists('file_hits');
 		await db.schema.dropTableIfExists('knex_migrations');
