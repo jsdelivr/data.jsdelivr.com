@@ -1,12 +1,12 @@
 const Joi = require('joi');
 const BaseModel = require('./BaseModel');
-const relativeDayUtc = require('relative-day-utc');
 
 const schema = {
 	id: Joi.number().integer().min(0).required().allow(null),
 	filename: Joi.string().max(255).required(),
 	updatedAt: Joi.date().required(),
 	processed: Joi.number().required(),
+	date: Joi.date().required(),
 };
 
 class LogFile extends BaseModel {
@@ -37,12 +37,19 @@ class LogFile extends BaseModel {
 		/** @type {number} */
 		this.processed = 0;
 
+		/** @type {Date} */
+		this.date = null;
+
 		Object.assign(this, properties);
 		return new Proxy(this, BaseModel.ProxyHandler);
 	}
 
-	static async cleanup () {
-		return db(this.table).where('updatedAt', '<', relativeDayUtc(-7)).delete();
+	static async deleteOlderThan (date) {
+		return db(this.table).where('updatedAt', '<', date).delete();
+	}
+
+	static async findOlderThan (date) {
+		return Promise.map(db(this.table).where('updatedAt', '<', date).select(), data => new this(data).dbOut());
 	}
 }
 
