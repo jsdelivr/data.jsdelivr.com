@@ -7,6 +7,5 @@ services:
   - redis-server
 addons:
   mariadb: '10.2'
-script:
- - mysql -u root -e "CREATE DATABASE IF NOT EXISTS `jsdelivr-stats-test`"
- - npm test
+before_install:
+ - mysql -e 'CREATE DATABASE IF NOT EXISTS `jsdelivr-stats-test`;'
