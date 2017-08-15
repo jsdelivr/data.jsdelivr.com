@@ -53,7 +53,14 @@ class Package extends BaseModel {
 			sql.where(`${FileHits.table}.date`, '<=', to);
 		}
 
-		return await sql.select([ `${PackageVersion.table}.version`, `${FileHits.table}.date` ]);
+		return _.map(_.groupBy(await sql.select([ `${PackageVersion.table}.version`, `${PackageVersion.table}.id`, `${FileHits.table}.date` ]), (record) => {
+			return `${record.id}:${record.date}`;
+		}), (record) => {
+			return _.reduce(record, (t, c) => {
+				t.hits += c.hits;
+				return t;
+			});
+		});
 	}
 
 	static async getPackageRank (hits, from, to) {
