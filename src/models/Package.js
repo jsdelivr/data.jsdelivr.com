@@ -99,9 +99,11 @@ class Package extends BaseModel {
 			.join(FileHits.table, `${File.table}.id`, '=', `${FileHits.table}.fileId`)
 			.groupBy(`${Package.table}.id`)
 			.sum(`${FileHits.table}.hits as hits`)
-			.orderBy('hits', 'DESC')
-			.limit(limit)
-			.offset((page - 1) * limit);
+			.orderBy('hits', 'DESC');
+
+		if (limit) {
+			sql.limit(limit).offset((page - 1) * limit);
+		}
 
 		if (from instanceof Date) {
 			sql.where(`${FileHits.table}.date`, '>=', from);

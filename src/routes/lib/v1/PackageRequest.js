@@ -33,6 +33,7 @@ class PackageRequest extends BaseRequest {
 			metadata: `package/${this.params.type}/${this.params.name}/metadata`,
 			packageStats: `package/${this.params.type}/${this.params.name}/stats`,
 			versionsStats: `package/${this.params.type}/${this.params.name}@${this.params.version}/stats`,
+			rank: `package/${this.params.type}/${this.params.name}/rank`,
 		};
 	}
 
@@ -77,22 +78,6 @@ class PackageRequest extends BaseRequest {
 		return files;
 	}
 
-	async getResolvedVersion () {
-		return this.getMetadata().then((metadata) => {
-			let versions = metadata.versions.filter(v => semver.valid(v) && !semver.prerelease(v)).sort(semver.rcompare);
-
-			if (metadata.versions.includes(this.params.version)) {
-				return this.params.version;
-			} else if (metadata.tags.hasOwnProperty(this.params.version)) {
-				return metadata.tags[this.params.version];
-			} else if (this.params.version === 'latest' || !this.params.version) {
-				return versions[0];
-			}
-
-			return semver.maxSatisfying(versions, this.params.version);
-		});
-	}
-
 	async getMetadata () {
 		return JSON.parse(await this.getMetadataAsJson());
 	}
@@ -107,6 +92,45 @@ class PackageRequest extends BaseRequest {
 		metadata = JSON.stringify(await this.fetchMetadata(), null, '\t');
 		await redis.setAsync(this.keys.metadata, metadata, 'EX', v1Config[this.params.type].maxAge);
 		return metadata;
+	}
+
+	async getRank () {
+		let date = `/${this.dateRange[0].toISOString().substr(0, 10)}/${this.dateRange[1].toISOString().substr(0, 10)}`;
+		let rank = await redis.getAsync(this.keys.rank + date);
+
+		if (rank) {
+			return Number(rank);
+		}
+
+		rank = -1;
+		let hits = Infinity;
+
+		await Promise.map(Package.getTopPackages(...this.dateRange, null), (pkg) => {
+			if (pkg.hits < hits) {
+				hits = pkg.hits;
+				rank++;
+			}
+
+			return redis.setAsync(`package/${pkg.type}/${pkg.name}/rank${date}`, rank, 'EX', 86400 - Math.floor(Date.now() % 86400000 / 1000));
+		});
+
+		return this.getRank();
+	}
+
+	async getResolvedVersion () {
+		return this.getMetadata().then((metadata) => {
+			let versions = metadata.versions.filter(v => semver.valid(v) && !semver.prerelease(v)).sort(semver.rcompare);
+
+			if (metadata.versions.includes(this.params.version)) {
+				return this.params.version;
+			} else if (metadata.tags.hasOwnProperty(this.params.version)) {
+				return metadata.tags[this.params.version];
+			} else if (this.params.version === 'latest' || !this.params.version) {
+				return versions[0];
+			}
+
+			return semver.maxSatisfying(versions, this.params.version);
+		});
 	}
 
 	async handleResolveVersion () {
@@ -131,7 +155,7 @@ class PackageRequest extends BaseRequest {
 			let total = sumDeep(data, 2);
 
 			this.ctx.body = {
-				// rank: await Package.getPackageRank(total, ...this.dateRange),
+				rank: await this.getRank(),
 				total,
 				dates: _.mapValues(data, versions => ({ total: sumDeep(versions), versions })),
 			};
@@ -140,7 +164,7 @@ class PackageRequest extends BaseRequest {
 			let total = sumDeep(data, 2);
 
 			this.ctx.body = {
-				// rank: await Package.getPackageRank(total, ...this.dateRange),
+				rank: await this.getRank(),
 				total,
 				versions: _.mapValues(data, dates => ({ total: sumDeep(dates), dates })),
 			};
