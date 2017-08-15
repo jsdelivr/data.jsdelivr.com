@@ -128,16 +128,20 @@ class PackageRequest extends BaseRequest {
 	async handlePackageStats () {
 		if (this.params.groupBy === 'date') {
 			let data = await Package.getSumDateHitsPerVersionByName(this.params.type, this.params.name, ...this.dateRange);
+			let total = sumDeep(data, 2);
 
 			this.ctx.body = {
-				total: sumDeep(data, 2),
+				rank: await Package.getPackageRank(total, ...this.dateRange),
+				total,
 				dates: _.mapValues(data, versions => ({ total: sumDeep(versions), versions })),
 			};
 		} else {
 			let data = await Package.getSumVersionHitsPerDateByName(this.params.type, this.params.name, ...this.dateRange);
+			let total = sumDeep(data, 2);
 
 			this.ctx.body = {
-				total: sumDeep(data, 2),
+				rank: await Package.getPackageRank(total, ...this.dateRange),
+				total,
 				versions: _.mapValues(data, dates => ({ total: sumDeep(dates), dates })),
 			};
 		}

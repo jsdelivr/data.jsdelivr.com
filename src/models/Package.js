@@ -56,6 +56,30 @@ class Package extends BaseModel {
 		return await sql.select([ `${PackageVersion.table}.version`, `${FileHits.table}.date` ]);
 	}
 
+	static async getPackageRank (hits, from, to) {
+		let _this = this;
+		let sql = db.count('* as count').from(function () {
+			this.from(_this.table)
+				.join(PackageVersion.table, `${_this.table}.id`, '=', `${PackageVersion.table}.packageId`)
+				.join(File.table, `${PackageVersion.table}.id`, '=', `${File.table}.packageVersionId`)
+				.join(FileHits.table, `${File.table}.id`, '=', `${FileHits.table}.fileId`)
+				.groupBy(`${Package.table}.id`)
+				.havingRaw(`SUM(${FileHits.table}.hits) > ${hits}`);
+
+			if (from instanceof Date) {
+				this.where(`${FileHits.table}.date`, '>=', from);
+			}
+
+			if (to instanceof Date) {
+				this.where(`${FileHits.table}.date`, '<=', to);
+			}
+
+			this.select(`${_this.table}.id`).as('t');
+		});
+
+		return (await sql.select().first()).count;
+	}
+
 	static async getSumDateHitsPerVersionByName (type, name, from, to) {
 		return _.mapValues(_.groupBy(await Package.getHitsByName(type, name, from, to), item => item.date.toISOString().substr(0, 10)), (versionHits) => {
 			return _.fromPairs(_.map(versionHits, entry => [ entry.version, entry.hits ]));
