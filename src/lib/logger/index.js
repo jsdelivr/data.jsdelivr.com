@@ -55,7 +55,7 @@ OpbeatStream.levels = {
 
 module.exports = bunyan.createLogger({
 	name: 'app-log',
-	streams: process.env.NODE_ENV === 'development' ? [
+	streams: process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test' ? [
 		{ level: bunyan.TRACE, type: 'raw', stream: prettyStream },
 	] : [
 		{ level: bunyan.TRACE, type: 'raw', stream: new FileStream(path.join(loggerConfig.path, process.pid + '.log')) },

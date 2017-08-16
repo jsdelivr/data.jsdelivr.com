@@ -11,11 +11,11 @@ CREATE TABLE file
 CREATE TABLE file_hits
 (
 	fileId INT(10) UNSIGNED NOT NULL,
-	`date` DATE             NOT NULL,
+	date   DATE             NOT NULL,
 	hits   INT(10) UNSIGNED NULL,
-	PRIMARY KEY (fileId, `date`),
+	PRIMARY KEY (fileId, date),
 	CONSTRAINT file_hits_fileid_foreign
-	FOREIGN KEY (fileId) REFERENCES `jsdelivr-stats-test`.file (id)
+	FOREIGN KEY (fileId) REFERENCES file (id)
 		ON UPDATE CASCADE
 		ON DELETE CASCADE
 );
@@ -41,6 +41,7 @@ CREATE TABLE log_file
 	filename  VARCHAR(255) NULL,
 	updatedAt DATETIME     NULL,
 	processed TINYINT(1)   NULL,
+	date      DATE         NULL,
 	CONSTRAINT log_file_filename_unique
 	UNIQUE (filename)
 );
@@ -69,10 +70,11 @@ FOR EACH ROW
 
 CREATE TABLE logs
 (
-	date      DATE             NOT NULL
+	date             DATE             NOT NULL
 		PRIMARY KEY,
-	`lines`   INT(10) UNSIGNED NULL,
-	megabytes INT(10) UNSIGNED NULL
+	records          INT(10) UNSIGNED NULL,
+	megabytesLogs    INT(10) UNSIGNED NULL,
+	megabytesTraffic INT(10) UNSIGNED NULL
 );
 
 CREATE TABLE package
@@ -94,14 +96,14 @@ CREATE TABLE package_version
 	CONSTRAINT package_version_packageid_version_unique
 	UNIQUE (packageId, version),
 	CONSTRAINT package_version_packageid_foreign
-	FOREIGN KEY (packageId) REFERENCES `jsdelivr-stats-test`.package (id)
+	FOREIGN KEY (packageId) REFERENCES package (id)
 		ON UPDATE CASCADE
 		ON DELETE CASCADE
 );
 
 ALTER TABLE file
 	ADD CONSTRAINT file_packageversionid_foreign
-FOREIGN KEY (packageVersionId) REFERENCES `jsdelivr-stats-test`.package_version (id)
+FOREIGN KEY (packageVersionId) REFERENCES package_version (id)
 	ON UPDATE CASCADE
 	ON DELETE CASCADE;
 
@@ -121,7 +123,7 @@ CREATE TABLE referrer_hits
 	hits       INT(10) UNSIGNED NULL,
 	PRIMARY KEY (referrerId, date),
 	CONSTRAINT referrer_hits_referrerid_foreign
-	FOREIGN KEY (referrerId) REFERENCES `jsdelivr-stats-test`.referrer (id)
+	FOREIGN KEY (referrerId) REFERENCES referrer (id)
 		ON UPDATE CASCADE
 		ON DELETE CASCADE
 );

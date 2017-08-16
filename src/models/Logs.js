@@ -3,8 +3,9 @@ const BaseModel = require('./BaseModel');
 
 const schema = {
 	date: Joi.date().required(),
-	lines: Joi.number().integer().min(0).required(),
-	megabytes: Joi.number().integer().min(0).required(),
+	records: Joi.number().integer().min(0).required(),
+	megabytesLogs: Joi.number().integer().min(0).required(),
+	megabytesTraffic: Joi.number().integer().min(0).required(),
 };
 
 class Logs extends BaseModel {
@@ -27,19 +28,40 @@ class Logs extends BaseModel {
 		this.date = null;
 
 		/** @type {number} */
-		this.lines = 0;
+		this.records = 0;
 
 		/** @type {number} */
-		this.megabytes = 0;
+		this.megabytesLogs = 0;
+
+		/** @type {number} */
+		this.megabytesTraffic = 0;
 
 		Object.assign(this, properties);
 		return new Proxy(this, BaseModel.ProxyHandler);
 	}
 
-	static async getStats (from, to) {
+	static async getMegabytesByDate (from, to) {
 		let sql = db(this.table)
-			.sum(`${this.table}.lines as records`)
-			.sum(`${this.table}.megabytes as megabytes`);
+			.groupBy(`${this.table}.date`)
+			.sum(`${this.table}.megabytesTraffic as megabytesTraffic`);
+
+		if (from instanceof Date) {
+			sql.where(`${this.table}.date`, '>=', from);
+		}
+
+		if (to instanceof Date) {
+			sql.where(`${this.table}.date`, '<=', to);
+		}
+
+		return _.fromPairs(_.map(await sql.select([ `${this.table}.date` ]), (record) => {
+			return [ record.date.toISOString().substr(0, 10), record.megabytesTraffic ];
+		}));
+	}
+
+	static async getMetaStats (from, to) {
+		let sql = db(this.table)
+			.sum(`${this.table}.records as records`)
+			.sum(`${this.table}.megabytesLogs as megabytes`);
 
 		if (from instanceof Date) {
 			sql.where(`${this.table}.date`, '>=', from);

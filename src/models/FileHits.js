@@ -36,8 +36,9 @@ class FileHits extends BaseModel {
 		return new Proxy(this, BaseModel.ProxyHandler);
 	}
 
-	static async getTotal (from, to) {
+	static async getSumByDate (from, to) {
 		let sql = db(this.table)
+			.groupBy(`${this.table}.date`)
 			.sum(`${this.table}.hits as hits`);
 
 		if (from instanceof Date) {
@@ -48,7 +49,9 @@ class FileHits extends BaseModel {
 			sql.where(`${this.table}.date`, '<=', to);
 		}
 
-		return sql.select().first();
+		return _.fromPairs(_.map(await sql.select([ `${this.table}.date` ]), (record) => {
+			return [ record.date.toISOString().substr(0, 10), record.hits ];
+		}));
 	}
 }
 
