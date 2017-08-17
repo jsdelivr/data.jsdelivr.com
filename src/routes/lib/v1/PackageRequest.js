@@ -169,6 +169,8 @@ class PackageRequest extends BaseRequest {
 				template: this.ctx.query.style === 'rounded' ? 'flat' : 'flat-square',
 			}, resolve, reject);
 		});
+
+		this.setCacheHeader();
 	}
 
 	async handlePackageStats () {
