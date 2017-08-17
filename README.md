@@ -10,6 +10,7 @@ The jsDelivr API allows you to:
  - [get package usage stats](#get-package-usage-stats)
  - [get package version usage stats](#get-package-version-usage-stats)
  - [get the most popular packages](#get-the-most-popular-packages)
+ - [get a badge for your project](#get-a-badge-for-your-project)
  
 The API is free to use and imposes no rate limits.
 Please note that usage statistics are available with a 48 hour delay
@@ -242,6 +243,30 @@ https://data.jsdelivr.com/v1/stats/packages
     ...
 ]
 ```
+
+### Get a badge for your project
+
+```
+/package/npm/:name/badge/:period?
+ - name: npm package name
+ - period: "day", "week", "month", or "year"; defaults to "month"
+
+/package/gh/:user/:repo/badge/:period?
+ - user: GitHub username
+ - repo: GitHub repository name
+ - period: "day", "week", "month", or "year"; defaults to "month"
+```
+
+**Example**
+```
+https://data.jsdelivr.com/v1/package/npm/jquery/badge
+```
+![](https://data.jsdelivr.com/v1/package/npm/jquery/badge)
+
+```
+https://data.jsdelivr.com/v1/package/npm/jquery/badge?style=rounded
+```
+![](https://data.jsdelivr.com/v1/package/npm/jquery/badge?style=rounded)
 
 ## Query string options
 
