@@ -164,7 +164,7 @@ class PackageRequest extends BaseRequest {
 		this.ctx.type = 'image/svg+xml; charset=utf-8';
 		this.ctx.body = await new Promise(async (resolve, reject) => {
 			badge({
-				text: [ ' jsDelivr ', ` ${number.abbreviate(hits)}/${this.params.period || 'month'} ` ],
+				text: [ ' jsDelivr ', ` ${number.abbreviate(hits)} hits/${this.params.period || 'month'} ` ],
 				colorB: '#ff5627',
 				template: this.ctx.query.style === 'rounded' ? 'flat' : 'flat-square',
 			}, resolve, reject);
