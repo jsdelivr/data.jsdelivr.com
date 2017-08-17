@@ -2,11 +2,20 @@ const got = require('got');
 const semver = require('semver');
 const config = require('config');
 const GitHubApi = require('github');
+const badge = require('gh-badges');
+const NumberAbbreviate = require('number-abbreviate');
+const number = new NumberAbbreviate([ 'k', 'M', 'B', 'T' ]);
 
 const BaseRequest = require('./BaseRequest');
 const Package = require('../../../models/Package');
 const PackageVersion = require('../../../models/PackageVersion');
 const sumDeep = require('../../utils/sumDeep');
+
+badge.loadFont(require.resolve('dejavu-sans/fonts/dejavu-sans-webfont.ttf'), (err) => {
+	if (err) {
+		logger.error({ err }, `Failed to load the font file for badges.`);
+	}
+});
 
 const v1Config = config.get('v1');
 const githubApi = new GitHubApi({
@@ -147,6 +156,19 @@ class PackageRequest extends BaseRequest {
 		} catch (e) {
 			return this.responseNotFound();
 		}
+	}
+
+	async handlePackageBadge () {
+		let hits = await Package.getSumHits(this.params.type, this.params.name, ...this.dateRange);
+
+		this.ctx.type = 'image/svg+xml; charset=utf-8';
+		this.ctx.body = await new Promise(async (resolve, reject) => {
+			badge({
+				text: [ ' jsDelivr ', ` ${number.abbreviate(hits)}/${this.params.period || 'month'} ` ],
+				colorB: '#ff5627',
+				template: this.ctx.query.style === 'rounded' ? 'flat' : 'flat-square',
+			}, resolve, reject);
+		});
 	}
 
 	async handlePackageStats () {

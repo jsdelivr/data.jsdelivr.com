@@ -53,6 +53,13 @@ router.get([
 });
 
 router.get([
+	'/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/badge/:period(day|week|month|year)?',
+	'/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/badge/:period(day|week|month|year)?',
+], async (ctx) => {
+	return new PackageRequest(ctx).handlePackageBadge();
+});
+
+router.get([
 	'/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version',
 	'/package/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version',
 ], async (ctx) => {
