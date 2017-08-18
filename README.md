@@ -137,7 +137,7 @@ https://data.jsdelivr.com/v1/package/npm/jquery/stats
 
 // =>
 {
-    "rank": 7, // number of packages with more hits
+    "rank": 7, // number of packages with more hits; null if the package doesn't have any hits
     "total": 122152394,
     "versions": {
         "2.2.4": {
