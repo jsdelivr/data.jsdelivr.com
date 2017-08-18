@@ -62,6 +62,11 @@ describe('v1', function () {
 			.query({ per_page: 100 })
 			.reply(200, upstreamGitHubResponses['/repos/jquery/jquery/tags']);
 
+		nock('https://api.github.com')
+			.get('/repos/jquery/jquery2/tags')
+			.query({ per_page: 100 })
+			.reply(200, upstreamGitHubResponses['/repos/jquery/jquery2/tags']);
+
 		nock('https://cdn.jsdelivr.net')
 			.get('/gh/jquery/jquery@3.2.1/+json')
 			.reply(200, upstreamCdnResponses['/gh/jquery/jquery@3.2.1/+json']);
@@ -175,6 +180,20 @@ describe('v1', function () {
 			});
 	});
 
+	it('GET /v1/package/resolve/npm/jquery@v3.2', () => {
+		return chai.request(server)
+			.get('/v1/package/resolve/npm/jquery@v3.2')
+			.then((response) => {
+				expect(response).to.have.status(200);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response.body).to.deep.equal({ version: '3.2.1' });
+			});
+	});
+
 	it('GET /v1/package/resolve/npm/jquery@3.2.1', () => {
 		return chai.request(server)
 			.get('/v1/package/resolve/npm/jquery@3.2.1')
@@ -214,6 +233,20 @@ describe('v1', function () {
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
 				expect(response.body).to.deep.equal({ version: null });
+			});
+	});
+
+	it('GET /v1/package/resolve/gh/jquery/jquery2@v3.2.1', () => {
+		return chai.request(server)
+			.get('/v1/package/resolve/gh/jquery/jquery2@v3.2.1')
+			.then((response) => {
+				expect(response).to.have.status(200);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response.body).to.deep.equal({ version: '3.2.1' });
 			});
 	});
 

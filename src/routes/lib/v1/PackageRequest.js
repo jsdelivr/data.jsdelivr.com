@@ -267,6 +267,12 @@ module.exports = PackageRequest;
 async function fetchGitHubMetadata (user, repo) {
 	let versions = [];
 	let loadMore = (response) => {
+		response.data.forEach((tag) => {
+			if (tag.name.charAt(0) === 'v') {
+				tag.name = tag.name.substr(1);
+			}
+		});
+
 		versions.push(..._.map(response.data, 'name'));
 
 		if (response.data && githubApi.hasNextPage(response)) {

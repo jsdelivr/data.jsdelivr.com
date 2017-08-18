@@ -270,5 +270,16 @@
 				"url": "https://api.github.com/repos/jquery/jquery/commits/a55c5eeb709b584f58a1f3d8d0bc9f1432cd998a"
 			}
 		}
+	],
+	"/repos/jquery/jquery2/tags": [
+		{
+			"name": "v3.2.1",
+			"zipball_url": "https://api.github.com/repos/jquery/jquery/zipball/v3.2.1",
+			"tarball_url": "https://api.github.com/repos/jquery/jquery/tarball/v3.2.1",
+			"commit": {
+				"sha": "f71eeda0fac4ec1442e631e90ff0703a0fb4ac96",
+				"url": "https://api.github.com/repos/jquery/jquery/commits/f71eeda0fac4ec1442e631e90ff0703a0fb4ac96"
+			}
+		}
 	]
 }

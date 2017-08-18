@@ -38,6 +38,14 @@ router.param('period', async (value, ctx, next) => {
 	return next();
 });
 
+router.param('version', async (value, ctx, next) => {
+	if (value && value.charAt(0) === 'v') {
+		ctx.params.version = value.substr(1);
+	}
+
+	return next();
+});
+
 router.get([
 	'/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)',
 	'/package/:type(gh)/:user([^/@]+)/:name([^/@]+)',
