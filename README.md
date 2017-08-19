@@ -55,14 +55,16 @@ https://data.jsdelivr.com/v1/package/npm/jquery
 ### List package files
 
 ```
-/package/npm/:name@:version
+/package/npm/:name@:version/:structure?
  - name: npm package name
  - version: exact package version (not a version range)
+ - structure: "tree" or "flat"; defaults to "tree"
  
-/package/gh/:user/:repo@:version
+/package/gh/:user/:repo@:version/:structure?
  - user: GitHub username
  - repo: GitHub repository name
  - version: exact package version (not a version range)
+ - structure: "tree" or "flat"; defaults to "tree"
 ```
 
 **Example**
@@ -74,19 +76,29 @@ https://data.jsdelivr.com/v1/package/npm/jquery@3.2.1
     "default": "/dist/jquery.min.js",
     "files": [
         {
-            "name": "/AUTHORS.txt",
+            "type": "file",
+            "name": "AUTHORS.txt",
             "size": 11218,
             "time": "2017-03-20T19:01:15.000Z"
         },
         {
-            "name": "/bower.json",
+            "type": "file",
+            "name": "bower.json",
             "size": 190,
             "time": "2017-03-20T19:01:15.000Z"
         },
         {
-            "name": "/dist/core.js",
-            "size": 11197,
-            "time": "2017-03-20T19:01:15.000Z"
+            "type": "directory",
+            "name": "dist",
+            "files": [
+                {
+                    "type": "file",
+                    "name": "core.js",
+                    "size": 11197,
+                    "time": "2017-03-20T19:01:15.000Z"
+                },
+                ...
+            ]
         },
         ...
     ]
