@@ -1,7 +1,9 @@
 # WORK IN PROGRESS
 # jsDelivr API
 
-https://data.jsdelivr.com/v1
+[![Build Status](https://img.shields.io/travis/jsdelivr/data.jsdelivr.com.svg?style=flat-square)](https://travis-ci.org/jsdelivr/data.jsdelivr.com)
+[![dependencies](https://img.shields.io/david/jsdelivr/data.jsdelivr.com.svg?style=flat-square)](https://david-dm.org/jsdelivr/data.jsdelivr.com#info=dependencies)
+[![devDependencies](https://img.shields.io/david/dev/jsdelivr/data.jsdelivr.com.svg?style=flat-square)](https://david-dm.org/jsdelivr/data.jsdelivr.com#info=devDependencies)
 
 The jsDelivr API allows you to:
  - [list package versions](#list-package-versions)
@@ -17,6 +19,8 @@ Please note that usage statistics are available with a 48 hour delay
 and data older than one year may not be available.
 
 ## Endpoints
+
+https://data.jsdelivr.com/v1
 
  - All responses are in JSON.
  - All error responses have `status` and `message` properties.
