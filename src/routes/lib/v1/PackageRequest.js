@@ -72,7 +72,39 @@ class PackageRequest extends BaseRequest {
 	}
 
 	async getFiles () {
-		return JSON.parse(await this.getFilesAsJson());
+		let files = JSON.parse(await this.getFilesAsJson());
+
+		if (this.ctx.params.structure === 'flat' || !files.files) {
+			return files;
+		}
+
+		let tree = [];
+		let dirs = [];
+		let fn = (entry, files = tree, dir = '/') => {
+			let name = entry.name.substr(1);
+			let index = name.indexOf('/');
+
+			if (index !== -1) {
+				let dirName = name.substr(0, index);
+				let absDirName = dir + '/' + dirName;
+
+				if (!dirs.hasOwnProperty(absDirName)) {
+					files.push(dirs[absDirName] = { type: 'directory', name: dirName, files: [] });
+				}
+
+				return fn({ name: entry.name.substr(index + 1), size: entry.size, time: entry.time }, dirs[absDirName].files, absDirName);
+			}
+
+			files.push({
+				type: 'file',
+				name,
+				size: entry.size,
+				time: entry.time,
+			});
+		};
+
+		files.files.forEach(file => fn(file, tree));
+		return { default: files.default, files: tree };
 	}
 
 	async getFilesAsJson () {

@@ -68,8 +68,8 @@ router.get([
 });
 
 router.get([
-	'/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version',
-	'/package/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version',
+	'/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version/:structure(tree|flat)?',
+	'/package/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version/:structure(tree|flat)?',
 ], async (ctx) => {
 	return new PackageRequest(ctx).handleVersionFiles();
 });

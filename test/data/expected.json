@@ -57,6 +57,869 @@
 		"default": "/dist/jquery.min.js",
 		"files": [
 			{
+				"type": "file",
+				"name": "AUTHORS.txt",
+				"size": 11218,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"type": "file",
+				"name": "bower.json",
+				"size": 190,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"type": "directory",
+				"name": "dist",
+				"files": [
+					{
+						"type": "file",
+						"name": "core.js",
+						"size": 11197,
+						"time": "2017-03-20T19:01:15.000Z"
+					},
+					{
+						"type": "file",
+						"name": "jquery.js",
+						"size": 268039,
+						"time": "2017-03-20T19:01:15.000Z"
+					},
+					{
+						"type": "file",
+						"name": "jquery.min.js",
+						"size": 86659,
+						"time": "2017-03-20T19:01:15.000Z"
+					},
+					{
+						"type": "file",
+						"name": "jquery.min.map",
+						"size": 131666,
+						"time": "2017-03-20T19:01:15.000Z"
+					},
+					{
+						"type": "file",
+						"name": "jquery.slim.js",
+						"size": 215256,
+						"time": "2017-03-20T19:01:15.000Z"
+					},
+					{
+						"type": "file",
+						"name": "jquery.slim.min.js",
+						"size": 69597,
+						"time": "2017-03-20T19:01:15.000Z"
+					},
+					{
+						"type": "file",
+						"name": "jquery.slim.min.map",
+						"size": 104583,
+						"time": "2017-03-20T19:01:15.000Z"
+					}
+				]
+			},
+			{
+				"type": "directory",
+				"name": "external",
+				"files": [
+					{
+						"type": "directory",
+						"name": "sizzle",
+						"files": [
+							{
+								"type": "directory",
+								"name": "dist",
+								"files": [
+									{
+										"type": "file",
+										"name": "sizzle.js",
+										"size": 65363,
+										"time": "2017-03-20T19:01:15.000Z"
+									},
+									{
+										"type": "file",
+										"name": "sizzle.min.js",
+										"size": 19909,
+										"time": "2017-03-20T19:01:15.000Z"
+									},
+									{
+										"type": "file",
+										"name": "sizzle.min.map",
+										"size": 30763,
+										"time": "2017-03-20T19:01:15.000Z"
+									}
+								]
+							},
+							{
+								"type": "file",
+								"name": "LICENSE.txt",
+								"size": 1606,
+								"time": "2017-03-20T19:01:15.000Z"
+							}
+						]
+					}
+				]
+			},
+			{
+				"type": "file",
+				"name": "LICENSE.txt",
+				"size": 1605,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"type": "file",
+				"name": "package.json",
+				"size": 2353,
+				"time": "2017-03-20T19:01:15.000Z"
+			},
+			{
+				"type": "file",
+				"name": "README.md",
+				"size": 2002,
+				"time": "2017-03-20T19:01:58.000Z"
+			},
+			{
+				"type": "directory",
+				"name": "src",
+				"files": [
+					{
+						"type": "file",
+						"name": ".eslintrc.json",
+						"size": 60,
+						"time": "2017-03-20T19:01:15.000Z"
+					},
+					{
+						"type": "file",
+						"name": "ajax.js",
+						"size": 22254,
+						"time": "2017-03-20T19:01:15.000Z"
+					},
+					{
+						"type": "directory",
+						"name": "ajax",
+						"files": [
+							{
+								"type": "file",
+								"name": "jsonp.js",
+								"size": 2728,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "load.js",
+								"size": 1877,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "parseXML.js",
+								"size": 559,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "script.js",
+								"size": 1583,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "directory",
+								"name": "var",
+								"files": [
+									{
+										"type": "file",
+										"name": "location.js",
+										"size": 67,
+										"time": "2017-03-20T19:01:15.000Z"
+									},
+									{
+										"type": "file",
+										"name": "nonce.js",
+										"size": 91,
+										"time": "2017-03-20T19:01:15.000Z"
+									},
+									{
+										"type": "file",
+										"name": "rquery.js",
+										"size": 60,
+										"time": "2017-03-20T19:01:15.000Z"
+									}
+								]
+							},
+							{
+								"type": "file",
+								"name": "xhr.js",
+								"size": 4298,
+								"time": "2017-03-20T19:01:15.000Z"
+							}
+						]
+					},
+					{
+						"type": "file",
+						"name": "attributes.js",
+						"size": 217,
+						"time": "2017-03-20T19:01:15.000Z"
+					},
+					{
+						"type": "directory",
+						"name": "attributes",
+						"files": [
+							{
+								"type": "file",
+								"name": "attr.js",
+								"size": 3271,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "classes.js",
+								"size": 4270,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "prop.js",
+								"size": 3004,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "support.js",
+								"size": 786,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "val.js",
+								"size": 4207,
+								"time": "2017-03-20T19:01:15.000Z"
+							}
+						]
+					},
+					{
+						"type": "file",
+						"name": "callbacks.js",
+						"size": 5505,
+						"time": "2017-03-20T19:01:15.000Z"
+					},
+					{
+						"type": "file",
+						"name": "core.js",
+						"size": 11197,
+						"time": "2017-03-20T19:01:15.000Z"
+					},
+					{
+						"type": "directory",
+						"name": "core",
+						"files": [
+							{
+								"type": "file",
+								"name": "access.js",
+								"size": 1262,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "DOMEval.js",
+								"size": 292,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "init.js",
+								"size": 3317,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "nodeName.js",
+								"size": 178,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "parseHTML.js",
+								"size": 1604,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "ready.js",
+								"size": 2097,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "ready-no-deferred.js",
+								"size": 2237,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "readyException.js",
+								"size": 168,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "stripAndCollapse.js",
+								"size": 384,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "support.js",
+								"size": 631,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "directory",
+								"name": "var",
+								"files": [
+									{
+										"type": "file",
+										"name": "rsingleTag.js",
+										"size": 148,
+										"time": "2017-03-20T19:01:15.000Z"
+									}
+								]
+							}
+						]
+					},
+					{
+						"type": "file",
+						"name": "css.js",
+						"size": 11684,
+						"time": "2017-03-20T19:01:15.000Z"
+					},
+					{
+						"type": "directory",
+						"name": "css",
+						"files": [
+							{
+								"type": "file",
+								"name": "addGetHookIf.js",
+								"size": 530,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "adjustCSS.js",
+								"size": 1897,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "curCSS.js",
+								"size": 1681,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "hiddenVisibleSelectors.js",
+								"size": 317,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "showHide.js",
+								"size": 2304,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "support.js",
+								"size": 2453,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "directory",
+								"name": "var",
+								"files": [
+									{
+										"type": "file",
+										"name": "cssExpand.js",
+										"size": 88,
+										"time": "2017-03-20T19:01:15.000Z"
+									},
+									{
+										"type": "file",
+										"name": "getStyles.js",
+										"size": 401,
+										"time": "2017-03-20T19:01:15.000Z"
+									},
+									{
+										"type": "file",
+										"name": "isHiddenWithinTree.js",
+										"size": 1290,
+										"time": "2017-03-20T19:01:15.000Z"
+									},
+									{
+										"type": "file",
+										"name": "rmargin.js",
+										"size": 65,
+										"time": "2017-03-20T19:01:15.000Z"
+									},
+									{
+										"type": "file",
+										"name": "rnumnonpx.js",
+										"size": 131,
+										"time": "2017-03-20T19:01:15.000Z"
+									},
+									{
+										"type": "file",
+										"name": "swap.js",
+										"size": 520,
+										"time": "2017-03-20T19:01:15.000Z"
+									}
+								]
+							}
+						]
+					},
+					{
+						"type": "file",
+						"name": "data.js",
+						"size": 4296,
+						"time": "2017-03-20T19:01:15.000Z"
+					},
+					{
+						"type": "directory",
+						"name": "data",
+						"files": [
+							{
+								"type": "file",
+								"name": "Data.js",
+								"size": 3954,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "directory",
+								"name": "var",
+								"files": [
+									{
+										"type": "file",
+										"name": "acceptData.js",
+										"size": 318,
+										"time": "2017-03-20T19:01:15.000Z"
+									},
+									{
+										"type": "file",
+										"name": "dataPriv.js",
+										"size": 84,
+										"time": "2017-03-20T19:01:15.000Z"
+									},
+									{
+										"type": "file",
+										"name": "dataUser.js",
+										"size": 84,
+										"time": "2017-03-20T19:01:15.000Z"
+									}
+								]
+							}
+						]
+					},
+					{
+						"type": "file",
+						"name": "deferred.js",
+						"size": 10862,
+						"time": "2017-03-20T19:01:15.000Z"
+					},
+					{
+						"type": "directory",
+						"name": "deferred",
+						"files": [
+							{
+								"type": "file",
+								"name": "exceptionHook.js",
+								"size": 640,
+								"time": "2017-03-20T19:01:15.000Z"
+							}
+						]
+					},
+					{
+						"type": "file",
+						"name": "deprecated.js",
+						"size": 801,
+						"time": "2017-03-20T19:01:15.000Z"
+					},
+					{
+						"type": "file",
+						"name": "dimensions.js",
+						"size": 1729,
+						"time": "2017-03-20T19:01:15.000Z"
+					},
+					{
+						"type": "file",
+						"name": "effects.js",
+						"size": 17398,
+						"time": "2017-03-20T19:01:15.000Z"
+					},
+					{
+						"type": "directory",
+						"name": "effects",
+						"files": [
+							{
+								"type": "file",
+								"name": "animatedSelector.js",
+								"size": 244,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "Tween.js",
+								"size": 3252,
+								"time": "2017-03-20T19:01:15.000Z"
+							}
+						]
+					},
+					{
+						"type": "file",
+						"name": "event.js",
+						"size": 19415,
+						"time": "2017-03-20T19:01:15.000Z"
+					},
+					{
+						"type": "directory",
+						"name": "event",
+						"files": [
+							{
+								"type": "file",
+								"name": "ajax.js",
+								"size": 346,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "alias.js",
+								"size": 649,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "focusin.js",
+								"size": 1512,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "support.js",
+								"size": 133,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "trigger.js",
+								"size": 5002,
+								"time": "2017-03-20T19:01:15.000Z"
+							}
+						]
+					},
+					{
+						"type": "directory",
+						"name": "exports",
+						"files": [
+							{
+								"type": "file",
+								"name": "amd.js",
+								"size": 1024,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "global.js",
+								"size": 608,
+								"time": "2017-03-20T19:01:15.000Z"
+							}
+						]
+					},
+					{
+						"type": "file",
+						"name": "jquery.js",
+						"size": 640,
+						"time": "2017-03-20T19:01:15.000Z"
+					},
+					{
+						"type": "file",
+						"name": "manipulation.js",
+						"size": 12506,
+						"time": "2017-03-20T19:01:15.000Z"
+					},
+					{
+						"type": "directory",
+						"name": "manipulation",
+						"files": [
+							{
+								"type": "file",
+								"name": "_evalUrl.js",
+								"size": 356,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "buildFragment.js",
+								"size": 2454,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "getAll.js",
+								"size": 650,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "setGlobalEval.js",
+								"size": 381,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "support.js",
+								"size": 1034,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "directory",
+								"name": "var",
+								"files": [
+									{
+										"type": "file",
+										"name": "rcheckableType.js",
+										"size": 79,
+										"time": "2017-03-20T19:01:15.000Z"
+									},
+									{
+										"type": "file",
+										"name": "rscriptType.js",
+										"size": 83,
+										"time": "2017-03-20T19:01:15.000Z"
+									},
+									{
+										"type": "file",
+										"name": "rtagName.js",
+										"size": 88,
+										"time": "2017-03-20T19:01:15.000Z"
+									}
+								]
+							},
+							{
+								"type": "file",
+								"name": "wrapMap.js",
+								"size": 798,
+								"time": "2017-03-20T19:01:15.000Z"
+							}
+						]
+					},
+					{
+						"type": "file",
+						"name": "offset.js",
+						"size": 6266,
+						"time": "2017-03-20T19:01:15.000Z"
+					},
+					{
+						"type": "file",
+						"name": "queue.js",
+						"size": 3091,
+						"time": "2017-03-20T19:01:15.000Z"
+					},
+					{
+						"type": "directory",
+						"name": "queue",
+						"files": [
+							{
+								"type": "file",
+								"name": "delay.js",
+								"size": 636,
+								"time": "2017-03-20T19:01:15.000Z"
+							}
+						]
+					},
+					{
+						"type": "file",
+						"name": "selector.js",
+						"size": 66,
+						"time": "2017-03-20T19:01:15.000Z"
+					},
+					{
+						"type": "file",
+						"name": "selector-native.js",
+						"size": 6394,
+						"time": "2017-03-20T19:01:15.000Z"
+					},
+					{
+						"type": "file",
+						"name": "selector-sizzle.js",
+						"size": 411,
+						"time": "2017-03-20T19:01:15.000Z"
+					},
+					{
+						"type": "file",
+						"name": "serialize.js",
+						"size": 3170,
+						"time": "2017-03-20T19:01:15.000Z"
+					},
+					{
+						"type": "file",
+						"name": "traversing.js",
+						"size": 4549,
+						"time": "2017-03-20T19:01:15.000Z"
+					},
+					{
+						"type": "directory",
+						"name": "traversing",
+						"files": [
+							{
+								"type": "file",
+								"name": "findFilter.js",
+								"size": 2671,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "directory",
+								"name": "var",
+								"files": [
+									{
+										"type": "file",
+										"name": "dir.js",
+										"size": 371,
+										"time": "2017-03-20T19:01:15.000Z"
+									},
+									{
+										"type": "file",
+										"name": "rneedsContext.js",
+										"size": 128,
+										"time": "2017-03-20T19:01:15.000Z"
+									},
+									{
+										"type": "file",
+										"name": "siblings.js",
+										"size": 218,
+										"time": "2017-03-20T19:01:15.000Z"
+									}
+								]
+							}
+						]
+					},
+					{
+						"type": "directory",
+						"name": "var",
+						"files": [
+							{
+								"type": "file",
+								"name": "arr.js",
+								"size": 54,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "class2type.js",
+								"size": 82,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "concat.js",
+								"size": 81,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "document.js",
+								"size": 67,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "documentElement.js",
+								"size": 105,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "fnToString.js",
+								"size": 92,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "getProto.js",
+								"size": 73,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "hasOwn.js",
+								"size": 110,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "indexOf.js",
+								"size": 82,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "ObjectFunctionString.js",
+								"size": 110,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "pnum.js",
+								"size": 100,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "push.js",
+								"size": 79,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "rcssNum.js",
+								"size": 136,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "rnothtmlwhite.js",
+								"size": 229,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "slice.js",
+								"size": 80,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "support.js",
+								"size": 117,
+								"time": "2017-03-20T19:01:15.000Z"
+							},
+							{
+								"type": "file",
+								"name": "toString.js",
+								"size": 104,
+								"time": "2017-03-20T19:01:15.000Z"
+							}
+						]
+					},
+					{
+						"type": "file",
+						"name": "wrap.js",
+						"size": 1457,
+						"time": "2017-03-20T19:01:15.000Z"
+					}
+				]
+			}
+		]
+	},
+	"/v1/package/npm/jquery@3.2.1/flat": {
+		"default": "/dist/jquery.min.js",
+		"files": [
+			{
 				"name": "/AUTHORS.txt",
 				"size": 11218,
 				"time": "2017-03-20T19:01:15.000Z"
@@ -689,6 +1552,2009 @@
 		]
 	},
 	"/v1/package/gh/jquery/jquery@3.2.1": {
+		"default": null,
+		"files": [
+			{
+				"type": "file",
+				"name": ".babelrc",
+				"size": 28,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"type": "file",
+				"name": ".editorconfig",
+				"size": 279,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"type": "file",
+				"name": ".eslintignore",
+				"size": 315,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"type": "file",
+				"name": ".eslintrc.json",
+				"size": 56,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"type": "file",
+				"name": ".eslintrc-browser.json",
+				"size": 687,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"type": "file",
+				"name": ".eslintrc-node.json",
+				"size": 115,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"type": "file",
+				"name": ".gitattributes",
+				"size": 127,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"type": "directory",
+				"name": ".github",
+				"files": [
+					{
+						"type": "file",
+						"name": "ISSUE_TEMPLATE.md",
+						"size": 749,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "file",
+						"name": "PULL_REQUEST_TEMPLATE.md",
+						"size": 647,
+						"time": "2017-03-20T19:00:06.000Z"
+					}
+				]
+			},
+			{
+				"type": "file",
+				"name": ".gitignore",
+				"size": 255,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"type": "file",
+				"name": ".mailmap",
+				"size": 5205,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"type": "file",
+				"name": ".npmignore",
+				"size": 172,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"type": "file",
+				"name": ".npmrc",
+				"size": 16,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"type": "file",
+				"name": ".travis.yml",
+				"size": 57,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"type": "file",
+				"name": "AUTHORS.txt",
+				"size": 11218,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"type": "directory",
+				"name": "build",
+				"files": [
+					{
+						"type": "file",
+						"name": "release.js",
+						"size": 2275,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "directory",
+						"name": "release",
+						"files": [
+							{
+								"type": "file",
+								"name": "cdn.js",
+								"size": 3198,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "dist.js",
+								"size": 4028,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "ensure-sizzle.js",
+								"size": 1350,
+								"time": "2017-03-20T19:00:06.000Z"
+							}
+						]
+					},
+					{
+						"type": "directory",
+						"name": "tasks",
+						"files": [
+							{
+								"type": "file",
+								"name": "build.js",
+								"size": 11014,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "dist.js",
+								"size": 1933,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "directory",
+								"name": "lib",
+								"files": [
+									{
+										"type": "file",
+										"name": "spawn_test.js",
+										"size": 458,
+										"time": "2017-03-20T19:00:06.000Z"
+									}
+								]
+							},
+							{
+								"type": "file",
+								"name": "node_smoke_tests.js",
+								"size": 1102,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "promises_aplus_tests.js",
+								"size": 614,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "sourcemap.js",
+								"size": 559,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "testswarm.js",
+								"size": 1619,
+								"time": "2017-03-20T19:00:06.000Z"
+							}
+						]
+					}
+				]
+			},
+			{
+				"type": "file",
+				"name": "CONTRIBUTING.md",
+				"size": 7923,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"type": "directory",
+				"name": "dist",
+				"files": [
+					{
+						"type": "file",
+						"name": ".eslintrc.json",
+						"size": 490,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "file",
+						"name": "jquery.js",
+						"size": 268039,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "file",
+						"name": "jquery.min.js",
+						"size": 86659,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "file",
+						"name": "jquery.min.map",
+						"size": 131666,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "file",
+						"name": "jquery.slim.js",
+						"size": 215256,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "file",
+						"name": "jquery.slim.min.js",
+						"size": 69597,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "file",
+						"name": "jquery.slim.min.map",
+						"size": 104583,
+						"time": "2017-03-20T19:00:06.000Z"
+					}
+				]
+			},
+			{
+				"type": "directory",
+				"name": "external",
+				"files": [
+					{
+						"type": "directory",
+						"name": "npo",
+						"files": [
+							{
+								"type": "file",
+								"name": "npo.js",
+								"size": 3608,
+								"time": "2017-03-20T19:00:06.000Z"
+							}
+						]
+					},
+					{
+						"type": "directory",
+						"name": "qunit",
+						"files": [
+							{
+								"type": "file",
+								"name": "LICENSE.txt",
+								"size": 1590,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "MIT-LICENSE.txt",
+								"size": 1099,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "qunit.css",
+								"size": 5349,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "qunit.js",
+								"size": 112454,
+								"time": "2017-03-20T19:00:06.000Z"
+							}
+						]
+					},
+					{
+						"type": "directory",
+						"name": "qunit-assert-step",
+						"files": [
+							{
+								"type": "file",
+								"name": "MIT-LICENSE.txt",
+								"size": 1094,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "qunit-assert-step.js",
+								"size": 758,
+								"time": "2017-03-20T19:00:06.000Z"
+							}
+						]
+					},
+					{
+						"type": "directory",
+						"name": "requirejs",
+						"files": [
+							{
+								"type": "file",
+								"name": "require.js",
+								"size": 85921,
+								"time": "2017-03-20T19:00:06.000Z"
+							}
+						]
+					},
+					{
+						"type": "directory",
+						"name": "sinon",
+						"files": [
+							{
+								"type": "file",
+								"name": "LICENSE.txt",
+								"size": 1572,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "sinon.js",
+								"size": 207592,
+								"time": "2017-03-20T19:00:06.000Z"
+							}
+						]
+					},
+					{
+						"type": "directory",
+						"name": "sizzle",
+						"files": [
+							{
+								"type": "directory",
+								"name": "dist",
+								"files": [
+									{
+										"type": "file",
+										"name": "sizzle.js",
+										"size": 65363,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "sizzle.min.js",
+										"size": 19909,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "sizzle.min.map",
+										"size": 30763,
+										"time": "2017-03-20T19:00:06.000Z"
+									}
+								]
+							},
+							{
+								"type": "file",
+								"name": "LICENSE.txt",
+								"size": 1606,
+								"time": "2017-03-20T19:00:06.000Z"
+							}
+						]
+					}
+				]
+			},
+			{
+				"type": "file",
+				"name": "Gruntfile.js",
+				"size": 5265,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"type": "file",
+				"name": "LICENSE.txt",
+				"size": 1605,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"type": "file",
+				"name": "package.json",
+				"size": 2353,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"type": "file",
+				"name": "README.md",
+				"size": 13117,
+				"time": "2017-03-20T19:00:06.000Z"
+			},
+			{
+				"type": "directory",
+				"name": "src",
+				"files": [
+					{
+						"type": "file",
+						"name": ".eslintrc.json",
+						"size": 60,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "file",
+						"name": "ajax.js",
+						"size": 22254,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "directory",
+						"name": "ajax",
+						"files": [
+							{
+								"type": "file",
+								"name": "jsonp.js",
+								"size": 2728,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "load.js",
+								"size": 1877,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "parseXML.js",
+								"size": 559,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "script.js",
+								"size": 1583,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "directory",
+								"name": "var",
+								"files": [
+									{
+										"type": "file",
+										"name": "location.js",
+										"size": 67,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "nonce.js",
+										"size": 91,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "rquery.js",
+										"size": 60,
+										"time": "2017-03-20T19:00:06.000Z"
+									}
+								]
+							},
+							{
+								"type": "file",
+								"name": "xhr.js",
+								"size": 4298,
+								"time": "2017-03-20T19:00:06.000Z"
+							}
+						]
+					},
+					{
+						"type": "file",
+						"name": "attributes.js",
+						"size": 217,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "directory",
+						"name": "attributes",
+						"files": [
+							{
+								"type": "file",
+								"name": "attr.js",
+								"size": 3271,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "classes.js",
+								"size": 4270,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "prop.js",
+								"size": 3004,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "support.js",
+								"size": 786,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "val.js",
+								"size": 4207,
+								"time": "2017-03-20T19:00:06.000Z"
+							}
+						]
+					},
+					{
+						"type": "file",
+						"name": "callbacks.js",
+						"size": 5505,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "file",
+						"name": "core.js",
+						"size": 11197,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "directory",
+						"name": "core",
+						"files": [
+							{
+								"type": "file",
+								"name": "access.js",
+								"size": 1262,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "DOMEval.js",
+								"size": 292,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "init.js",
+								"size": 3317,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "nodeName.js",
+								"size": 178,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "parseHTML.js",
+								"size": 1604,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "ready.js",
+								"size": 2097,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "ready-no-deferred.js",
+								"size": 2237,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "readyException.js",
+								"size": 168,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "stripAndCollapse.js",
+								"size": 384,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "support.js",
+								"size": 631,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "directory",
+								"name": "var",
+								"files": [
+									{
+										"type": "file",
+										"name": "rsingleTag.js",
+										"size": 148,
+										"time": "2017-03-20T19:00:06.000Z"
+									}
+								]
+							}
+						]
+					},
+					{
+						"type": "file",
+						"name": "css.js",
+						"size": 11684,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "directory",
+						"name": "css",
+						"files": [
+							{
+								"type": "file",
+								"name": "addGetHookIf.js",
+								"size": 530,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "adjustCSS.js",
+								"size": 1897,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "curCSS.js",
+								"size": 1681,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "hiddenVisibleSelectors.js",
+								"size": 317,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "showHide.js",
+								"size": 2304,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "support.js",
+								"size": 2453,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "directory",
+								"name": "var",
+								"files": [
+									{
+										"type": "file",
+										"name": "cssExpand.js",
+										"size": 88,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "getStyles.js",
+										"size": 401,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "isHiddenWithinTree.js",
+										"size": 1290,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "rmargin.js",
+										"size": 65,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "rnumnonpx.js",
+										"size": 131,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "swap.js",
+										"size": 520,
+										"time": "2017-03-20T19:00:06.000Z"
+									}
+								]
+							}
+						]
+					},
+					{
+						"type": "file",
+						"name": "data.js",
+						"size": 4296,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "directory",
+						"name": "data",
+						"files": [
+							{
+								"type": "file",
+								"name": "Data.js",
+								"size": 3954,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "directory",
+								"name": "var",
+								"files": [
+									{
+										"type": "file",
+										"name": "acceptData.js",
+										"size": 318,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "dataPriv.js",
+										"size": 84,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "dataUser.js",
+										"size": 84,
+										"time": "2017-03-20T19:00:06.000Z"
+									}
+								]
+							}
+						]
+					},
+					{
+						"type": "file",
+						"name": "deferred.js",
+						"size": 10862,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "directory",
+						"name": "deferred",
+						"files": [
+							{
+								"type": "file",
+								"name": "exceptionHook.js",
+								"size": 640,
+								"time": "2017-03-20T19:00:06.000Z"
+							}
+						]
+					},
+					{
+						"type": "file",
+						"name": "deprecated.js",
+						"size": 801,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "file",
+						"name": "dimensions.js",
+						"size": 1729,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "file",
+						"name": "effects.js",
+						"size": 17398,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "directory",
+						"name": "effects",
+						"files": [
+							{
+								"type": "file",
+								"name": "animatedSelector.js",
+								"size": 244,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "Tween.js",
+								"size": 3252,
+								"time": "2017-03-20T19:00:06.000Z"
+							}
+						]
+					},
+					{
+						"type": "file",
+						"name": "event.js",
+						"size": 19415,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "directory",
+						"name": "event",
+						"files": [
+							{
+								"type": "file",
+								"name": "ajax.js",
+								"size": 346,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "alias.js",
+								"size": 649,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "focusin.js",
+								"size": 1512,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "support.js",
+								"size": 133,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "trigger.js",
+								"size": 5002,
+								"time": "2017-03-20T19:00:06.000Z"
+							}
+						]
+					},
+					{
+						"type": "directory",
+						"name": "exports",
+						"files": [
+							{
+								"type": "file",
+								"name": "amd.js",
+								"size": 1024,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "global.js",
+								"size": 608,
+								"time": "2017-03-20T19:00:06.000Z"
+							}
+						]
+					},
+					{
+						"type": "file",
+						"name": "jquery.js",
+						"size": 640,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "file",
+						"name": "manipulation.js",
+						"size": 12506,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "directory",
+						"name": "manipulation",
+						"files": [
+							{
+								"type": "file",
+								"name": "_evalUrl.js",
+								"size": 356,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "buildFragment.js",
+								"size": 2454,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "getAll.js",
+								"size": 650,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "setGlobalEval.js",
+								"size": 381,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "support.js",
+								"size": 1034,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "directory",
+								"name": "var",
+								"files": [
+									{
+										"type": "file",
+										"name": "rcheckableType.js",
+										"size": 79,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "rscriptType.js",
+										"size": 83,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "rtagName.js",
+										"size": 88,
+										"time": "2017-03-20T19:00:06.000Z"
+									}
+								]
+							},
+							{
+								"type": "file",
+								"name": "wrapMap.js",
+								"size": 798,
+								"time": "2017-03-20T19:00:06.000Z"
+							}
+						]
+					},
+					{
+						"type": "file",
+						"name": "offset.js",
+						"size": 6266,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "file",
+						"name": "queue.js",
+						"size": 3091,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "directory",
+						"name": "queue",
+						"files": [
+							{
+								"type": "file",
+								"name": "delay.js",
+								"size": 636,
+								"time": "2017-03-20T19:00:06.000Z"
+							}
+						]
+					},
+					{
+						"type": "file",
+						"name": "selector.js",
+						"size": 66,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "file",
+						"name": "selector-native.js",
+						"size": 6394,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "file",
+						"name": "selector-sizzle.js",
+						"size": 411,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "file",
+						"name": "serialize.js",
+						"size": 3170,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "file",
+						"name": "traversing.js",
+						"size": 4549,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "directory",
+						"name": "traversing",
+						"files": [
+							{
+								"type": "file",
+								"name": "findFilter.js",
+								"size": 2671,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "directory",
+								"name": "var",
+								"files": [
+									{
+										"type": "file",
+										"name": "dir.js",
+										"size": 371,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "rneedsContext.js",
+										"size": 128,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "siblings.js",
+										"size": 218,
+										"time": "2017-03-20T19:00:06.000Z"
+									}
+								]
+							}
+						]
+					},
+					{
+						"type": "directory",
+						"name": "var",
+						"files": [
+							{
+								"type": "file",
+								"name": "arr.js",
+								"size": 54,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "class2type.js",
+								"size": 82,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "concat.js",
+								"size": 81,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "document.js",
+								"size": 67,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "documentElement.js",
+								"size": 105,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "fnToString.js",
+								"size": 92,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "getProto.js",
+								"size": 73,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "hasOwn.js",
+								"size": 110,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "indexOf.js",
+								"size": 82,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "ObjectFunctionString.js",
+								"size": 110,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "pnum.js",
+								"size": 100,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "push.js",
+								"size": 79,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "rcssNum.js",
+								"size": 136,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "rnothtmlwhite.js",
+								"size": 229,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "slice.js",
+								"size": 80,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "support.js",
+								"size": 117,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "toString.js",
+								"size": 104,
+								"time": "2017-03-20T19:00:06.000Z"
+							}
+						]
+					},
+					{
+						"type": "file",
+						"name": "wrap.js",
+						"size": 1457,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "file",
+						"name": "wrapper.js",
+						"size": 1611,
+						"time": "2017-03-20T19:00:06.000Z"
+					}
+				]
+			},
+			{
+				"type": "directory",
+				"name": "test",
+				"files": [
+					{
+						"type": "file",
+						"name": ".eslintrc.json",
+						"size": 1272,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "directory",
+						"name": "data",
+						"files": [
+							{
+								"type": "file",
+								"name": "1x1.jpg",
+								"size": 693,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "directory",
+								"name": "ajax",
+								"files": [
+									{
+										"type": "file",
+										"name": "content-type.php",
+										"size": 105,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "evalScript.php",
+										"size": 121,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "method.php",
+										"size": 41,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "onunload.html",
+										"size": 699,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "unreleasedXHR.html",
+										"size": 642,
+										"time": "2017-03-20T19:00:06.000Z"
+									}
+								]
+							},
+							{
+								"type": "file",
+								"name": "atom+xml.php",
+								"size": 69,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "badcall.js",
+								"size": 13,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "badjson.js",
+								"size": 17,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "cleanScript.html",
+								"size": 157,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "directory",
+								"name": "core",
+								"files": [
+									{
+										"type": "file",
+										"name": "aliased.html",
+										"size": 547,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "cc_on.html",
+										"size": 472,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "dont_return.php",
+										"size": 20,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "dynamic_ready.html",
+										"size": 823,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "onready.html",
+										"size": 544,
+										"time": "2017-03-20T19:00:06.000Z"
+									}
+								]
+							},
+							{
+								"type": "directory",
+								"name": "css",
+								"files": [
+									{
+										"type": "file",
+										"name": "cssWidthBeforeDocReady.html",
+										"size": 374,
+										"time": "2017-03-20T19:00:06.000Z"
+									}
+								]
+							},
+							{
+								"type": "file",
+								"name": "dashboard.xml",
+								"size": 298,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "directory",
+								"name": "data",
+								"files": [
+									{
+										"type": "file",
+										"name": "dataAttrs.html",
+										"size": 441,
+										"time": "2017-03-20T19:00:06.000Z"
+									}
+								]
+							},
+							{
+								"type": "directory",
+								"name": "dimensions",
+								"files": [
+									{
+										"type": "file",
+										"name": "documentLarge.html",
+										"size": 540,
+										"time": "2017-03-20T19:00:06.000Z"
+									}
+								]
+							},
+							{
+								"type": "file",
+								"name": "echoData.php",
+								"size": 48,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "echoQuery.php",
+								"size": 39,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "errorWithJSON.php",
+								"size": 134,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "errorWithText.php",
+								"size": 70,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "etag.php",
+								"size": 490,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "directory",
+								"name": "event",
+								"files": [
+									{
+										"type": "file",
+										"name": "focusElem.html",
+										"size": 397,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "focusinCrossFrame.html",
+										"size": 480,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "interactiveReady.html",
+										"size": 737,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "onbeforeunload.html",
+										"size": 426,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "promiseReady.html",
+										"size": 529,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "syncReady.html",
+										"size": 766,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "triggerunload.html",
+										"size": 454,
+										"time": "2017-03-20T19:00:06.000Z"
+									}
+								]
+							},
+							{
+								"type": "file",
+								"name": "headers.php",
+								"size": 522,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "if_modified_since.php",
+								"size": 378,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "iframe.html",
+								"size": 109,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "iframeTest.js",
+								"size": 255,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "jquery-1.9.1.js",
+								"size": 270158,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "json.php",
+								"size": 276,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "json_obj.js",
+								"size": 41,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "jsonp.php",
+								"size": 383,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "longLoadScript.php",
+								"size": 77,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "directory",
+								"name": "manipulation",
+								"files": [
+									{
+										"type": "file",
+										"name": "iframe-denied.html",
+										"size": 910,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "scripts-context.html",
+										"size": 275,
+										"time": "2017-03-20T19:00:06.000Z"
+									}
+								]
+							},
+							{
+								"type": "file",
+								"name": "name.html",
+								"size": 81,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "name.php",
+								"size": 493,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "nocontent.php",
+								"size": 45,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "directory",
+								"name": "offset",
+								"files": [
+									{
+										"type": "file",
+										"name": "absolute.html",
+										"size": 1836,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "body.html",
+										"size": 906,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "fixed.html",
+										"size": 1337,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "relative.html",
+										"size": 1608,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "scroll.html",
+										"size": 1531,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "static.html",
+										"size": 1488,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "table.html",
+										"size": 1297,
+										"time": "2017-03-20T19:00:06.000Z"
+									}
+								]
+							},
+							{
+								"type": "file",
+								"name": "params_html.php",
+								"size": 199,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "readywait.html",
+								"size": 1806,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "script.php",
+								"size": 248,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "directory",
+								"name": "selector",
+								"files": [
+									{
+										"type": "file",
+										"name": "html5_selector.html",
+										"size": 2066,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "sizzle_cache.html",
+										"size": 589,
+										"time": "2017-03-20T19:00:06.000Z"
+									}
+								]
+							},
+							{
+								"type": "file",
+								"name": "statusText.php",
+								"size": 58,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "directory",
+								"name": "support",
+								"files": [
+									{
+										"type": "file",
+										"name": "bodyBackground.html",
+										"size": 743,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "csp.js",
+										"size": 84,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "csp.log",
+										"size": 0,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "csp.php",
+										"size": 565,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "csp-clean.php",
+										"size": 53,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "csp-log.php",
+										"size": 58,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "getComputedSupport.js",
+										"size": 257,
+										"time": "2017-03-20T19:00:06.000Z"
+									}
+								]
+							},
+							{
+								"type": "file",
+								"name": "test.html",
+								"size": 208,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "test.php",
+								"size": 252,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "test2.html",
+								"size": 126,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "test3.html",
+								"size": 245,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "testbar.php",
+								"size": 84,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "testinit.js",
+								"size": 9237,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "testrunner.js",
+								"size": 5625,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "testsuite.css",
+								"size": 2044,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "text.php",
+								"size": 287,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "with_fries.xml",
+								"size": 740,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "with_fries_over_jsonp.php",
+								"size": 193,
+								"time": "2017-03-20T19:00:06.000Z"
+							}
+						]
+					},
+					{
+						"type": "file",
+						"name": "delegatetest.html",
+						"size": 6401,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "file",
+						"name": "hovertest.html",
+						"size": 3966,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "file",
+						"name": "index.html",
+						"size": 12407,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "directory",
+						"name": "integration",
+						"files": [
+							{
+								"type": "directory",
+								"name": "data",
+								"files": [
+									{
+										"type": "file",
+										"name": "gh-1764-fullscreen.js",
+										"size": 3085,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "gh-1764-fullscreen-iframe.css",
+										"size": 197,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "gh-1764-fullscreen-iframe.html",
+										"size": 572,
+										"time": "2017-03-20T19:00:06.000Z"
+									}
+								]
+							},
+							{
+								"type": "file",
+								"name": "gh-1764-fullscreen.html",
+								"size": 817,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "gh-2343-ie-radio-click.html",
+								"size": 844,
+								"time": "2017-03-20T19:00:06.000Z"
+							}
+						]
+					},
+					{
+						"type": "file",
+						"name": "jquery.js",
+						"size": 1586,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "file",
+						"name": "localfile.html",
+						"size": 1912,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "file",
+						"name": "networkerror.html",
+						"size": 1552,
+						"time": "2017-03-20T19:00:06.000Z"
+					},
+					{
+						"type": "directory",
+						"name": "node_smoke_tests",
+						"files": [
+							{
+								"type": "file",
+								"name": ".eslintrc.json",
+								"size": 133,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "document_missing.js",
+								"size": 316,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "document_passed.js",
+								"size": 392,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "document_present_originally.js",
+								"size": 452,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "iterable_with_native_symbol.js",
+								"size": 182,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "iterable_with_symbol_polyfill.js",
+								"size": 320,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "directory",
+								"name": "lib",
+								"files": [
+									{
+										"type": "file",
+										"name": "ensure_global_not_created.js",
+										"size": 494,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "ensure_iterability_es6.js",
+										"size": 547,
+										"time": "2017-03-20T19:00:06.000Z"
+									},
+									{
+										"type": "file",
+										"name": "ensure_jquery.js",
+										"size": 303,
+										"time": "2017-03-20T19:00:06.000Z"
+									}
+								]
+							}
+						]
+					},
+					{
+						"type": "directory",
+						"name": "promises_aplus_adapters",
+						"files": [
+							{
+								"type": "file",
+								"name": ".eslintrc.json",
+								"size": 60,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "deferred.js",
+								"size": 401,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "when.js",
+								"size": 1116,
+								"time": "2017-03-20T19:00:06.000Z"
+							}
+						]
+					},
+					{
+						"type": "directory",
+						"name": "unit",
+						"files": [
+							{
+								"type": "file",
+								"name": "ajax.js",
+								"size": 74187,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "animation.js",
+								"size": 8483,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "attributes.js",
+								"size": 71585,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "basic.js",
+								"size": 9661,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "callbacks.js",
+								"size": 11683,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "core.js",
+								"size": 62834,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "css.js",
+								"size": 60026,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "data.js",
+								"size": 32302,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "deferred.js",
+								"size": 33811,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "deprecated.js",
+								"size": 5021,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "dimensions.js",
+								"size": 28225,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "effects.js",
+								"size": 77118,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "event.js",
+								"size": 92907,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "exports.js",
+								"size": 211,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "manipulation.js",
+								"size": 101905,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "offset.js",
+								"size": 25786,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "queue.js",
+								"size": 8557,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "ready.js",
+								"size": 4804,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "selector.js",
+								"size": 25282,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "serialize.js",
+								"size": 9382,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "support.js",
+								"size": 6633,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "traversing.js",
+								"size": 50233,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "tween.js",
+								"size": 10535,
+								"time": "2017-03-20T19:00:06.000Z"
+							},
+							{
+								"type": "file",
+								"name": "wrap.js",
+								"size": 15015,
+								"time": "2017-03-20T19:00:06.000Z"
+							}
+						]
+					},
+					{
+						"type": "file",
+						"name": "xhtml.php",
+						"size": 136,
+						"time": "2017-03-20T19:00:06.000Z"
+					}
+				]
+			}
+		]
+	},
+	"/v1/package/gh/jquery/jquery@3.2.1/flat": {
 		"default": null,
 		"files": [
 			{

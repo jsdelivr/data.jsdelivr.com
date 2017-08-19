@@ -167,6 +167,34 @@ describe('v1', function () {
 			});
 	});
 
+	it('GET /v1/package/npm/jquery@3.2.1/flat', () => {
+		return chai.request(server)
+			.get('/v1/package/npm/jquery@3.2.1/flat')
+			.then((response) => {
+				expect(response).to.have.status(200);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response.body).to.deep.equal(expectedResponses['/v1/package/npm/jquery@3.2.1/flat']);
+			});
+	});
+
+	it('GET /v1/package/npm/jquery@3.2.1/flat - cache hit', () => {
+		return chai.request(server)
+			.get('/v1/package/npm/jquery@3.2.1/flat')
+			.then((response) => {
+				expect(response).to.have.status(200);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response.body).to.deep.equal(expectedResponses['/v1/package/npm/jquery@3.2.1/flat']);
+			});
+	});
+
 	it('GET /v1/package/resolve/npm/jquery@3.2', () => {
 		return chai.request(server)
 			.get('/v1/package/resolve/npm/jquery@3.2')
@@ -304,6 +332,34 @@ describe('v1', function () {
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
 				expect(response.body).to.deep.equal(expectedResponses['/v1/package/gh/jquery/jquery@3.2.1']);
+			});
+	});
+
+	it('GET /v1/package/gh/jquery/jquery@3.2.1/flat', () => {
+		return chai.request(server)
+			.get('/v1/package/gh/jquery/jquery@3.2.1/flat')
+			.then((response) => {
+				expect(response).to.have.status(200);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response.body).to.deep.equal(expectedResponses['/v1/package/gh/jquery/jquery@3.2.1/flat']);
+			});
+	});
+
+	it('GET /v1/package/gh/jquery/jquery@3.2.1/flat - cache hit', () => {
+		return chai.request(server)
+			.get('/v1/package/gh/jquery/jquery@3.2.1/flat')
+			.then((response) => {
+				expect(response).to.have.status(200);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response.body).to.deep.equal(expectedResponses['/v1/package/gh/jquery/jquery@3.2.1/flat']);
 			});
 	});
 
