@@ -2,8 +2,8 @@
 # jsDelivr API
 
 [![Build Status](https://img.shields.io/travis/jsdelivr/data.jsdelivr.com.svg?style=flat-square)](https://travis-ci.org/jsdelivr/data.jsdelivr.com)
-[![dependencies](https://img.shields.io/david/jsdelivr/data.jsdelivr.com.svg?style=flat-square)](https://david-dm.org/jsdelivr/data.jsdelivr.com#info=dependencies)
-[![devDependencies](https://img.shields.io/david/dev/jsdelivr/data.jsdelivr.com.svg?style=flat-square)](https://david-dm.org/jsdelivr/data.jsdelivr.com#info=devDependencies)
+[![dependencies](https://img.shields.io/david/jsdelivr/data.jsdelivr.com.svg?style=flat-square)](https://david-dm.org/jsdelivr/data.jsdelivr.com)
+[![devDependencies](https://img.shields.io/david/dev/jsdelivr/data.jsdelivr.com.svg?style=flat-square)](https://david-dm.org/jsdelivr/data.jsdelivr.com?type=dev)
 
 The jsDelivr API allows you to:
  - [list package versions](#list-package-versions)
