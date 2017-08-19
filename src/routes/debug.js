@@ -6,7 +6,7 @@ const serverConfig = config.get('server');
 let commit = 'git not available';
 
 try {
-	commit = childProcess.execSync('git log -1 "--format=%cd - commit %H"', { encoding: 'utf8' });
+	commit = childProcess.execSync('git log -1 "--format=%cd - commit %H"', { encoding: 'utf8' }).trim();
 } catch (e) {}
 
 module.exports = async (ctx) => {

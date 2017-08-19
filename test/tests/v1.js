@@ -28,6 +28,7 @@ describe('v1', function () {
 		await db.schema.dropTableIfExists('knex_migrations_lock');
 		await db.schema.dropTableIfExists('log_file');
 		await db.schema.dropTableIfExists('logs');
+		await db.schema.dropTableIfExists('other_hits');
 		await db.schema.dropTableIfExists('package');
 		await db.schema.dropTableIfExists('package_version');
 		await db.schema.dropTableIfExists('referrer');

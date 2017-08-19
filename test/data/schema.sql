@@ -77,6 +77,13 @@ CREATE TABLE logs
 	megabytesTraffic INT(10) UNSIGNED NULL
 );
 
+CREATE TABLE other_hits
+(
+	date DATE             NOT NULL
+		PRIMARY KEY,
+	hits INT(10) UNSIGNED NULL
+);
+
 CREATE TABLE package
 (
 	id   INT(10) UNSIGNED AUTO_INCREMENT
@@ -127,3 +134,4 @@ CREATE TABLE referrer_hits
 		ON UPDATE CASCADE
 		ON DELETE CASCADE
 );
+

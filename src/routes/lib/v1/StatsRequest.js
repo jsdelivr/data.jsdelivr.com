@@ -1,6 +1,7 @@
 const BaseRequest = require('./BaseRequest');
 const Package = require('../../../models/Package');
 const FileHits = require('../../../models/FileHits');
+const OtherHits = require('../../../models/OtherHits');
 const Logs = require('../../../models/Logs');
 const sumDeep = require('../../utils/sumDeep');
 
@@ -10,13 +11,23 @@ class StatsRequest extends BaseRequest {
 	}
 
 	async handleNetwork () {
-		let datesHits = await FileHits.getSumByDate(...this.dateRange);
+		let fileHits = await FileHits.getSumByDate(...this.dateRange);
+		let otherHits = await OtherHits.getSumByDate(...this.dateRange);
 		let datesTraffic = await Logs.getMegabytesByDate(...this.dateRange);
+		let sumFileHits = sumDeep(fileHits);
+		let sumOtherHits = sumDeep(otherHits);
 
 		this.ctx.body = {
 			hits: {
-				total: sumDeep(datesHits),
-				dates: datesHits,
+				total: sumFileHits + sumOtherHits,
+				packages: {
+					total: sumFileHits,
+					dates: fileHits,
+				},
+				other: {
+					total: sumOtherHits,
+					dates: otherHits,
+				},
 			},
 			megabytes: {
 				total: sumDeep(datesTraffic),
