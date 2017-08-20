@@ -80,18 +80,6 @@ https://data.jsdelivr.com/v1/package/npm/jquery@3.2.1
     "default": "/dist/jquery.min.js",
     "files": [
         {
-            "type": "file",
-            "name": "AUTHORS.txt",
-            "size": 11218,
-            "time": "2017-03-20T19:01:15.000Z"
-        },
-        {
-            "type": "file",
-            "name": "bower.json",
-            "size": 190,
-            "time": "2017-03-20T19:01:15.000Z"
-        },
-        {
             "type": "directory",
             "name": "dist",
             "files": [
@@ -99,6 +87,18 @@ https://data.jsdelivr.com/v1/package/npm/jquery@3.2.1
                     "type": "file",
                     "name": "core.js",
                     "size": 11197,
+                    "time": "2017-03-20T19:01:15.000Z"
+                },
+                {
+                    "type": "file",
+                    "name": "jquery.js",
+                    "size": 268039,
+                    "time": "2017-03-20T19:01:15.000Z"
+                },
+                {
+                    "type": "file",
+                    "name": "jquery.min.js",
+                    "size": 86659,
                     "time": "2017-03-20T19:01:15.000Z"
                 },
                 ...

@@ -79,7 +79,7 @@ class PackageRequest extends BaseRequest {
 		}
 
 		let tree = [];
-		let dirs = [];
+		let dirs = {};
 		let fn = (entry, files = tree, dir = '/') => {
 			let name = entry.name.substr(1);
 			let index = name.indexOf('/');
@@ -89,7 +89,11 @@ class PackageRequest extends BaseRequest {
 				let absDirName = dir + '/' + dirName;
 
 				if (!dirs.hasOwnProperty(absDirName)) {
-					files.push(dirs[absDirName] = { type: 'directory', name: dirName, files: [] });
+					dirs[absDirName] = { type: 'directory', name: dirName, files: [] };
+
+					// List directories before files.
+					let firstFileIndex = files.findIndex(item => item.type === 'file');
+					files.splice(firstFileIndex !== -1 ? firstFileIndex : 0, 0, dirs[absDirName]);
 				}
 
 				return fn({ name: entry.name.substr(index + 1), size: entry.size, time: entry.time }, dirs[absDirName].files, absDirName);
