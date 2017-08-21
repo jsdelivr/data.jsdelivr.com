@@ -310,7 +310,7 @@ async function fetchGitHubMetadata (user, repo) {
 			}
 		});
 
-		versions.push(..._.map(response.data, 'name'));
+		versions.push(..._.map(response.data, 'name').filter(v => v));
 
 		if (response.data && githubApi.hasNextPage(response)) {
 			return githubApi.getNextPage(response).then(loadMore);
