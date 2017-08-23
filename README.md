@@ -25,6 +25,10 @@ https://data.jsdelivr.com/v1
  - All responses are in JSON.
  - All error responses have `status` and `message` properties.
  - Additional [query string options](#query-string-options) are supported where appropriate.
+ 
+## Restrictions
+
+Neither jsDelivr CDN nor this API supports packages larger than 50 MB. Trying to get a list of files using the API will result in a `403` response.
 
 ### List package versions
 
