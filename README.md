@@ -15,8 +15,8 @@ The jsDelivr API allows you to:
  - [get a badge for your project](#get-a-badge-for-your-project)
  
 The API is free to use and imposes no rate limits.
-Please note that usage statistics are available with a 48 hour delay
-and data older than one year may not be available.
+Please note that usage statistics are available with a 48 hour delay.
+We only have data starting from Aug 16, 2017 and data older than one year may not be available.
 
 ## Endpoints
 
