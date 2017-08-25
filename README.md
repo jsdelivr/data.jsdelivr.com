@@ -90,7 +90,7 @@ https://data.jsdelivr.com/v1/package/npm/jquery@3.2.1
                 {
                     "type": "file",
                     "name": "core.js",
-                    "hash": "BSsbXsDErniq/HpuhULFor8x1CpA2sPPwQLlEoEri+0=",
+                    "hash": "BSsbXsDErniq/HpuhULFor8x1CpA2sPPwQLlEoEri+0=", // base64-encoded sha256
                     "time": "2017-03-20T19:01:15.000Z",
                     "size": 11197
                 },
