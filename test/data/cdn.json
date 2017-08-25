@@ -1,5 +1,5 @@
 {
-	"/npm/jquery@3.2.1/+json": {
+	"/npm/jquery@3.2.1/+private-json": {
 		"version": "3.2.1",
 		"default": "/dist/jquery.min.js",
 		"files": [
@@ -600,7 +600,7 @@
 			}
 		]
 	},
-	"/gh/jquery/jquery@3.2.1/+json": {
+	"/gh/jquery/jquery@3.2.1/+private-json": {
 		"version": "3.2.1",
 		"default": null,
 		"files": [
@@ -2011,5 +2011,5 @@
 			}
 		]
 	},
-	"/npm/emojione@3.1.1/+json": "Package size exceeded the configured limit of 50 MB."
+	"/npm/emojione@3.1.1/+private-json": "Package size exceeded the configured limit of 50 MB."
 }

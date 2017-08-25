@@ -49,7 +49,7 @@ class PackageRequest extends BaseRequest {
 	}
 
 	async fetchFiles () {
-		let url = `${v1Config.cdn.sourceUrl}/${this.params.type}/${this.params.name}@${this.params.version}/+json`;
+		let url = `${v1Config.cdn.sourceUrl}/${this.params.type}/${this.params.name}@${this.params.version}/+private-json`;
 
 		return fetchCache.get(url, () => {
 			return got(url, { json: true, timeout: 30000 }).then((response) => {
@@ -102,14 +102,15 @@ class PackageRequest extends BaseRequest {
 					files.splice(firstFileIndex !== -1 ? firstFileIndex : 0, 0, dirs[absDirName]);
 				}
 
-				return fn({ name: entry.name.substr(index + 1), size: entry.size, time: entry.time }, dirs[absDirName].files, absDirName);
+				return fn({ name: entry.name.substr(index + 1), hash: entry.hash, time: entry.time, size: entry.size }, dirs[absDirName].files, absDirName);
 			}
 
 			files.push({
 				type: 'file',
 				name,
-				size: entry.size,
+				hash: entry.hash,
 				time: entry.time,
+				size: entry.size,
 			});
 		};
 

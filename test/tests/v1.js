@@ -55,8 +55,8 @@ describe('v1', function () {
 			.reply(200, upstreamNpmResponses['/jquery']);
 
 		nock('https://cdn.jsdelivr.net')
-			.get('/npm/jquery@3.2.1/+json')
-			.reply(200, upstreamCdnResponses['/npm/jquery@3.2.1/+json']);
+			.get('/npm/jquery@3.2.1/+private-json')
+			.reply(200, upstreamCdnResponses['/npm/jquery@3.2.1/+private-json']);
 
 		nock('https://api.github.com')
 			.get('/repos/jquery/jquery/tags')
@@ -69,16 +69,16 @@ describe('v1', function () {
 			.reply(200, upstreamGitHubResponses['/repos/jquery/jquery2/tags']);
 
 		nock('https://cdn.jsdelivr.net')
-			.get('/gh/jquery/jquery@3.2.1/+json')
-			.reply(200, upstreamCdnResponses['/gh/jquery/jquery@3.2.1/+json']);
+			.get('/gh/jquery/jquery@3.2.1/+private-json')
+			.reply(200, upstreamCdnResponses['/gh/jquery/jquery@3.2.1/+private-json']);
 
 		nock('https://registry.npmjs.cf')
 			.get('/emojione')
 			.reply(200, upstreamNpmResponses['/emojione']);
 
 		nock('https://cdn.jsdelivr.net')
-			.get('/npm/emojione@3.1.1/+json')
-			.reply(403, upstreamCdnResponses['/npm/emojione@3.1.1/+json']);
+			.get('/npm/emojione@3.1.1/+private-json')
+			.reply(403, upstreamCdnResponses['/npm/emojione@3.1.1/+private-json']);
 
 		nock('https://registry.npmjs.org')
 			.get(/.*/)
