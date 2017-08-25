@@ -90,20 +90,23 @@ https://data.jsdelivr.com/v1/package/npm/jquery@3.2.1
                 {
                     "type": "file",
                     "name": "core.js",
-                    "size": 11197,
-                    "time": "2017-03-20T19:01:15.000Z"
+                    "hash": "BSsbXsDErniq/HpuhULFor8x1CpA2sPPwQLlEoEri+0=",
+                    "time": "2017-03-20T19:01:15.000Z",
+                    "size": 11197
                 },
                 {
                     "type": "file",
                     "name": "jquery.js",
-                    "size": 268039,
-                    "time": "2017-03-20T19:01:15.000Z"
+                    "hash": "DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=",
+                    "time": "2017-03-20T19:01:15.000Z",
+                    "size": 268039
                 },
                 {
                     "type": "file",
                     "name": "jquery.min.js",
-                    "size": 86659,
-                    "time": "2017-03-20T19:01:15.000Z"
+                    "hash": "hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=",
+                    "time": "2017-03-20T19:01:15.000Z",
+                    "size": 86659
                 },
                 ...
             ]
