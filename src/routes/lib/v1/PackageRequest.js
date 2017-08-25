@@ -5,6 +5,8 @@ const GitHubApi = require('github');
 const badge = require('gh-badges');
 const NumberAbbreviate = require('number-abbreviate');
 const number = new NumberAbbreviate([ 'k', 'M', 'B', 'T' ]);
+const PromiseCache = require('../../../lib/promise-cache');
+const fetchCache = new PromiseCache({ maxAge: 60 * 1000 }).autoClear();
 
 const BaseRequest = require('./BaseRequest');
 const Package = require('../../../models/Package');
@@ -47,17 +49,21 @@ class PackageRequest extends BaseRequest {
 	}
 
 	async fetchFiles () {
-		return got(`${v1Config.cdn.sourceUrl}/${this.params.type}/${this.params.name}@${this.params.version}/+json`, { json: true, timeout: 30000 }).then((response) => {
-			return _.pick(response.body, [ 'default', 'files' ]);
-		}).catch((error) => {
-			if (error instanceof got.HTTPError && error.response.statusCode === 403) {
-				return {
-					status: error.response.statusCode,
-					message: error.response.body,
-				};
-			}
+		let url = `${v1Config.cdn.sourceUrl}/${this.params.type}/${this.params.name}@${this.params.version}/+json`;
 
-			throw error;
+		return fetchCache.get(url, () => {
+			return got(url, { json: true, timeout: 30000 }).then((response) => {
+				return _.pick(response.body, [ 'default', 'files' ]);
+			}).catch((error) => {
+				if (error instanceof got.HTTPError && error.response.statusCode === 403) {
+					return {
+						status: error.response.statusCode,
+						message: error.response.body,
+					};
+				}
+
+				throw error;
+			});
 		});
 	}
 
@@ -302,29 +308,31 @@ module.exports = PackageRequest;
  * @return {Promise<Object>}
  */
 async function fetchGitHubMetadata (user, repo) {
-	let versions = [];
-	let loadMore = (response) => {
-		response.data.forEach((tag) => {
-			if (tag.name.charAt(0) === 'v') {
-				tag.name = tag.name.substr(1);
+	return fetchCache.get(`gh/${user}/${repo}`, () => {
+		let versions = [];
+		let loadMore = (response) => {
+			response.data.forEach((tag) => {
+				if (tag.name.charAt(0) === 'v') {
+					tag.name = tag.name.substr(1);
+				}
+			});
+
+			versions.push(..._.map(response.data, 'name').filter(v => v));
+
+			if (response.data && githubApi.hasNextPage(response)) {
+				return githubApi.getNextPage(response).then(loadMore);
 			}
+
+			return { tags: [], versions };
+		};
+
+		return githubApi.repos.getTags({ repo, owner: user, per_page: 100 }).then(loadMore).catch((err) => {
+			if (err.code === 403) {
+				logger.error({ err }, `GitHub API rate limit exceeded.`);
+			}
+
+			throw err;
 		});
-
-		versions.push(..._.map(response.data, 'name').filter(v => v));
-
-		if (response.data && githubApi.hasNextPage(response)) {
-			return githubApi.getNextPage(response).then(loadMore);
-		}
-
-		return { tags: [], versions };
-	};
-
-	return githubApi.repos.getTags({ repo, owner: user, per_page: 100 }).then(loadMore).catch((err) => {
-		if (err.code === 403) {
-			logger.error({ err }, `GitHub API rate limit exceeded.`);
-		}
-
-		throw err;
 	});
 }
 
@@ -334,23 +342,25 @@ async function fetchGitHubMetadata (user, repo) {
  * @return {Promise<Object>}
  */
 async function fetchNpmMetadata (name) {
-	name = name.charAt(0) === '@' ? '@' + encodeURIComponent(name.substr(1)) : encodeURIComponent(name);
-	let response;
+	return fetchCache.get(`npm/${name}`, async () => {
+		name = name.charAt(0) === '@' ? '@' + encodeURIComponent(name.substr(1)) : encodeURIComponent(name);
+		let response;
 
-	if (typeof v1Config.npm.sourceUrl === 'string') {
-		response = await got(`${v1Config.npm.sourceUrl}/${name}`, { json: true, timeout: 30000 });
-	} else {
-		response = await Promise.any(_.map(v1Config.npm.sourceUrl, (sourceUrl) => {
-			return got(`${sourceUrl}/${name}`, { json: true, timeout: 30000 });
-		}));
-	}
+		if (typeof v1Config.npm.sourceUrl === 'string') {
+			response = await got(`${v1Config.npm.sourceUrl}/${name}`, { json: true, timeout: 30000 });
+		} else {
+			response = await Promise.any(_.map(v1Config.npm.sourceUrl, (sourceUrl) => {
+				return got(`${sourceUrl}/${name}`, { json: true, timeout: 30000 });
+			}));
+		}
 
-	if (!response.body || !response.body.versions) {
-		throw new Error(`Unable to retrieve versions for package ${name}.`);
-	}
+		if (!response.body || !response.body.versions) {
+			throw new Error(`Unable to retrieve versions for package ${name}.`);
+		}
 
-	return {
-		tags: response.body['dist-tags'],
-		versions: Object.keys(response.body.versions).sort(semver.rcompare),
-	};
+		return {
+			tags: response.body['dist-tags'],
+			versions: Object.keys(response.body.versions).sort(semver.rcompare),
+		};
+	});
 }
