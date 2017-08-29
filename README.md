@@ -284,12 +284,12 @@ https://data.jsdelivr.com/v1/stats/packages
 ```
 https://data.jsdelivr.com/v1/package/npm/jquery/badge
 ```
-![](https://data.jsdelivr.com/v1/package/npm/jquery/badge)
+![https://www.jsdelivr.com/package/npm/jquery](https://data.jsdelivr.com/v1/package/npm/jquery/badge)
 
 ```
 https://data.jsdelivr.com/v1/package/npm/jquery/badge?style=rounded
 ```
-![](https://data.jsdelivr.com/v1/package/npm/jquery/badge?style=rounded)
+![https://www.jsdelivr.com/package/npm/jquery](https://data.jsdelivr.com/v1/package/npm/jquery/badge?style=rounded)
 
 ## Query string options
 
