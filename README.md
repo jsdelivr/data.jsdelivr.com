@@ -16,7 +16,7 @@ The jsDelivr API allows you to:
  
 The API is free to use and imposes no rate limits.
 Please note that usage statistics are available with a 48 hour delay.
-We only have data starting from Aug 16, 2017 and data older than one year may not be available.
+We only have data starting from Aug 19, 2017 and data older than one year may not be available.
 
 ## Endpoints
 
