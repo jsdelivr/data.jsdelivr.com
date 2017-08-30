@@ -1,4 +1,3 @@
-# WORK IN PROGRESS
 # jsDelivr API
 
 [![Build Status](https://img.shields.io/travis/jsdelivr/data.jsdelivr.com.svg?style=flat-square)](https://travis-ci.org/jsdelivr/data.jsdelivr.com)
