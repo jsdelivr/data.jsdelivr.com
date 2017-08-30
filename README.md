@@ -17,6 +17,10 @@ The API is free to use and imposes no rate limits.
 Please note that usage statistics are available with a 48 hour delay.
 We only have data starting from Aug 19, 2017 and data older than one year may not be available.
 
+## Let us know how you use this API
+
+If you create a tool/plugin/etc. which uses this API, please include a link to your tool in the `User-Agent` header so that we can learn more about how this API is being used.
+
 ## Endpoints
 
 https://data.jsdelivr.com/v1
