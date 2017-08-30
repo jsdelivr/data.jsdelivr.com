@@ -34,7 +34,7 @@ module.exports = {
 		},
 		npm: {
 			sourceUrl: [ 'https://registry.npmjs.org', 'https://registry.npmjs.cf' ],
-			maxAge: 60,
+			maxAge: 5 * 60,
 		},
 		gh: {
 			apiToken: '',
