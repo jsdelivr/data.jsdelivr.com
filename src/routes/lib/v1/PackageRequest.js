@@ -3,6 +3,7 @@ const semver = require('semver');
 const config = require('config');
 const GitHubApi = require('github');
 const badge = require('gh-badges');
+const isSemverStatic = require('is-semver-static');
 const NumberAbbreviate = require('number-abbreviate');
 const number = new NumberAbbreviate([ 'k', 'M', 'B', 'T' ]);
 const PromiseCache = require('../../../lib/promise-cache');
@@ -189,6 +190,10 @@ class PackageRequest extends BaseRequest {
 	async handleResolveVersion () {
 		try {
 			this.ctx.body = { version: await this.getResolvedVersion() };
+
+			if (this.ctx.body.version && isSemverStatic(this.params.version)) {
+				this.ctx.maxAge = 24 * 60 * 60;
+			}
 		} catch (e) {
 			return this.responseNotFound();
 		}
