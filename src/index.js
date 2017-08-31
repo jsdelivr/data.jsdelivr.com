@@ -64,6 +64,11 @@ if (server.env === 'development') {
 server.use(koaResponseTime());
 
 /**
+ * Gzip compression.
+ */
+server.use(koaCompress());
+
+/**
  * ETag support.
  */
 server.use(koaConditionalGet());
@@ -82,11 +87,6 @@ server.use((ctx, next) => {
 	ctx.status = 301;
 	ctx.redirect(path.replace(/\/+$/, '') + (querystring ? `?${querystring}` : ''));
 });
-
-/**
- * Gzip compression.
- */
-server.use(koaCompress());
 
 /**
  * Pretty-print JSON.
