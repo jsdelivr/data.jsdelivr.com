@@ -6,7 +6,7 @@ module.exports = (limit, page) => {
 		l = 100;
 	}
 
-	if (!Number.isInteger(p) || p < 0) {
+	if (!Number.isInteger(p) || p < 1) {
 		p = 1;
 	}
 

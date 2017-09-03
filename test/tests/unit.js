@@ -60,6 +60,7 @@ describe('Unit tests', () => {
 			expect(pagination(1.12, 0.5)).to.deep.equal([ 100, 1 ]);
 			expect(pagination(1000, 2)).to.deep.equal([ 100, 2 ]);
 			expect(pagination('1x', '1x')).to.deep.equal([ 100, 1 ]);
+			expect(pagination(100, 0)).to.deep.equal([ 100, 1 ]);
 		});
 
 		it('valid parameters', () => {
