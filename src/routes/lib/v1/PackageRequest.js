@@ -228,7 +228,7 @@ class PackageRequest extends BaseRequest {
 			let total = sumDeep(data, 2);
 
 			this.ctx.body = {
-				rank: await this.getRank(),
+				rank: total ? await this.getRank() : null,
 				total,
 				dates: _.mapValues(data, versions => ({ total: sumDeep(versions), versions })),
 			};
@@ -237,7 +237,7 @@ class PackageRequest extends BaseRequest {
 			let total = sumDeep(data, 2);
 
 			this.ctx.body = {
-				rank: await this.getRank(),
+				rank: total ? await this.getRank() : null,
 				total,
 				versions: _.mapValues(data, dates => ({ total: sumDeep(dates), dates })),
 			};
