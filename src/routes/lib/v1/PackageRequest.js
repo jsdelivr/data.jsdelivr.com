@@ -4,6 +4,7 @@ const config = require('config');
 const GitHubApi = require('github');
 const badge = require('gh-badges');
 const isSemverStatic = require('is-semver-static');
+const vCompare = require('v-compare');
 const NumberAbbreviate = require('number-abbreviate');
 const number = new NumberAbbreviate([ 'k', 'M', 'B', 'T' ]);
 const PromiseCache = require('../../../lib/promise-cache');
@@ -329,7 +330,7 @@ async function fetchGitHubMetadata (user, repo) {
 				return githubApi.getNextPage(response).then(loadMore);
 			}
 
-			return { tags: [], versions };
+			return { tags: [], versions: versions.sort(vCompare.rCompare) };
 		};
 
 		return githubApi.repos.getTags({ repo, owner: user, per_page: 100 }).then(loadMore).catch((err) => {
