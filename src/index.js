@@ -45,6 +45,7 @@ let router = new Router();
 server.name = serverConfig.name;
 server.keys = serverConfig.keys;
 server.silent = server.env === 'production';
+server.proxy = true;
 
 /**
  * Handle favicon requests before anything else.
