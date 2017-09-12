@@ -1,6 +1,15 @@
 {
 	"/repos/jquery/jquery/tags": [
 		{
+			"name": "v3.1.0",
+			"zipball_url": "https://api.github.com/repos/jquery/jquery/zipball/3.1.0",
+			"tarball_url": "https://api.github.com/repos/jquery/jquery/tarball/3.1.0",
+			"commit": {
+				"sha": "d0d2d9b9b004cf0c6763c871646e01ca67579253",
+				"url": "https://api.github.com/repos/jquery/jquery/commits/d0d2d9b9b004cf0c6763c871646e01ca67579253"
+			}
+		},
+		{
 			"name": "3.1.0",
 			"zipball_url": "https://api.github.com/repos/jquery/jquery/zipball/3.1.0",
 			"tarball_url": "https://api.github.com/repos/jquery/jquery/tarball/3.1.0",

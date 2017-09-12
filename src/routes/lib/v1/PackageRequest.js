@@ -330,7 +330,7 @@ async function fetchGitHubMetadata (user, repo) {
 				return githubApi.getNextPage(response).then(loadMore);
 			}
 
-			return { tags: [], versions: versions.sort(vCompare.rCompare) };
+			return { tags: [], versions: _.uniq(versions.sort(vCompare.rCompare)) };
 		};
 
 		return githubApi.repos.getTags({ repo, owner: user, per_page: 100 }).then(loadMore).catch((err) => {
