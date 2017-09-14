@@ -524,6 +524,20 @@ describe('v1', function () {
 			});
 	});
 
+	it('GET /v1/package/npm/package-1/stats?from=2017-05-01&to=2017-05-30', () => {
+		return chai.request(server)
+			.get('/v1/package/npm/package-1/stats?from=2017-05-01&to=2017-05-30')
+			.then((response) => {
+				expect(response).to.have.status(200);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response.body).to.deep.equal(expectedResponses['/v1/package/npm/package-1/stats?from=2017-05-01&to=2017-05-30']);
+			});
+	});
+
 	it('GET /v1/package/npm/package-1/stats/date?from=2017-06-26&to=2017-07-25', () => {
 		return chai.request(server)
 			.get('/v1/package/npm/package-1/stats/date?from=2017-06-26&to=2017-07-25')
@@ -535,6 +549,20 @@ describe('v1', function () {
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
 				expect(response.body).to.deep.equal(expectedResponses['/v1/package/npm/package-1/stats/date?from=2017-06-26&to=2017-07-25']);
+			});
+	});
+
+	it('GET /v1/package/npm/package-1/stats/date?from=2017-05-01&to=2017-05-30', () => {
+		return chai.request(server)
+			.get('/v1/package/npm/package-1/stats/date?from=2017-05-01&to=2017-05-30')
+			.then((response) => {
+				expect(response).to.have.status(200);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response.body).to.deep.equal(expectedResponses['/v1/package/npm/package-1/stats/date?from=2017-05-01&to=2017-05-30']);
 			});
 	});
 
@@ -594,6 +622,20 @@ describe('v1', function () {
 			});
 	});
 
+	it('GET /v1/package/npm/package-1@1.1.1/stats?from=2017-05-01&to=2017-05-30', () => {
+		return chai.request(server)
+			.get('/v1/package/npm/package-1@1.1.1/stats?from=2017-05-01&to=2017-05-30')
+			.then((response) => {
+				expect(response).to.have.status(200);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response.body).to.deep.equal(expectedResponses['/v1/package/npm/package-1@1.1.1/stats?from=2017-05-01&to=2017-05-30']);
+			});
+	});
+
 	it('GET /v1/package/npm/package-1@1.1.1/stats/date?from=2017-07-24&to=2017-07-25', () => {
 		return chai.request(server)
 			.get('/v1/package/npm/package-1@1.1.1/stats/date?from=2017-07-24&to=2017-07-25')
@@ -605,6 +647,20 @@ describe('v1', function () {
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
 				expect(response.body).to.deep.equal(expectedResponses['/v1/package/npm/package-1@1.1.1/stats/date?from=2017-07-24&to=2017-07-25']);
+			});
+	});
+
+	it('GET /v1/package/npm/package-1@1.1.1/stats/date?from=2017-05-01&to=2017-05-30', () => {
+		return chai.request(server)
+			.get('/v1/package/npm/package-1@1.1.1/stats/date?from=2017-05-01&to=2017-05-30')
+			.then((response) => {
+				expect(response).to.have.status(200);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response.body).to.deep.equal(expectedResponses['/v1/package/npm/package-1@1.1.1/stats/date?from=2017-05-01&to=2017-05-30']);
 			});
 	});
 
@@ -637,6 +693,20 @@ describe('v1', function () {
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
 				expect(response.body).to.deep.equal(expectedResponses['/v1/stats/network?from=2017-07-24&to=2017-07-25']);
+			});
+	});
+
+	it('GET /v1/stats/network?from=2017-05-01&to=2017-05-30', () => {
+		return chai.request(server)
+			.get('/v1/stats/network?from=2017-05-01&to=2017-05-30')
+			.then((response) => {
+				expect(response).to.have.status(200);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response.body).to.deep.equal(expectedResponses['/v1/stats/network?from=2017-05-01&to=2017-05-30']);
 			});
 	});
 

@@ -3,6 +3,7 @@ const Package = require('../../../models/Package');
 const FileHits = require('../../../models/FileHits');
 const OtherHits = require('../../../models/OtherHits');
 const Logs = require('../../../models/Logs');
+const dateRange = require('../../utils/dateRange');
 const sumDeep = require('../../utils/sumDeep');
 
 class StatsRequest extends BaseRequest {
@@ -22,16 +23,16 @@ class StatsRequest extends BaseRequest {
 				total: sumFileHits + sumOtherHits,
 				packages: {
 					total: sumFileHits,
-					dates: fileHits,
+					dates: dateRange.fill(fileHits, ...this.dateRange),
 				},
 				other: {
 					total: sumOtherHits,
-					dates: otherHits,
+					dates: dateRange.fill(otherHits, ...this.dateRange),
 				},
 			},
 			megabytes: {
 				total: sumDeep(datesTraffic),
-				dates: datesTraffic,
+				dates: dateRange.fill(datesTraffic, ...this.dateRange),
 			},
 			meta: await Logs.getMetaStats(...this.dateRange),
 		};

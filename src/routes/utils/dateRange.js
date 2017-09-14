@@ -37,3 +37,14 @@ module.exports = (from, to, defaultDays = 30) => {
 
 	return range;
 };
+
+module.exports.fill = (data, from, to, defaultValue = 0) => {
+	let result = {};
+
+	for (let date = new Date(from); date <= to; date.setDate(date.getDate() + 1)) {
+		let key = date.toISOString().substr(0, 10);
+		result[key] = data[key] || defaultValue;
+	}
+
+	return result;
+};

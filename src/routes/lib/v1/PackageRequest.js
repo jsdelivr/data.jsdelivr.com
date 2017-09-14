@@ -13,6 +13,7 @@ const fetchCache = new PromiseCache({ maxAge: 60 * 1000 }).autoClear();
 const BaseRequest = require('./BaseRequest');
 const Package = require('../../../models/Package');
 const PackageVersion = require('../../../models/PackageVersion');
+const dateRange = require('../../utils/dateRange');
 const sumDeep = require('../../utils/sumDeep');
 
 badge.loadFont(require.resolve('dejavu-sans/fonts/dejavu-sans-webfont.ttf'), (err) => {
@@ -231,7 +232,7 @@ class PackageRequest extends BaseRequest {
 			this.ctx.body = {
 				rank: total ? await this.getRank() : null,
 				total,
-				dates: _.mapValues(data, versions => ({ total: sumDeep(versions), versions })),
+				dates: dateRange.fill(_.mapValues(data, versions => ({ total: sumDeep(versions), versions })), ...this.dateRange, { total: 0, versions: {} }),
 			};
 		} else {
 			let data = await Package.getSumVersionHitsPerDateByName(this.params.type, this.params.name, ...this.dateRange);
@@ -240,7 +241,7 @@ class PackageRequest extends BaseRequest {
 			this.ctx.body = {
 				rank: total ? await this.getRank() : null,
 				total,
-				versions: _.mapValues(data, dates => ({ total: sumDeep(dates), dates })),
+				versions: _.mapValues(data, dates => ({ total: sumDeep(dates), dates: dateRange.fill(dates, ...this.dateRange) })),
 			};
 		}
 
@@ -284,14 +285,14 @@ class PackageRequest extends BaseRequest {
 
 			this.ctx.body = {
 				total: sumDeep(data, 2),
-				dates: _.mapValues(data, files => ({ total: sumDeep(files), files })),
+				dates: dateRange.fill(_.mapValues(data, files => ({ total: sumDeep(files), files })), ...this.dateRange, { total: 0, files: {} }),
 			};
 		} else {
 			let data = await PackageVersion.getSumFileHitsPerDateByName(this.params.type, this.params.name, this.params.version, ...this.dateRange);
 
 			this.ctx.body = {
 				total: sumDeep(data, 2),
-				files: _.mapValues(data, dates => ({ total: sumDeep(dates), dates })),
+				files: _.mapValues(data, dates => ({ total: sumDeep(dates), dates: dateRange.fill(dates, ...this.dateRange) })),
 			};
 		}
 
