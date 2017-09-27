@@ -43,10 +43,8 @@ class PackageRequest extends BaseRequest {
 		super(ctx);
 
 		this.keys = {
-			files: `package/${this.params.type}/${this.params.name}@${this.params.version}/files`,
-			metadata: `package/${this.params.type}/${this.params.name}/metadata`,
-			packageStats: `package/${this.params.type}/${this.params.name}/stats`,
-			versionsStats: `package/${this.params.type}/${this.params.name}@${this.params.version}/stats`,
+			files: `c:package/${this.params.type}/${this.params.name}@${this.params.version}/files`,
+			metadata: `c:package/${this.params.type}/${this.params.name}/metadata`,
 			rank: `package/${this.params.type}/${this.params.name}/rank`,
 		};
 	}
@@ -122,14 +120,14 @@ class PackageRequest extends BaseRequest {
 	}
 
 	async getFilesAsJson () {
-		let files = await redis.getAsync(this.keys.files);
+		let files = await redis.getCompressedAsync(this.keys.files);
 
 		if (files) {
 			return files;
 		}
 
 		files = JSON.stringify(await this.fetchFiles(), null, '\t');
-		await redis.setAsync(this.keys.files, files);
+		await redis.setCompressedAsync(this.keys.files, files);
 		return files;
 	}
 
@@ -138,14 +136,14 @@ class PackageRequest extends BaseRequest {
 	}
 
 	async getMetadataAsJson () {
-		let metadata = await redis.getAsync(this.keys.metadata);
+		let metadata = await redis.getCompressedAsync(this.keys.metadata);
 
 		if (metadata) {
 			return metadata;
 		}
 
 		metadata = JSON.stringify(await this.fetchMetadata(), null, '\t');
-		await redis.setAsync(this.keys.metadata, metadata, 'EX', v1Config[this.params.type].maxAge);
+		await redis.setCompressedAsync(this.keys.metadata, metadata, 'EX', v1Config[this.params.type].maxAge);
 		return metadata;
 	}
 
