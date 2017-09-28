@@ -195,6 +195,14 @@ if (require.main === module) {
 			process.exit(1);
 		}, 10000);
 	});
+
+	process.on('unhandledRejection', (error) => {
+		logger.fatal(error, 'Unhandled rejection. Exiting.');
+
+		setTimeout(() => {
+			process.exit(1);
+		}, 10000);
+	});
 }
 
 module.exports = server.callback();
