@@ -1,7 +1,6 @@
 // This needs to run before any require() call.
 // istanbul ignore next
 if (require.main === module) {
-	const trace = require('@risingstack/trace');
 	global.OPBEAT_CLIENT = require('opbeat').start({
 		appId: '9bedaa8213',
 		organizationId: '091f361b83f64dbcbac3d3c318636efc',
@@ -14,7 +13,6 @@ if (require.main === module) {
 	});
 
 	require('./lib/startup');
-	require('./lib/trace-cpu')(trace);
 }
 
 const config = require('config');
