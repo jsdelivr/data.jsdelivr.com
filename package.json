@@ -51,9 +51,9 @@
 		"nyc": "^11.2.1"
 	},
 	"scripts": {
-		"coverage": "nyc mocha test/tests.js",
+		"coverage": "nyc mocha --exit test/tests.js",
 		"lint": "eslint src test",
-		"mocha": "mocha test/tests.js",
+		"mocha": "mocha --exit test/tests.js",
 		"test": "npm run lint && npm run mocha"
 	},
 	"repository": {
