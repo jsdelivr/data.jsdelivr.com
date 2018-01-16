@@ -39,6 +39,10 @@ class FileHitsCdn extends BaseModel {
 		Object.assign(this, properties);
 		return new Proxy(this, BaseModel.ProxyHandler);
 	}
+
+	static async deleteOlderThan (date) {
+		return db(this.table).where('date', '<', date).delete();
+	}
 }
 
 module.exports = FileHitsCdn;
