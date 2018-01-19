@@ -64,6 +64,11 @@ describe('v1', function () {
 			.reply(200, upstreamGitHubResponses['/repos/jquery/jquery/tags']);
 
 		nock('https://api.github.com')
+			.get('/repos/adobe/source-sans-pro/tags')
+			.query({ per_page: 100 })
+			.reply(200, upstreamGitHubResponses['/repos/adobe/source-sans-pro/tags']);
+
+		nock('https://api.github.com')
 			.get('/repos/jquery/jquery2/tags')
 			.query({ per_page: 100 })
 			.reply(200, upstreamGitHubResponses['/repos/jquery/jquery2/tags']);
@@ -71,6 +76,10 @@ describe('v1', function () {
 		nock('https://cdn.jsdelivr.net')
 			.get('/gh/jquery/jquery@3.2.1/+private-json')
 			.reply(200, upstreamCdnResponses['/gh/jquery/jquery@3.2.1/+private-json']);
+
+		nock('https://cdn.jsdelivr.net')
+			.get('/gh/adobe/source-sans-pro@2.020R-ro%2F1.075R-it/+private-json')
+			.reply(200, upstreamCdnResponses['/gh/adobe/source-sans-pro@2.020R-ro%2F1.075R-it/+private-json']);
 
 		nock('https://registry.npmjs.cf')
 			.get('/emojione')
@@ -279,6 +288,20 @@ describe('v1', function () {
 			});
 	});
 
+	it('GET /v1/package/resolve/gh/adobe/source-sans-pro@2.020R-ro%2F1.075R-it', () => {
+		return chai.request(server)
+			.get('/v1/package/resolve/gh/adobe/source-sans-pro@2.020R-ro%2F1.075R-it')
+			.then((response) => {
+				expect(response).to.have.status(200);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response.body).to.deep.equal({ version: '2.020R-ro/1.075R-it' });
+			});
+	});
+
 	it('GET /v1/package/gh/jquery/jquery', () => {
 		return chai.request(server)
 			.get('/v1/package/gh/jquery/jquery')
@@ -307,6 +330,20 @@ describe('v1', function () {
 			});
 	});
 
+	it('GET /v1/package/gh/adobe/source-sans-pro', () => {
+		return chai.request(server)
+			.get('/v1/package/gh/adobe/source-sans-pro')
+			.then((response) => {
+				expect(response).to.have.status(200);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response.body).to.deep.equal(expectedResponses['/v1/package/gh/adobe/source-sans-pro']);
+			});
+	});
+
 	it('GET /v1/package/gh/jquery/jquery@3.2.1', () => {
 		return chai.request(server)
 			.get('/v1/package/gh/jquery/jquery@3.2.1')
@@ -332,6 +369,20 @@ describe('v1', function () {
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
 				expect(response.body).to.deep.equal(expectedResponses['/v1/package/gh/jquery/jquery@3.2.1']);
+			});
+	});
+
+	it('GET /v1/package/gh/adobe/source-sans-pro@2.020R-ro%2F1.075R-it', () => {
+		return chai.request(server)
+			.get('/v1/package/gh/adobe/source-sans-pro@2.020R-ro%2F1.075R-it')
+			.then((response) => {
+				expect(response).to.have.status(200);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response.body).to.deep.equal(expectedResponses['/v1/package/gh/adobe/source-sans-pro@2.020R-ro%2F1.075R-it']);
 			});
 	});
 

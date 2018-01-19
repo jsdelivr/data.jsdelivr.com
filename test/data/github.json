@@ -280,6 +280,179 @@
 			}
 		}
 	],
+	"/repos/adobe/source-sans-pro/tags": [
+		{
+			"name": "woff2",
+			"zipball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/zipball/woff2",
+			"tarball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/tarball/woff2",
+			"commit": {
+				"sha": "069ff1988a0314bf836afd597f436ff40103d961",
+				"url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/commits/069ff1988a0314bf836afd597f436ff40103d961"
+			}
+		},
+		{
+			"name": "variable-fonts",
+			"zipball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/zipball/variable-fonts",
+			"tarball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/tarball/variable-fonts",
+			"commit": {
+				"sha": "ff3bdec0a9ed367bfd6b05572f5dabebf030e7bb",
+				"url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/commits/ff3bdec0a9ed367bfd6b05572f5dabebf030e7bb"
+			}
+		},
+		{
+			"name": "2.020R-ro/1.075R-it",
+			"zipball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/zipball/2.020R-ro/1.075R-it",
+			"tarball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/tarball/2.020R-ro/1.075R-it",
+			"commit": {
+				"sha": "778e10a3656a899e0bc9f8a54d50a1ab4ba55308",
+				"url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/commits/778e10a3656a899e0bc9f8a54d50a1ab4ba55308"
+			}
+		},
+		{
+			"name": "2.020-ro/1.075-it",
+			"zipball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/zipball/2.020-ro/1.075-it",
+			"tarball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/tarball/2.020-ro/1.075-it",
+			"commit": {
+				"sha": "dcf70932c8e161860f62a48787fd1c89d1c0ef6d",
+				"url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/commits/dcf70932c8e161860f62a48787fd1c89d1c0ef6d"
+			}
+		},
+		{
+			"name": "2.010R-ro/1.065R-it",
+			"zipball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/zipball/2.010R-ro/1.065R-it",
+			"tarball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/tarball/2.010R-ro/1.065R-it",
+			"commit": {
+				"sha": "a956d20e2ab25577b6692d3222f020e80b9dc405",
+				"url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/commits/a956d20e2ab25577b6692d3222f020e80b9dc405"
+			}
+		},
+		{
+			"name": "2.010-ro/1.065-it",
+			"zipball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/zipball/2.010-ro/1.065-it",
+			"tarball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/tarball/2.010-ro/1.065-it",
+			"commit": {
+				"sha": "3aaab358d36e3720f43a994547ad744dfe185a6a",
+				"url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/commits/3aaab358d36e3720f43a994547ad744dfe185a6a"
+			}
+		},
+		{
+			"name": "1.055",
+			"zipball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/zipball/1.055",
+			"tarball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/tarball/1.055",
+			"commit": {
+				"sha": "b7a9beccb3e18de2b281a5314a391e2de1b48beb",
+				"url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/commits/b7a9beccb3e18de2b281a5314a391e2de1b48beb"
+			}
+		},
+		{
+			"name": "1.050",
+			"zipball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/zipball/1.050",
+			"tarball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/tarball/1.050",
+			"commit": {
+				"sha": "7f13fcba4ace8e8597b3d77435b5d446fbda9d32",
+				"url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/commits/7f13fcba4ace8e8597b3d77435b5d446fbda9d32"
+			}
+		},
+		{
+			"name": "1.050R",
+			"zipball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/zipball/1.050R",
+			"tarball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/tarball/1.050R",
+			"commit": {
+				"sha": "754023d0db6b640ee6115d548159150e79b00524",
+				"url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/commits/754023d0db6b640ee6115d548159150e79b00524"
+			}
+		},
+		{
+			"name": "1.040",
+			"zipball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/zipball/1.040",
+			"tarball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/tarball/1.040",
+			"commit": {
+				"sha": "dea72aae2e904e6948337db1644a6732d11cddaa",
+				"url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/commits/dea72aae2e904e6948337db1644a6732d11cddaa"
+			}
+		},
+		{
+			"name": "1.040R",
+			"zipball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/zipball/1.040R",
+			"tarball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/tarball/1.040R",
+			"commit": {
+				"sha": "fcc0942d1629f6abe63322f955d24a3e8a2d762c",
+				"url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/commits/fcc0942d1629f6abe63322f955d24a3e8a2d762c"
+			}
+		},
+		{
+			"name": "1.038",
+			"zipball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/zipball/1.038",
+			"tarball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/tarball/1.038",
+			"commit": {
+				"sha": "f0faf23c4d2b4b901e040b17941d64371d12feda",
+				"url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/commits/f0faf23c4d2b4b901e040b17941d64371d12feda"
+			}
+		},
+		{
+			"name": "1.038R",
+			"zipball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/zipball/1.038R",
+			"tarball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/tarball/1.038R",
+			"commit": {
+				"sha": "43fb681ff563d3646e62d982855387b984638d7c",
+				"url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/commits/43fb681ff563d3646e62d982855387b984638d7c"
+			}
+		},
+		{
+			"name": "1.036",
+			"zipball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/zipball/1.036",
+			"tarball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/tarball/1.036",
+			"commit": {
+				"sha": "fd21cd41481a156f2c369a8c6f701a1e718e42ed",
+				"url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/commits/fd21cd41481a156f2c369a8c6f701a1e718e42ed"
+			}
+		},
+		{
+			"name": "1.036R",
+			"zipball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/zipball/1.036R",
+			"tarball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/tarball/1.036R",
+			"commit": {
+				"sha": "4989856d722bbea14ef0344de91cee637bba6d45",
+				"url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/commits/4989856d722bbea14ef0344de91cee637bba6d45"
+			}
+		},
+		{
+			"name": "1.034",
+			"zipball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/zipball/1.034",
+			"tarball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/tarball/1.034",
+			"commit": {
+				"sha": "b7a8b40f7665add7ed24fae8e9d0264e06a2adff",
+				"url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/commits/b7a8b40f7665add7ed24fae8e9d0264e06a2adff"
+			}
+		},
+		{
+			"name": "1.034R",
+			"zipball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/zipball/1.034R",
+			"tarball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/tarball/1.034R",
+			"commit": {
+				"sha": "9f2eb5817a7b66f69c9a3c87a79178f11fd16eef",
+				"url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/commits/9f2eb5817a7b66f69c9a3c87a79178f11fd16eef"
+			}
+		},
+		{
+			"name": "1.033",
+			"zipball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/zipball/1.033",
+			"tarball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/tarball/1.033",
+			"commit": {
+				"sha": "6ca2b31d7ae19d67568721339173f84201844b96",
+				"url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/commits/6ca2b31d7ae19d67568721339173f84201844b96"
+			}
+		},
+		{
+			"name": "1.033R",
+			"zipball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/zipball/1.033R",
+			"tarball_url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/tarball/1.033R",
+			"commit": {
+				"sha": "d769ba78ce0f11afb14c736a867117633cc11880",
+				"url": "https://api.github.com/repos/adobe-fonts/source-sans-pro/commits/d769ba78ce0f11afb14c736a867117633cc11880"
+			}
+		}
+	],
 	"/repos/jquery/jquery2/tags": [
 		{
 			"name": "v3.2.1",

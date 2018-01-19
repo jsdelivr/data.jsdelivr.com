@@ -2411,5 +2411,539 @@
 			}
 		]
 	},
+	"/gh/adobe/source-sans-pro@2.020R-ro%2F1.075R-it/+private-json": {
+		"version": "2.020R-ro/1.075R-it",
+		"default": null,
+		"files": [
+			{
+				"name": "/bower.json",
+				"hash": "lfJO2Y/MVgAyL4I8Y2M1F3SpXjBn48CX3AxcO9OkL4g=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 519
+			},
+			{
+				"name": "/EOT/SourceSansPro-Black.eot",
+				"hash": "AW859g9ruTTwq2OTAFkW97D90rxStrLoR/s16B/MFV8=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 108125
+			},
+			{
+				"name": "/EOT/SourceSansPro-BlackIt.eot",
+				"hash": "pn2gixgSc1fTlCzZHrnYCw0BhMr33I1DD0bMnZgV3y8=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 46608
+			},
+			{
+				"name": "/EOT/SourceSansPro-Bold.eot",
+				"hash": "6jdp8T7lHwAqC40XsLMDivBEUwfNo3XrWR2N5Duj/MQ=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 112325
+			},
+			{
+				"name": "/EOT/SourceSansPro-BoldIt.eot",
+				"hash": "zwujxVDXxKLwBr9nRZmoMMK90b1vAQ3i/KNbbGqkK1Q=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 47398
+			},
+			{
+				"name": "/EOT/SourceSansPro-ExtraLight.eot",
+				"hash": "AuMSKlYQibZr7tRLNxGzHnkmPVgPBnI2QjAL1PosCpY=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 108781
+			},
+			{
+				"name": "/EOT/SourceSansPro-ExtraLightIt.eot",
+				"hash": "a6M5a6BATsqi8BQbjcwXeQImABj+g7ZsJvFJZZjPGxw=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 46089
+			},
+			{
+				"name": "/EOT/SourceSansPro-It.eot",
+				"hash": "KPtAQaZMEmlWd48gE+g+7UqFrJe/CegcrJ6VVWZMXNo=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 47537
+			},
+			{
+				"name": "/EOT/SourceSansPro-Light.eot",
+				"hash": "oCJRPWZk7vWmzXmmsMMD3QfuQ3pYtmOi56qFbwJWIow=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 112332
+			},
+			{
+				"name": "/EOT/SourceSansPro-LightIt.eot",
+				"hash": "g0n+WAXYxeyOfGzMl8pv6lQ6BGRy4ki72RrV5uJ1aWU=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 47428
+			},
+			{
+				"name": "/EOT/SourceSansPro-Regular.eot",
+				"hash": "54VIHkS/NSettNKSuPb3GLKtAauliBHPtULWdBlKJGE=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 113255
+			},
+			{
+				"name": "/EOT/SourceSansPro-Semibold.eot",
+				"hash": "qYrLSNOuptwf5uMvY+x5jebyTD8PkuTv8ol6tMPNt2o=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 112905
+			},
+			{
+				"name": "/EOT/SourceSansPro-SemiboldIt.eot",
+				"hash": "Wpcf3ZSGZNzJtjQU+/SIwX1bkQiBiGr2yKK9Rooh1iQ=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 47609
+			},
+			{
+				"name": "/LICENSE.txt",
+				"hash": "ZTqvmBnjPPHis1I8XU1sPa6SXXcMtFYwMPlmVTIcouk=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 4628
+			},
+			{
+				"name": "/OTF/SourceSansPro-Black.otf",
+				"hash": "5EfNR6YodNyU1quXqE2+t/Lwq6PkkLnwEotsg5mpbzc=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 234176
+			},
+			{
+				"name": "/OTF/SourceSansPro-BlackIt.otf",
+				"hash": "BxmNEWdZvXWv7un3qXXJQ1YI+lfgZHoJNJydAbkOo9A=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 81120
+			},
+			{
+				"name": "/OTF/SourceSansPro-Bold.otf",
+				"hash": "m4vRdPl0EzNOMXvoCNFND/j27+15ppKZ2EOEx+EOkxI=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 235128
+			},
+			{
+				"name": "/OTF/SourceSansPro-BoldIt.otf",
+				"hash": "uUZmh5+yIarXD0eRB60B+Mk1AMb9KneBHaQS02REGrU=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 80392
+			},
+			{
+				"name": "/OTF/SourceSansPro-ExtraLight.otf",
+				"hash": "+szduxEpLzlS04JIoCCHhW6ksexh8oKPLmAY0FESepg=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 221580
+			},
+			{
+				"name": "/OTF/SourceSansPro-ExtraLightIt.otf",
+				"hash": "Buw2Br4ohie0UlldJeRuLFCU70U+L1w3EHY5BVfFNJU=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 76400
+			},
+			{
+				"name": "/OTF/SourceSansPro-It.otf",
+				"hash": "6Qs15flld/A6J+ZZxLaWZuReFpHyvOL8L4g67/kjhBk=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 79724
+			},
+			{
+				"name": "/OTF/SourceSansPro-Light.otf",
+				"hash": "SzJQ/8gYLpPXkiHDa49qIUYA9wgrhDFC75wlJYHhO7Y=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 226032
+			},
+			{
+				"name": "/OTF/SourceSansPro-LightIt.otf",
+				"hash": "xdyafeVJsDLjQbRWTvn48hWrk4+a3Ow2RC3l+ae7ApA=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 77816
+			},
+			{
+				"name": "/OTF/SourceSansPro-Regular.otf",
+				"hash": "awlrRyBtj3iixJry8q5Gs12TsOPPEFqf6+9ZFEqi6uI=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 229588
+			},
+			{
+				"name": "/OTF/SourceSansPro-Semibold.otf",
+				"hash": "7julyIQAsiuIDYUgLOghQ9xeGYYb94gLf0wy1CY+ltU=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 232680
+			},
+			{
+				"name": "/OTF/SourceSansPro-SemiboldIt.otf",
+				"hash": "gu1B7tCxglTBu818Qxer+/pVrAVqXPYgBPVhwMRPc1w=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 80316
+			},
+			{
+				"name": "/README.md",
+				"hash": "+XETx2Y0noSlXEyLiUY1u7C2cNYyK9t2IEGlfzG0/Qs=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 1020
+			},
+			{
+				"name": "/source-sans-pro.css",
+				"hash": "AuTUbHF9Tz4cSPvxIfVGnmM7PGjJvN9XvRiXON0Hsq4=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 5718
+			},
+			{
+				"name": "/TTF/SourceSansPro-Black.ttf",
+				"hash": "HllZXr4ERdubzqXeDQ+i4IdmgJ0cl3idk4txp37PPPU=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 289364
+			},
+			{
+				"name": "/TTF/SourceSansPro-BlackIt.ttf",
+				"hash": "bNrrUO3y3j9iIvTlPnoi6DjulTP9Z6UhokyK2XPUio8=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 103404
+			},
+			{
+				"name": "/TTF/SourceSansPro-Bold.ttf",
+				"hash": "Lvw6ldB28tBMWSjArWmLfGHMMC1vbnnpZDzTci977MI=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 291424
+			},
+			{
+				"name": "/TTF/SourceSansPro-BoldIt.ttf",
+				"hash": "6rPmx2xnfdooey5W9B9xjMl1oUFQ9y74LgqH8bVurEw=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 103608
+			},
+			{
+				"name": "/TTF/SourceSansPro-ExtraLight.ttf",
+				"hash": "hXX8Wl6enk/mfgspNtSOg9by+2J+T08TCMKmTAu8dDY=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 291652
+			},
+			{
+				"name": "/TTF/SourceSansPro-ExtraLightIt.ttf",
+				"hash": "m8Mv4bg2B1ZK2HtBcdPbb4YupjRaIqOhKUgC1/tOq+g=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 104768
+			},
+			{
+				"name": "/TTF/SourceSansPro-It.ttf",
+				"hash": "NhM+n1CLC0xjnoSyoJhVNQvgsTcArXKatRmqeOXEjSA=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 104236
+			},
+			{
+				"name": "/TTF/SourceSansPro-Light.ttf",
+				"hash": "jZzYnjzbzAj5X+pEKzzjZpWLowEE1njpYEEm5f0lZdg=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 293220
+			},
+			{
+				"name": "/TTF/SourceSansPro-LightIt.ttf",
+				"hash": "Pt23o5Wb3m2c0Lgd9nD4z0DG/173fm6p1Elgzim/C30=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 104616
+			},
+			{
+				"name": "/TTF/SourceSansPro-Regular.ttf",
+				"hash": "t386cA7dD8DexzJY+ILVw5Jsd/XK9oAKIB0hZlaNIwk=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 293956
+			},
+			{
+				"name": "/TTF/SourceSansPro-Semibold.ttf",
+				"hash": "tED9Qv1aVOGyUnMd7KnMhmBL7m/6mSgfWHTDR26xfq4=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 292404
+			},
+			{
+				"name": "/TTF/SourceSansPro-SemiboldIt.ttf",
+				"hash": "52h6VVg4eqQsNAAS8krcbUR/Q8+vOXTnX9kf/2RR/nk=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 104020
+			},
+			{
+				"name": "/WOFF/OTF/SourceSansPro-Black.otf.woff",
+				"hash": "n0GKF8XnTGWqZNWw0rKO8BQVQGoF1y8LDscfeJocUx8=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 121420
+			},
+			{
+				"name": "/WOFF/OTF/SourceSansPro-BlackIt.otf.woff",
+				"hash": "tXvBFWWvvlxVhNVabxHcmMwdtZYdF3u5v8/E1RoijLU=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 50592
+			},
+			{
+				"name": "/WOFF/OTF/SourceSansPro-Bold.otf.woff",
+				"hash": "fehYK/pwv8lHSShodknG77bcmQ+rAqeCDQubUix+3qE=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 124508
+			},
+			{
+				"name": "/WOFF/OTF/SourceSansPro-BoldIt.otf.woff",
+				"hash": "OyXjA/8u+2W92FLgsDWolt+LsLk/KT6JEVZpPf78GHU=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 50708
+			},
+			{
+				"name": "/WOFF/OTF/SourceSansPro-ExtraLight.otf.woff",
+				"hash": "YUrEtCuAYLnTSK8s8gr+WneDPkWA5fXxVG+8Eu1qjJU=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 113168
+			},
+			{
+				"name": "/WOFF/OTF/SourceSansPro-ExtraLightIt.otf.woff",
+				"hash": "bkBEgmoCVMbLxlQQH5D6HrIrxcEVJBoXXyR9hqVji9M=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 46812
+			},
+			{
+				"name": "/WOFF/OTF/SourceSansPro-It.otf.woff",
+				"hash": "NClFLVERP72vbhJ4kF90gbyiBAt9SoptzKwIiboNGec=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 50556
+			},
+			{
+				"name": "/WOFF/OTF/SourceSansPro-Light.otf.woff",
+				"hash": "utLiZwLs66Z2NCZ5vN1abtlmsQwp6CQX6mttW3fsQAY=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 119280
+			},
+			{
+				"name": "/WOFF/OTF/SourceSansPro-LightIt.otf.woff",
+				"hash": "Sua8UxgX8Wn9A+SHkHE9M1UlmAiso06BLcVMjnLkhzg=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 48956
+			},
+			{
+				"name": "/WOFF/OTF/SourceSansPro-Regular.otf.woff",
+				"hash": "NL64MHRZ0EcZeJACU0pnSeG3pAAh3lEL68vFUNZQcAY=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 121876
+			},
+			{
+				"name": "/WOFF/OTF/SourceSansPro-Semibold.otf.woff",
+				"hash": "DWdJEAfZqhPz9OGwSGbsLTF3xQEdiq6lAUX4A7FBCjU=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 123400
+			},
+			{
+				"name": "/WOFF/OTF/SourceSansPro-SemiboldIt.otf.woff",
+				"hash": "LqvcxrXjQ02ax2sS59j8/WejWMYWiyUeMeaJJNQkxug=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 50616
+			},
+			{
+				"name": "/WOFF/TTF/SourceSansPro-Black.ttf.woff",
+				"hash": "tCDeNV4gWYP65akNHKJ4SR/W4GE+Dl86LEy8HeIHaOU=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 113800
+			},
+			{
+				"name": "/WOFF/TTF/SourceSansPro-BlackIt.ttf.woff",
+				"hash": "YgOP1WdZp69OFhY8wSzf1PlE5porjchG1kU3QdisU1Y=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 49704
+			},
+			{
+				"name": "/WOFF/TTF/SourceSansPro-Bold.ttf.woff",
+				"hash": "V/sff1rAzGsboJxwt2JSTv9yDfndZ4wRkku0l4p+AIU=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 117872
+			},
+			{
+				"name": "/WOFF/TTF/SourceSansPro-BoldIt.ttf.woff",
+				"hash": "OM6+tjKe9aI8RIfn4TKuuWxigjfenffgVLejTfWE5Xk=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 50608
+			},
+			{
+				"name": "/WOFF/TTF/SourceSansPro-ExtraLight.ttf.woff",
+				"hash": "VLD7akO37KY+jIxZavppawM8+Gxxdxp9RnzpdAPasNk=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 114336
+			},
+			{
+				"name": "/WOFF/TTF/SourceSansPro-ExtraLightIt.ttf.woff",
+				"hash": "fSyVpYyuXdfiE4QnDXVsPrh2Ce033zXBKua1Fr6M9aA=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 49684
+			},
+			{
+				"name": "/WOFF/TTF/SourceSansPro-It.ttf.woff",
+				"hash": "xLBqj8bdcInxSETrWkbJBI2tgbRxh79A5PqJ2kqun7k=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 51012
+			},
+			{
+				"name": "/WOFF/TTF/SourceSansPro-Light.ttf.woff",
+				"hash": "NwPEPHmPE35eOPjcYMr7dhzHkvhfy7xgFI6uDNFlpeg=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 118284
+			},
+			{
+				"name": "/WOFF/TTF/SourceSansPro-LightIt.ttf.woff",
+				"hash": "DG37ajdyyWR+i+MxUiLjcx/m8IyY/BuyVIwFArHNQH4=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 50992
+			},
+			{
+				"name": "/WOFF/TTF/SourceSansPro-Regular.ttf.woff",
+				"hash": "CrctnuZYsO4oxBTs9aMEQhoU8b21hasXwDTAN80hWrc=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 119064
+			},
+			{
+				"name": "/WOFF/TTF/SourceSansPro-Semibold.ttf.woff",
+				"hash": "Bj57Hs+Uf0IqSQ7NO8JEAJXlWzcdeB+fk/rjQOLWyq0=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 118412
+			},
+			{
+				"name": "/WOFF/TTF/SourceSansPro-SemiboldIt.ttf.woff",
+				"hash": "A/+0HtHqX2gwgS09oUG6CXmNrDgePYsibCb0zR8tCLY=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 50924
+			},
+			{
+				"name": "/WOFF2/OTF/SourceSansPro-Black.otf.woff2",
+				"hash": "XqzbbOe7Vv1mbLTNiTeMFWDkTBSBtWzFHoNfmVdDkP4=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 100624
+			},
+			{
+				"name": "/WOFF2/OTF/SourceSansPro-BlackIt.otf.woff2",
+				"hash": "otD41wzD7A2D4gGxsnnqcSWo/doYN+ntbcb++VMCbxQ=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 41480
+			},
+			{
+				"name": "/WOFF2/OTF/SourceSansPro-Bold.otf.woff2",
+				"hash": "mgtU8oLgCEVZCChPMPj/uJgF/P5IQqtu8ZO8DnTWIbQ=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 103484
+			},
+			{
+				"name": "/WOFF2/OTF/SourceSansPro-BoldIt.otf.woff2",
+				"hash": "STjVNMj1WgdS5/5BuoN92RMrBnLPxvXjz6hXzPyoK5k=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 41808
+			},
+			{
+				"name": "/WOFF2/OTF/SourceSansPro-ExtraLight.otf.woff2",
+				"hash": "9o5F9KiME2lKOP+2uSaJT+1oCjThZsRnSlx+GB0oEE0=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 94272
+			},
+			{
+				"name": "/WOFF2/OTF/SourceSansPro-ExtraLightIt.otf.woff2",
+				"hash": "aPhkiHY3AnwiHBl7/Ui05X5V0RkTdPMFT13g+Cj375M=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 38136
+			},
+			{
+				"name": "/WOFF2/OTF/SourceSansPro-It.otf.woff2",
+				"hash": "wnyGsIwHL0J32lAVBxeHlZMMTQAb26EMNrwm75PigIA=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 42084
+			},
+			{
+				"name": "/WOFF2/OTF/SourceSansPro-Light.otf.woff2",
+				"hash": "q+jRWrknGqTiCJNFk/bdq3uHqCDH5dxTEiMy3VpGwUA=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 99500
+			},
+			{
+				"name": "/WOFF2/OTF/SourceSansPro-LightIt.otf.woff2",
+				"hash": "kmQ2Omgqml0/RKkPdCGFE3UiF/3KlgBpgbOAAmuyeX8=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 40388
+			},
+			{
+				"name": "/WOFF2/OTF/SourceSansPro-Regular.otf.woff2",
+				"hash": "xOrfsyskZHFbtsSHiJPNvz364L1f707rY2gL8xEdlns=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 102552
+			},
+			{
+				"name": "/WOFF2/OTF/SourceSansPro-Semibold.otf.woff2",
+				"hash": "6CvMMNUXRLLeKGGFNTI91XvJKd4OW/aN+CR3y6x9/Lg=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 103132
+			},
+			{
+				"name": "/WOFF2/OTF/SourceSansPro-SemiboldIt.otf.woff2",
+				"hash": "2q+5u5C+VuCwl8hPHgNh1RHyNNi+d7gUzBaTJOsjnz0=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 41976
+			},
+			{
+				"name": "/WOFF2/TTF/SourceSansPro-Black.ttf.woff2",
+				"hash": "zB7ngVCOu64A2SPH/Gf8jATRJFolUHkvZAY6QYcgRO0=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 82052
+			},
+			{
+				"name": "/WOFF2/TTF/SourceSansPro-BlackIt.ttf.woff2",
+				"hash": "y0QnpATo4LPv5TTULOV779F/N6j0MJJCSgaW++8+A8Q=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 34812
+			},
+			{
+				"name": "/WOFF2/TTF/SourceSansPro-Bold.ttf.woff2",
+				"hash": "kp914gk9Q4KOqqcffjoIZG5ykcm6B2vaP6VmvL2ARzU=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 85604
+			},
+			{
+				"name": "/WOFF2/TTF/SourceSansPro-BoldIt.ttf.woff2",
+				"hash": "XHQzjgkm9yg4HeysDeHYwdMC9loewJuPpFd+gbGr/YI=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 35864
+			},
+			{
+				"name": "/WOFF2/TTF/SourceSansPro-ExtraLight.ttf.woff2",
+				"hash": "2m7EqSOXBwAWqMXS/kqQa65mOFeuH32XEohrCqV99Ag=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 82808
+			},
+			{
+				"name": "/WOFF2/TTF/SourceSansPro-ExtraLightIt.ttf.woff2",
+				"hash": "rpI66XYqxAJ1da65zGKft0XuQCoqpFTKtuToD0kOA5E=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 34560
+			},
+			{
+				"name": "/WOFF2/TTF/SourceSansPro-It.ttf.woff2",
+				"hash": "typ+uCBAVDh2W9SPjyYL/AavE+06rFoiE3OTmlcEEmU=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 36016
+			},
+			{
+				"name": "/WOFF2/TTF/SourceSansPro-Light.ttf.woff2",
+				"hash": "AZyjeiWOHumULJxzOjGTFxtlGTGgJSe4NuNkS5/dfBI=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 86336
+			},
+			{
+				"name": "/WOFF2/TTF/SourceSansPro-LightIt.ttf.woff2",
+				"hash": "k5kvtBj+rrlTqmUCmYekGQoV74mK+vXyZbieSRYMb54=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 35952
+			},
+			{
+				"name": "/WOFF2/TTF/SourceSansPro-Regular.ttf.woff2",
+				"hash": "J8BspTHQHxLZ4o2GkACYXkz4TdBySv5XjpQtRPCdGcI=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 86844
+			},
+			{
+				"name": "/WOFF2/TTF/SourceSansPro-Semibold.ttf.woff2",
+				"hash": "uW9VzOosStlZyoQfqIGok+ffM6LlddYhqB0vEGO0KcQ=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 86196
+			},
+			{
+				"name": "/WOFF2/TTF/SourceSansPro-SemiboldIt.ttf.woff2",
+				"hash": "IWFPHUkUed4DDpOoR2g2EkRa8GQ5bVnhmbgIAopkT9c=",
+				"time": "2015-09-16T00:07:34.000Z",
+				"size": 35984
+			}
+		]
+	},
 	"/npm/emojione@3.1.1/+private-json": "Package size exceeded the configured limit of 50 MB."
 }

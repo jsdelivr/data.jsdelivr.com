@@ -50,7 +50,7 @@ class PackageRequest extends BaseRequest {
 	}
 
 	async fetchFiles () {
-		let url = `${v1Config.cdn.sourceUrl}/${this.params.type}/${this.params.name}@${this.params.version}/+private-json`;
+		let url = `${v1Config.cdn.sourceUrl}/${this.params.type}/${this.params.name}@${encodeURIComponent(this.params.version)}/+private-json`;
 
 		return fetchCache.get(url, () => {
 			return got(url, { json: true, timeout: 30000 }).then((response) => {
