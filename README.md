@@ -13,7 +13,7 @@ The jsDelivr API allows you to:
  - [get the most popular packages](#get-the-most-popular-packages)
  - [get a badge for your project](#get-a-badge-for-your-project)
  
-The API is free to use and imposes no rate limits.
+The API is free to use and imposes no rate limits (however, if you plan to make 100+ RPM for longer periods of time, you should contact us first).
 Please note that usage statistics are available with a 48 hour delay.
 We only have data starting from Aug 19, 2017 and data older than one year may not be available.
 
