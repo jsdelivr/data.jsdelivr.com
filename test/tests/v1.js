@@ -105,18 +105,15 @@ describe('v1', function () {
 	it('GET /v1/', () => {
 		return chai.request(server)
 			.get('/v1/')
-			.then(() => {
-				expect(1).to.equal(0);
-			})
-			.catch((error) => {
-				expect(error.response).to.have.status(400);
-				expect(error.response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(error.response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
-				expect(error.response).to.have.header('Timing-Allow-Origin', '*');
-				expect(error.response).to.have.header('Vary', 'Accept-Encoding');
-				expect(error.response).to.be.json;
-				expect(error.response.body).to.have.property('status', 400);
-				expect(error.response.body).to.have.property('message');
+			.catch((response) => {
+				expect(response).to.have.status(400);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response.body).to.have.property('status', 400);
+				expect(response.body).to.have.property('message');
 			});
 	});
 
@@ -473,91 +470,75 @@ describe('v1', function () {
 	it('GET /v1/package/npm/foo', () => {
 		return chai.request(server)
 			.get('/v1/package/npm/foo')
-			.then(() => {
-				expect(1).to.equal(0);
-			})
-			.catch((error) => {
-				expect(error.response).to.have.status(404);
-				expect(error.response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(error.response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
-				expect(error.response).to.have.header('Timing-Allow-Origin', '*');
-				expect(error.response).to.have.header('Vary', 'Accept-Encoding');
-				expect(error.response).to.be.json;
-				expect(error.response.body).to.have.property('status', 404);
-				expect(error.response.body).to.have.property('message');
+			.catch((response) => {
+				expect(response).to.have.status(404);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response.body).to.have.property('status', 404);
+				expect(response.body).to.have.property('message');
 			});
 	});
 
 	it('GET /v1/package/npm/foo@1', () => {
 		return chai.request(server)
 			.get('/v1/package/npm/foo@1')
-			.then(() => {
-				expect(1).to.equal(0);
-			})
-			.catch((error) => {
-				expect(error.response).to.have.status(404);
-				expect(error.response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(error.response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
-				expect(error.response).to.have.header('Timing-Allow-Origin', '*');
-				expect(error.response).to.have.header('Vary', 'Accept-Encoding');
-				expect(error.response).to.be.json;
-				expect(error.response.body).to.have.property('status', 404);
-				expect(error.response.body).to.have.property('message');
+			.catch((response) => {
+				expect(response).to.have.status(404);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response.body).to.have.property('status', 404);
+				expect(response.body).to.have.property('message');
 			});
 	});
 
 	it('GET /v1/package/npm/jquery@1', () => {
 		return chai.request(server)
 			.get('/v1/package/npm/jquery@1')
-			.then(() => {
-				expect(1).to.equal(0);
-			})
-			.catch((error) => {
-				expect(error.response).to.have.status(404);
-				expect(error.response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(error.response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
-				expect(error.response).to.have.header('Timing-Allow-Origin', '*');
-				expect(error.response).to.have.header('Vary', 'Accept-Encoding');
-				expect(error.response).to.be.json;
-				expect(error.response.body).to.have.property('status', 404);
-				expect(error.response.body).to.have.property('message');
+			.catch((response) => {
+				expect(response).to.have.status(404);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response.body).to.have.property('status', 404);
+				expect(response.body).to.have.property('message');
 			});
 	});
 
 	it('GET /v1/package/npm/emojione@3.1.1', () => {
 		return chai.request(server)
 			.get('/v1/package/npm/emojione@3.1.1')
-			.then((b) => {
-				console.log(b.body);
-				expect(1).to.equal(0);
-			})
-			.catch((error) => {
-				expect(error.response).to.have.status(403);
-				expect(error.response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(error.response).to.have.header('Cache-Control', 'public, max-age=31536000');
-				expect(error.response).to.have.header('Timing-Allow-Origin', '*');
-				expect(error.response).to.have.header('Vary', 'Accept-Encoding');
-				expect(error.response).to.be.json;
-				expect(error.response.body).to.have.property('status', 403);
-				expect(error.response.body).to.have.property('message', 'Package size exceeded the configured limit of 50 MB.');
+			.then((response) => {
+				expect(response).to.have.status(403);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response.body).to.have.property('status', 403);
+				expect(response.body).to.have.property('message', 'Package size exceeded the configured limit of 50 MB.');
 			});
 	});
 
 	it('GET /v1/package/resolve/npm/foo', () => {
 		return chai.request(server)
 			.get('/v1/package/resolve/npm/foo')
-			.then(() => {
-				expect(1).to.equal(0);
-			})
-			.catch((error) => {
-				expect(error.response).to.have.status(404);
-				expect(error.response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(error.response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
-				expect(error.response).to.have.header('Timing-Allow-Origin', '*');
-				expect(error.response).to.have.header('Vary', 'Accept-Encoding');
-				expect(error.response).to.be.json;
-				expect(error.response.body).to.have.property('status', 404);
-				expect(error.response.body).to.have.property('message');
+			.catch((response) => {
+				expect(response).to.have.status(404);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response.body).to.have.property('status', 404);
+				expect(response.body).to.have.property('message');
 			});
 	});
 
