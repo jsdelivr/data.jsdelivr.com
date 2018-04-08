@@ -24,9 +24,7 @@ badge.loadFont(require.resolve('dejavu-sans/fonts/dejavu-sans-webfont.ttf'), (er
 
 const v1Config = config.get('v1');
 const githubApi = new GitHubApi({
-	Promise,
-	protocol: 'https',
-	host: v1Config.gh.sourceUrl,
+	baseUrl: v1Config.gh.sourceUrl,
 	headers: { 'user-agent': 'jsDelivr API backend' },
 	timeout: 30000,
 });

@@ -38,7 +38,7 @@ module.exports = {
 		},
 		gh: {
 			apiToken: '',
-			sourceUrl: 'api.github.com',
+			sourceUrl: 'https://api.github.com',
 			maxAge: 10 * 60,
 		},
 		maxAgeStatic: 365 * 24 * 60 * 60,
