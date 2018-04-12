@@ -7615,5 +7615,11 @@
 			"records": 2000000000,
 			"megabytes": 20000
 		}
+	},
+	"/v1/lookup/hash/1B5A2D2D240F16D42C420F1CF8D911CC3BB4D4667D7631F24D064B6161E97726": {
+		"type": "gh",
+		"name": "package-0",
+		"version": "1.1.0",
+		"file": "file-0.js"
 	}
 }

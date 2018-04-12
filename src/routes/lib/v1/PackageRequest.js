@@ -376,7 +376,7 @@ async function storeHashes (type, name, version, files) {
 	let pkg = new Package({ type, name });
 	let packageVersion = new PackageVersion({ version, packageId: '@update_id_package' });
 
-	if (!await pkg.isValid() || !await packageVersion.isValid()) {
+	if (!await pkg.isValid() || !await packageVersion.isValid() || !files) {
 		return;
 	}
 

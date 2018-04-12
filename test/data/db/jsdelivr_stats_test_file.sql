@@ -1,4 +1,4 @@
-INSERT INTO `jsdelivr-stats-test`.file (packageVersionId, filename) VALUES (1, 'file-0.js');
+INSERT INTO `jsdelivr-stats-test`.file (packageVersionId, filename, sha256) VALUES (1, 'file-0.js', X'1B5A2D2D240F16D42C420F1CF8D911CC3BB4D4667D7631F24D064B6161E97726');
 INSERT INTO `jsdelivr-stats-test`.file (packageVersionId, filename) VALUES (1, 'file-1.js');
 INSERT INTO `jsdelivr-stats-test`.file (packageVersionId, filename) VALUES (1, 'file-2.js');
 INSERT INTO `jsdelivr-stats-test`.file (packageVersionId, filename) VALUES (1, 'file-3.js');

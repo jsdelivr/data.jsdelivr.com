@@ -755,4 +755,42 @@ describe('v1', function () {
 				expect(response).to.be.json;
 			});
 	});
+
+	it('GET /v1/lookup/hash/xx', () => {
+		return chai.request(server)
+			.get('/v1/lookup/hash/xx')
+			.then((response) => {
+				expect(response).to.have.status(400);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+			});
+	});
+
+	it('GET /v1/lookup/hash/1B5A2D2D240F16D42C420F1CF8D911CC3BB4D4667D7631F24D064B6161E97729', () => {
+		return chai.request(server)
+			.get('/v1/lookup/hash/1B5A2D2D240F16D42C420F1CF8D911CC3BB4D4667D7631F24D064B6161E97729')
+			.then((response) => {
+				expect(response).to.have.status(404);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+			});
+	});
+
+	it('GET /v1/lookup/hash/1B5A2D2D240F16D42C420F1CF8D911CC3BB4D4667D7631F24D064B6161E97726', () => {
+		return chai.request(server)
+			.get('/v1/lookup/hash/1B5A2D2D240F16D42C420F1CF8D911CC3BB4D4667D7631F24D064B6161E97726')
+			.then((response) => {
+				expect(response).to.have.status(200);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response.body).to.deep.equal(expectedResponses['/v1/lookup/hash/1B5A2D2D240F16D42C420F1CF8D911CC3BB4D4667D7631F24D064B6161E97726']);
+			});
+	});
 });

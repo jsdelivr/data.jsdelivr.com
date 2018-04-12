@@ -4,8 +4,10 @@ CREATE TABLE file
 		PRIMARY KEY,
 	packageVersionId INT(10) UNSIGNED NULL,
 	filename         VARCHAR(255)     NULL,
+	sha256           BINARY(32)       NULL,
 	CONSTRAINT file_packageversionid_filename_unique
-	UNIQUE (packageVersionId, filename)
+	UNIQUE (packageVersionId, filename),
+	INDEX file_sha256 (sha256)
 );
 
 CREATE TABLE file_hits
