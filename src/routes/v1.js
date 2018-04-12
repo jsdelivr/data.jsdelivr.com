@@ -1,8 +1,21 @@
 const Router = require('koa-router');
 const relativeDayUtc = require('relative-day-utc');
+const isSha256 = require('is-sha-256-hex-digest');
+const LookupRequest = require('./lib/v1/LookupRequest');
 const PackageRequest = require('./lib/v1/PackageRequest');
 const StatsRequest = require('./lib/v1/StatsRequest');
 const router = new Router();
+
+router.param('hash', async (value, ctx, next) => {
+	if (!isSha256(value)) {
+		return ctx.body = {
+			status: 400,
+			message: 'Hash must be a hex-encoded sha256 hash.',
+		};
+	}
+
+	return next();
+});
 
 /**
  * name = @scope/name for npm, user/repo for GitHub
@@ -44,6 +57,10 @@ router.param('version', async (value, ctx, next) => {
 	}
 
 	return next();
+});
+
+router.get('/lookup/hash/:hash', async (ctx) => {
+	return new LookupRequest(ctx).handleHash();
 });
 
 router.get([
