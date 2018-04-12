@@ -3,13 +3,7 @@ const redis = require('redis');
 const config = require('config');
 const redisConfig = config.get('redis');
 
-module.exports = redis.createClient({
-	db: redisConfig.db,
-	host: redisConfig.host,
-	port: redisConfig.port,
-	auth_pass: redisConfig.password,
-	detect_buffers: true,
-});
+module.exports = createClient();
 
 if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test') {
 	module.exports.flushallAsync().catch(() => {});
@@ -34,3 +28,21 @@ redis.RedisClient.prototype.getCompressedAsync = async function (key) {
 redis.RedisClient.prototype.setCompressedAsync = async function (key, value, ...other) {
 	return this.setAsync(key, await zlib.deflateAsync(value), ...other);
 };
+
+function createClient () {
+	let client = redis.createClient({
+		db: redisConfig.db,
+		host: redisConfig.host,
+		port: redisConfig.port,
+		auth_pass: redisConfig.password,
+		detect_buffers: true,
+		enable_offline_queue: false,
+	});
+
+	client
+		.on('ready', () => logger.debug('Connection ready.'))
+		.on('reconnecting', info => logger.debug(_.pick(info, [ 'attempt', 'delay' ], 'Reconnecting.')))
+		.on('error', err => logger.error({ err }, 'Connection error.'));
+
+	return client;
+}
