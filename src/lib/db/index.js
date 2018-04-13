@@ -16,26 +16,3 @@ module.exports = knex({
 		},
 	},
 });
-
-/**
- * Add a few custom functions.
- */
-module.exports.batchInsert = (queries) => {
-	return db.transaction(async (trx) => {
-		let max = 0, min;
-
-		while (max < queries.length) {
-			min = max;
-			max = Math.min(max + 10000, queries.length);
-
-			await trx.raw(queries.slice(min, max).join('\n'));
-		}
-	}).catch((e) => {
-		// Handle deadlocks.
-		if (e.sqlState !== '40001') {
-			throw e;
-		}
-
-		return db.batchInsert(queries);
-	});
-};

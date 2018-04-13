@@ -13,7 +13,6 @@ const fetchCache = new PromiseCache({ maxAge: 60 * 1000 }).autoClear();
 const BaseRequest = require('./BaseRequest');
 const Package = require('../../../models/Package');
 const PackageVersion = require('../../../models/PackageVersion');
-const File = require('../../../models/File');
 const dateRange = require('../../utils/dateRange');
 const sumDeep = require('../../utils/sumDeep');
 
@@ -53,7 +52,6 @@ class PackageRequest extends BaseRequest {
 
 		return fetchCache.get(url, () => {
 			return got(url, { json: true, timeout: 30000 }).then((response) => {
-				storeHashes(this.params.type, this.params.name, this.params.version, response.body.files).catch(() => {});
 				return _.pick(response.body, [ 'default', 'files' ]);
 			}).catch((error) => {
 				if (error instanceof got.HTTPError && error.response.statusCode === 403) {
@@ -369,29 +367,4 @@ async function fetchNpmMetadata (name) {
 			versions: Object.keys(response.body.versions).sort(semver.rcompare),
 		};
 	});
-}
-
-async function storeHashes (type, name, version, files) {
-	let sql = [];
-	let pkg = new Package({ type, name });
-	let packageVersion = new PackageVersion({ version, packageId: '@update_id_package' });
-
-	if (!await pkg.isValid() || !await packageVersion.isValid() || !files) {
-		return;
-	}
-
-	sql.push(pkg.toSqlInsert());
-	sql.push(packageVersion.toSqlInsert());
-
-	for (let { name: filename, hash: sha256 } of files) {
-		let file = new File({ filename, sha256: new Buffer(sha256, 'base64'), packageVersionId: '@update_id_package_version' });
-
-		if (!await file.isValid()) {
-			continue;
-		}
-
-		sql.push(file.toSqlInsert(`\`sha256\` = X'${file.sha256.toString('hex')}'`));
-	}
-
-	await db.batchInsert(sql);
 }
