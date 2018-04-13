@@ -41,13 +41,21 @@ class File extends BaseModel {
 	}
 
 	static async getBySha256 (sha256) {
-		let sql = db(this.table)
+		return db(this.table)
 			.where({ sha256 })
 			.join(PackageVersion.table, `${this.table}.packageVersionId`, '=', `${PackageVersion.table}.id`)
 			.join(Package.table, `${PackageVersion.table}.packageId`, '=', `${Package.table}.id`)
-			.orderBy(`${File.table}.id`);
+			.orderBy(`${File.table}.id`)
+			.select([ 'type', 'name', 'version', 'filename as file' ])
+			.first();
+	}
 
-		return await sql.select([ 'type', 'name', 'version', 'filename as file' ]).first();
+	static async getWithPackages (criteria) {
+		return db(this.table)
+			.where(criteria)
+			.join(PackageVersion.table, `${this.table}.packageVersionId`, '=', `${PackageVersion.table}.id`)
+			.join(Package.table, `${PackageVersion.table}.packageId`, '=', `${Package.table}.id`)
+			.select([ '*', `${File.table}.id as fileId` ]);
 	}
 }
 
