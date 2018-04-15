@@ -6,7 +6,7 @@ const schema = {
 	packageVersionId: [ Joi.number().integer().min(0).required(), Joi.string().regex(/^@/) ],
 	filename: Joi.string().max(255).required(),
 	sha256: Joi.binary().length(32).required().allow(null),
-	fetchAttemptsLeft: Joi.number().integer().min(0).max(128).required(),
+	fetchAttemptsLeft: Joi.number().integer().min(0).max(128).required().allow(null),
 };
 
 class File extends BaseModel {
