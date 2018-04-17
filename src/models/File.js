@@ -6,7 +6,7 @@ const schema = {
 	packageVersionId: [ Joi.number().integer().min(0).required(), Joi.string().regex(/^@/) ],
 	filename: Joi.string().max(255).required(),
 	sha256: Joi.binary().length(32).required().allow(null),
-	fetchAttemptsLeft: Joi.number().integer().min(0).max(128).required().allow(null),
+	fetchAttemptsLeft: Joi.number().integer().min(0).max(128).required(),
 };
 
 class File extends BaseModel {
@@ -38,7 +38,7 @@ class File extends BaseModel {
 		this.sha256 = null;
 
 		/** @type {number} */
-		this.fetchAttemptsLeft = null;
+		this.fetchAttemptsLeft = 3;
 
 		Object.assign(this, properties);
 		return new Proxy(this, BaseModel.ProxyHandler);
