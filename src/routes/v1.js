@@ -6,6 +6,19 @@ const PackageRequest = require('./lib/v1/PackageRequest');
 const StatsRequest = require('./lib/v1/StatsRequest');
 const router = new Router();
 
+/**
+ * More accurate opbeat route names.
+ */
+router.use(async (ctx, next) => {
+	let matched = ctx.matched.find(r => r.name);
+
+	if (matched && global.OPBEAT_CLIENT) {
+		global.OPBEAT_CLIENT.setTransactionName(`${ctx.request.method} /v1${matched.name}`);
+	}
+
+	return next();
+});
+
 router.param('hash', async (value, ctx, next) => {
 	if (!isSha256(value)) {
 		return ctx.body = {
@@ -59,60 +72,72 @@ router.param('version', async (value, ctx, next) => {
 	return next();
 });
 
-router.get('/lookup/hash/:hash', async (ctx) => {
+addRoutes([
+	[ '/lookup/hash/:hash', '/lookup/hash/:hash' ],
+], async (ctx) => {
 	return new LookupRequest(ctx).handleHash();
 });
 
-router.get([
-	'/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)',
-	'/package/:type(gh)/:user([^/@]+)/:name([^/@]+)',
+addRoutes([
+	[ '/package/npm/:name', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)' ],
+	[ '/package/gh/:user/:repo', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)' ],
 ], async (ctx) => {
 	return new PackageRequest(ctx).handleVersions();
 });
 
-router.get([
-	'/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/stats/:groupBy(version|date)?/:period(day|week|month|year)?',
-	'/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/stats/:groupBy(version|date)?/:period(day|week|month|year)?',
+addRoutes([
+	[ '/package/npm/:name/stats', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/stats/:groupBy(version|date)?/:period(day|week|month|year)?' ],
+	[ '/package/gh/:user/:repo/stats', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/stats/:groupBy(version|date)?/:period(day|week|month|year)?' ],
 ], async (ctx) => {
 	return new PackageRequest(ctx).handlePackageStats();
 });
 
-router.get([
-	'/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/badge/:period(day|week|month|year)?',
-	'/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/badge/:period(day|week|month|year)?',
+addRoutes([
+	[ '/package/npm/:name/badge', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/badge/:period(day|week|month|year)?' ],
+	[ '/package/gh/:user/:repo/badge', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/badge/:period(day|week|month|year)?' ],
 ], async (ctx) => {
 	return new PackageRequest(ctx).handlePackageBadge();
 });
 
-router.get([
-	'/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version/:structure(tree|flat)?',
-	'/package/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version/:structure(tree|flat)?',
+addRoutes([
+	[ '/package/npm/:name@:version', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version/:structure(tree|flat)?' ],
+	[ '/package/gh/:user/:repo@:version', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version/:structure(tree|flat)?' ],
 ], async (ctx) => {
 	return new PackageRequest(ctx).handleVersionFiles();
 });
 
-router.get([
-	'/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version/stats/:groupBy(file|date)?/:period(day|week|month|year)?',
-	'/package/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version/stats/:groupBy(file|date)?/:period(day|week|month|year)?',
+addRoutes([
+	[ '/package/npm/:name@:version/stats', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version/stats/:groupBy(file|date)?/:period(day|week|month|year)?' ],
+	[ '/package/gh/:user/:repo@:version/stats', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version/stats/:groupBy(file|date)?/:period(day|week|month|year)?' ],
 ], async (ctx) => {
 	return new PackageRequest(ctx).handleVersionStats();
 });
 
-router.get([
-	'/package/resolve/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version',
-	'/package/resolve/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)',
-	'/package/resolve/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version',
-	'/package/resolve/:type(gh)/:user([^/@]+)/:name([^/@]+)',
+addRoutes([
+	[ '/package/resolve/npm/:name@:version', '/package/resolve/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version' ],
+	[ '/package/resolve/npm/:name', '/package/resolve/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)' ],
+	[ '/package/resolve/gh/:user/:repo@:version', '/package/resolve/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version' ],
+	[ '/package/resolve/gh/:user/:repo', '/package/resolve/:type(gh)/:user([^/@]+)/:name([^/@]+)' ],
 ], async (ctx) => {
 	return new PackageRequest(ctx).handleResolveVersion();
 });
 
-router.get('/stats/packages/:period(day|week|month|year)?', async (ctx) => {
+addRoutes([
+	[ '/stats/packages', '/stats/packages/:period(day|week|month|year)?' ],
+], async (ctx) => {
 	return new StatsRequest(ctx).handlePackages();
 });
 
-router.get('/stats/network/:period(day|week|month|year)?', async (ctx) => {
+addRoutes([
+	[ '/stats/network', '/stats/network/:period(day|week|month|year)?' ],
+], async (ctx) => {
 	return new StatsRequest(ctx).handleNetwork();
 });
 
 module.exports = router;
+
+function addRoutes (routes, fn) {
+	routes.forEach((route) => {
+		router.get(route[0], route[1], fn);
+	});
+}
