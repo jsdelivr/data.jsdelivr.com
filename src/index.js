@@ -103,6 +103,10 @@ server.use(async (ctx, next) => {
 			status: ctx.status,
 			message: statuses[ctx.status],
 		};
+
+		if (ctx.status === 400) {
+			ctx.body.message += `. Visit https://github.com/jsdelivr/data.jsdelivr.com for documentation.`;
+		}
 	} else if (!ctx.body.status) {
 		ctx.status = 200;
 	}
