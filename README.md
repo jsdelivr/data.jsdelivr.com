@@ -76,7 +76,7 @@ https://data.jsdelivr.com/v1/package/npm/jquery
 /package/gh/:user/:repo@:version/:structure?
  - user: GitHub username
  - repo: GitHub repository name
- - version: exact package version (not a version range)
+ - version: exact package version (not a version range) or a commit hash
  - structure: "tree" or "flat"; defaults to "tree"
 ```
 
@@ -187,7 +187,8 @@ https://data.jsdelivr.com/v1/package/npm/jquery/stats
             }
         },
         ...
-    }
+    },
+    "commits": {} // same structure as "versions"; always empty for npm packages
 }
 ```
 
@@ -203,7 +204,7 @@ https://data.jsdelivr.com/v1/package/npm/jquery/stats
 /package/gh/:user/:repo@:version/stats/:groupBy?/:period?
  - user: GitHub username
  - repo: GitHub repository name
- - version: exact package version (not a version range)
+ - version: exact package version (not a version range) or a commit hash
  - groupBy: "file" or "date"; defaults to "file"
  - period: "day", "week", "month", or "year"; defaults to "month"
 ```
