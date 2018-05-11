@@ -67,6 +67,8 @@ router.param('period', async (value, ctx, next) => {
 router.param('version', async (value, ctx, next) => {
 	if (value && value.charAt(0) === 'v') {
 		ctx.params.version = value.substr(1);
+	} else if (value && (ctx.params.type === 'gh' && isSha(value, 'sha1'))) {
+		ctx.params.version = value.toLowerCase();
 	}
 
 	return next();
