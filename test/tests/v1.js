@@ -81,6 +81,10 @@ describe('v1', function () {
 			.get('/gh/adobe/source-sans-pro@2.020R-ro%2F1.075R-it/+private-json')
 			.reply(200, upstreamCdnResponses['/gh/adobe/source-sans-pro@2.020R-ro%2F1.075R-it/+private-json']);
 
+		nock('https://cdn.jsdelivr.net')
+			.get('/gh/jquery/jquery@821bf34353a6baf97f7944379a6459afb16badae/+private-json')
+			.reply(200, upstreamCdnResponses['/gh/jquery/jquery@821bf34353a6baf97f7944379a6459afb16badae/+private-json']);
+
 		nock('https://registry.npmjs.cf')
 			.get('/emojione')
 			.reply(200, upstreamNpmResponses['/emojione']);
@@ -380,6 +384,21 @@ describe('v1', function () {
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
 				expect(response.body).to.deep.equal(expectedResponses['/v1/package/gh/adobe/source-sans-pro@2.020R-ro%2F1.075R-it']);
+			});
+	});
+
+	// TODO: add commit stats tests.
+	it('GET /v1/package/gh/jquery/jquery@821bf34353a6baf97f7944379a6459afb16badae', () => {
+		return chai.request(server)
+			.get('/v1/package/gh/jquery/jquery@821bf34353a6baf97f7944379a6459afb16badae')
+			.then((response) => {
+				expect(response).to.have.status(200);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response.body).to.deep.equal(expectedResponses['/v1/package/gh/jquery/jquery@821bf34353a6baf97f7944379a6459afb16badae']);
 			});
 	});
 

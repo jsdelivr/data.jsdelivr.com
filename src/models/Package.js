@@ -1,4 +1,5 @@
 const Joi = require('joi');
+const isSha = require('is-hexdigest');
 const BaseModel = require('./BaseModel');
 
 const schema = {
@@ -58,7 +59,9 @@ class Package extends BaseModel {
 
 	static async getSumDateHitsPerVersionByName (type, name, from, to) {
 		return _.mapValues(_.groupBy(await Package.getHitsByName(type, name, from, to), item => item.date.toISOString().substr(0, 10)), (versionHits) => {
-			return _.fromPairs(_.map(versionHits, entry => [ entry.version, entry.hits ]));
+			return _.mapValues(splitCommitsAndVersions(versionHits), (data) => {
+				return _.fromPairs(_.map(data, entry => [ entry.version, entry.hits ]));
+			});
 		});
 	}
 
@@ -83,8 +86,10 @@ class Package extends BaseModel {
 	}
 
 	static async getSumVersionHitsPerDateByName (type, name, from, to) {
-		return _.mapValues(_.groupBy(await Package.getHitsByName(type, name, from, to), 'version'), (versionHits) => {
-			return _.fromPairs(_.map(versionHits, entry => [ entry.date.toISOString().substr(0, 10), entry.hits ]));
+		return _.mapValues(splitCommitsAndVersions(await Package.getHitsByName(type, name, from, to)), (data) => {
+			return _.mapValues(_.groupBy(data, 'version'), (versionHits) => {
+				return _.fromPairs(_.map(versionHits, entry => [ entry.date.toISOString().substr(0, 10), entry.hits ]));
+			});
 		});
 	}
 
@@ -111,6 +116,11 @@ class Package extends BaseModel {
 
 		return sql.select([ `${Package.table}.type`, `${Package.table}.name` ]);
 	}
+}
+
+function splitCommitsAndVersions (collection) {
+	let [ commits, versions ] = _.partition(collection, item => isSha(item.version, 'sha1'));
+	return { commits, versions };
 }
 
 module.exports = Package;

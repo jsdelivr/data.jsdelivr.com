@@ -3,6 +3,7 @@ const semver = require('semver');
 const config = require('config');
 const GitHubApi = require('@octokit/rest');
 const badge = require('gh-badges');
+const isSha = require('is-hexdigest');
 const isSemverStatic = require('is-semver-static');
 const vCompare = require('v-compare');
 const NumberAbbreviate = require('number-abbreviate');
@@ -223,21 +224,23 @@ class PackageRequest extends BaseRequest {
 	async handlePackageStats () {
 		if (this.params.groupBy === 'date') {
 			let data = await Package.getSumDateHitsPerVersionByName(this.params.type, this.params.name, ...this.dateRange);
-			let total = sumDeep(data, 2);
+			let total = sumDeep(data, 3);
 
 			this.ctx.body = {
 				rank: total ? await this.getRank() : null,
 				total,
-				dates: dateRange.fill(_.mapValues(data, versions => ({ total: sumDeep(versions), versions })), ...this.dateRange, { total: 0, versions: {} }),
+				dates: dateRange.fill(_.mapValues(data, ({ versions, commits }) => ({ total: sumDeep(versions), versions, commits })), ...this.dateRange, { total: 0, versions: {}, commits: {} }),
 			};
 		} else {
 			let data = await Package.getSumVersionHitsPerDateByName(this.params.type, this.params.name, ...this.dateRange);
-			let total = sumDeep(data, 2);
+			let total = sumDeep(data, 3);
+			let fn = data => _.mapValues(data, dates => ({ total: sumDeep(dates), dates: dateRange.fill(dates, ...this.dateRange) }));
 
 			this.ctx.body = {
 				rank: total ? await this.getRank() : null,
 				total,
-				versions: _.mapValues(data, dates => ({ total: sumDeep(dates), dates: dateRange.fill(dates, ...this.dateRange) })),
+				versions: fn(data.versions),
+				commits: fn(data.commits),
 			};
 		}
 
@@ -245,19 +248,22 @@ class PackageRequest extends BaseRequest {
 	}
 
 	async handleVersionFiles () {
-		let metadata;
+		// Don't validate version if it's a commit hash.
+		if (this.params.type !== 'gh' || !isSha(this.params.version, 'sha1')) {
+			let metadata;
 
-		try {
-			metadata = await this.getMetadata();
-		} catch (e) {
-			return this.responseNotFound();
-		}
+			try {
+				metadata = await this.getMetadata();
+			} catch (e) {
+				return this.responseNotFound();
+			}
 
-		if (!metadata.versions.includes(this.params.version)) {
-			return this.ctx.body = {
-				status: 404,
-				message: `Couldn't find version ${this.params.version} for ${this.params.name}. Make sure you use a specific version number, and not a version range or a tag.`,
-			};
+			if (!metadata.versions.includes(this.params.version)) {
+				return this.ctx.body = {
+					status: 404,
+					message: `Couldn't find version ${this.params.version} for ${this.params.name}. Make sure you use a specific version number, and not a version range or a tag.`,
+				};
+			}
 		}
 
 		try {

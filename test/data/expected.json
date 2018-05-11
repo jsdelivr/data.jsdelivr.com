@@ -4772,6 +4772,2192 @@
 			}
 		]
 	},
+	"/v1/package/gh/jquery/jquery@821bf34353a6baf97f7944379a6459afb16badae": {
+		"default": null,
+		"files": [
+			{
+				"type": "directory",
+				"name": ".github",
+				"files": [
+					{
+						"type": "file",
+						"name": "ISSUE_TEMPLATE.md",
+						"hash": "DyPZQ6zJoPxu1Ws+rhf/0KR8RGrjsi2Dtfax+LiPurU=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 749
+					},
+					{
+						"type": "file",
+						"name": "PULL_REQUEST_TEMPLATE.md",
+						"hash": "GM30mRPUHkfM9MFCFO7z4WJelp0zu0D1n4VSnYKXzE8=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 647
+					}
+				]
+			},
+			{
+				"type": "directory",
+				"name": "build",
+				"files": [
+					{
+						"type": "directory",
+						"name": "release",
+						"files": [
+							{
+								"type": "file",
+								"name": "cdn.js",
+								"hash": "986aWsHClcomvcGd1HxDXfaNa6T8c1b2TH1FHlNIFss=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 3198
+							},
+							{
+								"type": "file",
+								"name": "dist.js",
+								"hash": "J6/d05fBSkE1a5YK6++cuWQ/MWE2VDSV9k3SHID61vY=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 4028
+							},
+							{
+								"type": "file",
+								"name": "ensure-sizzle.js",
+								"hash": "jvWo2UAnHtnsmJxrz4HlaChtz3ICKrmWUdm50LUzoCg=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 1350
+							}
+						]
+					},
+					{
+						"type": "directory",
+						"name": "tasks",
+						"files": [
+							{
+								"type": "directory",
+								"name": "lib",
+								"files": [
+									{
+										"type": "file",
+										"name": "spawn_test.js",
+										"hash": "oGuXhQ2ytu9H3yMozelpxYLn8f5SSPX2PGsz0PPleHw=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 438
+									}
+								]
+							},
+							{
+								"type": "file",
+								"name": "build.js",
+								"hash": "YuJ6QKPfRJ4fzPmRg4DaCgU5OXwJXLHV5E0Mj6Xh4qA=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 11014
+							},
+							{
+								"type": "file",
+								"name": "dist.js",
+								"hash": "eWHY8POrVaAzyfluVF0dRfOQRVeyT4O16Z9bo3D763c=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 1933
+							},
+							{
+								"type": "file",
+								"name": "node_smoke_tests.js",
+								"hash": "5IP4bpuvOYyYu4e3ItloSL6EW2gnX6kcVrXmWe2ZL2o=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 1116
+							},
+							{
+								"type": "file",
+								"name": "promises_aplus_tests.js",
+								"hash": "7wRYTZzdpZROMB8ZrH2C0g97N5ilhV9jZHSK+MWO/eQ=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 750
+							},
+							{
+								"type": "file",
+								"name": "qunit_fixture.js",
+								"hash": "XC0m8DkbDo4rZqH2moIkgy+a2xB6Qd39gAyCSxzfYoI=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 603
+							},
+							{
+								"type": "file",
+								"name": "sourcemap.js",
+								"hash": "Vz+vxPIHBA1W3xI+4HHQ/I22yFNNMwol1jcbLYKX//o=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 559
+							},
+							{
+								"type": "file",
+								"name": "testswarm.js",
+								"hash": "E7pmaF2whAqUWkpKNd87DhwWpisW6XSmofbfdIcVumU=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 1619
+							}
+						]
+					},
+					{
+						"type": "file",
+						"name": "release.js",
+						"hash": "J8Nd/uiMttSxxdGYNRo6bGL06T4zoDHuTbiWX8YouDA=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 2275
+					}
+				]
+			},
+			{
+				"type": "directory",
+				"name": "dist",
+				"files": [
+					{
+						"type": "file",
+						"name": ".eslintrc.json",
+						"hash": "4y19zx/DxL07l4KdBUBLS+aKC2v/G0fRXDKRGZntm1k=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 491
+					}
+				]
+			},
+			{
+				"type": "directory",
+				"name": "external",
+				"files": [
+					{
+						"type": "directory",
+						"name": "sizzle",
+						"files": [
+							{
+								"type": "directory",
+								"name": "dist",
+								"files": [
+									{
+										"type": "file",
+										"name": "sizzle.js",
+										"hash": "hn6krJ1CiEWWJp5fmWPB4sjkvRfKuARv14o1gEoLJgQ=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 65363
+									},
+									{
+										"type": "file",
+										"name": "sizzle.min.js",
+										"hash": "z1a5qwLnESQTT+lnpVKz3xNjci17C+5SSr2jHkA905c=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 19909
+									},
+									{
+										"type": "file",
+										"name": "sizzle.min.map",
+										"hash": "B70sL0NWhOUZf2QfkcE+kx2Up89J+n0z8cKwv0pqIHg=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 30763
+									}
+								]
+							},
+							{
+								"type": "file",
+								"name": "LICENSE.txt",
+								"hash": "nz7eWYcM7TRQG+mSJfcudSlpi2uRntnrINL61MOO9Yw=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 1606
+							}
+						]
+					},
+					{
+						"type": "directory",
+						"name": "sinon",
+						"files": [
+							{
+								"type": "file",
+								"name": "LICENSE.txt",
+								"hash": "sllI5IxEMS0E/8YmqdUsrnwEU5oajgwb5Ht7+g2gPh0=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 1572
+							},
+							{
+								"type": "file",
+								"name": "sinon.js",
+								"hash": "OOJLdUseT7cLCwsID7vBNo6tolPCl5bX9LfjLB6AF8k=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 207592
+							}
+						]
+					},
+					{
+						"type": "directory",
+						"name": "requirejs",
+						"files": [
+							{
+								"type": "file",
+								"name": "require.js",
+								"hash": "xjmd5jyZ9zEdLCxgOxmtHX81QRllm/NiwdvUzS620Bk=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 85921
+							}
+						]
+					},
+					{
+						"type": "directory",
+						"name": "qunit-assert-step",
+						"files": [
+							{
+								"type": "file",
+								"name": "MIT-LICENSE.txt",
+								"hash": "qQ6PS7MtejTeBkoEoxYb3CyBol3EGuJSXCjAvLAWuyU=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 1094
+							},
+							{
+								"type": "file",
+								"name": "qunit-assert-step.js",
+								"hash": "CjRlqhHQoAReI37AdIlOo8tf5M/30a+TdCuFQ+Yrb/s=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 758
+							}
+						]
+					},
+					{
+						"type": "directory",
+						"name": "qunit",
+						"files": [
+							{
+								"type": "file",
+								"name": "LICENSE.txt",
+								"hash": "65ozM9AqZdbS+lLIoVmVGMX6dYt1bQli+dNTZS+kAn8=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 1590
+							},
+							{
+								"type": "file",
+								"name": "MIT-LICENSE.txt",
+								"hash": "JEd5J1zPfe8Cp3JKcH3+h4f4Ov1cy2SYtCKWrkJISUA=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 1099
+							},
+							{
+								"type": "file",
+								"name": "qunit.css",
+								"hash": "Jz1f90TDD48BgS4hwBeLk8yXzn55rk9/GEY9uUqAYw4=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 5399
+							},
+							{
+								"type": "file",
+								"name": "qunit.js",
+								"hash": "ZhPNf4oVgZdbqluEjD9VlSqJ0VUajFl5sXE4Wtq2tuw=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 115069
+							}
+						]
+					},
+					{
+						"type": "directory",
+						"name": "npo",
+						"files": [
+							{
+								"type": "file",
+								"name": "npo.js",
+								"hash": "o/UXdF4sFrbgV5UCIWF5ca7VMLDdplhzA4knJ4nFsc0=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 3608
+							}
+						]
+					}
+				]
+			},
+			{
+				"type": "directory",
+				"name": "src",
+				"files": [
+					{
+						"type": "directory",
+						"name": "ajax",
+						"files": [
+							{
+								"type": "directory",
+								"name": "var",
+								"files": [
+									{
+										"type": "file",
+										"name": "location.js",
+										"hash": "NDHedxtpSVFey+vX5TvRRJoD+G06/QcbDyh0s9SVHTM=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 67
+									},
+									{
+										"type": "file",
+										"name": "nonce.js",
+										"hash": "HzElH0ZgKBO0nJ6KzAB+OnYMJ6ik6Hg10mQb8K+wrmw=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 62
+									},
+									{
+										"type": "file",
+										"name": "rquery.js",
+										"hash": "YYVkpdDrXsZjhfFtWDCRTSiLpkr1vp4GyCkT3yM7cwU=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 60
+									}
+								]
+							},
+							{
+								"type": "file",
+								"name": "jsonp.js",
+								"hash": "tVTBERQnmWMG6tnXVXE+GTdkXymdOoW5EdqbjGPBUuc=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 2748
+							},
+							{
+								"type": "file",
+								"name": "load.js",
+								"hash": "E/w7IKRRf7ScdUBFu4bqMuHTSoqbfR9n1oWWpe9pacM=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 1904
+							},
+							{
+								"type": "file",
+								"name": "parseXML.js",
+								"hash": "OwiKK9msu9NcXZcM5SKxFnNuZjui8VTEJlhfO1nG/Kc=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 559
+							},
+							{
+								"type": "file",
+								"name": "script.js",
+								"hash": "BOa35xpXMF3LQrJUAtRy10KgZTbZpuXeLeYBSGe+Bfg=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 1583
+							},
+							{
+								"type": "file",
+								"name": "xhr.js",
+								"hash": "YiG8fR24RK2NNcyOc7fyddu5wpu52Ta3FAKseoCBRiU=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 4339
+							}
+						]
+					},
+					{
+						"type": "directory",
+						"name": "attributes",
+						"files": [
+							{
+								"type": "file",
+								"name": "attr.js",
+								"hash": "qHbjXd7D00NHzu/va0PXjR/VjLhO5BOwh0cOwz8B3WE=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 3271
+							},
+							{
+								"type": "file",
+								"name": "classes.js",
+								"hash": "D8ZCxscmMdQjFU8tPzZRMUrzV8k2UfLqejUm+fCyOlw=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 4447
+							},
+							{
+								"type": "file",
+								"name": "prop.js",
+								"hash": "98PabMqvUTpMJLFBsMHZBQSFKewCgv3J8XUHqUTgrMs=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 3004
+							},
+							{
+								"type": "file",
+								"name": "support.js",
+								"hash": "rf7gspjppZWRRAFLjo37xtL47HF47KkA6y4ByDxCGro=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 786
+							},
+							{
+								"type": "file",
+								"name": "val.js",
+								"hash": "drGETcGeDrSv2kP7jsJLZyXMLxabFDOi1tIh4BS4s3M=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 4249
+							}
+						]
+					},
+					{
+						"type": "directory",
+						"name": "core",
+						"files": [
+							{
+								"type": "directory",
+								"name": "var",
+								"files": [
+									{
+										"type": "file",
+										"name": "rsingleTag.js",
+										"hash": "MU6dYx0e8A0xV21rO8jZ44WNgoZdNFQDkAgEQ5B8uWQ=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 148
+									}
+								]
+							},
+							{
+								"type": "file",
+								"name": "access.js",
+								"hash": "sYep2bgaUBYBHApUR2v4pxDpoK7K72kqM0aQRKP3Taw=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 1311
+							},
+							{
+								"type": "file",
+								"name": "camelCase.js",
+								"hash": "u1m3RokLYLL1vyZxtd7uagI8RR3af+CKygaC2uAqidE=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 545
+							},
+							{
+								"type": "file",
+								"name": "DOMEval.js",
+								"hash": "XGtWrmVlD+094dI29/1MuyzdtMsstioiBe+QF6s45Qg=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 516
+							},
+							{
+								"type": "file",
+								"name": "init.js",
+								"hash": "mZLiQZ2u5l4HFo+HqcllSWA9XCdJL4ysYv2ZbG56i/U=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 3337
+							},
+							{
+								"type": "file",
+								"name": "nodeName.js",
+								"hash": "NrGZeEG1QyYMRlxbeZyVUL1pNwiMGAFcnoTnCN2GpxY=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 178
+							},
+							{
+								"type": "file",
+								"name": "parseHTML.js",
+								"hash": "wodUQ/n+zMpSiZPrEfVSdjYmFPztugB/fZ3yyg7+aeo=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 1604
+							},
+							{
+								"type": "file",
+								"name": "ready.js",
+								"hash": "91Y5qZXJW0VcMFbzVHOXaw+yD6IXNB00m1wOV+vXtB0=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 2097
+							},
+							{
+								"type": "file",
+								"name": "ready-no-deferred.js",
+								"hash": "6o7X1jPGVoo5we/xP3OBtKHgr05rp1CVHcDzrcP4Msg=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 2264
+							},
+							{
+								"type": "file",
+								"name": "readyException.js",
+								"hash": "LirlI4fo/drRWco6AIbAFGCkKr9DzSULnuMHXuFGASI=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 168
+							},
+							{
+								"type": "file",
+								"name": "stripAndCollapse.js",
+								"hash": "hhpC3nE2O3Z7+oAyD7VPZDntNrVASOiiewWtQxW/CnM=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 362
+							},
+							{
+								"type": "file",
+								"name": "support.js",
+								"hash": "/LKKQwLjjtDPHLOhIIzldxHIU841KQFYR6llmeM/fpA=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 631
+							},
+							{
+								"type": "file",
+								"name": "toType.js",
+								"hash": "EZjmklhe/ZXR3Ud3Icu/W46ZhYZK1yf2H0g63caI2+c=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 379
+							}
+						]
+					},
+					{
+						"type": "directory",
+						"name": "css",
+						"files": [
+							{
+								"type": "directory",
+								"name": "var",
+								"files": [
+									{
+										"type": "file",
+										"name": "cssExpand.js",
+										"hash": "pIru3vFVcHriTVkaJfRTIbpQad/DepyNFaBjiZ7FAz4=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 88
+									},
+									{
+										"type": "file",
+										"name": "getStyles.js",
+										"hash": "pXm6OhIemhdyOTv5x4iKM1AVszuqckMaSfwQe4ZG2ZA=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 401
+									},
+									{
+										"type": "file",
+										"name": "isHiddenWithinTree.js",
+										"hash": "rdUA+uYozNh1cHbY9vIoZ6Ri4l2CVc3yas51EilGPBA=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 1283
+									},
+									{
+										"type": "file",
+										"name": "rboxStyle.js",
+										"hash": "zGVzgK01nEM+WhD1wDzh8661wnRk4PSC+/rf9xNrXhg=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 123
+									},
+									{
+										"type": "file",
+										"name": "rnumnonpx.js",
+										"hash": "LRluEam5e7bSDtWkIOjy2IwvPnHyDrB6UE5D0DAC9as=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 131
+									},
+									{
+										"type": "file",
+										"name": "swap.js",
+										"hash": "TSqE/YDEj/3RqDqsgldEGeVLLg8Me+JjJSviHxW7AOk=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 520
+									}
+								]
+							},
+							{
+								"type": "file",
+								"name": "addGetHookIf.js",
+								"hash": "SAsfHAPbzd+mgSmJvk0pan+zmiTDjq6wb2RRruZOk88=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 530
+							},
+							{
+								"type": "file",
+								"name": "adjustCSS.js",
+								"hash": "1jOz14fz9mH8DdBlTvRFFvbpGume8Tw3l6cW2amu42I=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 2002
+							},
+							{
+								"type": "file",
+								"name": "curCSS.js",
+								"hash": "xM8jKDiTv5L0we7RF1ZoojaT3CguHl0QhRev585FNzA=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 1655
+							},
+							{
+								"type": "file",
+								"name": "finalPropName.js",
+								"hash": "hynut4TnXqfhezW0SE3NZ9WU2F26ZDVT9x7oqKsMJn0=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 849
+							},
+							{
+								"type": "file",
+								"name": "hiddenVisibleSelectors.js",
+								"hash": "OK2VDpvtXiPtSfnaRDblna+WvlUGLyucjkRRvzVyjMI=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 317
+							},
+							{
+								"type": "file",
+								"name": "showHide.js",
+								"hash": "9r/4gVnvqiEZcEMLGjPOsK5k6Gsu1NaW16V3ExJNTww=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 2304
+							},
+							{
+								"type": "file",
+								"name": "support.js",
+								"hash": "sWq3e+wLzqWp207FHd2DO/Ppyo9GhsN2as01OV4qsJc=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 3084
+							}
+						]
+					},
+					{
+						"type": "directory",
+						"name": "data",
+						"files": [
+							{
+								"type": "directory",
+								"name": "var",
+								"files": [
+									{
+										"type": "file",
+										"name": "acceptData.js",
+										"hash": "35uwg+OJk5cSTc7P7t5DWnbHmfRRVw3fma2nnvsfo3Q=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 318
+									},
+									{
+										"type": "file",
+										"name": "dataPriv.js",
+										"hash": "GYc6ClSbTNsgg7nP5rfdebXdUJ9n/b46cHZgpEJBcIU=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 84
+									},
+									{
+										"type": "file",
+										"name": "dataUser.js",
+										"hash": "GYc6ClSbTNsgg7nP5rfdebXdUJ9n/b46cHZgpEJBcIU=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 84
+									}
+								]
+							},
+							{
+								"type": "file",
+								"name": "Data.js",
+								"hash": "fMPPbRR3QcDAc/GqMJVIJXH2tvoqg1plBUqp2r13KmM=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 3952
+							}
+						]
+					},
+					{
+						"type": "directory",
+						"name": "deferred",
+						"files": [
+							{
+								"type": "file",
+								"name": "exceptionHook.js",
+								"hash": "udKs034Z/UU2hvo39yiZV10EfLxcgQ4Ydkfwdt7CK0I=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 640
+							}
+						]
+					},
+					{
+						"type": "directory",
+						"name": "effects",
+						"files": [
+							{
+								"type": "file",
+								"name": "animatedSelector.js",
+								"hash": "UNp+ly+E+UZTulYgpD9AefrP4tJnzxuBbGe7v4AX6Wg=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 244
+							},
+							{
+								"type": "file",
+								"name": "Tween.js",
+								"hash": "1SDclk3WRbUiYqNDqjFekqUdISKJG1focHz9p7KQTWs=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 3292
+							}
+						]
+					},
+					{
+						"type": "directory",
+						"name": "event",
+						"files": [
+							{
+								"type": "file",
+								"name": "ajax.js",
+								"hash": "ArU6C4c9SE15bNJMxrDBJwSwFyDdCGggaMVOXLBqCsM=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 346
+							},
+							{
+								"type": "file",
+								"name": "alias.js",
+								"hash": "Gv5HahNRZIX7/QvLceQUe7EYzsAwJsyv+BajYusVXnE=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 649
+							},
+							{
+								"type": "file",
+								"name": "focusin.js",
+								"hash": "Y3VPyZhTYSMZu9AaKo8Rq5Akx4Ik9NLULVC1Ne6EaqI=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 1512
+							},
+							{
+								"type": "file",
+								"name": "support.js",
+								"hash": "cCO4OefxCNKsStLC5pglbD7P69YVFKDHHz4NEIBOhjU=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 133
+							},
+							{
+								"type": "file",
+								"name": "trigger.js",
+								"hash": "IKgonWWEoWhVUbBpAruZcFZti9xgO3mE9UZTWK64c3M=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 5407
+							}
+						]
+					},
+					{
+						"type": "directory",
+						"name": "exports",
+						"files": [
+							{
+								"type": "file",
+								"name": "amd.js",
+								"hash": "QlfltqSbRAmFDQxEzYJo4hRtmiZIEPIUwah/R0Y666c=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 1024
+							},
+							{
+								"type": "file",
+								"name": "global.js",
+								"hash": "rHosNaT5dmyhSmObrJZx/ZNuz0nJ6aw9SwqVDxSR2qA=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 608
+							}
+						]
+					},
+					{
+						"type": "directory",
+						"name": "manipulation",
+						"files": [
+							{
+								"type": "directory",
+								"name": "var",
+								"files": [
+									{
+										"type": "file",
+										"name": "rcheckableType.js",
+										"hash": "849PQpl513CvAi45KAyBwZvQYuApovHVrzG3SyKDRWk=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 79
+									},
+									{
+										"type": "file",
+										"name": "rscriptType.js",
+										"hash": "xzoVGObmf4ukpDZEvP9yMPEvBa7+PbQ5MskKlinMsVE=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 92
+									},
+									{
+										"type": "file",
+										"name": "rtagName.js",
+										"hash": "GX9kxabOeBG8bCsK2QNRc2a6z7yxvssYbqzq09VfZRQ=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 88
+									}
+								]
+							},
+							{
+								"type": "file",
+								"name": "_evalUrl.js",
+								"hash": "Yy0+Pr+WUgmtVE+y1E35p29GUSprCgmULi+9p8Iyk8c=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 356
+							},
+							{
+								"type": "file",
+								"name": "buildFragment.js",
+								"hash": "lAGCagfN0w5hp2MsPxBJQYupLDDTw6W0/v6al2ZDUtI=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 2485
+							},
+							{
+								"type": "file",
+								"name": "getAll.js",
+								"hash": "raG5gE7KL3NBMnvgzNRw7+9VGSJlmRcPL2/wiiSWMtc=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 650
+							},
+							{
+								"type": "file",
+								"name": "setGlobalEval.js",
+								"hash": "3L0phZ69PK1s3g+xxSf1D5X7nx+IiCnFEW3zT3ezDIw=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 381
+							},
+							{
+								"type": "file",
+								"name": "support.js",
+								"hash": "mwFmv1jIK7oxXl0EAIfURUqh8q2V3hGhRfSGIWpN3Dc=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 1034
+							},
+							{
+								"type": "file",
+								"name": "wrapMap.js",
+								"hash": "AHGuue6dHLKu390mSw+QONln7rk/ltXLfg33P9JkxwA=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 798
+							}
+						]
+					},
+					{
+						"type": "directory",
+						"name": "queue",
+						"files": [
+							{
+								"type": "file",
+								"name": "delay.js",
+								"hash": "G3+gyYUPLcPYyW4qLKx6dKFOh4vo4U/5ch0RP0IAz10=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 636
+							}
+						]
+					},
+					{
+						"type": "directory",
+						"name": "traversing",
+						"files": [
+							{
+								"type": "directory",
+								"name": "var",
+								"files": [
+									{
+										"type": "file",
+										"name": "dir.js",
+										"hash": "Rjovcv9nhs+cmbOtOeoMt3c6+e47ehttatQUdJH2jgU=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 371
+									},
+									{
+										"type": "file",
+										"name": "rneedsContext.js",
+										"hash": "kMoDVjTLFo7G5Tk+NnDLP+9nrwiptZqHhe+cTZlivx8=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 128
+									},
+									{
+										"type": "file",
+										"name": "siblings.js",
+										"hash": "CPV8/Yh3Z5jQZ9Bjm73+hCLAVfihd/RaxGpkxfx502k=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 218
+									}
+								]
+							},
+							{
+								"type": "file",
+								"name": "findFilter.js",
+								"hash": "6JpaMMZHQjK5B1OveqKZgLVWPvbhxQh2D/2pVnmmsRo=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 2352
+							}
+						]
+					},
+					{
+						"type": "directory",
+						"name": "var",
+						"files": [
+							{
+								"type": "file",
+								"name": "arr.js",
+								"hash": "KqEQ5OYuLmuBJfEmhHxBnmpGpv1pR72PM0lNLMZ/CW0=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 54
+							},
+							{
+								"type": "file",
+								"name": "class2type.js",
+								"hash": "MBPUIrJOxf7O2ci6pO1SDfVrDRjea/k2462G4VW2GTE=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 82
+							},
+							{
+								"type": "file",
+								"name": "concat.js",
+								"hash": "h+LQycndEDGbgbbXw5+XPh/unyHIw/LkaFA2c3D72Vo=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 81
+							},
+							{
+								"type": "file",
+								"name": "document.js",
+								"hash": "+gND7PEyGjy4zMBPzDjNx5L80bv+rMbglBOyjehkLEc=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 67
+							},
+							{
+								"type": "file",
+								"name": "documentElement.js",
+								"hash": "UGnuEkSzjDDd72APy/FSv8HCuN4a6f/C3wXPIG0J6UQ=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 105
+							},
+							{
+								"type": "file",
+								"name": "fnToString.js",
+								"hash": "w2Smaz/FOStIVIVyE0Tmd5XPR1RS6P1FrdIYSK+yquo=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 92
+							},
+							{
+								"type": "file",
+								"name": "getProto.js",
+								"hash": "TkAAWmLMCc10fZJz/1iv0Q6oAYT+lzoGIjfex9NX6rU=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 73
+							},
+							{
+								"type": "file",
+								"name": "hasOwn.js",
+								"hash": "sQe5oZPwd2LkibqEj0FCDN4m6E+OCg8K0dCZyrQZsgk=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 110
+							},
+							{
+								"type": "file",
+								"name": "indexOf.js",
+								"hash": "QzhziawYimalbpg88AATiw4B+xiRGNLjRgKhv7FYKtE=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 82
+							},
+							{
+								"type": "file",
+								"name": "isAttached.js",
+								"hash": "/3G5eg1urLXQAQcBx6mydgj9ka46azHcU+8Q8Hl2Ytc=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 199
+							},
+							{
+								"type": "file",
+								"name": "isFunction.js",
+								"hash": "UD/6nMVsm1UBzPPZ/XXQqmVBBgJVwXXfVgQv0E05RCg=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 428
+							},
+							{
+								"type": "file",
+								"name": "isWindow.js",
+								"hash": "87bJYkMxAREhW0dXpBB4pgbRcjs3/b70wDmOCjQCBbo=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 126
+							},
+							{
+								"type": "file",
+								"name": "ObjectFunctionString.js",
+								"hash": "8ymI7EWwkjEMYhd3a6kSAO5G6KzCub9YqCT5pkxF1Ys=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 110
+							},
+							{
+								"type": "file",
+								"name": "pnum.js",
+								"hash": "Y403VoUQRLqYLZ1H953nd9UmAAOYNqril0kh0rVdR5U=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 100
+							},
+							{
+								"type": "file",
+								"name": "push.js",
+								"hash": "ck7pyeuPlYAyci/q04Mo2sVNY1yGEIDGHu3LpGm/tEs=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 79
+							},
+							{
+								"type": "file",
+								"name": "rcssNum.js",
+								"hash": "nV8R+j8wlF0LiI89UHWox6X7xk6cUiHsB1nu3rkJE0Y=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 136
+							},
+							{
+								"type": "file",
+								"name": "rnothtmlwhite.js",
+								"hash": "3H4lGanl/njZn/e17m1k0Tf6Zp6XESWJ1mRWm+zyWg4=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 202
+							},
+							{
+								"type": "file",
+								"name": "slice.js",
+								"hash": "RbB/TiVS4EzuMeF4djnrI+R+rh5L9OeQBL3M7+TJT9E=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 80
+							},
+							{
+								"type": "file",
+								"name": "support.js",
+								"hash": "XMPzWuHe844wqbTSY/bOQ3IZ9b56nPMk8ibURLfrL2Y=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 117
+							},
+							{
+								"type": "file",
+								"name": "toString.js",
+								"hash": "Hh87skomwwu+CRIhgHuB57r89HwLkosBnbCADzaaLe8=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 104
+							}
+						]
+					},
+					{
+						"type": "file",
+						"name": ".eslintrc.json",
+						"hash": "05Y7V/QwxgotfDQr0pz9fozif8dEzryhttOOBvUEZnQ=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 60
+					},
+					{
+						"type": "file",
+						"name": "ajax.js",
+						"hash": "c62nyV6S4teU+nuCRBKkae7vCWcWZN+IwVkwMz781z0=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 22348
+					},
+					{
+						"type": "file",
+						"name": "attributes.js",
+						"hash": "mE2ygHkKZyKTqrdtEvX4O+gG8kAAVMny3B18lVC88iQ=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 217
+					},
+					{
+						"type": "file",
+						"name": "callbacks.js",
+						"hash": "4tvMCMKre12/X1YtVa6p+qsRKAuX3DF9cwVO0Yh/cmU=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 5552
+					},
+					{
+						"type": "file",
+						"name": "core.js",
+						"hash": "q8sR+CxdH+EYYiqOa38MQKK/pPa2W06/ZS9AhYVYRVE=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 9071
+					},
+					{
+						"type": "file",
+						"name": "css.js",
+						"hash": "t/lhGLzW2NsrdJfUNePGLDvpvPRAFf6tGmVrv/vm9TQ=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 12681
+					},
+					{
+						"type": "file",
+						"name": "data.js",
+						"hash": "WBS6+BnPLe2oxrxe5FldPiAa328dKTP1sGqC9OMYS0Y=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 4321
+					},
+					{
+						"type": "file",
+						"name": "deferred.js",
+						"hash": "Kd+auRXZfDCYZhD61224u4QZqBLaK7+ZK8prJapeP94=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 10997
+					},
+					{
+						"type": "file",
+						"name": "deprecated.js",
+						"hash": "aAEeWMa5fB6vbILFB8fM9nYFB6ppuo+e5lLJEPCPAz8=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 2467
+					},
+					{
+						"type": "file",
+						"name": "dimensions.js",
+						"hash": "9ADRMEp9BnANENOUuYoMrLB8TSKUWO8q2bKXbsPJ+2k=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 1751
+					},
+					{
+						"type": "file",
+						"name": "effects.js",
+						"hash": "yLUjrXFvh9KfR5QNQQjS3b68Bz6H9y7r2XwySiiWMXw=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 17455
+					},
+					{
+						"type": "file",
+						"name": "event.js",
+						"hash": "TmXApBArjpuENvXSrfKxrmPErAv7t0DIx6o7REvKljU=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 19453
+					},
+					{
+						"type": "file",
+						"name": "jquery.js",
+						"hash": "1J//37dUFd4Bl8WCE2NJx8Yhn4/76ufIZ9BgRlfBiec=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 622
+					},
+					{
+						"type": "file",
+						"name": "manipulation.js",
+						"hash": "IIheKCgDYnLXNsk/wFKj19TGZoC+iA/4CDSPivHyWfM=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 12565
+					},
+					{
+						"type": "file",
+						"name": "offset.js",
+						"hash": "7/5Q6xqAWgDcDhdaJzbqtxqZl0DYDRAIS5qn6rouZOM=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 6868
+					},
+					{
+						"type": "file",
+						"name": "queue.js",
+						"hash": "lQp6mzg7TypmtdCCngVWqXUBJ6ka4lh4/t8hTpF6fmg=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 3091
+					},
+					{
+						"type": "file",
+						"name": "selector.js",
+						"hash": "NHLf2FMFkMmwr4IjT49T5ZrTdvSGHzYzZZBlcXmYqto=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 66
+					},
+					{
+						"type": "file",
+						"name": "selector-native.js",
+						"hash": "gGuuEQzYbSpPrnQ8XFU2iYJwJff5DrFi2nXhyL3+BEs=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 6394
+					},
+					{
+						"type": "file",
+						"name": "selector-sizzle.js",
+						"hash": "hZnNx+RdH/3RJgq+Bm/rLPLfKK+KC1HWdHXI4lZW5Gc=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 411
+					},
+					{
+						"type": "file",
+						"name": "serialize.js",
+						"hash": "4EiqlZB6zxnhxeirN4doj/kQ5/H/mjV3lX9xhhmxL4w=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 3217
+					},
+					{
+						"type": "file",
+						"name": "traversing.js",
+						"hash": "uEpSpbKZaDK9XHOo7GtgNTYhocp7c5ZO8FHe1niVLsA=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 4549
+					},
+					{
+						"type": "file",
+						"name": "wrap.js",
+						"hash": "+VE7+oOJoDc8KAoIrsjCOvi4qOLRjeCs7WhDbWCq860=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 1477
+					},
+					{
+						"type": "file",
+						"name": "wrapper.js",
+						"hash": "9hdMFRRR72bLPGVxb8vgcskcemME85ipxPaJ66mv7EI=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 1611
+					}
+				]
+			},
+			{
+				"type": "directory",
+				"name": "test",
+				"files": [
+					{
+						"type": "directory",
+						"name": "data",
+						"files": [
+							{
+								"type": "directory",
+								"name": "ajax",
+								"files": [
+									{
+										"type": "file",
+										"name": "onunload.html",
+										"hash": "iDZ5qvoKN1fO6q1UEtwirKSP1008IMAc3F6R5aygzSo=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 699
+									},
+									{
+										"type": "file",
+										"name": "unreleasedXHR.html",
+										"hash": "odKoLEwoRsFF1P7zX2z6dbUIs74Gphz+Sf2AZqD2wD8=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 654
+									}
+								]
+							},
+							{
+								"type": "directory",
+								"name": "core",
+								"files": [
+									{
+										"type": "file",
+										"name": "aliased.html",
+										"hash": "SsrPydvy6ifTxjYT2Gbn2yYyEBkBWB6UFPrneWaYlrQ=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 547
+									},
+									{
+										"type": "file",
+										"name": "cc_on.html",
+										"hash": "us/S1/qNSxZCWxbQzHrDPegHZxmeTcxMMFquKOhWSyg=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 472
+									},
+									{
+										"type": "file",
+										"name": "dynamic_ready.html",
+										"hash": "rtGIvfGBwB2YUc5QXCfOoF6hi6GCp5RLXnu0DAuXxk0=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 839
+									},
+									{
+										"type": "file",
+										"name": "onready.html",
+										"hash": "rfs7xSwM//Emw5RxfGqo8tEpNk2W6UXdVw2u4NcEUQE=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 544
+									}
+								]
+							},
+							{
+								"type": "directory",
+								"name": "css",
+								"files": [
+									{
+										"type": "file",
+										"name": "cssWidthBeforeDocReady.html",
+										"hash": "EpJMSLx2gwZI5JgwTzLJ4F+HKWEgleThuroBnIkVgm4=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 374
+									},
+									{
+										"type": "file",
+										"name": "cssWidthBrowserZoom.html",
+										"hash": "7OC18vgQf/7fJv3cWRifQ4uDpZIuR1MPec60LxrLfyE=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 514
+									}
+								]
+							},
+							{
+								"type": "directory",
+								"name": "data",
+								"files": [
+									{
+										"type": "file",
+										"name": "dataAttrs.html",
+										"hash": "ciK1Yusp1U7sT1BkKRJjN61HWywJuJra838gazjwGi8=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 441
+									}
+								]
+							},
+							{
+								"type": "directory",
+								"name": "dimensions",
+								"files": [
+									{
+										"type": "file",
+										"name": "documentLarge.html",
+										"hash": "dAK1iD5dcqWqud2nqFW8CejSQP9SvqQnjfvlKvBaM5s=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 540
+									}
+								]
+							},
+							{
+								"type": "directory",
+								"name": "event",
+								"files": [
+									{
+										"type": "file",
+										"name": "focusElem.html",
+										"hash": "be/0N5REgBDHhhUXL8+Lx1h664HoQ1BZZjKlZ0VMLSw=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 397
+									},
+									{
+										"type": "file",
+										"name": "focusinCrossFrame.html",
+										"hash": "7NhQIppi6njCgXbZ/gEBrurCD130ktIoz4GjBhhheV8=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 480
+									},
+									{
+										"type": "file",
+										"name": "interactiveReady.html",
+										"hash": "06TNqKP4NSMAV/pNXkC8W92Qw7QlkcRPclgy65c0nag=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 738
+									},
+									{
+										"type": "file",
+										"name": "onbeforeunload.html",
+										"hash": "W1jTUlbC4WVpFq6hwI5jSRmQC1J6LJYL1x3HBZGU26c=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 426
+									},
+									{
+										"type": "file",
+										"name": "promiseReady.html",
+										"hash": "KDFb+bPlAD7viH4yoVI+7AtKvWdagXnjIiDGiamerQU=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 529
+									},
+									{
+										"type": "file",
+										"name": "syncReady.html",
+										"hash": "zRCQ7KX8I6KiY1Rt3BG3NzXiPtMbYuanYy6PXf+haSs=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 767
+									},
+									{
+										"type": "file",
+										"name": "triggerunload.html",
+										"hash": "i3RvovXL9BTsd7cL9K8zqrF0uSkMIYyPfSTe/M8l5Bw=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 454
+									}
+								]
+							},
+							{
+								"type": "directory",
+								"name": "manipulation",
+								"files": [
+									{
+										"type": "file",
+										"name": "iframe-denied.html",
+										"hash": "gBKniVyOkwg/AYuaGcfJQQJZrSU6aFCJOeyv6Gh/aT4=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 910
+									},
+									{
+										"type": "file",
+										"name": "scripts-context.html",
+										"hash": "VJ+NzLHMfOYUNXfpMTaYfOSK+S8SeG63XjOXEQM51Sg=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 275
+									}
+								]
+							},
+							{
+								"type": "directory",
+								"name": "offset",
+								"files": [
+									{
+										"type": "file",
+										"name": "absolute.html",
+										"hash": "jRLvxSjAzCPmwnKNYfQdS9hukfLowtWsr7UJG8RlNHs=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 1836
+									},
+									{
+										"type": "file",
+										"name": "body.html",
+										"hash": "teqR+hUGUvUTKkjeHiuM18C7C3sje5zGU+nnvhnbfRk=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 906
+									},
+									{
+										"type": "file",
+										"name": "boxes.html",
+										"hash": "g+8qljw9PhgwvEQqcR2HSpYnlQU8URVazGQEszSbwNY=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 3007
+									},
+									{
+										"type": "file",
+										"name": "fixed.html",
+										"hash": "kSEgEvGveyHtsjw1UEBY21kzWmzkNg9Kvpyt0bQk+Nc=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 1337
+									},
+									{
+										"type": "file",
+										"name": "relative.html",
+										"hash": "0IT378IwoWH1XET/2t4sPOds3sXjMw9ZRHRfT4P4pe8=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 1608
+									},
+									{
+										"type": "file",
+										"name": "scroll.html",
+										"hash": "iqAA8B5eUxfjtZ9pG+It0pny4ZliT7VOqicZgPNVEfE=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 1531
+									},
+									{
+										"type": "file",
+										"name": "static.html",
+										"hash": "oUoH4H9gFQ+F6wxBXqahcHOfb7ihtYt4i6IaSDveCB0=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 1488
+									},
+									{
+										"type": "file",
+										"name": "table.html",
+										"hash": "peNpzTpm8tGWQGeKnaAXTSUUmHvP89SUs/fFBg9isHQ=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 1297
+									}
+								]
+							},
+							{
+								"type": "directory",
+								"name": "selector",
+								"files": [
+									{
+										"type": "file",
+										"name": "html5_selector.html",
+										"hash": "Pw+JrtsZxg/d4+NSWObuKyIkRC1D80p/iDwuZ5cop7g=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 2066
+									},
+									{
+										"type": "file",
+										"name": "sizzle_cache.html",
+										"hash": "dIfW/gdskHvKYqtfxhsfVAC5S6FbbDs4jg9rHwTCS1s=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 589
+									}
+								]
+							},
+							{
+								"type": "directory",
+								"name": "support",
+								"files": [
+									{
+										"type": "file",
+										"name": "bodyBackground.html",
+										"hash": "U5Fd85UBhQi85H494kWpINO/xhv6TurASzjhBOqVum4=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 743
+									},
+									{
+										"type": "file",
+										"name": "csp.js",
+										"hash": "NfjenZpUTw3v7moTWz+dSofZhGJWu5l45qT6ldIYDXI=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 84
+									},
+									{
+										"type": "file",
+										"name": "csp.log",
+										"hash": "47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 0
+									},
+									{
+										"type": "file",
+										"name": "getComputedSupport.js",
+										"hash": "t2b8twzp4R/M3cRrzMomzdeIUuCCAEJ/tRnsFrSNNtE=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 257
+									}
+								]
+							},
+							{
+								"type": "file",
+								"name": "1x1.jpg",
+								"hash": "yg5WQThG4G6mehhcpKrHxxey55NIpcErZjgpGfe+EGk=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 693
+							},
+							{
+								"type": "file",
+								"name": "badcall.js",
+								"hash": "bofpIjMQf1cS34xMkt9Aohveg0u8H6niVL7dn5d4AKk=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 13
+							},
+							{
+								"type": "file",
+								"name": "badjson.js",
+								"hash": "26BRBn/r8NqS4UDcJg22h2bXtcsp4n+vw05VA6IhiO8=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 17
+							},
+							{
+								"type": "file",
+								"name": "cleanScript.html",
+								"hash": "mape7tHQlIpgSu0GxJqjzT/Gxx893kXaT2v76Qt5RxQ=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 157
+							},
+							{
+								"type": "file",
+								"name": "csp.include.html",
+								"hash": "Z7GzkidcBYCBYgt/fngMyR5p2mbhOXzxWARnj0uca3w=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 356
+							},
+							{
+								"type": "file",
+								"name": "dashboard.xml",
+								"hash": "wAH5MmviZObJcYm0dplg7tI85qTnBdkvk6vZAIptLBU=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 298
+							},
+							{
+								"type": "file",
+								"name": "iframe.html",
+								"hash": "/sRK8iHR1E7iIC9CldAbmEVvzZMhPxaxT0Bwc8U7/pM=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 109
+							},
+							{
+								"type": "file",
+								"name": "iframeTest.js",
+								"hash": "+NbaRhyBl+XQUICm3M2YuwXbxR394o5BdAx2SsOplAM=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 254
+							},
+							{
+								"type": "file",
+								"name": "inner_module.js",
+								"hash": "cJD4ZoVNDWdZOqiizJE2Ie9x8Iu4NNx+Ijqc4FmKlJQ=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 55
+							},
+							{
+								"type": "file",
+								"name": "jquery-1.9.1.js",
+								"hash": "9jVS2kqodmymdLowB5e4kEp5QUWKCAd4UdKDPHEy1EA=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 270158
+							},
+							{
+								"type": "file",
+								"name": "json_obj.js",
+								"hash": "gS7y18g6VT1T/Nnf8MLixQHHjAfZyM3abk81TIrzgk8=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 41
+							},
+							{
+								"type": "file",
+								"name": "mock.php",
+								"hash": "vMvCG//cx/t0F7YGXoPK97ylcJRw009nUrgEzuwt/qQ=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 6558
+							},
+							{
+								"type": "file",
+								"name": "module.js",
+								"hash": "Tcrw75ZWe7mHNyncOX5qIGE8eB8ZrKrpAEeDwhZjUqs=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 49
+							},
+							{
+								"type": "file",
+								"name": "name.html",
+								"hash": "dYFgULqGh6W9a83+KgS0AIyIZL54MEvSQT7KhSsl4gc=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 81
+							},
+							{
+								"type": "file",
+								"name": "qunit-fixture.html",
+								"hash": "OR/m+6zeUbiLZagrY2QHb+LYQVWz5tDYleOQkysG0Jc=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 10018
+							},
+							{
+								"type": "file",
+								"name": "qunit-fixture.js",
+								"hash": "QfeuDDu6ktB4GGyE2Opg2hODeQjIWF95V9mUQiQhtF0=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 11424
+							},
+							{
+								"type": "file",
+								"name": "readywait.html",
+								"hash": "oya//xENDFAc/2pKA0TKNzxM8zWbxyhUyHt1BXjbkHI=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 1806
+							},
+							{
+								"type": "file",
+								"name": "test.include.html",
+								"hash": "oXWJTYkNI6A5rkAknD8njA+xS9+fx+HM5gfWNKqJOfI=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 234
+							},
+							{
+								"type": "file",
+								"name": "test2.html",
+								"hash": "JjO4OZEwCh8S0i+2p3djI9Le61Y3qHFqSZHkh82+Eh8=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 126
+							},
+							{
+								"type": "file",
+								"name": "test3.html",
+								"hash": "ak2Mo3BpHD5xdFs8iAWJyB7J3/rp/3oRtFwMmOOlKZo=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 245
+							},
+							{
+								"type": "file",
+								"name": "testinit.js",
+								"hash": "nKi09oZRN5XsFFvqxrWhoWRrJclKZkC2U7H2CgqkLRM=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 10367
+							},
+							{
+								"type": "file",
+								"name": "testrunner.js",
+								"hash": "/RY1xsL1t+S/GIk8KNqDrt7bvqMiTV4QSoUdK6rmk5o=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 5707
+							},
+							{
+								"type": "file",
+								"name": "testsuite.css",
+								"hash": "qEN9JtgHxWjs1eckN+ZSewcIoqIMl/zymoga8ktM2oQ=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 2044
+							},
+							{
+								"type": "file",
+								"name": "text.txt",
+								"hash": "5KyZ6UVneOuYJoxaWW+kbyiDILbjmrMkXCYPtYODoNM=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 287
+							},
+							{
+								"type": "file",
+								"name": "with_fries.xml",
+								"hash": "3I8GZRb9VeH3U27kvCYx8R598KIMcq1D8C+qNoxtWSs=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 740
+							}
+						]
+					},
+					{
+						"type": "directory",
+						"name": "integration",
+						"files": [
+							{
+								"type": "directory",
+								"name": "data",
+								"files": [
+									{
+										"type": "file",
+										"name": "gh-1764-fullscreen.js",
+										"hash": "nCQhOiXkB7oU+AXcYg+5ff1C0YFzM+NuoD/OuZuDyeo=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 3085
+									},
+									{
+										"type": "file",
+										"name": "gh-1764-fullscreen-iframe.css",
+										"hash": "OULteiBAlV/JY9KfyOYVI0d2XsrjPhYevaBAMYmWL7U=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 197
+									},
+									{
+										"type": "file",
+										"name": "gh-1764-fullscreen-iframe.html",
+										"hash": "tGAepoxZJO6bQvL6IJy3T4hSs22JvsuNHeQNDSS1Rlc=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 572
+									}
+								]
+							},
+							{
+								"type": "file",
+								"name": "gh-1764-fullscreen.html",
+								"hash": "6pfLfY0/r/SqMTCNC+D8CJNuM0+eZsyrCB8YFNKeGPI=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 817
+							},
+							{
+								"type": "file",
+								"name": "gh-2343-ie-radio-click.html",
+								"hash": "nTgDYHqxFeuCit/ewaCkx4q7t30Yg+++H5fMtphqklU=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 844
+							}
+						]
+					},
+					{
+						"type": "directory",
+						"name": "node_smoke_tests",
+						"files": [
+							{
+								"type": "directory",
+								"name": "lib",
+								"files": [
+									{
+										"type": "file",
+										"name": "ensure_global_not_created.js",
+										"hash": "Za3Xfrunzy3CNJ4hytHx3Vt1/OM9Qp51VsROkhSaM64=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 494
+									},
+									{
+										"type": "file",
+										"name": "ensure_iterability_es6.js",
+										"hash": "5UIWNSCoxjWKrnofwhTt778zdG/fY1BS5koT8sIyicw=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 540
+									},
+									{
+										"type": "file",
+										"name": "ensure_jquery.js",
+										"hash": "U7ImG7Qd8HyaKf7ZOfCQpbrCwjk3cdU7h5qfJTAqWfo=",
+										"time": "2018-05-07T13:28:18.000Z",
+										"size": 303
+									}
+								]
+							},
+							{
+								"type": "file",
+								"name": ".eslintrc.json",
+								"hash": "bEl6Lw62QqC1BIsS+Jpxv7Tv6d6YMEmC4u4yXB+frf4=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 133
+							},
+							{
+								"type": "file",
+								"name": "document_missing.js",
+								"hash": "c/wXCyVZZe6w2zGcjQyaxiYxf9MR/UqZ60BbQ0PcsVc=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 316
+							},
+							{
+								"type": "file",
+								"name": "document_passed.js",
+								"hash": "jXxD5Rfg3Ifbk7Gn+5dtdMDYV4k6Yr3wUTI17rrfeDo=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 392
+							},
+							{
+								"type": "file",
+								"name": "document_present_originally.js",
+								"hash": "5UW6i+JzkHOUCu9kNOuC8lbvTQSLujUFGdxcf5rqTR8=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 452
+							},
+							{
+								"type": "file",
+								"name": "iterable_with_native_symbol.js",
+								"hash": "Lm8yiWC04YMb8UOp4FLsNpyzcwSGftxTk+e8CFjDQ40=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 182
+							},
+							{
+								"type": "file",
+								"name": "iterable_with_symbol_polyfill.js",
+								"hash": "bKv6kyDcYpFrpOsFQpbEmMDVuNDCKkgAUSPCz96byDs=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 320
+							}
+						]
+					},
+					{
+						"type": "directory",
+						"name": "promises_aplus_adapters",
+						"files": [
+							{
+								"type": "file",
+								"name": ".eslintrc.json",
+								"hash": "gSRjuvOJeAgdaFaQxsJeGuiIYT0nKcPdMA/TTu+7obs=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 60
+							},
+							{
+								"type": "file",
+								"name": "deferred.js",
+								"hash": "tO5z+PmfvjICqEgrMTiTtvHr0Tl003hhubqjqt+2vlE=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 401
+							},
+							{
+								"type": "file",
+								"name": "when.js",
+								"hash": "35KLj8yrK/OolPtltVOjV/zIq26aNq4e+podUHbbXpk=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 1116
+							}
+						]
+					},
+					{
+						"type": "directory",
+						"name": "unit",
+						"files": [
+							{
+								"type": "file",
+								"name": "ajax.js",
+								"hash": "D2vIou3uE3TfR4Sz+KqcvgV6p8KNejy2oIuD8Mm8W6g=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 76974
+							},
+							{
+								"type": "file",
+								"name": "animation.js",
+								"hash": "TVMQ/wYAV3uKlHhkxzhJ9wtDajjSiNSwlwb1wRTuh3M=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 8433
+							},
+							{
+								"type": "file",
+								"name": "attributes.js",
+								"hash": "EuyojeQmHAj4v6vD+rpStKRdR1Rn3p0rjKEqe0BKOTI=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 73590
+							},
+							{
+								"type": "file",
+								"name": "basic.js",
+								"hash": "AkIHUrbTNX217yDfap2mw/ZkMSiYMVTxbJ/jCQyuZdY=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 8992
+							},
+							{
+								"type": "file",
+								"name": "callbacks.js",
+								"hash": "D0Cc/Jxeu4l+CUvrgdt5RphXi//4VE9mjvFCe2Rnzms=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 11683
+							},
+							{
+								"type": "file",
+								"name": "core.js",
+								"hash": "9Fe/SJ2nM+0qxuBuwxeNSluK4NV7fxW1mrKJoIDWx4Y=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 51323
+							},
+							{
+								"type": "file",
+								"name": "css.js",
+								"hash": "yedoxYb9wtosHEwOl3/Mjq4ERGZtJEaHx+ox5f4VwZk=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 61114
+							},
+							{
+								"type": "file",
+								"name": "data.js",
+								"hash": "IaSCxczrsfUhE6nm3TuKv6FjVX0aSzn6VWpvVvP8xBw=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 33121
+							},
+							{
+								"type": "file",
+								"name": "deferred.js",
+								"hash": "QBAG3NnFQra+aBDCsaUnnDZn+LwVAcjDMpT6H39BV3I=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 34726
+							},
+							{
+								"type": "file",
+								"name": "deprecated.js",
+								"hash": "Juwj7SaJ6YCVRU9vhEZMoJpEOTF4/8v4/cAyHwkK7y0=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 20716
+							},
+							{
+								"type": "file",
+								"name": "dimensions.js",
+								"hash": "dSeqGGCQXasHKsvcgB5heRUxoqLFbqLeRMBkAmHd22A=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 33121
+							},
+							{
+								"type": "file",
+								"name": "effects.js",
+								"hash": "Lw5B5qzTb8/bA4345JBoaU6/Z0KQzuGh2yYYdXZs3sU=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 77449
+							},
+							{
+								"type": "file",
+								"name": "event.js",
+								"hash": "HHGHnb8Fmv+cUHNLN+tyBwHMB38zFlotCsU3yX95U6c=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 91494
+							},
+							{
+								"type": "file",
+								"name": "exports.js",
+								"hash": "hoKA1H8ZQNkaLY0UK2RooSdRVICFtPBcdR5Cm0qoFl8=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 211
+							},
+							{
+								"type": "file",
+								"name": "manipulation.js",
+								"hash": "ju1L/ZEacYMfAl0ZW65TFIsroXyDco/goJiKu0wd9wM=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 102593
+							},
+							{
+								"type": "file",
+								"name": "offset.js",
+								"hash": "TM2zW2MzYZyJb/FejCSguNrf09WQgF0AsgMA6rbKFJg=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 35409
+							},
+							{
+								"type": "file",
+								"name": "queue.js",
+								"hash": "KRK0wRw0B1WJH7hxvFk8Lt6455NFJjV/m24ENa2PwI8=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 8558
+							},
+							{
+								"type": "file",
+								"name": "ready.js",
+								"hash": "9WpJCpXt/ZQYC+FC1O1KHtUFTw2BGUiJRNAQSYb8xns=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 4804
+							},
+							{
+								"type": "file",
+								"name": "selector.js",
+								"hash": "2D8QqLGWg+HbUITQkb1CmpJpmPLSRvkYuNm54JP674o=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 25282
+							},
+							{
+								"type": "file",
+								"name": "serialize.js",
+								"hash": "6zmsrPZDUY2vQTehX1Wn9RI7rVjAWcfwVOB7lex4kLo=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 9382
+							},
+							{
+								"type": "file",
+								"name": "support.js",
+								"hash": "UI4OSzVKCR7KuafqzgWIAcndRBON3MLIrb8e+JqFjJ8=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 9279
+							},
+							{
+								"type": "file",
+								"name": "traversing.js",
+								"hash": "R3OH+juudHRoTeoA3ELtSesFYZFmoJeJxrDqg7Ny0I8=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 50267
+							},
+							{
+								"type": "file",
+								"name": "tween.js",
+								"hash": "RtImhrgg1CGeRLcG4OdhTk4FiVdz/Aiq1332mZoOvfw=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 10485
+							},
+							{
+								"type": "file",
+								"name": "wrap.js",
+								"hash": "d3rMV7BMveDJ18do2h/nQrgv72piSxGFG4F2upgz/9Q=",
+								"time": "2018-05-07T13:28:18.000Z",
+								"size": 15014
+							}
+						]
+					},
+					{
+						"type": "file",
+						"name": ".eslintrc.json",
+						"hash": "0rTx59tnpKfFBgBWBVpkScp+O6hXdD/O2kAlg2Faius=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 1272
+					},
+					{
+						"type": "file",
+						"name": "delegatetest.html",
+						"hash": "sp1KVADZZDnfQ30rTDxow0C0/aemEvTw8JkZhCtBFrk=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 6401
+					},
+					{
+						"type": "file",
+						"name": "hovertest.html",
+						"hash": "TemEI9WD5n1IwDMSGcWtUQZw/fSvQnjDqLXqMvTkT4I=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 3966
+					},
+					{
+						"type": "file",
+						"name": "index.html",
+						"hash": "ie/cVLj3etBmgIRtV4hMyPzXW64h4wk5SWp65G0zR6s=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 1731
+					},
+					{
+						"type": "file",
+						"name": "jquery.js",
+						"hash": "n/S9OcDQBAhvp5XkHc3aL3Y9t2MwQSfMdbB+Wxz5oq8=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 1631
+					},
+					{
+						"type": "file",
+						"name": "karma.context.html",
+						"hash": "SMX9k+AmV5AN+0A/HGH3nmzZVqPSNfSwxBM+TmaMY2U=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 1519
+					},
+					{
+						"type": "file",
+						"name": "karma.debug.html",
+						"hash": "E9u2U5Pr/BIQwogsaW7iPO5K6aGyV9vjIVBaGBtXyR4=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 1594
+					},
+					{
+						"type": "file",
+						"name": "localfile.html",
+						"hash": "vHPhL2pMKryqhY8P6Gug4FsQaRnmyyR6OwitfvMueII=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 1912
+					},
+					{
+						"type": "file",
+						"name": "middleware-mockserver.js",
+						"hash": "UiMYrLZqIJx54bIwzvUe3zK6+LnLT7GuyRCXa+0pAUY=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 7789
+					},
+					{
+						"type": "file",
+						"name": "networkerror.html",
+						"hash": "WO26KaMZ378VuC8WpC4Y61SaDh+YIr3RDNc8KjKich8=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 1552
+					},
+					{
+						"type": "file",
+						"name": "xhtml.php",
+						"hash": "S61lJpZGY+HIMClTNX3YRKNvVPJLMhLu08X+rFa4/FE=",
+						"time": "2018-05-07T13:28:18.000Z",
+						"size": 136
+					}
+				]
+			},
+			{
+				"type": "file",
+				"name": ".editorconfig",
+				"hash": "QKbMQnwhkXk7Qrigx7BWMQP9fOoaSCD2L9HJlCF1I2E=",
+				"time": "2018-05-07T13:28:18.000Z",
+				"size": 279
+			},
+			{
+				"type": "file",
+				"name": ".eslintignore",
+				"hash": "SXodHo7CSbGe+Nrybi6QwkTZ9h1DY6vfHQPpLt8y8Vc=",
+				"time": "2018-05-07T13:28:18.000Z",
+				"size": 315
+			},
+			{
+				"type": "file",
+				"name": ".eslintrc.json",
+				"hash": "RbC4srl9Z3jrmiMyJuVBJEoxW0aaz0/xiDZTTMUbFkk=",
+				"time": "2018-05-07T13:28:18.000Z",
+				"size": 56
+			},
+			{
+				"type": "file",
+				"name": ".eslintrc-browser.json",
+				"hash": "sNyHjFRTHUryq1WqIxstS7PEz5yXIosqzDI1bM1XaME=",
+				"time": "2018-05-07T13:28:18.000Z",
+				"size": 687
+			},
+			{
+				"type": "file",
+				"name": ".eslintrc-node.json",
+				"hash": "gl8dksE+qRAkILRwTvUmMhdtuRJXR8/khLkowGE/tnk=",
+				"time": "2018-05-07T13:28:18.000Z",
+				"size": 115
+			},
+			{
+				"type": "file",
+				"name": ".gitattributes",
+				"hash": "K0jxYsDqNBpRG/RE01SCMbTZi+lrRovREi0RfOxggWg=",
+				"time": "2018-05-07T13:28:18.000Z",
+				"size": 127
+			},
+			{
+				"type": "file",
+				"name": ".gitignore",
+				"hash": "r9Ip0VD66GDL1BWesNGZlNGRvrQk5CkR2CI8iojHRkM=",
+				"time": "2018-05-07T13:28:18.000Z",
+				"size": 283
+			},
+			{
+				"type": "file",
+				"name": ".mailmap",
+				"hash": "48oA8SdcIv/ThR4Vw2ZTbCMsENTtG9ge7YMpLuBGL+8=",
+				"time": "2018-05-07T13:28:18.000Z",
+				"size": 5223
+			},
+			{
+				"type": "file",
+				"name": ".npmignore",
+				"hash": "r4yWMV9zhhMLinbM2Ha9HrFejgSgt2h1hMDTtpXQsfc=",
+				"time": "2018-05-07T13:28:18.000Z",
+				"size": 172
+			},
+			{
+				"type": "file",
+				"name": ".npmrc",
+				"hash": "voXMRi50BYdia7y7HD7RxAsm5i7AcujL0naPI5FcKOY=",
+				"time": "2018-05-07T13:28:18.000Z",
+				"size": 16
+			},
+			{
+				"type": "file",
+				"name": ".travis.yml",
+				"hash": "qYHIO8pVI98YNWViqsKwVIzZtJ5OIGCoWdN4aCKVkcA=",
+				"time": "2018-05-07T13:28:18.000Z",
+				"size": 291
+			},
+			{
+				"type": "file",
+				"name": "AUTHORS.txt",
+				"hash": "/V5KZT/qHRKoLBJWcf1TAWOoM2SzB1a56idTUd7qufc=",
+				"time": "2018-05-07T13:28:18.000Z",
+				"size": 11650
+			},
+			{
+				"type": "file",
+				"name": "CODE_OF_CONDUCT.md",
+				"hash": "VoybzKSr2VwX2Q3afRSVV5Jjj/RrmPu7AT17jBM73Vc=",
+				"time": "2018-05-07T13:28:18.000Z",
+				"size": 168
+			},
+			{
+				"type": "file",
+				"name": "CONTRIBUTING.md",
+				"hash": "z3zOUcJcIlz1DeuBZPuEzXVBDDmb3Lq8YobtredZQfo=",
+				"time": "2018-05-07T13:28:18.000Z",
+				"size": 7923
+			},
+			{
+				"type": "file",
+				"name": "Gruntfile.js",
+				"hash": "iP4vTljXsl3x4qVHsCDzCrsqadiJ4f0nNl0oMHpm9gM=",
+				"time": "2018-05-07T13:28:18.000Z",
+				"size": 8262
+			},
+			{
+				"type": "file",
+				"name": "LICENSE.txt",
+				"hash": "Kz7YukJEI6ULAj5yhTDZS8OFz8fDKK1lo9/unHwFMcU=",
+				"time": "2018-05-07T13:28:18.000Z",
+				"size": 1605
+			},
+			{
+				"type": "file",
+				"name": "package.json",
+				"hash": "eNrp7Qgvd3mQDNzxvX1SgZ2skBpZ7VpEG3Y30FT3YYk=",
+				"time": "2018-05-07T13:28:18.000Z",
+				"size": 2817
+			},
+			{
+				"type": "file",
+				"name": "README.md",
+				"hash": "RgsfJSZLWeGYtR8O9K+CJ0B6Lp2f87IST1vLm0Esbaw=",
+				"time": "2018-05-07T13:28:18.000Z",
+				"size": 13105
+			}
+		]
+	},
 	"/v1/package/gh/jquery/jquery@3.2.1/flat": {
 		"default": null,
 		"files": [
@@ -6572,7 +8758,8 @@
 					"2017-07-25": 400
 				}
 			}
-		}
+		},
+		"commits": { }
 	},
 	"/v1/package/npm/package-1/stats?from=2017-05-01&to=2017-05-30": {
 		"rank": 0,
@@ -6683,7 +8870,8 @@
 					"2017-05-30": 400
 				}
 			}
-		}
+		},
+		"commits": { }
 	},
 	"/v1/package/npm/package-1/stats/date?from=2017-06-26&to=2017-07-25": {
 		"rank": 1,
@@ -6695,7 +8883,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 400
-				}
+				},
+				"commits": { }
 			},
 			"2017-06-27": {
 				"total": 1200,
@@ -6703,7 +8892,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 400
-				}
+				},
+				"commits": { }
 			},
 			"2017-06-28": {
 				"total": 1200,
@@ -6711,7 +8901,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 400
-				}
+				},
+				"commits": { }
 			},
 			"2017-06-29": {
 				"total": 1200,
@@ -6719,7 +8910,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 400
-				}
+				},
+				"commits": { }
 			},
 			"2017-06-30": {
 				"total": 1200,
@@ -6727,7 +8919,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 400
-				}
+				},
+				"commits": { }
 			},
 			"2017-07-01": {
 				"total": 1200,
@@ -6735,7 +8928,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 400
-				}
+				},
+				"commits": { }
 			},
 			"2017-07-02": {
 				"total": 1200,
@@ -6743,7 +8937,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 400
-				}
+				},
+				"commits": { }
 			},
 			"2017-07-03": {
 				"total": 1200,
@@ -6751,7 +8946,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 400
-				}
+				},
+				"commits": { }
 			},
 			"2017-07-04": {
 				"total": 1200,
@@ -6759,7 +8955,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 400
-				}
+				},
+				"commits": { }
 			},
 			"2017-07-05": {
 				"total": 1200,
@@ -6767,7 +8964,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 400
-				}
+				},
+				"commits": { }
 			},
 			"2017-07-06": {
 				"total": 1200,
@@ -6775,7 +8973,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 400
-				}
+				},
+				"commits": { }
 			},
 			"2017-07-07": {
 				"total": 1200,
@@ -6783,7 +8982,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 400
-				}
+				},
+				"commits": { }
 			},
 			"2017-07-08": {
 				"total": 1200,
@@ -6791,7 +8991,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 400
-				}
+				},
+				"commits": { }
 			},
 			"2017-07-09": {
 				"total": 1200,
@@ -6799,7 +9000,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 400
-				}
+				},
+				"commits": { }
 			},
 			"2017-07-10": {
 				"total": 1200,
@@ -6807,7 +9009,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 400
-				}
+				},
+				"commits": { }
 			},
 			"2017-07-11": {
 				"total": 1200,
@@ -6815,7 +9018,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 400
-				}
+				},
+				"commits": { }
 			},
 			"2017-07-12": {
 				"total": 1200,
@@ -6823,7 +9027,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 400
-				}
+				},
+				"commits": { }
 			},
 			"2017-07-13": {
 				"total": 1200,
@@ -6831,7 +9036,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 400
-				}
+				},
+				"commits": { }
 			},
 			"2017-07-14": {
 				"total": 1200,
@@ -6839,7 +9045,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 400
-				}
+				},
+				"commits": { }
 			},
 			"2017-07-15": {
 				"total": 1200,
@@ -6847,7 +9054,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 400
-				}
+				},
+				"commits": { }
 			},
 			"2017-07-16": {
 				"total": 1200,
@@ -6855,7 +9063,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 400
-				}
+				},
+				"commits": { }
 			},
 			"2017-07-17": {
 				"total": 1200,
@@ -6863,7 +9072,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 400
-				}
+				},
+				"commits": { }
 			},
 			"2017-07-18": {
 				"total": 1200,
@@ -6871,7 +9081,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 400
-				}
+				},
+				"commits": { }
 			},
 			"2017-07-19": {
 				"total": 1200,
@@ -6879,7 +9090,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 400
-				}
+				},
+				"commits": { }
 			},
 			"2017-07-20": {
 				"total": 1200,
@@ -6887,7 +9099,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 400
-				}
+				},
+				"commits": { }
 			},
 			"2017-07-21": {
 				"total": 1200,
@@ -6895,7 +9108,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 400
-				}
+				},
+				"commits": { }
 			},
 			"2017-07-22": {
 				"total": 1200,
@@ -6903,7 +9117,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 400
-				}
+				},
+				"commits": { }
 			},
 			"2017-07-23": {
 				"total": 1200,
@@ -6911,7 +9126,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 400
-				}
+				},
+				"commits": { }
 			},
 			"2017-07-24": {
 				"total": 1200,
@@ -6919,7 +9135,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 400
-				}
+				},
+				"commits": { }
 			},
 			"2017-07-25": {
 				"total": 1200,
@@ -6927,7 +9144,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 400
-				}
+				},
+				"commits": { }
 			}
 		}
 	},
@@ -6937,115 +9155,143 @@
 		"dates": {
 			"2017-05-01": {
 				"total": 0,
-				"versions": { }
+				"versions": { },
+				"commits": { }
 			},
 			"2017-05-02": {
 				"total": 0,
-				"versions": { }
+				"versions": { },
+				"commits": { }
 			},
 			"2017-05-03": {
 				"total": 0,
-				"versions": { }
+				"versions": { },
+				"commits": { }
 			},
 			"2017-05-04": {
 				"total": 0,
-				"versions": { }
+				"versions": { },
+				"commits": { }
 			},
 			"2017-05-05": {
 				"total": 0,
-				"versions": { }
+				"versions": { },
+				"commits": { }
 			},
 			"2017-05-06": {
 				"total": 0,
-				"versions": { }
+				"versions": { },
+				"commits": { }
 			},
 			"2017-05-07": {
 				"total": 0,
-				"versions": { }
+				"versions": { },
+				"commits": { }
 			},
 			"2017-05-08": {
 				"total": 0,
-				"versions": { }
+				"versions": { },
+				"commits": { }
 			},
 			"2017-05-09": {
 				"total": 0,
-				"versions": { }
+				"versions": { },
+				"commits": { }
 			},
 			"2017-05-10": {
 				"total": 0,
-				"versions": { }
+				"versions": { },
+				"commits": { }
 			},
 			"2017-05-11": {
 				"total": 0,
-				"versions": { }
+				"versions": { },
+				"commits": { }
 			},
 			"2017-05-12": {
 				"total": 0,
-				"versions": { }
+				"versions": { },
+				"commits": { }
 			},
 			"2017-05-13": {
 				"total": 0,
-				"versions": { }
+				"versions": { },
+				"commits": { }
 			},
 			"2017-05-14": {
 				"total": 0,
-				"versions": { }
+				"versions": { },
+				"commits": { }
 			},
 			"2017-05-15": {
 				"total": 0,
-				"versions": { }
+				"versions": { },
+				"commits": { }
 			},
 			"2017-05-16": {
 				"total": 0,
-				"versions": { }
+				"versions": { },
+				"commits": { }
 			},
 			"2017-05-17": {
 				"total": 0,
-				"versions": { }
+				"versions": { },
+				"commits": { }
 			},
 			"2017-05-18": {
 				"total": 0,
-				"versions": { }
+				"versions": { },
+				"commits": { }
 			},
 			"2017-05-19": {
 				"total": 0,
-				"versions": { }
+				"versions": { },
+				"commits": { }
 			},
 			"2017-05-20": {
 				"total": 0,
-				"versions": { }
+				"versions": { },
+				"commits": { }
 			},
 			"2017-05-21": {
 				"total": 0,
-				"versions": { }
+				"versions": { },
+				"commits": { }
 			},
 			"2017-05-22": {
 				"total": 0,
-				"versions": { }
+				"versions": { },
+				"commits": { }
 			},
 			"2017-05-23": {
 				"total": 0,
-				"versions": { }
+				"versions": { },
+				"commits": { }
 			},
 			"2017-05-24": {
 				"total": 0,
-				"versions": { }
+				"versions": { },
+				"commits": { }
 			},
 			"2017-05-25": {
 				"total": 0,
-				"versions": { }
+				"versions": { },
+				"commits": { }
 			},
 			"2017-05-26": {
 				"total": 0,
-				"versions": { }
+				"versions": { },
+				"commits": { }
 			},
 			"2017-05-27": {
 				"total": 0,
-				"versions": { }
+				"versions": { },
+				"commits": { }
 			},
 			"2017-05-28": {
 				"total": 0,
-				"versions": { }
+				"versions": { },
+				"commits": { }
 			},
 			"2017-05-29": {
 				"total": 1200,
@@ -7053,7 +9299,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 400
-				}
+				},
+				"commits": { }
 			},
 			"2017-05-30": {
 				"total": 1200,
@@ -7061,7 +9308,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 400
-				}
+				},
+				"commits": { }
 			}
 		}
 	},
@@ -7090,7 +9338,8 @@
 					"2017-07-25": 400
 				}
 			}
-		}
+		},
+		"commits": { }
 	},
 	"/v1/package/npm/package-1/stats/date?from=2017-07-24&to=2017-07-25": {
 		"rank": 1,
@@ -7102,7 +9351,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 400
-				}
+				},
+				"commits": { }
 			},
 			"2017-07-25": {
 				"total": 1200,
@@ -7110,7 +9360,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 400
-				}
+				},
+				"commits": { }
 			}
 		}
 	},
@@ -7124,7 +9375,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 1300
-				}
+				},
+				"commits": { }
 			},
 			"2017-07-25": {
 				"total": 1200,
@@ -7132,7 +9384,8 @@
 					"1.1.0": 400,
 					"1.1.1": 400,
 					"1.1.2": 400
-				}
+				},
+				"commits": { }
 			}
 		}
 	},
