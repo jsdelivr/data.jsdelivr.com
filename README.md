@@ -4,6 +4,10 @@
 [![dependencies](https://img.shields.io/david/jsdelivr/data.jsdelivr.com.svg?style=flat-square)](https://david-dm.org/jsdelivr/data.jsdelivr.com)
 [![devDependencies](https://img.shields.io/david/dev/jsdelivr/data.jsdelivr.com.svg?style=flat-square)](https://david-dm.org/jsdelivr/data.jsdelivr.com?type=dev)
 
+Related projects:
+ - [jsDelivr CDN](https://github.com/jsdelivr/jsdelivr)
+ - [jsDelivr website](https://github.com/jsdelivr/www.jsdelivr.com)
+ 
 The jsDelivr API allows you to:
  - [list package versions](#list-package-versions)
  - [list package files](#list-package-files)
@@ -18,7 +22,7 @@ Please note that usage statistics are available with a 48 hour delay.
 We only have data starting from Aug 19, 2017 and data older than one year may not be available.
 
 Looking for a search endpoint? You can use [the official npm API](https://github.com/npm/registry/blob/master/docs/REGISTRY-API.md#get-v1search) or [Algolia's npm search](https://github.com/algolia/npm-search) ([more info](https://github.com/jsdelivr/data.jsdelivr.com/issues/6)).
-
+ 
 ## Let us know how you use this API
 
 If you create a tool/plugin/etc. which uses this API, please include a link to your tool in the `User-Agent` header so that we can learn more about how this API is being used.
