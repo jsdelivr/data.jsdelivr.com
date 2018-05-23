@@ -9,15 +9,15 @@ const router = new Router();
 /**
  * More accurate opbeat route names.
  */
-router.use(async (ctx, next) => {
-	let matched = ctx.matched.find(r => r.name);
-
-	if (matched && global.OPBEAT_CLIENT) {
-		global.OPBEAT_CLIENT.setTransactionName(`${ctx.request.method} /v1${matched.name}`);
-	}
-
-	return next();
-});
+// router.use(async (ctx, next) => {
+// 	let matched = ctx.matched.find(r => r.name);
+//
+// 	if (matched && global.OPBEAT_CLIENT) {
+// 		global.OPBEAT_CLIENT.setTransactionName(`${ctx.request.method} /v1${matched.name}`);
+// 	}
+//
+// 	return next();
+// });
 
 router.param('hash', async (value, ctx, next) => {
 	if (!isSha(value, 'sha256')) {

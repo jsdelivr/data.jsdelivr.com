@@ -33,7 +33,6 @@
 		"minimatch": "^3.0.4",
 		"mysql": "^2.15.0",
 		"number-abbreviate": "^2.0.0",
-		"opbeat": "^4.17.0",
 		"redis": "^2.8.0",
 		"relative-day-utc": "^1.2.0",
 		"semver": "^5.5.0",
