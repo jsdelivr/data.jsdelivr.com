@@ -17,9 +17,9 @@ const PackageVersion = require('../../../models/PackageVersion');
 const dateRange = require('../../utils/dateRange');
 const sumDeep = require('../../utils/sumDeep');
 
-badge.loadFont(require.resolve('dejavu-sans/fonts/dejavu-sans-webfont.ttf'), (err) => {
-	if (err) {
-		logger.error({ err }, `Failed to load the font file for badges.`);
+badge.loadFont(require.resolve('dejavu-sans/fonts/dejavu-sans-webfont.ttf'), (error) => {
+	if (error) {
+		log.error(`Failed to load the font file for badges.`, error);
 	}
 });
 
@@ -336,12 +336,12 @@ async function fetchGitHubMetadata (user, repo) {
 			return { tags: [], versions: _.uniq(versions.sort(vCompare.rCompare)) };
 		};
 
-		return githubApi.repos.getTags({ repo, owner: user, per_page: 100 }).then(loadMore).catch((err) => {
-			if (err.code === 403) {
-				logger.error({ err }, `GitHub API rate limit exceeded.`);
+		return githubApi.repos.getTags({ repo, owner: user, per_page: 100 }).then(loadMore).catch((error) => {
+			if (error.code === 403) {
+				log.error(`GitHub API rate limit exceeded.`, error);
 			}
 
-			throw err;
+			throw error;
 		});
 	});
 }

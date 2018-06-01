@@ -1,5 +1,16 @@
 // istanbul ignore next
 if (require.main === module) {
+	// This needs to run before any require() call.
+	global.apmClient = require('elastic-apm-node').start({
+		active: process.env.NODE_ENV === 'production',
+		serviceName: 'jsdelivr-api',
+		serviceVersion: require('../package.json').version,
+		logLevel: 'fatal',
+		captureExceptions: false,
+		ignoreUrls: [ '/favicon.ico', '/heartbeat' ],
+		errorOnAbortedRequests: true,
+		abortedErrorThreshold: 30000,
+	});
 	require('./lib/startup');
 }
 
@@ -155,8 +166,8 @@ server.use(router.routes()).use(router.allowedMethods());
 /**
  * Koa error handling.
  */
-server.on('error', (err, ctx) => {
-	logger.error({ err, ctx }, 'Koa server error.');
+server.on('error', (error, ctx) => {
+	log.error('Koa server error.', error, { ctx });
 });
 
 // istanbul ignore next
@@ -164,22 +175,22 @@ if (require.main === module) {
 	/**
 	 * Start listening on the configured port.
 	 */
-	server.listen(process.env.PORT || serverConfig.port, () => {
-		logger.info(`Web server started on port ${process.env.PORT || serverConfig.port}.`);
+	server.listen(process.env.PORT || serverConfig.port, function () {
+		log.info(`Web server started at http://localhost:${this.address().port}, NODE_ENV=${process.env.NODE_ENV}.`);
 	});
 
 	/**
 	 * Always log before exit.
 	 */
 	signalExit((code, signal) => {
-		logger[code === 0 ? 'info' : 'fatal']({ code, signal }, 'Web server stopped.');
+		log[code === 0 ? 'info' : 'fatal']('Web server stopped.', { code, signal });
 	});
 
 	/**
 	 * If we exit because of an uncaught exception, log the error details as well.
 	 */
 	process.on('uncaughtException', (error) => {
-		logger.fatal(error, `Fatal error. Exiting.`);
+		log.fatal(error, `Uncaught exception. Exiting.`);
 
 		setTimeout(() => {
 			process.exit(1);
@@ -187,7 +198,7 @@ if (require.main === module) {
 	});
 
 	process.on('unhandledRejection', (error) => {
-		logger.fatal(error, 'Unhandled rejection. Exiting.');
+		log.fatal(error, 'Unhandled rejection. Exiting.');
 
 		setTimeout(() => {
 			process.exit(1);

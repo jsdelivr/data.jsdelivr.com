@@ -1,7 +1,4 @@
 module.exports = {
-	logger: {
-		path: './logs/',
-	},
 	server: {
 		port: 4454,
 		debugToken: '',

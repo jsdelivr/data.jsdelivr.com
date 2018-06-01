@@ -2,6 +2,7 @@ const zlib = require('zlib');
 const redis = require('redis');
 const config = require('config');
 const redisConfig = config.get('redis');
+const redisLog = logger.scope('redis');
 
 module.exports = createClient();
 
@@ -39,9 +40,9 @@ function createClient () {
 	});
 
 	client
-		.on('ready', () => logger.debug('Connection ready.'))
-		.on('reconnecting', info => logger.debug(_.pick(info, [ 'attempt', 'delay' ], 'Reconnecting.')))
-		.on('error', err => logger.error({ err }, 'Connection error.'));
+		.on('ready', () => redisLog.debug('Connection ready.'))
+		.on('reconnecting', info => redisLog.debug('Reconnecting.', _.pick(info, [ 'attempt', 'delay' ])))
+		.on('error', error => redisLog.error('Connection error.', error));
 
 	return client;
 }
