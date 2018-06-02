@@ -11,7 +11,7 @@ const router = new Router();
 /**
  * More accurate opbeat route names.
  */
-router.use(koaElasticUtils.middleware(global.apmClient, '/v1'));
+router.use(koaElasticUtils.middleware(global.apmClient, { prefix: '/v1' }));
 
 router.param('hash', async (value, ctx, next) => {
 	if (!isSha(value, 'sha256')) {
