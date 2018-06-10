@@ -1,7 +1,7 @@
 const Router = require('koa-router');
 const relativeDayUtc = require('relative-day-utc');
 const isSha = require('is-hexdigest');
-const koaElasticUtils = require('h-logger2-elastic').koa;
+const koaElasticUtils = require('elastic-apm-utils').koa;
 
 const LookupRequest = require('./lib/v1/LookupRequest');
 const PackageRequest = require('./lib/v1/PackageRequest');
