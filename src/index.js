@@ -14,6 +14,7 @@ if (require.main === module) {
 		abortedErrorThreshold: 30000,
 		transactionSampleRate: .5,
 	});
+
 	global.apmClient.addFilter(require('elastic-apm-utils').apm.filter());
 	require('./lib/startup');
 }
