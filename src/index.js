@@ -12,7 +12,7 @@ if (require.main === module) {
 		ignoreUrls: [ '/favicon.ico', '/heartbeat', '/amp_preconnect_polyfill_404_or_other_error_expected._Do_not_worry_about_it' ],
 		errorOnAbortedRequests: true,
 		abortedErrorThreshold: 30000,
-		transactionSampleRate: .5,
+		transactionSampleRate: .2,
 	});
 
 	global.apmClient.addFilter(require('elastic-apm-utils').apm.filter());
