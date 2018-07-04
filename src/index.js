@@ -13,7 +13,6 @@ if (require.main === module) {
 		errorOnAbortedRequests: true,
 		abortedErrorThreshold: 30000,
 		transactionSampleRate: .2,
-		instrument: false,
 	});
 
 	global.apmClient.addFilter(require('elastic-apm-utils').apm.filter());
