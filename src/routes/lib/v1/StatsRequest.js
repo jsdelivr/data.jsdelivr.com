@@ -7,10 +7,6 @@ const dateRange = require('../../utils/dateRange');
 const sumDeep = require('../../utils/sumDeep');
 
 class StatsRequest extends BaseRequest {
-	constructor (ctx) {
-		super(ctx);
-	}
-
 	async handleNetwork () {
 		let fileHits = await FileHits.getSumByDate(...this.dateRange);
 		let otherHits = await OtherHits.getSumByDate(...this.dateRange);

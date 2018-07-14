@@ -54,7 +54,7 @@ class Package extends BaseModel {
 			sql.where(`${FileHits.table}.date`, '<=', to);
 		}
 
-		return await sql.select([ `${PackageVersion.table}.version`, `${FileHits.table}.date` ]);
+		return sql.select([ `${PackageVersion.table}.version`, `${FileHits.table}.date` ]);
 	}
 
 	static async getSumDateHitsPerVersionByName (type, name, from, to) {

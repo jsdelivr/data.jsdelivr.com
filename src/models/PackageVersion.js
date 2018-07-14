@@ -51,7 +51,7 @@ class PackageVersion extends BaseModel {
 			sql.where(`${FileHits.table}.date`, '<=', to);
 		}
 
-		return await sql.select(FileHits.columnsPrefixed.concat(`${File.table}.filename`));
+		return sql.select(FileHits.columnsPrefixed.concat(`${File.table}.filename`));
 	}
 
 	static async getSumDateHitsPerFileByName (type, name, version, from, to) {

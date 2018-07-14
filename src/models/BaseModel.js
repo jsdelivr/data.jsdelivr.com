@@ -17,8 +17,6 @@ class BaseModel {
 		return _.pickBy(_.pick(this, this.constructor.unique));
 	}
 
-	constructor () {}
-
 	/**
 	 * Gets the first object matching the criteria.
 	 *

@@ -4,12 +4,8 @@ const File = require('../../../models/File');
 const v1Config = config.get('v1');
 
 class LookupRequest extends BaseRequest {
-	constructor (ctx) {
-		super(ctx);
-	}
-
 	async handleHash () {
-		let file = await File.getBySha256(new Buffer(this.params.hash, 'hex'));
+		let file = await File.getBySha256(Buffer.from(this.params.hash, 'hex'));
 
 		if (!file) {
 			return this.ctx.body = {

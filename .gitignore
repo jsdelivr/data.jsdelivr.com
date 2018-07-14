@@ -2,6 +2,5 @@
 .local/
 .nyc_output/
 coverage/
-logs/
 node_modules/
 config/local.js

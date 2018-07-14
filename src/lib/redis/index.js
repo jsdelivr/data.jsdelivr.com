@@ -17,7 +17,7 @@ if (process.env.NO_CACHE) {
 }
 
 redis.RedisClient.prototype.getCompressedAsync = async function (key) {
-	let value = await this.getAsync(new Buffer(key, 'utf8'));
+	let value = await this.getAsync(Buffer.from(key, 'utf8'));
 
 	if (!value) {
 		return value;
@@ -35,7 +35,7 @@ function createClient () {
 		db: redisConfig.db,
 		host: redisConfig.host,
 		port: redisConfig.port,
-		auth_pass: redisConfig.password,
+		password: redisConfig.password,
 		detect_buffers: true,
 	});
 

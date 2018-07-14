@@ -1,0 +1,10 @@
+{
+	"extends": "@martin-kolarik/eslint-config",
+	"globals": {
+		"_": false,
+		"db": false,
+		"log": false,
+		"logger": false,
+		"redis": false
+	}
+}

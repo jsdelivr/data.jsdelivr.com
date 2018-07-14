@@ -23,7 +23,7 @@ module.exports = {
 		db: 0,
 		host: '',
 		port: '',
-		password: '',
+		password: undefined,
 	},
 	v1: {
 		cdn: {
