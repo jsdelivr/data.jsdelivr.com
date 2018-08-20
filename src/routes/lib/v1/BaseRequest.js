@@ -13,7 +13,7 @@ class BaseRequest {
 		this.query = ctx.query;
 		this.ctx = ctx;
 		this.dateRange = dateRange(this.query.from, this.query.to);
-		this.pagination = pagination(this.query.limit, this.query.page);
+		this.pagination = this.params.all ? [ null ] : pagination(this.query.limit, this.query.page);
 		ctx.type = 'json';
 	}
 

@@ -9,7 +9,7 @@ const StatsRequest = require('./lib/v1/StatsRequest');
 const router = new Router();
 
 /**
- * More accurate opbeat route names.
+ * More accurate APM route names.
  */
 router.use(koaElasticUtils.middleware(global.apmClient, { prefix: '/v1' }));
 
@@ -119,7 +119,7 @@ koaElasticUtils.addRoutes(router, [
 });
 
 koaElasticUtils.addRoutes(router, [
-	[ '/stats/packages', '/stats/packages/:period(day|week|month|year)?' ],
+	[ '/stats/packages', '/stats/packages/:period(day|week|month|year)?/:all(all)?' ],
 ], async (ctx) => {
 	return new StatsRequest(ctx).handlePackages();
 });
