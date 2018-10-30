@@ -1,6 +1,6 @@
 {
 	"name": "data.jsdelivr.com",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"description": "jsDelivr API",
 	"private": true,
 	"main": "./src/index.js",
