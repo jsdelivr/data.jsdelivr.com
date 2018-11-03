@@ -37,6 +37,7 @@ function createClient () {
 		port: redisConfig.port,
 		password: redisConfig.password,
 		detect_buffers: true,
+		enable_offline_queue: false,
 	});
 
 	client
