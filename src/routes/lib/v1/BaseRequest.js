@@ -23,6 +23,8 @@ class BaseRequest {
 		} else {
 			this.ctx.expires = relativeDayUtc(1).toUTCString();
 		}
+
+		this.ctx.maxStale = v1Config.maxStale;
 	}
 }
 

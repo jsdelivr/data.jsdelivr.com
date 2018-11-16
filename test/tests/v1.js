@@ -155,7 +155,7 @@ describe('v1', function () {
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
@@ -169,7 +169,7 @@ describe('v1', function () {
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
@@ -183,7 +183,7 @@ describe('v1', function () {
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
@@ -197,7 +197,7 @@ describe('v1', function () {
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
@@ -239,7 +239,7 @@ describe('v1', function () {
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=86400');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=86400, stale-while-revalidate=86400, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
@@ -281,7 +281,7 @@ describe('v1', function () {
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=86400');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=86400, stale-while-revalidate=86400, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
@@ -351,7 +351,7 @@ describe('v1', function () {
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
@@ -365,7 +365,7 @@ describe('v1', function () {
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
@@ -379,7 +379,7 @@ describe('v1', function () {
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
@@ -394,7 +394,7 @@ describe('v1', function () {
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
@@ -408,7 +408,7 @@ describe('v1', function () {
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
@@ -422,7 +422,7 @@ describe('v1', function () {
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
@@ -436,7 +436,7 @@ describe('v1', function () {
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=86400');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=86400, stale-while-revalidate=86400, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
@@ -537,7 +537,7 @@ describe('v1', function () {
 			.then((response) => {
 				expect(response).to.have.status(403);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
@@ -567,7 +567,7 @@ describe('v1', function () {
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
@@ -581,7 +581,7 @@ describe('v1', function () {
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
@@ -595,7 +595,7 @@ describe('v1', function () {
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
@@ -609,7 +609,7 @@ describe('v1', function () {
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
@@ -623,7 +623,7 @@ describe('v1', function () {
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
@@ -637,7 +637,7 @@ describe('v1', function () {
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
@@ -651,7 +651,7 @@ describe('v1', function () {
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
@@ -665,7 +665,7 @@ describe('v1', function () {
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
@@ -679,7 +679,7 @@ describe('v1', function () {
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
@@ -693,7 +693,7 @@ describe('v1', function () {
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
@@ -707,7 +707,7 @@ describe('v1', function () {
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
@@ -721,7 +721,7 @@ describe('v1', function () {
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
@@ -739,7 +739,7 @@ describe('v1', function () {
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
@@ -753,7 +753,7 @@ describe('v1', function () {
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
@@ -767,7 +767,7 @@ describe('v1', function () {
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public');
+				expect(response).to.have.header('Cache-Control', 'public, stale-while-revalidate=86400, stale-if-error=86400');
 				expect(response).to.have.header('Expires', relativeDayUtc(1).toUTCString());
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
@@ -805,7 +805,7 @@ describe('v1', function () {
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;

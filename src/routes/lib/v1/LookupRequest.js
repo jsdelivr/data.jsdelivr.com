@@ -15,6 +15,7 @@ class LookupRequest extends BaseRequest {
 		}
 
 		this.ctx.maxAge = v1Config.maxAgeStatic;
+		this.ctx.maxStale = v1Config.maxStale;
 		this.ctx.body = file;
 	}
 }

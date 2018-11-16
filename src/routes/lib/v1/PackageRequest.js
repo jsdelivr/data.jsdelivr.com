@@ -192,6 +192,7 @@ class PackageRequest extends BaseRequest {
 
 			if (this.ctx.body.version && isSemverStatic(this.params.version)) {
 				this.ctx.maxAge = 24 * 60 * 60;
+				this.ctx.maxStale = v1Config.maxStale;
 			}
 		} catch (e) {
 			return this.responseNotFound();
@@ -269,6 +270,7 @@ class PackageRequest extends BaseRequest {
 		try {
 			this.ctx.body = await this.getFiles(); // Can't use AsJson() version here because we need to set correct status code on cached errors.
 			this.ctx.maxAge = v1Config.maxAgeStatic;
+			this.ctx.maxStale = v1Config.maxStale;
 		} catch (error) {
 			if (error instanceof got.HTTPError) {
 				return this.ctx.body = {
