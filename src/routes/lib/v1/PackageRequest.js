@@ -2,7 +2,7 @@ const got = require('got');
 const semver = require('semver');
 const config = require('config');
 const GitHubApi = require('@octokit/rest');
-const badge = require('gh-badges');
+const BadgeFactory = require('gh-badges').BadgeFactory;
 const isSha = require('is-hexdigest');
 const isSemverStatic = require('is-semver-static');
 const vCompare = require('v-compare');
@@ -10,18 +10,13 @@ const NumberAbbreviate = require('number-abbreviate');
 const number = new NumberAbbreviate([ 'k', 'M', 'B', 'T' ]);
 const PromiseCache = require('../../../lib/promise-cache');
 const fetchCache = new PromiseCache({ maxAge: 60 * 1000 }).autoClear();
+const badgeFactory = new BadgeFactory();
 
 const BaseRequest = require('./BaseRequest');
 const Package = require('../../../models/Package');
 const PackageVersion = require('../../../models/PackageVersion');
 const dateRange = require('../../utils/dateRange');
 const sumDeep = require('../../utils/sumDeep');
-
-badge.loadFont(require.resolve('dejavu-sans/fonts/dejavu-sans-webfont.ttf'), (error) => {
-	if (error) {
-		log.error(`Failed to load the font file for badges.`, error);
-	}
-});
 
 const v1Config = config.get('v1');
 const githubApi = new GitHubApi({
@@ -211,13 +206,11 @@ class PackageRequest extends BaseRequest {
 		let hits = await Package.getSumHits(this.params.type, this.params.name, ...this.dateRange);
 
 		this.ctx.type = 'image/svg+xml; charset=utf-8';
-		this.ctx.body = await new Promise(async (resolve, reject) => {
-			badge({
-				text: [ ' jsDelivr ', ` ${number.abbreviate(hits)} hits/${this.params.period || 'month'} ` ],
-				colorB: '#ff5627',
-				template: this.ctx.query.style === 'rounded' ? 'flat' : 'flat-square',
-			}, resolve, reject);
-		});
+		this.ctx.body = badgeFactory.create({
+			text: [ ' jsDelivr ', ` ${number.abbreviate(hits)} hits/${this.params.period || 'month'} ` ],
+			colorB: '#ff5627',
+			template: this.ctx.query.style === 'rounded' ? 'flat' : 'flat-square',
+		}).replace(/textLength="[^"]*?"/g, '');
 
 		this.setCacheHeader();
 	}
@@ -321,25 +314,19 @@ module.exports = PackageRequest;
  */
 async function fetchGitHubMetadata (user, repo) {
 	return fetchCache.get(`gh/${user}/${repo}`, () => {
-		let versions = [];
-		let loadMore = (response) => {
-			response.data.forEach((tag) => {
+		return githubApi.paginate(githubApi.repos.listTags.endpoint.merge({ repo, owner: user, per_page: 100 })).then((data) => {
+			let versions = [];
+
+			data.forEach((tag) => {
 				if (tag.name.charAt(0) === 'v') {
 					tag.name = tag.name.substr(1);
 				}
 			});
 
-			versions.push(..._.map(response.data, 'name').filter(v => v));
-
-			if (response.data && githubApi.hasNextPage(response)) {
-				return githubApi.getNextPage(response).then(loadMore);
-			}
-
+			versions.push(..._.map(data, 'name').filter(v => v));
 			return { tags: [], versions: _.uniq(versions.sort(vCompare.rCompare)) };
-		};
-
-		return githubApi.repos.getTags({ repo, owner: user, per_page: 100 }).then(loadMore).catch((error) => {
-			if (error.code === 403) {
+		}).catch((error) => {
+			if (error.status === 403) {
 				log.error(`GitHub API rate limit exceeded.`, error);
 			}
 
