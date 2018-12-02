@@ -1,6 +1,6 @@
 const Joi = require('joi');
 const isSha = require('is-hexdigest');
-const BaseModel = require('./BaseModel');
+const BaseCacheModel = require('./BaseCacheModel');
 
 const schema = {
 	id: Joi.number().integer().min(0).required().allow(null),
@@ -8,7 +8,7 @@ const schema = {
 	type: Joi.string().max(255).required(),
 };
 
-class Package extends BaseModel {
+class Package extends BaseCacheModel {
 	static get table () {
 		return 'package';
 	}
@@ -34,7 +34,7 @@ class Package extends BaseModel {
 		this.type = null;
 
 		Object.assign(this, properties);
-		return new Proxy(this, BaseModel.ProxyHandler);
+		return new Proxy(this, BaseCacheModel.ProxyHandler);
 	}
 
 	static async getHitsByName (type, name, from, to) {

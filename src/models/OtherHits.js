@@ -1,12 +1,12 @@
 const Joi = require('joi');
-const BaseModel = require('./BaseModel');
+const BaseCacheModel = require('./BaseCacheModel');
 
 const schema = {
 	date: Joi.date().required(),
 	hits: Joi.number().integer().min(0).required(),
 };
 
-class OtherHits extends BaseModel {
+class OtherHits extends BaseCacheModel {
 	static get table () {
 		return 'other_hits';
 	}
@@ -29,7 +29,7 @@ class OtherHits extends BaseModel {
 		this.hits = 0;
 
 		Object.assign(this, properties);
-		return new Proxy(this, BaseModel.ProxyHandler);
+		return new Proxy(this, BaseCacheModel.ProxyHandler);
 	}
 
 	static async getSumByDate (from, to) {

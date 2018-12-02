@@ -147,6 +147,10 @@ class BaseModel {
 	toSqlInsert (onDuplicate = `id = LAST_INSERT_ID(id); SET @update_id_${this.constructor.table} = LAST_INSERT_ID()`) {
 		return db(this.constructor.table).insert(this.dbIn()).toString().replace(/'(@update_id_\w+)'/g, '$1') + ' ON DUPLICATE KEY UPDATE ' + onDuplicate + ';';
 	}
+
+	static fromJson (properties) {
+		return new this(properties);
+	}
 }
 
 module.exports = BaseModel;

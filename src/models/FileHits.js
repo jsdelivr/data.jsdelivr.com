@@ -1,5 +1,5 @@
 const Joi = require('joi');
-const BaseModel = require('./BaseModel');
+const BaseCacheModel = require('./BaseCacheModel');
 
 const schema = {
 	fileId: [ Joi.number().integer().min(0).required().allow(null), Joi.string().regex(/^@/) ],
@@ -7,7 +7,7 @@ const schema = {
 	hits: Joi.number().integer().min(0).required(),
 };
 
-class FileHits extends BaseModel {
+class FileHits extends BaseCacheModel {
 	static get table () {
 		return 'file_hits';
 	}
@@ -33,7 +33,7 @@ class FileHits extends BaseModel {
 		this.hits = 0;
 
 		Object.assign(this, properties);
-		return new Proxy(this, BaseModel.ProxyHandler);
+		return new Proxy(this, BaseCacheModel.ProxyHandler);
 	}
 
 	static async getSumByDate (from, to) {

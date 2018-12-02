@@ -5,12 +5,13 @@ const OtherHits = require('../../../models/OtherHits');
 const Logs = require('../../../models/Logs');
 const dateRange = require('../../utils/dateRange');
 const sumDeep = require('../../utils/sumDeep');
+const secondsTillMidnight = () => Math.floor((86400000 - Date.now() % 86400000) / 1000);
 
 class StatsRequest extends BaseRequest {
 	async handleNetwork () {
-		let fileHits = await FileHits.getSumByDate(...this.dateRange);
-		let otherHits = await OtherHits.getSumByDate(...this.dateRange);
-		let datesTraffic = await Logs.getMegabytesByDate(...this.dateRange);
+		let fileHits = await FileHits.get(undefined, secondsTillMidnight()).getSumByDate(...this.dateRange);
+		let otherHits = await OtherHits.get(undefined, secondsTillMidnight()).getSumByDate(...this.dateRange);
+		let datesTraffic = await Logs.get(undefined, secondsTillMidnight()).getMegabytesByDate(...this.dateRange);
 		let sumFileHits = sumDeep(fileHits);
 		let sumOtherHits = sumDeep(otherHits);
 
@@ -30,7 +31,7 @@ class StatsRequest extends BaseRequest {
 				total: sumDeep(datesTraffic),
 				dates: dateRange.fill(datesTraffic, ...this.dateRange),
 			},
-			meta: await Logs.getMetaStats(...this.dateRange),
+			meta: await Logs.get(undefined, secondsTillMidnight()).getMetaStats(...this.dateRange),
 		};
 
 		if (!this.ctx.body.meta.records) {
@@ -45,7 +46,7 @@ class StatsRequest extends BaseRequest {
 	}
 
 	async handlePackages () {
-		this.ctx.body = await Package.getTopPackages(...this.dateRange, ...this.pagination);
+		this.ctx.body = await Package.get(undefined, secondsTillMidnight()).getTopPackages(...this.dateRange, ...this.pagination);
 		this.setCacheHeader();
 	}
 }

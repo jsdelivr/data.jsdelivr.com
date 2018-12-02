@@ -1,5 +1,5 @@
 const Joi = require('joi');
-const BaseModel = require('./BaseModel');
+const BaseCacheModel = require('./BaseCacheModel');
 
 const schema = {
 	date: Joi.date().required(),
@@ -8,7 +8,7 @@ const schema = {
 	megabytesTraffic: Joi.number().integer().min(0).required(),
 };
 
-class Logs extends BaseModel {
+class Logs extends BaseCacheModel {
 	static get table () {
 		return 'logs';
 	}
@@ -37,7 +37,7 @@ class Logs extends BaseModel {
 		this.megabytesTraffic = 0;
 
 		Object.assign(this, properties);
-		return new Proxy(this, BaseModel.ProxyHandler);
+		return new Proxy(this, BaseCacheModel.ProxyHandler);
 	}
 
 	static async getMegabytesByDate (from, to) {
