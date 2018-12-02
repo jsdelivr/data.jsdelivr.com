@@ -315,16 +315,13 @@ module.exports = PackageRequest;
 async function fetchGitHubMetadata (user, repo) {
 	return fetchCache.get(`gh/${user}/${repo}`, () => {
 		return githubApi.paginate(githubApi.repos.listTags.endpoint.merge({ repo, owner: user, per_page: 100 })).then((data) => {
-			let versions = [];
-
 			data.forEach((tag) => {
 				if (tag.name.charAt(0) === 'v') {
 					tag.name = tag.name.substr(1);
 				}
 			});
 
-			versions.push(..._.map(data, 'name').filter(v => v));
-			return { tags: [], versions: _.uniq(versions.sort(vCompare.rCompare)) };
+			return { tags: [], versions: _.uniq(_.map(data, 'name').filter(v => v).sort(vCompare.rCompare)) };
 		}).catch((error) => {
 			if (error.status === 403) {
 				log.error(`GitHub API rate limit exceeded.`, error);
