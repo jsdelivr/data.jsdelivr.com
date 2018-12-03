@@ -2,10 +2,6 @@ const crypto = require('crypto');
 const BaseModel = require('./BaseModel');
 
 class BaseCacheModel extends BaseModel {
-	static async flushCache () {
-		return redis.flushdbAsync().catch(() => {});
-	}
-
 	static get (transformKey = '', expiration = 24 * 60 * 60, deserialize = v => v) {
 		return this.transform(transformKey, v => v, expiration, deserialize);
 	}
@@ -20,33 +16,6 @@ class BaseCacheModel extends BaseModel {
 
 	static transform (transformKey, callback, expiration = 24 * 60 * 60, deserialize = v => v) {
 		return new Proxy(new ProxyTarget(this, transformKey, callback, expiration, deserialize), BaseCacheModel.ProxyTargetHandler);
-	}
-
-	/**
-	 * @returns {Promise<number>}
-	 */
-	async delete () {
-		let result = await super.delete();
-		await this.constructor.flushCache();
-		return result;
-	}
-
-	/**
-	 * @returns {Promise<this>}
-	 */
-	async insert () {
-		let result = await super.insert();
-		await this.constructor.flushCache();
-		return result;
-	}
-
-	/**
-	 * @returns {Promise<number>}
-	 */
-	async update () {
-		let result = await super.update();
-		await this.constructor.flushCache();
-		return result;
 	}
 }
 
