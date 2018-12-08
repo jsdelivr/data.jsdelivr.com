@@ -266,7 +266,7 @@ class PackageRequest extends BaseRequest {
 			this.ctx.maxStale = v1Config.maxStale;
 		} catch (error) {
 			if (error instanceof got.RequestError) {
-				return this.ctx.status = 502;
+				return this.ctx.status = error.code === 'ETIMEDOUT' ? 504 : 502;
 			} else if (error instanceof got.HTTPError) {
 				return this.ctx.body = {
 					status: error.response.statusCode || 502,
