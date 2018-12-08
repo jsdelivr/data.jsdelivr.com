@@ -9,8 +9,9 @@ module.exports = knex({
 		multipleStatements: true,
 	}, dbConfig.connection),
 	pool: {
-		min: 0,
-		max: 50,
+		min: 2,
+		max: 40,
+		propagateCreateError: false,
 		afterCreate (connection, callback) {
 			connection.query('SET TRANSACTION ISOLATION LEVEL READ COMMITTED', callback);
 		},
