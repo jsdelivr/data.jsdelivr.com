@@ -265,7 +265,9 @@ class PackageRequest extends BaseRequest {
 			this.ctx.maxAge = v1Config.maxAgeStatic;
 			this.ctx.maxStale = v1Config.maxStale;
 		} catch (error) {
-			if (error instanceof got.HTTPError) {
+			if (error instanceof got.RequestError) {
+				return this.ctx.status = 502;
+			} else if (error instanceof got.HTTPError) {
 				return this.ctx.body = {
 					status: error.response.statusCode || 502,
 					message: error.response.body,
