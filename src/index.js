@@ -195,6 +195,7 @@ if (require.main === module) {
 	 * If we exit because of an uncaught exception, log the error details as well.
 	 */
 	process.on('uncaughtException', (error) => {
+		error.handled = false;
 		log.fatal(`Uncaught exception. Exiting.`, error);
 
 		setTimeout(() => {
@@ -203,6 +204,7 @@ if (require.main === module) {
 	});
 
 	process.on('unhandledRejection', (error) => {
+		error.handled = false;
 		log.fatal('Unhandled rejection. Exiting.', error);
 
 		setTimeout(() => {
