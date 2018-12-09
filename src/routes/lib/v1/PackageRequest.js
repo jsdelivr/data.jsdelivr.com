@@ -325,7 +325,7 @@ async function fetchGitHubMetadata (user, repo) {
 
 			return { tags: [], versions: _.uniq(_.map(data, 'name').filter(v => v).sort(vCompare.rCompare)) };
 		}).catch((error) => {
-			if (error.status === 403) {
+			if (error.status === 403 && !error.block) {
 				log.error(`GitHub API rate limit exceeded.`, error);
 			}
 
