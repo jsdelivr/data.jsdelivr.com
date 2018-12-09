@@ -301,7 +301,7 @@ class PackageRequest extends BaseRequest {
 	async responseNotFound () {
 		this.ctx.body = {
 			status: 404,
-			message: `Couldn't find ${this.params.name}@${this.params.version}.`,
+			message: this.params.version ? `Couldn't find ${this.params.name}@${this.params.version}.` : `Couldn't fetch versions for ${this.params.name}.`,
 		};
 	}
 }
