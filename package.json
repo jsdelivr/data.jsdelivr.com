@@ -16,7 +16,7 @@
 		"gh-badges": "^2.1.0",
 		"got": "^8.3.2",
 		"h-logger2": "^1.0.3",
-		"h-logger2-elastic": "^2.1.4",
+		"h-logger2-elastic": "^2.2.0",
 		"is-hexdigest": "^1.0.1",
 		"is-semver-static": "^1.0.0",
 		"joi": "^14.3.0",
