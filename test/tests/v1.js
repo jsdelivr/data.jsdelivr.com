@@ -35,7 +35,7 @@ describe('v1', function () {
 		await db.schema.dropTableIfExists('referrer_hits');
 		await db.schema.raw(fs.readFileSync(__dirname + '/../data/schema.sql', 'utf8'));
 
-		await Promise.map(fs.readdirSync(__dirname + '/../data/db/'), (file) => {
+		await Promise.mapSeries(fs.readdirSync(__dirname + '/../data/db/'), (file) => {
 			return db.raw(`
 				START TRANSACTION;
 				${fs.readFileSync(__dirname + '/../data/db/' + file, 'utf8')}
