@@ -67,6 +67,14 @@ if (server.env === 'development') {
 server.use(koaResponseTime());
 
 /**
+ * Remove x-forwarded-port because it's wrong for CF + CC combo.
+ */
+server.use(async (ctx, next) => {
+	delete ctx.headers['x-forwarded-port'];
+	return next();
+});
+
+/**
  * Gzip compression.
  */
 server.use(koaCompress());
