@@ -17,14 +17,18 @@ class BaseRequest {
 		ctx.type = 'json';
 	}
 
-	setCacheHeader () {
+	setCacheHeader (delay = 0) {
 		if (this.dateRange.isStatic) {
 			this.ctx.maxAge = v1Config.maxAgeStatic;
 		} else {
-			this.ctx.expires = relativeDayUtc(1).toUTCString();
+			this.ctx.expires = new Date(relativeDayUtc(1).valueOf() + delay).toUTCString();
 		}
 
 		this.ctx.maxStale = v1Config.maxStale;
+	}
+
+	setCacheHeaderDelayed () {
+		this.setCacheHeader(60 * 60 * 1000);
 	}
 }
 

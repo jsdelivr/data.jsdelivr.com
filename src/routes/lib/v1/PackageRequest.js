@@ -212,7 +212,7 @@ class PackageRequest extends BaseRequest {
 			template: this.ctx.query.style === 'rounded' ? 'flat' : 'flat-square',
 		}).replace(/textLength="[^"]*?"/g, '');
 
-		this.setCacheHeader();
+		this.setCacheHeaderDelayed();
 	}
 
 	async handlePackageStats () {
