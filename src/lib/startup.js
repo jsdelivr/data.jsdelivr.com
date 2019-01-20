@@ -32,3 +32,6 @@ Promise.promisifyAll(redis.Multi.prototype);
 
 global.redis = require('./redis');
 global.db = require('./db');
+
+const JSONPP = require('./jsonpp');
+JSONPP.addConstructor(require('./promise-lock').PromiseLockError);

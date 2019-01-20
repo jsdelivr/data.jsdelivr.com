@@ -7,15 +7,23 @@ const dateRange = require('../../utils/dateRange');
 const sumDeep = require('../../utils/sumDeep');
 const secondsTillMidnight = () => Math.floor((86400000 - Date.now() % 86400000) / 1000);
 
+const PromiseLock = require('../../../lib/promise-lock');
+const promiseLock = new PromiseLock('st');
+
 class StatsRequest extends BaseRequest {
 	async handleNetwork () {
+		this.ctx.body = await promiseLock.get(`network:${JSON.stringify(this.dateRange)}`, () => this.handleNetworkInternal(), 5 * 60 * 1000, true);
+		this.setCacheHeader();
+	}
+
+	async handleNetworkInternal () {
 		let fileHits = await FileHits.get(undefined, secondsTillMidnight()).getSumByDate(...this.dateRange);
 		let otherHits = await OtherHits.get(undefined, secondsTillMidnight()).getSumByDate(...this.dateRange);
 		let datesTraffic = await Logs.get(undefined, secondsTillMidnight()).getMegabytesByDate(...this.dateRange);
 		let sumFileHits = sumDeep(fileHits);
 		let sumOtherHits = sumDeep(otherHits);
 
-		this.ctx.body = {
+		let result = {
 			hits: {
 				total: sumFileHits + sumOtherHits,
 				packages: {
@@ -34,20 +42,24 @@ class StatsRequest extends BaseRequest {
 			meta: await Logs.get(undefined, secondsTillMidnight()).getMetaStats(...this.dateRange),
 		};
 
-		if (!this.ctx.body.meta.records) {
-			this.ctx.body.meta.records = 0;
+		if (!result.meta.records) {
+			result.meta.records = 0;
 		}
 
-		if (!this.ctx.body.meta.megabytes) {
-			this.ctx.body.meta.megabytes = 0;
+		if (!result.meta.megabytes) {
+			result.meta.megabytes = 0;
 		}
 
-		this.setCacheHeader();
+		return result;
 	}
 
 	async handlePackages () {
-		this.ctx.body = await Package.get(undefined, secondsTillMidnight()).getTopPackages(...this.dateRange, ...this.pagination);
+		this.ctx.body = await promiseLock.get(`packages:${JSON.stringify(this.dateRange)}:${JSON.stringify(this.pagination)}`, () => this.handlePackagesInternal(), 5 * 60 * 1000, true);
 		this.setCacheHeader();
+	}
+
+	async handlePackagesInternal () {
+		return Package.get(undefined, secondsTillMidnight()).getTopPackages(...this.dateRange, ...this.pagination);
 	}
 }
 
