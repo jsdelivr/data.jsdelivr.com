@@ -60,17 +60,17 @@ describe('v1', function () {
 
 		nock('https://api.github.com')
 			.get('/repos/jquery/jquery/tags')
-			.query({ per_page: 100, page: 1 })
+			.query({ per_page: 100 })
 			.reply(200, upstreamGitHubResponses['/repos/jquery/jquery/tags']);
 
 		nock('https://api.github.com')
 			.get('/repos/adobe/source-sans-pro/tags')
-			.query({ per_page: 100, page: 1 })
+			.query({ per_page: 100 })
 			.reply(200, upstreamGitHubResponses['/repos/adobe/source-sans-pro/tags']);
 
 		nock('https://api.github.com')
 			.get('/repos/jquery/jquery2/tags')
-			.query({ per_page: 100, page: 1 })
+			.query({ per_page: 100 })
 			.reply(200, upstreamGitHubResponses['/repos/jquery/jquery2/tags']);
 
 		nock('https://cdn.jsdelivr.net')
