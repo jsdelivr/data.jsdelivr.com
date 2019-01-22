@@ -58,7 +58,8 @@ module.exports.ProxyTargetHandler = _.defaults({
 				value = await target.callback(await target.model[property](...args));
 
 				if (value) {
-					redis.setCompressedAsync(key, JSON.stringify(value), 'EX', target.expiration).catch(() => {});
+					let expiration = target.expiration instanceof Date ? Math.floor((target.expiration - Date.now()) / 1000) : target.expiration;
+					redis.setCompressedAsync(key, JSON.stringify(value), 'EX', expiration).catch(() => {});
 				}
 
 				return value;
