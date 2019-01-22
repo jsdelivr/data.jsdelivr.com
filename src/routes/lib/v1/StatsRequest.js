@@ -1,5 +1,4 @@
 const relativeDayUtc = require('relative-day-utc');
-const cacheExpirationDate = () => relativeDayUtc(1);
 
 const BaseRequest = require('./BaseRequest');
 const Package = require('../../../models/Package');
@@ -14,14 +13,14 @@ const promiseLock = new PromiseLock('st');
 
 class StatsRequest extends BaseRequest {
 	async handleNetwork () {
-		this.ctx.body = await promiseLock.get(`network:${JSON.stringify(this.dateRange)}`, () => this.handleNetworkInternal(), 5 * 60 * 1000, true);
+		this.ctx.body = await promiseLock.get(`network:${JSON.stringify(this.dateRange)}`, () => this.handleNetworkInternal(relativeDayUtc(1)), undefined, true);
 		this.setCacheHeader();
 	}
 
-	async handleNetworkInternal () {
-		let fileHits = await FileHits.get(undefined, cacheExpirationDate()).getSumByDate(...this.dateRange);
-		let otherHits = await OtherHits.get(undefined, cacheExpirationDate()).getSumByDate(...this.dateRange);
-		let datesTraffic = await Logs.get(undefined, cacheExpirationDate()).getMegabytesByDate(...this.dateRange);
+	async handleNetworkInternal (redisCacheExpirationDate) {
+		let fileHits = await FileHits.get(undefined, redisCacheExpirationDate).getSumByDate(...this.dateRange);
+		let otherHits = await OtherHits.get(undefined, redisCacheExpirationDate).getSumByDate(...this.dateRange);
+		let datesTraffic = await Logs.get(undefined, redisCacheExpirationDate).getMegabytesByDate(...this.dateRange);
 		let sumFileHits = sumDeep(fileHits);
 		let sumOtherHits = sumDeep(otherHits);
 
@@ -41,7 +40,7 @@ class StatsRequest extends BaseRequest {
 				total: sumDeep(datesTraffic),
 				dates: dateRange.fill(datesTraffic, ...this.dateRange),
 			},
-			meta: await Logs.get(undefined, cacheExpirationDate()).getMetaStats(...this.dateRange),
+			meta: await Logs.get(undefined, redisCacheExpirationDate).getMetaStats(...this.dateRange),
 		};
 
 		if (!result.meta.records) {
@@ -56,12 +55,12 @@ class StatsRequest extends BaseRequest {
 	}
 
 	async handlePackages () {
-		this.ctx.body = await promiseLock.get(`packages:${JSON.stringify(this.dateRange)}:${JSON.stringify(this.pagination)}`, () => this.handlePackagesInternal(), 5 * 60 * 1000, true);
+		this.ctx.body = await promiseLock.get(`packages:${JSON.stringify(this.dateRange)}:${JSON.stringify(this.pagination)}`, () => this.handlePackagesInternal(relativeDayUtc(1)), undefined, true);
 		this.setCacheHeader();
 	}
 
-	async handlePackagesInternal () {
-		return Package.get(undefined, cacheExpirationDate()).getTopPackages(...this.dateRange, ...this.pagination);
+	async handlePackagesInternal (redisCacheExpirationDate) {
+		return Package.get(undefined, redisCacheExpirationDate).getTopPackages(...this.dateRange, ...this.pagination);
 	}
 }
 
