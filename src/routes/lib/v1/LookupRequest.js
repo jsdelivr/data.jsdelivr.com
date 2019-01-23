@@ -8,6 +8,8 @@ class LookupRequest extends BaseRequest {
 		let file = await File.getBySha256(Buffer.from(this.params.hash, 'hex'));
 
 		if (!file) {
+			this.ctx.maxAge = 24 * 60 * 60;
+
 			return this.ctx.body = {
 				status: 404,
 				message: `Couldn't find ${this.params.hash}.`,
