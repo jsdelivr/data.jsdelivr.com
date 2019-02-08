@@ -28,7 +28,7 @@ class BaseRequest {
 	}
 
 	setCacheHeaderDelayed () {
-		this.setCacheHeader(60 * 60 * 1000);
+		this.setCacheHeader(2 * 60 * 60 * 1000);
 	}
 }
 
