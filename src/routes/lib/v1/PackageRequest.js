@@ -20,17 +20,13 @@ const sumDeep = require('../../utils/sumDeep');
 
 const v1Config = config.get('v1');
 const githubApi = new GitHubApi({
+	auth: `token ${v1Config.gh.apiToken}`,
 	baseUrl: v1Config.gh.sourceUrl,
-	headers: { 'user-agent': 'jsDelivr API backend' },
-	timeout: 30000,
+	userAgent: 'jsDelivr API backend',
+	request: {
+		timeout: 30000,
+	},
 });
-
-if (v1Config.gh.apiToken) {
-	githubApi.authenticate({
-		type: 'token',
-		token: v1Config.gh.apiToken,
-	});
-}
 
 class PackageRequest extends BaseRequest {
 	constructor (ctx) {
