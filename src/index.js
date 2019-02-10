@@ -55,6 +55,21 @@ server.proxy = true;
 server.use(koaFavicon(__dirname + '/public/favicon.ico'));
 
 /**
+ * Custom APM tags.
+ */
+if (global.apmClient) {
+	server.use(async (ctx, next) => {
+		let userAgent = ctx.headers['user-agent'];
+
+		if (userAgent && !/\bchrome|edge|mozilla|opera|trident\b/i.test(userAgent)) {
+			global.apmClient.addTags({ userAgent });
+		}
+
+		return next();
+	});
+}
+
+/**
  * Log requests during development.
  */
 if (server.env === 'development') {
