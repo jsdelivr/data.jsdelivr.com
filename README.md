@@ -25,7 +25,7 @@ Looking for a search endpoint? You can use [the official npm API](https://github
  
 ## Let us know how you use this API
 
-If you create a tool/plugin/etc. which uses this API, please include a link to your tool in the `User-Agent` header so that we can learn more about how this API is being used.
+**If you create a tool/plugin/etc. which uses this API, please include a link to your tool in the `User-Agent` header so that we can learn more about how this API is being used.**
 
 ## Endpoints
 
