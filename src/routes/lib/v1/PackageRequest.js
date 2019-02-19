@@ -170,7 +170,7 @@ class PackageRequest extends BaseRequest {
 			} else if (metadata.tags.hasOwnProperty(this.params.version)) {
 				return metadata.tags[this.params.version];
 			} else if (this.params.version === 'latest' || !this.params.version) {
-				return versions[0];
+				return versions[0] || null;
 			}
 
 			return semver.maxSatisfying(versions, this.params.version);
