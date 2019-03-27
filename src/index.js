@@ -16,6 +16,7 @@ if (require.main === module) {
 	});
 
 	global.apmClient.addTransactionFilter(require('elastic-apm-utils').apm.transactionFilter());
+	global.apmClient.addSpanFilter(require('elastic-apm-utils').apm.spanFilter({ filterShorterThan: 10 }));
 	require('./lib/startup');
 }
 
