@@ -180,6 +180,7 @@ class PackageRequest extends BaseRequest {
 	async handleResolveVersion () {
 		try {
 			this.ctx.body = { version: await this.getResolvedVersion() };
+			this.ctx.maxAge = 60;
 
 			if (this.ctx.body.version && isSemverStatic(this.params.version)) {
 				this.ctx.maxAge = 24 * 60 * 60;
