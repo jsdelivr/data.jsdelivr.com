@@ -180,11 +180,12 @@ class PackageRequest extends BaseRequest {
 	async handleResolveVersion () {
 		try {
 			this.ctx.body = { version: await this.getResolvedVersion() };
-			this.ctx.maxAge = 60;
+			this.ctx.maxAge = v1Config.maxAgeShort;
+			this.ctx.maxStale = v1Config.maxStaleShort;
 
 			if (this.ctx.body.version && isSemverStatic(this.params.version)) {
 				this.ctx.maxAge = 24 * 60 * 60;
-				this.ctx.maxStale = v1Config.maxStale;
+				this.ctx.maxStale = v1Config.maxStaleStatic;
 			}
 		} catch (e) {
 			return this.responseNotFound();
@@ -194,6 +195,8 @@ class PackageRequest extends BaseRequest {
 	async handleVersions () {
 		try {
 			this.ctx.body = await this.getMetadataAsJson();
+			this.ctx.maxAge = v1Config.maxAgeShort;
+			this.ctx.maxStale = v1Config.maxStaleShort;
 		} catch (e) {
 			return this.responseNotFound();
 		}
@@ -260,7 +263,7 @@ class PackageRequest extends BaseRequest {
 		try {
 			this.ctx.body = await this.getFiles(); // Can't use AsJson() version here because we need to set correct status code on cached errors.
 			this.ctx.maxAge = v1Config.maxAgeStatic;
-			this.ctx.maxStale = v1Config.maxStale;
+			this.ctx.maxStale = v1Config.maxStaleStatic;
 		} catch (error) {
 			if (error instanceof got.RequestError) {
 				return this.ctx.status = error.code === 'ETIMEDOUT' ? 504 : 502;
