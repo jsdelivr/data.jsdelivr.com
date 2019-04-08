@@ -58,7 +58,7 @@ class BaseModel {
 			sql.offset(offset);
 		}
 
-		return Promise.map(sql.select(), data => new this(data).dbOut());
+		return Promise.map(sql.select(), data => new this(data).dbOut(), { concurrency: 8 });
 	}
 
 	dbIn () {
