@@ -18,6 +18,9 @@ const PackageVersion = require('../../../models/PackageVersion');
 const dateRange = require('../../utils/dateRange');
 const sumDeep = require('../../utils/sumDeep');
 
+const PromiseLock = require('../../../lib/promise-lock');
+const promiseLock = new PromiseLock('pk');
+
 const v1Config = config.get('v1');
 const githubApi = new GitHubApi({
 	auth: `token ${v1Config.gh.apiToken}`,
@@ -145,16 +148,18 @@ class PackageRequest extends BaseRequest {
 			return Number(rank);
 		}
 
-		rank = -1;
-		let hits = Infinity;
+		await promiseLock.get(`rank:${JSON.stringify(this.dateRange)}`, () => {
+			rank = -1;
+			let hits = Infinity;
 
-		await Promise.map(Package.getTopPackages(...this.dateRange, null), (pkg) => {
-			if (pkg.hits < hits) {
-				hits = pkg.hits;
-				rank++;
-			}
+			return Promise.map(Package.getTopPackages(...this.dateRange, null), (pkg) => {
+				if (pkg.hits < hits) {
+					hits = pkg.hits;
+					rank++;
+				}
 
-			return redis.setAsync(`package/${pkg.type}/${pkg.name}/rank${date}`, rank, 'EX', 86400 - Math.floor(Date.now() % 86400000 / 1000));
+				return redis.setAsync(`package/${pkg.type}/${pkg.name}/rank${date}`, rank, 'EX', 86400 - Math.floor(Date.now() % 86400000 / 1000));
+			});
 		});
 
 		rank = await redis.getAsync(this.keys.rank + date);
