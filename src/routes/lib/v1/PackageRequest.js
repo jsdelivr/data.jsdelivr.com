@@ -159,7 +159,7 @@ class PackageRequest extends BaseRequest {
 				}
 
 				return redis.setAsync(`package/${pkg.type}/${pkg.name}/rank${date}`, rank, 'EX', 86400 - Math.floor(Date.now() % 86400000 / 1000));
-			});
+			}, { concurrency: 16 });
 		});
 
 		rank = await redis.getAsync(this.keys.rank + date);
