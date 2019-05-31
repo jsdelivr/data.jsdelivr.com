@@ -38,7 +38,7 @@ class PackageRequest extends BaseRequest {
 		this.keys = {
 			files: `c:package/${this.params.type}/${this.params.name}@${this.params.version}/files`,
 			metadata: `c:package/${this.params.type}/${this.params.name}/metadata`,
-			rank: `package/${this.params.type}/${this.params.name}/rank`,
+			rank: `package/${this.params.type}/${this.params.name}/rank/`,
 		};
 	}
 
@@ -158,7 +158,7 @@ class PackageRequest extends BaseRequest {
 					rank++;
 				}
 
-				return redis.setAsync(`package/${pkg.type}/${pkg.name}/rank${date}`, rank, 'EX', 86400 - Math.floor(Date.now() % 86400000 / 1000));
+				return redis.setAsync(`package/${pkg.type}/${pkg.name}/rank/${date}`, rank, 'EX', 86400 - Math.floor(Date.now() % 86400000 / 1000));
 			});
 		});
 
