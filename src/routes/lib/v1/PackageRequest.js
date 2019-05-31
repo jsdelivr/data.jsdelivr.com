@@ -152,14 +152,14 @@ class PackageRequest extends BaseRequest {
 			rank = -1;
 			let hits = Infinity;
 
-			return Promise.map(Package.getTopPackages(...this.dateRange, null), (pkg) => {
+			return Promise.each(Package.getTopPackages(...this.dateRange, null), (pkg) => {
 				if (pkg.hits < hits) {
 					hits = pkg.hits;
 					rank++;
 				}
 
 				return redis.setAsync(`package/${pkg.type}/${pkg.name}/rank${date}`, rank, 'EX', 86400 - Math.floor(Date.now() % 86400000 / 1000));
-			}, { concurrency: 16 });
+			});
 		});
 
 		rank = await redis.getAsync(this.keys.rank + date);
