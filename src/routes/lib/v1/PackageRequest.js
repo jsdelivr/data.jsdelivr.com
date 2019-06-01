@@ -152,7 +152,7 @@ class PackageRequest extends BaseRequest {
 			rank = -1;
 			let hits = Infinity;
 
-			return Promise.each(Package.getTopPackages(...this.dateRange, null), (pkg) => {
+			return Bluebird.each(Package.getTopPackages(...this.dateRange, null), (pkg) => {
 				if (pkg.hits < hits) {
 					hits = pkg.hits;
 					rank++;
@@ -212,10 +212,10 @@ class PackageRequest extends BaseRequest {
 
 		this.ctx.type = 'image/svg+xml; charset=utf-8';
 		this.ctx.body = badgeFactory.create({
-			text: [ ' jsDelivr ', ` ${number.abbreviate(hits)} hits/${this.params.period || 'month'} ` ],
+			text: [ 'jsDelivr', `${number.abbreviate(hits)} hits/${this.params.period || 'month'}` ],
 			colorB: '#ff5627',
 			template: this.ctx.query.style === 'rounded' ? 'flat' : 'flat-square',
-		}).replace(/textLength="[^"]*?"/g, '');
+		});
 
 		this.setCacheHeaderDelayed();
 	}
@@ -270,7 +270,7 @@ class PackageRequest extends BaseRequest {
 			this.ctx.maxAge = v1Config.maxAgeStatic;
 			this.ctx.maxStale = v1Config.maxStaleStatic;
 		} catch (error) {
-			if (error instanceof got.RequestError) {
+			if (error instanceof got.RequestError || error instanceof got.TimeoutError) {
 				return this.ctx.status = error.code === 'ETIMEDOUT' ? 504 : 502;
 			} else if (error instanceof got.HTTPError) {
 				return this.ctx.body = {
@@ -352,7 +352,7 @@ async function fetchNpmMetadata (name) {
 		if (typeof v1Config.npm.sourceUrl === 'string') {
 			response = await got(`${v1Config.npm.sourceUrl}/${name}`, { json: true, timeout: 30000 });
 		} else {
-			response = await Promise.any(_.map(v1Config.npm.sourceUrl, (sourceUrl) => {
+			response = await Bluebird.any(_.map(v1Config.npm.sourceUrl, (sourceUrl) => {
 				return got(`${sourceUrl}/${name}`, { json: true, timeout: 30000 });
 			}));
 		}

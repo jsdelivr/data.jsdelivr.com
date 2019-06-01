@@ -4,8 +4,9 @@
 		"_": false,
 		"db": false,
 		"log": false,
+		"redis": false,
 		"logger": false,
-		"redis": false
+		"Bluebird": false
 	},
 	"plugins": [
 		"html"

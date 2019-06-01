@@ -1,5 +1,5 @@
 global._ = require('lodash');
-global.Promise = require('bluebird');
+global.Bluebird = require('bluebird');
 
 const Logger = require('h-logger2');
 const ElasticWriter = require('h-logger2-elastic');
@@ -25,10 +25,10 @@ const fs = require('fs-extra');
 const zlib = require('zlib');
 const redis = require('redis');
 
-Promise.promisifyAll(fs);
-Promise.promisifyAll(zlib);
-Promise.promisifyAll(redis.RedisClient.prototype);
-Promise.promisifyAll(redis.Multi.prototype);
+Bluebird.promisifyAll(fs);
+Bluebird.promisifyAll(zlib);
+Bluebird.promisifyAll(redis.RedisClient.prototype);
+Bluebird.promisifyAll(redis.Multi.prototype);
 
 global.redis = require('./redis');
 global.db = require('./db');

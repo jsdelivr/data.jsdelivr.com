@@ -98,7 +98,7 @@ class PromiseLock {
 
 			// Already resolved.
 			if (lock.s !== STATUS_PENDING) {
-				return lock.s === STATUS_REJECTED ? Promise.reject(lock.v) : lock.v;
+				return lock.s === STATUS_REJECTED ? Bluebird.reject(lock.v) : lock.v;
 			}
 
 			// Wait for a notification from another process.
@@ -144,7 +144,7 @@ class PromiseLock {
 
 		// Wrapped in Promise.resolve() to make sure it's a Bluebird promise because
 		// .finally() behaves differently with some promises.
-		return Promise.resolve(value).finally(() => {
+		return Bluebird.resolve(value).finally(() => {
 			value.then((v) => {
 				return this.notify({ key, v, s: STATUS_RESOLVED }).then(() => {
 					if (lockOnly) {

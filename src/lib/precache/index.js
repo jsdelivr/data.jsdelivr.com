@@ -29,7 +29,7 @@ function run () {
 		let dateRange = makeDateRange(30, 1);
 		let redisCacheExpirationDate = relativeDayUtc(2);
 
-		await Promise.mapSeries([
+		await Bluebird.mapSeries([
 			() => makeRequest(V1StatsRequest, dateRange, makeCtx()).handleNetworkInternal(redisCacheExpirationDate),
 			() => makeRequest(V1StatsRequest, dateRange, makeCtx()).handlePackagesInternal(redisCacheExpirationDate),
 			() => makeRequest(V1StatsRequest, dateRange, makeCtx({}, { page: 2 })).handlePackagesInternal(redisCacheExpirationDate),
