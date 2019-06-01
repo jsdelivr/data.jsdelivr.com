@@ -8,7 +8,7 @@ module.exports = createClient();
 module.exports.createClient = createClient;
 
 if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test') {
-	module.exports.flushallAsync().catch(() => {});
+	module.exports.once('ready', () => module.exports.flushallAsync().catch(() => {}));
 }
 
 if (process.env.NO_CACHE) {
