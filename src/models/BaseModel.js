@@ -144,8 +144,8 @@ class BaseModel {
 		}
 	}
 
-	toSqlInsert (onDuplicate = `id = LAST_INSERT_ID(id); SET @update_id_${this.constructor.table} = LAST_INSERT_ID()`) {
-		return db(this.constructor.table).insert(this.dbIn()).toString().replace(/'(@update_id_\w+)'/g, '$1') + ' ON DUPLICATE KEY UPDATE ' + onDuplicate + ';';
+	toSqlInsert (onDuplicate = `id = last_insert_id(id); set @lastId${_.upperFirst(_.camelCase(this.constructor.table))} = last_insert_id()`) {
+		return db(this.constructor.table).insert(this.dbIn()).toString().replace(/'(@lastId\w+)'/g, '$1') + ' on duplicate key update ' + onDuplicate + ';';
 	}
 
 	static fromJson (properties) {

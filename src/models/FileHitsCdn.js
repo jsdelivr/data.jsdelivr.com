@@ -3,7 +3,7 @@ const BaseModel = require('./BaseModel');
 
 const schema = {
 	cdn: Joi.string().required(),
-	fileId: [ Joi.number().integer().min(0).required().allow(null), Joi.string().regex(/^@/) ],
+	fileId: Joi.number().integer().min(0).required().allow(null),
 	date: Joi.date().required(),
 	hits: Joi.number().integer().min(0).required(),
 };
@@ -42,6 +42,10 @@ class FileHitsCdn extends BaseModel {
 
 	static async deleteOlderThan (date) {
 		return db(this.table).where('date', '<', date).delete();
+	}
+
+	toSqlFunctionCall () {
+		return db.raw(`select updateOrInsertFileHitsCdn(@lastIdFile, ?, ?, ?);`, [ this.cdn, this.date, this.hits ]);
 	}
 }
 

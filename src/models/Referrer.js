@@ -31,6 +31,10 @@ class Referrer extends BaseModel {
 		Object.assign(this, properties);
 		return new Proxy(this, BaseModel.ProxyHandler);
 	}
+
+	toSqlFunctionCall () {
+		return db.raw(`set @lastIdReferrer = updateOrInsertReferrer(?);`, [ this.referrer ]);
+	}
 }
 
 module.exports = Referrer;

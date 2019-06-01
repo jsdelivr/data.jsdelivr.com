@@ -2,7 +2,7 @@ const Joi = require('joi');
 const BaseModel = require('./BaseModel');
 
 const schema = {
-	referrerId: [ Joi.number().integer().min(0).required().allow(null), Joi.string().regex(/^@/) ],
+	referrerId: Joi.number().integer().min(0).required().allow(null),
 	date: Joi.date().required(),
 	hits: Joi.number().integer().min(0).required(),
 };
@@ -34,6 +34,10 @@ class ReferrerHits extends BaseModel {
 
 		Object.assign(this, properties);
 		return new Proxy(this, BaseModel.ProxyHandler);
+	}
+
+	toSqlFunctionCall () {
+		return db.raw(`select updateOrInsertReferrerHits(@lastIdReferrer, ?, ?);`, [ this.date, this.hits ]);
 	}
 }
 

@@ -73,6 +73,10 @@ class Logs extends BaseCacheModel {
 
 		return sql.select().first();
 	}
+
+	toSqlFunctionCall () {
+		return db.raw(`select updateOrInsertLogs(?, ?, ?, ?);`, [ this.date, this.records, this.megabytesLogs, this.megabytesTraffic ]);
+	}
 }
 
 module.exports = Logs;

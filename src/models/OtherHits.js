@@ -49,6 +49,10 @@ class OtherHits extends BaseCacheModel {
 			return [ record.date.toISOString().substr(0, 10), record.hits ];
 		}));
 	}
+
+	toSqlFunctionCall () {
+		return db.raw(`select updateOrInsertOtherHits(?, ?);`, [ this.date, this.hits ]);
+	}
 }
 
 module.exports = OtherHits;

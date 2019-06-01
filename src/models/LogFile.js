@@ -51,6 +51,10 @@ class LogFile extends BaseModel {
 	static async findOlderThan (date) {
 		return Promise.map(db(this.table).where('updatedAt', '<', date).select(), data => new this(data).dbOut());
 	}
+
+	toSqlFunctionCall () {
+		return db.raw(`select updateLogFile(?, ?);`, [ this.filename, this.updatedAt ]);
+	}
 }
 
 module.exports = LogFile;

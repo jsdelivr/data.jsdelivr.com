@@ -3,7 +3,7 @@ const BaseModel = require('./BaseModel');
 
 const schema = {
 	id: Joi.number().integer().min(0).required().allow(null),
-	packageVersionId: [ Joi.number().integer().min(0).required(), Joi.string().regex(/^@/) ],
+	packageVersionId: Joi.number().integer().min(0).required().allow(null),
 	filename: Joi.string().max(255).required(),
 	sha256: Joi.binary().length(32).required().allow(null),
 	fetchAttemptsLeft: Joi.number().integer().min(0).max(128).required(),
@@ -60,6 +60,10 @@ class File extends BaseModel {
 			.join(PackageVersion.table, `${this.table}.packageVersionId`, '=', `${PackageVersion.table}.id`)
 			.join(Package.table, `${PackageVersion.table}.packageId`, '=', `${Package.table}.id`)
 			.select([ '*', `${File.table}.id as fileId` ]);
+	}
+
+	toSqlFunctionCall () {
+		return db.raw(`set @lastIdFile = updateOrInsertFile(@lastIdPackageVersion, ?);`, [ this.filename ]);
 	}
 }
 

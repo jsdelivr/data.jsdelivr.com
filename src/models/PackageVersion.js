@@ -3,7 +3,7 @@ const BaseModel = require('./BaseModel');
 
 const schema = {
 	id: Joi.number().integer().min(0).required().allow(null),
-	packageId: [ Joi.number().integer().min(0).required(), Joi.string().regex(/^@/) ],
+	packageId: Joi.number().integer().min(0).required().allow(null),
 	version: Joi.string().max(255).required(),
 };
 
@@ -64,6 +64,10 @@ class PackageVersion extends BaseModel {
 		return _.mapValues(_.groupBy(await PackageVersion.getHitsByNameAndVersion(type, name, version, from, to), 'filename'), (versionHits) => {
 			return _.fromPairs(_.map(versionHits, entry => [ entry.date.toISOString().substr(0, 10), entry.hits ]));
 		});
+	}
+
+	toSqlFunctionCall () {
+		return db.raw(`set @lastIdPackageVersion = updateOrInsertPackageVersion(@lastIdPackage, ?);`, [ this.version ]);
 	}
 }
 

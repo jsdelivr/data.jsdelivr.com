@@ -116,6 +116,10 @@ class Package extends BaseCacheModel {
 
 		return sql.select([ `${Package.table}.type`, `${Package.table}.name` ]);
 	}
+
+	toSqlFunctionCall () {
+		return db.raw(`set @lastIdPackage = updateOrInsertPackage(?, ?);`, [ this.type, this.name ]);
+	}
 }
 
 function splitCommitsAndVersions (collection) {

@@ -2,7 +2,7 @@ const Joi = require('joi');
 const BaseCacheModel = require('./BaseCacheModel');
 
 const schema = {
-	fileId: [ Joi.number().integer().min(0).required().allow(null), Joi.string().regex(/^@/) ],
+	fileId: Joi.number().integer().min(0).required().allow(null),
 	date: Joi.date().required(),
 	hits: Joi.number().integer().min(0).required(),
 };
@@ -52,6 +52,10 @@ class FileHits extends BaseCacheModel {
 		return _.fromPairs(_.map(await sql.select([ `${this.table}.date` ]), (record) => {
 			return [ record.date.toISOString().substr(0, 10), record.hits ];
 		}));
+	}
+
+	toSqlFunctionCall () {
+		return db.raw(`select updateOrInsertFileHits(@lastIdFile, ?, ?);`, [ this.date, this.hits ]);
 	}
 }
 
