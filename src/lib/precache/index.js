@@ -25,22 +25,21 @@ function run () {
 	// Promise lock ensures this starts only in one process.
 	promiseLock.get('run', async () => {
 		precacheLog.info(`Precache function started.`);
-
-		let dateRange = makeDateRange(30, 1);
 		let redisCacheExpirationDate = relativeDayUtc(2);
 
 		await Bluebird.mapSeries([
+			makeDateRange(1, 1),
+			makeDateRange(7, 1),
+			makeDateRange(30, 1),
+			makeDateRange(365, 1),
+		], dateRange => Bluebird.mapSeries([
 			() => makeRequest(V1StatsRequest, dateRange, makeCtx()).handleNetworkInternal(redisCacheExpirationDate),
-			() => makeRequest(V1StatsRequest, dateRange, makeCtx()).handlePackagesInternal(redisCacheExpirationDate),
-			() => makeRequest(V1StatsRequest, dateRange, makeCtx({}, { page: 2 })).handlePackagesInternal(redisCacheExpirationDate),
-			() => makeRequest(V1StatsRequest, dateRange, makeCtx({}, { page: 3 })).handlePackagesInternal(redisCacheExpirationDate),
-			() => makeRequest(V1StatsRequest, dateRange, makeCtx({}, { page: 4 })).handlePackagesInternal(redisCacheExpirationDate),
-			() => makeRequest(V1StatsRequest, dateRange, makeCtx({}, { page: 5 })).handlePackagesInternal(redisCacheExpirationDate),
 			() => makeRequest(V1StatsRequest, dateRange, makeCtx({ all: true })).handlePackagesInternal(redisCacheExpirationDate),
+			..._.range(1, 11).map(page => () => makeRequest(V1StatsRequest, dateRange, makeCtx({}, { page })).handlePackagesInternal(redisCacheExpirationDate)),
 		], (job, index) => {
-			precacheLog.info(`Executing job #${index}.`);
+			precacheLog.info(`Executing job #${index} with date range = ${dateRange}.`);
 			return job().catch(error => precacheLog.warn(`Error running job #${index}.`, error));
-		});
+		}));
 
 		precacheLog.info(`Precache function finished.`);
 	}).catch(() => {});
