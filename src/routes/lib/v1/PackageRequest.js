@@ -5,6 +5,7 @@ const GitHubApi = require('@octokit/rest');
 const BadgeFactory = require('gh-badges').BadgeFactory;
 const isSha = require('is-hexdigest');
 const isSemverStatic = require('is-semver-static');
+const relativeDayUtc = require('relative-day-utc');
 const vCompare = require('v-compare');
 const NumberAbbreviate = require('number-abbreviate');
 const number = new NumberAbbreviate([ 'k', 'M', 'B', 'T' ]);
@@ -152,7 +153,7 @@ class PackageRequest extends BaseRequest {
 			rank = -1;
 			let hits = Infinity;
 
-			return Bluebird.each(Package.getTopPackages(...this.dateRange, null), (pkg) => {
+			return Bluebird.each(Package.get(undefined, relativeDayUtc(1)).getTopPackages(...this.dateRange, null), (pkg) => {
 				if (pkg.hits < hits) {
 					hits = pkg.hits;
 					rank++;
