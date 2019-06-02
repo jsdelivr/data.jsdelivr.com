@@ -2,13 +2,14 @@ const Joi = require('joi');
 const BaseCacheModel = require('./BaseCacheModel');
 
 const schema = {
+	packageId: Joi.number().integer().min(0).required().allow(null),
 	date: Joi.date().required(),
 	hits: Joi.number().integer().min(0).required(),
 };
 
-class OtherHits extends BaseCacheModel {
+class PackageHits extends BaseCacheModel {
 	static get table () {
-		return 'other_hits';
+		return 'package_hits';
 	}
 
 	static get schema () {
@@ -16,17 +17,20 @@ class OtherHits extends BaseCacheModel {
 	}
 
 	static get unique () {
-		return [ 'date' ];
+		return [ 'packageId', 'date' ];
 	}
 
 	constructor (properties = {}) {
 		super();
 
+		/** @type {number} */
+		this.packageId = null;
+
 		/** @type {Date} */
 		this.date = null;
 
 		/** @type {number} */
-		this.hits = 0;
+		this.hits = null;
 
 		Object.assign(this, properties);
 		return new Proxy(this, BaseCacheModel.ProxyHandler);
@@ -51,8 +55,8 @@ class OtherHits extends BaseCacheModel {
 	}
 
 	toSqlFunctionCall () {
-		return db.raw(`select updateOrInsertOtherHits(?, ?);`, [ this.date, this.hits ]);
+		return db.raw(`select updateOrInsertPackageHits(@lastIdPackage, ?, ?);`, [ this.date, this.hits ]);
 	}
 }
 
-module.exports = OtherHits;
+module.exports = PackageHits;

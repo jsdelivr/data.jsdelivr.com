@@ -137,3 +137,10 @@ CREATE TABLE referrer_hits
 		ON DELETE CASCADE
 );
 
+CREATE VIEW package_hits AS
+SELECT packageId, date, SUM(hits) as hits
+FROM package
+		 JOIN package_version ON package.id = package_version.packageId
+		 JOIN file ON package_version.id = file.packageVersionId
+		 JOIN file_hits ON file.id = file_hits.fileId
+GROUP BY packageId, date;

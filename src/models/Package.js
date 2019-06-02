@@ -68,18 +68,16 @@ class Package extends BaseCacheModel {
 	static async getSumHits (type, name, from, to) {
 		let sql = db(this.table)
 			.where({ type, name })
-			.join(PackageVersion.table, `${this.table}.id`, '=', `${PackageVersion.table}.packageId`)
-			.join(File.table, `${PackageVersion.table}.id`, '=', `${File.table}.packageVersionId`)
-			.join(FileHits.table, `${File.table}.id`, '=', `${FileHits.table}.fileId`)
+			.join(PackageHits.table, `${this.table}.id`, '=', `${PackageHits.table}.packageId`)
 			.groupBy(`${Package.table}.id`)
-			.sum(`${FileHits.table}.hits as hits`);
+			.sum(`${PackageHits.table}.hits as hits`);
 
 		if (from instanceof Date) {
-			sql.where(`${FileHits.table}.date`, '>=', from);
+			sql.where(`${PackageHits.table}.date`, '>=', from);
 		}
 
 		if (to instanceof Date) {
-			sql.where(`${FileHits.table}.date`, '<=', to);
+			sql.where(`${PackageHits.table}.date`, '<=', to);
 		}
 
 		return (await sql.select().first() || { hits: 0 }).hits;
@@ -95,11 +93,9 @@ class Package extends BaseCacheModel {
 
 	static async getTopPackages (from, to, limit = 100, page = 1) {
 		let sql = db(this.table)
-			.join(PackageVersion.table, `${this.table}.id`, '=', `${PackageVersion.table}.packageId`)
-			.join(File.table, `${PackageVersion.table}.id`, '=', `${File.table}.packageVersionId`)
-			.join(FileHits.table, `${File.table}.id`, '=', `${FileHits.table}.fileId`)
-			.groupBy(`${Package.table}.id`)
-			.sum(`${FileHits.table}.hits as hits`)
+			.join(PackageHits.table, `${this.table}.id`, '=', `${PackageHits.table}.packageId`)
+			.groupBy(`${PackageHits.table}.packageId`)
+			.sum(`${PackageHits.table}.hits as hits`)
 			.orderBy('hits', 'DESC');
 
 		if (limit) {
@@ -107,11 +103,11 @@ class Package extends BaseCacheModel {
 		}
 
 		if (from instanceof Date) {
-			sql.where(`${FileHits.table}.date`, '>=', from);
+			sql.where(`${PackageHits.table}.date`, '>=', from);
 		}
 
 		if (to instanceof Date) {
-			sql.where(`${FileHits.table}.date`, '<=', to);
+			sql.where(`${PackageHits.table}.date`, '<=', to);
 		}
 
 		return sql.select([ `${Package.table}.type`, `${Package.table}.name` ]);
@@ -129,6 +125,7 @@ function splitCommitsAndVersions (collection) {
 
 module.exports = Package;
 
+const PackageHits = require('./PackageHits');
 const PackageVersion = require('./PackageVersion');
 const File = require('./File');
 const FileHits = require('./FileHits');

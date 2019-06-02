@@ -2,7 +2,7 @@ const relativeDayUtc = require('relative-day-utc');
 
 const BaseRequest = require('./BaseRequest');
 const Package = require('../../../models/Package');
-const FileHits = require('../../../models/FileHits');
+const PackageHits = require('../../../models/PackageHits');
 const OtherHits = require('../../../models/OtherHits');
 const Logs = require('../../../models/Logs');
 const dateRange = require('../../utils/dateRange');
@@ -18,9 +18,9 @@ class StatsRequest extends BaseRequest {
 	}
 
 	async handleNetworkInternal (redisCacheExpirationDate) {
-		let fileHits = await FileHits.get(undefined, redisCacheExpirationDate).getSumByDate(...this.dateRange);
-		let otherHits = await OtherHits.get(undefined, redisCacheExpirationDate).getSumByDate(...this.dateRange);
-		let datesTraffic = await Logs.get(undefined, redisCacheExpirationDate).getMegabytesByDate(...this.dateRange);
+		let fileHits = await PackageHits.get(undefined, redisCacheExpirationDate).getSumPerDate(...this.dateRange);
+		let otherHits = await OtherHits.get(undefined, redisCacheExpirationDate).getSumPerDate(...this.dateRange);
+		let datesTraffic = await Logs.get(undefined, redisCacheExpirationDate).getMegabytesPerDate(...this.dateRange);
 		let sumFileHits = sumDeep(fileHits);
 		let sumOtherHits = sumDeep(otherHits);
 

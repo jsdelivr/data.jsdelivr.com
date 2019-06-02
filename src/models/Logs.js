@@ -40,7 +40,7 @@ class Logs extends BaseCacheModel {
 		return new Proxy(this, BaseCacheModel.ProxyHandler);
 	}
 
-	static async getMegabytesByDate (from, to) {
+	static async getMegabytesPerDate (from, to) {
 		let sql = db(this.table)
 			.groupBy(`${this.table}.date`)
 			.sum(`${this.table}.megabytesTraffic as megabytesTraffic`);

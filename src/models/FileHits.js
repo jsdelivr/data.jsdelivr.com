@@ -36,24 +36,6 @@ class FileHits extends BaseCacheModel {
 		return new Proxy(this, BaseCacheModel.ProxyHandler);
 	}
 
-	static async getSumByDate (from, to) {
-		let sql = db(this.table)
-			.groupBy(`${this.table}.date`)
-			.sum(`${this.table}.hits as hits`);
-
-		if (from instanceof Date) {
-			sql.where(`${this.table}.date`, '>=', from);
-		}
-
-		if (to instanceof Date) {
-			sql.where(`${this.table}.date`, '<=', to);
-		}
-
-		return _.fromPairs(_.map(await sql.select([ `${this.table}.date` ]), (record) => {
-			return [ record.date.toISOString().substr(0, 10), record.hits ];
-		}));
-	}
-
 	toSqlFunctionCall () {
 		return db.raw(`select updateOrInsertFileHits(@lastIdFile, ?, ?);`, [ this.date, this.hits ]);
 	}
