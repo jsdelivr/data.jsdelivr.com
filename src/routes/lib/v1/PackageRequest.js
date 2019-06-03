@@ -142,7 +142,7 @@ class PackageRequest extends BaseRequest {
 	}
 
 	async getRank () {
-		let date = `/${this.dateRange[0].toISOString().substr(0, 10)}/${this.dateRange[1].toISOString().substr(0, 10)}`;
+		let date = `${this.dateRange[0].toISOString().substr(0, 10)}/${this.dateRange[1].toISOString().substr(0, 10)}`;
 		let rank = await redis.getAsync(this.keys.rank + date);
 
 		if (rank) {
