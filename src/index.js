@@ -121,6 +121,19 @@ server.use((ctx, next) => {
 server.use(koaJson({ spaces: '\t' }));
 
 /**
+ * Replace 502/504 HTTP codes with 500,
+ * because Cloudflare requires and enterprise account
+ * to serve these correctly.
+ */
+server.use(async (ctx, next) => {
+	await next();
+
+	if ([ 502, 504 ].includes(ctx.status)) {
+		ctx.status = 500;
+	}
+});
+
+/**
  * Always respond with a JSON.
  */
 server.use(async (ctx, next) => {
