@@ -22,7 +22,7 @@ redis.RedisClient.prototype.getCompressedAsync = async function (key) {
 
 	if (!value) {
 		return value;
-	} else if (value[0] === 0xFF) {
+	} else if (value[0] === 0) {
 		return value.toString('utf8', 1);
 	}
 
@@ -34,8 +34,8 @@ redis.RedisClient.prototype.setCompressedAsync = async function (key, value, ...
 
 	// Don't compress if the data is less than 1024 bytes.
 	if (value.length < 1024) {
-		// Add a 0xFF byte as a flag for "not compressed".
-		return this.setAsync(key, '\xFF' + value, ...other);
+		// Add a 0x00 byte as a flag for "not compressed".
+		return this.setAsync(key, '\x00' + value, ...other);
 	}
 
 	return this.setAsync(key, await zlib.deflateAsync(value), ...other);
