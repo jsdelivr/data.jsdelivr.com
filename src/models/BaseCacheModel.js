@@ -1,7 +1,12 @@
 const crypto = require('crypto');
+const config = require('config');
 const BaseModel = require('./BaseModel');
-const PromiseLock = require('../lib/promise-lock');
-const promiseLock = new PromiseLock('cm');
+let PromiseLock, promiseLock;
+
+if (config.has('redis')) {
+	PromiseLock = require('../lib/promise-lock');
+	promiseLock = new PromiseLock('cm');
+}
 
 class BaseCacheModel extends BaseModel {
 	static exec () {}
