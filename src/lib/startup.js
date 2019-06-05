@@ -3,11 +3,14 @@ global.Bluebird = require('bluebird');
 
 const Logger = require('h-logger2');
 const ElasticWriter = require('h-logger2-elastic');
+const ElasticSearch = require('@elastic/elasticsearch').Client;
+let esClient;
 
-const esClient = require('elasticsearch').Client({
-	host: process.env.ELASTIC_SEARCH_URL,
-	log: 'error',
-});
+if (process.env.ELASTIC_SEARCH_URL) {
+	esClient = new ElasticSearch({
+		node: process.env.ELASTIC_SEARCH_URL,
+	});
+}
 
 global.logger = new Logger(
 	'jsdelivr-api',
