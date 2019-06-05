@@ -4,6 +4,8 @@ const PromiseLock = require('../lib/promise-lock');
 const promiseLock = new PromiseLock('cm');
 
 class BaseCacheModel extends BaseModel {
+	static exec () {}
+
 	static get (transformKey = '', expiration = 24 * 60 * 60, deserialize = v => v) {
 		return this.transform(transformKey, v => v, expiration, deserialize);
 	}
