@@ -19,9 +19,6 @@ const PackageVersion = require('../../../models/PackageVersion');
 const dateRange = require('../../utils/dateRange');
 const sumDeep = require('../../utils/sumDeep');
 
-const PromiseLock = require('../../../lib/promise-lock');
-const promiseLock = new PromiseLock('pk');
-
 const v1Config = config.get('v1');
 const githubApi = new GitHubApi({
 	auth: `token ${v1Config.gh.apiToken}`,
@@ -142,29 +139,20 @@ class PackageRequest extends BaseRequest {
 	}
 
 	async getRank () {
-		let date = `${this.dateRange[0].toISOString().substr(0, 10)}/${this.dateRange[1].toISOString().substr(0, 10)}`;
-		let rank = await redis.getAsync(this.keys.rank + date);
-
-		if (rank) {
-			return Number(rank);
-		}
-
-		await promiseLock.get(`rank:${JSON.stringify(this.dateRange)}`, () => {
-			rank = -1;
+		return Package.transformWithLock(`${this.keys.rank}${this.dateRange[0].toISOString().substr(0, 10)}/${this.dateRange[1].toISOString().substr(0, 10)}`, async () => {
+			let data = await Package.getWithLock(undefined, relativeDayUtc(1)).getTopPackages(...this.dateRange, null);
 			let hits = Infinity;
+			let rank = -1;
 
-			return Bluebird.each(Package.get(undefined, relativeDayUtc(1)).getTopPackages(...this.dateRange, null), (pkg) => {
+			return data.some((pkg) => {
 				if (pkg.hits < hits) {
 					hits = pkg.hits;
 					rank++;
 				}
 
-				return redis.setAsync(`package/${pkg.type}/${pkg.name}/rank/${date}`, rank, 'EX', 86400 - Math.floor(Date.now() % 86400000 / 1000));
-			});
-		});
-
-		rank = await redis.getAsync(this.keys.rank + date);
-		return rank ? Number(rank) : null;
+				return pkg.type === this.params.type && pkg.name === this.params.name;
+			}) ? rank : null;
+		}).exec();
 	}
 
 	async getResolvedVersion () {
