@@ -70,7 +70,7 @@ module.exports.ProxyTargetHandler = _.defaults({
 	get (target, property) {
 		if (typeof target.model[property] === 'function') {
 			return async (...args) => {
-				let key = `${target.model.name}:${property}:${ProxyTarget.hash(...args)}:${target.transformKey}`, value;
+				let key = `${target.model.name}:${property}:${args.length ? ProxyTarget.hash(...args) : ''}:${target.transformKey}`, value;
 
 				if (value = await redis.getCompressedAsync(key).catch(() => {})) {
 					return target.deserialize(JSON.parse(value));
