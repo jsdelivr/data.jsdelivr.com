@@ -1,5 +1,6 @@
 const relativeDayUtc = require('relative-day-utc');
 const V1StatsRequest = require('../../routes/lib/v1/StatsRequest');
+const V1PackageRequest = require('../../routes/lib/v1/PackageRequest');
 
 const PromiseLock = require('../promise-lock');
 const promiseLock = new PromiseLock('pc');
@@ -34,7 +35,10 @@ function run () {
 			makeDateRange(365, 1),
 		], dateRange => Bluebird.mapSeries([
 			() => makeRequest(V1StatsRequest, dateRange, makeCtx()).handleNetworkInternal(redisCacheExpirationDate),
-			() => makeRequest(V1StatsRequest, dateRange, makeCtx({ all: true })).handlePackagesInternal(redisCacheExpirationDate),
+			() => makeRequest(V1StatsRequest, dateRange, makeCtx({ all: true })).handlePackagesInternal(redisCacheExpirationDate).then((pkgs) => {
+				// Also precache ranks for the top 10k packages.
+				return Bluebird.map(pkgs.slice(0, 10000), pkg => makeRequest(V1PackageRequest, dateRange, makeCtx(pkg)).getRank(pkgs), { concurrency: 8 });
+			}),
 			..._.range(1, 11).map(page => () => makeRequest(V1StatsRequest, dateRange, makeCtx({}, { page })).handlePackagesInternal(redisCacheExpirationDate)),
 		], (job, index) => {
 			precacheLog.info(`Executing job #${index} with date range = ${dateRange}.`);

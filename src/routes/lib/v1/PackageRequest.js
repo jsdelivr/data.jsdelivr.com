@@ -138,9 +138,9 @@ class PackageRequest extends BaseRequest {
 		return metadata;
 	}
 
-	async getRank () {
+	async getRank (packages) {
 		return Package.transform(`${this.keys.rank}${this.dateRange[0].toISOString().substr(0, 10)}/${this.dateRange[1].toISOString().substr(0, 10)}`, async () => {
-			let data = await Package.getWithLock(undefined, relativeDayUtc(1)).getTopPackages(...this.dateRange, null);
+			let data = packages || await Package.getWithLock(undefined, relativeDayUtc(1)).getTopPackages(...this.dateRange, null);
 			let hits = Infinity;
 			let rank = -1;
 
