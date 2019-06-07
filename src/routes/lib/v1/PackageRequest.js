@@ -139,7 +139,7 @@ class PackageRequest extends BaseRequest {
 	}
 
 	async getRank () {
-		return Package.transformWithLock(`${this.keys.rank}${this.dateRange[0].toISOString().substr(0, 10)}/${this.dateRange[1].toISOString().substr(0, 10)}`, async () => {
+		return Package.transform(`${this.keys.rank}${this.dateRange[0].toISOString().substr(0, 10)}/${this.dateRange[1].toISOString().substr(0, 10)}`, async () => {
 			let data = await Package.getWithLock(undefined, relativeDayUtc(1)).getTopPackages(...this.dateRange, null);
 			let hits = Infinity;
 			let rank = -1;
