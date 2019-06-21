@@ -31,6 +31,7 @@ describe('v1', function () {
 		await db.schema.dropTableIfExists('other_hits');
 		await db.schema.dropTableIfExists('package');
 		await db.schema.raw('DROP VIEW IF EXISTS package_hits');
+		await db.schema.dropTableIfExists('package_listing');
 		await db.schema.dropTableIfExists('package_version');
 		await db.schema.dropTableIfExists('referrer');
 		await db.schema.dropTableIfExists('referrer_hits');

@@ -144,3 +144,15 @@ FROM package
 		 JOIN file ON package_version.id = file.packageVersionId
 		 JOIN file_hits ON file.id = file_hits.fileId
 GROUP BY packageId, date;
+
+CREATE TABLE `package_listing` (
+	`type`    varchar(255) COLLATE utf8mb4_bin NOT NULL,
+	`name`    varchar(255) COLLATE utf8mb4_bin NOT NULL,
+	`version` varchar(255) COLLATE utf8mb4_bin NOT NULL,
+	`listing` mediumtext COLLATE utf8mb4_bin DEFAULT NULL,
+	PRIMARY KEY (`type`, `name`, `version`)
+)
+	ENGINE = InnoDB
+	DEFAULT CHARSET = utf8mb4
+	COLLATE = utf8mb4_bin
+	ROW_FORMAT = COMPRESSED;

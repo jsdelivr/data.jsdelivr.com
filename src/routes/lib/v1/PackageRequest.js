@@ -15,6 +15,7 @@ const badgeFactory = new BadgeFactory();
 
 const BaseRequest = require('./BaseRequest');
 const Package = require('../../../models/Package');
+const PackageListing = require('../../../models/PackageListing');
 const PackageVersion = require('../../../models/PackageVersion');
 const dateRange = require('../../utils/dateRange');
 const sumDeep = require('../../utils/sumDeep');
@@ -34,7 +35,6 @@ class PackageRequest extends BaseRequest {
 		super(ctx);
 
 		this.keys = {
-			files: `c:package/${this.params.type}/${this.params.name}@${this.params.version}/files`,
 			metadata: `c:package/${this.params.type}/${this.params.name}/metadata`,
 			rank: `package/${this.params.type}/${this.params.name}/rank/`,
 		};
@@ -111,15 +111,16 @@ class PackageRequest extends BaseRequest {
 	}
 
 	async getFilesAsJson () {
-		let files = await redis.getCompressedAsync(this.keys.files);
+		let props = { type: this.params.type, name: this.params.name, version: this.params.version };
+		let packageListing = await PackageListing.find(props);
 
-		if (files) {
-			return files;
+		if (packageListing) {
+			return packageListing.listing;
 		}
 
-		files = JSON.stringify(await this.fetchFiles(), null, '\t');
-		await redis.setCompressedAsync(this.keys.files, files);
-		return files;
+		let listing = JSON.stringify(await this.fetchFiles());
+		await new PackageListing({ ...props, listing }).insert().catch(() => {});
+		return listing;
 	}
 
 	async getMetadata () {
