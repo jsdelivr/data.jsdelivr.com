@@ -2,6 +2,7 @@ const got = require('got');
 const semver = require('semver');
 const config = require('config');
 const GitHubApi = require('@octokit/rest');
+const promiseRetry = require('promise-retry');
 const BadgeFactory = require('gh-badges').BadgeFactory;
 const isSha = require('is-hexdigest');
 const isSemverStatic = require('is-semver-static');
@@ -44,18 +45,22 @@ class PackageRequest extends BaseRequest {
 		let url = `${v1Config.cdn.sourceUrl}/${this.params.type}/${this.params.name}@${encodeURIComponent(this.params.version)}/+private-json`;
 
 		return fetchCache.get(url, () => {
-			return got(url, { json: true, timeout: 30000 }).then((response) => {
-				return _.pick(response.body, [ 'default', 'files' ]);
-			}).catch((error) => {
-				if (error instanceof got.HTTPError && error.response.statusCode === 403) {
-					return {
-						status: error.response.statusCode,
-						message: error.response.body,
-					};
-				}
+			return promiseRetry((retry) => {
+				return got(url, { json: true, timeout: 30000 }).then((response) => {
+					return _.pick(response.body, [ 'default', 'files' ]);
+				}).catch((error) => {
+					if (error instanceof got.HTTPError && error.response.statusCode === 403) {
+						return {
+							status: error.response.statusCode,
+							message: error.response.body,
+						};
+					} else if (error instanceof got.ParseError) {
+						return retry(error);
+					}
 
-				throw error;
-			});
+					throw error;
+				});
+			}, { retries: 2 });
 		});
 	}
 
