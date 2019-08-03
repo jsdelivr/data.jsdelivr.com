@@ -119,7 +119,7 @@ koaElasticUtils.addRoutes(router, [
 });
 
 koaElasticUtils.addRoutes(router, [
-	[ '/stats/packages', '/stats/packages/:period(day|week|month|year)?/:all(all)?' ],
+	[ '/stats/packages/:type(gh|npm)?', '/stats/packages/:type(gh|npm)?/:period(day|week|month|year)?/:all(all)?' ],
 ], async (ctx) => {
 	return new StatsRequest(ctx).handlePackages();
 });

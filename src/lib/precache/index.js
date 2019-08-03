@@ -39,9 +39,13 @@ function run () {
 				// Also precache ranks for the top 10k packages.
 				return Bluebird.map(pkgs.slice(0, 10000), pkg => makeRequest(V1PackageRequest, dateRange, makeCtx(pkg)).getRank(pkgs), { concurrency: 8 });
 			}),
+			() => makeRequest(V1StatsRequest, dateRange, makeCtx({ all: true, type: 'gh' })).handlePackagesInternal(redisCacheExpirationDate),
+			() => makeRequest(V1StatsRequest, dateRange, makeCtx({ all: true, type: 'npm' })).handlePackagesInternal(redisCacheExpirationDate),
 			..._.range(1, 11).map(page => () => makeRequest(V1StatsRequest, dateRange, makeCtx({}, { page })).handlePackagesInternal(redisCacheExpirationDate)),
+			..._.range(1, 11).map(page => () => makeRequest(V1StatsRequest, dateRange, makeCtx({ type: 'gh' }, { page })).handlePackagesInternal(redisCacheExpirationDate)),
+			..._.range(1, 11).map(page => () => makeRequest(V1StatsRequest, dateRange, makeCtx({ type: 'npm' }, { page })).handlePackagesInternal(redisCacheExpirationDate)),
 		], (job, index) => {
-			precacheLog.info(`Executing job #${index} with date range = ${dateRange}.`);
+			precacheLog.info(`Executing job #${index} with date range = ${dateRange.map(date => date.toISOString().substr(0, 10)).join(' - ')}.`);
 			return job().catch(error => precacheLog.warn(`Error running job #${index}.`, error));
 		}));
 

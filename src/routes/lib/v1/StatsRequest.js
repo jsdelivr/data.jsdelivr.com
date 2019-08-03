@@ -57,7 +57,7 @@ class StatsRequest extends BaseRequest {
 	}
 
 	async handlePackagesInternal (redisCacheExpirationDate) {
-		return Package.getWithLock(undefined, redisCacheExpirationDate).getTopPackages(...this.dateRange, ...this.pagination);
+		return Package.getWithLock(undefined, redisCacheExpirationDate).getTopPackages(...this.dateRange, this.params.type, ...this.pagination);
 	}
 }
 

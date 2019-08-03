@@ -91,12 +91,16 @@ class Package extends BaseCacheModel {
 		});
 	}
 
-	static async getTopPackages (from, to, limit = 100, page = 1) {
+	static async getTopPackages (from, to, type = undefined, limit = 100, page = 1) {
 		let sql = db(this.table)
 			.join(PackageHits.table, `${this.table}.id`, '=', `${PackageHits.table}.packageId`)
 			.groupBy(`${PackageHits.table}.packageId`)
 			.sum(`${PackageHits.table}.hits as hits`)
 			.orderBy('hits', 'DESC');
+
+		if (type) {
+			sql.where({ type });
+		}
 
 		if (limit) {
 			sql.limit(limit).offset((page - 1) * limit);
