@@ -123,7 +123,7 @@ server.use(koaJson({ spaces: '\t' }));
 
 /**
  * Replace 502/504 HTTP codes with 500,
- * because Cloudflare requires and enterprise account
+ * because Cloudflare requires an enterprise account
  * to serve these correctly.
  */
 server.use(async (ctx, next) => {
@@ -210,6 +210,12 @@ server.use(router.routes()).use(router.allowedMethods());
  * Koa error handling.
  */
 server.on('error', (error, ctx) => {
+	let ignore = [ 'ECONNABORTED', 'ECONNRESET', 'EPIPE' ];
+
+	if (ignore.includes(error.code)) {
+		return;
+	}
+
 	log.error('Koa server error.', error, { ctx });
 });
 
