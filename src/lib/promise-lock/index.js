@@ -9,7 +9,7 @@ const STATUS_RESOLVED = 1;
 const STATUS_REJECTED = 2;
 
 let lastMessageId = 0;
-let getNextMessageId = () => ++lastMessageId % Number.MAX_SAFE_INTEGER;
+let getNextMessageId = () => lastMessageId = (lastMessageId + 1) % Number.MAX_SAFE_INTEGER;
 
 class PromiseLock {
 	/**
@@ -249,7 +249,11 @@ class ScopedLock {
 	}
 
 	get (key, fn, maxAge, lockOnly) {
-		return module.exports.promiseLock.get(`${this.scope}/` + key, fn, maxAge, lockOnly);
+		return module.exports.promiseLock.get(`${this.scope}/${key}`, fn, maxAge, lockOnly);
+	}
+
+	refresh (key, maxAge) {
+		return redis.pexpireAsync(module.exports.promiseLock.getRedisKey(`${this.scope}/${key}`), maxAge);
 	}
 }
 
