@@ -15,9 +15,9 @@ class StatsRequest extends BaseRequest {
 	}
 
 	async handleNetworkInternal (redisCacheExpirationDate) {
-		let fileHits = await PackageHits.getWithLock(undefined, redisCacheExpirationDate).getSumPerDate(...this.dateRange);
-		let otherHits = await OtherHits.getWithLock(undefined, redisCacheExpirationDate).getSumPerDate(...this.dateRange);
-		let datesTraffic = await Logs.getWithLock(undefined, redisCacheExpirationDate).getMegabytesPerDate(...this.dateRange);
+		let fileHits = await PackageHits.get(undefined, redisCacheExpirationDate).withLock().getSumPerDate(...this.dateRange);
+		let otherHits = await OtherHits.get(undefined, redisCacheExpirationDate).withLock().getSumPerDate(...this.dateRange);
+		let datesTraffic = await Logs.get(undefined, redisCacheExpirationDate).withLock().getMegabytesPerDate(...this.dateRange);
 		let sumFileHits = sumDeep(fileHits);
 		let sumOtherHits = sumDeep(otherHits);
 
@@ -37,7 +37,7 @@ class StatsRequest extends BaseRequest {
 				total: sumDeep(datesTraffic),
 				dates: dateRange.fill(datesTraffic, ...this.dateRange),
 			},
-			meta: await Logs.getWithLock(undefined, redisCacheExpirationDate).getMetaStats(...this.dateRange),
+			meta: await Logs.get(undefined, redisCacheExpirationDate).withLock().getMetaStats(...this.dateRange),
 		};
 
 		if (!result.meta.records) {
@@ -57,7 +57,7 @@ class StatsRequest extends BaseRequest {
 	}
 
 	async handlePackagesInternal (redisCacheExpirationDate) {
-		return Package.getWithLock(undefined, redisCacheExpirationDate).getTopPackages(...this.dateRange, this.params.type, ...this.pagination);
+		return Package.get(undefined, redisCacheExpirationDate).withLock().asRawArray().getTopPackages(...this.dateRange, this.params.type, ...this.pagination);
 	}
 }
 
