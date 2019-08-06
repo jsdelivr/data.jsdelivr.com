@@ -76,6 +76,7 @@
 		"@types/serve-favicon": "^2.2.30",
 		"@types/signal-exit": "^3.0.0",
 		"@types/statuses": "^1.5.0",
+		"blocked": "^1.2.1",
 		"chai": "^4.2.0",
 		"chai-http": "^4.3.0",
 		"eslint": "^5.16.0",

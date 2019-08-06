@@ -104,6 +104,14 @@ describe('v1', function () {
 			.get(/.*/)
 			.times(Infinity)
 			.reply(504);
+
+		before(() => {
+			if (global.v8debug === undefined && !/--debug|--inspect/.test(process.execArgv.join(' '))) {
+				require('blocked')((ms) => {
+					throw new Error(`Blocked for ${ms} ms.`);
+				}, { threshold: 100 });
+			}
+		});
 	});
 
 	this.timeout(10000);
