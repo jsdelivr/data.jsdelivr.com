@@ -6,6 +6,7 @@ const schema = {
 	name: Joi.string().max(255).required(),
 	version: Joi.string().max(255).required(),
 	listing: Joi.string().required(),
+	updatedAt: Joi.date().required(),
 };
 
 class PackageListing extends BaseCacheModel {
@@ -35,6 +36,9 @@ class PackageListing extends BaseCacheModel {
 
 		/** @type {string} */
 		this.listing = null;
+
+		/** @type {Date} */
+		this.updatedAt = null;
 
 		Object.assign(this, properties);
 		return new Proxy(this, BaseCacheModel.ProxyHandler);
