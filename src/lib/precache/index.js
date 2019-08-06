@@ -1,6 +1,7 @@
 const relativeDayUtc = require('relative-day-utc');
 const V1StatsRequest = require('../../routes/lib/v1/StatsRequest');
 const V1PackageRequest = require('../../routes/lib/v1/PackageRequest');
+const Package = require('../../models/Package');
 
 const PromiseLock = require('../promise-lock');
 const promiseLock = new PromiseLock('pc');
@@ -42,8 +43,9 @@ function run () {
 				makeDateRange(365, 1),
 			], dateRange => Bluebird.mapSeries([
 				() => makeRequest(V1StatsRequest, dateRange, makeCtx()).handleNetworkInternal(redisCacheExpirationDate),
-				() => makeRequest(V1StatsRequest, dateRange, makeCtx({ all: true })).handlePackagesInternal(redisCacheExpirationDate).then((pkgs) => {
-					// Also precache ranks for the top 10k packages.
+				() => makeRequest(V1StatsRequest, dateRange, makeCtx({ all: true })).handlePackagesInternal(redisCacheExpirationDate),
+				// Also precache ranks for the top 10k packages.
+				() => Package.get(undefined, redisCacheExpirationDate).withLock().asArray().getTopPackages(...dateRange, undefined, null).then((pkgs) => {
 					return Bluebird.map(pkgs.slice(0, 10000), pkg => makeRequest(V1PackageRequest, dateRange, makeCtx(pkg)).getRank(pkgs), { concurrency: 8 });
 				}),
 				() => makeRequest(V1StatsRequest, dateRange, makeCtx({ all: true, type: 'gh' })).handlePackagesInternal(redisCacheExpirationDate),
