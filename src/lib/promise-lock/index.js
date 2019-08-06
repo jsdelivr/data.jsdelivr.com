@@ -166,7 +166,7 @@ class PromiseLock {
 	async getLockOrValue (key, maxAge) {
 		let rKey = this.getRedisKey(key);
 		let result = await redis.multi().set(rKey, '{"s":0}', 'PX', maxAge, 'NX').get(rKey).execAsync();
-		return result[0] === null ? JSONPP.parse(result[1]) : null;
+		return result[0] === null ? PromiseLock.parse(await redis.decompress(result[1])) : null;
 	}
 
 	/**
@@ -185,20 +185,23 @@ class PromiseLock {
 	 * @private
 	 */
 	onMessage (channel, messageString) {
-		let message = JSONPP.parse(messageString);
-		let pending = this.pendingR.get(message.k);
+		redis.decompress(messageString).then((decompressed) => {
+			return PromiseLock.parse(decompressed);
+		}).then((message) => {
+			let pending = this.pendingR.get(message.k);
 
-		if (pending) {
-			if (message.s === STATUS_RESOLVED) {
-				pending.resolve(message.v);
-			} else {
-				pending.reject(message.v);
+			if (pending) {
+				if (message.s === STATUS_RESOLVED) {
+					pending.resolve(message.v);
+				} else {
+					pending.reject(message.v);
+				}
 			}
-		}
 
-		this.messages.set(message.k, Object.assign({ id: getNextMessageId() }, message));
-		this.pendingR.del(message.k);
-		this.pendingL.del(message.k);
+			this.messages.set(message.k, Object.assign({ id: getNextMessageId() }, message));
+			this.pendingR.del(message.k);
+			this.pendingL.del(message.k);
+		}).catch(() => {});
 	}
 
 	/**
@@ -209,7 +212,7 @@ class PromiseLock {
 	async notify (message) {
 		let key = this.getRedisKey(message.key);
 		let ttl = await redis.pttlAsync(key);
-		let res = JSONPP.stringify({ s: message.s, k: message.key, v: message.v });
+		let res = await redis.compress(PromiseLock.serialize(message));
 
 		// Store result in redis so that we can resolve future promises.
 		// istanbul ignore else
@@ -222,7 +225,27 @@ class PromiseLock {
 		// Resolve existing promises in other processes and this process.
 		let args = [ this.channel, res ];
 		this.pubClient.publish(...args);
-		this.onMessage(...args);
+	}
+
+	/**
+	 * @param string
+	 * @returns {Object}
+	 */
+	static parse (string) {
+		let i = string.indexOf('\n');
+		let o = JSONPP.parse(string.substr(0, i));
+		o.v = string.charAt(i + 1) === '0' ? string.substr(i + 2) : JSONPP.parse(string.substr(i + 2));
+		return o;
+	}
+
+	/**
+	 * @param {Object} message
+	 * @returns {string}
+	 */
+	static serialize (message) {
+		return JSONPP.stringify({ s: message.s, k: message.key })
+			+ '\n'
+			+ (typeof message.v === 'string' ? '0' + message.v : '1' + JSONPP.stringify({ v: message.v }));
 	}
 }
 

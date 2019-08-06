@@ -17,9 +17,19 @@ if (process.env.NO_CACHE) {
 	}, 1000);
 }
 
-redis.RedisClient.prototype.getCompressedAsync = async function (key) {
-	let value = await this.getAsync(Buffer.from(key, 'utf8'));
+redis.RedisClient.prototype.compress = async function (value) {
+	value = String(value);
 
+	// Don't compress if the data is less than 1024 bytes.
+	if (value.length < 1024) {
+		// Add a 0x00 byte as a flag for "not compressed".
+		return '\x00' + value;
+	}
+
+	return zlib.deflateAsync(value);
+};
+
+redis.RedisClient.prototype.decompress = async function (value) {
 	if (!value) {
 		return value;
 	} else if (value[0] === 0) {
@@ -29,16 +39,12 @@ redis.RedisClient.prototype.getCompressedAsync = async function (key) {
 	return (await zlib.inflateAsync(value)).toString();
 };
 
+redis.RedisClient.prototype.getCompressedAsync = async function (key) {
+	return this.decompress(await this.getAsync(Buffer.from(key, 'utf8')));
+};
+
 redis.RedisClient.prototype.setCompressedAsync = async function (key, value, ...other) {
-	value = String(value);
-
-	// Don't compress if the data is less than 1024 bytes.
-	if (value.length < 1024) {
-		// Add a 0x00 byte as a flag for "not compressed".
-		return this.setAsync(key, '\x00' + value, ...other);
-	}
-
-	return this.setAsync(key, await zlib.deflateAsync(value), ...other);
+	return this.setAsync(key, await this.compress(value), ...other);
 };
 
 function createClient () {
@@ -47,7 +53,7 @@ function createClient () {
 		host: redisConfig.host,
 		port: redisConfig.port,
 		password: redisConfig.password,
-		detect_buffers: true,
+		return_buffers: true, // needed for compressed pub/sub
 		enable_offline_queue: false,
 	});
 
