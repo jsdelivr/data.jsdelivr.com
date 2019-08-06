@@ -225,6 +225,7 @@ class PromiseLock {
 		// Resolve existing promises in other processes and this process.
 		let args = [ this.channel, res ];
 		this.pubClient.publish(...args);
+		this.onMessage(...args);
 	}
 
 	/**
