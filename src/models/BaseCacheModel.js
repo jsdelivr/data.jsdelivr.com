@@ -1,6 +1,10 @@
 const crypto = require('crypto');
 const config = require('config');
+
 const BaseModel = require('./BaseModel');
+const ArrayStream = require('../lib/array-stream');
+
+let arrayStream = new ArrayStream(JSON);
 let PromiseLock, promiseLock;
 
 if (config.has('redis')) {
@@ -70,16 +74,7 @@ class ProxyTarget {
 			return JSON.parse(string);
 		}
 
-		let array = [], prevIndex = 0, index;
-
-		while ((index = string.indexOf('\n]', prevIndex)) !== -1) {
-			index += 2;
-			array.push(...JSON.parse(string.substring(prevIndex, index)));
-			await Bluebird.resolve();
-			prevIndex = index;
-		}
-
-		return array;
+		return arrayStream.parse(string);
 	}
 
 	async serialize (value) {
@@ -87,27 +82,7 @@ class ProxyTarget {
 			return JSON.stringify(value, null, '\t');
 		}
 
-		let out = [];
-		let max = 0, min;
-
-		while (max < value.length) {
-			min = max;
-			max = Math.min(max + 10000, value.length);
-			let json = JSON.stringify(value.slice(min, max), null, '\t');
-
-			if (this.options.raw) {
-				json = json.slice(1, -1).trim();
-			}
-
-			out.push(json);
-			await Bluebird.resolve();
-		}
-
-		if (this.options.raw) {
-			return `[\n\t${out.join(',\n\t')}\n]`;
-		}
-
-		return out.join('\n');
+		return arrayStream.stringify(value, { singleArrayOutput: this.options.raw });
 	}
 
 	raw () {

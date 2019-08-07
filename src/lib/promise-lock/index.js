@@ -4,6 +4,9 @@ const redis = require('../redis');
 const createRedisClient = require('../redis').createClient;
 const JSONPP = require('../jsonpp');
 
+const ArrayStream = require('../array-stream');
+const arrayStream = new ArrayStream(JSONPP);
+
 const STATUS_PENDING = 0;
 const STATUS_RESOLVED = 1;
 const STATUS_REJECTED = 2;
@@ -235,7 +238,17 @@ class PromiseLock {
 	static parse (string) {
 		let i = string.indexOf('\n');
 		let o = JSONPP.parse(string.substr(0, i));
-		o.v = string.charAt(i + 1) === '0' ? string.substr(i + 2) : JSONPP.parse(string.substr(i + 2));
+		let t = string.charAt(i + 1);
+		let v = string.substr(i + 2);
+
+		if (t === '1') {
+			o.v = v;
+		} else if (t === '2') {
+			o.v = arrayStream.parse(v);
+		} else {
+			o.v = JSONPP.parse(v);
+		}
+
 		return o;
 	}
 
@@ -244,9 +257,19 @@ class PromiseLock {
 	 * @returns {string}
 	 */
 	static serialize (message) {
+		let serializedValue;
+
+		if (typeof message.v === 'string') {
+			serializedValue = '1' + message.v;
+		} else if (Array.isArray(message.v)) {
+			serializedValue = '2' + arrayStream.stringify(message.v);
+		} else {
+			serializedValue = '0' + JSONPP.stringify(message.v);
+		}
+
 		return JSONPP.stringify({ s: message.s, k: message.key })
 			+ '\n'
-			+ (typeof message.v === 'string' ? '0' + message.v : '1' + JSONPP.stringify({ v: message.v }));
+			+ serializedValue;
 	}
 }
 
