@@ -215,7 +215,7 @@ class PromiseLock {
 	async notify (message) {
 		let key = this.getRedisKey(message.key);
 		let ttl = await redis.pttlAsync(key);
-		let res = await redis.compress(PromiseLock.serialize(message));
+		let res = await redis.compress(await PromiseLock.serialize(message));
 
 		// Store result in redis so that we can resolve future promises.
 		// istanbul ignore else
@@ -235,7 +235,7 @@ class PromiseLock {
 	 * @param string
 	 * @returns {Object}
 	 */
-	static parse (string) {
+	static async parse (string) {
 		let i = string.indexOf('\n');
 		let o = JSONPP.parse(string.substr(0, i));
 		let t = string.charAt(i + 1);
@@ -244,7 +244,7 @@ class PromiseLock {
 		if (t === '1') {
 			o.v = v;
 		} else if (t === '2') {
-			o.v = arrayStream.parse(v);
+			o.v = await arrayStream.parse(v);
 		} else {
 			o.v = JSONPP.parse(v);
 		}
@@ -256,13 +256,13 @@ class PromiseLock {
 	 * @param {Object} message
 	 * @returns {string}
 	 */
-	static serialize (message) {
+	static async serialize (message) {
 		let serializedValue;
 
 		if (typeof message.v === 'string') {
 			serializedValue = '1' + message.v;
 		} else if (Array.isArray(message.v)) {
-			serializedValue = '2' + arrayStream.stringify(message.v);
+			serializedValue = '2' + await arrayStream.stringify(message.v);
 		} else {
 			serializedValue = '0' + JSONPP.stringify(message.v);
 		}
