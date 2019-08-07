@@ -20,6 +20,10 @@ describe('v1', function () {
 	this.timeout(0);
 
 	before(async () => {
+		if (!dbConfig.connection.database.endsWith('-test')) {
+			throw new Error(`Database name for test env needs to end with "-test". Got "${dbConfig.connection.database}".`);
+		}
+
 		await db.raw('SET @@foreign_key_checks = 0;');
 		await db.raw(`CREATE DATABASE IF NOT EXISTS \`${dbConfig.connection.database}\`;`);
 		await db.schema.dropTableIfExists('file');
