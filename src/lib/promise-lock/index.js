@@ -168,7 +168,7 @@ class PromiseLock {
 	 */
 	async getLockOrValue (key, maxAge) {
 		let rKey = this.getRedisKey(key);
-		let result = await redis.multi().set(rKey, '\x00{"s":0}', 'PX', maxAge, 'NX').get(rKey).execAsync();
+		let result = await redis.multi().set(rKey, '\x00{"s":0}\n', 'PX', maxAge, 'NX').get(rKey).execAsync();
 		return result[0] === null ? PromiseLock.parse(await redis.decompress(result[1])) : null;
 	}
 
@@ -238,6 +238,11 @@ class PromiseLock {
 	static async parse (string) {
 		let i = string.indexOf('\n');
 		let o = JSONPP.parse(string.substr(0, i));
+
+		if (o.s === 0) {
+			return o;
+		}
+
 		let t = string.charAt(i + 1);
 		let v = string.substr(i + 2);
 
