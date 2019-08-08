@@ -168,7 +168,7 @@ class PromiseLock {
 	 */
 	async getLockOrValue (key, maxAge) {
 		let rKey = this.getRedisKey(key);
-		let result = await redis.multi().set(rKey, '{"s":0}', 'PX', maxAge, 'NX').get(rKey).execAsync();
+		let result = await redis.multi().set(rKey, '\x00{"s":0}', 'PX', maxAge, 'NX').get(rKey).execAsync();
 		return result[0] === null ? PromiseLock.parse(await redis.decompress(result[1])) : null;
 	}
 
