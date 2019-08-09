@@ -12,6 +12,7 @@
 		"config-mapper-env": "^1.0.1",
 		"elastic-apm-node": "^2.13.0",
 		"elastic-apm-utils": "^2.1.0",
+		"execa": "^2.0.3",
 		"fs-extra": "^8.1.0",
 		"gh-badges": "^2.2.1",
 		"got": "^9.6.0",

@@ -1,72 +1,14 @@
-const relativeDayUtc = require('relative-day-utc');
-const V1StatsRequest = require('../../routes/lib/v1/StatsRequest');
-const V1PackageRequest = require('../../routes/lib/v1/PackageRequest');
-const Package = require('../../models/Package');
+const execa = require('execa');
 
 const PromiseLock = require('../promise-lock');
 const promiseLock = new PromiseLock('pc');
 
-const precacheLog = logger.scope('precache');
 let runToday = false;
-
-function makeCtx (params = {}, query = {}) {
-	return { params, query };
-}
-
-function makeDateRange (defaultDays, daysInFuture) {
-	return [ relativeDayUtc(-2 - defaultDays + 1 + daysInFuture), relativeDayUtc(-2 + daysInFuture) ];
-}
-
-function makeRequest (Constructor, dateRange, ctx) {
-	let request = new Constructor(ctx);
-	request.dateRange = dateRange;
-	return request;
-}
 
 function run () {
 	// Promise lock ensures this starts only in one process.
 	promiseLock.get('run', async () => {
-		precacheLog.info(`Precache function started.`);
-
-		let redisCacheExpirationDate = relativeDayUtc(2);
-		runToday = true;
-
-		let redisLockRefreshInterval = setInterval(() => {
-			promiseLock.refresh('run', 2 * 60 * 1000).catch(() => {});
-		}, 60 * 1000);
-
-		try {
-			await Bluebird.mapSeries([
-				makeDateRange(1, 1),
-				makeDateRange(7, 1),
-				makeDateRange(30, 1),
-				makeDateRange(365, 1),
-			], dateRange => Bluebird.mapSeries([
-				() => makeRequest(V1StatsRequest, dateRange, makeCtx()).handleNetworkInternal(redisCacheExpirationDate),
-				() => makeRequest(V1StatsRequest, dateRange, makeCtx({ all: true })).handlePackagesInternal(redisCacheExpirationDate),
-				// Also precache ranks for the top 10k packages.
-				() => Package.get(undefined, redisCacheExpirationDate).withLock().asArray().getTopPackages(...dateRange, undefined, null).then((pkgs) => {
-					return Bluebird.map(pkgs.slice(0, 10000), pkg => makeRequest(V1PackageRequest, dateRange, makeCtx(pkg)).getRank(pkgs), { concurrency: 8 });
-				}),
-				() => makeRequest(V1StatsRequest, dateRange, makeCtx({ all: true, type: 'gh' })).handlePackagesInternal(redisCacheExpirationDate),
-				() => makeRequest(V1StatsRequest, dateRange, makeCtx({ all: true, type: 'npm' })).handlePackagesInternal(redisCacheExpirationDate),
-				..._.range(1, 11).map(page => () => makeRequest(V1StatsRequest, dateRange, makeCtx({}, { page })).handlePackagesInternal(redisCacheExpirationDate)),
-				..._.range(1, 11).map(page => () => makeRequest(V1StatsRequest, dateRange, makeCtx({ type: 'gh' }, { page })).handlePackagesInternal(redisCacheExpirationDate)),
-				..._.range(1, 11).map(page => () => makeRequest(V1StatsRequest, dateRange, makeCtx({ type: 'npm' }, { page })).handlePackagesInternal(redisCacheExpirationDate)),
-			], (job, index) => {
-				precacheLog.info(`Executing job #${index} with date range = ${dateRange.map(date => date.toISOString().substr(0, 10)).join(' - ')}.`);
-				return job().catch(error => precacheLog.warn(`Error running job #${index}.`, error));
-			}));
-		} catch (error) {
-			precacheLog.info(`Precache function failed.`, error);
-			throw error;
-		} finally {
-			clearInterval(redisLockRefreshInterval);
-		}
-
-		precacheLog.info(`Precache function finished.`);
-		// When everything is done, set the lock for 2 hours to prevent other processes from trying to run this again.
-		promiseLock.refresh('run', 2 * 60 * 60 * 1000).catch(() => {});
+		await execa(process.execPath, [ ...process.execArgv, require.resolve('./run') ], { reject: false, stdio: 'inherit', timeout: 60 * 60 * 1000 });
 	}, 2 * 60 * 1000).catch(() => {});
 }
 
