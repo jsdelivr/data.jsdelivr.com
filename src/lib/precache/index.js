@@ -7,8 +7,8 @@ let runToday = false;
 
 function run () {
 	// Promise lock ensures this starts only in one process.
-	promiseLock.get('run', async () => {
-		await execa(process.execPath, [ ...process.execArgv, require.resolve('./run') ], { reject: false, stdio: 'inherit', timeout: 60 * 60 * 1000 });
+	promiseLock.get('run', () => {
+		return execa(process.execPath, [ ...process.execArgv, require.resolve('./run') ], { reject: false, stdio: 'inherit', timeout: 60 * 60 * 1000 });
 	}, 2 * 60 * 1000).catch(() => {});
 }
 
