@@ -1,20 +1,7 @@
 // istanbul ignore next
 if (require.main === module) {
 	// This needs to run before any require() call.
-	global.apmClient = require('elastic-apm-node').start({
-		active: process.env.NODE_ENV === 'production',
-		serviceName: 'jsdelivr-api',
-		serviceVersion: require('../package.json').version,
-		logLevel: 'fatal',
-		captureExceptions: false,
-		captureSpanStackTraces: false,
-		captureErrorLogStackTraces: 'always',
-		ignoreUrls: [ '/favicon.ico', '/heartbeat', '/amp_preconnect_polyfill_404_or_other_error_expected._Do_not_worry_about_it' ],
-		errorOnAbortedRequests: true,
-		abortedErrorThreshold: 30,
-		transactionSampleRate: 1,
-	});
-
+	global.apmClient = require('elastic-apm-node').start({});
 	global.apmClient.addTransactionFilter(payload => (payload.context && payload.context.tags && payload.context.tags.userAgent && !payload.context.tags.userAgent.includes('sindresorhus/got')) || Math.random() < .2 ? payload : false);
 	global.apmClient.addTransactionFilter(require('elastic-apm-utils').apm.transactionFilter());
 	global.apmClient.addSpanFilter(require('elastic-apm-utils').apm.spanFilter({ filterShorterThan: 10 }));
