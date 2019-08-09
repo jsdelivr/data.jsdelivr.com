@@ -11,6 +11,10 @@ const STATUS_PENDING = 0;
 const STATUS_RESOLVED = 1;
 const STATUS_REJECTED = 2;
 
+const VALUE_TYPE_OBJECT = '0';
+const VALUE_TYPE_STRING = '1';
+const VALUE_TYPE_ARRAY = '2';
+
 let lastMessageId = 0;
 let getNextMessageId = () => lastMessageId = (lastMessageId + 1) % Number.MAX_SAFE_INTEGER;
 
@@ -239,16 +243,16 @@ class PromiseLock {
 		let i = string.indexOf('\n');
 		let o = JSONPP.parse(string.substr(0, i));
 
-		if (o.s === 0) {
+		if (o.s === STATUS_PENDING) {
 			return o;
 		}
 
 		let t = string.charAt(i + 1);
 		let v = string.substr(i + 2);
 
-		if (t === '1') {
+		if (t === VALUE_TYPE_STRING) {
 			o.v = v;
-		} else if (t === '2') {
+		} else if (t === VALUE_TYPE_ARRAY) {
 			o.v = await arrayStream.parse(v);
 		} else {
 			o.v = JSONPP.parse(v);
@@ -265,11 +269,11 @@ class PromiseLock {
 		let serializedValue;
 
 		if (typeof message.v === 'string') {
-			serializedValue = '1' + message.v;
+			serializedValue = VALUE_TYPE_STRING + message.v;
 		} else if (Array.isArray(message.v)) {
-			serializedValue = '2' + await arrayStream.stringify(message.v);
+			serializedValue = VALUE_TYPE_ARRAY + await arrayStream.stringify(message.v);
 		} else {
-			serializedValue = '0' + JSONPP.stringify(message.v);
+			serializedValue = VALUE_TYPE_OBJECT + JSONPP.stringify(message.v);
 		}
 
 		return JSONPP.stringify({ s: message.s, k: message.key })
