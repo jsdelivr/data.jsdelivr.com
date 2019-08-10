@@ -63,15 +63,13 @@ async function run () {
 
 	precacheLog.info(`Precache function finished.`);
 	// When everything is done, set the lock for 2 hours to prevent other processes from trying to run this again.
-	promiseLock.refresh('run', 2 * 60 * 60 * 1000).catch(() => {});
+	await promiseLock.refresh('run', 2 * 60 * 60 * 1000).catch(() => {});
 }
 
 setTimeout(() => {
 	run().then(() => {
 		process.exit();
-	}).catch((error) => {
-		console.error(error);
-
+	}).catch(() => {
 		setTimeout(() => {
 			process.exit(1);
 		}, 10000);
