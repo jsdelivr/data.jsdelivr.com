@@ -12,7 +12,7 @@ function run () {
 		runToday = true;
 
 		try {
-			await execa(process.execPath, [ ...process.execArgv, require.resolve('./run') ], { reject: false, stdio: 'inherit', timeout: 60 * 60 * 1000 });
+			await execa(process.execPath, [ ...process.execArgv, require.resolve('./run') ], { stdio: 'inherit', timeout: 60 * 60 * 1000 });
 		} catch (error) {
 			precacheLog.error(`Precache process failed.`, error);
 		}
