@@ -15,6 +15,7 @@ function run () {
 			await execa(process.execPath, [ ...process.execArgv, require.resolve('./run') ], { stdio: 'inherit', timeout: 60 * 60 * 1000 });
 		} catch (error) {
 			precacheLog.error(`Precache process failed.`, error);
+			runToday = false;
 		}
 	}, 2 * 60 * 1000).catch(() => {});
 }
