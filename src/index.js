@@ -51,7 +51,7 @@ if (global.apmClient) {
 		let userAgent = ctx.headers['user-agent'];
 
 		if (userAgent && !/\bchrome|edge|mozilla|opera|trident\b/i.test(userAgent)) {
-			global.apmClient.addTags({ userAgent });
+			global.apmClient.addLabels({ userAgent });
 		}
 
 		return next();
