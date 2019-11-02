@@ -255,7 +255,7 @@ class PackageRequest extends BaseRequest {
 			if (!metadata.versions.includes(this.params.version)) {
 				return this.ctx.body = {
 					status: 404,
-					message: `Couldn't find version ${this.params.version} for ${this.params.name}. Make sure you use a specific version number, and not a version range or a tag.`,
+					message: `Couldn't find version ${this.params.version} for ${this.params.name}. Make sure you use a specific version number, and not a version range or an npm tag.`,
 				};
 			}
 		}
