@@ -1,0 +1,13 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="node.js development" type="NodeJSConfigurationType" node-parameters="--max-old-space-size=2096" path-to-js-file="src/index.js" working-dir="$PROJECT_DIR$">
+    <envs>
+      <env name="NODE_ENV" value="development" />
+      <env name="BLUEBIRD_WARNINGS" value="0" />
+      <env name="PRECACHE_STATS" value="true" />
+    </envs>
+    <EXTENSION ID="com.jetbrains.nodejs.run.NodeJSProfilingRunConfigurationExtension">
+      <profiling v8-profiler-path="C:\Martin\Projects\~\data.jsdelivr.com\node_modules\v8-profiler" />
+    </EXTENSION>
+    <method v="2" />
+  </configuration>
+</component>
