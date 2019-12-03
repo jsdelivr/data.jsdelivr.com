@@ -98,6 +98,7 @@ class ProxyTarget {
 
 module.exports = BaseCacheModel;
 module.exports.ProxyHandler = BaseModel.ProxyHandler;
+
 module.exports.ProxyTargetHandler = _.defaults({
 	get (target, property) {
 		if (target[property]) {

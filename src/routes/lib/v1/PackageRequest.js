@@ -206,6 +206,7 @@ class PackageRequest extends BaseRequest {
 		let hits = await Package.getSumHits(this.params.type, this.params.name, ...this.dateRange);
 
 		this.ctx.type = 'image/svg+xml; charset=utf-8';
+
 		this.ctx.body = badgeFactory.create({
 			text: [ 'jsDelivr', `${number.abbreviate(hits)} hits/${this.params.period || 'month'}` ],
 			colorB: '#ff5627',

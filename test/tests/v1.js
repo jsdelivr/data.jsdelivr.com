@@ -739,6 +739,7 @@ describe('v1', function () {
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
+
 				expect(response.body[0]).to.deep.equal({
 					type: 'npm',
 					name: 'package-9',
