@@ -5,6 +5,7 @@ const schema = {
 	fileId: Joi.number().integer().min(0).required().allow(null),
 	date: Joi.date().required(),
 	hits: Joi.number().integer().min(0).required(),
+	bandwidth: Joi.number().min(0).required(),
 };
 
 class FileHits extends BaseCacheModel {
@@ -32,12 +33,15 @@ class FileHits extends BaseCacheModel {
 		/** @type {number} */
 		this.hits = 0;
 
+		/** @type {number} */
+		this.bandwidth = 0;
+
 		Object.assign(this, properties);
 		return new Proxy(this, BaseCacheModel.ProxyHandler);
 	}
 
 	toSqlFunctionCall () {
-		return db.raw(`select updateOrInsertFileHits(@lastIdFile, ?, ?);`, [ this.date, this.hits ]);
+		return db.raw(`select updateOrInsertFileHits(@lastIdFile, ?, ?, ?);`, [ this.date, this.hits, this.bandwidth ]);
 	}
 }
 
