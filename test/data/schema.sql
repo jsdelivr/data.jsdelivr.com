@@ -15,7 +15,7 @@ CREATE TABLE file_hits
 	fileId INT(10) UNSIGNED NOT NULL,
 	date   DATE             NOT NULL,
 	hits   INT(10) UNSIGNED NULL,
-    bandwidth float(8,2) UNSIGNED DEFAULT NULL,
+	bandwidth FLOAT UNSIGNED NULL,
 	PRIMARY KEY (fileId, date),
 	CONSTRAINT file_hits_fileid_foreign
 	FOREIGN KEY (fileId) REFERENCES file (id)
@@ -85,7 +85,7 @@ CREATE TABLE other_hits
 	date DATE             NOT NULL
 		PRIMARY KEY,
 	hits INT(10) UNSIGNED NULL,
-    bandwidth float(8,2) UNSIGNED DEFAULT NULL
+	bandwidth FLOAT UNSIGNED NULL
 );
 
 CREATE TABLE package
@@ -131,8 +131,8 @@ CREATE TABLE referrer_hits
 (
 	referrerId INT(10) UNSIGNED NOT NULL,
 	date       DATE             NOT NULL,
-	hits       INT(10) UNSIGNED NULL,
-    bandwidth float(8,2) UNSIGNED DEFAULT NULL,
+	hits       INT(10) UNSIGNED    NULL,
+	bandwidth  FLOAT UNSIGNED NULL,
 	PRIMARY KEY (referrerId, date),
 	CONSTRAINT referrer_hits_referrerid_foreign
 	FOREIGN KEY (referrerId) REFERENCES referrer (id)

@@ -26,7 +26,7 @@ class FileHitsCdn extends BaseModel {
 		super();
 
 		/** @type {string} */
-		this.cdn = '';
+		this.cdn = null;
 
 		/** @type {number} */
 		this.fileId = null;
@@ -49,7 +49,6 @@ class FileHitsCdn extends BaseModel {
 	}
 
 	toSqlFunctionCall () {
-		// console.log('FileHitsCdn.toSqlFunctionCall', [ this.cdn, this.date, this.hits, this.bandwidth ]);
 		return db.raw(`select updateOrInsertFileHitsCdn(@lastIdFile, ?, ?, ?, ?);`, [ this.cdn, this.date, this.hits, this.bandwidth ]);
 	}
 }
