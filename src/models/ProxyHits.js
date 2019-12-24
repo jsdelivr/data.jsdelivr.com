@@ -2,8 +2,7 @@ const Joi = require('joi');
 const BaseModel = require('./BaseModel');
 
 const schema = {
-	id: Joi.number().integer().min(1).required().allow(null),
-	proxyId: Joi.number().integer().min(1).required().disallow(null),
+	proxyId: Joi.number().integer().min(1).required().allow(null),
 	date: Joi.date().required(),
 	hits: Joi.number().integer().min(0).required(),
 	bandwidth: Joi.number().min(0).required(),
@@ -19,14 +18,11 @@ class ProxyHits extends BaseModel {
 	}
 
 	static get unique () {
-		return [ 'id' ];
+		return [ 'proxyId', 'date' ];
 	}
 
 	constructor (properties = {}) {
 		super();
-
-		/** @type {number} */
-		this.id = null;
 
 		/** @type {number} */
 		this.proxyId = null;
