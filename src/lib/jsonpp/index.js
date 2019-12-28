@@ -78,14 +78,14 @@ class Jsonpp {
 
 			value = replacer(key, value);
 
-			if (!value || typeof value !== 'object' || !value.constructor) {
+			if (!value || typeof value !== 'object' || !value.constructor || value.constructor.name === 'Array') {
 				return value;
 			}
 
 			skip = 2;
 
 			return {
-				t: value.constructor.name === 'Object' || value.constructor.name === 'Array' ? '' : value.constructor.name,
+				t: value.constructor.name === 'Object' ? '' : value.constructor.name,
 				v: value,
 			};
 		}, space);
