@@ -6,6 +6,7 @@ const schema = {
 	fileId: Joi.number().integer().min(0).required().allow(null),
 	date: Joi.date().required(),
 	hits: Joi.number().integer().min(0).required(),
+	bandwidth: Joi.number().min(0).required(),
 };
 
 class FileHitsCdn extends BaseModel {
@@ -36,6 +37,9 @@ class FileHitsCdn extends BaseModel {
 		/** @type {number} */
 		this.hits = 0;
 
+		/** @type {number} */
+		this.bandwidth = 0;
+
 		Object.assign(this, properties);
 		return new Proxy(this, BaseModel.ProxyHandler);
 	}
@@ -45,7 +49,7 @@ class FileHitsCdn extends BaseModel {
 	}
 
 	toSqlFunctionCall () {
-		return db.raw(`select updateOrInsertFileHitsCdn(@lastIdFile, ?, ?, ?);`, [ this.cdn, this.date, this.hits ]);
+		return db.raw(`select updateOrInsertFileHitsCdn(@lastIdFile, ?, ?, ?, ?);`, [ this.cdn, this.date, this.hits, this.bandwidth ]);
 	}
 }
 

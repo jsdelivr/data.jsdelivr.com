@@ -4,6 +4,7 @@ const BaseCacheModel = require('./BaseCacheModel');
 const schema = {
 	date: Joi.date().required(),
 	hits: Joi.number().integer().min(0).required(),
+	bandwidth: Joi.number().min(0).required(),
 };
 
 class OtherHits extends BaseCacheModel {
@@ -28,6 +29,9 @@ class OtherHits extends BaseCacheModel {
 		/** @type {number} */
 		this.hits = 0;
 
+		/** @type {number} */
+		this.bandwidth = 0;
+
 		Object.assign(this, properties);
 		return new Proxy(this, BaseCacheModel.ProxyHandler);
 	}
@@ -51,7 +55,7 @@ class OtherHits extends BaseCacheModel {
 	}
 
 	toSqlFunctionCall () {
-		return db.raw(`select updateOrInsertOtherHits(?, ?);`, [ this.date, this.hits ]);
+		return db.raw(`select updateOrInsertOtherHits(?, ?, ?);`, [ this.date, this.hits, this.bandwidth ]);
 	}
 }
 

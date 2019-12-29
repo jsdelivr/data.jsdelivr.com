@@ -1,16 +1,16 @@
 const Joi = require('joi');
-const BaseCacheModel = require('./BaseCacheModel');
+const BaseModel = require('./BaseModel');
 
 const schema = {
-	fileId: Joi.number().integer().min(0).required().allow(null),
+	proxyId: Joi.number().integer().min(1).required(),
 	date: Joi.date().required(),
 	hits: Joi.number().integer().min(0).required(),
 	bandwidth: Joi.number().min(0).required(),
 };
 
-class FileHits extends BaseCacheModel {
+class ProxyHits extends BaseModel {
 	static get table () {
-		return 'file_hits';
+		return 'proxy_hits';
 	}
 
 	static get schema () {
@@ -18,14 +18,14 @@ class FileHits extends BaseCacheModel {
 	}
 
 	static get unique () {
-		return [ 'fileId', 'date' ];
+		return [ 'proxyId', 'date' ];
 	}
 
 	constructor (properties = {}) {
 		super();
 
 		/** @type {number} */
-		this.fileId = null;
+		this.proxyId = null;
 
 		/** @type {Date} */
 		this.date = null;
@@ -37,12 +37,12 @@ class FileHits extends BaseCacheModel {
 		this.bandwidth = 0;
 
 		Object.assign(this, properties);
-		return new Proxy(this, BaseCacheModel.ProxyHandler);
+		return new Proxy(this, BaseModel.ProxyHandler);
 	}
 
 	toSqlFunctionCall () {
-		return db.raw(`select updateOrInsertFileHits(@lastIdFile, ?, ?, ?);`, [ this.date, this.hits, this.bandwidth ]);
+		return db.raw(`select updateOrInsertProxyHits(?, ?, ?, ?);`, [ this.proxyId, this.date, this.hits, this.bandwidth ]);
 	}
 }
 
-module.exports = FileHits;
+module.exports = ProxyHits;

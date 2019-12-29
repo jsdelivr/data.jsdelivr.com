@@ -5,6 +5,7 @@ const schema = {
 	packageId: Joi.number().integer().min(0).required().allow(null),
 	date: Joi.date().required(),
 	hits: Joi.number().integer().min(0).required(),
+	bandwidth: Joi.number().min(0).required(),
 };
 
 class PackageHits extends BaseCacheModel {
@@ -30,7 +31,10 @@ class PackageHits extends BaseCacheModel {
 		this.date = null;
 
 		/** @type {number} */
-		this.hits = null;
+		this.hits = 0;
+
+		/** @type {number} */
+		this.bandwidth = 0;
 
 		Object.assign(this, properties);
 		return new Proxy(this, BaseCacheModel.ProxyHandler);
@@ -55,7 +59,7 @@ class PackageHits extends BaseCacheModel {
 	}
 
 	toSqlFunctionCall () {
-		return db.raw(`select updateOrInsertPackageHits(@lastIdPackage, ?, ?);`, [ this.date, this.hits ]);
+		return db.raw(`select updateOrInsertPackageHits(@lastIdPackage, ?, ?, ?);`, [ this.date, this.hits, this.bandwidth ]);
 	}
 }
 
