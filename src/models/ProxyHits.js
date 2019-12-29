@@ -2,7 +2,7 @@ const Joi = require('joi');
 const BaseModel = require('./BaseModel');
 
 const schema = {
-	proxyId: Joi.number().integer().min(1).required().allow(null),
+	proxyId: Joi.number().integer().min(1).required(),
 	date: Joi.date().required(),
 	hits: Joi.number().integer().min(0).required(),
 	bandwidth: Joi.number().min(0).required(),
