@@ -23,7 +23,7 @@ class ProxyModel extends BaseModel {
 		super();
 
 		/** @type {number} */
-		this.id = 0;
+		this.id = null;
 
 		/** @type {string} */
 		this.path = '';
