@@ -3,7 +3,7 @@ const BaseModel = require('./BaseModel');
 
 const schema = {
 	countryIso: Joi.string().length(2).required(),
-	cdn: Joi.string().required(),
+	cdn: Joi.string().length(2).required(),
 	date: Joi.date().required(),
 	hits: Joi.number().integer().min(0).required(),
 	bandwidth: Joi.number().min(0).required(),
