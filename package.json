@@ -93,7 +93,7 @@
 	"scripts": {
 		"coverage": "nyc mocha --exit test/tests.js",
 		"knex": "knex",
-		"lint": "eslint bin config src test",
+		"lint": "eslint bin config migrations seeds src test",
 		"migrate": "knex migrate:latest",
 		"mocha": "mocha --exit test/tests.js",
 		"test": "npm run lint && npm run mocha"
