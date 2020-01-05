@@ -10,6 +10,7 @@
 		"bluebird": "^3.7.2",
 		"config": "^3.2.4",
 		"config-mapper-env": "^1.0.1",
+		"dedent-js": "^1.0.1",
 		"elastic-apm-node": "^3.3.0",
 		"elastic-apm-utils": "^3.0.0",
 		"execa": "^3.4.0",
@@ -91,7 +92,9 @@
 	},
 	"scripts": {
 		"coverage": "nyc mocha --exit test/tests.js",
+		"knex": "knex",
 		"lint": "eslint bin config src test",
+		"migrate": "knex migrate:latest",
 		"mocha": "mocha --exit test/tests.js",
 		"test": "npm run lint && npm run mocha"
 	},

@@ -4,6 +4,7 @@ const chaiHttp = require('chai-http');
 const nock = require('nock');
 const expect = chai.expect;
 const relativeDayUtc = require('relative-day-utc');
+const { listTables, listViews } = require('../../src/lib/db/utils');
 
 const server = require('../../src');
 const upstreamGitHubResponses = require('../data/github.json');
@@ -25,31 +26,14 @@ describe('v1', function () {
 		}
 
 		await db.raw('SET @@foreign_key_checks = 0;');
-		await db.raw(`CREATE DATABASE IF NOT EXISTS \`${dbConfig.connection.database}\`;`);
-		await db.schema.dropTableIfExists('file');
-		await db.schema.dropTableIfExists('file_hits');
-		await db.schema.dropTableIfExists('knex_migrations');
-		await db.schema.dropTableIfExists('knex_migrations_lock');
-		await db.schema.dropTableIfExists('log_file');
-		await db.schema.dropTableIfExists('logs');
-		await db.schema.dropTableIfExists('other_hits');
-		await db.schema.dropTableIfExists('package');
-		await db.schema.raw('DROP VIEW IF EXISTS package_hits');
-		await db.schema.dropTableIfExists('package_listing');
-		await db.schema.dropTableIfExists('package_version');
-		await db.schema.dropTableIfExists('referrer');
-		await db.schema.dropTableIfExists('referrer_hits');
-		await db.schema.raw(fs.readFileSync(__dirname + '/../data/schema.sql', 'utf8'));
-
-		await Bluebird.mapSeries(fs.readdirSync(__dirname + '/../data/db/'), (file) => {
-			return db.raw(`
-				START TRANSACTION;
-				${fs.readFileSync(__dirname + '/../data/db/' + file, 'utf8')}
-				COMMIT;
-			`);
-		});
-
+		await Bluebird.each(listTables(db), table => db.schema.raw(`drop table \`${table}\``));
+		await Bluebird.each(listViews(db), table => db.schema.raw(`drop view \`${table}\``));
 		await db.raw('SET @@foreign_key_checks = 1;');
+
+		await db.migrate.latest();
+		await db.seed.run();
+
+		await db.schema.raw(fs.readFileSync(__dirname + '/../data/schema.sql', 'utf8'));
 
 		// nock.recorder.rec();
 		nock.cleanAll();
@@ -814,9 +798,9 @@ describe('v1', function () {
 			});
 	});
 
-	it('GET /v1/lookup/hash/1B5A2D2D240F16D42C420F1CF8D911CC3BB4D4667D7631F24D064B6161E97726', () => {
+	it('GET /v1/lookup/hash/A302DA3294EF556AB933C9B09A7FDEBF7CA7BB51868DEE1CC24B35DC4E68CF97', () => {
 		return chai.request(server)
-			.get('/v1/lookup/hash/1B5A2D2D240F16D42C420F1CF8D911CC3BB4D4667D7631F24D064B6161E97726')
+			.get('/v1/lookup/hash/A302DA3294EF556AB933C9B09A7FDEBF7CA7BB51868DEE1CC24B35DC4E68CF97')
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
@@ -824,7 +808,7 @@ describe('v1', function () {
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
-				expect(response.body).to.deep.equal(expectedResponses['/v1/lookup/hash/1B5A2D2D240F16D42C420F1CF8D911CC3BB4D4667D7631F24D064B6161E97726']);
+				expect(response.body).to.deep.equal(expectedResponses['/v1/lookup/hash/A302DA3294EF556AB933C9B09A7FDEBF7CA7BB51868DEE1CC24B35DC4E68CF97']);
 			});
 	});
 });
