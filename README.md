@@ -307,8 +307,6 @@ All invalid values are ignored.
 
 | Description            	| Format             	| Notes                         	|
 |------------------------	|--------------------	|-------------------------------	|
-| Start date (inclusive) 	| `?from=YYYY-MM-DD` 	| 						          	|
-| End date (inclusive)   	| `?to=YYYY-MM-DD`   	| 						          	|
 | Limit                  	| `?limit=number`    	| 						max 100 	|
 | Page                   	| `?page=number`      	| 						        	|
 
