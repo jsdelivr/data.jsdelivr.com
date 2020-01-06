@@ -23,7 +23,7 @@ exports.up = async (db) => {
 		table.integer('fileModificationTime').unsigned();
 		table.datetime('updatedAt').index();
 		table.boolean('processed').index();
-		table.datetime('date').index();
+		table.date('date').index();
 		table.unique([ 'filename', 'fileModificationTime' ]);
 	});
 
