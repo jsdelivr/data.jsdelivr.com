@@ -7,7 +7,7 @@
 Related projects:
  - [jsDelivr CDN](https://github.com/jsdelivr/jsdelivr)
  - [jsDelivr website](https://github.com/jsdelivr/www.jsdelivr.com)
- 
+
 The jsDelivr API allows you to:
  - [list package versions](#list-package-versions)
  - [list package files](#list-package-files)
@@ -16,13 +16,14 @@ The jsDelivr API allows you to:
  - [get package version usage stats](#get-package-version-usage-stats)
  - [get the most popular packages](#get-the-most-popular-packages)
  - [get a badge for your project](#get-a-badge-for-your-project)
- 
+ - [get a CDN link/metadata from file hash](#get-a-cdn-linkmetadata-from-file-hash)
+
 The API is free to use and imposes no rate limits (however, if you plan to make 100+ RPM for longer periods of time, you should contact us first).
 Please note that usage statistics are available with a 48 hour delay.
 We only have data starting from Aug 19, 2017 and data older than one year may not be available.
 
 Looking for a search endpoint? You can use [the official npm API](https://github.com/npm/registry/blob/master/docs/REGISTRY-API.md#get-v1search) or [Algolia's npm search](https://github.com/algolia/npm-search) ([more info](https://github.com/jsdelivr/data.jsdelivr.com/issues/6)).
- 
+
 ## Let us know how you use this API
 
 **If you create a tool/plugin/etc. which uses this API, please include a link to your tool in the `User-Agent` header so that we can learn more about how this API is being used.**
@@ -34,7 +35,7 @@ https://data.jsdelivr.com/v1
  - All responses are in JSON.
  - All error responses have `status` and `message` properties.
  - Additional [query string options](#query-string-options) are supported where appropriate.
- 
+
 ## Restrictions
 
 Neither jsDelivr CDN nor this API supports packages larger than 50 MB. Trying to get a list of files using the API will result in a `403` response.
@@ -44,7 +45,7 @@ Neither jsDelivr CDN nor this API supports packages larger than 50 MB. Trying to
 ```
 /package/npm/:name
  - name: npm package name
- 
+
 /package/gh/:user/:repo
  - user: GitHub username
  - repo: GitHub repository name
@@ -76,7 +77,7 @@ https://data.jsdelivr.com/v1/package/npm/jquery
  - name: npm package name
  - version: exact package version (not a version range)
  - structure: "tree" or "flat"; defaults to "tree"
- 
+
 /package/gh/:user/:repo@:version/:structure?
  - user: GitHub username
  - repo: GitHub repository name
@@ -131,7 +132,7 @@ https://data.jsdelivr.com/v1/package/npm/jquery@3.2.1
 /package/resolve/npm/:name@:range
  - name: npm package name
  - range: any valid semver version range
- 
+
 /package/resolve/gh/:user/:repo@:range
  - user: GitHub username
  - repo: GitHub repository name
@@ -300,6 +301,30 @@ https://data.jsdelivr.com/v1/package/npm/jquery/badge
 https://data.jsdelivr.com/v1/package/npm/jquery/badge?style=rounded
 ```
 ![https://www.jsdelivr.com/package/npm/jquery](https://data.jsdelivr.com/v1/package/npm/jquery/badge?style=rounded)
+
+### Get a CDN link/metadata from file hash
+
+```
+/lookup/hash/:hash
+ - hash: hex-encoded sha256 of file contents
+```
+
+Works only for files which were accessed at least once via our CDN. If there are multiple
+files with the same hash, the one which was accessed first via the CDN is returned.
+
+
+**Example**
+```
+https://data.jsdelivr.com/v1/lookup/hash/87083882cc6015984eb0411a99d3981817f5dc5c90ba24f0940420c5548d82de
+
+// =>
+{
+    "type": "npm",
+    "name": "jquery",
+    "version": "3.2.1",
+    "file": "/dist/jquery.min.js"
+}
+```
 
 ## Query string options
 
