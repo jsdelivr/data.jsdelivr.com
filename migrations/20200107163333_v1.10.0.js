@@ -9,7 +9,7 @@ exports.up = async (db) => {
 
 	await db.schema.createTable('platform_version', (table) => {
 		table.increments();
-		table.string('platformId').unsigned().references('id').inTable('platform').onUpdate('cascade').onDelete('cascade');
+		table.integer('platformId').unsigned().references('id').inTable('platform').onUpdate('cascade').onDelete('cascade');
 		table.string('version');
 		table.unique([ 'platformId', 'version' ]);
 	});
@@ -21,7 +21,7 @@ exports.up = async (db) => {
 		table.date('date').index();
 		table.integer('hits').unsigned().defaultTo(0).notNullable();
 		table.specificType('bandwidth', 'float').unsigned().defaultTo(0).notNullable();
-		table.unique([ 'platformVersionId', 'countryIso', 'date' ]);
+		table.unique([ 'platformVersionId', 'countryIso', 'date' ], 'unique_platformVersionId_country_date');
 	});
 
 	await db.schema.createTable('browser', (table) => {
@@ -31,7 +31,7 @@ exports.up = async (db) => {
 
 	await db.schema.createTable('browser_version', (table) => {
 		table.increments();
-		table.string('browserId').unsigned().references('id').inTable('browser').onUpdate('cascade').onDelete('cascade');
+		table.integer('browserId').unsigned().references('id').inTable('browser').onUpdate('cascade').onDelete('cascade');
 		table.string('version');
 		table.unique([ 'browserId', 'version' ]);
 	});
@@ -43,7 +43,7 @@ exports.up = async (db) => {
 		table.date('date').index();
 		table.integer('hits').unsigned().defaultTo(0).notNullable();
 		table.specificType('bandwidth', 'float').unsigned().defaultTo(0).notNullable();
-		table.unique([ 'browserVersionId', 'countryIso', 'date' ]);
+		table.unique([ 'browserVersionId', 'countryIso', 'date' ], 'unique_browserVersionId_country_date');
 	});
 
 	await db.schema.raw(sql);

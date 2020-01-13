@@ -31,14 +31,14 @@ begin
 end;
 
 drop function if exists updateOrInsertCountryPlatformVersionHits;
-create function updateOrInsertCountryPlatformVersionHits (aPlatformVersionId int,aCountryIso varchar(2), aDate date, aHits int, aBandwidth float) returns int
+create function updateOrInsertCountryPlatformVersionHits (aPlatformVersionId int, aCountryIso varchar(2), aDate date, aHits int, aBandwidth float) returns int
 begin
     update `country_platform_version_hits`
     set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
     where `platformVersionId` = aPlatformVersionId and `countryIso` = aCountryIso and `date` = aDate;
 
     if row_count() = 0 then
-        insert into `country_platform_version_hits` (aPlatformVersionId, countryIso, date, hits, bandwidth)
+        insert into `country_platform_version_hits` (platformVersionId, countryIso, date, hits, bandwidth)
         values (aPlatformVersionId, aCountryIso, aDate, aHits, aBandwidth)
         on duplicate key update `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth;
     end if;
@@ -81,14 +81,14 @@ begin
 end;
 
 drop function if exists updateOrInsertCountryBrowserVersionHits;
-create function updateOrInsertCountryBrowserVersionHits (aBrowserVersionId int,aCountryIso varchar(2), aDate date, aHits int, aBandwidth float) returns int
+create function updateOrInsertCountryBrowserVersionHits (aBrowserVersionId int, aCountryIso varchar(2), aDate date, aHits int, aBandwidth float) returns int
 begin
     update `country_browser_version_hits`
     set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
     where `browserVersionId` = aBrowserVersionId and `countryIso` = aCountryIso and `date` = aDate;
 
     if row_count() = 0 then
-        insert into `country_browser_version_hits` (aBrowserVersionId, countryIso, date, hits, bandwidth)
+        insert into `country_browser_version_hits` (browserVersionId, countryIso, date, hits, bandwidth)
         values (aBrowserVersionId, aCountryIso, aDate, aHits, aBandwidth)
         on duplicate key update `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth;
     end if;
