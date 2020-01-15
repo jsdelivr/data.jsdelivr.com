@@ -57,10 +57,6 @@ class PackageHits extends BaseCacheModel {
 			return [ record.date.toISOString().substr(0, 10), record.hits ];
 		}));
 	}
-
-	toSqlFunctionCall () {
-		return db.raw(`select updateOrInsertPackageHits(@lastIdPackage, ?, ?, ?);`, [ this.date, this.hits, this.bandwidth ]);
-	}
 }
 
 module.exports = PackageHits;

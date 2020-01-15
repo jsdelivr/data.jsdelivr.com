@@ -2,15 +2,15 @@ const Joi = require('joi');
 const BaseCacheModel = require('./BaseCacheModel');
 
 const schema = {
-	fileId: Joi.number().integer().min(0).required().allow(null),
+	packageVersionId: Joi.number().integer().min(0).required().allow(null),
 	date: Joi.date().required(),
 	hits: Joi.number().integer().min(0).required(),
 	bandwidth: Joi.number().min(0).required(),
 };
 
-class FileHits extends BaseCacheModel {
+class PackageVersionHits extends BaseCacheModel {
 	static get table () {
-		return 'file_hits';
+		return 'package_version_hits';
 	}
 
 	static get schema () {
@@ -18,14 +18,14 @@ class FileHits extends BaseCacheModel {
 	}
 
 	static get unique () {
-		return [ 'fileId', 'date' ];
+		return [ 'packageVersionId', 'date' ];
 	}
 
 	constructor (properties = {}) {
 		super();
 
 		/** @type {number} */
-		this.fileId = null;
+		this.packageVersionId = null;
 
 		/** @type {Date} */
 		this.date = null;
@@ -39,10 +39,6 @@ class FileHits extends BaseCacheModel {
 		Object.assign(this, properties);
 		return new Proxy(this, BaseCacheModel.ProxyHandler);
 	}
-
-	toSqlFunctionCall () {
-		return db.raw(`select updateOrInsertFileHits(@lastIdPackage, @lastIdPackageVersion, @lastIdFile, ?, ?, ?);`, [ this.date, this.hits, this.bandwidth ]);
-	}
 }
 
-module.exports = FileHits;
+module.exports = PackageVersionHits;
