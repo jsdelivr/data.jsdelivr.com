@@ -41,7 +41,7 @@ class FileHits extends BaseCacheModel {
 	}
 
 	toSqlFunctionCall () {
-		return db.raw(`select updateOrInsertFileHits(@lastIdFile, ?, ?, ?);`, [ this.date, this.hits, this.bandwidth ]);
+		return db.raw(`select updateOrInsertFileHits(@lastIdPackage, @lastIdPackageVersion, @lastIdFile, ?, ?, ?);`, [ this.date, this.hits, this.bandwidth ]);
 	}
 }
 
