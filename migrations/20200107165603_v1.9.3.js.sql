@@ -1,5 +1,5 @@
 drop function if exists updateOrInsertPackageVersionHits;
-create function updateOrInsertPackageVersionHits (aPackageVersionId int, aDate date, aHits int, aBandwidth float) returns int
+create function updateOrInsertPackageVersionHits(aPackageVersionId int, aDate date, aHits int, aBandwidth float) returns int
 begin
 	update `package_version_hits`
 	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth

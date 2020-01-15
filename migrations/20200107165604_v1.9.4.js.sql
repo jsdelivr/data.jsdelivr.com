@@ -2,7 +2,7 @@ drop function if exists updateOrInsertPackageHits;
 drop function if exists updateOrInsertPackageVersionHits;
 
 drop function if exists updateOrInsertFileHits;
-create function updateOrInsertFileHits (aPackageId int, aPackageVersionId int, aFileId int, aDate date, aHits int, aBandwidth float) returns int
+create function updateOrInsertFileHits(aPackageId int, aPackageVersionId int, aFileId int, aDate date, aHits int, aBandwidth float) returns int
 begin
 	update `file_hits`
 	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
