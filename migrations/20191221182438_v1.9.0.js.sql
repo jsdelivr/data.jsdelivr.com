@@ -1,5 +1,5 @@
 drop function if exists updateOrInsertFileHits;
-create function updateOrInsertFileHits (aFileId int, aDate date, aHits int, aBandwidth float) returns int
+create function updateOrInsertFileHits(aFileId int, aDate date, aHits int, aBandwidth float) returns int
 begin
 	update `file_hits`
 	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
@@ -15,7 +15,7 @@ begin
 end;
 
 drop function if exists updateOrInsertFileHitsCdn;
-create function updateOrInsertFileHitsCdn (aFileId int, aCdn varchar(255), aDate date, aHits int, aBandwidth float) returns int
+create function updateOrInsertFileHitsCdn(aFileId int, aCdn varchar(255), aDate date, aHits int, aBandwidth float) returns int
 begin
 	update `file_hits_cdn`
 	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
@@ -31,7 +31,7 @@ begin
 end;
 
 drop function if exists updateOrInsertOtherHits;
-create function updateOrInsertOtherHits (aDate date, aHits int, aBandwidth float) returns int
+create function updateOrInsertOtherHits(aDate date, aHits int, aBandwidth float) returns int
 begin
 	update `other_hits`
 	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
@@ -47,7 +47,7 @@ begin
 end;
 
 drop function if exists updateOrInsertReferrerHits;
-create function updateOrInsertReferrerHits (aReferrerId int, aDate date, aHits int, aBandwidth float) returns int
+create function updateOrInsertReferrerHits(aReferrerId int, aDate date, aHits int, aBandwidth float) returns int
 begin
 	update `referrer_hits`
 	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
@@ -63,7 +63,7 @@ begin
 end;
 
 drop function if exists updateOrInsertPackageHits;
-create function updateOrInsertPackageHits (aPackageId int, aDate date, aHits int, aBandwidth float) returns int
+create function updateOrInsertPackageHits(aPackageId int, aDate date, aHits int, aBandwidth float) returns int
 begin
 	update `package_hits`
 	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
