@@ -36,3 +36,17 @@ begin
 
 	return 0;
 end;
+
+drop view if exists view_package_version_hits;
+create view view_package_version_hits as
+select package.type as type,
+	package.name as name,
+	package_version.version as version,
+	package_version_hits.date as date,
+	sum(package_version_hits.hits) as hits,
+	sum(package_version_hits.bandwidth) as bandwidth
+from package
+	     join package_version on package.id = package_version.packageId
+	     join package_version_hits on package_version.id = package_version_hits.packageVersionId
+group by package_version.id, package_version_hits.date
+order by package_version_hits.date desc, hits desc;
