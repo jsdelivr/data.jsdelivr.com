@@ -22,7 +22,7 @@
 		"is-hexdigest": "^1.0.1",
 		"is-semver-static": "^1.0.0",
 		"joi": "^14.3.1",
-		"knex": "^0.20.5",
+		"knex": "^0.20.8",
 		"koa": "^2.11.0",
 		"koa-compress": "^3.0.0",
 		"koa-conditional-get": "^2.0.0",
@@ -64,7 +64,7 @@
 		"@types/koa-json": "^2.0.18",
 		"@types/koa-logger": "^3.1.1",
 		"@types/koa-response-time": "^2.1.0",
-		"@types/koa-router": "^7.0.42",
+		"@types/koa-router": "^7.4.0",
 		"@types/lodash": "^4.14.149",
 		"@types/lru-cache": "^5.1.0",
 		"@types/mocha": "^5.2.7",
@@ -87,7 +87,7 @@
 		"eslint-plugin-prefer-let": "^1.0.1",
 		"eslint-plugin-promise": "^4.2.1",
 		"mocha": "^6.2.2",
-		"nock": "^11.7.0",
+		"nock": "^11.7.2",
 		"nyc": "^14.1.1"
 	},
 	"scripts": {
