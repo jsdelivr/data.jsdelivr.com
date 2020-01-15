@@ -41,20 +41,19 @@ class Package extends BaseCacheModel {
 		let sql = db(this.table)
 			.where({ type, name })
 			.join(PackageVersion.table, `${this.table}.id`, '=', `${PackageVersion.table}.packageId`)
-			.join(File.table, `${PackageVersion.table}.id`, '=', `${File.table}.packageVersionId`)
-			.join(FileHits.table, `${File.table}.id`, '=', `${FileHits.table}.fileId`)
-			.groupBy([ `${PackageVersion.table}.id`, `${FileHits.table}.date` ])
-			.sum(`${FileHits.table}.hits as hits`);
+			.join(PackageVersionHits.table, `${PackageVersion.table}.id`, '=', `${PackageVersionHits.table}.packageVersionId`)
+			.groupBy([ `${PackageVersion.table}.id`, `${PackageVersionHits.table}.date` ])
+			.sum(`${PackageVersionHits.table}.hits as hits`);
 
 		if (from instanceof Date) {
-			sql.where(`${FileHits.table}.date`, '>=', from);
+			sql.where(`${PackageVersionHits.table}.date`, '>=', from);
 		}
 
 		if (to instanceof Date) {
-			sql.where(`${FileHits.table}.date`, '<=', to);
+			sql.where(`${PackageVersionHits.table}.date`, '<=', to);
 		}
 
-		return sql.select([ `${PackageVersion.table}.version`, `${FileHits.table}.date` ]);
+		return sql.select([ `${PackageVersion.table}.version`, `${PackageVersionHits.table}.date` ]);
 	}
 
 	static async getSumDateHitsPerVersionByName (type, name, from, to) {
@@ -131,5 +130,4 @@ module.exports = Package;
 
 const PackageHits = require('./PackageHits');
 const PackageVersion = require('./PackageVersion');
-const File = require('./File');
-const FileHits = require('./FileHits');
+const PackageVersionHits = require('./PackageVersionHits');
