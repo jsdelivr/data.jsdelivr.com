@@ -1,5 +1,5 @@
 drop function if exists updateOrInsertPackageHits;
-create function updateOrInsertPackageHits (aPackageId int, aDate date, aHits int) returns int
+create function updateOrInsertPackageHits(aPackageId int, aDate date, aHits int) returns int
 begin
 	update `package_hits`
 	set `hits` = hits + aHits

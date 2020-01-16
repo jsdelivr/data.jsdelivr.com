@@ -10,7 +10,7 @@ exports.up = async (db) => {
 	await db.schema.createTable('platform_version', (table) => {
 		table.increments();
 		table.integer('platformId').unsigned().references('id').inTable('platform').onUpdate('cascade').onDelete('cascade');
-		table.string('version');
+		table.string('version').nullable();
 		table.unique([ 'platformId', 'version' ]);
 	});
 
@@ -26,13 +26,15 @@ exports.up = async (db) => {
 
 	await db.schema.createTable('browser', (table) => {
 		table.increments();
+		table.integer('platformId').unsigned().references('id').inTable('platform').onUpdate('cascade').onDelete('cascade');
 		table.string('name');
+		table.unique([ 'platformId', 'name' ]);
 	});
 
 	await db.schema.createTable('browser_version', (table) => {
 		table.increments();
 		table.integer('browserId').unsigned().references('id').inTable('browser').onUpdate('cascade').onDelete('cascade');
-		table.string('version');
+		table.string('version').nullable();
 		table.unique([ 'browserId', 'version' ]);
 	});
 

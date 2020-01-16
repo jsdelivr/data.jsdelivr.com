@@ -1,5 +1,5 @@
 drop function if exists updateOrInsertProxyHits;
-create function updateOrInsertProxyHits (aProxyId int, aDate date, aHits int, aBandwidth float) returns int
+create function updateOrInsertProxyHits(aProxyId int, aDate date, aHits int, aBandwidth float) returns int
 begin
 	update `proxy_hits`
 	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth

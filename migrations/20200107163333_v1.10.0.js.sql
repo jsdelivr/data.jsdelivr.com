@@ -49,15 +49,15 @@ end;
 ###############################################################################
 
 drop function if exists updateOrInsertBrowser;
-create function updateOrInsertBrowser (aName varchar(255)) returns int
+create function updateOrInsertBrowser (aPlatformId int, aName varchar(255)) returns int
 begin
     update `browser`
     set `id` = last_insert_id(`id`)
-    where `name` = aName;
+    where `platformId` = aPlatformId and `name` = aName;
 
     if row_count() = 0 then
-        insert into `browser` (name)
-        values (aName)
+        insert into `browser` (platformId, name)
+        values (aPlatformId, aName)
         on duplicate key update `id` = last_insert_id(`id`);
     end if;
 

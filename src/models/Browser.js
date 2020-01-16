@@ -3,6 +3,7 @@ const BaseCacheModel = require('./BaseCacheModel');
 
 const schema = {
 	id: Joi.number().integer().min(0).required().allow(null),
+	platformId: Joi.number().integer().min(0).required().allow(null),
 	name: Joi.string().max(255).required(),
 };
 
@@ -16,7 +17,7 @@ class Browser extends BaseCacheModel {
 	}
 
 	static get unique () {
-		return [ 'id', 'name' ];
+		return [ 'platformId', 'name' ];
 	}
 
 	constructor (properties = {}) {
@@ -24,6 +25,9 @@ class Browser extends BaseCacheModel {
 
 		/** @type {number} */
 		this.id = null;
+
+		/** @type {number} */
+		this.platformId = null;
 
 		/** @type {string} */
 		this.name = null;
@@ -33,7 +37,7 @@ class Browser extends BaseCacheModel {
 	}
 
 	toSqlFunctionCall () {
-		return db.raw(`set @lastIdBrowser = updateOrInsertBrowser(?);`, [ this.name ]);
+		return db.raw(`set @lastIdBrowser = updateOrInsertBrowser(@lastIdPlatform, ?);`, [ this.name ]);
 	}
 }
 

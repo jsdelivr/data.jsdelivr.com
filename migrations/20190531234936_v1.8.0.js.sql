@@ -1,5 +1,5 @@
 drop function if exists updateOrInsertFile;
-create function updateOrInsertFile (aPackageVersionId int, aFilename varchar(255)) returns int
+create function updateOrInsertFile(aPackageVersionId int, aFilename varchar(255)) returns int
 begin
 	update `file`
 	set `id` = last_insert_id(`id`)
@@ -15,7 +15,7 @@ begin
 end;
 
 drop function if exists updateOrInsertFileHits;
-create function updateOrInsertFileHits (aFileId int, aDate date, aHits int) returns int
+create function updateOrInsertFileHits(aFileId int, aDate date, aHits int) returns int
 begin
 	update `file_hits`
 	set `hits` = hits + aHits
@@ -31,7 +31,7 @@ begin
 end;
 
 drop function if exists updateOrInsertFileHitsCdn;
-create function updateOrInsertFileHitsCdn (aFileId int, aCdn varchar(255), aDate date, aHits int) returns int
+create function updateOrInsertFileHitsCdn(aFileId int, aCdn varchar(255), aDate date, aHits int) returns int
 begin
 	update `file_hits_cdn`
 	set `hits` = hits + aHits
@@ -47,7 +47,7 @@ begin
 end;
 
 drop function if exists updateLogFile;
-create function updateLogFile (aFilename varchar(255), aUpdatedAt datetime) returns int
+create function updateLogFile(aFilename varchar(255), aUpdatedAt datetime) returns int
 begin
 	update `log_file`
 	set `processed` = `processed` + 1, updatedAt = aUpdatedAt
@@ -57,7 +57,7 @@ begin
 end;
 
 drop function if exists updateOrInsertLogs;
-create function updateOrInsertLogs (aDate date, aRecords int, aMegabytesLogs int, aMegabytesTraffic int) returns int
+create function updateOrInsertLogs(aDate date, aRecords int, aMegabytesLogs int, aMegabytesTraffic int) returns int
 begin
 	update `logs`
 	set `records` = `records` + aRecords, `megabytesLogs` = `megabytesLogs` + aMegabytesLogs, `megabytesTraffic` = `megabytesTraffic` + aMegabytesTraffic
@@ -73,7 +73,7 @@ begin
 end;
 
 drop function if exists updateOrInsertOtherHits;
-create function updateOrInsertOtherHits (aDate date, aHits int) returns int
+create function updateOrInsertOtherHits(aDate date, aHits int) returns int
 begin
 	update `other_hits`
 	set `hits` = `hits` + aHits
@@ -89,7 +89,7 @@ begin
 end;
 
 drop function if exists updateOrInsertPackage;
-create function updateOrInsertPackage (aType varchar(255), aName varchar(255)) returns int
+create function updateOrInsertPackage(aType varchar(255), aName varchar(255)) returns int
 begin
 	update `package`
 	set `id` = last_insert_id(`id`)
@@ -105,7 +105,7 @@ begin
 end;
 
 drop function if exists updateOrInsertPackageVersion;
-create function updateOrInsertPackageVersion (aPackageId int, aVersion varchar(255)) returns int
+create function updateOrInsertPackageVersion(aPackageId int, aVersion varchar(255)) returns int
 begin
 	update `package_version`
 	set `id` = last_insert_id(`id`)
@@ -121,7 +121,7 @@ begin
 end;
 
 drop function if exists updateOrInsertReferrer;
-create function updateOrInsertReferrer (aReferrer varchar(255)) returns int
+create function updateOrInsertReferrer(aReferrer varchar(255)) returns int
 begin
 	update `referrer`
 	set `id` = last_insert_id(`id`)
@@ -137,7 +137,7 @@ begin
 end;
 
 drop function if exists updateOrInsertReferrerHits;
-create function updateOrInsertReferrerHits (aReferrer varchar(255), aDate date, aHits int) returns int
+create function updateOrInsertReferrerHits(aReferrer varchar(255), aDate date, aHits int) returns int
 begin
 	update `referrer_hits`
 	set `hits` = `hits` + aHits
