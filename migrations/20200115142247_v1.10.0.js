@@ -5,6 +5,7 @@ exports.up = async (db) => {
 	await db.schema.createTable('platform', (table) => {
 		table.increments();
 		table.string('name');
+		table.unique([ 'name' ]);
 	});
 
 	await db.schema.createTable('platform_version', (table) => {
