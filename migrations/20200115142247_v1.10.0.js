@@ -4,8 +4,7 @@ const sql = fs.readFileSync(__filename + '.sql', 'utf8');
 exports.up = async (db) => {
 	await db.schema.createTable('platform', (table) => {
 		table.increments();
-		table.string('name');
-		table.unique([ 'name' ]);
+		table.string('name').unique();
 	});
 
 	await db.schema.createTable('platform_version', (table) => {
