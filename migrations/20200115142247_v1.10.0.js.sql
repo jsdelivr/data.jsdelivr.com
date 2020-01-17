@@ -1,5 +1,5 @@
 drop function if exists updateOrInsertPlatform;
-create function updateOrInsertPlatform (aName varchar(255)) returns int
+create function updateOrInsertPlatform(aName varchar(255)) returns int
 begin
 	update `platform`
 	set `id` = last_insert_id(`id`)
@@ -15,7 +15,7 @@ begin
 end;
 
 drop function if exists updateOrInsertPlatformVersion;
-create function updateOrInsertPlatformVersion (aPlatformId int, aVersion varchar(255)) returns int
+create function updateOrInsertPlatformVersion(aPlatformId int, aVersion varchar(255)) returns int
 begin
 	update `platform_version`
 	set `id` = last_insert_id(`id`)
@@ -31,7 +31,7 @@ begin
 end;
 
 drop function if exists updateOrInsertCountryPlatformVersionHits;
-create function updateOrInsertCountryPlatformVersionHits (aPlatformVersionId int, aCountryIso varchar(2), aDate date, aHits int, aBandwidth float) returns int
+create function updateOrInsertCountryPlatformVersionHits(aPlatformVersionId int, aCountryIso varchar(2), aDate date, aHits int, aBandwidth float) returns int
 begin
 	update `country_platform_version_hits`
 	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
@@ -49,7 +49,7 @@ end;
 ###############################################################################
 
 drop function if exists updateOrInsertBrowser;
-create function updateOrInsertBrowser (aPlatformId int, aName varchar(255)) returns int
+create function updateOrInsertBrowser(aPlatformId int, aName varchar(255)) returns int
 begin
 	update `browser`
 	set `id` = last_insert_id(`id`)
@@ -65,7 +65,7 @@ begin
 end;
 
 drop function if exists updateOrInsertBrowserVersion;
-create function updateOrInsertBrowserVersion (aBrowserId int, aVersion varchar(255)) returns int
+create function updateOrInsertBrowserVersion(aBrowserId int, aVersion varchar(255)) returns int
 begin
 	update `browser_version`
 	set `id` = last_insert_id(`id`)
@@ -81,7 +81,7 @@ begin
 end;
 
 drop function if exists updateOrInsertCountryBrowserVersionHits;
-create function updateOrInsertCountryBrowserVersionHits (aBrowserVersionId int, aCountryIso varchar(2), aDate date, aHits int, aBandwidth float) returns int
+create function updateOrInsertCountryBrowserVersionHits(aBrowserVersionId int, aCountryIso varchar(2), aDate date, aHits int, aBandwidth float) returns int
 begin
 	update `country_browser_version_hits`
 	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
