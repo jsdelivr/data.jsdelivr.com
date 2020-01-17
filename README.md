@@ -8,25 +8,17 @@ Related projects:
  - [jsDelivr CDN](https://github.com/jsdelivr/jsdelivr)
  - [jsDelivr website](https://github.com/jsdelivr/www.jsdelivr.com)
 
-The jsDelivr API allows you to:
- - [list package versions](#list-package-versions)
- - [list package files](#list-package-files)
- - [resolve version range](#resolve-version-range)
- - [get package usage stats](#get-package-usage-stats)
- - [get package version usage stats](#get-package-version-usage-stats)
- - [get the most popular packages](#get-the-most-popular-packages)
- - [get a badge for your project](#get-a-badge-for-your-project)
- - [get a CDN link/metadata from file hash](#get-a-cdn-linkmetadata-from-file-hash)
-
-The API is free to use and imposes no rate limits (however, if you plan to make 100+ RPM for longer periods of time, you should contact us first).
+The API is free to use and imposes no rate limits. However, if you plan to make 100+ RPM for longer periods of time, you should contact us first.
 Please note that usage statistics are available with a 48 hour delay.
 We only have data starting from Aug 19, 2017 and data older than one year may not be available.
-
-Looking for a search endpoint? You can use [the official npm API](https://github.com/npm/registry/blob/master/docs/REGISTRY-API.md#get-v1search) or [Algolia's npm search](https://github.com/algolia/npm-search) ([more info](https://github.com/jsdelivr/data.jsdelivr.com/issues/6)).
 
 ## Let us know how you use this API
 
 **If you create a tool/plugin/etc. which uses this API, please include a link to your tool in the `User-Agent` header so that we can learn more about how this API is being used.**
+
+## Restrictions
+
+Neither jsDelivr CDN nor this API supports packages larger than 50 MB for GitHub and 100 MB for npm. Trying to get a list of files using the API will result in a `403` response.
 
 ## Endpoints
 
@@ -36,9 +28,16 @@ https://data.jsdelivr.com/v1
  - All error responses have `status` and `message` properties.
  - Additional [query string options](#query-string-options) are supported where appropriate.
 
-## Restrictions
-
-Neither jsDelivr CDN nor this API supports packages larger than 50 MB. Trying to get a list of files using the API will result in a `403` response.
+The jsDelivr API allows you to:
+ - [list package versions](#list-package-versions)
+ - [list package files](#list-package-files)
+ - [resolve a version range](#resolve-a-version-range)
+ - [get package usage stats](#get-package-usage-stats)
+ - [get package version usage stats](#get-package-version-usage-stats)
+ - [get the most popular packages](#get-the-most-popular-packages)
+ - [get a badge for your project](#get-a-badge-for-your-project)
+ - [get a CDN link/metadata from file hash](#get-a-cdn-linkmetadata-from-file-hash)
+ - [search npm packages](#search-npm-packages)
 
 ### List package versions
 
@@ -126,7 +125,7 @@ https://data.jsdelivr.com/v1/package/npm/jquery@3.2.1
 }
 ```
 
-### Resolve version range
+### Resolve a version range
 
 ```
 /package/resolve/npm/:name@:range
@@ -325,6 +324,12 @@ https://data.jsdelivr.com/v1/lookup/hash/87083882cc6015984eb0411a99d3981817f5dc5
     "file": "/dist/jquery.min.js"
 }
 ```
+
+### Search npm packages
+
+There is no search endpoint in this API because there are already two other APIs for that:
+ - [the official npm API](https://github.com/npm/registry/blob/master/docs/REGISTRY-API.md#get-v1search)
+ - [Algolia's npm search](https://github.com/algolia/npm-search) ([more info](https://github.com/jsdelivr/data.jsdelivr.com/issues/6))
 
 ## Query string options
 
