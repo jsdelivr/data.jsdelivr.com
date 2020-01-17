@@ -17,7 +17,7 @@ class Browser extends BaseCacheModel {
 	}
 
 	static get unique () {
-		return [ 'platformId', 'name' ];
+		return [ 'id', 'platformId', 'name' ];
 	}
 
 	constructor (properties = {}) {
