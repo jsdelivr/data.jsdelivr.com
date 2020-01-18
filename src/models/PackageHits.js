@@ -41,19 +41,17 @@ class PackageHits extends BaseCacheModel {
 	}
 
 	static async getSumPerDate (from, to) {
-		let sql = db(this.table)
-			.groupBy(`${this.table}.date`)
-			.sum(`${this.table}.hits as hits`);
+		let sql = db('view_network_packages');
 
 		if (from instanceof Date) {
-			sql.where(`${this.table}.date`, '>=', from);
+			sql.where(`date`, '>=', from);
 		}
 
 		if (to instanceof Date) {
-			sql.where(`${this.table}.date`, '<=', to);
+			sql.where(`date`, '<=', to);
 		}
 
-		return _.fromPairs(_.map(await sql.select([ `${this.table}.date` ]), (record) => {
+		return _.fromPairs(_.map(await sql.select([ `date`, `hits` ]), (record) => {
 			return [ record.date.toISOString().substr(0, 10), record.hits ];
 		}));
 	}
