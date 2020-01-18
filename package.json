@@ -13,7 +13,6 @@
 		"dedent-js": "^1.0.1",
 		"elastic-apm-node": "^3.3.0",
 		"elastic-apm-utils": "^3.0.0",
-		"execa": "^3.4.0",
 		"fs-extra": "^8.1.0",
 		"gh-badges": "^2.2.1",
 		"got": "^9.6.0",
