@@ -3,8 +3,6 @@ require('../startup');
 
 const relativeDayUtc = require('relative-day-utc');
 const V1StatsRequest = require('../../routes/lib/v1/StatsRequest');
-const V1PackageRequest = require('../../routes/lib/v1/PackageRequest');
-const Package = require('../../models/Package');
 
 const PromiseLock = require('../promise-lock');
 const promiseLock = new PromiseLock('pc');
