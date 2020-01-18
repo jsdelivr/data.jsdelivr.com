@@ -1,0 +1,8 @@
+{
+	"/v1/lookup/hash/AFAC519CC8E522B42073B24C5D45BD7E28A68ADB823E3D5CB1869EA08BE468D6": {
+		"type": "gh",
+		"name": "user/package-0",
+		"version": "1.1.0",
+		"file": "file-0.js"
+	}
+}

@@ -17,3 +17,10 @@ from package
 	     join file on package_version.id = file.packageVersionId
 	     join file_hits on file.id = file_hits.fileId
 group by packageVersionId, date;
+
+set @date = utc_date();
+call updateViewTopPackagesDay(@date);
+call updateViewTopPackagesWeek(@date);
+call updateViewTopPackagesMonth(@date);
+call updateViewTopPackagesYear(@date);
+call updateViewTopPackagesAll(@date);

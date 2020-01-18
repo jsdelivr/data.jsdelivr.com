@@ -1,5 +1,4 @@
 const Router = require('koa-router');
-const relativeDayUtc = require('relative-day-utc');
 const isSha = require('is-hexdigest');
 const koaElasticUtils = require('elastic-apm-utils').koa;
 
@@ -36,28 +35,6 @@ router.param('user', async (value, ctx, next) => {
 	return next();
 });
 
-router.param('period', async (value, ctx, next) => {
-	switch (value) {
-		case 'day':
-			ctx.query.from = relativeDayUtc(-2).toISOString().substr(0, 10);
-			break;
-
-		case 'week':
-			ctx.query.from = relativeDayUtc(-8).toISOString().substr(0, 10);
-			break;
-
-		case 'month':
-			ctx.query.from = relativeDayUtc(-31).toISOString().substr(0, 10);
-			break;
-
-		case 'year':
-			ctx.query.from = relativeDayUtc(-366).toISOString().substr(0, 10);
-			break;
-	}
-
-	return next();
-});
-
 router.param('version', async (value, ctx, next) => {
 	if (value && value.charAt(0) === 'v') {
 		ctx.params.version = value.substr(1);
@@ -82,15 +59,15 @@ koaElasticUtils.addRoutes(router, [
 });
 
 koaElasticUtils.addRoutes(router, [
-	[ '/package/npm/:name/stats', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/stats/:groupBy(version|date)?/:period(day|week|month|year)?' ],
-	[ '/package/gh/:user/:repo/stats', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/stats/:groupBy(version|date)?/:period(day|week|month|year)?' ],
+	[ '/package/npm/:name/stats', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/stats/:groupBy(version|date)?/:period(day|week|month|year|all)?' ],
+	[ '/package/gh/:user/:repo/stats', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/stats/:groupBy(version|date)?/:period(day|week|month|year|all)?' ],
 ], async (ctx) => {
 	return new PackageRequest(ctx).handlePackageStats();
 });
 
 koaElasticUtils.addRoutes(router, [
-	[ '/package/npm/:name/badge', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/badge/:period(day|week|month|year)?' ],
-	[ '/package/gh/:user/:repo/badge', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/badge/:period(day|week|month|year)?' ],
+	[ '/package/npm/:name/badge', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/badge/:period(day|week|month|year|all)?' ],
+	[ '/package/gh/:user/:repo/badge', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/badge/:period(day|week|month|year|all)?' ],
 ], async (ctx) => {
 	return new PackageRequest(ctx).handlePackageBadge();
 });
@@ -103,8 +80,8 @@ koaElasticUtils.addRoutes(router, [
 });
 
 koaElasticUtils.addRoutes(router, [
-	[ '/package/npm/:name@:version/stats', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version/stats/:groupBy(file|date)?/:period(day|week|month|year)?' ],
-	[ '/package/gh/:user/:repo@:version/stats', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version/stats/:groupBy(file|date)?/:period(day|week|month|year)?' ],
+	[ '/package/npm/:name@:version/stats', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version/stats/:groupBy(file|date)?/:period(day|week|month|year|all)?' ],
+	[ '/package/gh/:user/:repo@:version/stats', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version/stats/:groupBy(file|date)?/:period(day|week|month|year|all)?' ],
 ], async (ctx) => {
 	return new PackageRequest(ctx).handleVersionStats();
 });
@@ -119,13 +96,13 @@ koaElasticUtils.addRoutes(router, [
 });
 
 koaElasticUtils.addRoutes(router, [
-	[ '/stats/packages/:type(gh|npm)?', '/stats/packages/:type(gh|npm)?/:period(day|week|month|year)?/:all(all)?' ],
+	[ '/stats/packages/:type(gh|npm)?', '/stats/packages/:type(gh|npm)?/:period(day|week|month|year|all)?/:all(all)?' ],
 ], async (ctx) => {
 	return new StatsRequest(ctx).handlePackages();
 });
 
 koaElasticUtils.addRoutes(router, [
-	[ '/stats/network', '/stats/network/:period(day|week|month|year)?' ],
+	[ '/stats/network', '/stats/network/:period(day|week|month|year|all)?' ],
 ], async (ctx) => {
 	return new StatsRequest(ctx).handleNetwork();
 });
