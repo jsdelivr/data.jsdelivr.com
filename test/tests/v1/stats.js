@@ -9,7 +9,7 @@ const expectedResponsesPath = require.resolve('../../data/v1/expected/stats');
 const expectedResponses = require(expectedResponsesPath);
 const periodOptions = [ 'day', 'week', 'month', 'year', 'all', '' ];
 const snapshotResponsesOverwrite = false; // Set to `true` to update all stored responses with the current outputs.
-const snapshotResponses = true; // Set to `true` to store missing responses.
+const snapshotResponses = false; // Set to `true` to store missing responses.
 
 chai.use(chaiHttp);
 
@@ -108,7 +108,7 @@ describe('/v1/package/stats', () => {
 				expect(response).to.have.header('Cache-Control', 'public, stale-while-revalidate=86400, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response.body.toString()).to.contain('360 hits/month');
+				expect(response.body.toString()).to.contain('720 hits/month');
 			});
 	});
 });
