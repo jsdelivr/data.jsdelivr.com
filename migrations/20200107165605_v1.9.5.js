@@ -12,6 +12,8 @@ exports.up = async (db) => {
 			table.bigInteger('hits').unsigned().defaultTo(0).notNullable().index();
 			table.specificType('bandwidth', 'float').unsigned().defaultTo(0).notNullable().index();
 			table.primary([ 'date', 'type', 'name' ]);
+			table.index([ 'date', 'type', 'hits' ]);
+			table.index([ 'date', 'hits' ]);
 		});
 
 		// language=MariaDB
