@@ -3,14 +3,13 @@ const chai = require('chai');
 const chaiHttp = require('chai-http');
 const nock = require('nock');
 const expect = chai.expect;
-const relativeDayUtc = require('relative-day-utc');
 const { listTables, listViews } = require('../../src/lib/db/utils');
 
 const server = require('../../src');
-const upstreamGitHubResponses = require('../data/github.json');
-const upstreamNpmResponses = require('../data/npm.json');
-const upstreamCdnResponses = require('../data/cdn.json');
-const expectedResponses = require('../data/expected.json');
+const upstreamGitHubResponses = require('../data/v1/github.json');
+const upstreamNpmResponses = require('../data/v1/npm.json');
+const upstreamCdnResponses = require('../data/v1/cdn.json');
+const expectedResponses = require('../data/v1/expected.json');
 
 const config = require('config');
 const dbConfig = config.get('db');
@@ -18,9 +17,9 @@ const dbConfig = config.get('db');
 chai.use(chaiHttp);
 
 describe('v1', function () {
-	this.timeout(0);
+	before(async function () {
+		this.timeout(0);
 
-	before(async () => {
 		if (!dbConfig.connection.database.endsWith('-test')) {
 			throw new Error(`Database name for test env needs to end with "-test". Got "${dbConfig.connection.database}".`);
 		}
@@ -93,13 +92,11 @@ describe('v1', function () {
 			.times(Infinity)
 			.reply(504);
 
-		before(() => {
-			if (global.v8debug === undefined && !/--debug|--inspect/.test(process.execArgv.join(' '))) {
-				require('blocked')((ms) => {
-					throw new Error(`Blocked for ${ms} ms.`);
-				}, { threshold: 100 });
-			}
-		});
+		if (global.v8debug === undefined && !/--debug|--inspect/.test(process.execArgv.join(' '))) {
+			require('blocked')((ms) => {
+				throw new Error(`Blocked for ${ms} ms.`);
+			}, { threshold: 100 });
+		}
 	});
 
 	this.timeout(10000);
@@ -119,696 +116,46 @@ describe('v1', function () {
 			});
 	});
 
-	it('GET /v1/package/npm/jquery', () => {
-		return chai.request(server)
-			.get('/v1/package/npm/jquery')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=60, stale-while-revalidate=3600, stale-if-error=3600');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal(expectedResponses['/v1/package/npm/jquery']);
-			});
-	});
+	require('./v1/package');
+	require('./v1/stats');
 
-	it('GET /v1/package/npm/jquery - cache hit', () => {
-		return chai.request(server)
-			.get('/v1/package/npm/jquery')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=60, stale-while-revalidate=3600, stale-if-error=3600');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal(expectedResponses['/v1/package/npm/jquery']);
-			});
-	});
-
-	it('GET /v1/package/npm/jquery@3.2.1', () => {
-		return chai.request(server)
-			.get('/v1/package/npm/jquery@3.2.1')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal(expectedResponses['/v1/package/npm/jquery@3.2.1']);
-			});
-	});
-
-	it('GET /v1/package/npm/jquery@3.2.1 - cache hit', () => {
-		return chai.request(server)
-			.get('/v1/package/npm/jquery@3.2.1')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal(expectedResponses['/v1/package/npm/jquery@3.2.1']);
-			});
-	});
-
-	it('GET /v1/package/npm/jquery@3.2.1/flat', () => {
-		return chai.request(server)
-			.get('/v1/package/npm/jquery@3.2.1/flat')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal(expectedResponses['/v1/package/npm/jquery@3.2.1/flat']);
-			});
-	});
-
-	it('GET /v1/package/npm/jquery@3.2.1/flat - cache hit', () => {
-		return chai.request(server)
-			.get('/v1/package/npm/jquery@3.2.1/flat')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal(expectedResponses['/v1/package/npm/jquery@3.2.1/flat']);
-			});
-	});
-
-	it('GET /v1/package/resolve/npm/jquery@3.2', () => {
-		return chai.request(server)
-			.get('/v1/package/resolve/npm/jquery@3.2')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=60, stale-while-revalidate=3600, stale-if-error=3600');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal({ version: '3.2.1' });
-			});
-	});
-
-	it('GET /v1/package/resolve/npm/jquery@v3.2', () => {
-		return chai.request(server)
-			.get('/v1/package/resolve/npm/jquery@v3.2')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=60, stale-while-revalidate=3600, stale-if-error=3600');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal({ version: '3.2.1' });
-			});
-	});
-
-	it('GET /v1/package/resolve/npm/jquery@3.2.1', () => {
-		return chai.request(server)
-			.get('/v1/package/resolve/npm/jquery@3.2.1')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=86400, stale-while-revalidate=86400, stale-if-error=86400');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal({ version: '3.2.1' });
-			});
-	});
-
-	it('GET /v1/package/resolve/npm/jquery@latest', () => {
-		return chai.request(server)
-			.get('/v1/package/resolve/npm/jquery@latest')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=60, stale-while-revalidate=3600, stale-if-error=3600');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal({ version: '3.2.1' });
-			});
-	});
-
-	it('GET /v1/package/resolve/npm/jquery@xxx', () => {
-		return chai.request(server)
-			.get('/v1/package/resolve/npm/jquery@xxx')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=60, stale-while-revalidate=3600, stale-if-error=3600');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal({ version: null });
-			});
-	});
-
-	it('GET /v1/package/resolve/gh/jquery/jquery2@v3.2.1', () => {
-		return chai.request(server)
-			.get('/v1/package/resolve/gh/jquery/jquery2@v3.2.1')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=86400, stale-while-revalidate=86400, stale-if-error=86400');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal({ version: '3.2.1' });
-			});
-	});
-
-	it('GET /v1/package/resolve/gh/adobe/source-sans-pro@2.020R-ro%2F1.075R-it', () => {
-		return chai.request(server)
-			.get('/v1/package/resolve/gh/adobe/source-sans-pro@2.020R-ro%2F1.075R-it')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=60, stale-while-revalidate=3600, stale-if-error=3600');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal({ version: '2.020R-ro/1.075R-it' });
-			});
-	});
-
-	it('GET /v1/package/gh/jquery/jquery', () => {
-		return chai.request(server)
-			.get('/v1/package/gh/jquery/jquery')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=60, stale-while-revalidate=3600, stale-if-error=3600');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal(expectedResponses['/v1/package/gh/jquery/jquery']);
-			});
-	});
-
-	it('GET /v1/package/gh/jquery/jquery - cache hit', () => {
-		return chai.request(server)
-			.get('/v1/package/gh/jquery/jquery')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=60, stale-while-revalidate=3600, stale-if-error=3600');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal(expectedResponses['/v1/package/gh/jquery/jquery']);
-			});
-	});
-
-	it('GET /v1/package/gh/adobe/source-sans-pro', () => {
-		return chai.request(server)
-			.get('/v1/package/gh/adobe/source-sans-pro')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=60, stale-while-revalidate=3600, stale-if-error=3600');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal(expectedResponses['/v1/package/gh/adobe/source-sans-pro']);
-			});
-	});
-
-	it('GET /v1/package/gh/jquery/jquery@3.2.1', () => {
-		return chai.request(server)
-			.get('/v1/package/gh/jquery/jquery@3.2.1')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal(expectedResponses['/v1/package/gh/jquery/jquery@3.2.1']);
-			});
-	});
-
-	it('GET /v1/package/gh/jquery/jquery@3.2.1 - cache hit', () => {
-		return chai.request(server)
-			.get('/v1/package/gh/jquery/jquery@3.2.1')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal(expectedResponses['/v1/package/gh/jquery/jquery@3.2.1']);
-			});
-	});
-
-	it('GET /v1/package/gh/adobe/source-sans-pro@2.020R-ro%2F1.075R-it', () => {
-		return chai.request(server)
-			.get('/v1/package/gh/adobe/source-sans-pro@2.020R-ro%2F1.075R-it')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal(expectedResponses['/v1/package/gh/adobe/source-sans-pro@2.020R-ro%2F1.075R-it']);
-			});
-	});
-
-	// TODO: add commit stats tests.
-	it('GET /v1/package/gh/jquery/jquery@821bf34353a6baf97f7944379a6459afb16badae', () => {
-		return chai.request(server)
-			.get('/v1/package/gh/jquery/jquery@821bf34353a6baf97f7944379a6459afb16badae')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal(expectedResponses['/v1/package/gh/jquery/jquery@821bf34353a6baf97f7944379a6459afb16badae']);
-			});
-	});
-
-	it('GET /v1/package/gh/jquery/jquery@3.2.1/flat', () => {
-		return chai.request(server)
-			.get('/v1/package/gh/jquery/jquery@3.2.1/flat')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal(expectedResponses['/v1/package/gh/jquery/jquery@3.2.1/flat']);
-			});
-	});
-
-	it('GET /v1/package/gh/jquery/jquery@3.2.1/flat - cache hit', () => {
-		return chai.request(server)
-			.get('/v1/package/gh/jquery/jquery@3.2.1/flat')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal(expectedResponses['/v1/package/gh/jquery/jquery@3.2.1/flat']);
-			});
-	});
-
-	it('GET /v1/package/resolve/gh/jquery/jquery@3.2.1', () => {
-		return chai.request(server)
-			.get('/v1/package/resolve/gh/jquery/jquery@3.2.1')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=86400, stale-while-revalidate=86400, stale-if-error=86400');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal({ version: '3.2.1' });
-			});
-	});
-
-	it('GET /v1/package/resolve/gh/jquery/jquery@3.2', () => {
-		return chai.request(server)
-			.get('/v1/package/resolve/gh/jquery/jquery@3.2')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=60, stale-while-revalidate=3600, stale-if-error=3600');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal({ version: '3.2.1' });
-			});
-	});
-
-	it('GET /v1/package/resolve/gh/jquery/jquery@latest', () => {
-		return chai.request(server)
-			.get('/v1/package/resolve/gh/jquery/jquery@latest')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=60, stale-while-revalidate=3600, stale-if-error=3600');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal({ version: '3.2.1' });
-			});
-	});
-
-	it('GET /v1/package/resolve/gh/jquery/jquery@xxx', () => {
-		return chai.request(server)
-			.get('/v1/package/resolve/gh/jquery/jquery@xxx')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=60, stale-while-revalidate=3600, stale-if-error=3600');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal({ version: null });
-			});
-	});
-
-	it('GET /v1/package/npm/foo', () => {
-		return chai.request(server)
-			.get('/v1/package/npm/foo')
-			.catch((response) => {
-				expect(response).to.have.status(404);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.have.property('status', 404);
-				expect(response.body).to.have.property('message');
-			});
-	});
-
-	it('GET /v1/package/npm/foo@1', () => {
-		return chai.request(server)
-			.get('/v1/package/npm/foo@1')
-			.catch((response) => {
-				expect(response).to.have.status(404);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.have.property('status', 404);
-				expect(response.body).to.have.property('message');
-			});
-	});
-
-	it('GET /v1/package/npm/jquery@1', () => {
-		return chai.request(server)
-			.get('/v1/package/npm/jquery@1')
-			.catch((response) => {
-				expect(response).to.have.status(404);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.have.property('status', 404);
-				expect(response.body).to.have.property('message');
-			});
-	});
-
-	it('GET /v1/package/npm/emojione@3.1.1', () => {
-		return chai.request(server)
-			.get('/v1/package/npm/emojione@3.1.1')
-			.then((response) => {
-				expect(response).to.have.status(403);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.have.property('status', 403);
-				expect(response.body).to.have.property('message', 'Package size exceeded the configured limit of 50 MB.');
-			});
-	});
-
-	it('GET /v1/package/resolve/npm/foo', () => {
-		return chai.request(server)
-			.get('/v1/package/resolve/npm/foo')
-			.catch((response) => {
-				expect(response).to.have.status(404);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.have.property('status', 404);
-				expect(response.body).to.have.property('message');
-			});
-	});
-
-	it('GET /v1/package/npm/package-1/stats?from=2017-06-26&to=2017-07-25', () => {
-		return chai.request(server)
-			.get('/v1/package/npm/package-1/stats?from=2017-06-26&to=2017-07-25')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal(expectedResponses['/v1/package/npm/package-1/stats?from=2017-06-26&to=2017-07-25']);
-			});
-	});
-
-	it('GET /v1/package/npm/package-1/stats?from=2017-05-01&to=2017-05-30', () => {
-		return chai.request(server)
-			.get('/v1/package/npm/package-1/stats?from=2017-05-01&to=2017-05-30')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal(expectedResponses['/v1/package/npm/package-1/stats?from=2017-05-01&to=2017-05-30']);
-			});
-	});
-
-	it('GET /v1/package/npm/package-1/stats/date?from=2017-06-26&to=2017-07-25', () => {
-		return chai.request(server)
-			.get('/v1/package/npm/package-1/stats/date?from=2017-06-26&to=2017-07-25')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal(expectedResponses['/v1/package/npm/package-1/stats/date?from=2017-06-26&to=2017-07-25']);
-			});
-	});
-
-	it('GET /v1/package/npm/package-1/stats/date?from=2017-05-01&to=2017-05-30', () => {
-		return chai.request(server)
-			.get('/v1/package/npm/package-1/stats/date?from=2017-05-01&to=2017-05-30')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal(expectedResponses['/v1/package/npm/package-1/stats/date?from=2017-05-01&to=2017-05-30']);
-			});
-	});
-
-	it('GET /v1/package/npm/package-1/stats?from=2017-07-24&to=2017-07-25', () => {
-		return chai.request(server)
-			.get('/v1/package/npm/package-1/stats?from=2017-07-24&to=2017-07-25')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal(expectedResponses['/v1/package/npm/package-1/stats?from=2017-07-24&to=2017-07-25']);
-			});
-	});
-
-	it('GET /v1/package/npm/package-1/stats/date?from=2017-07-24&to=2017-07-25', () => {
-		return chai.request(server)
-			.get('/v1/package/npm/package-1/stats/date?from=2017-07-24&to=2017-07-25')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal(expectedResponses['/v1/package/npm/package-1/stats/date?from=2017-07-24&to=2017-07-25']);
-			});
-	});
-
-	it('GET /v1/package/npm/package-9/stats/date?from=2017-07-24&to=2017-07-25', () => {
-		return chai.request(server)
-			.get('/v1/package/npm/package-9/stats/date?from=2017-07-24&to=2017-07-25')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal(expectedResponses['/v1/package/npm/package-9/stats/date?from=2017-07-24&to=2017-07-25']);
-			});
-	});
-
-	it('GET /v1/package/npm/package-1@1.1.1/stats?from=2017-07-24&to=2017-07-25', () => {
-		return chai.request(server)
-			.get('/v1/package/npm/package-1@1.1.1/stats?from=2017-07-24&to=2017-07-25')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal(expectedResponses['/v1/package/npm/package-1@1.1.1/stats?from=2017-07-24&to=2017-07-25']);
-			});
-	});
-
-	it('GET /v1/package/npm/package-1@1.1.1/stats?from=2017-05-01&to=2017-05-30', () => {
-		return chai.request(server)
-			.get('/v1/package/npm/package-1@1.1.1/stats?from=2017-05-01&to=2017-05-30')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal(expectedResponses['/v1/package/npm/package-1@1.1.1/stats?from=2017-05-01&to=2017-05-30']);
-			});
-	});
-
-	it('GET /v1/package/npm/package-1@1.1.1/stats/date?from=2017-07-24&to=2017-07-25', () => {
-		return chai.request(server)
-			.get('/v1/package/npm/package-1@1.1.1/stats/date?from=2017-07-24&to=2017-07-25')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal(expectedResponses['/v1/package/npm/package-1@1.1.1/stats/date?from=2017-07-24&to=2017-07-25']);
-			});
-	});
-
-	it('GET /v1/package/npm/package-1@1.1.1/stats/date?from=2017-05-01&to=2017-05-30', () => {
-		return chai.request(server)
-			.get('/v1/package/npm/package-1@1.1.1/stats/date?from=2017-05-01&to=2017-05-30')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal(expectedResponses['/v1/package/npm/package-1@1.1.1/stats/date?from=2017-05-01&to=2017-05-30']);
-			});
-	});
-
-	it('GET /v1/stats/packages?from=2017-07-24&to=2017-07-25', () => {
-		return chai.request(server)
-			.get('/v1/stats/packages?from=2017-07-24&to=2017-07-25')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-
-				expect(response.body[0]).to.deep.equal({
-					type: 'npm',
-					name: 'package-9',
-					hits: 3300,
+	describe('/v1/lookup', () => {
+		it('GET /v1/lookup/hash/xx', () => {
+			return chai.request(server)
+				.get('/v1/lookup/hash/xx')
+				.then((response) => {
+					expect(response).to.have.status(400);
+					expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+					expect(response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
+					expect(response).to.have.header('Timing-Allow-Origin', '*');
+					expect(response).to.have.header('Vary', 'Accept-Encoding');
 				});
-			});
-	});
+		});
 
-	it('GET /v1/stats/network?from=2017-07-24&to=2017-07-25', () => {
-		return chai.request(server)
-			.get('/v1/stats/network?from=2017-07-24&to=2017-07-25')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal(expectedResponses['/v1/stats/network?from=2017-07-24&to=2017-07-25']);
-			});
-	});
+		it('GET /v1/lookup/hash/1B5A2D2D240F16D42C420F1CF8D911CC3BB4D4667D7631F24D064B6161E97729', () => {
+			return chai.request(server)
+				.get('/v1/lookup/hash/1B5A2D2D240F16D42C420F1CF8D911CC3BB4D4667D7631F24D064B6161E97729')
+				.then((response) => {
+					expect(response).to.have.status(404);
+					expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+					expect(response).to.have.header('Cache-Control', 'public, max-age=86400');
+					expect(response).to.have.header('Timing-Allow-Origin', '*');
+					expect(response).to.have.header('Vary', 'Accept-Encoding');
+				});
+		});
 
-	it('GET /v1/stats/network?from=2017-05-01&to=2017-05-30', () => {
-		return chai.request(server)
-			.get('/v1/stats/network?from=2017-05-01&to=2017-05-30')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal(expectedResponses['/v1/stats/network?from=2017-05-01&to=2017-05-30']);
-			});
-	});
-
-	it('GET /v1/stats/network', () => {
-		return chai.request(server)
-			.get('/v1/stats/network')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, stale-while-revalidate=86400, stale-if-error=86400');
-				expect(response).to.have.header('Expires', relativeDayUtc(1).toUTCString());
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-			});
-	});
-
-	it('GET /v1/lookup/hash/xx', () => {
-		return chai.request(server)
-			.get('/v1/lookup/hash/xx')
-			.then((response) => {
-				expect(response).to.have.status(400);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-			});
-	});
-
-	it('GET /v1/lookup/hash/1B5A2D2D240F16D42C420F1CF8D911CC3BB4D4667D7631F24D064B6161E97729', () => {
-		return chai.request(server)
-			.get('/v1/lookup/hash/1B5A2D2D240F16D42C420F1CF8D911CC3BB4D4667D7631F24D064B6161E97729')
-			.then((response) => {
-				expect(response).to.have.status(404);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=86400');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-			});
-	});
-
-	it('GET /v1/lookup/hash/A302DA3294EF556AB933C9B09A7FDEBF7CA7BB51868DEE1CC24B35DC4E68CF97', () => {
-		return chai.request(server)
-			.get('/v1/lookup/hash/A302DA3294EF556AB933C9B09A7FDEBF7CA7BB51868DEE1CC24B35DC4E68CF97')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
-				expect(response).to.have.header('Timing-Allow-Origin', '*');
-				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response).to.be.json;
-				expect(response.body).to.deep.equal(expectedResponses['/v1/lookup/hash/A302DA3294EF556AB933C9B09A7FDEBF7CA7BB51868DEE1CC24B35DC4E68CF97']);
-			});
+		it('GET /v1/lookup/hash/AFAC519CC8E522B42073B24C5D45BD7E28A68ADB823E3D5CB1869EA08BE468D6', () => {
+			return chai.request(server)
+				.get('/v1/lookup/hash/AFAC519CC8E522B42073B24C5D45BD7E28A68ADB823E3D5CB1869EA08BE468D6')
+				.then((response) => {
+					expect(response).to.have.status(200);
+					expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+					expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
+					expect(response).to.have.header('Timing-Allow-Origin', '*');
+					expect(response).to.have.header('Vary', 'Accept-Encoding');
+					expect(response).to.be.json;
+					expect(response.body).to.deep.equal(expectedResponses['/v1/lookup/hash/AFAC519CC8E522B42073B24C5D45BD7E28A68ADB823E3D5CB1869EA08BE468D6']);
+				});
+		});
 	});
 });

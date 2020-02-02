@@ -1,10 +1,11 @@
 const _ = require('lodash');
 const crypto = require('crypto');
 const Bluebird = require('bluebird');
+const relativeDateUtc = require('relative-day-utc');
 const { listTables } = require('../../src/lib/db/utils');
 
-const PACKAGE_TYPES = [ 'gh', 'npm' ];
-const STATS_START_DATE = [ 2017, 4, 29 ];
+const PACKAGE_TYPES = [ 'npm', 'gh' ];
+const STATS_START_TIMESTAMP = relativeDateUtc(-60).valueOf();
 
 exports.seed = async (db) => {
 	await Bluebird.each(listTables(db), async (table) => {
@@ -13,7 +14,7 @@ exports.seed = async (db) => {
 	});
 
 	await db('package').insert(_.flatten(PACKAGE_TYPES.map((type) => {
-		return _.range(0, 60).map(i => ({ type, name: `package-${i}` }));
+		return _.range(0, 60).map(i => ({ type, name: (type === 'npm' ? '' : 'user/') + `package-${i}` }));
 	})));
 
 	await db('package_version').insert(_.flatten(_.range(1, 121).map((packageId) => {
@@ -34,20 +35,15 @@ exports.seed = async (db) => {
 		return _.range(0, 60).map((i) => {
 			return {
 				fileId,
-				date: new Date(Date.UTC(...STATS_START_DATE) + (i * 86400000)),
-				hits: 100,
+				date: new Date(STATS_START_TIMESTAMP + (i * 86400000)),
+				hits: Math.floor((fileId - 1) / 12),
 			};
 		});
 	})));
 
-	await db('file_hits')
-		.update({ hits: 1000 })
-		.where({ fileId: 840 })
-		.whereIn('date', [ '2017-07-24', '2017-07-27' ]);
-
 	await db('logs').insert(_.flatten(_.range(0, 60).map((i) => {
 		return {
-			date: new Date(Date.UTC(...STATS_START_DATE) + (i * 86400000)),
+			date: new Date(STATS_START_TIMESTAMP + (i * 86400000)),
 			records: 1000000000,
 			megabytesLogs: 10000,
 			megabytesTraffic: 100000,
@@ -56,7 +52,7 @@ exports.seed = async (db) => {
 
 	await db('other_hits').insert(_.flatten(_.range(0, 2).map((i) => {
 		return {
-			date: new Date(Date.UTC(2017, 6, 25) + (i * 86400000)),
+			date: new Date(STATS_START_TIMESTAMP + (i * 86400000)),
 			hits: 100000,
 		};
 	})));

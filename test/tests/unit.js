@@ -7,46 +7,34 @@ const pagination = require('../../src/routes/utils/pagination');
 
 describe('Unit tests', () => {
 	describe('utils/dateRange.js', () => {
-		it('no parameters', () => {
-			let range = dateRange();
-			expect(range).to.deep.equal([ relativeDayUtc(-31), relativeDayUtc(-2) ]);
-			expect(range.isStatic).to.be.undefined;
+		it('day', () => {
+			let range = dateRange('day', relativeDayUtc(-10));
+			expect(range).to.deep.equal([ relativeDayUtc(-12), relativeDayUtc(-12) ]);
 		});
 
-		it('no parameters, custom range', () => {
-			let range = dateRange(undefined, undefined, 15);
-			expect(range).to.deep.equal([ relativeDayUtc(-16), relativeDayUtc(-2) ]);
-			expect(range.isStatic).to.be.undefined;
+		it('week', () => {
+			let range = dateRange('week', relativeDayUtc(-10));
+			expect(range).to.deep.equal([ relativeDayUtc(-18), relativeDayUtc(-12) ]);
 		});
 
-		it('from too late, to wrong format', () => {
-			let range = dateRange('2200-01-01', '2000/11/11');
-			expect(range).to.deep.equal([ undefined, relativeDayUtc(-2) ]);
-			expect(range.isStatic).to.be.undefined;
+		it('month', () => {
+			let range = dateRange('month', relativeDayUtc(-10));
+			expect(range).to.deep.equal([ relativeDayUtc(-41), relativeDayUtc(-12) ]);
 		});
 
-		it('to too late', () => {
-			let range = dateRange('2015-01-01', '2200-01-01');
-			expect(range).to.deep.equal([ relativeDayUtc(0, new Date('2015-01-01')), relativeDayUtc(-2) ]);
-			expect(range.isStatic).to.be.undefined;
+		it('year', () => {
+			let range = dateRange('year', relativeDayUtc(-10));
+			expect(range).to.deep.equal([ relativeDayUtc(-376), relativeDayUtc(-12) ]);
 		});
 
-		it('only from', () => {
-			let range = dateRange('2015-01-01');
-			expect(range).to.deep.equal([ relativeDayUtc(0, new Date('2015-01-01')), relativeDayUtc(-2) ]);
-			expect(range.isStatic).to.be.undefined;
+		it('all', () => {
+			let range = dateRange('all', relativeDayUtc(-10));
+			expect(range).to.deep.equal([ relativeDayUtc(0, Date.UTC(2017, 7, 19)), relativeDayUtc(-12) ]);
 		});
 
-		it('only to', () => {
-			let range = dateRange(undefined, '2015-01-01');
-			expect(range).to.deep.equal([ undefined, relativeDayUtc(0, new Date('2015-01-01')) ]);
-			expect(range.isStatic).to.be.true;
-		});
-
-		it('both from and to', () => {
-			let range = dateRange('2015-01-01', '2015-01-02');
-			expect(range).to.deep.equal([ relativeDayUtc(0, new Date('2015-01-01')), relativeDayUtc(0, new Date('2015-01-02')) ]);
-			expect(range.isStatic).to.be.true;
+		it('invalid period', () => {
+			let range = () => dateRange('xxx', relativeDayUtc(-10));
+			expect(range).to.throw('period');
 		});
 	});
 

@@ -38,7 +38,3 @@ global.db = require('./db');
 
 const JSONPP = require('./jsonpp');
 JSONPP.addConstructor(require('./promise-lock').PromiseLockError);
-
-if (process.env.PRECACHE_STATS === 'true') {
-	require('./precache');
-}

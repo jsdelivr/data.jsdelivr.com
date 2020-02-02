@@ -37,9 +37,7 @@ class OtherHits extends BaseCacheModel {
 	}
 
 	static async getSumPerDate (from, to) {
-		let sql = db(this.table)
-			.groupBy(`${this.table}.date`)
-			.sum(`${this.table}.hits as hits`);
+		let sql = db(this.table);
 
 		if (from instanceof Date) {
 			sql.where(`${this.table}.date`, '>=', from);
@@ -49,7 +47,7 @@ class OtherHits extends BaseCacheModel {
 			sql.where(`${this.table}.date`, '<=', to);
 		}
 
-		return _.fromPairs(_.map(await sql.select([ `${this.table}.date` ]), (record) => {
+		return _.fromPairs(_.map(await sql.select([ `${this.table}.date`, `${this.table}.hits` ]), (record) => {
 			return [ record.date.toISOString().substr(0, 10), record.hits ];
 		}));
 	}

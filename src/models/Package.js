@@ -41,9 +41,7 @@ class Package extends BaseCacheModel {
 		let sql = db(this.table)
 			.where({ type, name })
 			.join(PackageVersion.table, `${this.table}.id`, '=', `${PackageVersion.table}.packageId`)
-			.join(PackageVersionHits.table, `${PackageVersion.table}.id`, '=', `${PackageVersionHits.table}.packageVersionId`)
-			.groupBy([ `${PackageVersion.table}.id`, `${PackageVersionHits.table}.date` ])
-			.sum(`${PackageVersionHits.table}.hits as hits`);
+			.join(PackageVersionHits.table, `${PackageVersion.table}.id`, '=', `${PackageVersionHits.table}.packageVersionId`);
 
 		if (from instanceof Date) {
 			sql.where(`${PackageVersionHits.table}.date`, '>=', from);
@@ -53,7 +51,7 @@ class Package extends BaseCacheModel {
 			sql.where(`${PackageVersionHits.table}.date`, '<=', to);
 		}
 
-		return sql.select([ `${PackageVersion.table}.version`, `${PackageVersionHits.table}.date` ]);
+		return sql.select([ `${PackageVersion.table}.version`, `${PackageVersionHits.table}.date`, `${PackageVersionHits.table}.hits` ]);
 	}
 
 	static async getSumDateHitsPerVersionByName (type, name, from, to) {
@@ -64,22 +62,11 @@ class Package extends BaseCacheModel {
 		});
 	}
 
-	static async getSumHits (type, name, from, to) {
-		let sql = db(this.table)
-			.where({ type, name })
-			.join(PackageHits.table, `${this.table}.id`, '=', `${PackageHits.table}.packageId`)
-			.groupBy(`${Package.table}.id`)
-			.sum(`${PackageHits.table}.hits as hits`);
+	static async getStatsForPeriod (type, name, period, date) {
+		let sql = db(`view_top_packages_${period}`)
+			.where({ type, name, date });
 
-		if (from instanceof Date) {
-			sql.where(`${PackageHits.table}.date`, '>=', from);
-		}
-
-		if (to instanceof Date) {
-			sql.where(`${PackageHits.table}.date`, '<=', to);
-		}
-
-		return (await sql.select().first() || { hits: 0 }).hits;
+		return sql.select().first();
 	}
 
 	static async getSumVersionHitsPerDateByName (type, name, from, to) {
@@ -90,11 +77,9 @@ class Package extends BaseCacheModel {
 		});
 	}
 
-	static async getTopPackages (from, to, type = undefined, limit = 100, page = 1) {
-		let sql = db(this.table)
-			.join(PackageHits.table, `${this.table}.id`, '=', `${PackageHits.table}.packageId`)
-			.groupBy(`${PackageHits.table}.packageId`)
-			.sum(`${PackageHits.table}.hits as hits`)
+	static async getTopPackages (period, date, type = undefined, limit = 100, page = 1) {
+		let sql = db(`view_top_packages_${period}`)
+			.where({ date })
 			.orderBy('hits', 'DESC');
 
 		if (type) {
@@ -105,15 +90,7 @@ class Package extends BaseCacheModel {
 			sql.limit(limit).offset((page - 1) * limit);
 		}
 
-		if (from instanceof Date) {
-			sql.where(`${PackageHits.table}.date`, '>=', from);
-		}
-
-		if (to instanceof Date) {
-			sql.where(`${PackageHits.table}.date`, '<=', to);
-		}
-
-		return sql.select([ `${Package.table}.type`, `${Package.table}.name` ]);
+		return sql.select([ `type`, `name`, `hits` ]);
 	}
 
 	toSqlFunctionCall () {
@@ -128,6 +105,5 @@ function splitCommitsAndVersions (collection) {
 
 module.exports = Package;
 
-const PackageHits = require('./PackageHits');
 const PackageVersion = require('./PackageVersion');
 const PackageVersionHits = require('./PackageVersionHits');

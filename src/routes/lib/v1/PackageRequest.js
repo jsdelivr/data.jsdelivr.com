@@ -6,7 +6,6 @@ const promiseRetry = require('promise-retry');
 const BadgeFactory = require('gh-badges').BadgeFactory;
 const isSha = require('is-hexdigest');
 const isSemverStatic = require('is-semver-static');
-const relativeDayUtc = require('relative-day-utc');
 const vCompare = require('v-compare');
 const NumberAbbreviate = require('number-abbreviate');
 const number = new NumberAbbreviate([ 'k', 'M', 'B', 'T' ]);
@@ -144,21 +143,9 @@ class PackageRequest extends BaseRequest {
 		return metadata;
 	}
 
-	async getRank (packages) {
-		return Package.transform(`${this.keys.rank}${this.dateRange[0].toISOString().substr(0, 10)}/${this.dateRange[1].toISOString().substr(0, 10)}`, async () => {
-			let data = packages || await Package.get(undefined, relativeDayUtc(1)).withLock().asArray().getTopPackages(...this.dateRange, undefined, null);
-			let hits = Infinity;
-			let rank = -1;
-
-			return data.some((pkg) => {
-				if (pkg.hits < hits) {
-					hits = pkg.hits;
-					rank++;
-				}
-
-				return pkg.type === this.params.type && pkg.name === this.params.name;
-			}) ? rank : null;
-		}, relativeDayUtc(2)).exec();
+	async getRank () {
+		let stats = await Package.getStatsForPeriod(this.params.type, this.params.name, this.period, this.date);
+		return stats ? stats.rank : null;
 	}
 
 	async getResolvedVersion () {
@@ -203,12 +190,13 @@ class PackageRequest extends BaseRequest {
 	}
 
 	async handlePackageBadge () {
-		let hits = await Package.getSumHits(this.params.type, this.params.name, ...this.dateRange);
+		let stats = await Package.getStatsForPeriod(this.params.type, this.params.name, this.period, this.date);
+		let hits = stats ? stats.hits : 0;
 
 		this.ctx.type = 'image/svg+xml; charset=utf-8';
 
 		this.ctx.body = badgeFactory.create({
-			text: [ 'jsDelivr', `${number.abbreviate(hits)} hits/${this.params.period || 'month'}` ],
+			text: [ 'jsDelivr', `${number.abbreviate(hits)} hits${this.period === 'all' ? '' : `/${this.period}`}` ],
 			colorB: '#ff5627',
 			template: this.ctx.query.style === 'rounded' ? 'flat' : 'flat-square',
 		});
