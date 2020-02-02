@@ -17,9 +17,9 @@ const dbConfig = config.get('db');
 chai.use(chaiHttp);
 
 describe('v1', function () {
-	this.timeout(0);
+	before(async function () {
+		this.timeout(0);
 
-	before(async () => {
 		if (!dbConfig.connection.database.endsWith('-test')) {
 			throw new Error(`Database name for test env needs to end with "-test". Got "${dbConfig.connection.database}".`);
 		}
@@ -92,13 +92,11 @@ describe('v1', function () {
 			.times(Infinity)
 			.reply(504);
 
-		before(() => {
-			if (global.v8debug === undefined && !/--debug|--inspect/.test(process.execArgv.join(' '))) {
-				require('blocked')((ms) => {
-					throw new Error(`Blocked for ${ms} ms.`);
-				}, { threshold: 100 });
-			}
-		});
+		if (global.v8debug === undefined && !/--debug|--inspect/.test(process.execArgv.join(' '))) {
+			require('blocked')((ms) => {
+				throw new Error(`Blocked for ${ms} ms.`);
+			}, { threshold: 100 });
+		}
 	});
 
 	this.timeout(10000);
