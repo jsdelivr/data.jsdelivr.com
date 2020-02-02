@@ -46,8 +46,6 @@ begin
 	return 0;
 end;
 
-###############################################################################
-
 drop function if exists updateOrInsertBrowser;
 create function updateOrInsertBrowser(aPlatformId int, aName varchar(255)) returns int
 begin
