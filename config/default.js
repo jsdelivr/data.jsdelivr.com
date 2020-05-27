@@ -40,7 +40,7 @@ module.exports = {
 		},
 		maxAgeStatic: 365 * 24 * 60 * 60,
 		maxStaleStatic: 24 * 60 * 60,
-		maxAgeShort: 60,
+		maxAgeShort: 5 * 60,
 		maxStaleShort: 60 * 60,
 	},
 };
