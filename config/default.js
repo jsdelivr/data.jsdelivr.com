@@ -42,5 +42,6 @@ module.exports = {
 		maxStaleStatic: 24 * 60 * 60,
 		maxAgeShort: 5 * 60,
 		maxStaleShort: 60 * 60,
+		maxStaleErrorShort: 12 * 60 * 60,
 	},
 };

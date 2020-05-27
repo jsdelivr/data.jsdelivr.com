@@ -144,10 +144,14 @@ server.use(async (ctx, next) => {
 		ctx.status = ctx.body.status;
 	}
 
+	if (!ctx.maxStaleError) {
+		ctx.maxStaleError = ctx.maxStale;
+	}
+
 	if (ctx.maxAge) {
-		ctx.set('Cache-Control', `public, max-age=${ctx.maxAge}${ctx.maxStale ? `, stale-while-revalidate=${ctx.maxStale}, stale-if-error=${ctx.maxStale}` : ''}`);
+		ctx.set('Cache-Control', `public, max-age=${ctx.maxAge}${ctx.maxStale ? `, stale-while-revalidate=${ctx.maxStale}, stale-if-error=${ctx.maxStaleError}` : ''}`);
 	} else if (ctx.expires) {
-		ctx.set('Cache-Control', `public${ctx.maxStale ? `, stale-while-revalidate=${ctx.maxStale}, stale-if-error=${ctx.maxStale}` : ''}`);
+		ctx.set('Cache-Control', `public${ctx.maxStale ? `, stale-while-revalidate=${ctx.maxStale}, stale-if-error=${ctx.maxStaleError}` : ''}`);
 		ctx.set('Expires', ctx.expires);
 	}
 });
