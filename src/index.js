@@ -1,12 +1,9 @@
-// istanbul ignore next
-if (require.main === module) {
-	// This needs to run before any require() call.
-	global.apmClient = require('elastic-apm-node').start({});
-	global.apmClient.addTransactionFilter(payload => (payload.context && payload.context.tags && payload.context.tags.userAgent && !payload.context.tags.userAgent.includes('sindresorhus/got')) || Math.random() < .2 ? payload : false);
-	global.apmClient.addTransactionFilter(require('elastic-apm-utils').apm.transactionFilter());
-	global.apmClient.addSpanFilter(require('elastic-apm-utils').apm.spanFilter({ filterShorterThan: 10 }));
-	require('./lib/startup');
-}
+// This needs to run before any require() call.
+global.apmClient = require('elastic-apm-node').start({});
+apmClient.addTransactionFilter(payload => (payload.context && payload.context.tags && payload.context.tags.userAgent && !payload.context.tags.userAgent.includes('sindresorhus/got')) || Math.random() < .2 ? payload : false);
+apmClient.addTransactionFilter(require('elastic-apm-utils').apm.transactionFilter());
+apmClient.addSpanFilter(require('elastic-apm-utils').apm.spanFilter({ filterShorterThan: 10 }));
+require('./lib/startup');
 
 const config = require('config');
 const signalExit = require('signal-exit');
@@ -51,7 +48,7 @@ if (global.apmClient) {
 		let userAgent = ctx.headers['user-agent'];
 
 		if (userAgent && !/\bchrome|edge|mozilla|opera|trident\b/i.test(userAgent)) {
-			global.apmClient.addLabels({ userAgent });
+			apmClient.addLabels({ userAgent });
 		}
 
 		return next();

@@ -6,7 +6,8 @@
 		"log": false,
 		"redis": false,
 		"logger": false,
-		"Bluebird": false
+		"Bluebird": false,
+		"apmClient": false
 	},
 	"plugins": [
 		"html"
