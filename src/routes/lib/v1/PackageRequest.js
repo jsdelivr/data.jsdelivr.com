@@ -307,8 +307,13 @@ module.exports = PackageRequest;
  * @return {Promise<Object>}
  */
 async function fetchGitHubMetadata (user, repo) {
+	apmClient.addLabels({ githubUser: user });
+	apmClient.addLabels({ githubRepo: repo });
+
 	return fetchCache.get(`gh/${user}/${repo}`, () => {
 		return githubApi.paginate(githubApi.repos.listTags.endpoint.merge({ repo, owner: user, per_page: 100 })).then((data) => {
+			apmClient.addLabels({ githubTagCount: data.length });
+
 			data.forEach((tag) => {
 				if (tag.name.charAt(0) === 'v') {
 					tag.name = tag.name.substr(1);
@@ -317,7 +322,12 @@ async function fetchGitHubMetadata (user, repo) {
 
 			return { tags: [], versions: _.uniq(_.map(data, 'name').filter(v => v).sort(vCompare.rCompare)) };
 		}).catch((error) => {
-			if (error.status === 403 && !error.block) {
+			// istanbul ignore next
+			if (error.status === 404) {
+				apmClient.addLabels({ githubRepoNotFound: '1' });
+			}
+
+			if (error.status === 403 && !error.block) { // TODO: check if this is correct and unify with origin
 				log.error(`GitHub API rate limit exceeded.`, error);
 			}
 
