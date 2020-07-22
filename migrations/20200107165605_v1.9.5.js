@@ -35,6 +35,7 @@ exports.up = async (db) => {
 				set @hits = pow(2, 64);
 
 				delete from view_top_packages_${period} where \`date\` = aDate;
+				delete from view_top_packages_${period} where \`date\` < @dateTo;
 
 				insert into view_top_packages_${period}
 				(date, rank, type, name, hits, bandwidth)
