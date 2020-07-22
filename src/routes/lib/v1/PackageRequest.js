@@ -1,7 +1,7 @@
 const got = require('got');
 const semver = require('semver');
 const config = require('config');
-const GitHubApi = require('@octokit/rest');
+const { Octokit } = require('@octokit/rest');
 const promiseRetry = require('promise-retry');
 const BadgeFactory = require('gh-badges').BadgeFactory;
 const isSha = require('is-hexdigest');
@@ -21,7 +21,7 @@ const dateRange = require('../../utils/dateRange');
 const sumDeep = require('../../utils/sumDeep');
 
 const v1Config = config.get('v1');
-const githubApi = new GitHubApi({
+const githubApi = new Octokit({
 	auth: `token ${v1Config.gh.apiToken}`,
 	baseUrl: v1Config.gh.sourceUrl,
 	userAgent: 'jsDelivr API backend',

@@ -127,7 +127,7 @@ server.use(async (ctx, next) => {
 	if (!ctx.body) {
 		ctx.body = {
 			status: ctx.status,
-			message: statuses[ctx.status],
+			message: statuses.message[ctx.status],
 		};
 
 		if (ctx.status === 400) {
