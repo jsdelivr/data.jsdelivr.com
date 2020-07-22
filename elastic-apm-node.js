@@ -3,6 +3,7 @@ module.exports = {
 	serviceName: 'jsdelivr-api',
 	serviceVersion: require('./package.json').version,
 	logLevel: 'fatal',
+	centralConfig: false,
 	captureExceptions: false,
 	captureSpanStackTraces: false,
 	captureErrorLogStackTraces: 'always',
