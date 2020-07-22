@@ -5,6 +5,7 @@ module.exports = {
 		headers: {
 			'Access-Control-Allow-Origin': '*',
 			'Cache-Control': 'no-cache, no-store, must-revalidate',
+			'Cross-Origin-Resource-Policy': 'cross-origin',
 			'Timing-Allow-Origin': '*',
 			'Vary': 'Accept-Encoding',
 		},
