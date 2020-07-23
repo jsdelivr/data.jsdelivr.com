@@ -1,11 +1,11 @@
 const Joi = require('joi');
 const BaseCacheModel = require('./BaseCacheModel');
 
-const schema = {
+const schema = Joi.object({
 	id: Joi.number().integer().min(0).required().allow(null),
 	platformId: Joi.number().integer().min(0).required().allow(null),
 	name: Joi.string().max(255).required(),
-};
+});
 
 class Browser extends BaseCacheModel {
 	static get table () {

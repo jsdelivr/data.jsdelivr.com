@@ -1,13 +1,13 @@
 const Joi = require('joi');
 const BaseModel = require('./BaseModel');
 
-const schema = {
+const schema = Joi.object({
 	countryIso: Joi.string().length(2).required(),
 	browserVersionId: Joi.number().integer().min(0).required().allow(null),
 	date: Joi.date().required(),
 	hits: Joi.number().integer().min(0).required(),
 	bandwidth: Joi.number().min(0).required(),
-};
+});
 
 class CountryBrowserVersionHits extends BaseModel {
 	static get table () {

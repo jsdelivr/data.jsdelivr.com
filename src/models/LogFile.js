@@ -1,13 +1,13 @@
 const Joi = require('joi');
 const BaseModel = require('./BaseModel');
 
-const schema = {
+const schema = Joi.object({
 	id: Joi.number().integer().min(0).required().allow(null),
 	filename: Joi.string().max(255).required(),
 	updatedAt: Joi.date().required(),
 	processed: Joi.number().required(),
 	date: Joi.date().required(),
-};
+});
 
 class LogFile extends BaseModel {
 	static get table () {

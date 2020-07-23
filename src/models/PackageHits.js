@@ -1,12 +1,12 @@
 const Joi = require('joi');
 const BaseCacheModel = require('./BaseCacheModel');
 
-const schema = {
+const schema = Joi.object({
 	packageId: Joi.number().integer().min(0).required().allow(null),
 	date: Joi.date().required(),
 	hits: Joi.number().integer().min(0).required(),
 	bandwidth: Joi.number().min(0).required(),
-};
+});
 
 class PackageHits extends BaseCacheModel {
 	static get table () {

@@ -1,11 +1,11 @@
 const Joi = require('joi');
 const BaseModel = require('./BaseModel');
 
-const schema = {
+const schema = Joi.object({
 	id: Joi.number().integer().min(0).required().allow(null),
 	packageId: Joi.number().integer().min(0).required().allow(null),
 	version: Joi.string().max(255).required(),
-};
+});
 
 class PackageVersion extends BaseModel {
 	static get table () {

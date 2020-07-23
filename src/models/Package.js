@@ -2,11 +2,11 @@ const Joi = require('joi');
 const isSha = require('is-hexdigest');
 const BaseCacheModel = require('./BaseCacheModel');
 
-const schema = {
+const schema = Joi.object({
 	id: Joi.number().integer().min(0).required().allow(null),
 	name: Joi.string().max(255).required(),
 	type: Joi.string().max(255).required(),
-};
+});
 
 class Package extends BaseCacheModel {
 	static get table () {

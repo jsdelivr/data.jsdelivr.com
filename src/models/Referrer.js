@@ -1,10 +1,10 @@
 const Joi = require('joi');
 const BaseModel = require('./BaseModel');
 
-const schema = {
+const schema = Joi.object({
 	id: Joi.number().integer().min(0).required().allow(null),
 	referrer: Joi.string().max(255).required().allow(''),
-};
+});
 
 class Referrer extends BaseModel {
 	static get table () {

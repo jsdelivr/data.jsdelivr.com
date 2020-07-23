@@ -1,4 +1,5 @@
 const Joi = require('joi');
+const getProperties = _.memoize(schema => Object.keys(schema.describe().children));
 
 class BaseModel {
 	static get table () {}
@@ -11,6 +12,10 @@ class BaseModel {
 
 	static get columnsPrefixed () {
 		return this.columns.map(column => `${this.table}.${column}`);
+	}
+
+	get properties () {
+		return getProperties(this.constructor.schema);
 	}
 
 	get unique () {
@@ -62,7 +67,7 @@ class BaseModel {
 	}
 
 	dbIn () {
-		return _.pick(this, Object.keys(this.constructor.schema));
+		return _.pick(this, this.properties);
 	}
 
 	async dbOut () {
@@ -137,7 +142,7 @@ class BaseModel {
 	}
 
 	async validate () {
-		let result = Joi.validate(this.dbIn(), this.constructor.schema, { abortEarly: false });
+		let result = this.constructor.schema.validate(this.dbIn(), { abortEarly: false });
 
 		if (result.error) {
 			throw result.error;
@@ -157,7 +162,7 @@ module.exports = BaseModel;
 
 module.exports.ProxyHandler = {
 	set (target, property, value) {
-		if (!(property in target.constructor.schema)) {
+		if (!target.properties.includes(property)) {
 			target[property] = value;
 			return true;
 		}
@@ -168,7 +173,7 @@ module.exports.ProxyHandler = {
 			value = this[setter](target, value);
 		}
 
-		Joi.assert(value, target.constructor.schema[property], `${property}:`);
+		Joi.assert(value, Joi.reach(target.constructor.schema, property), `${property}:`);
 		target[property] = value;
 		return true;
 	},

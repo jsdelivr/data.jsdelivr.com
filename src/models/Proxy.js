@@ -1,10 +1,10 @@
 const Joi = require('joi');
 const BaseModel = require('./BaseModel');
 
-const schema = {
+const schema = Joi.object({
 	id: Joi.number().integer().min(1).required().allow(null),
 	path: Joi.string().max(255).required(),
-};
+});
 
 class ProxyModel extends BaseModel {
 	static get table () {

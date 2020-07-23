@@ -1,13 +1,13 @@
 const Joi = require('joi');
 const BaseModel = require('./BaseModel');
 
-const schema = {
+const schema = Joi.object({
 	countryIso: Joi.string().length(2).required(),
 	cdn: Joi.string().length(2).required(),
 	date: Joi.date().required(),
 	hits: Joi.number().integer().min(0).required(),
 	bandwidth: Joi.number().min(0).required(),
-};
+});
 
 class CountryCdnHits extends BaseModel {
 	static get table () {
