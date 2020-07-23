@@ -16,7 +16,7 @@ module.exports = _.merge(...[ 'development', 'production', 'staging', 'test' ].m
 				max: 40,
 				propagateCreateError: false,
 				afterCreate (connection, callback) {
-					connection.query('SET TRANSACTION ISOLATION LEVEL READ COMMITTED', callback);
+					connection.query('SET names utf8mb4 COLLATE utf8mb4_unicode_ci; SET TRANSACTION ISOLATION LEVEL READ COMMITTED;', callback);
 				},
 			},
 			seeds: {
