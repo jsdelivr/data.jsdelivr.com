@@ -1,5 +1,5 @@
 const Joi = require('joi');
-const getProperties = _.memoize(schema => Object.keys(schema.describe().children));
+const getProperties = _.memoize(schema => Object.keys(schema.describe().keys));
 
 class BaseModel {
 	static get table () {}
@@ -91,7 +91,7 @@ class BaseModel {
 
 		await this.validate();
 
-		return db(this.constructor.table).insert(this.dbIn()).spread((id) => {
+		return db(this.constructor.table).insert(this.dbIn()).then(([ id ]) => {
 			this.id = id;
 			return this;
 		});
@@ -173,7 +173,7 @@ module.exports.ProxyHandler = {
 			value = this[setter](target, value);
 		}
 
-		Joi.assert(value, Joi.reach(target.constructor.schema, property), `${property}:`);
+		Joi.assert(value, target.constructor.schema.extract(property), `${property}:`);
 		target[property] = value;
 		return true;
 	},
