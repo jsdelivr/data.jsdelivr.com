@@ -279,16 +279,12 @@ class PackageRequest extends BaseRequest {
 	}
 
 	async responseFromRemoteError (error) {
-		if (error.response && error.response.statusCode === 404) {
-			return this.responseNotFound();
-		}
-
-		this.ctx.status = error instanceof got.TimeoutError || error.code === 'ETIMEDOUT' ? 504 : 502;
-	}
-
-	async responseNotFound () {
 		this.ctx.body = {
-			status: 404,
+			status: error.response && error.response.statusCode === 404
+				? 404
+				: error instanceof got.TimeoutError || error.code === 'ETIMEDOUT'
+					? 504
+					: 502,
 			message: this.params.version ? `Couldn't find ${this.params.name}@${this.params.version}.` : `Couldn't fetch versions for ${this.params.name}.`,
 		};
 	}
