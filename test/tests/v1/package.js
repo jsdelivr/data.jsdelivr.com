@@ -376,7 +376,7 @@ describe('/v1/package', () => {
 	it('GET /v1/package/npm/foo', () => {
 		return chai.request(server)
 			.get('/v1/package/npm/foo')
-			.catch((response) => {
+			.then((response) => {
 				expect(response).to.have.status(404);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
 				expect(response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
@@ -391,7 +391,7 @@ describe('/v1/package', () => {
 	it('GET /v1/package/npm/foo@1', () => {
 		return chai.request(server)
 			.get('/v1/package/npm/foo@1')
-			.catch((response) => {
+			.then((response) => {
 				expect(response).to.have.status(404);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
 				expect(response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
@@ -406,7 +406,7 @@ describe('/v1/package', () => {
 	it('GET /v1/package/npm/jquery@1', () => {
 		return chai.request(server)
 			.get('/v1/package/npm/jquery@1')
-			.catch((response) => {
+			.then((response) => {
 				expect(response).to.have.status(404);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
 				expect(response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
@@ -436,7 +436,7 @@ describe('/v1/package', () => {
 	it('GET /v1/package/resolve/npm/foo', () => {
 		return chai.request(server)
 			.get('/v1/package/resolve/npm/foo')
-			.catch((response) => {
+			.then((response) => {
 				expect(response).to.have.status(404);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
 				expect(response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');

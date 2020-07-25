@@ -104,7 +104,7 @@ describe('v1', function () {
 	it('GET /v1/', () => {
 		return chai.request(server)
 			.get('/v1/')
-			.catch((response) => {
+			.then((response) => {
 				expect(response).to.have.status(400);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
 				expect(response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
