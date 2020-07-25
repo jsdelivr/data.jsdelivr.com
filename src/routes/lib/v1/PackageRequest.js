@@ -9,8 +9,8 @@ const isSemverStatic = require('is-semver-static');
 const vCompare = require('v-compare');
 const NumberAbbreviate = require('number-abbreviate');
 const number = new NumberAbbreviate([ 'k', 'M', 'B', 'T' ]);
-const PromiseCache = require('../../../lib/promise-cache');
-const fetchCache = new PromiseCache({ maxAge: 60 * 1000 }).autoClear();
+const PromiseCacheShared = require('../../../lib/promise-cache-shared');
+const fetchCache = new PromiseCacheShared('v1/pr');
 const badgeFactory = new BadgeFactory();
 
 const BaseRequest = require('./BaseRequest');
@@ -65,9 +65,9 @@ class PackageRequest extends BaseRequest {
 
 	async fetchMetadata () {
 		if (this.params.type === 'npm') {
-			return fetchNpmMetadata(this.params.name);
+			return fetchNpmMetadata(this.params.name, v1Config[this.params.type].maxAge);
 		} else if (this.params.type === 'gh') {
-			return fetchGitHubMetadata(this.params.user, this.params.repo);
+			return fetchGitHubMetadata(this.params.user, this.params.repo, v1Config[this.params.type].maxAge);
 		}
 
 		throw new Error(`Unknown package type ${this.params.type}.`);
@@ -128,19 +128,7 @@ class PackageRequest extends BaseRequest {
 	}
 
 	async getMetadata () {
-		return JSON.parse(await this.getMetadataAsJson());
-	}
-
-	async getMetadataAsJson () {
-		let metadata = await redis.getCompressedAsync(this.keys.metadata);
-
-		if (metadata) {
-			return metadata;
-		}
-
-		metadata = JSON.stringify(await this.fetchMetadata(), null, '\t');
-		await redis.setCompressedAsync(this.keys.metadata, metadata, 'EX', v1Config[this.params.type].maxAge);
-		return metadata;
+		return this.fetchMetadata();
 	}
 
 	async getRank () {
@@ -177,18 +165,18 @@ class PackageRequest extends BaseRequest {
 				this.ctx.maxStaleError = v1Config.maxStaleStatic;
 			}
 		} catch (e) {
-			return this.responseNotFound();
+			return this.responseFromRemoteError(e);
 		}
 	}
 
 	async handleVersions () {
 		try {
-			this.ctx.body = await this.getMetadataAsJson();
+			this.ctx.body = await this.getMetadata();
 			this.ctx.maxAge = v1Config.maxAgeShort;
 			this.ctx.maxStale = v1Config.maxStaleShort;
 			this.ctx.maxStaleError = v1Config.maxStaleErrorShort;
 		} catch (e) {
-			return this.responseNotFound();
+			return this.responseFromRemoteError(e);
 		}
 	}
 
@@ -241,7 +229,7 @@ class PackageRequest extends BaseRequest {
 			try {
 				metadata = await this.getMetadata();
 			} catch (e) {
-				return this.responseNotFound();
+				return this.responseFromRemoteError(e);
 			}
 
 			if (!metadata.versions.includes(this.params.version)) {
@@ -290,6 +278,14 @@ class PackageRequest extends BaseRequest {
 		this.setCacheHeader();
 	}
 
+	async responseFromRemoteError (error) {
+		if (error.response && error.response.statusCode === 404) {
+			return this.responseNotFound();
+		}
+
+		this.ctx.status = error instanceof got.TimeoutError || error.code === 'ETIMEDOUT' ? 504 : 502;
+	}
+
 	async responseNotFound () {
 		this.ctx.body = {
 			status: 404,
@@ -304,13 +300,14 @@ module.exports = PackageRequest;
  * Fetches repo tags from GitHub.
  * @param {string} user
  * @param {string} repo
+ * @param {number} maxAge
  * @return {Promise<Object>}
  */
-async function fetchGitHubMetadata (user, repo) {
+async function fetchGitHubMetadata (user, repo, maxAge) {
 	apmClient.addLabels({ githubUser: user });
 	apmClient.addLabels({ githubRepo: repo });
 
-	return fetchCache.get(`gh/${user}/${repo}`, () => {
+	return fetchCache.get(`gh/${user}/${repo}`, (cache) => {
 		return githubApi.paginate(githubApi.repos.listTags.endpoint.merge({ repo, owner: user, per_page: 100 })).then((data) => {
 			apmClient.addLabels({ githubTagCount: data.length });
 
@@ -322,37 +319,56 @@ async function fetchGitHubMetadata (user, repo) {
 
 			return { tags: [], versions: _.uniq(_.map(data, 'name').filter(v => v).sort(vCompare.rCompare)) };
 		}).catch((error) => {
+			// mimic got interface that's used in other places
+			error.response = { statusCode: error.status };
+
 			// istanbul ignore next
 			if (error.status === 404) {
 				apmClient.addLabels({ githubRepoNotFound: '1' });
+				cache({ response: error.response }, maxAge * 2);
 			}
 
-			if (error.status === 403 && !error.block) { // TODO: check if this is correct and unify with origin
-				log.error(`GitHub API rate limit exceeded.`, error);
+			if (error.status === 403) {
+				if (error.block) {
+					cache({ response: error.response }, maxAge * 2);
+				} else {
+					log.error(`GitHub API rate limit exceeded.`, error);
+				}
 			}
 
 			throw error;
 		});
-	});
+	}, maxAge);
 }
 
 /**
  * Sends a query to all configured registries and returns the first response.
  * @param {string} name
+ * @param {number} maxAge
  * @return {Promise<Object>}
  */
-async function fetchNpmMetadata (name) {
-	return fetchCache.get(`npm/${name}`, async () => {
+async function fetchNpmMetadata (name, maxAge) {
+	return fetchCache.get(`npm/${name}`, async (cache) => {
 		name = name.charAt(0) === '@' ? '@' + encodeURIComponent(name.substr(1)) : encodeURIComponent(name);
-		let response;
+		let promise;
 
 		if (typeof v1Config.npm.sourceUrl === 'string') {
-			response = await got(`${v1Config.npm.sourceUrl}/${name}`, { json: true, timeout: 30000 });
+			promise = got(`${v1Config.npm.sourceUrl}/${name}`, { json: true, timeout: 30000 });
 		} else {
-			response = await Bluebird.any(_.map(v1Config.npm.sourceUrl, (sourceUrl) => {
+			promise = Bluebird.any(_.map(v1Config.npm.sourceUrl, (sourceUrl) => {
 				return got(`${sourceUrl}/${name}`, { json: true, timeout: 30000 });
-			}));
+			})).catch((e) => {
+				throw e[0]; // throw one of the original errors instead of bluebird's AggregateError
+			});
 		}
+
+		let response = await promise.catch((error) => {
+			if (error.response && error.response.statusCode === 404) {
+				cache({ response: { statusCode: error.response.statusCode } });
+			}
+
+			throw error;
+		});
 
 		if (!response.body || !response.body.versions) {
 			throw new Error(`Unable to retrieve versions for package ${name}.`);
@@ -362,5 +378,5 @@ async function fetchNpmMetadata (name) {
 			tags: response.body['dist-tags'],
 			versions: Object.keys(response.body.versions).sort(semver.rcompare),
 		};
-	});
+	}, maxAge);
 }
