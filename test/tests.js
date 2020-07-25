@@ -4,15 +4,13 @@ require('../src/lib/startup');
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const nock = require('nock');
-const expect = chai.expect;
+const expect = chai.expect = require('expect-assert')(chai.expect);
 
 chai.use(chaiHttp);
 nock.disableNetConnect();
 nock.enableNetConnect('127.0.0.1');
 
 const server = require('../src');
-
-chai.use(chaiHttp);
 
 describe('Other', function () {
 	this.timeout(10000);
