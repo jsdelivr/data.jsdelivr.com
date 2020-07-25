@@ -82,6 +82,19 @@ describe('v1', function () {
 			.get('/npm/emojione@3.1.1/+private-json')
 			.reply(403, upstreamCdnResponses['/npm/emojione@3.1.1/+private-json']);
 
+		nock('https://registry.npmjs.cf')
+			.get('/foo')
+			.reply(404);
+
+		nock('https://registry.npmjs.org')
+			.get('/foo')
+			.reply(404);
+
+		nock('https://api.github.com')
+			.get('/repos/jquery/jqueryxxx/tags')
+			.query({ per_page: 100 })
+			.reply(404);
+
 		nock('https://registry.npmjs.org')
 			.get(/.*/)
 			.times(Infinity)
