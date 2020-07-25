@@ -376,3 +376,21 @@ async function fetchNpmMetadata (name, maxAge) {
 		};
 	}, maxAge);
 }
+
+setTimeout(() => {
+	if (apmClient.isStarted()) {
+		let remaining = 0;
+
+		setInterval(() => {
+			githubApi.rateLimit.get().then((response) => {
+				remaining = response.data.resources.core.remaining;
+			}).catch(() => {});
+		}, 30 * 1000);
+
+		setTimeout(() => {
+			apmClient.registerMetric('github.remaining', () => {
+				return remaining;
+			});
+		}, 40 * 1000);
+	}
+}, 10 * 1000);
