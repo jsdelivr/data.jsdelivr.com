@@ -378,7 +378,7 @@ async function fetchNpmMetadata (name, maxAge) {
 }
 
 setTimeout(() => {
-	if (apmClient.isStarted()) {
+	if (apmClient._conf.active) {
 		let remaining = 0;
 
 		setInterval(() => {
