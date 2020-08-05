@@ -36,14 +36,28 @@ class PackageRequest extends BaseRequest {
 	}
 
 	async fetchFiles () {
-		return jsDelivrRemoteService.listFiles(this.params.type, this.params.name, this.params.version).then(remoteResource => remoteResource.data);
+		return jsDelivrRemoteService.usingContext(this.ctx).listFiles(this.params.type, this.params.name, this.params.version);
 	}
 
 	async fetchMetadata () {
 		if (this.params.type === 'npm') {
-			return fetchNpmMetadata(this.params.name);
+			return npmRemoteService.usingContext(this.ctx).listVersionsAndTags(this.params.name);
 		} else if (this.params.type === 'gh') {
-			return fetchGitHubMetadata(this.params.user, this.params.repo);
+			apmClient.addLabels({ githubUser: this.params.user });
+			apmClient.addLabels({ githubRepo: this.params.repo });
+
+			return gitHubRemoteService.usingContext(this.ctx).listTags(this.params.user, this.params.repo).then((data) => {
+				return { tags: [], versions: data };
+			}).catch((error) => {
+				// istanbul ignore next
+				if (error.statusCode === 404) {
+					apmClient.addLabels({ githubRepoNotFound: '1' });
+				} else if (error.status === 403 && !error.block) {
+					log.error(`GitHub API rate limit exceeded.`, error);
+				}
+
+				throw error;
+			});
 		}
 
 		throw new Error(`Unknown package type ${this.params.type}.`);
@@ -278,9 +292,7 @@ async function fetchGitHubMetadata (user, repo) {
 	apmClient.addLabels({ githubUser: user });
 	apmClient.addLabels({ githubRepo: repo });
 
-	return gitHubRemoteService.listTags(user, repo).then((remoteResource) => {
-		return { tags: [], versions: remoteResource.data };
-	}).catch((error) => {
+	return gitHubRemoteService.listTags(user, repo).catch((error) => {
 		// istanbul ignore next
 		if (error.statusCode === 404) {
 			apmClient.addLabels({ githubRepoNotFound: '1' });

@@ -145,7 +145,9 @@ server.use(async (ctx, next) => {
 		ctx.maxStaleError = ctx.maxStale;
 	}
 
-	if (ctx.maxAge) {
+	if (ctx.isStale) {
+		ctx.set('Cache-Control', `public, max-age=10, stale-if-error=60`);
+	} else if (ctx.maxAge) {
 		ctx.set('Cache-Control', `public, max-age=${ctx.maxAge}${ctx.maxStale ? `, stale-while-revalidate=${ctx.maxStale}, stale-if-error=${ctx.maxStaleError}` : ''}`);
 	} else if (ctx.expires) {
 		ctx.set('Cache-Control', `public${ctx.maxStale ? `, stale-while-revalidate=${ctx.maxStale}, stale-if-error=${ctx.maxStaleError}` : ''}`);

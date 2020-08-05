@@ -26,6 +26,32 @@ class RemoteService {
 			return exec(uri, cached);
 		});
 	}
+
+	usingContext (ctx) {
+		return new Proxy(this, {
+			get (target, property) {
+				if (typeof target[property] !== 'function') {
+					return target[property];
+				}
+
+				let processResource = (remoteResource) => {
+					if (remoteResource.isStale) {
+						ctx.isStale = true;
+					}
+
+					return remoteResource;
+				};
+
+				return (...args) => {
+					return target[property](...args).then((remoteResource) => {
+						return processResource(remoteResource).data;
+					}).catch((error) => {
+						throw processResource(error);
+					});
+				};
+			},
+		});
+	}
 }
 
 module.exports = RemoteService;

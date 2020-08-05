@@ -57,8 +57,12 @@ class PromiseCacheShared {
 
 		let [ cached, ttl ] = await this.getCachedValue(key);
 
+		if (cached) {
+			cached.v.age = cached.v.ttlInternalStore - ttl;
+		}
+
 		// Already cached.
-		if (cached !== null && cached.v.ttlInternalStore - ttl <= cached.v.ttlInternalRevalidate) {
+		if (cached && !cached.v.isStale) {
 			return cached.s === STATUS_REJECTED ? Bluebird.reject(cached.v) : cached.v;
 		}
 
@@ -68,17 +72,31 @@ class PromiseCacheShared {
 
 		// Wrapped in Promise.resolve() to make sure it's a Bluebird promise because
 		// .finally() behaves differently with some promises.
-		return Bluebird.resolve(value).finally(() => {
+		let done = Bluebird.resolve(value).finally(() => {
 			value.then((v) => {
 				return this.store({ key, v, s: STATUS_RESOLVED }, v.ttlInternalStore).then(() => {
 					this.pendingL.del(key);
 				});
 			}).catch((v) => {
+				if (cached && cached.v.staleIfError) {
+					this.pendingL.del(key);
+					return cached.v;
+				}
+
 				return this.store({ key, v, s: STATUS_REJECTED }, v.ttlInternalStore).then(() => {
 					this.pendingL.del(key);
 				});
 			});
 		});
+
+		// This will work only for the first request because the new promise
+		// is added to pendingL right away. Should be ok for our use case.
+		if (cached && cached.v.staleWhileRevalidate) {
+			done.catch(() => {});
+			return cached.v;
+		}
+
+		return done;
 	}
 
 	/**

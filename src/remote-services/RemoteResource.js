@@ -2,6 +2,10 @@ class RemoteResource extends Error {
 	constructor ({ statusCode, headers = {}, parts = [], data, ...props }, error = null, isFromCache = false) {
 		super(`Response status ${statusCode}.`);
 
+		this.age = 0;
+		this.staleIfError = true;
+		this.staleWhileRevalidate = true;
+
 		this.statusCode = statusCode;
 		this.headers = headers;
 		this.parts = parts;
@@ -18,6 +22,10 @@ class RemoteResource extends Error {
 
 	get defaultTtlInternalStore () {
 		return 0;
+	}
+
+	get isStale () {
+		return this.age > this.ttlInternalRevalidate;
 	}
 
 	get ttlInternalRevalidate () {
