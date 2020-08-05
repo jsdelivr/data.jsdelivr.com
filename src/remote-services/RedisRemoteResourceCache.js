@@ -1,8 +1,8 @@
 const LRU = require('lru-cache');
-const redis = require('../redis');
-const JSONPP = require('../jsonpp');
+const redis = require('../lib/redis');
+const JSONPP = require('../lib/jsonpp');
 
-const ArrayStream = require('../array-stream');
+const ArrayStream = require('../lib/array-stream');
 const arrayStream = new ArrayStream(JSONPP);
 
 const STATUS_PENDING = 0;
@@ -13,12 +13,14 @@ const VALUE_TYPE_OBJECT = '0';
 const VALUE_TYPE_STRING = '1';
 const VALUE_TYPE_ARRAY = '2';
 
+// TODO: this is an experimental implementation based on promise-lock and shares a lot of code with it.
+// If it works well it should be merged somehow.
 class PromiseCacheShared {
 	/**
 	 * Provides a multi-process locking and caching mechanism backed by redis.
 	 * @param {string} prefix
 	 */
-	constructor ({ prefix = 'pc/' } = {}) {
+	constructor ({ prefix = 'rrrc/' } = {}) {
 		this.prefix = prefix;
 		this.pendingL = new LRU({});
 	}
@@ -42,52 +44,39 @@ class PromiseCacheShared {
 	}
 
 	/**
-	 * Returns the stored value for the given key from cache or executes fn() if it is not cached.
-	 * Guarantees that there are no concurrent calls of fn() across all processes.
-	 *
 	 * @param {string} key
 	 * @param {function} fn
-	 * @param {number} [maxAge]
 	 * @returns {Promise<*>}
 	 */
-	async get (key, fn, maxAge = 10 * 60) {
+	async getOrExec (key, fn) {
 		let value = this.pendingL.get(key);
 
 		if (value) {
 			return value;
 		}
 
-		value = await this.getCachedValue(key);
+		let [ cached, ttl ] = await this.getCachedValue(key);
 
 		// Already cached.
-		if (value !== null) {
-			return value.s === STATUS_REJECTED ? Bluebird.reject(value.v) : value.v;
+		if (cached !== null && cached.v.ttlInternalStore - ttl <= cached.v.ttlInternalRevalidate) {
+			return cached.s === STATUS_REJECTED ? Bluebird.reject(cached.v) : cached.v;
 		}
 
-		let forceCache;
+		value = fn(cached && cached.v);
 
-		value = fn((data, newMaxAge = maxAge) => {
-			forceCache = data;
-			maxAge = newMaxAge;
-		});
-
-		this.pendingL.set(key, value, maxAge * 1000);
+		this.pendingL.set(key, value, value.ttlInternalStore * 1000);
 
 		// Wrapped in Promise.resolve() to make sure it's a Bluebird promise because
 		// .finally() behaves differently with some promises.
 		return Bluebird.resolve(value).finally(() => {
 			value.then((v) => {
-				return this.store({ key, v, s: STATUS_RESOLVED }, maxAge).then(() => {
+				return this.store({ key, v, s: STATUS_RESOLVED }, v.ttlInternalStore).then(() => {
 					this.pendingL.del(key);
 				});
-			}).catch(() => {
-				if (forceCache) {
-					return this.store({ key, v: forceCache, s: STATUS_REJECTED }, maxAge).then(() => {
-						this.pendingL.del(key);
-					});
-				}
-
-				this.pendingL.del(key);
+			}).catch((v) => {
+				return this.store({ key, v, s: STATUS_REJECTED }, v.ttlInternalStore).then(() => {
+					this.pendingL.del(key);
+				});
 			});
 		});
 	}
@@ -99,8 +88,8 @@ class PromiseCacheShared {
 	 */
 	async getCachedValue (key) {
 		let rKey = this.getRedisKey(key);
-		let result = await redis.getCompressedAsync(rKey);
-		return result ? PromiseCacheShared.parse(result) : null;
+		let result = await redis.multi().get(rKey).ttl(rKey).execAsync();
+		return result[0] ? [ await PromiseCacheShared.parse(await redis.decompress(result[0])), result[1] ] : [ null ];
 	}
 
 	/**
@@ -119,6 +108,10 @@ class PromiseCacheShared {
 	 * @private
 	 */
 	async store (message, maxAge) {
+		if (!maxAge) {
+			return;
+		}
+
 		let key = this.getRedisKey(message.key);
 		let res = await redis.compress(await PromiseCacheShared.serialize(message));
 
@@ -194,12 +187,8 @@ class ScopedPromiseCacheShared {
 		}
 	}
 
-	get (key, fn, maxAge) {
-		return module.exports.promiseCacheShared.get(`${this.scope}/${key}`, fn, maxAge);
-	}
-
-	refresh (key, maxAge) {
-		return redis.eexpireAsync(module.exports.promiseCacheShared.getRedisKey(`${this.scope}/${key}`), maxAge);
+	getOrExec (key, fn) {
+		return module.exports.promiseCacheShared.getOrExec(`${this.scope}${key}`, fn);
 	}
 }
 

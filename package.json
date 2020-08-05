@@ -18,6 +18,7 @@
 		"got": "^9.6.0",
 		"h-logger2": "^1.0.3",
 		"h-logger2-elastic": "^3.0.0",
+		"http-link-header": "^1.0.2",
 		"is-hexdigest": "^1.0.1",
 		"is-semver-static": "^1.0.0",
 		"joi": "^17.1.1",

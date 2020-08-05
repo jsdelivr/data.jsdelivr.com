@@ -50,7 +50,14 @@ describe('v1', function () {
 		nock('https://api.github.com')
 			.get('/repos/jquery/jquery/tags')
 			.query({ per_page: 100 })
-			.reply(200, upstreamGitHubResponses['/repos/jquery/jquery/tags']);
+			.reply(200, upstreamGitHubResponses['/repos/jquery/jquery/tags'], {
+				link: '<https://api.github.com/repos/jquery/jquery/tags?page=2>; rel="next"',
+			});
+
+		nock('https://api.github.com')
+			.get('/repos/jquery/jquery/tags')
+			.query({ per_page: 100, page: 2 })
+			.reply(200, upstreamGitHubResponses['/repos/jquery/jquery/tags/2']);
 
 		nock('https://api.github.com')
 			.get('/repos/adobe/source-sans-pro/tags')

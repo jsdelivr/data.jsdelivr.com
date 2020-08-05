@@ -38,3 +38,7 @@ global.db = require('./db');
 
 const JSONPP = require('./jsonpp');
 JSONPP.addConstructor(require('./promise-lock').PromiseLockError);
+JSONPP.addConstructor(require('../remote-services/RemoteResource'));
+JSONPP.addConstructor(require('../remote-services/NpmRemoteResource'));
+JSONPP.addConstructor(require('../remote-services/GitHubRemoteResource'));
+JSONPP.addConstructor(require('../remote-services/JsDelivrRemoteResource'));

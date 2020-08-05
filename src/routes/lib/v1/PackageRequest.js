@@ -1,16 +1,11 @@
 const got = require('got');
 const semver = require('semver');
 const config = require('config');
-const { Octokit } = require('@octokit/rest');
-const promiseRetry = require('promise-retry');
 const BadgeFactory = require('gh-badges').BadgeFactory;
 const isSha = require('is-hexdigest');
 const isSemverStatic = require('is-semver-static');
-const vCompare = require('v-compare');
 const NumberAbbreviate = require('number-abbreviate');
 const number = new NumberAbbreviate([ 'k', 'M', 'B', 'T' ]);
-const PromiseCacheShared = require('../../../lib/promise-cache-shared');
-const fetchCache = new PromiseCacheShared('v1/pr');
 const badgeFactory = new BadgeFactory();
 
 const BaseRequest = require('./BaseRequest');
@@ -20,15 +15,15 @@ const PackageVersion = require('../../../models/PackageVersion');
 const dateRange = require('../../utils/dateRange');
 const sumDeep = require('../../utils/sumDeep');
 
+const NpmRemoteService = require('../../../remote-services/NpmRemoteService');
+const GitHubRemoteService = require('../../../remote-services/GitHubRemoteService');
+const JsDelivrRemoteService = require('../../../remote-services/JsDelivrRemoteService');
+const RedisRemoteResourceCache = require('../../../remote-services/RedisRemoteResourceCache');
+
 const v1Config = config.get('v1');
-const githubApi = new Octokit({
-	auth: `token ${v1Config.gh.apiToken}`,
-	baseUrl: v1Config.gh.sourceUrl,
-	userAgent: 'jsDelivr API backend',
-	request: {
-		timeout: 30000,
-	},
-});
+const npmRemoteService = new NpmRemoteService({ baseUrl: v1Config.npm.sourceUrl }, new RedisRemoteResourceCache('pr/npm'));
+const gitHubRemoteService = new GitHubRemoteService({ auth: `token ${v1Config.gh.apiToken}`, baseUrl: v1Config.gh.sourceUrl }, new RedisRemoteResourceCache('pr/gh'));
+const jsDelivrRemoteService = new JsDelivrRemoteService({ baseUrl: v1Config.cdn.sourceUrl }, new RedisRemoteResourceCache('pr/jsd'));
 
 class PackageRequest extends BaseRequest {
 	constructor (ctx) {
@@ -41,33 +36,14 @@ class PackageRequest extends BaseRequest {
 	}
 
 	async fetchFiles () {
-		let url = `${v1Config.cdn.sourceUrl}/${this.params.type}/${this.params.name}@${encodeURIComponent(this.params.version)}/+private-json`;
-
-		return fetchCache.get(url, () => {
-			return promiseRetry((retry) => {
-				return got(url, { json: true, timeout: 30000 }).then((response) => {
-					return _.pick(response.body, [ 'default', 'files' ]);
-				}).catch((error) => {
-					if (error instanceof got.HTTPError && error.response.statusCode === 403) {
-						return {
-							status: error.response.statusCode,
-							message: error.response.body,
-						};
-					} else if (error instanceof got.ParseError) {
-						return retry(error);
-					}
-
-					throw error;
-				});
-			}, { retries: 2 });
-		});
+		return jsDelivrRemoteService.listFiles(this.params.type, this.params.name, this.params.version).then(remoteResource => remoteResource.data);
 	}
 
 	async fetchMetadata () {
 		if (this.params.type === 'npm') {
-			return fetchNpmMetadata(this.params.name, v1Config[this.params.type].maxAge);
+			return fetchNpmMetadata(this.params.name);
 		} else if (this.params.type === 'gh') {
-			return fetchGitHubMetadata(this.params.user, this.params.repo, v1Config[this.params.type].maxAge);
+			return fetchGitHubMetadata(this.params.user, this.params.repo);
 		}
 
 		throw new Error(`Unknown package type ${this.params.type}.`);
@@ -244,17 +220,17 @@ class PackageRequest extends BaseRequest {
 			this.ctx.body = await this.getFiles(); // Can't use AsJson() version here because we need to set correct status code on cached errors.
 			this.ctx.maxAge = v1Config.maxAgeStatic;
 			this.ctx.maxStale = v1Config.maxStaleStatic;
-		} catch (error) {
-			if (error instanceof got.RequestError || error instanceof got.TimeoutError) {
-				return this.ctx.status = error.code === 'ETIMEDOUT' ? 504 : 502;
-			} else if (error instanceof got.HTTPError) {
+		} catch (remoteResourceOrError) {
+			if (remoteResourceOrError.error instanceof got.RequestError || remoteResourceOrError.error instanceof got.TimeoutError) {
+				return this.ctx.status = remoteResourceOrError.error.code === 'ETIMEDOUT' ? 504 : 502;
+			} else if (remoteResourceOrError.statusCode) {
 				return this.ctx.body = {
-					status: error.response.statusCode || 502,
-					message: error.response.body,
+					status: remoteResourceOrError.statusCode || 502,
+					message: remoteResourceOrError.data,
 				};
 			}
 
-			throw error;
+			throw remoteResourceOrError;
 		}
 	}
 
@@ -278,11 +254,11 @@ class PackageRequest extends BaseRequest {
 		this.setCacheHeader();
 	}
 
-	async responseFromRemoteError (error) {
+	async responseFromRemoteError (remoteResource) {
 		this.ctx.body = {
-			status: error.response && error.response.statusCode === 404
+			status: remoteResource.statusCode === 404
 				? 404
-				: error instanceof got.TimeoutError || error.code === 'ETIMEDOUT'
+				: remoteResource.error instanceof got.TimeoutError || remoteResource.code === 'ETIMEDOUT'
 					? 504
 					: 502,
 			message: this.params.version ? `Couldn't find ${this.params.name}@${this.params.version}.` : `Couldn't fetch versions for ${this.params.name}.`,
@@ -296,101 +272,37 @@ module.exports = PackageRequest;
  * Fetches repo tags from GitHub.
  * @param {string} user
  * @param {string} repo
- * @param {number} maxAge
  * @return {Promise<Object>}
  */
-async function fetchGitHubMetadata (user, repo, maxAge) {
+async function fetchGitHubMetadata (user, repo) {
 	apmClient.addLabels({ githubUser: user });
 	apmClient.addLabels({ githubRepo: repo });
 
-	return fetchCache.get(`gh/${user}/${repo}`, (cache) => {
-		return githubApi.paginate(githubApi.repos.listTags.endpoint.merge({ repo, owner: user, per_page: 100 })).then((data) => {
-			apmClient.addLabels({ githubTagCount: data.length });
+	return gitHubRemoteService.listTags(user, repo).then((remoteResource) => {
+		return { tags: [], versions: remoteResource.data };
+	}).catch((error) => {
+		// istanbul ignore next
+		if (error.statusCode === 404) {
+			apmClient.addLabels({ githubRepoNotFound: '1' });
+		} else if (error.status === 403 && !error.block) {
+			log.error(`GitHub API rate limit exceeded.`, error);
+		}
 
-			data.forEach((tag) => {
-				if (tag.name.charAt(0) === 'v') {
-					tag.name = tag.name.substr(1);
-				}
-			});
-
-			return { tags: [], versions: _.uniq(_.map(data, 'name').filter(v => v).sort(vCompare.rCompare)) };
-		}).catch((error) => {
-			// mimic got interface that's used in other places
-			error.response = { statusCode: error.status };
-
-			// istanbul ignore next
-			if (error.status === 404) {
-				apmClient.addLabels({ githubRepoNotFound: '1' });
-				cache({ response: error.response }, maxAge * 2);
-			}
-
-			if (error.status === 403) {
-				if (error.block) {
-					cache({ response: error.response }, maxAge * 2);
-				} else {
-					log.error(`GitHub API rate limit exceeded.`, error);
-				}
-			}
-
-			throw error;
-		});
-	}, maxAge);
+		throw error;
+	});
 }
 
 /**
  * Sends a query to all configured registries and returns the first response.
  * @param {string} name
- * @param {number} maxAge
  * @return {Promise<Object>}
  */
-async function fetchNpmMetadata (name, maxAge) {
-	return fetchCache.get(`npm/${name}`, async (cache) => {
-		name = name.charAt(0) === '@' ? '@' + encodeURIComponent(name.substr(1)) : encodeURIComponent(name);
-		let promise;
-
-		if (typeof v1Config.npm.sourceUrl === 'string') {
-			promise = got(`${v1Config.npm.sourceUrl}/${name}`, { json: true, timeout: 30000 });
-		} else {
-			promise = Bluebird.any(_.map(v1Config.npm.sourceUrl, (sourceUrl) => {
-				return got(`${sourceUrl}/${name}`, { json: true, timeout: 30000 });
-			})).catch((e) => {
-				throw e[0]; // throw one of the original errors instead of bluebird's AggregateError
-			});
-		}
-
-		let response = await promise.catch((error) => {
-			if (error.response && error.response.statusCode === 404) {
-				cache({ response: { statusCode: error.response.statusCode } });
-			}
-
-			throw error;
-		});
-
-		if (!response.body || !response.body.versions) {
-			throw new Error(`Unable to retrieve versions for package ${name}.`);
-		}
-
-		return {
-			tags: response.body['dist-tags'],
-			versions: Object.keys(response.body.versions).sort(semver.rcompare),
-		};
-	}, maxAge);
+async function fetchNpmMetadata (name) {
+	return npmRemoteService.listVersionsAndTags(name).then(remoteResource => remoteResource.data);
 }
 
 setTimeout(() => {
 	if (apmClient._conf.active) {
-		let remaining = 0;
-
-		setInterval(() => {
-			githubApi.rateLimit.get().then((response) => {
-				remaining = response.data.resources.core.remaining;
-			}).catch(() => {});
-		}, 30 * 1000);
-
-		setTimeout(() => {
-			apmClient.registerMetric('github.remaining', () => {
-				return remaining;
-			});
-		}, 40 * 1000);
+		gitHubRemoteService.reportUsage();
 	}
 }, 10 * 1000);
