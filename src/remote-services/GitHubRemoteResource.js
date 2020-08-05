@@ -7,7 +7,7 @@ class GitHubRemoteResource extends RemoteResource {
 		if (this.statusCode === 200) {
 			return baseTtl;
 		} else if (this.statusCode === 403) {
-			return this.error.block ? baseTtl * 6 : 0;
+			return this.error.block ? oneWeek : 0;
 		} else if (this.statusCode === 404) {
 			return baseTtl * 6;
 		}
