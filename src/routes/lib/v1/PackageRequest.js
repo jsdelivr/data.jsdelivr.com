@@ -282,37 +282,6 @@ class PackageRequest extends BaseRequest {
 
 module.exports = PackageRequest;
 
-/**
- * Fetches repo tags from GitHub.
- * @param {string} user
- * @param {string} repo
- * @return {Promise<Object>}
- */
-async function fetchGitHubMetadata (user, repo) {
-	apmClient.addLabels({ githubUser: user });
-	apmClient.addLabels({ githubRepo: repo });
-
-	return gitHubRemoteService.listTags(user, repo).catch((error) => {
-		// istanbul ignore next
-		if (error.statusCode === 404) {
-			apmClient.addLabels({ githubRepoNotFound: '1' });
-		} else if (error.status === 403 && !error.block) {
-			log.error(`GitHub API rate limit exceeded.`, error);
-		}
-
-		throw error;
-	});
-}
-
-/**
- * Sends a query to all configured registries and returns the first response.
- * @param {string} name
- * @return {Promise<Object>}
- */
-async function fetchNpmMetadata (name) {
-	return npmRemoteService.listVersionsAndTags(name).then(remoteResource => remoteResource.data);
-}
-
 setTimeout(() => {
 	if (apmClient._conf.active) {
 		gitHubRemoteService.reportUsage();
