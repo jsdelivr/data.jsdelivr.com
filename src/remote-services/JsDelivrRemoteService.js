@@ -40,11 +40,7 @@ class JsDelivrRemoteService extends RemoteService {
 		JsDelivrRemoteService.addConditionalHeaders(remoteResource, options);
 
 		return this.request(uri, options).then((response) => {
-			if (response.statusCode === 304) {
-				return remoteResource;
-			}
-
-			return response;
+			return JsDelivrRemoteService.processConditionalResponse(response, remoteResource);
 		});
 	}
 

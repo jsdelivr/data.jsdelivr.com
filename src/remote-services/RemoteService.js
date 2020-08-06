@@ -21,6 +21,18 @@ class RemoteService {
 		return options;
 	}
 
+	static processConditionalResponse (response, cached) {
+		if (response.statusCode !== 304) {
+			return response;
+		}
+
+		if (cached.statusCode < 200 || cached.statusCode >= 400) {
+			throw cached;
+		}
+
+		return cached;
+	}
+
 	requestWithCache (uri, exec) {
 		return this.resourceCache.getOrExec(uri, (cached) => {
 			return exec(uri, cached);

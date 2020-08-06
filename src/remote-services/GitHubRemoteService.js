@@ -101,7 +101,7 @@ class GitHubRemoteService extends RemoteService {
 
 		return this.request(uri, options).catch((error) => {
 			if (error.statusCode === 304) {
-				return remoteResource;
+				return GitHubRemoteService.processConditionalResponse(error, remoteResource);
 			}
 
 			throw error;
