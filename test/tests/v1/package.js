@@ -388,6 +388,21 @@ describe('/v1/package', () => {
 			});
 	});
 
+	it('GET /v1/package/npm/package-without-versions', () => {
+		return chai.request(server)
+			.get('/v1/package/npm/package-without-versions')
+			.then((response) => {
+				expect(response).to.have.status(404);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response.body).to.have.property('status', 404);
+				expect(response.body).to.have.property('message');
+			});
+	});
+
 	it('GET /v1/package/npm/foo@1', () => {
 		return chai.request(server)
 			.get('/v1/package/npm/foo@1')

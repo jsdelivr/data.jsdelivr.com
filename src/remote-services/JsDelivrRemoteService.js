@@ -17,12 +17,10 @@ class JsDelivrRemoteService extends RemoteService {
 					return remoteResource;
 				}
 
-				Object.assign(remoteResource, {
+				return Object.assign(remoteResource, {
 					data: _.pick(remoteResource.data, [ 'default', 'files' ]),
 					headers: _.pick(remoteResource.headers, 'etag', 'last-modified'),
 				});
-
-				return remoteResource;
 			}).catch((error) => {
 				if (error.statusCode === 403) {
 					Object.assign(error, {

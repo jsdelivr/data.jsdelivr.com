@@ -19,15 +19,22 @@ class NpmRemoteService extends RemoteService {
 					return remoteResource;
 				}
 
-				Object.assign(remoteResource, {
+				// This happens e.g. when a package is unpublished.
+				if (!remoteResource.data.versions || !Object.keys(remoteResource.data.versions).length) {
+					throw Object.assign(remoteResource, {
+						statusCode: 404,
+						headers: _.pick(remoteResource.headers, 'etag', 'last-modified'),
+						data: {},
+					});
+				}
+
+				return Object.assign(remoteResource, {
 					data: {
 						tags: remoteResource.data['dist-tags'],
 						versions: Object.keys(remoteResource.data.versions).sort(semver.rcompare),
 					},
 					headers: _.pick(remoteResource.headers, 'etag', 'last-modified'),
 				});
-
-				return remoteResource;
 			});
 		});
 	}

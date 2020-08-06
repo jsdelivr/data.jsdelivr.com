@@ -85,6 +85,10 @@ describe('v1', function () {
 			.get('/emojione')
 			.reply(200, upstreamNpmResponses['/emojione']);
 
+		nock('https://registry.npmjs.cf')
+			.get('/package-without-versions')
+			.reply(200, upstreamNpmResponses['/package-without-versions']);
+
 		nock('https://cdn.jsdelivr.net')
 			.get('/npm/emojione@3.1.1/+private-json')
 			.reply(403, upstreamCdnResponses['/npm/emojione@3.1.1/+private-json']);

@@ -7478,5 +7478,8 @@
 			"psbolden": true
 		},
 		"_attachments": { }
+	},
+	"/package-without-versions": {
+		"name": "package-without-versions"
 	}
 }
