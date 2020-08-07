@@ -81,7 +81,7 @@ class GitHubRemoteService extends RemoteService {
 			return this;
 		}
 
-		let remaining = 0;
+		let remaining = -1;
 
 		this.reportUsageInterval = setInterval(() => {
 			this.octokit.rateLimit.get().then((response) => {
