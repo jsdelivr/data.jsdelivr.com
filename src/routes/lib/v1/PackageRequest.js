@@ -128,17 +128,18 @@ class PackageRequest extends BaseRequest {
 
 	async getResolvedVersion () {
 		return this.getMetadata().then((metadata) => {
+			let requestedVersion = this.params.version || 'latest';
 			let versions = metadata.versions.filter(v => semver.valid(v) && !semver.prerelease(v)).sort(semver.rcompare);
 
-			if (metadata.versions.includes(this.params.version)) {
-				return this.params.version;
-			} else if ({}.hasOwnProperty.call(metadata.tags, this.params.version)) {
-				return metadata.tags[this.params.version];
-			} else if (this.params.version === 'latest' || !this.params.version) {
+			if (metadata.versions.includes(requestedVersion)) {
+				return requestedVersion;
+			} else if ({}.hasOwnProperty.call(metadata.tags, requestedVersion)) {
+				return metadata.tags[requestedVersion];
+			} else if (requestedVersion === 'latest') {
 				return versions[0] || null;
 			}
 
-			return semver.maxSatisfying(versions, this.params.version);
+			return semver.maxSatisfying(versions, requestedVersion);
 		});
 	}
 

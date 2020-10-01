@@ -148,6 +148,20 @@ describe('/v1/package', () => {
 			});
 	});
 
+	it('GET /v1/package/resolve/npm/jquery - implicit latest', () => {
+		return chai.request(server)
+			.get('/v1/package/resolve/npm/jquery')
+			.then((response) => {
+				expect(response).to.have.status(200);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=300, stale-while-revalidate=3600, stale-if-error=43200');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response.body).to.deep.equal({ version: '3.2.1' });
+			});
+	});
+
 	it('GET /v1/package/resolve/npm/jquery@xxx', () => {
 		return chai.request(server)
 			.get('/v1/package/resolve/npm/jquery@xxx')
