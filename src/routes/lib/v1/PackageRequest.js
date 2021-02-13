@@ -188,16 +188,16 @@ class PackageRequest extends BaseRequest {
 
 	async handlePackageBadgeRank () {
 		let rank = await this.getRank();
-		let text = "Error";
+		let text = 'error';
 
 		if (rank !== null) {
-			text = `#${rank}`
+			text = `#${rank}`;
 		}
 
 		this.ctx.type = 'image/svg+xml; charset=utf-8';
 
 		this.ctx.body = badgeFactory.create({
-			text: [ 'jsDelivr Rank', text ],
+			text: [ 'jsDelivr rank', text ],
 			colorB: '#ff5627',
 			template: this.ctx.query.style === 'rounded' ? 'flat' : 'flat-square',
 		});
