@@ -186,6 +186,25 @@ class PackageRequest extends BaseRequest {
 		this.setCacheHeaderDelayed();
 	}
 
+	async handlePackageBadgeRank () {
+		let rank = this.getRank();
+		let text = "Error";
+
+		if (rank !== null) {
+			text = `#${rank}`
+		}
+
+		this.ctx.type = 'image/svg+xml; charset=utf-8';
+
+		this.ctx.body = badgeFactory.create({
+			text: [ 'jsDelivr Rank', text ],
+			colorB: '#ff5627',
+			template: this.ctx.query.style === 'rounded' ? 'flat' : 'flat-square',
+		});
+
+		this.setCacheHeaderDelayed();
+	}
+
 	async handlePackageStats () {
 		if (this.params.groupBy === 'date') {
 			let data = await Package.getSumDateHitsPerVersionByName(this.params.type, this.params.name, ...this.dateRange);
