@@ -187,7 +187,7 @@ class PackageRequest extends BaseRequest {
 	}
 
 	async handlePackageBadgeRank () {
-		let rank = this.getRank();
+		let rank = await this.getRank();
 		let text = "Error";
 
 		if (rank !== null) {
