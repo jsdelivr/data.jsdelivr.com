@@ -35,7 +35,8 @@ The jsDelivr API allows you to:
  - [get package usage stats](#get-package-usage-stats)
  - [get package version usage stats](#get-package-version-usage-stats)
  - [get the most popular packages](#get-the-most-popular-packages)
- - [get a badge for your project](#get-a-badge-for-your-project)
+ - [get a hits badge for your project](#get-a-badge-for-your-project)
+ - [get a rank badge for your project](#get-a-rank-badge-for-your-project)
  - [get a CDN link/metadata from file hash](#get-a-cdn-linkmetadata-from-file-hash)
  - [search npm packages](#search-npm-packages)
 
@@ -300,6 +301,30 @@ https://data.jsdelivr.com/v1/package/npm/jquery/badge
 https://data.jsdelivr.com/v1/package/npm/jquery/badge?style=rounded
 ```
 ![https://www.jsdelivr.com/package/npm/jquery](https://data.jsdelivr.com/v1/package/npm/jquery/badge?style=rounded)
+
+### Get a rank badge for your project
+
+```
+/package/npm/:name/badge/rank/:period?
+ - name: npm package name
+ - period: "day", "week", "month", or "year"; defaults to "month"
+
+/package/gh/:user/:repo/badge/rank/:period?
+ - user: GitHub username
+ - repo: GitHub repository name
+ - period: "day", "week", "month", or "year"; defaults to "month"
+```
+
+**Example**
+```
+https://data.jsdelivr.com/v1/package/npm/jquery/badge/rank
+```
+![https://www.jsdelivr.com/package/npm/jquery](https://data.jsdelivr.com/v1/package/npm/jquery/badge/rank)
+
+```
+https://data.jsdelivr.com/v1/package/npm/jquery/badge?style=rounded
+```
+![https://www.jsdelivr.com/package/npm/jquery](https://data.jsdelivr.com/v1/package/npm/jquery/badge/rank?style=rounded)
 
 ### Get a CDN link/metadata from file hash
 
