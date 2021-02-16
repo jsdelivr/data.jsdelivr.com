@@ -322,7 +322,7 @@ https://data.jsdelivr.com/v1/package/npm/jquery/badge/rank
 ![https://www.jsdelivr.com/package/npm/jquery](https://data.jsdelivr.com/v1/package/npm/jquery/badge/rank)
 
 ```
-https://data.jsdelivr.com/v1/package/npm/jquery/badge?style=rounded
+https://data.jsdelivr.com/v1/package/npm/jquery/badge/rank?style=rounded
 ```
 ![https://www.jsdelivr.com/package/npm/jquery](https://data.jsdelivr.com/v1/package/npm/jquery/badge/rank?style=rounded)
 
