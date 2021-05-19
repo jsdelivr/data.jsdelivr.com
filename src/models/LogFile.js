@@ -6,6 +6,7 @@ const schema = Joi.object({
 	filename: Joi.string().max(255).required(),
 	updatedAt: Joi.date().required(),
 	processed: Joi.number().required(),
+	processAttemptsLeft: Joi.number().required(),
 	date: Joi.date().required(),
 });
 
@@ -37,6 +38,9 @@ class LogFile extends BaseModel {
 		/** @type {number} */
 		this.processed = 0;
 
+		/** @type {number} */
+		this.processAttemptsLeft = 10;
+
 		/** @type {Date} */
 		this.date = null;
 
@@ -50,6 +54,10 @@ class LogFile extends BaseModel {
 
 	static async findOlderThan (date) {
 		return Bluebird.map(db(this.table).where('updatedAt', '<', date).select(), data => new this(data).dbOut());
+	}
+
+	static async decrementAttempts (filename) {
+		await db(this.table).where('filename', filename).update('updatedAt', new Date()).decrement('processAttemptsLeft');
 	}
 
 	toSqlFunctionCall () {
