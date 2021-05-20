@@ -213,7 +213,7 @@ class PackageRequest extends BaseRequest {
 			this.ctx.body = {
 				rank: total ? await this.getRank() : null,
 				total,
-				dates: dateRange.fill(_.mapValues(data, ({ versions, commits }) => ({ total: sumDeep(versions), versions, commits })), ...this.dateRange, { total: 0, versions: {}, commits: {} }),
+				dates: dateRange.fill(_.mapValues(data, ({ versions, commits, branches }) => ({ total: sumDeep(versions), versions, commits, branches })), ...this.dateRange, { total: 0, versions: {}, commits: {}, branches: {} }),
 			};
 		} else {
 			let data = await Package.getSumVersionHitsPerDateByName(this.params.type, this.params.name, ...this.dateRange);
@@ -225,6 +225,7 @@ class PackageRequest extends BaseRequest {
 				total,
 				versions: fn(data.versions),
 				commits: fn(data.commits),
+				branches: fn(data.branches),
 			};
 		}
 

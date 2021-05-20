@@ -46,11 +46,11 @@ class File extends BaseModel {
 
 	static async getBySha256 (sha256) {
 		return db(this.table)
-			.where({ sha256 })
+			.where(`${this.table}.sha256`, sha256)
 			.join(PackageVersion.table, `${this.table}.packageVersionId`, '=', `${PackageVersion.table}.id`)
 			.join(Package.table, `${PackageVersion.table}.packageId`, '=', `${Package.table}.id`)
 			.orderBy(`${File.table}.id`)
-			.select([ 'type', 'name', 'version', 'filename as file' ])
+			.select([ `${Package.table}.type`, `${Package.table}.name`, `${PackageVersion.table}.version`, `${this.table}.filename as file` ])
 			.first();
 	}
 

@@ -5,6 +5,7 @@ const schema = Joi.object({
 	id: Joi.number().integer().min(0).required().allow(null),
 	packageId: Joi.number().integer().min(0).required().allow(null),
 	version: Joi.string().max(255).required(),
+	type: Joi.string().max(16).required(),
 });
 
 class PackageVersion extends BaseModel {
@@ -32,13 +33,18 @@ class PackageVersion extends BaseModel {
 		/** @type {string} */
 		this.version = null;
 
+		/** @type {string} */
+		this.type = null;
+
 		Object.assign(this, properties);
 		return new Proxy(this, BaseModel.ProxyHandler);
 	}
 
 	static async getHitsByNameAndVersion (type, name, version, from, to) {
 		let sql = db(this.table)
-			.where({ type, name, version })
+			.where(`${Package.table}.type`, type)
+			.andWhere(`${Package.table}.name`, name)
+			.andWhere(`${this.table}.version`, version)
 			.join(Package.table, `${this.table}.packageId`, '=', `${Package.table}.id`)
 			.join(File.table, `${this.table}.id`, '=', `${File.table}.packageVersionId`)
 			.join(FileHits.table, `${File.table}.id`, '=', `${FileHits.table}.fileId`);
@@ -67,7 +73,7 @@ class PackageVersion extends BaseModel {
 	}
 
 	toSqlFunctionCall () {
-		return db.raw(`set @lastIdPackageVersion = updateOrInsertPackageVersion(@lastIdPackage, ?);`, [ this.version ]);
+		return db.raw(`set @lastIdPackageVersion = updateOrInsertPackageVersion(@lastIdPackage, ?, ?);`, [ this.version, this.type ]);
 	}
 }
 

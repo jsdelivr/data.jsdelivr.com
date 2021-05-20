@@ -98,6 +98,7 @@ describe('/v1/package/stats', () => {
 
 	makePackageVersionStatsTests('npm', 'package-2', '1.1.0');
 	makePackageVersionStatsTests('gh', 'user/package-59', '1.1.2');
+	makePackageVersionStatsTests('gh', 'user/package-59', 'branch-1');
 
 	it(`GET /v1/package/npm/package-2/badge`, () => {
 		return chai.request(server)
