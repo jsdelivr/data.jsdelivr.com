@@ -40,3 +40,8 @@ set `pv`.`type` = (
         end
     )
 where `p`.`type` = 'gh';
+
+update `file` `f`
+    inner join `package_version` `pv` on `pv`.`id` = `f`.`packageVersionId`
+set `f`.`sha256` = null, `f`.`fetchAttemptsLeft` = 0
+where `pv`.`type` = 'branch';
