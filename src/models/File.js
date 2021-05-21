@@ -59,7 +59,7 @@ class File extends BaseModel {
 			.where(criteria)
 			.join(PackageVersion.table, `${this.table}.packageVersionId`, '=', `${PackageVersion.table}.id`)
 			.join(Package.table, `${PackageVersion.table}.packageId`, '=', `${Package.table}.id`)
-			.select([ '*', `${File.table}.id as fileId` ]);
+			.select([ '*', `${File.table}.id as fileId`, `${Package.table}.type as type` ]);
 	}
 
 	toSqlFunctionCall () {
