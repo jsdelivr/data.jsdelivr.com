@@ -63,7 +63,7 @@ class File extends BaseModel {
 	}
 
 	toSqlFunctionCall () {
-		return db.raw(`set @lastIdFile = updateOrInsertFile(@lastIdPackageVersion, ?);`, [ this.filename ]);
+		return db.raw(`set @lastIdFile = updateOrInsertFile(@lastIdPackageVersion, ?, ?);`, [ this.filename, this.fetchAttemptsLeft ]);
 	}
 }
 
