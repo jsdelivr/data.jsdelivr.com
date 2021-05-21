@@ -3,7 +3,7 @@ create function updateOrInsertPackageVersion(aPackageId int, aVersion varchar(25
 begin
     update `package_version`
     set `id` = last_insert_id(`id`)
-    where `packageId` = aPackageId and `version` = aVersion and `type` = aType;
+    where `packageId` = aPackageId and `version` = aVersion;
 
     if row_count() = 0 then
         insert into `package_version` (packageId, version, type)
