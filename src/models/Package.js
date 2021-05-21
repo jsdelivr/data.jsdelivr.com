@@ -1,5 +1,4 @@
 const Joi = require('joi');
-const isSha = require('is-hexdigest');
 const BaseCacheModel = require('./BaseCacheModel');
 
 const schema = Joi.object({
@@ -39,7 +38,8 @@ class Package extends BaseCacheModel {
 
 	static async getHitsByName (type, name, from, to) {
 		let sql = db(this.table)
-			.where({ type, name })
+			.where(`${this.table}.type`, type)
+			.andWhere(`${this.table}.name`, name)
 			.join(PackageVersion.table, `${this.table}.id`, '=', `${PackageVersion.table}.packageId`)
 			.join(PackageVersionHits.table, `${PackageVersion.table}.id`, '=', `${PackageVersionHits.table}.packageVersionId`);
 
@@ -51,7 +51,7 @@ class Package extends BaseCacheModel {
 			sql.where(`${PackageVersionHits.table}.date`, '<=', to);
 		}
 
-		return sql.select([ `${PackageVersion.table}.version`, `${PackageVersionHits.table}.date`, `${PackageVersionHits.table}.hits` ]);
+		return sql.select([ `${PackageVersion.table}.version`, `${PackageVersion.table}.type`, `${PackageVersionHits.table}.date`, `${PackageVersionHits.table}.hits` ]);
 	}
 
 	static async getSumDateHitsPerVersionByName (type, name, from, to) {
@@ -99,8 +99,8 @@ class Package extends BaseCacheModel {
 }
 
 function splitCommitsAndVersions (collection) {
-	let [ commits, versions ] = _.partition(collection, item => isSha(item.version, 'sha1'));
-	return { commits, versions };
+	let { commit: commits, version: versions, branch: branches } = _.groupBy(collection, item => item.type);
+	return { commits, versions, branches };
 }
 
 module.exports = Package;
