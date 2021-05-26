@@ -39,7 +39,7 @@ describe('v1', function () {
 		nock.disableNetConnect();
 		nock.enableNetConnect('127.0.0.1');
 
-		nock('https://registry.npmjs.cf')
+		nock('https://registry.npmjs.org')
 			.get('/jquery')
 			.reply(200, upstreamNpmResponses['/jquery']);
 
@@ -81,11 +81,11 @@ describe('v1', function () {
 			.get('/gh/jquery/jquery@821bf34353a6baf97f7944379a6459afb16badae/+private-json')
 			.reply(200, upstreamCdnResponses['/gh/jquery/jquery@821bf34353a6baf97f7944379a6459afb16badae/+private-json']);
 
-		nock('https://registry.npmjs.cf')
+		nock('https://registry.npmjs.org')
 			.get('/emojione')
 			.reply(200, upstreamNpmResponses['/emojione']);
 
-		nock('https://registry.npmjs.cf')
+		nock('https://registry.npmjs.org')
 			.get('/package-without-versions')
 			.reply(200, upstreamNpmResponses['/package-without-versions']);
 
@@ -93,7 +93,7 @@ describe('v1', function () {
 			.get('/npm/emojione@3.1.1/+private-json')
 			.reply(403, upstreamCdnResponses['/npm/emojione@3.1.1/+private-json']);
 
-		nock('https://registry.npmjs.cf')
+		nock('https://registry.npmjs.org')
 			.get('/foo')
 			.reply(404);
 
@@ -107,11 +107,6 @@ describe('v1', function () {
 			.reply(404);
 
 		nock('https://registry.npmjs.org')
-			.get(/.*/)
-			.times(Infinity)
-			.reply(504);
-
-		nock('https://registry.npmjs.cf')
 			.get(/.*/)
 			.times(Infinity)
 			.reply(504);

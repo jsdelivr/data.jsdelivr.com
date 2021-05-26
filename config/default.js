@@ -31,7 +31,7 @@ module.exports = {
 			sourceUrl: 'https://cdn.jsdelivr.net',
 		},
 		npm: {
-			sourceUrl: [ 'https://registry.npmjs.org', 'https://registry.npmjs.cf' ],
+			sourceUrl: [ 'https://registry.npmjs.org' ],
 		},
 		gh: {
 			apiToken: '',
