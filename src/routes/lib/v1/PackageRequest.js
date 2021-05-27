@@ -129,17 +129,16 @@ class PackageRequest extends BaseRequest {
 	async getResolvedVersion () {
 		return this.getMetadata().then((metadata) => {
 			let requestedVersion = this.params.version || 'latest';
-			let versions = metadata.versions.filter(v => semver.valid(v) && !semver.prerelease(v)).sort(semver.rcompare);
+			let versions = metadata.versions.filter(v => semver.valid(v));
 
 			if (metadata.versions.includes(requestedVersion)) {
 				return requestedVersion;
 			} else if ({}.hasOwnProperty.call(metadata.tags, requestedVersion)) {
 				return metadata.tags[requestedVersion];
-			} else if (requestedVersion === 'latest') {
-				return versions[0] || null;
 			}
 
-			return semver.maxSatisfying(versions, requestedVersion);
+			// "latest" is not actually a range, it's a tag - its equivalent (needed for GitHub sources) is an empty range
+			return semver.maxSatisfying(versions, requestedVersion === 'latest' ? '' : requestedVersion);
 		});
 	}
 
