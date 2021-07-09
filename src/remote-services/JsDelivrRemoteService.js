@@ -18,7 +18,7 @@ class JsDelivrRemoteService extends RemoteService {
 				}
 
 				return Object.assign(remoteResource, {
-					data: _.pick(remoteResource.data, [ 'default', 'files' ]),
+					data: _.pick(remoteResource.data, [ 'default', 'files', 'version' ]),
 					headers: _.pick(remoteResource.headers, 'etag', 'last-modified'),
 				});
 			}).catch((error) => {

@@ -2,13 +2,13 @@ const got = require('got');
 const semver = require('semver');
 const config = require('config');
 const BadgeFactory = require('gh-badges').BadgeFactory;
-const isSha = require('is-hexdigest');
 const isSemverStatic = require('is-semver-static');
 const NumberAbbreviate = require('number-abbreviate');
 const number = new NumberAbbreviate([ 'k', 'M', 'B', 'T' ]);
 const badgeFactory = new BadgeFactory();
 
 const BaseRequest = require('./BaseRequest');
+const BadVersionError = require('../errors/BadVersionError');
 const Package = require('../../../models/Package');
 const PackageListing = require('../../../models/PackageListing');
 const PackageVersion = require('../../../models/PackageVersion');
@@ -36,7 +36,15 @@ class PackageRequest extends BaseRequest {
 	}
 
 	async fetchFiles () {
-		return jsDelivrRemoteService.usingContext(this.ctx).listFiles(this.params.type, this.params.name, this.params.version);
+		let response = await jsDelivrRemoteService.usingContext(this.ctx).listFiles(this.params.type, this.params.name, this.params.version);
+
+		// We require specifying an exact version here. If the final version doesn't match the one from the request,
+		// the requested version was actually a range or a tag. Error responses don't return the version field.
+		if (response.version && response.version !== this.params.version) {
+			throw new BadVersionError();
+		}
+
+		return _.omit(response, 'version');
 	}
 
 	async fetchMetadata () {
@@ -232,29 +240,18 @@ class PackageRequest extends BaseRequest {
 	}
 
 	async handleVersionFiles () {
-		// Don't validate version if it's a commit hash.
-		if (this.params.type !== 'gh' || !isSha(this.params.version, 'sha1')) {
-			let metadata;
-
-			try {
-				metadata = await this.getMetadata();
-			} catch (e) {
-				return this.responseFromRemoteError(e);
-			}
-
-			if (!metadata.versions.includes(this.params.version)) {
-				return this.ctx.body = {
-					status: 404,
-					message: `Couldn't find version ${this.params.version} for ${this.params.name}. Make sure you use a specific version number, and not a version range or an npm tag.`,
-				};
-			}
-		}
-
 		try {
 			this.ctx.body = await this.getFiles(); // Can't use AsJson() version here because we need to set correct status code on cached errors.
 			this.ctx.maxAge = v1Config.maxAgeStatic;
 			this.ctx.maxStale = v1Config.maxStaleStatic;
 		} catch (remoteResourceOrError) {
+			if (remoteResourceOrError instanceof BadVersionError || remoteResourceOrError.statusCode === 404) {
+				return this.ctx.body = {
+					status: 404,
+					message: `Couldn't find version ${this.params.version} for ${this.params.name}. Make sure you use a specific version number, and not a version range or an npm tag.`,
+				};
+			}
+
 			if (remoteResourceOrError.error instanceof got.RequestError || remoteResourceOrError.error instanceof got.TimeoutError) {
 				return this.ctx.status = remoteResourceOrError.error.code === 'ETIMEDOUT' ? 504 : 502;
 			} else if (remoteResourceOrError.statusCode) {

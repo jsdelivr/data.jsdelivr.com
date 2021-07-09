@@ -93,9 +93,13 @@ describe('v1', function () {
 			.get('/npm/emojione@3.1.1/+private-json')
 			.reply(403, upstreamCdnResponses['/npm/emojione@3.1.1/+private-json']);
 
-		nock('https://registry.npmjs.org')
-			.get('/foo')
-			.reply(404);
+		nock('https://cdn.jsdelivr.net')
+			.get('/npm/foo@1/+private-json')
+			.reply(404, upstreamCdnResponses['/npm/foo@1/+private-json']);
+
+		nock('https://cdn.jsdelivr.net')
+			.get('/npm/jquery@1/+private-json')
+			.reply(404, upstreamCdnResponses['/npm/jquery@1/+private-json']);
 
 		nock('https://registry.npmjs.org')
 			.get('/foo')
