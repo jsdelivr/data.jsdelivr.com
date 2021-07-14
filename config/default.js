@@ -1,7 +1,10 @@
+const { version } = require('../package.json');
+
 module.exports = {
 	server: {
 		port: 4454,
 		debugToken: '',
+		userAgent: `data.jsdelivr.com/${version} (https://github.com/jsdelivr/data.jsdelivr.com)`,
 		headers: {
 			'Access-Control-Allow-Origin': '*',
 			'Cache-Control': 'no-cache, no-store, must-revalidate',

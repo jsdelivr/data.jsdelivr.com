@@ -1,4 +1,4 @@
-const got = require('got');
+const got = require('../lib/got');
 const promiseRetry = require('promise-retry');
 
 const JsDelivrRemoteResource = require('./JsDelivrRemoteResource');

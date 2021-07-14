@@ -1,9 +1,12 @@
 const HttpLinkHeader = require('http-link-header');
 const { Octokit } = require('@octokit/rest');
 const vCompare = require('v-compare');
+const config = require('config');
 
 const GitHubRemoteResource = require('./GitHubRemoteResource');
 const RemoteService = require('./RemoteService');
+
+const { userAgent } = config.get('server');
 
 class GitHubRemoteService extends RemoteService {
 	constructor ({ auth, baseUrl }, resourceCache) {
@@ -12,7 +15,7 @@ class GitHubRemoteService extends RemoteService {
 		this.octokit = new Octokit({
 			auth,
 			baseUrl,
-			userAgent: 'jsDelivr API backend',
+			userAgent,
 			request: {
 				timeout: 30000,
 			},

@@ -1,4 +1,4 @@
-const got = require('got');
+const got = require('../lib/got');
 const semver = require('semver');
 
 const NpmRemoteResource = require('./NpmRemoteResource');
