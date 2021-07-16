@@ -10,5 +10,5 @@ module.exports = {
 	ignoreUrls: [ '/favicon.ico', '/heartbeat', '/amp_preconnect_polyfill_404_or_other_error_expected._Do_not_worry_about_it' ],
 	errorOnAbortedRequests: true,
 	abortedErrorThreshold: 30,
-	transactionSampleRate: 1,
+	transactionSampleRate: .1,
 };
