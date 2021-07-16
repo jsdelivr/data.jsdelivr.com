@@ -2,7 +2,7 @@
 global.apmClient = require('elastic-apm-node').start({});
 apmClient.addTransactionFilter(payload => (payload.context && payload.context.tags && payload.context.tags.userAgent && !payload.context.tags.userAgent.includes('jsdelivr-log-parser')) || Math.random() < .2 ? payload : false);
 apmClient.addTransactionFilter(require('elastic-apm-utils').apm.transactionFilter());
-apmClient.addSpanFilter(require('elastic-apm-utils').apm.spanFilter({ filterShorterThan: 20 }));
+// apmClient.addSpanFilter(require('elastic-apm-utils').apm.spanFilter({ filterShorterThan: 20 }));
 require('./lib/startup');
 
 const config = require('config');
