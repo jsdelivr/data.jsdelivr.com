@@ -60,7 +60,7 @@ class PackageRequest extends BaseRequest {
 				// istanbul ignore next
 				if (error.statusCode === 404) {
 					apmClient.addLabels({ githubRepoNotFound: '1' });
-				} else if (error.status === 403 && !error.block) {
+				} else if (error.statusCode === 403 && error.headers['x-ratelimit-remaining'] === '0') {
 					log.error(`GitHub API rate limit exceeded.`, error);
 				}
 
