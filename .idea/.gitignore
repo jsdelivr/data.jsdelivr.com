@@ -8,4 +8,6 @@
 # Editor-based HTTP Client requests
 /httpRequests/
 
+/dictionaries/
 /shelf/
+/vcs.xml
