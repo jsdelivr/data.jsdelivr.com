@@ -52,6 +52,10 @@ class RemoteResource extends Error {
 		this._ttlInternalStore = value;
 	}
 
+	toJSON () {
+		return _.omit(this, [ 'age', 'staleIfError', 'staleWhileRevalidate', 'isFromCache' ]);
+	}
+
 	static fromJSON (props) {
 		return new this(props, props.error, true);
 	}
