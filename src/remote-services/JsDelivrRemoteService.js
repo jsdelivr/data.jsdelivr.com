@@ -10,15 +10,15 @@ class JsDelivrRemoteService extends RemoteService {
 		this.baseUrl = baseUrl;
 	}
 
-	listFiles (type, name, version) {
-		return this.requestWithCache(`/${type}/${name}@${encodeURIComponent(version)}/+private-json`, (uri, cached) => {
+	fetchPrivateData (type, name, version, modifier, columns) {
+		return this.requestWithCache(`/${type}/${name}@${encodeURIComponent(version)}/${modifier}`, (uri, cached) => {
 			return this.requestConditional(uri, cached, { json: true }).then((remoteResource) => {
 				if (remoteResource.isFromCache) {
 					return remoteResource;
 				}
 
 				return Object.assign(remoteResource, {
-					data: _.pick(remoteResource.data, [ 'default', 'files', 'version' ]),
+					data: _.pick(remoteResource.data, columns),
 					headers: _.pick(remoteResource.headers, 'etag', 'last-modified'),
 				});
 			}).catch((error) => {
@@ -34,6 +34,14 @@ class JsDelivrRemoteService extends RemoteService {
 				throw error;
 			});
 		});
+	}
+
+	listFiles (type, name, version) {
+		return this.fetchPrivateData(type, name, version, '+private-json', [ 'default', 'files', 'version' ]);
+	}
+
+	listResolvedEntries (type, name, version) {
+		return this.fetchPrivateData(type, name, version, '+private-entrypoints', [ 'default', 'entrypoints' ]);
 	}
 
 	requestConditional (uri, remoteResource, options = {}) {

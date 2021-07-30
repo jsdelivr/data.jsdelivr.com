@@ -11,7 +11,9 @@ const BaseRequest = require('./BaseRequest');
 const BadVersionError = require('../errors/BadVersionError');
 const Package = require('../../../models/Package');
 const PackageListing = require('../../../models/PackageListing');
+const PackageEntrypoints = require('../../../models/PackageEntrypoints');
 const PackageVersion = require('../../../models/PackageVersion');
+const CdnJsPackage = require('../../../models/CdnJsPackage');
 const dateRange = require('../../utils/dateRange');
 const sumDeep = require('../../utils/sumDeep');
 
@@ -125,6 +127,25 @@ class PackageRequest extends BaseRequest {
 		return listing;
 	}
 
+	async getEntrypoints () {
+		let props = { type: this.params.type, name: this.params.name, version: this.params.version };
+		let packageEntrypoints = await PackageEntrypoints.find(props);
+
+		if (packageEntrypoints) {
+			return JSON.parse(packageEntrypoints.entrypoints);
+		}
+
+		let { entrypoints } = await jsDelivrRemoteService.usingContext(this.ctx).listResolvedEntries(this.params.type, this.params.name, this.params.version);
+
+		if (!entrypoints) {
+			return [];
+		}
+
+		await new PackageEntrypoints({ ...props, entrypoints: JSON.stringify(entrypoints) }).insert().catch(() => {});
+
+		return entrypoints;
+	}
+
 	async getMetadata () {
 		return this.fetchMetadata();
 	}
@@ -148,6 +169,49 @@ class PackageRequest extends BaseRequest {
 			// "latest" is not actually a range, it's a tag - its equivalent (needed for GitHub sources) is an empty range
 			return semver.maxSatisfying(versions, requestedVersion === 'latest' ? '' : requestedVersion);
 		});
+	}
+
+	async getResolvedEntrypoints () {
+		let browserSafeColumns = [ 'jsdelivr', 'cdn', 'browser' ];
+		let entrypoints = await this.getEntrypoints();
+		let response = { default: _.get(entrypoints, '0.file') };
+
+		// Add styles entry if any
+		let styleEntry = entrypoints.find(e => e.field === 'style');
+
+		if (styleEntry) {
+			response.style = styleEntry.file;
+		}
+
+		// use "safe entry"
+		let safeEntries = entrypoints.filter(e => browserSafeColumns.includes(e.field));
+
+		if (safeEntries.length > 0) {
+			response.default = _.get(safeEntries, '0.file');
+			return response;
+		}
+
+		// or get from cdnJs index
+		let cdnjsFile = await CdnJsPackage.getPackageEntrypoint(this.params.name, this.params.version);
+
+		if (cdnjsFile) {
+			response.default = '/' + cdnjsFile
+				.replace(/^\//, '') // remove trailing slash
+				.replace(/\.min\.(js|css)$/i, '.$1') // normalize minified
+				.replace(/\.(js|css)$/i, '.min.$1'); // convert to minified
+
+			return response;
+		}
+
+		// or detect most used file
+		let mostUsed = await PackageVersion.getMostUsedFile(this.params.type, this.params.name, this.params.version);
+
+		if (mostUsed) {
+			response.mostUsed = mostUsed.filename;
+			return response;
+		}
+
+		return response;
 	}
 
 	async handleResolveVersion () {
@@ -175,6 +239,23 @@ class PackageRequest extends BaseRequest {
 			this.ctx.maxStaleError = v1Config.maxStaleErrorShort;
 		} catch (e) {
 			return this.responseFromRemoteError(e);
+		}
+	}
+
+	async handleResolveEntrypoints () {
+		try {
+			this.ctx.body = await this.getResolvedEntrypoints();
+			this.ctx.maxAge = v1Config.maxAge;
+			this.ctx.maxStale = v1Config.maxStaleStatic;
+		} catch (remoteResourceOrError) {
+			if (remoteResourceOrError instanceof BadVersionError || remoteResourceOrError.statusCode === 404) {
+				return this.ctx.body = {
+					status: 404,
+					message: `Couldn't find version ${this.params.version} for ${this.params.name}. Make sure you use a specific version number, and not a version range or an npm tag.`,
+				};
+			}
+
+			return this.responseFromRemoteError(remoteResourceOrError);
 		}
 	}
 
