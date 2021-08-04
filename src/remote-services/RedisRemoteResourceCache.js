@@ -66,21 +66,30 @@ class PromiseCacheShared {
 			return cached.s === STATUS_REJECTED ? Bluebird.reject(cached.v) : cached.v;
 		}
 
-		value = fn(cached && cached.v);
+		let executor = fn(cached && cached.v);
+		let staleIfErrorUsed = false;
+
+		value = executor.catch((error) => {
+			if (cached && cached.s === STATUS_RESOLVED && cached.v.staleIfError) {
+				staleIfErrorUsed = true;
+				return cached.v;
+			}
+
+			throw error;
+		});
 
 		this.pendingL.set(key, value, value.ttlInternalStore * 1000);
 
 		// Wrapped in Promise.resolve() to make sure it's a Bluebird promise because
 		// .finally() behaves differently with some promises.
 		let done = Bluebird.resolve(value).finally(() => {
-			value.then((v) => {
+			executor.then((v) => {
 				return this.store({ key, v, s: STATUS_RESOLVED }, v.ttlInternalStore).then(() => {
 					this.pendingL.del(key);
 				});
 			}).catch((v) => {
-				if (cached && cached.s === STATUS_RESOLVED && cached.v.staleIfError) {
-					this.pendingL.del(key);
-					return cached.v;
+				if (staleIfErrorUsed) {
+					return this.pendingL.del(key);
 				}
 
 				return this.store({ key, v, s: STATUS_REJECTED }, v.ttlInternalStore).then(() => {
