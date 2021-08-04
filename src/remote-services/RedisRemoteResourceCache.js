@@ -70,7 +70,7 @@ class PromiseCacheShared {
 		let staleIfErrorUsed = false;
 
 		value = executor.catch((error) => {
-			if (cached && cached.s === STATUS_RESOLVED && cached.v.staleIfError) {
+			if (cached && cached.s === STATUS_RESOLVED && cached.v.age < cached.v.staleIfError) {
 				staleIfErrorUsed = true;
 				return cached.v;
 			}
@@ -100,7 +100,7 @@ class PromiseCacheShared {
 
 		// This will work only for the first request because the new promise
 		// is added to pendingL right away. Should be ok for our use case.
-		if (cached && cached.s === STATUS_RESOLVED && cached.v.staleWhileRevalidate) {
+		if (cached && cached.s === STATUS_RESOLVED && cached.v.age < cached.v.staleWhileRevalidate) {
 			done.catch(() => {});
 			return cached.v;
 		}

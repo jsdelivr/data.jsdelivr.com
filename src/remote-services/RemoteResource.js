@@ -3,9 +3,6 @@ class RemoteResource extends Error {
 		super(`Response status ${statusCode}.`);
 
 		this.age = 0;
-		this.staleIfError = true;
-		this.staleWhileRevalidate = true;
-
 		this.statusCode = statusCode;
 		this.headers = headers;
 		this.parts = parts;
@@ -26,6 +23,14 @@ class RemoteResource extends Error {
 
 	get isStale () {
 		return this.age > this.ttlInternalRevalidate;
+	}
+
+	get staleIfError () {
+		return Infinity;
+	}
+
+	get staleWhileRevalidate () {
+		return this.ttlInternalRevalidate * 2;
 	}
 
 	get ttlInternalRevalidate () {
