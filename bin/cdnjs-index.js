@@ -19,9 +19,6 @@ const httpClient = got.extend({ headers: { 'user-agent': config.get('server.user
 const tarballUrl = 'https://github.com/cdnjs/packages/tarball/master';
 const versionedListUrl = 'https://api.cdnjs.com/libraries/?fields=version';
 
-const batchSize = 100;
-const batchEntries = [];
-
 const fetchExistingPackages = async () => {
 	let packages = await db(CndJsPackage.table).select([ 'name', 'version' ]);
 
@@ -29,6 +26,10 @@ const fetchExistingPackages = async () => {
 };
 
 const insertBatch = async (batch) => {
+	if (!batch.length) {
+		return;
+	}
+
 	return db(CndJsPackage.table).insert(batch).onConflict().ignore();
 };
 
@@ -50,7 +51,7 @@ function getBasePath (config) {
 }
 
 async function fileExist (name, version, filename) {
-	let files = await httpClient(`http://127.0.0.1:4454/v1/package/npm/${name}@${version}/flat`)
+	let files = await httpClient(`${config.get('server.url')}/v1/package/npm/${name}@${version}/flat`)
 		.then(res => _.get(res, 'body.files', []))
 		.catch(() => []);
 
@@ -67,10 +68,8 @@ async function fileExist (name, version, filename) {
 	return false;
 }
 
-const fetchPackages = (versionsMap, existingPackages) => {
+const fetchPackages = (versionsMap, existingPackages, resultingPackages) => {
 	let extract = tar.extract();
-	let total = 0;
-	let badFiles = [];
 
 	extract.on('entry', async (header, stream, next) => {
 		if (header.type !== 'file') {
@@ -90,56 +89,65 @@ const fetchPackages = (versionsMap, existingPackages) => {
 		}
 
 		let payload = JSON.parse(Buffer.concat(chunks).toString('utf-8'));
-		let packageVersion = versionsMap.get(payload.name);
 
 		// skip non-npm or packages without default file
 		// https://github.com/cdnjs/packages/blob/master/packages/a/ant-design-icons-svg.json
-		if (!packageVersion || !payload.autoupdate || payload.autoupdate.source !== 'npm' || !payload.filename) {
+		if (!versionsMap.has(payload.name) || !payload.autoupdate || payload.autoupdate.source !== 'npm' || !payload.filename) {
 			return next();
 		}
 
-		let packageName = payload.autoupdate.target;
 		let basePath = '/' + getBasePath(payload);
-		let filename = path.posix.join(basePath, payload.filename);
+		let pkg = {
+			name: payload.autoupdate.target,
+			version: versionsMap.get(payload.name),
+			filename: path.posix.join(basePath, payload.filename),
+		};
 
 		// same package version already in the db - skip
-		if (existingPackages.has(`${packageName}@${packageVersion}`)) {
+		if (existingPackages.has(`${pkg.name}@${pkg.version}`)) {
 			return next();
 		}
 
+		resultingPackages.push(pkg);
+
+		next();
+	});
+
+	extract.on('finish', () => console.log(`${resultingPackages.length} packages ready for update`));
+
+	return extract;
+};
+
+const insertPackages = async (packages) => {
+	let batchSize = 100;
+	let batchEntries = [];
+	let badPackages = [];
+	let progress = 0;
+
+	await Bluebird.map(packages, async (pkg) => {
 		// file recommended by cdnjs doesn't exist in the package - skip
-		if (!await fileExist(packageName, packageVersion, filename)) {
-			badFiles.push({ packageName, packageVersion, filename });
-			return next();
+		if (!await fileExist(pkg.name, pkg.version, pkg.filename)) {
+			badPackages.push(pkg);
+
+			return;
 		}
 
-		batchEntries.push({
-			name: payload.autoupdate.target,
-			version: packageVersion,
-			filename,
-		});
+		batchEntries.push(pkg);
 
 		if (batchEntries.length > batchSize) {
 			let batch = batchEntries.splice(0, batchSize);
 			await insertBatch(batch);
 
-			total += batch.length;
-			console.log(`${total} packages processed`);
+			progress += batch.length;
+			console.log(`${progress} packages processed`);
 		}
+	}, { concurrency: 4 });
 
-		next();
-	});
+	await insertBatch(batchEntries);
 
-	extract.on('finish', async () => {
-		total += batchEntries.length;
-		await insertBatch(batchEntries);
-		console.log(`Total packages processed: ${total}`);
-
-		console.log(`Bad files found: ${badFiles.length}`);
-		// badFiles.forEach(file => console.log(`File ${file.filename} do not exist for ${file.packageName}@${file.packageVersion}`));
-	});
-
-	return extract;
+	console.log(`packages inserted: ${progress}`);
+	console.log(`bad files found: ${badPackages.length}`);
+	// badFiles.forEach(file => console.log(`File ${file.filename} do not exist for ${file.packageName}@${file.packageVersion}`));
 };
 
 console.time('cdnjs import');
@@ -147,11 +155,13 @@ console.time('cdnjs import');
 // eslint-disable-next-line promise/catch-or-return
 Bluebird.all([ fetchVersionsList(), fetchExistingPackages() ])
 	.then(([ versionsList, existingPackages ]) => {
+		let packages = [];
+
 		return pipeline(
 			httpClient.stream(tarballUrl),
 			zlib.createGunzip(),
-			fetchPackages(versionsList, existingPackages)
-		);
+			fetchPackages(versionsList, existingPackages, packages)
+		).then(() => insertPackages(packages));
 	})
 	.catch(err => console.error(err))
 	.then(() => {

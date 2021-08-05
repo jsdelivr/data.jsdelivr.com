@@ -2,6 +2,7 @@ const { version } = require('../package.json');
 
 module.exports = {
 	server: {
+		url: 'https://data.jsdelivr.com',
 		port: 4454,
 		debugToken: '',
 		userAgent: `data.jsdelivr.com/${version} (https://github.com/jsdelivr/data.jsdelivr.com)`,
@@ -42,6 +43,8 @@ module.exports = {
 		},
 		maxAgeStatic: 365 * 24 * 60 * 60,
 		maxStaleStatic: 24 * 60 * 60,
+		maxAgeOneWeek: 7 * 24 * 60 * 60,
+		maxStaleOneWeek: 24 * 60 * 60,
 		maxAgeShort: 5 * 60,
 		maxStaleShort: 60 * 60,
 		maxStaleErrorShort: 12 * 60 * 60,

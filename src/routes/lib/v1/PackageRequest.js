@@ -16,6 +16,7 @@ const PackageVersion = require('../../../models/PackageVersion');
 const CdnJsPackage = require('../../../models/CdnJsPackage');
 const dateRange = require('../../utils/dateRange');
 const sumDeep = require('../../utils/sumDeep');
+const entrypoint = require('../../utils/packageEntrypoint');
 
 const NpmRemoteService = require('../../../remote-services/NpmRemoteService');
 const GitHubRemoteService = require('../../../remote-services/GitHubRemoteService');
@@ -174,44 +175,31 @@ class PackageRequest extends BaseRequest {
 	async getResolvedEntrypoints () {
 		let browserSafeColumns = [ 'jsdelivr', 'cdn', 'browser' ];
 		let entrypoints = await this.getEntrypoints();
-		let response = { default: _.get(entrypoints, '0.file') };
 
-		// Add styles entry if any
-		let styleEntry = entrypoints.find(e => e.field === 'style');
-
-		if (styleEntry) {
-			response.style = styleEntry.file;
-		}
+		let defaultFiles = entrypoint.resolveEntrypoints(entrypoints);
 
 		// use "safe entry"
 		let safeEntries = entrypoints.filter(e => browserSafeColumns.includes(e.field));
 
 		if (safeEntries.length > 0) {
-			response.default = _.get(safeEntries, '0.file');
-			return response;
+			return entrypoint.resolveEntrypoints(safeEntries);
 		}
 
 		// or get from cdnJs index
 		let cdnjsFile = await CdnJsPackage.getPackageEntrypoint(this.params.name, this.params.version);
 
 		if (cdnjsFile) {
-			response.default = '/' + cdnjsFile
-				.replace(/^\//, '') // remove trailing slash
-				.replace(/\.min\.(js|css)$/i, '.$1') // normalize minified
-				.replace(/\.(js|css)$/i, '.min.$1'); // convert to minified
-
-			return response;
+			return entrypoint.updateResolved(defaultFiles, [{ file: cdnjsFile }]);
 		}
 
 		// or detect most used file
-		let mostUsed = await PackageVersion.getMostUsedFile(this.params.type, this.params.name, this.params.version);
+		let mostUsed = await PackageVersion.getMostUsedFiles(this.params.name, this.params.version);
 
-		if (mostUsed) {
-			response.mostUsed = mostUsed.filename;
-			return response;
+		if (mostUsed.length > 0) {
+			return entrypoint.updateResolved(defaultFiles, mostUsed.map(row => ({ file: row.filename })));
 		}
 
-		return response;
+		return defaultFiles;
 	}
 
 	async handleResolveVersion () {
@@ -245,13 +233,13 @@ class PackageRequest extends BaseRequest {
 	async handleResolveEntrypoints () {
 		try {
 			this.ctx.body = await this.getResolvedEntrypoints();
-			this.ctx.maxAge = v1Config.maxAge;
-			this.ctx.maxStale = v1Config.maxStaleStatic;
+			this.ctx.maxAge = v1Config.maxAgeOneWeek;
+			this.ctx.maxStale = v1Config.maxStaleOneWeek;
 		} catch (remoteResourceOrError) {
-			if (remoteResourceOrError instanceof BadVersionError || remoteResourceOrError.statusCode === 404) {
+			if (remoteResourceOrError.statusCode === 404) {
 				return this.ctx.body = {
 					status: 404,
-					message: `Couldn't find version ${this.params.version} for ${this.params.name}. Make sure you use a specific version number, and not a version range or an npm tag.`,
+					message: `Couldn't find version ${this.params.version} for ${this.params.name}.`,
 				};
 			}
 

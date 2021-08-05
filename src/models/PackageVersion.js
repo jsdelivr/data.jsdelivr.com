@@ -60,24 +60,10 @@ class PackageVersion extends BaseModel {
 		return sql.select([ `${FileHits.table}.*`, `${File.table}.filename` ]);
 	}
 
-	static async getMostUsedFile (type, name, version) {
-		return db(this.table)
-			.select([
-				`${Package.table}.id`,
-				`${Package.table}.type`,
-				`${Package.table}.name`,
-				`${this.table}.version`,
-				`${File.table}.filename`,
-				`${FileHits.table}.hits`,
-			])
-			.where(`${Package.table}.type`, type)
-			.andWhere(`${Package.table}.name`, name)
-			.andWhere(`${this.table}.version`, version)
-			.join(Package.table, `${this.table}.packageId`, '=', `${Package.table}.id`)
-			.join(File.table, `${this.table}.id`, '=', `${File.table}.packageVersionId`)
-			.join(FileHits.table, `${File.table}.id`, '=', `${FileHits.table}.fileId`)
-			.orderBy(`${FileHits.table}.hits`, 'desc')
-			.first();
+	static async getMostUsedFiles (name, version) {
+		return db('view_top_package_files')
+			.select([ 'filename' ])
+			.where({ name, version });
 	}
 
 	static async getSumDateHitsPerFileByName (type, name, version, from, to) {
