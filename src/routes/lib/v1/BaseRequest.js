@@ -7,6 +7,9 @@ const pagination = require('../../utils/pagination');
 const v1Config = config.get('v1');
 
 class BaseRequest {
+	/**
+	 * @param {RouterContext} ctx
+	 */
 	constructor (ctx) {
 		this.url = ctx.url;
 		this.params = ctx.params;

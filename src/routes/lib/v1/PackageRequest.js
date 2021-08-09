@@ -40,22 +40,22 @@ class PackageRequest extends BaseRequest {
 
 		// We require specifying an exact version here. If the final version doesn't match the one from the request,
 		// the requested version was actually a range or a tag. Error responses don't return the version field.
-		if (response.version && response.version !== this.params.version) {
+		if (response.data.version && response.data.version !== this.params.version) {
 			throw new BadVersionError();
 		}
 
-		return _.omit(response, 'version');
+		return _.omit(response.data, 'version');
 	}
 
 	async fetchMetadata () {
 		if (this.params.type === 'npm') {
-			return npmRemoteService.usingContext(this.ctx).listVersionsAndTags(this.params.name);
+			return npmRemoteService.usingContext(this.ctx).listVersionsAndTags(this.params.name).then(response => response.data);
 		} else if (this.params.type === 'gh') {
 			apmClient.addLabels({ githubUser: this.params.user });
 			apmClient.addLabels({ githubRepo: this.params.repo });
 
-			return gitHubRemoteService.usingContext(this.ctx).listTags(this.params.user, this.params.repo).then((data) => {
-				return { tags: [], versions: data };
+			return gitHubRemoteService.usingContext(this.ctx).listTags(this.params.user, this.params.repo).then((response) => {
+				return { tags: [], versions: response.data };
 			}).catch((error) => {
 				// istanbul ignore next
 				if (error.statusCode === 404) {
@@ -74,7 +74,7 @@ class PackageRequest extends BaseRequest {
 	async getFiles () {
 		let files = JSON.parse(await this.getFilesAsJson());
 
-		if (this.ctx.params.structure === 'flat' || !files.files) {
+		if (this.params.structure === 'flat' || !files.files) {
 			return files;
 		}
 

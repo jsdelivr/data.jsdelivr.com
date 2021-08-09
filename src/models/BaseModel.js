@@ -161,6 +161,12 @@ class BaseModel {
 module.exports = BaseModel;
 
 module.exports.ProxyHandler = {
+	/**
+	 * @param {BaseModel} target
+	 * @param {string} property
+	 * @param {*} value
+	 * @returns {boolean}
+	 */
 	set (target, property, value) {
 		if (!target.properties.includes(property)) {
 			target[property] = value;

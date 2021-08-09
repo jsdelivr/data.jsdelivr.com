@@ -10,6 +10,12 @@ class JsDelivrRemoteService extends RemoteService {
 		this.baseUrl = baseUrl;
 	}
 
+	/**
+	 * @param {string} type
+	 * @param {string} name
+	 * @param {string} version
+	 * @returns {Promise<JsDelivrRemoteResource>}
+	 */
 	listFiles (type, name, version) {
 		return this.requestWithCache(`/${type}/${name}@${encodeURIComponent(version)}/+private-json`, (uri, cached) => {
 			return this.requestConditional(uri, cached, { json: true }).then((remoteResource) => {
@@ -36,6 +42,12 @@ class JsDelivrRemoteService extends RemoteService {
 		});
 	}
 
+	/**
+	 * @param {string} uri
+	 * @param {JsDelivrRemoteResource|null} [remoteResource]
+	 * @param options
+	 * @returns {Promise<JsDelivrRemoteResource>}
+	 */
 	requestConditional (uri, remoteResource, options = {}) {
 		JsDelivrRemoteService.addConditionalHeaders(remoteResource, options);
 
@@ -44,6 +56,11 @@ class JsDelivrRemoteService extends RemoteService {
 		});
 	}
 
+	/**
+	 * @param {string} uri
+	 * @param {*} options
+	 * @returns {Promise<JsDelivrRemoteResource>}
+	 */
 	request (uri, options) {
 		return promiseRetry((retry) => {
 			return got(`${this.baseUrl}${uri}`, Object.assign({ timeout: 30000 }, options)).catch((error) => {

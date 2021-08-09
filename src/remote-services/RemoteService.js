@@ -3,6 +3,11 @@ class RemoteService {
 		this.resourceCache = resourceCache;
 	}
 
+	/**
+	 * @param {RemoteResource|null} [remoteResource]
+	 * @param {*} options
+	 * @returns {*}
+	 */
 	static addConditionalHeaders (remoteResource, options) {
 		if (!options.headers) {
 			options.headers = {};
@@ -21,8 +26,13 @@ class RemoteService {
 		return options;
 	}
 
+	/**
+	 * @param {RemoteResource} response
+	 * @param {RemoteResource|null} [cached]
+	 * @returns {*}
+	 */
 	static processConditionalResponse (response, cached) {
-		if (response.statusCode !== 304) {
+		if (!cached || response.statusCode !== 304) {
 			return response;
 		}
 
@@ -33,12 +43,21 @@ class RemoteService {
 		return cached;
 	}
 
+	/**
+	 * @param {string} uri
+	 * @param {function} exec
+	 * @returns {Promise<RemoteResource>}
+	 */
 	requestWithCache (uri, exec) {
 		return this.resourceCache.getOrExec(uri, (cached) => {
 			return exec(uri, cached);
 		});
 	}
 
+	/**
+	 * @param {RouterContext} ctx
+	 * @returns {this}
+	 */
 	usingContext (ctx) {
 		return new Proxy(this, {
 			get (target, property) {
@@ -56,7 +75,7 @@ class RemoteService {
 
 				return (...args) => {
 					return target[property](...args).then((remoteResource) => {
-						return processResource(remoteResource).data;
+						return processResource(remoteResource);
 					}).catch((error) => {
 						throw processResource(error);
 					});
