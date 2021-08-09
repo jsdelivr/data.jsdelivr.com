@@ -1,14 +1,14 @@
 class RemoteResource extends Error {
 	/**
 	 * @param {number} statusCode
-	 * @param {Record<string, string>} headers
-	 * @param {RemoteResource[]} parts
+	 * @param {Record<string, string>} [headers]
+	 * @param {RemoteResource[]} [parts]
 	 * @param {*} data
-	 * @param {*} props
+	 * @param {Object} [props]
 	 * @param {Error|*} [error]
 	 * @param {boolean} [isFromCache]
 	 */
-	constructor ({ statusCode, headers = {}, parts = [], data, ...props }, error = null, isFromCache = false) {
+	constructor ({ statusCode, headers = {}, parts = [], data, props = {} }, error = null, isFromCache = false) {
 		super(`Response status ${statusCode}.`);
 
 		/** @type {number} */
@@ -26,7 +26,7 @@ class RemoteResource extends Error {
 		/** @type {*} */
 		this.data = data;
 
-		/** @type {*} */
+		/** @type {Object} */
 		this.props = props;
 
 		/** @type {Error|*} */
