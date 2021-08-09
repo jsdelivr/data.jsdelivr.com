@@ -45,7 +45,7 @@ class NpmRemoteService extends RemoteService {
 
 	/**
 	 * @param {string} uri
-	 * @param {NpmRemoteResource|null} [remoteResource]
+	 * @param {RemoteResource|null} [remoteResource]
 	 * @param {*} [options]
 	 * @returns {Promise<NpmRemoteResource>}
 	 */

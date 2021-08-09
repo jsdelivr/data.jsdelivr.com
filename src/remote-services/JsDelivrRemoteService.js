@@ -44,7 +44,7 @@ class JsDelivrRemoteService extends RemoteService {
 
 	/**
 	 * @param {string} uri
-	 * @param {JsDelivrRemoteResource|null} [remoteResource]
+	 * @param {RemoteResource|null} [remoteResource]
 	 * @param options
 	 * @returns {Promise<JsDelivrRemoteResource>}
 	 */

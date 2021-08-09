@@ -117,7 +117,7 @@ class GitHubRemoteService extends RemoteService {
 
 	/**
 	 * @param {string} uri
-	 * @param {GitHubRemoteResource|null} [remoteResource]
+	 * @param {RemoteResource|null} [remoteResource]
 	 * @param {*} [options]
 	 * @returns {Promise<GitHubRemoteResource>}
 	 */
