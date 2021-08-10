@@ -61,7 +61,7 @@ exports.up = async (db) => {
 					inner join file_hits on file.id = file_hits.fileId
 				where file_hits.date = aDate
 					and package.type = 'npm'
-					and file.filename RLIKE '^(?!\\\\/(docs?|documentation|examples?|samples?|demos?|tests?|cjs|esm|es6?|__internal__)\\\\/)\\\\/[^._].*\\\\.(js|css)$'
+					and file.filename RLIKE '^(?!\\\\/(docs?|documentation|examples?|samples?|demos?|tests?|cjs|esm|es6?)\\\\/)\\\\/[^._].*\\\\.(js|css)$'
 				group by file.id
 			) t where t.rowNum = 1;
 
