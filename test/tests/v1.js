@@ -51,7 +51,7 @@ describe('v1', function () {
 			.get('/repos/jquery/jquery/tags')
 			.query({ per_page: 100 })
 			.reply(200, upstreamGitHubResponses['/repos/jquery/jquery/tags'], {
-				link: '<https://api.github.com/repos/jquery/jquery/tags?page=2>; rel="next"',
+				link: '<https://api.github.com/repos/jquery/jquery/tags?per_page=100&page=2>; rel="next"',
 			});
 
 		nock('https://api.github.com')

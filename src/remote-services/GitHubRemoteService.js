@@ -56,9 +56,10 @@ class GitHubRemoteService extends RemoteService {
 		let i = 0;
 		let f = (uri, data = [], parts = []) => {
 			let remoteResourcePart = cached && cached.parts && cached.parts[i];
+			let options = i === 0 ? { per_page: 100 } : {}; // Pagination options are already included in the "next" link for subsequent pages.
 			i++;
 
-			return this.requestConditional(uri, remoteResourcePart, { per_page: 100 }).then((response) => {
+			return this.requestConditional(uri, remoteResourcePart, options).then((response) => {
 				let part, next;
 
 				if (response.isFromCache) {
