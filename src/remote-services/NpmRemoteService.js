@@ -10,6 +10,10 @@ class NpmRemoteService extends RemoteService {
 		this.baseUrl = Array.isArray(baseUrl) ? baseUrl : [ baseUrl ];
 	}
 
+	/**
+	 * @param {string} name
+	 * @returns {Promise<NpmRemoteResource>}
+	 */
 	listVersionsAndTags (name) {
 		name = name.charAt(0) === '@' ? '@' + encodeURIComponent(name.substr(1)) : encodeURIComponent(name);
 
@@ -39,6 +43,12 @@ class NpmRemoteService extends RemoteService {
 		});
 	}
 
+	/**
+	 * @param {string} uri
+	 * @param {RemoteResource|null} [remoteResource]
+	 * @param {*} [options]
+	 * @returns {Promise<NpmRemoteResource>}
+	 */
 	requestConditional (uri, remoteResource, options = {}) {
 		NpmRemoteService.addConditionalHeaders(remoteResource, options);
 
@@ -47,6 +57,11 @@ class NpmRemoteService extends RemoteService {
 		});
 	}
 
+	/**
+	 * @param {string} uri
+	 * @param {*} options
+	 * @returns {Promise<NpmRemoteResource>}
+	 */
 	request (uri, options) {
 		return Bluebird.any(_.map(this.baseUrl, (baseUrl) => {
 			return got(`${baseUrl}${uri}`, Object.assign({ timeout: 30000 }, options));

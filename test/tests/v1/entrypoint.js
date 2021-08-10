@@ -65,6 +65,15 @@ describe('/v1/package/:package/entrypoints', function () {
 		});
 	}
 
+	it('should not put trash in the DB', async () => {
+		let count = await db('view_top_package_files')
+			.count('filename as count')
+			.where({ name: 'entrypoint', version: 'no-trash-in-db' })
+			.first();
+
+		expect(count).to.deep.equal({ count: 0 });
+	});
+
 	it(`GET /v1/package/npm/entrypoint@no-local-cache/entrypoints`, async () => {
 		nock('https://cdn.jsdelivr.net')
 			.get('/npm/entrypoint@no-local-cache/+private-entrypoints')

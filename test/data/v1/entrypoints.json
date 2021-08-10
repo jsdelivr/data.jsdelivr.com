@@ -1,5 +1,21 @@
 {
 	"entrypoint@just-empty": { "expected": {}, "db": { "entrypoints":  [] } },
+	"entrypoint@no-trash-in-db": {
+		"expected": {},
+		"db": {
+			"entrypoints": [],
+			"stats": [
+				{ "file": "/doc/file.js", "hits": [{ "date": "2021-08-01", "hits": 10 }] },
+				{ "file": "/docs/file.js", "hits": [{ "date": "2021-08-01", "hits": 10 }] },
+				{ "file": "/__internal__/file.css", "hits": [{ "date": "2021-08-01", "hits": 10 }] },
+				{ "file": "/.style.css", "hits": [{ "date": "2021-08-01", "hits": 10 }] },
+				{ "file": "/_style.css", "hits": [{ "date": "2021-08-01", "hits": 10 }] },
+				{ "file": "/style.scss", "hits": [{ "date": "2021-08-01", "hits": 10 }] },
+				{ "file": "/.style.scss", "hits": [{ "date": "2021-08-01", "hits": 10 }] },
+				{ "file": "/_style.scss", "hits": [{ "date": "2021-08-01", "hits": 10 }] }
+			]
+		}
+	},
 	"entrypoint@simple": {
 		"expected": { "js": { "file": "/main.min.js", "guessed": false } },
 		"db": {

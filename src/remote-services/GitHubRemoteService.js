@@ -22,6 +22,11 @@ class GitHubRemoteService extends RemoteService {
 		});
 	}
 
+	/**
+	 * @param {string} owner
+	 * @param {string} repo
+	 * @returns {Promise<GitHubRemoteResource>}
+	 */
 	listTags (owner, repo) {
 		return this.requestWithCache(`/${owner}/${repo}`, (uri, cached) => {
 			return this.paginate(this.octokit.repos.listTags.endpoint({ owner, repo }).url, response => response.data.map(t => t.name), cached).then((remoteResource) => {
@@ -41,6 +46,12 @@ class GitHubRemoteService extends RemoteService {
 		});
 	}
 
+	/**
+	 * @param {string} uri
+	 * @param {function} mapper
+	 * @param {GitHubRemoteResource|null} [cached]
+	 * @returns {Promise<GitHubRemoteResource>}
+	 */
 	paginate (uri, mapper, cached) {
 		let i = 0;
 		let f = (uri, data = [], parts = []) => {
@@ -52,7 +63,7 @@ class GitHubRemoteService extends RemoteService {
 
 				if (response.isFromCache) {
 					part = response;
-					next = response.next;
+					next = response.props.next;
 				} else {
 					if (response.headers.link) {
 						next = new HttpLinkHeader(response.headers.link).rel('next')[0];
@@ -61,7 +72,7 @@ class GitHubRemoteService extends RemoteService {
 					part = Object.assign(response, { data: mapper(response), headers: _.pick(response.headers, 'etag', 'last-modified') });
 
 					if (next) {
-						part.next = next = next.uri;
+						part.props.next = next = next.uri;
 					}
 				}
 
@@ -79,6 +90,9 @@ class GitHubRemoteService extends RemoteService {
 		return f(uri).then(({ data, parts }) => new GitHubRemoteResource({ statusCode: 200, data, parts }));
 	}
 
+	/**
+	 * @returns {this}
+	 */
 	reportUsage () {
 		if (this.reportUsageInterval) {
 			return this;
@@ -97,8 +111,16 @@ class GitHubRemoteService extends RemoteService {
 				return remaining;
 			});
 		}, 40 * 1000);
+
+		return this;
 	}
 
+	/**
+	 * @param {string} uri
+	 * @param {RemoteResource|null} [remoteResource]
+	 * @param {*} [options]
+	 * @returns {Promise<GitHubRemoteResource>}
+	 */
 	requestConditional (uri, remoteResource, options = {}) {
 		GitHubRemoteService.addConditionalHeaders(remoteResource, options);
 
@@ -111,6 +133,11 @@ class GitHubRemoteService extends RemoteService {
 		});
 	}
 
+	/**
+	 * @param {string} uri
+	 * @param {*} options
+	 * @returns {Promise<GitHubRemoteResource>}
+	 */
 	request (uri, options) {
 		return this.octokit.request(uri, options).then((response) => {
 			return new GitHubRemoteResource({ statusCode: response.status, headers: response.headers, data: response.data });

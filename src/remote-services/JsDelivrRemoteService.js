@@ -10,6 +10,14 @@ class JsDelivrRemoteService extends RemoteService {
 		this.baseUrl = baseUrl;
 	}
 
+	/**
+	 * @param {string} type
+	 * @param {string} name
+	 * @param {string} version
+	 * @param {string} modifier
+	 * @param {string[]} columns
+	 * @returns {Promise<JsDelivrRemoteResource>}
+	 */
 	fetchPrivateData (type, name, version, modifier, columns) {
 		return this.requestWithCache(`/${type}/${name}@${encodeURIComponent(version)}/${modifier}`, (uri, cached) => {
 			return this.requestConditional(uri, cached, { json: true }).then((remoteResource) => {
@@ -36,10 +44,22 @@ class JsDelivrRemoteService extends RemoteService {
 		});
 	}
 
+	/**
+	 * @param {string} type
+	 * @param {string} name
+	 * @param {string} version
+	 * @returns {Promise<JsDelivrRemoteResource>}
+	 */
 	listFiles (type, name, version) {
 		return this.fetchPrivateData(type, name, version, '+private-json', [ 'default', 'files', 'version' ]);
 	}
 
+	/**
+	 * @param {string} type
+	 * @param {string} name
+	 * @param {string} version
+	 * @returns {Promise<JsDelivrRemoteResource>}
+	 */
 	listResolvedEntries (type, name, version) {
 		return this.fetchPrivateData(type, name, version, '+private-entrypoints', [ 'version', 'default', 'entrypoints' ]);
 	}
@@ -52,6 +72,11 @@ class JsDelivrRemoteService extends RemoteService {
 		});
 	}
 
+	/**
+	 * @param {string} uri
+	 * @param {*} options
+	 * @returns {Promise<JsDelivrRemoteResource>}
+	 */
 	request (uri, options) {
 		return promiseRetry((retry) => {
 			return got(`${this.baseUrl}${uri}`, Object.assign({ timeout: 30000 }, options)).catch((error) => {
