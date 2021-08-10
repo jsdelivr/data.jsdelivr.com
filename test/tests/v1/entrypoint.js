@@ -19,7 +19,10 @@ const seedTestData = async (entrypointsTestData) => {
 	// entrypoints
 	for (let [ packageName, data ] of Object.entries(entrypointsTestData)) {
 		let [ name, version ] = packageName.split('@');
-		await db('package_entrypoints').insert({ type: 'npm', name, version, entrypoints: JSON.stringify(data.db.entrypoints) });
+
+		if (data.db.entrypoints) {
+			await db('package_entrypoints').insert({ type: 'npm', name, version, entrypoints: JSON.stringify(data.db.entrypoints) });
+		}
 
 		if (data.db.cdnjs) {
 			await db('cdnjs_package').insert({ name, version, filename: data.db.cdnjs });
@@ -35,11 +38,13 @@ const seedTestData = async (entrypointsTestData) => {
 		}
 	}
 
-	// All hits for test entrypoint files ust be in this date range
-	await db.raw(`call updateViewTopPackageFiles('2021-08-01', '2021-08-31')`);
+	// All hits for test entrypoint files must be in that exact date
+	await db.raw(`call updateViewTopPackageFiles('2021-08-01')`);
 };
 
-describe('/v1/package/:package/entrypoints', () => {
+describe('/v1/package/:package/entrypoints', function () {
+	this.timeout(10000000);
+
 	before(async () => {
 		await seedTestData(testCases);
 	});
@@ -64,7 +69,7 @@ describe('/v1/package/:package/entrypoints', () => {
 		nock('https://cdn.jsdelivr.net')
 			.get('/npm/entrypoint@no-local-cache/+private-entrypoints')
 			.times(1)
-			.reply(200, { default: '/index.js', entrypoints: [{ field: 'main', file: '/index.js' }] });
+			.reply(200, { version: 'no-local-cache', default: '/index.js', entrypoints: [{ field: 'main', file: '/index.js' }] });
 
 		return chai.request(server)
 			.get('/v1/package/npm/entrypoint@no-local-cache/entrypoints')
@@ -83,7 +88,7 @@ describe('/v1/package/:package/entrypoints', () => {
 		nock('https://cdn.jsdelivr.net')
 			.get('/npm/entrypoint@no-local-cache-empty-remote/+private-entrypoints')
 			.times(1)
-			.reply(200, {});
+			.reply(200, { version: 'no-local-cache-empty-remote' });
 
 		return chai.request(server)
 			.get('/v1/package/npm/entrypoint@no-local-cache-empty-remote/entrypoints')
@@ -114,7 +119,7 @@ describe('/v1/package/:package/entrypoints', () => {
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
 				expect(response.body.status).to.equal(404);
-				expect(response.body.message).to.equal('Couldn\'t find version no-local-cache-404-remote for entrypoint.');
+				expect(response.body.message).to.equal('Couldn\'t find version no-local-cache-404-remote for entrypoint. Make sure you use a specific version number, and not a version range or an npm tag.');
 			});
 	});
 
@@ -135,6 +140,26 @@ describe('/v1/package/:package/entrypoints', () => {
 				expect(response).to.be.json;
 				expect(response.body.status).to.equal(502);
 				expect(response.body.message).to.equal('Couldn\'t find entrypoint@no-local-cache-500-remote.');
+			});
+	});
+
+	it(`GET /v1/package/npm/entrypoint@no-local-cache-different-remote-version/entrypoints`, async () => {
+		nock('https://cdn.jsdelivr.net')
+			.get('/npm/entrypoint@no-local-cache-different-remote-version/+private-entrypoints')
+			.times(1)
+			.reply(200, { version: '1.0.0' });
+
+		return chai.request(server)
+			.get('/v1/package/npm/entrypoint@no-local-cache-different-remote-version/entrypoints')
+			.then((response) => {
+				expect(response).to.have.status(404);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response.body.status).to.equal(404);
+				expect(response.body.message).to.equal('Couldn\'t find version no-local-cache-different-remote-version for entrypoint. Make sure you use a specific version number, and not a version range or an npm tag.');
 			});
 	});
 });

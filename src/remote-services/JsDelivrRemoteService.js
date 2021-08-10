@@ -41,7 +41,7 @@ class JsDelivrRemoteService extends RemoteService {
 	}
 
 	listResolvedEntries (type, name, version) {
-		return this.fetchPrivateData(type, name, version, '+private-entrypoints', [ 'default', 'entrypoints' ]);
+		return this.fetchPrivateData(type, name, version, '+private-entrypoints', [ 'version', 'default', 'entrypoints' ]);
 	}
 
 	requestConditional (uri, remoteResource, options = {}) {

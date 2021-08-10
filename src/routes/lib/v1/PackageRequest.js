@@ -124,7 +124,7 @@ class PackageRequest extends BaseRequest {
 		}
 
 		let listing = JSON.stringify(await this.fetchFiles());
-		await new PackageListing({ ...props, listing }).insert().catch(() => {});
+		new PackageListing({ ...props, listing }).insert().catch(() => {});
 		return listing;
 	}
 
@@ -136,15 +136,17 @@ class PackageRequest extends BaseRequest {
 			return JSON.parse(packageEntrypoints.entrypoints);
 		}
 
-		let { entrypoints } = await jsDelivrRemoteService.usingContext(this.ctx).listResolvedEntries(this.params.type, this.params.name, this.params.version);
+		let response = await jsDelivrRemoteService.usingContext(this.ctx).listResolvedEntries(this.params.type, this.params.name, this.params.version);
 
-		if (!entrypoints) {
-			return [];
+		if (response.version && response.version !== this.params.version) {
+			throw new BadVersionError();
 		}
 
-		await new PackageEntrypoints({ ...props, entrypoints: JSON.stringify(entrypoints) }).insert().catch(() => {});
+		if (response.entrypoints) {
+			new PackageEntrypoints({ ...props, entrypoints: JSON.stringify(response.entrypoints) }).insert().catch(() => {});
+		}
 
-		return entrypoints;
+		return response.entrypoints || [];
 	}
 
 	async getMetadata () {
@@ -173,33 +175,42 @@ class PackageRequest extends BaseRequest {
 	}
 
 	async getResolvedEntrypoints () {
-		let browserSafeColumns = [ 'jsdelivr', 'cdn', 'browser' ];
+		let browserSafeColumns = [ 'jsdelivr', 'cdn', 'browser', 'style' ];
 		let entrypoints = await this.getEntrypoints();
 
-		let defaultFiles = entrypoint.resolveEntrypoints(entrypoints);
+		let defaultFiles = entrypoint.resolveEntrypoints({}, entrypoints);
 
 		// use "safe entry"
 		let safeEntries = entrypoints.filter(e => browserSafeColumns.includes(e.field));
 
 		if (safeEntries.length > 0) {
-			return entrypoint.resolveEntrypoints(safeEntries);
+			defaultFiles = entrypoint.resolveEntrypoints(defaultFiles, safeEntries, 'safe');
+		}
+
+		// We are ready to respond when both js and style exist and resolved from trusted sources
+		if (entrypoint.readyForResponse(defaultFiles)) {
+			return entrypoint.buildResponse(defaultFiles);
 		}
 
 		// or get from cdnJs index
 		let cdnjsFile = await CdnJsPackage.getPackageEntrypoint(this.params.name, this.params.version);
 
 		if (cdnjsFile) {
-			return entrypoint.updateResolved(defaultFiles, [{ file: cdnjsFile }]);
+			defaultFiles = entrypoint.resolveEntrypoints(defaultFiles, [{ file: cdnjsFile }], 'cdnjs');
+		}
+
+		if (entrypoint.readyForResponse(defaultFiles)) {
+			return entrypoint.buildResponse(defaultFiles);
 		}
 
 		// or detect most used file
 		let mostUsed = await PackageVersion.getMostUsedFiles(this.params.name, this.params.version);
 
 		if (mostUsed.length > 0) {
-			return entrypoint.updateResolved(defaultFiles, mostUsed.map(row => ({ file: row.filename })));
+			defaultFiles = entrypoint.resolveEntrypoints(defaultFiles, mostUsed.map(row => ({ file: row.filename })), 'stats');
 		}
 
-		return defaultFiles;
+		return entrypoint.buildResponse(defaultFiles);
 	}
 
 	async handleResolveVersion () {
@@ -236,10 +247,10 @@ class PackageRequest extends BaseRequest {
 			this.ctx.maxAge = v1Config.maxAgeOneWeek;
 			this.ctx.maxStale = v1Config.maxStaleOneWeek;
 		} catch (remoteResourceOrError) {
-			if (remoteResourceOrError.statusCode === 404) {
+			if (remoteResourceOrError instanceof BadVersionError || remoteResourceOrError.statusCode === 404) {
 				return this.ctx.body = {
 					status: 404,
-					message: `Couldn't find version ${this.params.version} for ${this.params.name}.`,
+					message: `Couldn't find version ${this.params.version} for ${this.params.name}. Make sure you use a specific version number, and not a version range or an npm tag.`,
 				};
 			}
 

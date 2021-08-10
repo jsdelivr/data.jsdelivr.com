@@ -7,32 +7,46 @@ const normalizeFilename = (filename) => {
 
 const buildFileResponse = (file, guessed = false) => ({ file: normalizeFilename(file), guessed });
 
-const responseByType = (files, type) => {
+const buildResponse = (data) => {
+	return Object.fromEntries(Object.entries(data).filter(([ , v ]) => v).map(([ k, v ]) => [ k, buildFileResponse(v.file, v.guessed) ]));
+};
+
+const readyForResponse = (data) => {
+	return data.js && data.style && Object.values(data).find(v => v.source === 'default') === undefined;
+};
+
+const responseByType = (files, type, source) => {
 	let entry = files.find(e => e.field === type);
-	return entry ? buildFileResponse(entry.file) : undefined;
+	return entry ? { ...buildFileResponse(entry.file), source } : undefined;
 };
 
-const responseByExtension = (files, extension) => {
+const responseByExtension = (files, extension, source) => {
 	let entry = files.find(e => e.file.endsWith(`.${extension}`));
-	return entry ? buildFileResponse(entry.file) : undefined;
+	return entry ? { ...buildFileResponse(entry.file), source } : undefined;
 };
 
-const resolveEntrypoints = (entries) => {
-	return {
-		js: responseByExtension(entries, 'js'),
-		style: responseByType(entries, 'style') || responseByExtension(entries, 'css'),
+const resolveEntrypoints = (defaults, entries, source = 'default') => {
+	let cloned = _.cloneDeep(defaults);
+	let alternatives = {
+		js: responseByExtension(entries, 'js', source),
+		style: responseByType(entries, 'style', source) || responseByExtension(entries, 'css', source),
 	};
-};
 
-const updateResolved = (defaults, entries) => {
-	let alternatives = resolveEntrypoints(entries);
+	if (_.isEmpty(cloned)) {
+		return alternatives;
+	}
 
 	Object.entries(alternatives).filter(([ , v ]) => v).forEach(([ type, info ]) => {
-		let current = defaults[type];
-		defaults[type] = { ...info, guessed: current ? current.file !== info.file : true };
+		let current = cloned[type];
+
+		if (current && current.source !== 'default') {
+			return;
+		}
+
+		cloned[type] = { ...info, guessed: current ? current.file !== info.file : true };
 	});
 
-	return defaults;
+	return cloned;
 };
 
-module.exports = { resolveEntrypoints, updateResolved };
+module.exports = { resolveEntrypoints, readyForResponse, buildResponse };

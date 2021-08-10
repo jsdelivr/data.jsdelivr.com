@@ -51,7 +51,7 @@ function getBasePath (config) {
 }
 
 async function fileExist (name, version, filename) {
-	let files = await httpClient(`${config.get('server.url')}/v1/package/npm/${name}@${version}/flat`)
+	let files = await httpClient(`${config.get('server.host')}/v1/package/npm/${name}@${version}/flat`)
 		.then(res => _.get(res, 'body.files', []))
 		.catch(() => []);
 
@@ -152,7 +152,6 @@ const insertPackages = async (packages) => {
 
 console.time('cdnjs import');
 
-// eslint-disable-next-line promise/catch-or-return
 Bluebird.all([ fetchVersionsList(), fetchExistingPackages() ])
 	.then(([ versionsList, existingPackages ]) => {
 		let packages = [];
@@ -163,8 +162,9 @@ Bluebird.all([ fetchVersionsList(), fetchExistingPackages() ])
 			fetchPackages(versionsList, existingPackages, packages)
 		).then(() => insertPackages(packages));
 	})
-	.catch(err => console.error(err))
-	.then(() => {
+	.finally(() => {
 		console.timeEnd('cdnjs import');
 		db.destroy(() => console.log('DB connection closed'));
-	});
+	})
+	.catch(err => console.error(err));
+
