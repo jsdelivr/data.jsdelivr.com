@@ -32,6 +32,7 @@ The jsDelivr API allows you to:
  - [list package versions](#list-package-versions)
  - [list package files](#list-package-files)
  - [resolve a version range](#resolve-a-version-range)
+ - [resolve a package entry points](#resolve-a-package-entry-points)
  - [get package usage stats](#get-package-usage-stats)
  - [get package version usage stats](#get-package-version-usage-stats)
  - [get the most popular packages](#get-the-most-popular-packages)
@@ -148,6 +149,39 @@ https://data.jsdelivr.com/v1/package/resolve/npm/jquery@3
     "version": "3.2.1"
 }
 ```
+
+### Resolve a package entry points
+
+```
+/package/npm/:name@:version/entrypoints
+ - name: npm package name
+ - version: exact package version (not a version range)
+```
+
+**Example**
+
+```
+https://data.jsdelivr.com/v1/package/resolve/npm/bootstrap@5.1.0
+
+// =>
+{
+    "js": {
+        "file": "/dist/js/bootstrap.min.js",
+        "guessed": false
+    },
+    "style": {
+        "file": "/dist/css/bootstrap.min.css",
+        "guessed": false
+    }
+}
+```
+
+Each type of resolved entry point contains:
+
+- `file` - resolved file path
+- `guessed` - flag that shows a way the entrypoint was resolved
+  - `false` - resolved from the `package.json` of a package
+  - `true` - "guessed" using package statistics on jsDelivr or other sources
 
 ### Get package usage stats
 
