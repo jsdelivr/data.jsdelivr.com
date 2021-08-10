@@ -34,7 +34,7 @@ exports.up = async (db) => {
 	// language=MariaDB
 	await db.schema.raw(dedent`
 		drop procedure if exists updateViewTopPackageFiles;
-		create procedure updateViewTopPackageFiles(aDate date)
+		create procedure updateViewTopPackageFiles(dateFrom date, dateTo date)
 		begin
 			declare exit handler for sqlexception
 				begin
@@ -59,7 +59,7 @@ exports.up = async (db) => {
 					inner join package on package_version.packageId = package.id
 					inner join file on package_version.id = file.packageVersionId
 					inner join file_hits on file.id = file_hits.fileId
-				where file_hits.date = aDate
+				where file_hits.date between dateFrom and dateTo
 					and package.type = 'npm'
 					and file.filename RLIKE '^(?!\\\\/(docs?|documentation|examples?|samples?|demos?|tests?|cjs|esm|es6?)\\\\/)\\\\/[^._].*\\\\.(js|css)$'
 				group by file.id
@@ -80,7 +80,7 @@ exports.up = async (db) => {
 			begin
 				if not exists(select * from view_top_package_files where \`date\` = utc_date()) then
 					if get_lock('update_top_package_files', 0) = 1 then
-						call updateViewTopPackageFiles(date_sub(utc_date(), interval 2 day));
+						call updateViewTopPackageFiles(date_sub(utc_date(), interval 8 day), date_sub(utc_date(), interval 2 day));
 						select release_lock('update_top_package_files');
 					end if;
 				end if;

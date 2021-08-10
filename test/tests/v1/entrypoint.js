@@ -38,13 +38,11 @@ const seedTestData = async (entrypointsTestData) => {
 		}
 	}
 
-	// All hits for test entrypoint files must be in that exact date
-	await db.raw(`call updateViewTopPackageFiles('2021-08-01')`);
+	// All hits for test entrypoint files must be in this date range
+	await db.raw(`call updateViewTopPackageFiles('2021-08-01', '2021-08-31')`);
 };
 
-describe('/v1/package/:package/entrypoints', function () {
-	this.timeout(10000000);
-
+describe('/v1/package/:package/entrypoints', () => {
 	before(async () => {
 		await seedTestData(testCases);
 	});
