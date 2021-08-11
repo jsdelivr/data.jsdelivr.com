@@ -32,7 +32,7 @@ The jsDelivr API allows you to:
  - [list package versions](#list-package-versions)
  - [list package files](#list-package-files)
  - [resolve a version range](#resolve-a-version-range)
- - [resolve a package entry points](#resolve-a-package-entry-points)
+ - [resolve package entry points](#resolve-package-entry-points)
  - [get package usage stats](#get-package-usage-stats)
  - [get package version usage stats](#get-package-version-usage-stats)
  - [get the most popular packages](#get-the-most-popular-packages)
@@ -150,7 +150,7 @@ https://data.jsdelivr.com/v1/package/resolve/npm/jquery@3
 }
 ```
 
-### Resolve a package entry points
+### Resolve package entry points
 
 ```
 /package/npm/:name@:version/entrypoints
@@ -161,7 +161,7 @@ https://data.jsdelivr.com/v1/package/resolve/npm/jquery@3
 **Example**
 
 ```
-https://data.jsdelivr.com/v1/package/resolve/npm/bootstrap@5.1.0
+https://data.jsdelivr.com/v1/package/npm/bootstrap@5.1.0/entrypoints
 
 // =>
 {
