@@ -188,7 +188,7 @@ class PackageRequest extends BaseRequest {
 		}
 
 		// We are ready to respond when both js and style exist and resolved from trusted sources
-		if (entrypoint.readyForResponse(defaultFiles)) {
+		if (entrypoint.isReadyForResponse(defaultFiles)) {
 			return entrypoint.buildResponse(defaultFiles);
 		}
 
@@ -199,7 +199,7 @@ class PackageRequest extends BaseRequest {
 			defaultFiles = entrypoint.resolveEntrypoints(defaultFiles, [{ file: cdnjsFile }], 'cdnjs');
 		}
 
-		if (entrypoint.readyForResponse(defaultFiles)) {
+		if (entrypoint.isReadyForResponse(defaultFiles)) {
 			return entrypoint.buildResponse(defaultFiles);
 		}
 
