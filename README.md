@@ -158,6 +158,17 @@ https://data.jsdelivr.com/v1/package/resolve/npm/jquery@3
  - version: exact package version (not a version range)
 ```
 
+Based on package metadata and additional heuristics, returns the recommended files to use from this package. The response includes one file of each supported type (js, css), if available.
+
+Each resolved entry point contains:
+
+- `file` - resolved file path
+- `guessed` - a flag that indicates how the entrypoint was resolved
+	- `false` - based on trusted package metadata
+	- `true` - based on our heuristics
+
+The output of this endpoint may change over time as our algorithm improves.
+
 **Example**
 
 ```
@@ -175,13 +186,6 @@ https://data.jsdelivr.com/v1/package/npm/bootstrap@5.1.0/entrypoints
     }
 }
 ```
-
-Each type of resolved entry point contains:
-
-- `file` - resolved file path
-- `guessed` - flag that shows a way the entrypoint was resolved
-  - `false` - resolved from the `package.json` of a package
-  - `true` - "guessed" using package statistics on jsDelivr or other sources
 
 ### Get package usage stats
 
