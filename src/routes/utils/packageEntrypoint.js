@@ -1,27 +1,29 @@
 const normalizeFilename = (filename) => {
 	return '/' + filename
-		.replace(/^\//, '') // remove trailing slash
+		.replace(/^\//, '') // remove leading slash
 		.replace(/\.min\.(js|css)$/i, '.$1') // normalize minified
-		.replace(/\.(js|css)$/i, '.min.$1'); // convert to minified;
+		.replace(/\.(js|css)$/i, '.min.$1'); // convert to minified
 };
 
-const buildFileResponse = (file, guessed = false) => ({ file: normalizeFilename(file), guessed });
-
-const buildResponse = (data) => {
-	return Object.fromEntries(Object.entries(data).filter(([ , v ]) => v).map(([ k, v ]) => [ k, buildFileResponse(v.file, v.guessed) ]));
+const buildFileResponse = (file, guessed = false) => {
+	return { file: normalizeFilename(file), guessed };
 };
 
-const readyForResponse = (data) => {
+const buildResponse = (entries) => {
+	return _.mapValues(_.pickBy(entries), entrypoint => buildFileResponse(entrypoint.file, entrypoint.guessed));
+};
+
+const isReadyForResponse = (data) => {
 	return data.js && data.style && Object.values(data).find(v => v.source === 'default') === undefined;
 };
 
-const responseByType = (files, type, source) => {
-	let entry = files.find(e => e.field === type);
+const responseByExtension = (entries, extension, source) => {
+	let entry = entries.find(e => e.file.toLowerCase().endsWith(`.${extension.toLowerCase()}`));
 	return entry ? { ...buildFileResponse(entry.file), source } : undefined;
 };
 
-const responseByExtension = (files, extension, source) => {
-	let entry = files.find(e => e.file.endsWith(`.${extension}`));
+const responseByType = (entries, type, source) => {
+	let entry = entries.find(e => e.field === type);
 	return entry ? { ...buildFileResponse(entry.file), source } : undefined;
 };
 
@@ -49,4 +51,4 @@ const resolveEntrypoints = (defaults, entries, source = 'default') => {
 	return cloned;
 };
 
-module.exports = { resolveEntrypoints, readyForResponse, buildResponse };
+module.exports = { resolveEntrypoints, isReadyForResponse, buildResponse };
