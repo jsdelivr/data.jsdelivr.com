@@ -14,7 +14,7 @@ const buildResponse = (entries) => {
 };
 
 const isReadyForResponse = (data) => {
-	return data.js && data.style && Object.values(data).find(v => v.source === 'default') === undefined;
+	return data.js && data.style && Object.values(data).every(v => v.source !== 'default');
 };
 
 const responseByExtension = (entries, extension, source) => {
