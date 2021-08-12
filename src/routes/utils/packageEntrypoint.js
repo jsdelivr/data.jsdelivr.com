@@ -1,3 +1,5 @@
+const TRUSTED_SOURCES = [ 'default', 'safe', 'cdnjs' ];
+
 const normalizeFilename = (filename) => {
 	return '/' + filename
 		.replace(/^\//, '') // remove leading slash
@@ -49,7 +51,9 @@ const resolveEntrypoints = (defaults, entries, source = 'default') => {
 			return;
 		}
 
-		cloned[type] = { ...info, guessed: current ? current.file !== info.file : true };
+		let isTrusted = TRUSTED_SOURCES.includes(source) || (current ? current.file === info.file : false);
+
+		cloned[type] = { ...info, guessed: !isTrusted };
 	});
 
 	return cloned;

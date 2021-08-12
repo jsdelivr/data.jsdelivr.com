@@ -80,7 +80,7 @@
 		}
 	},
 	"entrypoint@cdnjs-alt-js": {
-		"expected": { "js": { "file": "/cdnjs-alt.min.js", "guessed": true } },
+		"expected": { "js": { "file": "/cdnjs-alt.min.js", "guessed": false } },
 		"db": {
 			"entrypoints": [{ "file": "/main.js", "field": "main" }],
 			"cdnjs": "/cdnjs-alt.js"
@@ -94,14 +94,14 @@
 		}
 	},
 	"entrypoint@cdnjs-alt-js-default-style": {
-		"expected": { "js": { "file": "/cdnjs-alt.min.js", "guessed": true }, "css": { "file": "/style.min.css", "guessed": false } },
+		"expected": { "js": { "file": "/cdnjs-alt.min.js", "guessed": false }, "css": { "file": "/style.min.css", "guessed": false } },
 		"db": {
 			"entrypoints": [{ "file": "/main.js", "field": "main" }, { "file": "/style.css", "field": "style" }],
 			"cdnjs": "/cdnjs-alt.js"
 		}
 	},
 	"entrypoint@cdnjs-alt-style": {
-		"expected": { "css": { "file": "/cdnjs-alt.min.css", "guessed": true } },
+		"expected": { "css": { "file": "/cdnjs-alt.min.css", "guessed": false } },
 		"db": {
 			"entrypoints": [{ "file": "/main.scss", "field": "style" }],
 			"cdnjs": "/cdnjs-alt.css"
@@ -112,6 +112,17 @@
 		"db": {
 			"entrypoints": [{ "file": "/main.scss", "field": "style" }],
 			"cdnjs": "/cdnjs-alt.scss"
+		}
+	},
+	"entrypoint@safe-style-cdnjs-style-stats-js": {
+		"expected": { "js": { "file": "/script.min.js", "guessed": true }, "css": { "file": "/style.min.css", "guessed": false } },
+		"db": {
+			"entrypoints": [{ "file": "/style.css", "field": "style" }],
+			"cdnjs": "/cdnjs-alt.css",
+			"stats": [
+				{ "file": "/script.js", "hits": [{ "date": "2021-08-01", "hits": 18 }] },
+				{ "file": "/stats-alt.css", "hits": [{ "date": "2021-08-01", "hits": 18 }] }
+			]
 		}
 	},
 	"entrypoint@stats-alt-js": {
@@ -161,15 +172,24 @@
 			]
 		}
 	},
+	"entrypoint@main-is-css-and-stats-based-alt": {
+		"expected": { "css": { "file": "/style-alt.min.css", "guessed": true } },
+		"db": {
+			"entrypoints": [{ "file": "/style.css", "field": "main" }],
+			"stats": [
+				{ "file": "/style-alt.min.css", "hits": [{ "date": "2021-08-01", "hits": 18 }] }
+			]
+		}
+	},
 	"entrypoint@safe-js-cdnjs-based-style": {
-		"expected": { "js": { "file": "/script.min.js", "guessed": false }, "css": { "file": "/style.min.css", "guessed": true } },
+		"expected": { "js": { "file": "/script.min.js", "guessed": false }, "css": { "file": "/style.min.css", "guessed": false } },
 		"db": {
 			"entrypoints": [{ "file": "/script.js", "field": "browser" }],
 			"cdnjs": "/style.min.css"
 		}
 	},
 	"entrypoint@safe-style-cdnjs-based-js": {
-		"expected": { "js": { "file": "/script.min.js", "guessed": true }, "css": { "file": "/style.min.css", "guessed": false } },
+		"expected": { "js": { "file": "/script.min.js", "guessed": false }, "css": { "file": "/style.min.css", "guessed": false } },
 		"db": {
 			"entrypoints": [{ "file": "/main.js", "field": "main" }, { "file": "/style.min.css", "field": "style" }],
 			"cdnjs": "/script.min.js"
@@ -195,14 +215,21 @@
 			]
 		}
 	},
-	"entrypoint@safe-style-cdnjs-style-stats-js": {
-		"expected": { "js": { "file": "/script.min.js", "guessed": true }, "css": { "file": "/style.min.css", "guessed": false } },
+	"entrypoint@stats-based-js-is-the-same": {
+		"expected": { "js": { "file": "/script.min.js", "guessed": false } },
 		"db": {
-			"entrypoints": [{ "file": "/style.css", "field": "style" }],
-			"cdnjs": "/cdnjs-alt.css",
+			"entrypoints": [{ "file": "/script.js", "field": "main" }],
 			"stats": [
-				{ "file": "/script.js", "hits": [{ "date": "2021-08-01", "hits": 18 }] },
-				{ "file": "/stats-alt.css", "hits": [{ "date": "2021-08-01", "hits": 18 }] }
+				{ "file": "/script.js", "hits": [{ "date": "2021-08-01", "hits": 18 }] }
+			]
+		}
+	},
+	"entrypoint@main-is-css-and-stats-based-css-is-the-same": {
+		"expected": { "css": { "file": "/style.min.css", "guessed": false } },
+		"db": {
+			"entrypoints": [{ "file": "/style.css", "field": "main" }],
+			"stats": [
+				{ "file": "/style.min.css", "hits": [{ "date": "2021-08-01", "hits": 18 }] }
 			]
 		}
 	}
