@@ -23,19 +23,25 @@
 		}
 	},
 	"entrypoint@simple-with-style": {
-		"expected": { "js": { "file": "/main.min.js", "guessed": false }, "style": { "file": "/main.min.min.css", "guessed": false } },
+		"expected": { "js": { "file": "/main.min.js", "guessed": false }, "css": { "file": "/main.min.min.css", "guessed": false } },
 		"db": {
 			"entrypoints": [{ "file": "/main.min.js", "field": "main" }, { "file": "/main.min.min.css", "field": "style" }]
 		}
 	},
 	"entrypoint@main-as-css": {
-		"expected": { "style": { "file": "/main.min.css", "guessed": false } },
+		"expected": { "css": { "file": "/main.min.css", "guessed": false } },
 		"db": {
 			"entrypoints": [{ "file": "/main.min.css", "field": "main" }]
 		}
 	},
+	"entrypoint@style-is-not-css": {
+		"expected": { "js": { "file": "/main.min.js", "guessed": false } },
+		"db": {
+			"entrypoints": [{ "file": "/main.js", "field": "main" }, { "file": "/not-a-style.scss", "field": "style" }]
+		}
+	},
 	"entrypoint@main-and-style-both-css": {
-		"expected": { "style": { "file": "/alt.min.css", "guessed": false } },
+		"expected": { "css": { "file": "/alt.min.css", "guessed": false } },
 		"db": {
 			"entrypoints": [{ "file": "/main.min.css", "field": "main" }, { "file": "/alt.css", "field": "style" }]
 		}
@@ -68,7 +74,7 @@
 		}
 	},
 	"entrypoint@safe-for-both": {
-		"expected": { "js": { "file": "/browser.min.js", "guessed": false }, "style": { "file": "/style.min.css", "guessed": false } },
+		"expected": { "js": { "file": "/browser.min.js", "guessed": false }, "css": { "file": "/style.min.css", "guessed": false } },
 		"db": {
 			"entrypoints": [{ "file": "/browser.js", "field": "browser" }, { "file": "/style.css", "field": "style" }]
 		}
@@ -88,10 +94,24 @@
 		}
 	},
 	"entrypoint@cdnjs-alt-js-default-style": {
-		"expected": { "js": { "file": "/cdnjs-alt.min.js", "guessed": true }, "style": { "file": "/style.min.css", "guessed": false } },
+		"expected": { "js": { "file": "/cdnjs-alt.min.js", "guessed": true }, "css": { "file": "/style.min.css", "guessed": false } },
 		"db": {
 			"entrypoints": [{ "file": "/main.js", "field": "main" }, { "file": "/style.css", "field": "style" }],
 			"cdnjs": "/cdnjs-alt.js"
+		}
+	},
+	"entrypoint@cdnjs-alt-style": {
+		"expected": { "css": { "file": "/cdnjs-alt.min.css", "guessed": true } },
+		"db": {
+			"entrypoints": [{ "file": "/main.scss", "field": "style" }],
+			"cdnjs": "/cdnjs-alt.css"
+		}
+	},
+	"entrypoint@cdnjs-alt-style-not-css": {
+		"expected": {},
+		"db": {
+			"entrypoints": [{ "file": "/main.scss", "field": "style" }],
+			"cdnjs": "/cdnjs-alt.scss"
 		}
 	},
 	"entrypoint@stats-alt-js": {
@@ -109,7 +129,7 @@
 		}
 	},
 	"entrypoint@stats-alt-js-default-style": {
-		"expected": { "js": { "file": "/stats-first.min.js", "guessed": true }, "style": { "file": "/style.min.css", "guessed": false } },
+		"expected": { "js": { "file": "/stats-first.min.js", "guessed": true }, "css": { "file": "/style.min.css", "guessed": false } },
 		"db": {
 			"entrypoints": [{ "file": "/main.js", "field": "main" }, { "file": "/style.css", "field": "style" }],
 			"stats": [
@@ -120,7 +140,7 @@
 		}
 	},
 	"entrypoint@based-on-stats-only": {
-		"expected": { "js": { "file": "/script.min.js", "guessed": true }, "style": { "file": "/style.min.css", "guessed": true } },
+		"expected": { "js": { "file": "/script.min.js", "guessed": true }, "css": { "file": "/style.min.css", "guessed": true } },
 		"db": {
 			"entrypoints": [],
 			"stats": [
@@ -130,22 +150,33 @@
 			]
 		}
 	},
+	"entrypoint@based-on-stats-only-no-css": {
+		"expected": { "js": { "file": "/script.min.js", "guessed": true } },
+		"db": {
+			"entrypoints": [],
+			"stats": [
+				{ "file": "/script.js", "hits": [{ "date": "2021-08-01", "hits": 18 }] },
+				{ "file": "/style.scss", "hits": [{ "date": "2021-08-01", "hits": 18 }] },
+				{ "file": "/sourcemap.map", "hits": [{ "date": "2021-08-01", "hits": 100 }] }
+			]
+		}
+	},
 	"entrypoint@safe-js-cdnjs-based-style": {
-		"expected": { "js": { "file": "/script.min.js", "guessed": false }, "style": { "file": "/style.min.css", "guessed": true } },
+		"expected": { "js": { "file": "/script.min.js", "guessed": false }, "css": { "file": "/style.min.css", "guessed": true } },
 		"db": {
 			"entrypoints": [{ "file": "/script.js", "field": "browser" }],
 			"cdnjs": "/style.min.css"
 		}
 	},
 	"entrypoint@safe-style-cdnjs-based-js": {
-		"expected": { "js": { "file": "/script.min.js", "guessed": true }, "style": { "file": "/style.min.css", "guessed": false } },
+		"expected": { "js": { "file": "/script.min.js", "guessed": true }, "css": { "file": "/style.min.css", "guessed": false } },
 		"db": {
 			"entrypoints": [{ "file": "/main.js", "field": "main" }, { "file": "/style.min.css", "field": "style" }],
 			"cdnjs": "/script.min.js"
 		}
 	},
 	"entrypoint@safe-js-stats-based-style": {
-		"expected": { "js": { "file": "/script.min.js", "guessed": false }, "style": { "file": "/style.min.css", "guessed": true } },
+		"expected": { "js": { "file": "/script.min.js", "guessed": false }, "css": { "file": "/style.min.css", "guessed": true } },
 		"db": {
 			"entrypoints": [{ "file": "/script.js", "field": "cdn" }],
 			"stats": [
@@ -155,7 +186,7 @@
 		}
 	},
 	"entrypoint@safe-style-stats-based-js": {
-		"expected": { "js": { "file": "/script.min.js", "guessed": true }, "style": { "file": "/style.min.css", "guessed": false } },
+		"expected": { "js": { "file": "/script.min.js", "guessed": true }, "css": { "file": "/style.min.css", "guessed": false } },
 		"db": {
 			"entrypoints": [{ "file": "/style.css", "field": "style" }],
 			"stats": [
@@ -165,7 +196,7 @@
 		}
 	},
 	"entrypoint@safe-style-cdnjs-style-stats-js": {
-		"expected": { "js": { "file": "/script.min.js", "guessed": true }, "style": { "file": "/style.min.css", "guessed": false } },
+		"expected": { "js": { "file": "/script.min.js", "guessed": true }, "css": { "file": "/style.min.css", "guessed": false } },
 		"db": {
 			"entrypoints": [{ "file": "/style.css", "field": "style" }],
 			"cdnjs": "/cdnjs-alt.css",

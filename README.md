@@ -180,7 +180,7 @@ https://data.jsdelivr.com/v1/package/npm/bootstrap@5.1.0/entrypoints
         "file": "/dist/js/bootstrap.min.js",
         "guessed": false
     },
-    "style": {
+    "css": {
         "file": "/dist/css/bootstrap.min.css",
         "guessed": false
     }

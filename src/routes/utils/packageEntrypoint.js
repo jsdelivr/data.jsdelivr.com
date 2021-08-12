@@ -31,8 +31,12 @@ const resolveEntrypoints = (defaults, entries, source = 'default') => {
 	let cloned = _.cloneDeep(defaults);
 	let alternatives = {
 		js: responseByExtension(entries, 'js', source),
-		style: responseByType(entries, 'style', source) || responseByExtension(entries, 'css', source),
+		css: responseByType(entries, 'style', source) || responseByExtension(entries, 'css', source),
 	};
+
+	if (!_.get(alternatives, 'css.file', '').endsWith('.css')) {
+		alternatives.css = undefined;
+	}
 
 	if (_.isEmpty(cloned)) {
 		return alternatives;
