@@ -172,7 +172,7 @@ class PackageRequest extends BaseRequest {
 	}
 
 	async getResolvedEntrypoints () {
-		let entrypoints = await this.getEntrypoints();
+		let entrypoints = entrypoint.normalize(await this.getEntrypoints());
 
 		return entrypoint.resolve(entrypoints, [
 			() => {

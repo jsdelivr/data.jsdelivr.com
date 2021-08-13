@@ -8,13 +8,6 @@ const FALLBACK_FIELDS = {
 	css: [ 'main' ],
 };
 
-const normalizeFilename = (filename) => {
-	return '/' + filename
-		.replace(/^\//, '') // remove leading slash
-		.replace(/\.min\.(js|css)$/i, '.$1') // normalize minified
-		.replace(/\.(js|css)$/i, '.min.$1'); // convert to minified
-};
-
 const filterFields = (pkg, fields, extension) => {
 	return filterFilesByExtension(fields[extension].map(field => pkg[field]), extension).map(file => ({ file }));
 };
@@ -54,9 +47,21 @@ const isReadyForResponse = (data) => {
 	return data.js && data.css;
 };
 
-const resolve = async (pkg, sources) => {
+const normalize = (pkg) => {
+	return _.mapValues(pkg, filename => normalizeFilename(filename));
+};
+
+const normalizeFilename = (filename) => {
+	return '/' + filename
+		.replace(/^\//, '') // remove leading slash
+		.replace(/^[^.]+$/, '$&.js') // assume js extension if there is none
+		.replace(/\.min\.(js|css)$/i, '.$1') // normalize minified
+		.replace(/\.(js|css)$/i, '.min.$1'); // convert to minified
+};
+
+const resolve = async (normalizedPkg, sources) => {
 	let result = {};
-	let fieldValues = _.map(pkg, file => normalizeFilename(file));
+	let fieldValues = Object.values(normalizedPkg);
 
 	for (let source of sources) {
 		_.defaults(result, fromFiles(fieldValues, await source()));
@@ -76,5 +81,6 @@ const responseByExtension = (entries, extension) => {
 module.exports = {
 	fromFields,
 	fromFallbackFields,
+	normalize,
 	resolve,
 };

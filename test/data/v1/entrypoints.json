@@ -129,6 +129,43 @@
 			}
 		}
 	},
+	"entrypoint@main-no-extension": {
+		"expected": {
+			"js": {
+				"file": "/main.min.js",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"main": "/main"
+			}
+		}
+	},
+	"entrypoint@main-no-extension-and-stats": {
+		"expected": {
+			"js": {
+				"file": "/main.min.js",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"main": "/main"
+			},
+			"stats": [
+				{
+					"file": "/main.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 20
+						}
+					]
+				}
+			]
+		}
+	},
 	"entrypoint@style-is-not-css": {
 		"expected": {
 			"js": {
