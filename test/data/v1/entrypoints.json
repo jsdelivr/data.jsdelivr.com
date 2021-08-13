@@ -143,6 +143,14 @@
 			}
 		}
 	},
+	"entrypoint@style-is-js": {
+		"expected": {},
+		"db": {
+			"entrypoints": {
+				"style": "style.js"
+			}
+		}
+	},
 	"entrypoint@main-and-style-both-css": {
 		"expected": {
 			"css": {
@@ -154,6 +162,20 @@
 			"entrypoints": {
 				"main": "/main.min.css",
 				"style": "/alt.css"
+			}
+		}
+	},
+	"entrypoint@jsdelivr-and-style-both-css": {
+		"expected": {
+			"css": {
+				"file": "/jsdelivr.min.css",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"jsdelivr": "/jsdelivr.min.css",
+				"style": "/style.css"
 			}
 		}
 	},
