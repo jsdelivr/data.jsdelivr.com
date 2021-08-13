@@ -8,13 +8,40 @@ const zlib = require('zlib');
 const got = require('got');
 const micromatch = require('micromatch');
 const Bluebird = require('bluebird');
-
 const pipeline = require('util').promisify(require('stream').pipeline);
+
+const Logger = require('h-logger2');
+const ElasticWriter = require('h-logger2-elastic');
+const ElasticSearch = require('@elastic/elasticsearch').Client;
 
 const db = require('../src/lib/db/index.js');
 const CndJsPackage = require('../src/models/CdnJsPackage');
 
-const httpClient = got.extend({ headers: { 'user-agent': config.get('server.userAgent') }, json: true });
+let esClient;
+
+if (process.env.ELASTIC_SEARCH_URL) {
+	esClient = new ElasticSearch({
+		node: process.env.ELASTIC_SEARCH_URL,
+	});
+}
+
+const log = new Logger(
+	'jsdelivr-cdnjs-sync',
+	process.env.NODE_ENV === 'production' ? [
+		new Logger.ConsoleWriter(process.env.LOG_LEVEL || Logger.levels.info),
+		new ElasticWriter(process.env.LOG_LEVEL || Logger.levels.info, { esClient }),
+	] : [
+		new Logger.ConsoleWriter(process.env.LOG_LEVEL || Logger.levels.info),
+	]
+);
+
+const httpClient = got.extend({
+	headers: {
+		'user-agent': config.get('server.userAgent'),
+	},
+	json: true,
+	timeout: 30000,
+});
 
 const tarballUrl = 'https://github.com/cdnjs/packages/tarball/master';
 const versionedListUrl = 'https://api.cdnjs.com/libraries/?fields=version';
@@ -65,8 +92,8 @@ async function fileExist (name, version, filename) {
 		.then(res => _.get(res, 'body.files', []))
 		.catch(() => []);
 
-	// cdnjs index may contain dynamically minimized files that are not exist in the original package
-	// we should allow this scenario because jsdelivr can minify files on th fly
+	// cdnjs index may contain dynamically minified files that do not exist in the original package
+	// we should allow this scenario because jsdelivr can minify files on the fly
 	let normalizedFilename = filename.replace(/\.min\.(js|css)$/i, '.$1'); // convert to unminified
 
 	for (let file of files) {
@@ -123,7 +150,7 @@ const fetchPackages = (versionsMap, existingPackages, resultingPackages) => {
 		next();
 	});
 
-	extract.on('finish', () => console.log(`${resultingPackages.length} packages ready for update`));
+	extract.on('finish', () => log.info(`${resultingPackages.length} packages ready for update`));
 
 	return extract;
 };
@@ -149,19 +176,19 @@ const insertPackages = async (packages) => {
 			await insertBatch(batch);
 
 			progress += batch.length;
-			console.log(`${progress} packages processed`);
+			log.info(`${progress} packages processed`);
 		}
 	}, { concurrency: 4 });
 
 	progress += batchEntries.length;
 	await insertBatch(batchEntries);
 
-	console.log(`packages inserted: ${progress}`);
-	console.log(`bad files found: ${badPackages.length}`);
-	// badPackages.forEach(file => console.log(`file ${file.filename} is missing for ${file.name}@${file.version}`));
+	log.debug(`Bad packages`, { badPackages });
+	log.info(`Packages inserted: ${progress}`);
+	log.info(`Bad files found: ${badPackages.length}`);
 };
 
-console.time('Execution time');
+let start = Date.now();
 
 Bluebird.all([ fetchVersionsList(), fetchExistingPackages() ])
 	.then(([ versionsList, existingPackages ]) => {
@@ -174,8 +201,8 @@ Bluebird.all([ fetchVersionsList(), fetchExistingPackages() ])
 		).then(() => insertPackages(packages));
 	})
 	.finally(() => {
-		console.timeEnd('Execution time');
-		db.destroy(() => console.log('DB connection closed'));
+		log.info(`Execution time: ${Date.now() - start} ms`);
+		db.destroy(() => {});
 	})
-	.catch(err => console.error(err));
+	.catch(err => log.error(`Error during sync`, err));
 
