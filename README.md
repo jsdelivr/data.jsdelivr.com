@@ -32,7 +32,7 @@ The jsDelivr API allows you to:
  - [list package versions](#list-package-versions)
  - [list package files](#list-package-files)
  - [resolve a version range](#resolve-a-version-range)
- - [resolve package entry points](#resolve-package-entry-points)
+ - [get package entry points](#get-package-entry-points)
  - [get package usage stats](#get-package-usage-stats)
  - [get package version usage stats](#get-package-version-usage-stats)
  - [get the most popular packages](#get-the-most-popular-packages)
@@ -150,7 +150,7 @@ https://data.jsdelivr.com/v1/package/resolve/npm/jquery@3
 }
 ```
 
-### Resolve package entry points
+### Get package entry points
 
 ```
 /package/npm/:name@:version/entrypoints
@@ -160,9 +160,9 @@ https://data.jsdelivr.com/v1/package/resolve/npm/jquery@3
 
 Based on package metadata and additional heuristics, returns the recommended files to use from this package. The response includes one file of each supported type (js, css), if available.
 
-Each resolved entry point contains:
+Each entry point contains:
 
-- `file` - resolved file path
+- `file` - file path
 - `guessed` - a flag that indicates how the entrypoint was resolved
 	- `false` - based on trusted package metadata
 	- `true` - based on our heuristics
