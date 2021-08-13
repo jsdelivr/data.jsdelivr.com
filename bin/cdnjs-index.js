@@ -35,7 +35,17 @@ const insertBatch = async (batch) => {
 
 const fetchVersionsList = async () => {
 	let response = await httpClient(versionedListUrl);
-	return new Map(response.body.results.map(p => [ p.name, p.version ]));
+	let versionsMap = new Map();
+
+	response.body.results.forEach((p) => {
+		if (!p.name || !p.version) {
+			return;
+		}
+
+		versionsMap.set(p.name, p.version);
+	});
+
+	return versionsMap;
 };
 
 function getBasePath (config) {
@@ -143,14 +153,15 @@ const insertPackages = async (packages) => {
 		}
 	}, { concurrency: 4 });
 
+	progress += batchEntries.length;
 	await insertBatch(batchEntries);
 
 	console.log(`packages inserted: ${progress}`);
 	console.log(`bad files found: ${badPackages.length}`);
-	// badFiles.forEach(file => console.log(`File ${file.filename} do not exist for ${file.packageName}@${file.packageVersion}`));
+	// badPackages.forEach(file => console.log(`file ${file.filename} is missing for ${file.name}@${file.version}`));
 };
 
-console.time('cdnjs import');
+console.time('Execution time');
 
 Bluebird.all([ fetchVersionsList(), fetchExistingPackages() ])
 	.then(([ versionsList, existingPackages ]) => {
@@ -163,7 +174,7 @@ Bluebird.all([ fetchVersionsList(), fetchExistingPackages() ])
 		).then(() => insertPackages(packages));
 	})
 	.finally(() => {
-		console.timeEnd('cdnjs import');
+		console.timeEnd('Execution time');
 		db.destroy(() => console.log('DB connection closed'));
 	})
 	.catch(err => console.error(err));
