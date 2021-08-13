@@ -142,11 +142,8 @@ class PackageRequest extends BaseRequest {
 			throw new BadVersionError();
 		}
 
-		if (response.data.entrypoints) {
-			new PackageEntrypoints({ ...props, entrypoints: JSON.stringify(response.data.entrypoints) }).insert().catch(() => {});
-		}
-
-		return response.data.entrypoints || {};
+		new PackageEntrypoints({ ...props, entrypoints: JSON.stringify(response.data.entrypoints) }).insert().catch(() => {});
+		return response.data.entrypoints;
 	}
 
 	async getMetadata () {
