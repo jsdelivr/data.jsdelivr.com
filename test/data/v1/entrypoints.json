@@ -1,235 +1,713 @@
 {
-	"entrypoint@just-empty": { "expected": {}, "db": { "entrypoints":  [] } },
+	"entrypoint@just-empty": {
+		"expected": {},
+		"db": {
+			"entrypoints": {}
+		}
+	},
 	"entrypoint@no-trash-in-db": {
 		"expected": {},
 		"db": {
-			"entrypoints": [],
+			"entrypoints": {},
 			"stats": [
-				{ "file": "/doc/file.js", "hits": [{ "date": "2021-08-01", "hits": 10 }] },
-				{ "file": "/docs/file.js", "hits": [{ "date": "2021-08-01", "hits": 10 }] },
-				{ "file": "/__internal__/file.css", "hits": [{ "date": "2021-08-01", "hits": 10 }] },
-				{ "file": "/.style.css", "hits": [{ "date": "2021-08-01", "hits": 10 }] },
-				{ "file": "/_style.css", "hits": [{ "date": "2021-08-01", "hits": 10 }] },
-				{ "file": "/style.scss", "hits": [{ "date": "2021-08-01", "hits": 10 }] },
-				{ "file": "/.style.scss", "hits": [{ "date": "2021-08-01", "hits": 10 }] },
-				{ "file": "/_style.scss", "hits": [{ "date": "2021-08-01", "hits": 10 }] }
+				{
+					"file": "/doc/file.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 10
+						}
+					]
+				},
+				{
+					"file": "/docs/file.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 10
+						}
+					]
+				},
+				{
+					"file": "/__internal__/file.css",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 10
+						}
+					]
+				},
+				{
+					"file": "/.style.css",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 10
+						}
+					]
+				},
+				{
+					"file": "/_style.css",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 10
+						}
+					]
+				},
+				{
+					"file": "/style.scss",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 10
+						}
+					]
+				},
+				{
+					"file": "/.style.scss",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 10
+						}
+					]
+				},
+				{
+					"file": "/_style.scss",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 10
+						}
+					]
+				}
 			]
 		}
 	},
 	"entrypoint@simple": {
-		"expected": { "js": { "file": "/main.min.js", "guessed": false } },
+		"expected": {
+			"js": {
+				"file": "/main.min.js",
+				"guessed": false
+			}
+		},
 		"db": {
-			"entrypoints": [{ "file": "/main.js", "field": "main" }]
+			"entrypoints": {
+				"main": "/main.js"
+			}
 		}
 	},
 	"entrypoint@simple-with-style": {
-		"expected": { "js": { "file": "/main.min.js", "guessed": false }, "css": { "file": "/main.min.min.css", "guessed": false } },
+		"expected": {
+			"js": {
+				"file": "/main.min.js",
+				"guessed": false
+			},
+			"css": {
+				"file": "/main.min.min.css",
+				"guessed": false
+			}
+		},
 		"db": {
-			"entrypoints": [{ "file": "/main.min.js", "field": "main" }, { "file": "/main.min.min.css", "field": "style" }]
+			"entrypoints": {
+				"main": "/main.min.js",
+				"style": "/main.min.min.css"
+			}
 		}
 	},
 	"entrypoint@main-as-css": {
-		"expected": { "css": { "file": "/main.min.css", "guessed": false } },
+		"expected": {
+			"css": {
+				"file": "/main.min.css",
+				"guessed": false
+			}
+		},
 		"db": {
-			"entrypoints": [{ "file": "/main.min.css", "field": "main" }]
+			"entrypoints": {
+				"main": "/main.min.css"
+			}
 		}
 	},
 	"entrypoint@style-is-not-css": {
-		"expected": { "js": { "file": "/main.min.js", "guessed": false } },
+		"expected": {
+			"js": {
+				"file": "/main.min.js",
+				"guessed": false
+			}
+		},
 		"db": {
-			"entrypoints": [{ "file": "/main.js", "field": "main" }, { "file": "/not-a-style.scss", "field": "style" }]
+			"entrypoints": {
+				"main": "/main.js",
+				"style": "/not-a-style.scss"
+			}
 		}
 	},
 	"entrypoint@main-and-style-both-css": {
-		"expected": { "css": { "file": "/alt.min.css", "guessed": false } },
+		"expected": {
+			"css": {
+				"file": "/alt.min.css",
+				"guessed": false
+			}
+		},
 		"db": {
-			"entrypoints": [{ "file": "/main.min.css", "field": "main" }, { "file": "/alt.css", "field": "style" }]
+			"entrypoints": {
+				"main": "/main.min.css",
+				"style": "/alt.css"
+			}
 		}
 	},
 	"entrypoint@simple-safe-jsdelivr": {
-		"expected": { "js": { "file": "/jsdelivr.min.js", "guessed": false } },
+		"expected": {
+			"js": {
+				"file": "/jsdelivr.min.js",
+				"guessed": false
+			}
+		},
 		"db": {
-			"entrypoints": [
-				{ "file": "/jsdelivr.js", "field": "jsdelivr" },
-				{ "file": "/cdn.js", "field": "cdn" },
-				{ "file": "/browser.js", "field": "browser" },
-				{ "file": "/main.js", "field": "main" }
-			]
+			"entrypoints": {
+				"jsdelivr": "/jsdelivr.js",
+				"cdn": "/cdn.js",
+				"browser": "/browser.js",
+				"main": "/main.js"
+			}
 		}
 	},
 	"entrypoint@simple-safe-cdn": {
-		"expected": { "js": { "file": "/cdn.min.js", "guessed": false } },
+		"expected": {
+			"js": {
+				"file": "/cdn.min.js",
+				"guessed": false
+			}
+		},
 		"db": {
-			"entrypoints": [
-				{ "file": "/cdn.js", "field": "cdn" },
-				{ "file": "/browser.js", "field": "browser" },
-				{ "file": "/main.js", "field": "main" }
-			]
+			"entrypoints": {
+				"cdn": "/cdn.js",
+				"browser": "/browser.js",
+				"main": "/main.js"
+			}
 		}
 	},
 	"entrypoint@simple-safe-browser": {
-		"expected": { "js": { "file": "/browser.min.js", "guessed": false } },
+		"expected": {
+			"js": {
+				"file": "/browser.min.js",
+				"guessed": false
+			}
+		},
 		"db": {
-			"entrypoints": [{ "file": "/browser.js", "field": "browser" }, { "file": "/main.js", "field": "main" }]
+			"entrypoints": {
+				"browser": "/browser.js",
+				"main": "/main.js"
+			}
 		}
 	},
 	"entrypoint@safe-for-both": {
-		"expected": { "js": { "file": "/browser.min.js", "guessed": false }, "css": { "file": "/style.min.css", "guessed": false } },
+		"expected": {
+			"js": {
+				"file": "/browser.min.js",
+				"guessed": false
+			},
+			"css": {
+				"file": "/style.min.css",
+				"guessed": false
+			}
+		},
 		"db": {
-			"entrypoints": [{ "file": "/browser.js", "field": "browser" }, { "file": "/style.css", "field": "style" }]
+			"entrypoints": {
+				"browser": "/browser.js",
+				"style": "/style.css"
+			}
 		}
 	},
 	"entrypoint@cdnjs-alt-js": {
-		"expected": { "js": { "file": "/cdnjs-alt.min.js", "guessed": false } },
+		"expected": {
+			"js": {
+				"file": "/cdnjs-alt.min.js",
+				"guessed": false
+			}
+		},
 		"db": {
-			"entrypoints": [{ "file": "/main.js", "field": "main" }],
+			"entrypoints": {
+				"main": "/main.js"
+			},
 			"cdnjs": "/cdnjs-alt.js"
 		}
 	},
 	"entrypoint@cdnjs-alt-js-is-the-same": {
-		"expected": { "js": { "file": "/main.min.js", "guessed": false } },
+		"expected": {
+			"js": {
+				"file": "/main.min.js",
+				"guessed": false
+			}
+		},
 		"db": {
-			"entrypoints": [{ "file": "/main.js", "field": "main" }],
+			"entrypoints": {
+				"main": "/main.js"
+			},
 			"cdnjs": "/main.min.js"
 		}
 	},
 	"entrypoint@cdnjs-alt-js-default-style": {
-		"expected": { "js": { "file": "/cdnjs-alt.min.js", "guessed": false }, "css": { "file": "/style.min.css", "guessed": false } },
+		"expected": {
+			"js": {
+				"file": "/cdnjs-alt.min.js",
+				"guessed": false
+			},
+			"css": {
+				"file": "/style.min.css",
+				"guessed": false
+			}
+		},
 		"db": {
-			"entrypoints": [{ "file": "/main.js", "field": "main" }, { "file": "/style.css", "field": "style" }],
+			"entrypoints": {
+				"main": "/main.js",
+				"style": "/style.css"
+			},
 			"cdnjs": "/cdnjs-alt.js"
 		}
 	},
 	"entrypoint@cdnjs-alt-style": {
-		"expected": { "css": { "file": "/cdnjs-alt.min.css", "guessed": false } },
+		"expected": {
+			"css": {
+				"file": "/cdnjs-alt.min.css",
+				"guessed": false
+			}
+		},
 		"db": {
-			"entrypoints": [{ "file": "/main.scss", "field": "style" }],
+			"entrypoints": {
+				"style": "/main.scss"
+			},
 			"cdnjs": "/cdnjs-alt.css"
 		}
 	},
 	"entrypoint@cdnjs-alt-style-not-css": {
 		"expected": {},
 		"db": {
-			"entrypoints": [{ "file": "/main.scss", "field": "style" }],
+			"entrypoints": {
+				"style": "/main.scss"
+			},
 			"cdnjs": "/cdnjs-alt.scss"
 		}
 	},
 	"entrypoint@safe-style-cdnjs-style-stats-js": {
-		"expected": { "js": { "file": "/script.min.js", "guessed": true }, "css": { "file": "/style.min.css", "guessed": false } },
+		"expected": {
+			"js": {
+				"file": "/script.min.js",
+				"guessed": true
+			},
+			"css": {
+				"file": "/style.min.css",
+				"guessed": false
+			}
+		},
 		"db": {
-			"entrypoints": [{ "file": "/style.css", "field": "style" }],
+			"entrypoints": {
+				"style": "/style.css"
+			},
 			"cdnjs": "/cdnjs-alt.css",
 			"stats": [
-				{ "file": "/script.js", "hits": [{ "date": "2021-08-01", "hits": 18 }] },
-				{ "file": "/stats-alt.css", "hits": [{ "date": "2021-08-01", "hits": 18 }] }
+				{
+					"file": "/script.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 18
+						}
+					]
+				},
+				{
+					"file": "/stats-alt.css",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 18
+						}
+					]
+				}
 			]
 		}
 	},
 	"entrypoint@stats-alt-js": {
-		"expected": { "js": { "file": "/stats-first.min.js", "guessed": true } },
+		"expected": {
+			"js": {
+				"file": "/stats-first.min.js",
+				"guessed": true
+			}
+		},
 		"db": {
-			"entrypoints": [{ "file": "/main.js", "field": "main" }],
+			"entrypoints": {
+				"main": "/main.js"
+			},
 			"stats": [
-				{ "file": "/stats-first.js", "hits": [{ "date": "2021-08-01", "hits": 20 }] },
-				{ "file": "/stats-second.js", "hits": [{ "date": "2021-08-01", "hits": 15 }] },
-				{ "file": "/docs/index.js", "hits": [{ "date": "2021-08-01", "hits": 100 }] },
-				{ "file": "/tests/index.js", "hits": [{ "date": "2021-08-01", "hits": 100 }] },
-				{ "file": "/samples/index.js", "hits": [{ "date": "2021-08-01", "hits": 100 }] },
-				{ "file": "/dist/", "hits": [{ "date": "2021-08-01", "hits": 100 }] }
+				{
+					"file": "/stats-first.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 20
+						}
+					]
+				},
+				{
+					"file": "/stats-second.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 15
+						}
+					]
+				},
+				{
+					"file": "/docs/index.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 100
+						}
+					]
+				},
+				{
+					"file": "/tests/index.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 100
+						}
+					]
+				},
+				{
+					"file": "/samples/index.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 100
+						}
+					]
+				},
+				{
+					"file": "/dist/",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 100
+						}
+					]
+				}
 			]
 		}
 	},
 	"entrypoint@stats-alt-js-default-style": {
-		"expected": { "js": { "file": "/stats-first.min.js", "guessed": true }, "css": { "file": "/style.min.css", "guessed": false } },
+		"expected": {
+			"js": {
+				"file": "/stats-first.min.js",
+				"guessed": true
+			},
+			"css": {
+				"file": "/style.min.css",
+				"guessed": false
+			}
+		},
 		"db": {
-			"entrypoints": [{ "file": "/main.js", "field": "main" }, { "file": "/style.css", "field": "style" }],
+			"entrypoints": {
+				"main": "/main.js",
+				"style": "/style.css"
+			},
 			"stats": [
-				{ "file": "/stats-first.js", "hits": [ { "date": "2021-08-01", "hits": 20 } ]},
-				{ "file": "/stats-second.js", "hits": [ { "date": "2021-08-01", "hits": 12 } ]},
-				{ "file": "/style.min.css", "hits": [ { "date": "2021-08-01", "hits": 15 } ]}
+				{
+					"file": "/stats-first.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 20
+						}
+					]
+				},
+				{
+					"file": "/stats-second.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 12
+						}
+					]
+				},
+				{
+					"file": "/style.min.css",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 15
+						}
+					]
+				}
 			]
 		}
 	},
 	"entrypoint@based-on-stats-only": {
-		"expected": { "js": { "file": "/script.min.js", "guessed": true }, "css": { "file": "/style.min.css", "guessed": true } },
+		"expected": {
+			"js": {
+				"file": "/script.min.js",
+				"guessed": true
+			},
+			"css": {
+				"file": "/style.min.css",
+				"guessed": true
+			}
+		},
 		"db": {
-			"entrypoints": [],
+			"entrypoints": {},
 			"stats": [
-				{ "file": "/script.js", "hits": [{ "date": "2021-08-01", "hits": 18 }] },
-				{ "file": "/style.css", "hits": [{ "date": "2021-08-01", "hits": 18 }] },
-				{ "file": "/sourcemap.map", "hits": [{ "date": "2021-08-01", "hits": 100 }] }
+				{
+					"file": "/script.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 18
+						}
+					]
+				},
+				{
+					"file": "/style.css",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 18
+						}
+					]
+				},
+				{
+					"file": "/sourcemap.map",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 100
+						}
+					]
+				}
 			]
 		}
 	},
 	"entrypoint@based-on-stats-only-no-css": {
-		"expected": { "js": { "file": "/script.min.js", "guessed": true } },
+		"expected": {
+			"js": {
+				"file": "/script.min.js",
+				"guessed": true
+			}
+		},
 		"db": {
-			"entrypoints": [],
+			"entrypoints": {},
 			"stats": [
-				{ "file": "/script.js", "hits": [{ "date": "2021-08-01", "hits": 18 }] },
-				{ "file": "/style.scss", "hits": [{ "date": "2021-08-01", "hits": 18 }] },
-				{ "file": "/sourcemap.map", "hits": [{ "date": "2021-08-01", "hits": 100 }] }
+				{
+					"file": "/script.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 18
+						}
+					]
+				},
+				{
+					"file": "/style.scss",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 18
+						}
+					]
+				},
+				{
+					"file": "/sourcemap.map",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 100
+						}
+					]
+				}
 			]
 		}
 	},
 	"entrypoint@main-is-css-and-stats-based-alt": {
-		"expected": { "css": { "file": "/style-alt.min.css", "guessed": true } },
+		"expected": {
+			"css": {
+				"file": "/style-alt.min.css",
+				"guessed": true
+			}
+		},
 		"db": {
-			"entrypoints": [{ "file": "/style.css", "field": "main" }],
+			"entrypoints": {
+				"main": "/style.css"
+			},
 			"stats": [
-				{ "file": "/style-alt.min.css", "hits": [{ "date": "2021-08-01", "hits": 18 }] }
+				{
+					"file": "/style-alt.min.css",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 18
+						}
+					]
+				}
 			]
 		}
 	},
 	"entrypoint@safe-js-cdnjs-based-style": {
-		"expected": { "js": { "file": "/script.min.js", "guessed": false }, "css": { "file": "/style.min.css", "guessed": false } },
+		"expected": {
+			"js": {
+				"file": "/script.min.js",
+				"guessed": false
+			},
+			"css": {
+				"file": "/style.min.css",
+				"guessed": false
+			}
+		},
 		"db": {
-			"entrypoints": [{ "file": "/script.js", "field": "browser" }],
+			"entrypoints": {
+				"browser": "/script.js"
+			},
 			"cdnjs": "/style.min.css"
 		}
 	},
 	"entrypoint@safe-style-cdnjs-based-js": {
-		"expected": { "js": { "file": "/script.min.js", "guessed": false }, "css": { "file": "/style.min.css", "guessed": false } },
+		"expected": {
+			"js": {
+				"file": "/script.min.js",
+				"guessed": false
+			},
+			"css": {
+				"file": "/style.min.css",
+				"guessed": false
+			}
+		},
 		"db": {
-			"entrypoints": [{ "file": "/main.js", "field": "main" }, { "file": "/style.min.css", "field": "style" }],
+			"entrypoints": {
+				"main": "/main.js",
+				"style": "/style.min.css"
+			},
 			"cdnjs": "/script.min.js"
 		}
 	},
 	"entrypoint@safe-js-stats-based-style": {
-		"expected": { "js": { "file": "/script.min.js", "guessed": false }, "css": { "file": "/style.min.css", "guessed": true } },
+		"expected": {
+			"js": {
+				"file": "/script.min.js",
+				"guessed": false
+			},
+			"css": {
+				"file": "/style.min.css",
+				"guessed": true
+			}
+		},
 		"db": {
-			"entrypoints": [{ "file": "/script.js", "field": "cdn" }],
+			"entrypoints": {
+				"cdn": "/script.js"
+			},
 			"stats": [
-				{ "file": "/script.js", "hits": [{ "date": "2021-08-01", "hits": 18 }] },
-				{ "file": "/style.css", "hits": [{ "date": "2021-08-01", "hits": 18 }] }
+				{
+					"file": "/script.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 18
+						}
+					]
+				},
+				{
+					"file": "/style.css",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 18
+						}
+					]
+				}
 			]
 		}
 	},
 	"entrypoint@safe-style-stats-based-js": {
-		"expected": { "js": { "file": "/script.min.js", "guessed": true }, "css": { "file": "/style.min.css", "guessed": false } },
+		"expected": {
+			"js": {
+				"file": "/script.min.js",
+				"guessed": true
+			},
+			"css": {
+				"file": "/style.min.css",
+				"guessed": false
+			}
+		},
 		"db": {
-			"entrypoints": [{ "file": "/style.css", "field": "style" }],
+			"entrypoints": {
+				"style": "/style.css"
+			},
 			"stats": [
-				{ "file": "/script.js", "hits": [{ "date": "2021-08-01", "hits": 18 }] },
-				{ "file": "/stats-alt.css", "hits": [{ "date": "2021-08-01", "hits": 18 }] }
+				{
+					"file": "/script.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 18
+						}
+					]
+				},
+				{
+					"file": "/stats-alt.css",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 18
+						}
+					]
+				}
 			]
 		}
 	},
 	"entrypoint@stats-based-js-is-the-same": {
-		"expected": { "js": { "file": "/script.min.js", "guessed": false } },
+		"expected": {
+			"js": {
+				"file": "/script.min.js",
+				"guessed": false
+			}
+		},
 		"db": {
-			"entrypoints": [{ "file": "/script.js", "field": "main" }],
+			"entrypoints": {
+				"main": "/script.js"
+			},
 			"stats": [
-				{ "file": "/script.js", "hits": [{ "date": "2021-08-01", "hits": 18 }] }
+				{
+					"file": "/script.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 18
+						}
+					]
+				}
 			]
 		}
 	},
 	"entrypoint@main-is-css-and-stats-based-css-is-the-same": {
-		"expected": { "css": { "file": "/style.min.css", "guessed": false } },
+		"expected": {
+			"css": {
+				"file": "/style.min.css",
+				"guessed": false
+			}
+		},
 		"db": {
-			"entrypoints": [{ "file": "/style.css", "field": "main" }],
+			"entrypoints": {
+				"main": "/style.css"
+			},
 			"stats": [
-				{ "file": "/style.min.css", "hits": [{ "date": "2021-08-01", "hits": 18 }] }
+				{
+					"file": "/style.min.css",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 18
+						}
+					]
+				}
 			]
 		}
 	}

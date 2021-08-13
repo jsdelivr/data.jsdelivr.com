@@ -1,4 +1,12 @@
-const TRUSTED_SOURCES = [ 'default', 'safe', 'cdnjs' ];
+const PRIMARY_FIELDS = {
+	js: [ 'jsdelivr', 'cdn', 'browser' ],
+	css: [ 'jsdelivr', 'cdn', 'browser', 'style' ],
+};
+
+const FALLBACK_FIELDS = {
+	js: [ 'main' ],
+	css: [ 'main' ],
+};
 
 const normalizeFilename = (filename) => {
 	return '/' + filename
@@ -7,56 +15,66 @@ const normalizeFilename = (filename) => {
 		.replace(/\.(js|css)$/i, '.min.$1'); // convert to minified
 };
 
-const buildFileResponse = (file, guessed = false) => {
-	return { file: normalizeFilename(file), guessed };
+const filterFields = (pkg, fields, extension) => {
+	return filterFilesByExtension(fields[extension].map(field => pkg[field]), extension).map(file => ({ file }));
 };
 
-const buildResponse = (entries) => {
-	return _.mapValues(_.pickBy(entries), entrypoint => buildFileResponse(entrypoint.file, entrypoint.guessed));
+const filterFilesByExtension = (entries, extension) => {
+	return entries.filter(entry => entry && entry.toLowerCase().endsWith(`.${extension.toLowerCase()}`));
+};
+
+const fromFields = (pkg, fields = PRIMARY_FIELDS) => {
+	return [
+		...filterFields(pkg, fields, 'js'),
+		...filterFields(pkg, fields, 'css'),
+	];
+};
+
+const fromFallbackFields = (fields) => {
+	return fromFields(fields, FALLBACK_FIELDS);
+};
+
+const fromFiles = (fieldValues, files) => {
+	files = files.map((entry) => {
+		let file = normalizeFilename(entry.file);
+
+		return {
+			file,
+			guessed: !!entry.guessed && !fieldValues.includes(file),
+		};
+	});
+
+	return {
+		js: responseByExtension(files, 'js'),
+		css: responseByExtension(files, 'css'),
+	};
 };
 
 const isReadyForResponse = (data) => {
-	return data.js && data.style && Object.values(data).every(v => v.source !== 'default');
+	return data.js && data.css;
 };
 
-const responseByExtension = (entries, extension, source) => {
-	let entry = entries.find(e => e.file.toLowerCase().endsWith(`.${extension.toLowerCase()}`));
-	return entry ? { ...buildFileResponse(entry.file), source } : undefined;
-};
+const resolve = async (pkg, sources) => {
+	let result = {};
+	let fieldValues = _.map(pkg, file => normalizeFilename(file));
 
-const responseByType = (entries, type, source) => {
-	let entry = entries.find(e => e.field === type);
-	return entry ? { ...buildFileResponse(entry.file), source } : undefined;
-};
+	for (let source of sources) {
+		_.defaults(result, fromFiles(fieldValues, await source()));
 
-const resolveEntrypoints = (defaults, entries, source = 'default') => {
-	let cloned = _.cloneDeep(defaults);
-	let alternatives = {
-		js: responseByExtension(entries, 'js', source),
-		css: responseByType(entries, 'style', source) || responseByExtension(entries, 'css', source),
-	};
-
-	if (!_.get(alternatives, 'css.file', '').endsWith('.css')) {
-		alternatives.css = undefined;
-	}
-
-	if (_.isEmpty(cloned)) {
-		return alternatives;
-	}
-
-	Object.entries(alternatives).filter(([ , v ]) => v).forEach(([ type, info ]) => {
-		let current = cloned[type];
-
-		if (current && current.source !== 'default') {
-			return;
+		if (isReadyForResponse(result)) {
+			return result;
 		}
+	}
 
-		let isTrusted = TRUSTED_SOURCES.includes(source) || (current ? current.file === info.file : false);
-
-		cloned[type] = { ...info, guessed: !isTrusted };
-	});
-
-	return cloned;
+	return result;
 };
 
-module.exports = { resolveEntrypoints, isReadyForResponse, buildResponse };
+const responseByExtension = (entries, extension) => {
+	return entries.find(entry => entry.file.toLowerCase().endsWith(`.${extension.toLowerCase()}`));
+};
+
+module.exports = {
+	fromFields,
+	fromFallbackFields,
+	resolve,
+};

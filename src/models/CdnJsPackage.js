@@ -36,13 +36,11 @@ class CdnJsPackage extends BaseModel {
 		return new Proxy(this, BaseModel.ProxyHandler);
 	}
 
-	static async getPackageEntrypoint (name, version) {
+	static async getPackageEntrypoints (name, version) {
 		return db(this.table)
 			.select(`${this.table}.filename`)
 			.where(`${this.table}.name`, name)
-			.andWhere(`${this.table}.version`, version)
-			.first()
-			.then(row => row && row.filename);
+			.andWhere(`${this.table}.version`, version);
 	}
 }
 

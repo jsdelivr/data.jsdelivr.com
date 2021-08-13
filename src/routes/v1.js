@@ -89,7 +89,7 @@ koaElasticUtils.addRoutes(router, [
 koaElasticUtils.addRoutes(router, [
 	[ '/package/npm/:name@:version/entrypoints', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version/entrypoints' ],
 ], async (ctx) => {
-	return new PackageRequest(ctx).handleResolveEntrypoints();
+	return new PackageRequest(ctx).handlePackageEntrypoints();
 });
 
 koaElasticUtils.addRoutes(router, [

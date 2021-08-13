@@ -146,7 +146,7 @@ class PackageRequest extends BaseRequest {
 			new PackageEntrypoints({ ...props, entrypoints: JSON.stringify(response.data.entrypoints) }).insert().catch(() => {});
 		}
 
-		return response.data.entrypoints || [];
+		return response.data.entrypoints || {};
 	}
 
 	async getMetadata () {
@@ -178,39 +178,22 @@ class PackageRequest extends BaseRequest {
 		let browserSafeColumns = [ 'jsdelivr', 'cdn', 'browser', 'style' ];
 		let entrypoints = await this.getEntrypoints();
 
-		let defaultFiles = entrypoint.resolveEntrypoints({}, entrypoints);
-
-		// use "safe entry"
-		let safeEntries = entrypoints.filter(e => browserSafeColumns.includes(e.field));
-
-		if (safeEntries.length > 0) {
-			defaultFiles = entrypoint.resolveEntrypoints(defaultFiles, safeEntries, 'safe');
-		}
-
-		// We are ready to respond when both js and style exist and resolved from trusted sources
-		if (entrypoint.isReadyForResponse(defaultFiles)) {
-			return entrypoint.buildResponse(defaultFiles);
-		}
-
-		// or get from cdnJs index
-		let cdnjsFile = await CdnJsPackage.getPackageEntrypoint(this.params.name, this.params.version);
-
-		if (cdnjsFile) {
-			defaultFiles = entrypoint.resolveEntrypoints(defaultFiles, [{ file: cdnjsFile }], 'cdnjs');
-		}
-
-		if (entrypoint.isReadyForResponse(defaultFiles)) {
-			return entrypoint.buildResponse(defaultFiles);
-		}
-
-		// or detect most used file
-		let mostUsed = await PackageVersion.getMostUsedFiles(this.params.name, this.params.version);
-
-		if (mostUsed.length > 0) {
-			defaultFiles = entrypoint.resolveEntrypoints(defaultFiles, mostUsed.map(row => ({ file: row.filename })), 'stats');
-		}
-
-		return entrypoint.buildResponse(defaultFiles);
+		return entrypoint.resolve(entrypoints, [
+			() => {
+				return entrypoint.fromFields(entrypoints);
+			},
+			async () => {
+				let files = await CdnJsPackage.getPackageEntrypoints(this.params.name, this.params.version);
+				return files.map(file => ({ file: file.filename }));
+			},
+			async () => {
+				let files = await PackageVersion.getMostUsedFiles(this.params.name, this.params.version);
+				return files.map(file => ({ file: file.filename, guessed: true }));
+			},
+			() => {
+				return entrypoint.fromFallbackFields(entrypoints);
+			},
+		]);
 	}
 
 	async handleResolveVersion () {
@@ -241,7 +224,7 @@ class PackageRequest extends BaseRequest {
 		}
 	}
 
-	async handleResolveEntrypoints () {
+	async handlePackageEntrypoints () {
 		try {
 			this.ctx.body = await this.getResolvedEntrypoints();
 			this.ctx.maxAge = v1Config.maxAgeOneWeek;
