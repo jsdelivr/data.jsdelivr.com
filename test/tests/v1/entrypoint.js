@@ -76,7 +76,7 @@ describe('/v1/package/:package/entrypoints', () => {
 		nock('https://cdn.jsdelivr.net')
 			.get('/npm/entrypoint@no-local-cache/+private-entrypoints')
 			.times(1)
-			.reply(200, { version: 'no-local-cache', default: '/index.js', entrypoints: { main: '/index.js' } });
+			.reply(200, { version: 'no-local-cache', entrypoints: { main: '/index.js' } });
 
 		return chai.request(server)
 			.get('/v1/package/npm/entrypoint@no-local-cache/entrypoints')
@@ -95,7 +95,7 @@ describe('/v1/package/:package/entrypoints', () => {
 		nock('https://cdn.jsdelivr.net')
 			.get('/npm/entrypoint@no-local-cache-empty-remote/+private-entrypoints')
 			.times(1)
-			.reply(200, { version: 'no-local-cache-empty-remote' });
+			.reply(200, { version: 'no-local-cache-empty-remote', entrypoints: {} });
 
 		return chai.request(server)
 			.get('/v1/package/npm/entrypoint@no-local-cache-empty-remote/entrypoints')
