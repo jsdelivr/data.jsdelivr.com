@@ -172,7 +172,6 @@ class PackageRequest extends BaseRequest {
 	}
 
 	async getResolvedEntrypoints () {
-		let browserSafeColumns = [ 'jsdelivr', 'cdn', 'browser', 'style' ];
 		let entrypoints = await this.getEntrypoints();
 
 		return entrypoint.resolve(entrypoints, [
