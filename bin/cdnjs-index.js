@@ -15,25 +15,27 @@ const ElasticWriter = require('h-logger2-elastic');
 const ElasticSearch = require('@elastic/elasticsearch').Client;
 
 const db = require('../src/lib/db/index.js');
-const CndJsPackage = require('../src/models/CdnJsPackage');
+const CdnJsPackage = require('../src/models/CdnJsPackage');
 
-let esClient;
+const log = (() => {
+	let esClient;
 
-if (process.env.ELASTIC_SEARCH_URL) {
-	esClient = new ElasticSearch({
-		node: process.env.ELASTIC_SEARCH_URL,
-	});
-}
+	if (process.env.ELASTIC_SEARCH_URL) {
+		esClient = new ElasticSearch({
+			node: process.env.ELASTIC_SEARCH_URL,
+		});
+	}
 
-const log = new Logger(
-	'jsdelivr-cdnjs-sync',
-	process.env.NODE_ENV === 'production' ? [
-		new Logger.ConsoleWriter(process.env.LOG_LEVEL || Logger.levels.info),
-		new ElasticWriter(process.env.LOG_LEVEL || Logger.levels.info, { esClient }),
-	] : [
-		new Logger.ConsoleWriter(process.env.LOG_LEVEL || Logger.levels.info),
-	]
-);
+	return new Logger(
+		'jsdelivr-cdnjs-sync',
+		process.env.NODE_ENV === 'production' ? [
+			new Logger.ConsoleWriter(process.env.LOG_LEVEL || Logger.levels.info),
+			new ElasticWriter(process.env.LOG_LEVEL || Logger.levels.info, { esClient }),
+		] : [
+			new Logger.ConsoleWriter(process.env.LOG_LEVEL || Logger.levels.info),
+		]
+	);
+})();
 
 const httpClient = got.extend({
 	headers: {
@@ -44,20 +46,20 @@ const httpClient = got.extend({
 });
 
 const tarballUrl = 'https://github.com/cdnjs/packages/tarball/master';
-const versionedListUrl = 'https://api.cdnjs.com/libraries/?fields=version';
-
-const fetchExistingPackages = async () => {
-	let packages = await db(CndJsPackage.table).select([ 'name', 'version' ]);
-
-	return new Set(packages.map(p => `${p.name}@${p.version}`));
-};
+const versionedListUrl = 'https://api.cdnjs.com/libraries/?fields=version,filename';
 
 const insertBatch = async (batch) => {
 	if (!batch.length) {
 		return;
 	}
 
-	return db(CndJsPackage.table).insert(batch).onConflict().ignore();
+	return db(CdnJsPackage.table).insert(batch).onConflict().merge([ 'filename', 'updatedAt' ]);
+};
+
+const fetchExistingPackages = async () => {
+	let packages = await db(CdnJsPackage.table).select([ 'name', 'version' ]);
+
+	return new Set(packages.map(p => `${p.name}@${p.version}`));
 };
 
 const fetchVersionsList = async () => {
@@ -65,45 +67,13 @@ const fetchVersionsList = async () => {
 	let versionsMap = new Map();
 
 	response.body.results.forEach((p) => {
-		if (!p.name || !p.version) {
-			return;
+		if (p.name && p.version && p.filename) {
+			versionsMap.set(p.name, [ p.version, p.filename ]);
 		}
-
-		versionsMap.set(p.name, p.version);
 	});
 
 	return versionsMap;
 };
-
-function getBasePath (config) {
-	for (let map of config.autoupdate.fileMap) {
-		for (let pattern of map.files) {
-			if (micromatch.isMatch(config.filename, pattern)) {
-				return map.basePath;
-			}
-		}
-	}
-
-	return '';
-}
-
-async function fileExist (name, version, filename) {
-	let files = await httpClient(`${config.get('server.host')}/v1/package/npm/${name}@${version}/flat`)
-		.then(res => _.get(res, 'body.files', []))
-		.catch(() => []);
-
-	// cdnjs index may contain dynamically minified files that do not exist in the original package
-	// we should allow this scenario because jsdelivr can minify files on the fly
-	let normalizedFilename = filename.replace(/\.min\.(js|css)$/i, '.$1'); // convert to unminified
-
-	for (let file of files) {
-		if (file.name === filename || file.name === normalizedFilename) {
-			return true;
-		}
-	}
-
-	return false;
-}
 
 const fetchPackages = (versionsMap, existingPackages, resultingPackages) => {
 	let extract = tar.extract();
@@ -133,11 +103,13 @@ const fetchPackages = (versionsMap, existingPackages, resultingPackages) => {
 			return next();
 		}
 
-		let basePath = '/' + getBasePath(payload);
+		let [ packageVersion, packageFilename ] = versionsMap.get(payload.name);
+
 		let pkg = {
 			name: payload.autoupdate.target,
-			version: versionsMap.get(payload.name),
-			filename: path.posix.join(basePath, payload.filename),
+			version: packageVersion,
+			filename: packageFilename,
+			fileMap: payload.autoupdate.fileMap,
 		};
 
 		// same package version already in the db - skip
@@ -155,21 +127,59 @@ const fetchPackages = (versionsMap, existingPackages, resultingPackages) => {
 	return extract;
 };
 
-const insertPackages = async (packages) => {
+function fileExist (filename, files) {
+	// cdnjs index may contain dynamically minified files that do not exist in the original package
+	// we should allow this scenario because jsdelivr can minify files on the fly
+	let normalizedFile = path.posix.join('/', filename);
+	let unminifiedFile = normalizedFile.replace(/\.min\.(js|css)$/i, '.$1');
+
+	for (let file of files) {
+		if (file.name === normalizedFile || file.name === unminifiedFile) {
+			return true;
+		}
+	}
+
+	return false;
+}
+
+async function findWorkingMainFile (pkg) {
+	let packageFiles = await httpClient(`${config.get('server.host')}/v1/package/npm/${pkg.name}@${pkg.version}/flat`)
+		.then(res => _.get(res, 'body.files', []))
+		.catch(() => []);
+
+	if (fileExist(pkg.filename, packageFiles)) {
+		return path.posix.join('/', pkg.filename);
+	}
+
+	for (let map of pkg.fileMap) {
+		for (let pattern of map.files) {
+			let normalizedPath = path.posix.join('/', map.basePath, '/', pkg.filename);
+
+			if (micromatch.isMatch(pkg.filename, pattern) && fileExist(normalizedPath, packageFiles)) {
+				return normalizedPath;
+			}
+		}
+	}
+
+	return null;
+}
+
+const storePackages = async (packages) => {
 	let batchSize = 100;
 	let batchEntries = [];
 	let badPackages = [];
 	let progress = 0;
 
 	await Bluebird.map(packages, async (pkg) => {
-		// file recommended by cdnjs doesn't exist in the package - skip
-		if (!await fileExist(pkg.name, pkg.version, pkg.filename)) {
+		let normalizedFile = await findWorkingMainFile(pkg);
+
+		if (!normalizedFile) {
 			badPackages.push(pkg);
 
 			return;
 		}
 
-		batchEntries.push(pkg);
+		batchEntries.push({ name: pkg.name, version: pkg.version, filename: normalizedFile, updatedAt: new Date() });
 
 		if (batchEntries.length > batchSize) {
 			let batch = batchEntries.splice(0, batchSize);
@@ -198,7 +208,7 @@ Bluebird.all([ fetchVersionsList(), fetchExistingPackages() ])
 			httpClient.stream(tarballUrl),
 			zlib.createGunzip(),
 			fetchPackages(versionsList, existingPackages, packages)
-		).then(() => insertPackages(packages));
+		).then(() => storePackages(packages));
 	})
 	.finally(() => {
 		log.info(`Execution time: ${Date.now() - start} ms`);
