@@ -1,11 +1,11 @@
 {
-	"entrypoint@just-empty": {
+	"entrypoint-just-empty@1.0.0": {
 		"expected": {},
 		"db": {
 			"entrypoints": {}
 		}
 	},
-	"entrypoint@no-trash-in-db": {
+	"entrypoint-no-trash-in-db@1.0.0": {
 		"expected": {},
 		"db": {
 			"entrypoints": {},
@@ -130,7 +130,7 @@
 			]
 		}
 	},
-	"entrypoint@simple": {
+	"entrypoint-simple@1.0.0": {
 		"expected": {
 			"js": {
 				"file": "/main.min.js",
@@ -143,7 +143,7 @@
 			}
 		}
 	},
-	"entrypoint@simple-with-style": {
+	"entrypoint-simple-with-style@1.0.0": {
 		"expected": {
 			"js": {
 				"file": "/main.min.js",
@@ -161,7 +161,7 @@
 			}
 		}
 	},
-	"entrypoint@main-as-css": {
+	"entrypoint-main-as-css@1.0.0": {
 		"expected": {
 			"css": {
 				"file": "/main.min.css",
@@ -174,7 +174,7 @@
 			}
 		}
 	},
-	"entrypoint@main-no-extension": {
+	"entrypoint-main-no-extension@1.0.0": {
 		"expected": {
 			"js": {
 				"file": "/main.min.js",
@@ -187,7 +187,7 @@
 			}
 		}
 	},
-	"entrypoint@main-no-extension-and-stats": {
+	"entrypoint-main-no-extension-and-stats@1.0.0": {
 		"expected": {
 			"js": {
 				"file": "/main.min.js",
@@ -211,7 +211,7 @@
 			]
 		}
 	},
-	"entrypoint@style-is-not-css": {
+	"entrypoint-style-is-not-css@1.0.0": {
 		"expected": {
 			"js": {
 				"file": "/main.min.js",
@@ -225,7 +225,7 @@
 			}
 		}
 	},
-	"entrypoint@style-is-js": {
+	"entrypoint-style-is-js@1.0.0": {
 		"expected": {},
 		"db": {
 			"entrypoints": {
@@ -233,7 +233,7 @@
 			}
 		}
 	},
-	"entrypoint@main-and-style-both-css": {
+	"entrypoint-main-and-style-both-css@1.0.0": {
 		"expected": {
 			"css": {
 				"file": "/alt.min.css",
@@ -247,7 +247,7 @@
 			}
 		}
 	},
-	"entrypoint@jsdelivr-and-style-both-css": {
+	"entrypoint-jsdelivr-and-style-both-css@1.0.0": {
 		"expected": {
 			"css": {
 				"file": "/jsdelivr.min.css",
@@ -261,7 +261,7 @@
 			}
 		}
 	},
-	"entrypoint@simple-safe-jsdelivr": {
+	"entrypoint-simple-safe-jsdelivr@1.0.0": {
 		"expected": {
 			"js": {
 				"file": "/jsdelivr.min.js",
@@ -277,7 +277,7 @@
 			}
 		}
 	},
-	"entrypoint@simple-safe-cdn": {
+	"entrypoint-simple-safe-cdn@1.0.0": {
 		"expected": {
 			"js": {
 				"file": "/cdn.min.js",
@@ -292,7 +292,7 @@
 			}
 		}
 	},
-	"entrypoint@simple-safe-browser": {
+	"entrypoint-simple-safe-browser@1.0.0": {
 		"expected": {
 			"js": {
 				"file": "/browser.min.js",
@@ -306,7 +306,7 @@
 			}
 		}
 	},
-	"entrypoint@safe-for-both": {
+	"entrypoint-safe-for-both@1.0.0": {
 		"expected": {
 			"js": {
 				"file": "/browser.min.js",
@@ -324,7 +324,7 @@
 			}
 		}
 	},
-	"entrypoint@cdnjs-alt-js": {
+	"entrypoint-cdnjs-alt-js@1.0.0": {
 		"expected": {
 			"js": {
 				"file": "/cdnjs-alt.min.js",
@@ -338,7 +338,7 @@
 			"cdnjs": "/cdnjs-alt.js"
 		}
 	},
-	"entrypoint@cdnjs-alt-js-is-the-same": {
+	"entrypoint-cdnjs-alt-js-is-the-same@1.0.0": {
 		"expected": {
 			"js": {
 				"file": "/main.min.js",
@@ -352,7 +352,7 @@
 			"cdnjs": "/main.min.js"
 		}
 	},
-	"entrypoint@cdnjs-alt-js-default-style": {
+	"entrypoint-cdnjs-alt-js-default-style@1.0.0": {
 		"expected": {
 			"js": {
 				"file": "/cdnjs-alt.min.js",
@@ -371,7 +371,7 @@
 			"cdnjs": "/cdnjs-alt.js"
 		}
 	},
-	"entrypoint@cdnjs-alt-style": {
+	"entrypoint-cdnjs-alt-style@1.0.0": {
 		"expected": {
 			"css": {
 				"file": "/cdnjs-alt.min.css",
@@ -385,7 +385,7 @@
 			"cdnjs": "/cdnjs-alt.css"
 		}
 	},
-	"entrypoint@cdnjs-alt-style-not-css": {
+	"entrypoint-cdnjs-alt-style-not-css@1.0.0": {
 		"expected": {},
 		"db": {
 			"entrypoints": {
@@ -394,7 +394,7 @@
 			"cdnjs": "/cdnjs-alt.scss"
 		}
 	},
-	"entrypoint@safe-style-cdnjs-style-stats-js": {
+	"entrypoint-safe-style-cdnjs-style-stats-js@1.0.0": {
 		"expected": {
 			"js": {
 				"file": "/script.min.js",
@@ -432,7 +432,7 @@
 			]
 		}
 	},
-	"entrypoint@stats-alt-js": {
+	"entrypoint-stats-alt-js@1.0.0": {
 		"expected": {
 			"js": {
 				"file": "/stats-first.min.js",
@@ -501,7 +501,7 @@
 			]
 		}
 	},
-	"entrypoint@stats-alt-js-default-style": {
+	"entrypoint-stats-alt-js-default-style@1.0.0": {
 		"expected": {
 			"js": {
 				"file": "/stats-first.min.js",
@@ -548,7 +548,7 @@
 			]
 		}
 	},
-	"entrypoint@based-on-stats-only": {
+	"entrypoint-based-on-stats-only@1.0.0": {
 		"expected": {
 			"js": {
 				"file": "/script.min.js",
@@ -592,7 +592,7 @@
 			]
 		}
 	},
-	"entrypoint@based-on-stats-only-no-css": {
+	"entrypoint-based-on-stats-only-no-css@1.0.0": {
 		"expected": {
 			"js": {
 				"file": "/script.min.js",
@@ -632,7 +632,7 @@
 			]
 		}
 	},
-	"entrypoint@main-is-css-and-stats-based-alt": {
+	"entrypoint-main-is-css-and-stats-based-alt@1.0.0": {
 		"expected": {
 			"css": {
 				"file": "/style-alt.min.css",
@@ -656,7 +656,7 @@
 			]
 		}
 	},
-	"entrypoint@safe-js-cdnjs-based-style": {
+	"entrypoint-safe-js-cdnjs-based-style@1.0.0": {
 		"expected": {
 			"js": {
 				"file": "/script.min.js",
@@ -674,7 +674,7 @@
 			"cdnjs": "/style.min.css"
 		}
 	},
-	"entrypoint@safe-style-cdnjs-based-js": {
+	"entrypoint-safe-style-cdnjs-based-js@1.0.0": {
 		"expected": {
 			"js": {
 				"file": "/script.min.js",
@@ -693,7 +693,7 @@
 			"cdnjs": "/script.min.js"
 		}
 	},
-	"entrypoint@safe-js-stats-based-style": {
+	"entrypoint-safe-js-stats-based-style@1.0.0": {
 		"expected": {
 			"js": {
 				"file": "/script.min.js",
@@ -730,7 +730,7 @@
 			]
 		}
 	},
-	"entrypoint@safe-style-stats-based-js": {
+	"entrypoint-safe-style-stats-based-js@1.0.0": {
 		"expected": {
 			"js": {
 				"file": "/script.min.js",
@@ -767,7 +767,7 @@
 			]
 		}
 	},
-	"entrypoint@stats-based-js-is-the-same": {
+	"entrypoint-stats-based-js-is-the-same@1.0.0": {
 		"expected": {
 			"js": {
 				"file": "/script.min.js",
@@ -791,7 +791,7 @@
 			]
 		}
 	},
-	"entrypoint@main-is-css-and-stats-based-css-is-the-same": {
+	"entrypoint-main-is-css-and-stats-based-css-is-the-same@1.0.0": {
 		"expected": {
 			"css": {
 				"file": "/style.min.css",
