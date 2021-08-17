@@ -26,7 +26,7 @@ begin
             inner join file_hits on file.id = file_hits.fileId
         where file_hits.date between dateFrom and dateTo
             and package.type = 'npm'
-            and file.filename RLIKE '^(?:(?!\\/(docs?|documentation|examples?|samples?|demos?|tests?|cjs|esm|es6?)\\/)(?!\\/[._]).)+\\.(js|css)$'
+            and file.filename RLIKE '^(?:(?!/(docs?|documentation|examples?|samples?|demos?|tests?|cjs|esm|es6?)/)(?!/[._]).)+\\.(js|css)$'
         group by file.id
     ) t where t.rowNum = 1;
 
