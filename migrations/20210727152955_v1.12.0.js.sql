@@ -42,7 +42,7 @@ create event top_package_files_update
     begin
         if not exists(select * from view_top_package_files where `date` = utc_date()) then
             if get_lock('update_top_package_files', 0) = 1 then
-                call updateViewTopPackageFiles(date_sub(utc_date(), interval 8 day), date_sub(utc_date(), interval 2 day));
+                call updateViewTopPackageFiles(date_sub(utc_date(), interval 31 day), date_sub(utc_date(), interval 2 day));
                 select release_lock('update_top_package_files');
             end if;
         end if;
