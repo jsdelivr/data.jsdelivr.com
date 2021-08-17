@@ -76,7 +76,7 @@ function getTopPackagesUpdateCodeForPeriod (period) {
 			end if;
 		end if;
 
-		if utc_time() >= '23:30:00' then
+		if utc_time() >= '23:00:00' then
 			if not exists(select * from view_top_packages_${period} where \`date\` = date_add(utc_date(), interval 1 day)) then
 			    if get_lock('update_top_packages_${period}', 0) = 1 then
 					call updateViewTopPackages${_.upperFirst(period)}(date_add(utc_date(), interval 1 day));

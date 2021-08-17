@@ -49,7 +49,7 @@ exports.up = async (db) => {
 					end if;
 				end if;
 
-				if utc_time() >= '23:30:00' then
+				if utc_time() >= '23:00:00' then
 					if not exists(select * from view_network_packages where \`date\` = date_sub(utc_date(), interval 1 day)) then
 					    if get_lock('update_network_packages', 0) = 1 then
 							call updateViewNetworkPackages(date_sub(utc_date(), interval 1 day));
