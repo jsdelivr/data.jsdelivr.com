@@ -13,13 +13,13 @@ begin
 
     insert into view_top_package_files
     (name, version, filename, date)
-    select t.name, t.version, t.filename, utc_date()
+    select t.name, t.v, t.filename, utc_date()
     from (
         select
             package.name as name,
-            package_version.version as version,
+            if(substring_index(package_version.version, '.', 1) = '0', substring_index(package_version.version, '.', 2), substring_index(package_version.version, '.', 1)) as v,
             file.filename as filename,
-            row_number() over (partition by package_version.id, substring_index(file.filename, '.', -1) order by substring_index(file.filename, '.', -1), sum(file_hits.hits) desc) as rowNum
+            row_number() over (partition by package.id, v, substring_index(file.filename, '.', -1) order by substring_index(file.filename, '.', -1), sum(file_hits.hits) desc) as rowNum
         from package_version
             inner join package on package_version.packageId = package.id
             inner join file on package_version.id = file.packageVersionId

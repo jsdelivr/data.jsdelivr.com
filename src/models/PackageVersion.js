@@ -61,6 +61,8 @@ class PackageVersion extends BaseModel {
 	}
 
 	static async getMostUsedFiles (name, version) {
+		[ , version ] = /^(0\.\d+|\d+)/.exec(version);
+
 		return db('view_top_package_files')
 			.select([ 'filename' ])
 			.where({ name, version });
