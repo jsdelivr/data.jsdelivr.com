@@ -82,7 +82,7 @@ server.use(koaCompress());
  * ETag support.
  */
 server.use(koaConditionalGet());
-server.use(koaETag());
+server.use(koaETag({ weak: true }));
 
 /**
  * Normalize URLs.
