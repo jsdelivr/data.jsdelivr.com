@@ -117,6 +117,15 @@
 							"hits": 10
 						}
 					]
+				},
+				{
+					"file": "/nested/docs/file.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 10
+						}
+					]
 				}
 			]
 		}
