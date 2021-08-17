@@ -11,9 +11,12 @@ const BaseRequest = require('./BaseRequest');
 const BadVersionError = require('../errors/BadVersionError');
 const Package = require('../../../models/Package');
 const PackageListing = require('../../../models/PackageListing');
+const PackageEntrypoints = require('../../../models/PackageEntrypoints');
 const PackageVersion = require('../../../models/PackageVersion');
+const CdnJsPackage = require('../../../models/CdnJsPackage');
 const dateRange = require('../../utils/dateRange');
 const sumDeep = require('../../utils/sumDeep');
+const entrypoint = require('../../utils/packageEntrypoint');
 
 const NpmRemoteService = require('../../../remote-services/NpmRemoteService');
 const GitHubRemoteService = require('../../../remote-services/GitHubRemoteService');
@@ -121,8 +124,26 @@ class PackageRequest extends BaseRequest {
 		}
 
 		let listing = JSON.stringify(await this.fetchFiles());
-		await new PackageListing({ ...props, listing }).insert().catch(() => {});
+		new PackageListing({ ...props, listing }).insert().catch(() => {});
 		return listing;
+	}
+
+	async getEntrypoints () {
+		let props = { type: this.params.type, name: this.params.name, version: this.params.version };
+		let packageEntrypoints = await PackageEntrypoints.find(props);
+
+		if (packageEntrypoints) {
+			return JSON.parse(packageEntrypoints.entrypoints);
+		}
+
+		let response = await jsDelivrRemoteService.usingContext(this.ctx).listResolvedEntries(this.params.type, this.params.name, this.params.version);
+
+		if (response.data.version && response.data.version !== this.params.version) {
+			throw new BadVersionError();
+		}
+
+		new PackageEntrypoints({ ...props, entrypoints: JSON.stringify(response.data.entrypoints) }).insert().catch(() => {});
+		return response.data.entrypoints;
 	}
 
 	async getMetadata () {
@@ -150,6 +171,27 @@ class PackageRequest extends BaseRequest {
 		});
 	}
 
+	async getResolvedEntrypoints () {
+		let entrypoints = entrypoint.normalize(await this.getEntrypoints());
+
+		return entrypoint.resolve(entrypoints, [
+			() => {
+				return entrypoint.fromFields(entrypoints);
+			},
+			async () => {
+				let files = await CdnJsPackage.getPackageEntrypoints(this.params.name, this.params.version);
+				return files.map(file => ({ file: file.filename }));
+			},
+			async () => {
+				let files = await PackageVersion.getMostUsedFiles(this.params.name, this.params.version);
+				return files.map(file => ({ file: file.filename, guessed: true }));
+			},
+			() => {
+				return entrypoint.fromFallbackFields(entrypoints);
+			},
+		]);
+	}
+
 	async handleResolveVersion () {
 		try {
 			this.ctx.body = { version: await this.getResolvedVersion() };
@@ -175,6 +217,23 @@ class PackageRequest extends BaseRequest {
 			this.ctx.maxStaleError = v1Config.maxStaleErrorShort;
 		} catch (e) {
 			return this.responseFromRemoteError(e);
+		}
+	}
+
+	async handlePackageEntrypoints () {
+		try {
+			this.ctx.body = await this.getResolvedEntrypoints();
+			this.ctx.maxAge = v1Config.maxAgeOneWeek;
+			this.ctx.maxStale = v1Config.maxStaleOneWeek;
+		} catch (remoteResourceOrError) {
+			if (remoteResourceOrError instanceof BadVersionError || remoteResourceOrError.statusCode === 404) {
+				return this.ctx.body = {
+					status: 404,
+					message: `Couldn't find version ${this.params.version} for ${this.params.name}. Make sure you use a specific version number, and not a version range or an npm tag.`,
+				};
+			}
+
+			return this.responseFromRemoteError(remoteResourceOrError);
 		}
 	}
 

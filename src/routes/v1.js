@@ -87,6 +87,12 @@ koaElasticUtils.addRoutes(router, [
 });
 
 koaElasticUtils.addRoutes(router, [
+	[ '/package/npm/:name@:version/entrypoints', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version/entrypoints' ],
+], async (ctx) => {
+	return new PackageRequest(ctx).handlePackageEntrypoints();
+});
+
+koaElasticUtils.addRoutes(router, [
 	[ '/package/npm/:name@:version/stats', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version/stats/:groupBy(file|date)?/:period(day|week|month|year|all)?' ],
 	[ '/package/gh/:user/:repo@:version/stats', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version/stats/:groupBy(file|date)?/:period(day|week|month|year|all)?' ],
 ], async (ctx) => {

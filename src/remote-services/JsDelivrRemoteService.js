@@ -14,17 +14,19 @@ class JsDelivrRemoteService extends RemoteService {
 	 * @param {string} type
 	 * @param {string} name
 	 * @param {string} version
+	 * @param {string} modifier
+	 * @param {string[]} columns
 	 * @returns {Promise<JsDelivrRemoteResource>}
 	 */
-	listFiles (type, name, version) {
-		return this.requestWithCache(`/${type}/${name}@${encodeURIComponent(version)}/+private-json`, (uri, cached) => {
+	fetchPrivateData (type, name, version, modifier, columns) {
+		return this.requestWithCache(`/${type}/${name}@${encodeURIComponent(version)}/${modifier}`, (uri, cached) => {
 			return this.requestConditional(uri, cached, { json: true }).then((remoteResource) => {
 				if (remoteResource.isFromCache) {
 					return remoteResource;
 				}
 
 				return Object.assign(remoteResource, {
-					data: _.pick(remoteResource.data, [ 'default', 'files', 'version' ]),
+					data: _.pick(remoteResource.data, columns),
 					headers: _.pick(remoteResource.headers, 'etag', 'last-modified'),
 				});
 			}).catch((error) => {
@@ -43,11 +45,25 @@ class JsDelivrRemoteService extends RemoteService {
 	}
 
 	/**
-	 * @param {string} uri
-	 * @param {RemoteResource|null} [remoteResource]
-	 * @param options
+	 * @param {string} type
+	 * @param {string} name
+	 * @param {string} version
 	 * @returns {Promise<JsDelivrRemoteResource>}
 	 */
+	listFiles (type, name, version) {
+		return this.fetchPrivateData(type, name, version, '+private-json', [ 'default', 'files', 'version' ]);
+	}
+
+	/**
+	 * @param {string} type
+	 * @param {string} name
+	 * @param {string} version
+	 * @returns {Promise<JsDelivrRemoteResource>}
+	 */
+	listResolvedEntries (type, name, version) {
+		return this.fetchPrivateData(type, name, version, '+private-entrypoints', [ 'version', 'default', 'entrypoints' ]);
+	}
+
 	requestConditional (uri, remoteResource, options = {}) {
 		JsDelivrRemoteService.addConditionalHeaders(remoteResource, options);
 

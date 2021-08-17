@@ -60,6 +60,14 @@ class PackageVersion extends BaseModel {
 		return sql.select([ `${FileHits.table}.*`, `${File.table}.filename` ]);
 	}
 
+	static async getMostUsedFiles (name, version) {
+		[ , version ] = /^(0\.\d+|\d+)/.exec(version);
+
+		return db('view_top_package_files')
+			.select([ 'filename' ])
+			.where({ name, version });
+	}
+
 	static async getSumDateHitsPerFileByName (type, name, version, from, to) {
 		return _.mapValues(_.groupBy(await PackageVersion.getHitsByNameAndVersion(type, name, version, from, to), item => item.date.toISOString().substr(0, 10)), (versionHits) => {
 			return _.fromPairs(_.map(versionHits, entry => [ entry.filename, entry.hits ]));

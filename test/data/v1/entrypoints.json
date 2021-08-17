@@ -1,0 +1,818 @@
+{
+	"entrypoint-just-empty@1.0.0": {
+		"expected": {},
+		"db": {
+			"entrypoints": {}
+		}
+	},
+	"entrypoint-no-trash-in-db@1.0.0": {
+		"expected": {},
+		"db": {
+			"entrypoints": {},
+			"stats": [
+				{
+					"file": "/doc/file.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 10
+						}
+					]
+				},
+				{
+					"file": "/docs/file.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 10
+						}
+					]
+				},
+				{
+					"file": "/__internal__/file.css",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 10
+						}
+					]
+				},
+				{
+					"file": "/.style.css",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 10
+						}
+					]
+				},
+				{
+					"file": "/_style.css",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 10
+						}
+					]
+				},
+				{
+					"file": "/style.scss",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 10
+						}
+					]
+				},
+				{
+					"file": "/.style.scss",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 10
+						}
+					]
+				},
+				{
+					"file": "/_style.scss",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 10
+						}
+					]
+				},
+				{
+					"file": "/nested/.hidden/file.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 10
+						}
+					]
+				},
+				{
+					"file": "/nested/_hidden/file.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 10
+						}
+					]
+				},
+				{
+					"file": "/nested/.file.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 10
+						}
+					]
+				},
+				{
+					"file": "/nested/_file.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 10
+						}
+					]
+				},
+				{
+					"file": "/nested/docs/file.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 10
+						}
+					]
+				}
+			]
+		}
+	},
+	"entrypoint-simple@1.0.0": {
+		"expected": {
+			"js": {
+				"file": "/main.min.js",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"main": "/main.js"
+			}
+		}
+	},
+	"entrypoint-simple-with-style@1.0.0": {
+		"expected": {
+			"js": {
+				"file": "/main.min.js",
+				"guessed": false
+			},
+			"css": {
+				"file": "/main.min.min.css",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"main": "/main.min.js",
+				"style": "/main.min.min.css"
+			}
+		}
+	},
+	"entrypoint-main-as-css@1.0.0": {
+		"expected": {
+			"css": {
+				"file": "/main.min.css",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"main": "/main.min.css"
+			}
+		}
+	},
+	"entrypoint-main-no-extension@1.0.0": {
+		"expected": {
+			"js": {
+				"file": "/main.min.js",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"main": "/main"
+			}
+		}
+	},
+	"entrypoint-main-no-extension-and-stats@1.0.0": {
+		"expected": {
+			"js": {
+				"file": "/main.min.js",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"main": "/main"
+			},
+			"stats": [
+				{
+					"file": "/main.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 20
+						}
+					]
+				}
+			]
+		}
+	},
+	"entrypoint-style-is-not-css@1.0.0": {
+		"expected": {
+			"js": {
+				"file": "/main.min.js",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"main": "/main.js",
+				"style": "/not-a-style.scss"
+			}
+		}
+	},
+	"entrypoint-style-is-js@1.0.0": {
+		"expected": {},
+		"db": {
+			"entrypoints": {
+				"style": "style.js"
+			}
+		}
+	},
+	"entrypoint-main-and-style-both-css@1.0.0": {
+		"expected": {
+			"css": {
+				"file": "/alt.min.css",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"main": "/main.min.css",
+				"style": "/alt.css"
+			}
+		}
+	},
+	"entrypoint-jsdelivr-and-style-both-css@1.0.0": {
+		"expected": {
+			"css": {
+				"file": "/jsdelivr.min.css",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"jsdelivr": "/jsdelivr.min.css",
+				"style": "/style.css"
+			}
+		}
+	},
+	"entrypoint-simple-safe-jsdelivr@1.0.0": {
+		"expected": {
+			"js": {
+				"file": "/jsdelivr.min.js",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"jsdelivr": "/jsdelivr.js",
+				"cdn": "/cdn.js",
+				"browser": "/browser.js",
+				"main": "/main.js"
+			}
+		}
+	},
+	"entrypoint-simple-safe-cdn@1.0.0": {
+		"expected": {
+			"js": {
+				"file": "/cdn.min.js",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"cdn": "/cdn.js",
+				"browser": "/browser.js",
+				"main": "/main.js"
+			}
+		}
+	},
+	"entrypoint-simple-safe-browser@1.0.0": {
+		"expected": {
+			"js": {
+				"file": "/browser.min.js",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"browser": "/browser.js",
+				"main": "/main.js"
+			}
+		}
+	},
+	"entrypoint-safe-for-both@1.0.0": {
+		"expected": {
+			"js": {
+				"file": "/browser.min.js",
+				"guessed": false
+			},
+			"css": {
+				"file": "/style.min.css",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"browser": "/browser.js",
+				"style": "/style.css"
+			}
+		}
+	},
+	"entrypoint-cdnjs-alt-js@1.0.0": {
+		"expected": {
+			"js": {
+				"file": "/cdnjs-alt.min.js",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"main": "/main.js"
+			},
+			"cdnjs": "/cdnjs-alt.js"
+		}
+	},
+	"entrypoint-cdnjs-alt-js-is-the-same@1.0.0": {
+		"expected": {
+			"js": {
+				"file": "/main.min.js",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"main": "/main.js"
+			},
+			"cdnjs": "/main.min.js"
+		}
+	},
+	"entrypoint-cdnjs-alt-js-default-style@1.0.0": {
+		"expected": {
+			"js": {
+				"file": "/cdnjs-alt.min.js",
+				"guessed": false
+			},
+			"css": {
+				"file": "/style.min.css",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"main": "/main.js",
+				"style": "/style.css"
+			},
+			"cdnjs": "/cdnjs-alt.js"
+		}
+	},
+	"entrypoint-cdnjs-alt-style@1.0.0": {
+		"expected": {
+			"css": {
+				"file": "/cdnjs-alt.min.css",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"style": "/main.scss"
+			},
+			"cdnjs": "/cdnjs-alt.css"
+		}
+	},
+	"entrypoint-cdnjs-alt-style-not-css@1.0.0": {
+		"expected": {},
+		"db": {
+			"entrypoints": {
+				"style": "/main.scss"
+			},
+			"cdnjs": "/cdnjs-alt.scss"
+		}
+	},
+	"entrypoint-safe-style-cdnjs-style-stats-js@1.0.0": {
+		"expected": {
+			"js": {
+				"file": "/script.min.js",
+				"guessed": true
+			},
+			"css": {
+				"file": "/style.min.css",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"style": "/style.css"
+			},
+			"cdnjs": "/cdnjs-alt.css",
+			"stats": [
+				{
+					"file": "/script.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 18
+						}
+					]
+				},
+				{
+					"file": "/stats-alt.css",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 18
+						}
+					]
+				}
+			]
+		}
+	},
+	"entrypoint-stats-alt-js@1.0.0": {
+		"expected": {
+			"js": {
+				"file": "/stats-first.min.js",
+				"guessed": true
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"main": "/main.js"
+			},
+			"stats": [
+				{
+					"file": "/stats-first.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 20
+						}
+					]
+				},
+				{
+					"file": "/stats-second.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 15
+						}
+					]
+				},
+				{
+					"file": "/docs/index.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 100
+						}
+					]
+				},
+				{
+					"file": "/tests/index.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 100
+						}
+					]
+				},
+				{
+					"file": "/samples/index.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 100
+						}
+					]
+				},
+				{
+					"file": "/dist/",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 100
+						}
+					]
+				}
+			]
+		}
+	},
+	"entrypoint-stats-alt-js-default-style@1.0.0": {
+		"expected": {
+			"js": {
+				"file": "/stats-first.min.js",
+				"guessed": true
+			},
+			"css": {
+				"file": "/style.min.css",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"main": "/main.js",
+				"style": "/style.css"
+			},
+			"stats": [
+				{
+					"file": "/stats-first.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 20
+						}
+					]
+				},
+				{
+					"file": "/stats-second.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 12
+						}
+					]
+				},
+				{
+					"file": "/style.min.css",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 15
+						}
+					]
+				}
+			]
+		}
+	},
+	"entrypoint-based-on-stats-only@1.0.0": {
+		"expected": {
+			"js": {
+				"file": "/script.min.js",
+				"guessed": true
+			},
+			"css": {
+				"file": "/style.min.css",
+				"guessed": true
+			}
+		},
+		"db": {
+			"entrypoints": {},
+			"stats": [
+				{
+					"file": "/script.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 18
+						}
+					]
+				},
+				{
+					"file": "/style.css",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 18
+						}
+					]
+				},
+				{
+					"file": "/sourcemap.map",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 100
+						}
+					]
+				}
+			]
+		}
+	},
+	"entrypoint-based-on-stats-only-no-css@1.0.0": {
+		"expected": {
+			"js": {
+				"file": "/script.min.js",
+				"guessed": true
+			}
+		},
+		"db": {
+			"entrypoints": {},
+			"stats": [
+				{
+					"file": "/script.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 18
+						}
+					]
+				},
+				{
+					"file": "/style.scss",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 18
+						}
+					]
+				},
+				{
+					"file": "/sourcemap.map",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 100
+						}
+					]
+				}
+			]
+		}
+	},
+	"entrypoint-main-is-css-and-stats-based-alt@1.0.0": {
+		"expected": {
+			"css": {
+				"file": "/style-alt.min.css",
+				"guessed": true
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"main": "/style.css"
+			},
+			"stats": [
+				{
+					"file": "/style-alt.min.css",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 18
+						}
+					]
+				}
+			]
+		}
+	},
+	"entrypoint-safe-js-cdnjs-based-style@1.0.0": {
+		"expected": {
+			"js": {
+				"file": "/script.min.js",
+				"guessed": false
+			},
+			"css": {
+				"file": "/style.min.css",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"browser": "/script.js"
+			},
+			"cdnjs": "/style.min.css"
+		}
+	},
+	"entrypoint-safe-style-cdnjs-based-js@1.0.0": {
+		"expected": {
+			"js": {
+				"file": "/script.min.js",
+				"guessed": false
+			},
+			"css": {
+				"file": "/style.min.css",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"main": "/main.js",
+				"style": "/style.min.css"
+			},
+			"cdnjs": "/script.min.js"
+		}
+	},
+	"entrypoint-safe-js-stats-based-style@1.0.0": {
+		"expected": {
+			"js": {
+				"file": "/script.min.js",
+				"guessed": false
+			},
+			"css": {
+				"file": "/style.min.css",
+				"guessed": true
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"cdn": "/script.js"
+			},
+			"stats": [
+				{
+					"file": "/script.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 18
+						}
+					]
+				},
+				{
+					"file": "/style.css",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 18
+						}
+					]
+				}
+			]
+		}
+	},
+	"entrypoint-safe-style-stats-based-js@1.0.0": {
+		"expected": {
+			"js": {
+				"file": "/script.min.js",
+				"guessed": true
+			},
+			"css": {
+				"file": "/style.min.css",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"style": "/style.css"
+			},
+			"stats": [
+				{
+					"file": "/script.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 18
+						}
+					]
+				},
+				{
+					"file": "/stats-alt.css",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 18
+						}
+					]
+				}
+			]
+		}
+	},
+	"entrypoint-stats-based-js-is-the-same@1.0.0": {
+		"expected": {
+			"js": {
+				"file": "/script.min.js",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"main": "/script.js"
+			},
+			"stats": [
+				{
+					"file": "/script.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 18
+						}
+					]
+				}
+			]
+		}
+	},
+	"entrypoint-main-is-css-and-stats-based-css-is-the-same@1.0.0": {
+		"expected": {
+			"css": {
+				"file": "/style.min.css",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"main": "/style.css"
+			},
+			"stats": [
+				{
+					"file": "/style.min.css",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 18
+						}
+					]
+				}
+			]
+		}
+	}
+}

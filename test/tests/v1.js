@@ -115,7 +115,7 @@ describe('v1', function () {
 			.times(Infinity)
 			.reply(504);
 
-		if (global.v8debug === undefined && !/--debug|--inspect/.test(process.execArgv.join(' ')) && !process.env.JB_PUBLISH_PORT) {
+		if (global.v8debug === undefined && !/--debug|--inspect/.test(process.execArgv.join(' ')) && !process.env.JB_IDE_PORT) {
 			require('blocked')((ms) => {
 				throw new Error(`Blocked for ${ms} ms.`);
 			}, { threshold: 100 });
@@ -141,6 +141,7 @@ describe('v1', function () {
 	});
 
 	require('./v1/package');
+	require('./v1/entrypoint');
 	require('./v1/stats');
 
 	describe('/v1/lookup', () => {
