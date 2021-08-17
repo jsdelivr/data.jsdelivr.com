@@ -81,6 +81,42 @@
 							"hits": 10
 						}
 					]
+				},
+				{
+					"file": "/nested/.hidden/file.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 10
+						}
+					]
+				},
+				{
+					"file": "/nested/_hidden/file.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 10
+						}
+					]
+				},
+				{
+					"file": "/nested/.file.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 10
+						}
+					]
+				},
+				{
+					"file": "/nested/_file.js",
+					"hits": [
+						{
+							"date": "2021-08-01",
+							"hits": 10
+						}
+					]
 				}
 			]
 		}
