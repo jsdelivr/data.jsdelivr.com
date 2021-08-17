@@ -5,6 +5,7 @@ const schema = Joi.object({
 	name: Joi.string().max(255).required(),
 	version: Joi.string().max(255).required(),
 	filename: Joi.string().max(255).required(),
+	updatedAt: Joi.date().required(),
 });
 
 class CdnJsPackage extends BaseModel {
@@ -31,6 +32,9 @@ class CdnJsPackage extends BaseModel {
 
 		/** @type {string} */
 		this.filename = null;
+
+		/** @type {Date} */
+		this.updatedAt = null;
 
 		Object.assign(this, properties);
 		return new Proxy(this, BaseModel.ProxyHandler);
