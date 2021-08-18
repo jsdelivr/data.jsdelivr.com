@@ -1,6 +1,6 @@
 const RemoteResource = require('./RemoteResource');
-const oneWeek = 7 * 24 * 60 * 60;
-const baseTtl = 10 * 60;
+const oneWeek = 7 * 24 * 60 * 60 * 1000;
+const baseTtl = 10 * 60 * 1000;
 
 class GitHubRemoteResource extends RemoteResource {
 	get defaultTtlInternalRevalidate () {

@@ -1,5 +1,5 @@
 const RemoteResource = require('./RemoteResource');
-const baseTtl = 5 * 60;
+const baseTtl = 5 * 60 * 1000;
 
 class JsDelivrRemoteResource extends RemoteResource {
 	get defaultTtlInternalRevalidate () {

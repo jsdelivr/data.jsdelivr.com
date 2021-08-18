@@ -78,7 +78,7 @@ class PromiseCacheShared {
 			throw error;
 		});
 
-		this.pendingL.set(key, value, value.ttlInternalStore * 1000);
+		this.pendingL.set(key, value, value.ttlInternalStore);
 
 		// Wrapped in Promise.resolve() to make sure it's a Bluebird promise because
 		// .finally() behaves differently with some promises.
@@ -115,7 +115,7 @@ class PromiseCacheShared {
 	 */
 	async getCachedValue (key) {
 		let rKey = this.getRedisKey(key);
-		let result = await redis.multi().get(rKey).ttl(rKey).execAsync();
+		let result = await redis.multi().get(rKey).pttl(rKey).execAsync();
 		return result[0] ? [ await PromiseCacheShared.parse(await redis.decompress(result[0])), result[1] ] : [ null ];
 	}
 
@@ -142,7 +142,7 @@ class PromiseCacheShared {
 		let key = this.getRedisKey(message.key);
 		let res = await redis.compress(await PromiseCacheShared.serialize(message));
 
-		await redis.setAsync(key, res, 'EX', maxAge);
+		await redis.setAsync(key, res, 'PX', maxAge);
 	}
 
 	/**

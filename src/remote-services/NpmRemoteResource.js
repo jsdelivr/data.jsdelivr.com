@@ -1,6 +1,6 @@
 const RemoteResource = require('./RemoteResource');
-const oneWeek = 7 * 24 * 60 * 60;
-const baseTtl = 5 * 60;
+const oneWeek = 7 * 24 * 60 * 60 * 1000;
+const baseTtl = 5 * 60 * 1000;
 
 class NpmRemoteResource extends RemoteResource {
 	get defaultTtlInternalRevalidate () {
