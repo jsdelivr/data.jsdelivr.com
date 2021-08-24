@@ -42,3 +42,4 @@ JSONPP.addConstructor(require('../remote-services/RemoteResource'));
 JSONPP.addConstructor(require('../remote-services/NpmRemoteResource'));
 JSONPP.addConstructor(require('../remote-services/GitHubRemoteResource'));
 JSONPP.addConstructor(require('../remote-services/JsDelivrRemoteResource'));
+JSONPP.addConstructor(require('../remote-services/RemoteResourceSerializableError'));
