@@ -7,11 +7,13 @@ class RemoteResource extends Error {
 	 * @param {RemoteResource[]} [parts]
 	 * @param {*} data
 	 * @param {Object} [props]
+	 * @param {Object} [state]
 	 * @param {Error|*} [error]
 	 * @param {boolean} [isFromCache]
 	 */
-	constructor ({ statusCode, headers = {}, parts = [], data, props = {} }, error = null, isFromCache = false) {
-		super(`Response status ${statusCode}.`);
+	constructor ({ statusCode, headers = {}, parts = [], data, props = {}, ...state }, error = null, isFromCache = false) {
+		super(`Response status ${statusCode || error?.code}.`);
+		Object.assign(this, state);
 
 		/** @type {number} */
 		this.age = 0;
