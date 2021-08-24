@@ -6,8 +6,8 @@ class GitHubRemoteResource extends RemoteResource {
 	get defaultTtlInternalRevalidate () {
 		if (this.statusCode === 200) {
 			return baseTtl;
-		} else if ([ 403, 451 ].includes(this.statusCode)) {
-			return this.error.block ? oneWeek : 0;
+		} else if (this.statusCode === 451 || (this.statusCode === 403 && this.data?.block)) { // The "block" property indicates GitHub blocked the account for ToS violation.
+			return oneWeek;
 		} else if (this.statusCode === 404) {
 			return baseTtl * 6;
 		}

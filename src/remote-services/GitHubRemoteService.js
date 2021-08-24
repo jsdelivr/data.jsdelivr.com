@@ -143,7 +143,7 @@ class GitHubRemoteService extends RemoteService {
 		return this.octokit.request(uri, options).then((response) => {
 			return new GitHubRemoteResource({ statusCode: response.status, headers: response.headers, data: response.data });
 		}).catch((error) => {
-			throw new GitHubRemoteResource({ statusCode: error.status, headers: error.response.headers }, error);
+			throw new GitHubRemoteResource({ statusCode: error.status, headers: error.response?.headers, data: error.response?.data }, error);
 		});
 	}
 }
