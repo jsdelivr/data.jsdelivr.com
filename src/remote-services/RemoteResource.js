@@ -1,3 +1,5 @@
+const RemoteResourceSerializableError = require('./RemoteResourceSerializableError');
+
 class RemoteResource extends Error {
 	/**
 	 * @param {number} statusCode
@@ -78,6 +80,14 @@ class RemoteResource extends Error {
 
 	set ttlInternalStore (value) {
 		this._ttlInternalStore = value;
+	}
+
+	toJSON () {
+		if (this.error && !(this.error instanceof RemoteResourceSerializableError)) {
+			return new this.constructor(this, new RemoteResourceSerializableError(this.error), this.isFromCache);
+		}
+
+		return this;
 	}
 
 	static fromJSON (props) {
