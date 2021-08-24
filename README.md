@@ -31,7 +31,7 @@ https://data.jsdelivr.com/v1
 The jsDelivr API allows you to:
  - [list package versions](#list-package-versions)
  - [list package files](#list-package-files)
- - [resolve a version range](#resolve-a-version-range)
+ - [resolve a version range/tag](#resolve-a-version-rangetag)
  - [get package entry points](#get-package-entry-points)
  - [get package usage stats](#get-package-usage-stats)
  - [get package version usage stats](#get-package-version-usage-stats)
@@ -127,12 +127,12 @@ https://data.jsdelivr.com/v1/package/npm/jquery@3.2.1
 }
 ```
 
-### Resolve a version range
+### Resolve a version range/tag
 
 ```
 /package/resolve/npm/:name@:range
  - name: npm package name
- - range: any valid semver version range
+ - range: any valid semver version range or a dist-tag
 
 /package/resolve/gh/:user/:repo@:range
  - user: GitHub username
