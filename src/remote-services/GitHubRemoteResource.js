@@ -12,7 +12,7 @@ class GitHubRemoteResource extends RemoteResource {
 			return baseTtl * 6;
 		}
 
-		return 0;
+		return super.defaultTtlInternalRevalidate;
 	}
 
 	get defaultTtlInternalStore () {
@@ -20,7 +20,7 @@ class GitHubRemoteResource extends RemoteResource {
 			return oneWeek;
 		}
 
-		return this.ttlInternalRevalidate;
+		return super.defaultTtlInternalStore;
 	}
 }
 

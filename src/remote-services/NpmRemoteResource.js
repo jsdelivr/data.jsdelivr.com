@@ -8,7 +8,7 @@ class NpmRemoteResource extends RemoteResource {
 			return baseTtl;
 		}
 
-		return 0;
+		return super.defaultTtlInternalRevalidate;
 	}
 
 	get defaultTtlInternalStore () {
@@ -16,7 +16,7 @@ class NpmRemoteResource extends RemoteResource {
 			return oneWeek;
 		}
 
-		return this.ttlInternalRevalidate;
+		return super.defaultTtlInternalStore;
 	}
 }
 

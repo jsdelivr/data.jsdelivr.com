@@ -45,7 +45,7 @@ class RemoteResource extends Error {
 	}
 
 	get defaultTtlInternalStore () {
-		return 0;
+		return this.ttlInternalRevalidate;
 	}
 
 	get isStale () {
