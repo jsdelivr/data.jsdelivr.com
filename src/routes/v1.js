@@ -120,4 +120,13 @@ koaElasticUtils.addRoutes(router, [
 	return new StatsRequest(ctx).handleNetwork();
 });
 
+koaElasticUtils.addRoutes(router, [
+	[ '/debug', '/debug' ],
+], async (ctx) => {
+	ctx.body = {
+		ip: ctx.request.ip,
+		headers: ctx.request.headers,
+	};
+});
+
 module.exports = router;
