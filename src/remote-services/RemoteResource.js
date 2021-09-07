@@ -48,6 +48,10 @@ class RemoteResource extends Error {
 		return this.ttlInternalRevalidate;
 	}
 
+	get forceCacheUpdate () {
+		return this.statusCode === 404;
+	}
+
 	get isStale () {
 		return this.age > this.ttlInternalRevalidate;
 	}

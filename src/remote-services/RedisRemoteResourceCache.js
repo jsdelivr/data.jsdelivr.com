@@ -70,7 +70,7 @@ class PromiseCacheShared {
 		let staleIfErrorUsed = false;
 
 		value = executor.catch((error) => {
-			if (cached && cached.s === STATUS_RESOLVED && cached.v.age < cached.v.staleIfError) {
+			if (cached && cached.s === STATUS_RESOLVED && cached.v.age < cached.v.staleIfError && !error.forceCacheUpdate) {
 				staleIfErrorUsed = true;
 				return cached.v;
 			}
