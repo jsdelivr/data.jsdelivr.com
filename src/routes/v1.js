@@ -121,10 +121,11 @@ koaElasticUtils.addRoutes(router, [
 });
 
 koaElasticUtils.addRoutes(router, [
-	[ '/debug', '/debug' ],
+	[ '/debug/:status?', '/debug/:status?' ],
 ], async (ctx) => {
 	ctx.body = {
 		ip: ctx.request.ip,
+		status: Number(ctx.params.status) || 200,
 		headers: ctx.request.headers,
 	};
 });
