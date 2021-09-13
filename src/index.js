@@ -111,9 +111,9 @@ server.use(koaJson({ spaces: '\t' }));
 server.use(async (ctx, next) => {
 	await next();
 
-	if ([ 502, 504 ].includes(ctx.status)) {
-		ctx.status = 500;
-	}
+	// if ([ 502, 504 ].includes(ctx.status)) {
+	// 	ctx.status = 500;
+	// }
 });
 
 /**
