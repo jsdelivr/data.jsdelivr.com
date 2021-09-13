@@ -121,8 +121,12 @@ koaElasticUtils.addRoutes(router, [
 });
 
 koaElasticUtils.addRoutes(router, [
-	[ '/debug/:status?', '/debug/:status?' ],
+	[ '/debug/:status?/:cache?', '/debug/:status?/:cache?' ],
 ], async (ctx) => {
+	if (ctx.params.cache) {
+		ctx.maxAge = Number(ctx.params.cache);
+	}
+
 	ctx.body = {
 		ip: ctx.request.ip,
 		status: Number(ctx.params.status) || 200,
