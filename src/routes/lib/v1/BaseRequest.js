@@ -25,7 +25,8 @@ class BaseRequest {
 
 	setCacheHeader (delay = 0) {
 		this.ctx.expires = new Date(relativeDayUtc(1).valueOf() + delay).toUTCString();
-		this.ctx.maxStale = v1Config.maxStaleStatic;
+		this.ctx.maxStale = v1Config.maxStaleShort;
+		this.ctx.maxStaleError = v1Config.maxStaleError;
 	}
 
 	setCacheHeaderDelayed () {
