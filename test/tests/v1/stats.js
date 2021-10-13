@@ -106,7 +106,7 @@ describe('/v1/package/stats', () => {
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, stale-while-revalidate=86400, stale-if-error=86400');
+				expect(response).to.have.header('Cache-Control', 'public, stale-while-revalidate=3600, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response.body.toString()).to.contain('720 hits/month');
@@ -131,7 +131,7 @@ function makePackageStatsTest (type, name, groupBy, period) {
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, stale-while-revalidate=86400, stale-if-error=86400');
+				expect(response).to.have.header('Cache-Control', 'public, stale-while-revalidate=3600, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
@@ -157,7 +157,7 @@ function makePackageVersionStatsTest (type, name, version, groupBy, period) {
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, stale-while-revalidate=86400, stale-if-error=86400');
+				expect(response).to.have.header('Cache-Control', 'public, stale-while-revalidate=3600, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
@@ -185,7 +185,7 @@ function makeStatsPackagesTest (type, period, page, limit) {
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, stale-while-revalidate=86400, stale-if-error=86400');
+				expect(response).to.have.header('Cache-Control', 'public, stale-while-revalidate=3600, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
@@ -212,7 +212,7 @@ function makeStatsNetworkTests () {
 				.then((response) => {
 					expect(response).to.have.status(200);
 					expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-					expect(response).to.have.header('Cache-Control', 'public, stale-while-revalidate=86400, stale-if-error=86400');
+					expect(response).to.have.header('Cache-Control', 'public, stale-while-revalidate=3600, stale-if-error=86400');
 					expect(response).to.have.header('Timing-Allow-Origin', '*');
 					expect(response).to.have.header('Vary', 'Accept-Encoding');
 					expect(response).to.be.json;

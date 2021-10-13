@@ -197,7 +197,7 @@ class PackageRequest extends BaseRequest {
 			this.ctx.body = { version: await this.getResolvedVersion() };
 			this.ctx.maxAge = v1Config.maxAgeShort;
 			this.ctx.maxStale = v1Config.maxStaleShort;
-			this.ctx.maxStaleError = v1Config.maxStaleErrorShort;
+			this.ctx.maxStaleError = v1Config.maxStaleError;
 
 			if (this.ctx.body.version && isSemverStatic(this.params.version)) {
 				this.ctx.maxAge = 24 * 60 * 60;
@@ -214,7 +214,7 @@ class PackageRequest extends BaseRequest {
 			this.ctx.body = await this.getMetadata();
 			this.ctx.maxAge = v1Config.maxAgeShort;
 			this.ctx.maxStale = v1Config.maxStaleShort;
-			this.ctx.maxStaleError = v1Config.maxStaleErrorShort;
+			this.ctx.maxStaleError = v1Config.maxStaleError;
 		} catch (e) {
 			return this.responseFromRemoteError(e);
 		}
