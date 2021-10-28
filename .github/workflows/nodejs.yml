@@ -27,7 +27,7 @@ jobs:
       - name: Setup MariaDB
         uses: getong/mariadb-action@v1.1
         with:
-          mariadb version: '10.2'
+          mariadb version: '10.4'
           mysql root password: ''
           mysql database: 'jsdelivr-stats-test'
 
