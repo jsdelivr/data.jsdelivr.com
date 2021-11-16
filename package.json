@@ -112,6 +112,6 @@
 		"url": "https://github.com/jsdelivr/data.jsdelivr.com/issues"
 	},
 	"engines": {
-		"node": "14"
+		"node": "16"
 	}
 }
