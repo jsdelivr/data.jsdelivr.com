@@ -120,4 +120,22 @@ koaElasticUtils.addRoutes(router, [
 	return new StatsRequest(ctx).handleNetwork();
 });
 
+koaElasticUtils.addRoutes(router, [
+	[ '/debug/:status?/:cache?/:stale?', '/debug/:status?/:cache?:stale?' ],
+], async (ctx) => {
+	if (ctx.params.cache) {
+		ctx.maxAge = Number(ctx.params.cache);
+	}
+
+	if (ctx.params.stale) {
+		ctx.maxStale = Number(ctx.params.stale);
+	}
+
+	ctx.body = {
+		ip: ctx.request.ip,
+		status: Number(ctx.params.status) || 200,
+		headers: ctx.request.headers,
+	};
+});
+
 module.exports = router;
