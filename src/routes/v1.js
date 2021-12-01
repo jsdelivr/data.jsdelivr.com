@@ -133,6 +133,7 @@ koaElasticUtils.addRoutes(router, [
 
 	ctx.body = {
 		ip: ctx.request.ip,
+		date: new Date().toISOString(),
 		status: Number(ctx.params.status) || 200,
 		headers: ctx.request.headers,
 	};
