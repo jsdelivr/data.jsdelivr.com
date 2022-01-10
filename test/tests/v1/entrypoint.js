@@ -137,7 +137,7 @@ describe('/v1/package/:package/entrypoints', () => {
 		return chai.request(server)
 			.get('/v1/package/npm/entrypoint-no-local-cache-500-remote@1.0.0-500/entrypoints')
 			.then((response) => {
-				expect(response).to.have.status(500);
+				expect(response).to.have.status(502);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
 				expect(response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
