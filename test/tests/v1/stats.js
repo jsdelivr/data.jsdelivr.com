@@ -85,16 +85,16 @@ function snapshotResponse (data, key) {
 }
 
 describe('/v1/package/stats', () => {
-	makePackageStatsTest('npm', 'package-0', 'date', 'month');
-	makePackageStatsTest('npm', 'package-x', 'date', 'month');
-	makePackageStatsTest('npm', 'package-x', 'date', 'all');
+	makePackageStatsTest('npm', 'package-0', 'hits', 'date', 'month');
+	makePackageStatsTest('npm', 'package-x', 'hits', 'date', 'month');
+	makePackageStatsTest('npm', 'package-x', 'hits', 'date', 'all');
 
 	makePackageStatsTests('npm', 'package-2');
 	makePackageStatsTests('gh', 'user/package-59');
 
-	makePackageVersionStatsTest('npm', 'package-0', '1.1.0', 'date', 'month');
-	makePackageVersionStatsTest('npm', 'package-0', '1.1.5', 'date', 'month');
-	makePackageVersionStatsTest('npm', 'package-0', '1.1.5', 'date', 'all');
+	makePackageVersionStatsTest('npm', 'package-0', '1.1.0', 'hits', 'date', 'month');
+	makePackageVersionStatsTest('npm', 'package-0', '1.1.5', 'hits', 'date', 'month');
+	makePackageVersionStatsTest('npm', 'package-0', '1.1.5', 'hits', 'date', 'all');
 
 	makePackageVersionStatsTests('npm', 'package-2', '1.1.0');
 	makePackageVersionStatsTests('gh', 'user/package-59', '1.1.2');
@@ -122,8 +122,8 @@ describe('/v1/stats', () => {
 	makeStatsNetworkTests();
 });
 
-function makePackageStatsTest (type, name, groupBy, period) {
-	let params = [ groupBy, period ];
+function makePackageStatsTest (type, name, statType, groupBy, period) {
+	let params = [ statType, groupBy, period ];
 
 	it(`GET /v1/package/${type}/${name}/stats/${params.filter(v => v).join('/')}`, () => {
 		return chai.request(server)
@@ -135,21 +135,23 @@ function makePackageStatsTest (type, name, groupBy, period) {
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
-				expect(response.body).to.deep.equal(getExpectedStatsResponse(`/v1/package/${type}/${name}/stats/${groupBy || 'version'}/${period || 'month'}`, response, params.every(v => v)));
+				expect(response.body).to.deep.equal(getExpectedStatsResponse(`/v1/package/${type}/${name}/stats/${statType || 'hits'}/${groupBy || 'version'}/${period || 'month'}`, response, params.every(v => v)));
 			});
 	});
 }
 
 function makePackageStatsTests (type, name) {
-	for (let groupBy of [ 'version', 'date', '' ]) {
-		for (let period of periodOptions) {
-			makePackageStatsTest(type, name, groupBy, period);
+	for (let statType of [ '' ]) {
+		for (let groupBy of [ 'version', 'date', '' ]) {
+			for (let period of periodOptions) {
+				makePackageStatsTest(type, name, statType, groupBy, period);
+			}
 		}
 	}
 }
 
-function makePackageVersionStatsTest (type, name, version, groupBy, period) {
-	let params = [ groupBy, period ];
+function makePackageVersionStatsTest (type, name, version, statType, groupBy, period) {
+	let params = [ statType, groupBy, period ];
 
 	it(`GET /v1/package/${type}/${name}@${version}/stats/${params.filter(v => v).join('/')}`, () => {
 		return chai.request(server)
@@ -161,15 +163,17 @@ function makePackageVersionStatsTest (type, name, version, groupBy, period) {
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
-				expect(response.body).to.deep.equal(getExpectedStatsResponse(`/v1/package/${type}/${name}@${version}/stats/${groupBy || 'file'}/${period || 'month'}`, response, params.every(v => v)));
+				expect(response.body).to.deep.equal(getExpectedStatsResponse(`/v1/package/${type}/${name}@${version}/stats/${statType || 'hits'}/${groupBy || 'file'}/${period || 'month'}`, response, params.every(v => v)));
 			});
 	});
 }
 
 function makePackageVersionStatsTests (type, name, version) {
-	for (let groupBy of [ 'file', 'date', '' ]) {
-		for (let period of periodOptions) {
-			makePackageVersionStatsTest(type, name, version, groupBy, period);
+	for (let statType of [ '' ]) {
+		for (let groupBy of [ 'file', 'date', '' ]) {
+			for (let period of periodOptions) {
+				makePackageVersionStatsTest(type, name, version, statType, groupBy, period);
+			}
 		}
 	}
 }

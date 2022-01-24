@@ -7137,7 +7137,7 @@
 			"hits": 0
 		}
 	],
-	"/v1/package/npm/package-0/stats/date/month": {
+	"/v1/package/npm/package-0/stats/hits/date/month": {
 		"date": "2021-05-20",
 		"rank": null,
 		"total": 0,
@@ -7444,7 +7444,7 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-0@1.1.0/stats/date/month": {
+	"/v1/package/npm/package-0@1.1.0/stats/hits/date/month": {
 		"date": "2021-05-20",
 		"total": 0,
 		"dates": {
@@ -7720,12 +7720,12 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-0@1.1.5/stats/date/all": {
+	"/v1/package/npm/package-0@1.1.5/stats/hits/date/all": {
 		"date": "2021-05-20",
 		"total": 0,
 		"dates": {}
 	},
-	"/v1/package/npm/package-0@1.1.5/stats/date/month": {
+	"/v1/package/npm/package-0@1.1.5/stats/hits/date/month": {
 		"date": "2021-05-20",
 		"total": 0,
 		"dates": {
@@ -7851,7 +7851,7 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-2/stats/date/all": {
+	"/v1/package/npm/package-2/stats/hits/date/all": {
 		"date": "2021-05-20",
 		"rank": 117,
 		"total": 1416,
@@ -8448,7 +8448,7 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-2/stats/date/day": {
+	"/v1/package/npm/package-2/stats/hits/date/day": {
 		"date": "2021-05-20",
 		"rank": 117,
 		"total": 24,
@@ -8465,7 +8465,7 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-2/stats/date/month": {
+	"/v1/package/npm/package-2/stats/hits/date/month": {
 		"date": "2021-05-20",
 		"rank": 117,
 		"total": 720,
@@ -8772,7 +8772,7 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-2/stats/date/week": {
+	"/v1/package/npm/package-2/stats/hits/date/week": {
 		"date": "2021-05-20",
 		"rank": 117,
 		"total": 168,
@@ -8849,7 +8849,7 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-2/stats/date/year": {
+	"/v1/package/npm/package-2/stats/hits/date/year": {
 		"date": "2021-05-20",
 		"rank": 117,
 		"total": 1416,
@@ -11282,7 +11282,7 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-2/stats/version/all": {
+	"/v1/package/npm/package-2/stats/hits/version/all": {
 		"date": "2021-05-20",
 		"rank": 117,
 		"total": 1416,
@@ -11483,7 +11483,7 @@
 		"commits": {},
 		"branches": {}
 	},
-	"/v1/package/npm/package-2/stats/version/day": {
+	"/v1/package/npm/package-2/stats/hits/version/day": {
 		"date": "2021-05-20",
 		"rank": 117,
 		"total": 24,
@@ -11510,7 +11510,7 @@
 		"commits": {},
 		"branches": {}
 	},
-	"/v1/package/npm/package-2/stats/version/month": {
+	"/v1/package/npm/package-2/stats/hits/version/month": {
 		"date": "2021-05-20",
 		"rank": 117,
 		"total": 720,
@@ -11624,7 +11624,7 @@
 		"commits": {},
 		"branches": {}
 	},
-	"/v1/package/npm/package-2/stats/version/week": {
+	"/v1/package/npm/package-2/stats/hits/version/week": {
 		"date": "2021-05-20",
 		"rank": 117,
 		"total": 168,
@@ -11669,7 +11669,7 @@
 		"commits": {},
 		"branches": {}
 	},
-	"/v1/package/npm/package-2/stats/version/year": {
+	"/v1/package/npm/package-2/stats/hits/version/year": {
 		"date": "2021-05-20",
 		"rank": 117,
 		"total": 1416,
@@ -12788,7 +12788,7 @@
 		"commits": {},
 		"branches": {}
 	},
-	"/v1/package/npm/package-2@1.1.0/stats/date/all": {
+	"/v1/package/npm/package-2@1.1.0/stats/hits/date/all": {
 		"date": "2021-05-20",
 		"total": 472,
 		"dates": {
@@ -13325,7 +13325,7 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-2@1.1.0/stats/date/day": {
+	"/v1/package/npm/package-2@1.1.0/stats/hits/date/day": {
 		"date": "2021-05-20",
 		"total": 8,
 		"dates": {
@@ -13340,7 +13340,7 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-2@1.1.0/stats/date/month": {
+	"/v1/package/npm/package-2@1.1.0/stats/hits/date/month": {
 		"date": "2021-05-20",
 		"total": 240,
 		"dates": {
@@ -13616,7 +13616,7 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-2@1.1.0/stats/date/week": {
+	"/v1/package/npm/package-2@1.1.0/stats/hits/date/week": {
 		"date": "2021-05-20",
 		"total": 56,
 		"dates": {
@@ -13685,7 +13685,7 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-2@1.1.0/stats/date/year": {
+	"/v1/package/npm/package-2@1.1.0/stats/hits/date/year": {
 		"date": "2021-05-20",
 		"total": 472,
 		"dates": {
@@ -15446,7 +15446,7 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-2@1.1.0/stats/file/all": {
+	"/v1/package/npm/package-2@1.1.0/stats/hits/file/all": {
 		"date": "2021-05-20",
 		"total": 472,
 		"files": {
@@ -15708,7 +15708,7 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-2@1.1.0/stats/file/day": {
+	"/v1/package/npm/package-2@1.1.0/stats/hits/file/day": {
 		"date": "2021-05-20",
 		"total": 8,
 		"files": {
@@ -15738,7 +15738,7 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-2@1.1.0/stats/file/month": {
+	"/v1/package/npm/package-2@1.1.0/stats/hits/file/month": {
 		"date": "2021-05-20",
 		"total": 240,
 		"files": {
@@ -15884,7 +15884,7 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-2@1.1.0/stats/file/week": {
+	"/v1/package/npm/package-2@1.1.0/stats/hits/file/week": {
 		"date": "2021-05-20",
 		"total": 56,
 		"files": {
@@ -15938,7 +15938,7 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-2@1.1.0/stats/file/year": {
+	"/v1/package/npm/package-2@1.1.0/stats/hits/file/year": {
 		"date": "2021-05-20",
 		"total": 472,
 		"files": {
@@ -17424,13 +17424,13 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-x/stats/date/all": {
+	"/v1/package/npm/package-x/stats/hits/date/all": {
 		"date": "2021-05-20",
 		"rank": null,
 		"total": 0,
 		"dates": {}
 	},
-	"/v1/package/npm/package-x/stats/date/month": {
+	"/v1/package/npm/package-x/stats/hits/date/month": {
 		"date": "2021-05-20",
 		"rank": null,
 		"total": 0,
@@ -17617,7 +17617,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59/stats/date/all": {
+	"/v1/package/gh/user/package-59/stats/hits/date/all": {
 		"date": "2021-05-20",
 		"rank": 0,
 		"total": 140892,
@@ -18391,7 +18391,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59/stats/date/day": {
+	"/v1/package/gh/user/package-59/stats/hits/date/day": {
 		"date": "2021-05-20",
 		"rank": 0,
 		"total": 2388,
@@ -18411,7 +18411,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59/stats/date/month": {
+	"/v1/package/gh/user/package-59/stats/hits/date/month": {
 		"date": "2021-05-20",
 		"rank": 0,
 		"total": 71640,
@@ -18808,7 +18808,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59/stats/date/week": {
+	"/v1/package/gh/user/package-59/stats/hits/date/week": {
 		"date": "2021-05-20",
 		"rank": 0,
 		"total": 16716,
@@ -18906,7 +18906,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59/stats/date/year": {
+	"/v1/package/gh/user/package-59/stats/hits/date/year": {
 		"date": "2021-05-20",
 		"rank": 0,
 		"total": 140892,
@@ -21516,7 +21516,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59/stats/version/all": {
+	"/v1/package/gh/user/package-59/stats/hits/version/all": {
 		"date": "2021-05-20",
 		"rank": 0,
 		"total": 140892,
@@ -21846,7 +21846,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59/stats/version/day": {
+	"/v1/package/gh/user/package-59/stats/hits/version/day": {
 		"date": "2021-05-20",
 		"rank": 0,
 		"total": 2388,
@@ -21886,7 +21886,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59/stats/version/month": {
+	"/v1/package/gh/user/package-59/stats/hits/version/month": {
 		"date": "2021-05-20",
 		"rank": 0,
 		"total": 71640,
@@ -22071,7 +22071,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59/stats/version/week": {
+	"/v1/package/gh/user/package-59/stats/hits/version/week": {
 		"date": "2021-05-20",
 		"rank": 0,
 		"total": 16716,
@@ -22141,7 +22141,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59/stats/version/year": {
+	"/v1/package/gh/user/package-59/stats/hits/version/year": {
 		"date": "2021-05-20",
 		"rank": 0,
 		"total": 140892,
@@ -24001,7 +24001,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@1.1.2/stats/date/all": {
+	"/v1/package/gh/user/package-59@1.1.2/stats/hits/date/all": {
 		"date": "2021-05-20",
 		"total": 28084,
 		"dates": {
@@ -24538,7 +24538,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@1.1.2/stats/date/day": {
+	"/v1/package/gh/user/package-59@1.1.2/stats/hits/date/day": {
 		"date": "2021-05-20",
 		"total": 476,
 		"dates": {
@@ -24553,7 +24553,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@1.1.2/stats/date/month": {
+	"/v1/package/gh/user/package-59@1.1.2/stats/hits/date/month": {
 		"date": "2021-05-20",
 		"total": 14280,
 		"dates": {
@@ -24829,7 +24829,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@1.1.2/stats/date/week": {
+	"/v1/package/gh/user/package-59@1.1.2/stats/hits/date/week": {
 		"date": "2021-05-20",
 		"total": 3332,
 		"dates": {
@@ -24898,7 +24898,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@1.1.2/stats/date/year": {
+	"/v1/package/gh/user/package-59@1.1.2/stats/hits/date/year": {
 		"date": "2021-05-20",
 		"total": 28084,
 		"dates": {
@@ -26659,7 +26659,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@1.1.2/stats/file/all": {
+	"/v1/package/gh/user/package-59@1.1.2/stats/hits/file/all": {
 		"date": "2021-05-20",
 		"total": 28084,
 		"files": {
@@ -26921,7 +26921,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@1.1.2/stats/file/day": {
+	"/v1/package/gh/user/package-59@1.1.2/stats/hits/file/day": {
 		"date": "2021-05-20",
 		"total": 476,
 		"files": {
@@ -26951,7 +26951,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@1.1.2/stats/file/month": {
+	"/v1/package/gh/user/package-59@1.1.2/stats/hits/file/month": {
 		"date": "2021-05-20",
 		"total": 14280,
 		"files": {
@@ -27097,7 +27097,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@1.1.2/stats/file/week": {
+	"/v1/package/gh/user/package-59@1.1.2/stats/hits/file/week": {
 		"date": "2021-05-20",
 		"total": 3332,
 		"files": {
@@ -27151,7 +27151,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@1.1.2/stats/file/year": {
+	"/v1/package/gh/user/package-59@1.1.2/stats/hits/file/year": {
 		"date": "2021-05-20",
 		"total": 28084,
 		"files": {
@@ -28637,7 +28637,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@branch-1/stats/date/all": {
+	"/v1/package/gh/user/package-59@branch-1/stats/hits/date/all": {
 		"date": "2021-05-20",
 		"total": 28320,
 		"dates": {
@@ -29174,7 +29174,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@branch-1/stats/date/day": {
+	"/v1/package/gh/user/package-59@branch-1/stats/hits/date/day": {
 		"date": "2021-05-20",
 		"total": 480,
 		"dates": {
@@ -29189,7 +29189,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@branch-1/stats/date/month": {
+	"/v1/package/gh/user/package-59@branch-1/stats/hits/date/month": {
 		"date": "2021-05-20",
 		"total": 14400,
 		"dates": {
@@ -29465,7 +29465,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@branch-1/stats/date/week": {
+	"/v1/package/gh/user/package-59@branch-1/stats/hits/date/week": {
 		"date": "2021-05-20",
 		"total": 3360,
 		"dates": {
@@ -29534,7 +29534,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@branch-1/stats/date/year": {
+	"/v1/package/gh/user/package-59@branch-1/stats/hits/date/year": {
 		"date": "2021-05-20",
 		"total": 28320,
 		"dates": {
@@ -31295,7 +31295,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@branch-1/stats/file/all": {
+	"/v1/package/gh/user/package-59@branch-1/stats/hits/file/all": {
 		"date": "2021-05-20",
 		"total": 28320,
 		"files": {
@@ -31557,7 +31557,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@branch-1/stats/file/day": {
+	"/v1/package/gh/user/package-59@branch-1/stats/hits/file/day": {
 		"date": "2021-05-20",
 		"total": 480,
 		"files": {
@@ -31587,7 +31587,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@branch-1/stats/file/month": {
+	"/v1/package/gh/user/package-59@branch-1/stats/hits/file/month": {
 		"date": "2021-05-20",
 		"total": 14400,
 		"files": {
@@ -31733,7 +31733,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@branch-1/stats/file/week": {
+	"/v1/package/gh/user/package-59@branch-1/stats/hits/file/week": {
 		"date": "2021-05-20",
 		"total": 3360,
 		"files": {
@@ -31787,7 +31787,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@branch-1/stats/file/year": {
+	"/v1/package/gh/user/package-59@branch-1/stats/hits/file/year": {
 		"date": "2021-05-20",
 		"total": 28320,
 		"files": {
