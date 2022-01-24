@@ -141,7 +141,7 @@ function makePackageStatsTest (type, name, statType, groupBy, period) {
 }
 
 function makePackageStatsTests (type, name) {
-	for (let statType of [ '' ]) {
+	for (let statType of [ 'hits', 'bandwidth', '' ]) {
 		for (let groupBy of [ 'version', 'date', '' ]) {
 			for (let period of periodOptions) {
 				makePackageStatsTest(type, name, statType, groupBy, period);
@@ -169,7 +169,7 @@ function makePackageVersionStatsTest (type, name, version, statType, groupBy, pe
 }
 
 function makePackageVersionStatsTests (type, name, version) {
-	for (let statType of [ '' ]) {
+	for (let statType of [ 'hits', 'bandwidth', '' ]) {
 		for (let groupBy of [ 'file', 'date', '' ]) {
 			for (let period of periodOptions) {
 				makePackageVersionStatsTest(type, name, version, statType, groupBy, period);

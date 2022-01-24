@@ -273,25 +273,29 @@ class PackageRequest extends BaseRequest {
 
 	async handlePackageStats () {
 		if (this.params.groupBy === 'date') {
-			let data = await Package.getSumDateHitsPerVersionByName(this.params.type, this.params.name, ...this.dateRange);
-			let total = sumDeep(data, 3);
+			let stats = this.params.statType === 'bandwidth'
+				? await Package.getSumDateBandwidthPerVersionByName(this.params.type, this.params.name, ...this.dateRange)
+				: await Package.getSumDateHitsPerVersionByName(this.params.type, this.params.name, ...this.dateRange);
+			let total = sumDeep(stats, 3);
 
 			this.ctx.body = {
 				rank: total ? await this.getRank() : null,
 				total,
-				dates: dateRange.fill(_.mapValues(data, ({ versions, commits, branches }) => ({ total: sumDeep(versions), versions, commits, branches })), ...this.dateRange, { total: 0, versions: {}, commits: {}, branches: {} }),
+				dates: dateRange.fill(_.mapValues(stats, ({ versions, commits, branches }) => ({ total: sumDeep(versions), versions, commits, branches })), ...this.dateRange, { total: 0, versions: {}, commits: {}, branches: {} }),
 			};
 		} else {
-			let data = await Package.getSumVersionHitsPerDateByName(this.params.type, this.params.name, ...this.dateRange);
-			let total = sumDeep(data, 3);
+			let stats = this.params.statType === 'bandwidth'
+				? await Package.getSumVersionBandwidthPerDateByName(this.params.type, this.params.name, ...this.dateRange)
+				: await Package.getSumVersionHitsPerDateByName(this.params.type, this.params.name, ...this.dateRange);
+			let total = sumDeep(stats, 3);
 			let fn = data => _.mapValues(data, dates => ({ total: sumDeep(dates), dates: dateRange.fill(dates, ...this.dateRange) }));
 
 			this.ctx.body = {
 				rank: total ? await this.getRank() : null,
 				total,
-				versions: fn(data.versions),
-				commits: fn(data.commits),
-				branches: fn(data.branches),
+				versions: fn(stats.versions),
+				commits: fn(stats.commits),
+				branches: fn(stats.branches),
 			};
 		}
 
@@ -326,18 +330,22 @@ class PackageRequest extends BaseRequest {
 
 	async handleVersionStats () {
 		if (this.params.groupBy === 'date') {
-			let data = await PackageVersion.getSumDateHitsPerFileByName(this.params.type, this.params.name, this.params.version, ...this.dateRange);
+			let stats = this.params.statType === 'bandwidth'
+				? await PackageVersion.getSumDateBandwidthPerFileByName(this.params.type, this.params.name, this.params.version, ...this.dateRange)
+				: await PackageVersion.getSumDateHitsPerFileByName(this.params.type, this.params.name, this.params.version, ...this.dateRange);
 
 			this.ctx.body = {
-				total: sumDeep(data, 2),
-				dates: dateRange.fill(_.mapValues(data, files => ({ total: sumDeep(files), files })), ...this.dateRange, { total: 0, files: {} }),
+				total: sumDeep(stats, 2),
+				dates: dateRange.fill(_.mapValues(stats, files => ({ total: sumDeep(files), files })), ...this.dateRange, { total: 0, files: {} }),
 			};
 		} else {
-			let data = await PackageVersion.getSumFileHitsPerDateByName(this.params.type, this.params.name, this.params.version, ...this.dateRange);
+			let stats = this.params.statType === 'bandwidth'
+				? await PackageVersion.getSumFileBandwidthPerDateByName(this.params.type, this.params.name, this.params.version, ...this.dateRange)
+				: await PackageVersion.getSumFileHitsPerDateByName(this.params.type, this.params.name, this.params.version, ...this.dateRange);
 
 			this.ctx.body = {
-				total: sumDeep(data, 2),
-				files: _.mapValues(data, dates => ({ total: sumDeep(dates), dates: dateRange.fill(dates, ...this.dateRange) })),
+				total: sumDeep(stats, 2),
+				files: _.mapValues(stats, dates => ({ total: sumDeep(dates), dates: dateRange.fill(dates, ...this.dateRange) })),
 			};
 		}
 
