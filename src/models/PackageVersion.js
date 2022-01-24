@@ -40,7 +40,7 @@ class PackageVersion extends BaseModel {
 		return new Proxy(this, BaseModel.ProxyHandler);
 	}
 
-	static async getHitsByNameAndVersion (type, name, version, from, to) {
+	static async getStatByNameAndVersion (type, name, version, from, to, statType) {
 		let sql = db(this.table)
 			.where(`${Package.table}.type`, type)
 			.andWhere(`${Package.table}.name`, name)
@@ -57,7 +57,7 @@ class PackageVersion extends BaseModel {
 			sql.where(`${FileHits.table}.date`, '<=', to);
 		}
 
-		return sql.select([ `${FileHits.table}.*`, `${File.table}.filename` ]);
+		return sql.select([ `${FileHits.table}.date`, `${FileHits.table}.${statType} as stat`, `${File.table}.filename` ]);
 	}
 
 	static async getMostUsedFiles (name, version) {
@@ -68,15 +68,31 @@ class PackageVersion extends BaseModel {
 			.where({ name, version });
 	}
 
+	static async getSumDateBandwidthPerFileByName (type, name, version, from, to) {
+		return this.getSumDateStatPerFileByName(await this.getStatByNameAndVersion(type, name, version, from, to, 'bandwidth'));
+	}
+
 	static async getSumDateHitsPerFileByName (type, name, version, from, to) {
-		return _.mapValues(_.groupBy(await PackageVersion.getHitsByNameAndVersion(type, name, version, from, to), item => item.date.toISOString().substr(0, 10)), (versionHits) => {
-			return _.fromPairs(_.map(versionHits, entry => [ entry.filename, entry.hits ]));
+		return this.getSumDateStatPerFileByName(await this.getStatByNameAndVersion(type, name, version, from, to, 'hits'));
+	}
+
+	static async getSumDateStatPerFileByName (stats) {
+		return _.mapValues(_.groupBy(stats, item => item.date.toISOString().substr(0, 10)), (versionHits) => {
+			return _.fromPairs(_.map(versionHits, entry => [ entry.filename, entry.stat ]));
 		});
 	}
 
+	static async getSumFileBandwidthPerDateByName (type, name, version, from, to) {
+		return this.getSumFileStatPerDateByName(await this.getStatByNameAndVersion(type, name, version, from, to, 'bandwidth'));
+	}
+
 	static async getSumFileHitsPerDateByName (type, name, version, from, to) {
-		return _.mapValues(_.groupBy(await PackageVersion.getHitsByNameAndVersion(type, name, version, from, to), 'filename'), (versionHits) => {
-			return _.fromPairs(_.map(versionHits, entry => [ entry.date.toISOString().substr(0, 10), entry.hits ]));
+		return this.getSumFileStatPerDateByName(await this.getStatByNameAndVersion(type, name, version, from, to, 'hits'));
+	}
+
+	static async getSumFileStatPerDateByName (stats) {
+		return _.mapValues(_.groupBy(stats, 'filename'), (versionHits) => {
+			return _.fromPairs(_.map(versionHits, entry => [ entry.date.toISOString().substr(0, 10), entry.stat ]));
 		});
 	}
 

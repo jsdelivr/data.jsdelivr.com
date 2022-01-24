@@ -36,7 +36,46 @@ class Package extends BaseCacheModel {
 		return new Proxy(this, BaseCacheModel.ProxyHandler);
 	}
 
-	static async getHitsByName (type, name, from, to) {
+	static async getSumDateBandwidthPerVersionByName (type, name, from, to) {
+		return this.getSumDateStatPerVersionByName(await this.getStatByName(type, name, from, to, 'bandwidth'));
+	}
+
+	static async getSumDateHitsPerVersionByName (type, name, from, to) {
+		return this.getSumDateStatPerVersionByName(await this.getStatByName(type, name, from, to, 'hits'));
+	}
+
+	static getSumDateStatPerVersionByName (stats) {
+		return _.mapValues(_.groupBy(stats, item => item.date.toISOString().substr(0, 10)), (versionStats) => {
+			return _.mapValues(splitCommitsAndVersions(versionStats), (data) => {
+				return _.fromPairs(_.map(data, entry => [ entry.version, entry.stat ]));
+			});
+		});
+	}
+
+	static async getStatsForPeriod (type, name, period, date) {
+		let sql = db(`view_top_packages_${period}`)
+			.where({ type, name, date });
+
+		return sql.select().first();
+	}
+
+	static async getSumVersionBandwidthPerDateByName (type, name, from, to) {
+		return this.getSumVersionStatPerDateByName(await this.getStatByName(type, name, from, to, 'bandwidth'));
+	}
+
+	static async getSumVersionHitsPerDateByName (type, name, from, to) {
+		return this.getSumVersionStatPerDateByName(await this.getStatByName(type, name, from, to, 'hits'));
+	}
+
+	static getSumVersionStatPerDateByName (stats) {
+		return _.mapValues(splitCommitsAndVersions(stats), (data) => {
+			return _.mapValues(_.groupBy(data, 'version'), (versionStats) => {
+				return _.fromPairs(_.map(versionStats, entry => [ entry.date.toISOString().substr(0, 10), entry.stat ]));
+			});
+		});
+	}
+
+	static async getStatByName (type, name, from, to, statType) {
 		let sql = db(this.table)
 			.where(`${this.table}.type`, type)
 			.andWhere(`${this.table}.name`, name)
@@ -51,30 +90,7 @@ class Package extends BaseCacheModel {
 			sql.where(`${PackageVersionHits.table}.date`, '<=', to);
 		}
 
-		return sql.select([ `${PackageVersion.table}.version`, `${PackageVersion.table}.type`, `${PackageVersionHits.table}.date`, `${PackageVersionHits.table}.hits` ]);
-	}
-
-	static async getSumDateHitsPerVersionByName (type, name, from, to) {
-		return _.mapValues(_.groupBy(await Package.getHitsByName(type, name, from, to), item => item.date.toISOString().substr(0, 10)), (versionHits) => {
-			return _.mapValues(splitCommitsAndVersions(versionHits), (data) => {
-				return _.fromPairs(_.map(data, entry => [ entry.version, entry.hits ]));
-			});
-		});
-	}
-
-	static async getStatsForPeriod (type, name, period, date) {
-		let sql = db(`view_top_packages_${period}`)
-			.where({ type, name, date });
-
-		return sql.select().first();
-	}
-
-	static async getSumVersionHitsPerDateByName (type, name, from, to) {
-		return _.mapValues(splitCommitsAndVersions(await Package.getHitsByName(type, name, from, to)), (data) => {
-			return _.mapValues(_.groupBy(data, 'version'), (versionHits) => {
-				return _.fromPairs(_.map(versionHits, entry => [ entry.date.toISOString().substr(0, 10), entry.hits ]));
-			});
-		});
+		return sql.select([ `${PackageVersion.table}.version`, `${PackageVersion.table}.type`, `${PackageVersionHits.table}.date`, `${PackageVersionHits.table}.${statType} as stat` ]);
 	}
 
 	static async getTopPackages (period, date, type = undefined, limit = 100, page = 1) {
