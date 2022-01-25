@@ -24,6 +24,23 @@ chai.use(chaiHttp);
 //  2. Set the variable `snapshotResponses` above to `true` and run the tests.
 //  3. Responses will be captured and stored in a JSON file. Check that they are correct.
 //  4. Future test runs will require that the output matches the JSON file, unless `snapshotResponsesOverwrite` is set to `true`.
+function recalculateDates (object, diff) {
+	let datePattern = /^\d{4}-\d{2}-\d{2}$/;
+
+	if (!_.isObject(object)) {
+		return object;
+	} else if (Array.isArray(object)) {
+		return object.map(value => recalculateDates(value, diff));
+	}
+
+	return _.mapValues(_.mapKeys(object, (value, key) => {
+		if (datePattern.test(key)) {
+			return new Date(relativeDayUtc(0, key).valueOf() + diff).toISOString().substr(0, 10);
+		}
+
+		return key;
+	}), value => recalculateDates(value, diff));
+}
 
 function getExpectedStatsResponse (key, response, hasAllParams) {
 	if (response && hasAllParams && snapshotResponses) {
@@ -38,30 +55,22 @@ function getExpectedStatsResponse (key, response, hasAllParams) {
 	let diff = relativeDayUtc().valueOf() - relativeDayUtc(0, data.date);
 	delete data.date;
 
-	let recalculateDates = (object) => {
-		let datePattern = /^\d{4}-\d{2}-\d{2}$/;
-
-		if (!_.isObject(object)) {
-			return object;
-		} else if (Array.isArray(object)) {
-			return object.map(value => recalculateDates(value));
-		}
-
-		return _.mapValues(_.mapKeys(object, (value, key) => {
-			if (datePattern.test(key)) {
-				return new Date(relativeDayUtc(0, key).valueOf() + diff).toISOString().substr(0, 10);
-			}
-
-			return key;
-		}), recalculateDates);
-	};
-
-	return recalculateDates(data);
+	return recalculateDates(data, diff);
 }
 
 function snapshotResponse (data, key) {
-	if (expectedResponses[key] && !snapshotResponsesOverwrite) {
-		return;
+	if (expectedResponses[key]) {
+		if (!snapshotResponsesOverwrite) {
+			return;
+		}
+
+		let currentData = _.cloneDeep(expectedResponses[key]);
+		let diff = relativeDayUtc().valueOf() - relativeDayUtc(0, currentData.date);
+		delete currentData.date;
+
+		if (_.isEqual(data, recalculateDates(currentData, diff))) {
+			return;
+		}
 	}
 
 	if (Array.isArray(data)) {
