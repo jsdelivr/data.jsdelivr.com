@@ -106,7 +106,7 @@ class Package extends BaseCacheModel {
 			sql.limit(limit).offset((page - 1) * limit);
 		}
 
-		return sql.select([ `type`, `name`, `hits` ]);
+		return sql.select([ `type`, `name`, `hits`, `bandwidth` ]);
 	}
 
 	toSqlFunctionCall () {
