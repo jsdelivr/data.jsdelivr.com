@@ -23,7 +23,7 @@
 		"is-hexdigest": "^1.0.1",
 		"is-semver-static": "^1.0.0",
 		"joi": "^17.4.2",
-		"knex": "^0.95.12",
+		"knex": "^1.0.2",
 		"koa": "^2.13.4",
 		"koa-compress": "^5.1.0",
 		"koa-conditional-get": "^3.0.0",
