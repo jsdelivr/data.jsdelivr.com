@@ -41,7 +41,7 @@ exports.seed = async (db) => {
 				fileId,
 				date: new Date(STATS_START_TIMESTAMP + (i * 86400000)),
 				hits: Math.floor((fileId - 1) / 12),
-				bandwidth: Math.floor((fileId - 1) / 12) * 16,
+				bandwidth: Math.floor((fileId - 1) / 12) * 16 * 1025,
 			};
 		});
 	})));

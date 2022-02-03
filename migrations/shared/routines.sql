@@ -55,7 +55,7 @@ end;
 
 
 drop function if exists updateOrInsertCountryBrowserVersionHits;
-create function updateOrInsertCountryBrowserVersionHits(aBrowserVersionId int, aCountryIso varchar(2), aDate date, aHits int, aBandwidth float) returns int
+create function updateOrInsertCountryBrowserVersionHits(aBrowserVersionId int, aCountryIso varchar(2), aDate date, aHits int, aBandwidth bigint) returns int
 begin
 	update `country_browser_version_hits`
 	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
@@ -72,7 +72,7 @@ end;
 
 
 drop function if exists updateOrInsertCountryCdnHits;
-create function updateOrInsertCountryCdnHits(aCountryIso varchar(2), aCdn varchar(255), aDate date, aHits int, aBandwidth float) returns int
+create function updateOrInsertCountryCdnHits(aCountryIso varchar(2), aCdn varchar(255), aDate date, aHits int, aBandwidth bigint) returns int
 begin
 	update `country_cdn_hits`
 	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
@@ -89,7 +89,7 @@ end;
 
 
 drop function if exists updateOrInsertCountryPlatformVersionHits;
-create function updateOrInsertCountryPlatformVersionHits(aPlatformVersionId int, aCountryIso varchar(2), aDate date, aHits int, aBandwidth float) returns int
+create function updateOrInsertCountryPlatformVersionHits(aPlatformVersionId int, aCountryIso varchar(2), aDate date, aHits int, aBandwidth bigint) returns int
 begin
 	update `country_platform_version_hits`
 	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
@@ -123,7 +123,7 @@ end;
 
 
 drop function if exists updateOrInsertFileHits;
-create function updateOrInsertFileHits(aPackageId int, aPackageVersionId int, aFileId int, aDate date, aHits int, aBandwidth float) returns int
+create function updateOrInsertFileHits(aPackageId int, aPackageVersionId int, aFileId int, aDate date, aHits int, aBandwidth bigint) returns int
 begin
 	update `file_hits`
 	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
@@ -177,7 +177,7 @@ end;
 
 
 drop function if exists updateOrInsertOtherHits;
-create function updateOrInsertOtherHits(aDate date, aHits int, aBandwidth float) returns int
+create function updateOrInsertOtherHits(aDate date, aHits int, aBandwidth bigint) returns int
 begin
 	update `other_hits`
 	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
@@ -262,7 +262,7 @@ end;
 
 
 drop function if exists updateOrInsertProxyHits;
-create function updateOrInsertProxyHits(aProxyId int, aDate date, aHits int, aBandwidth float) returns int
+create function updateOrInsertProxyHits(aProxyId int, aDate date, aHits int, aBandwidth bigint) returns int
 begin
 	update `proxy_hits`
 	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
@@ -296,7 +296,7 @@ end;
 
 
 drop function if exists updateOrInsertReferrerHits;
-create function updateOrInsertReferrerHits(aReferrerId int, aDate date, aHits int, aBandwidth float) returns int
+create function updateOrInsertReferrerHits(aReferrerId int, aDate date, aHits int, aBandwidth bigint) returns int
 begin
 	update `referrer_hits`
 	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
