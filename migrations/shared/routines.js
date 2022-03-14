@@ -32,7 +32,7 @@ module.exports = async (db) => {
 					select type, name, sum(hits) as hits, sum(bandwidth) as bandwidth
 					from package
 						     join package_hits on package.id = package_hits.packageId
-					where date >= @dateFrom and date <= @dateTo
+					where isPrivate = 0 and date >= @dateFrom and date <= @dateTo
 					group by packageId
 					order by hits desc
 				) t;

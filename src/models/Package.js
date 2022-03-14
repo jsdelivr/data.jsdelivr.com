@@ -5,6 +5,7 @@ const schema = Joi.object({
 	id: Joi.number().integer().min(0).required().allow(null),
 	name: Joi.string().max(255).required(),
 	type: Joi.string().max(255).required(),
+	isPrivate: Joi.number().integer().min(0).max(1).required(),
 });
 
 class Package extends BaseCacheModel {
@@ -31,6 +32,9 @@ class Package extends BaseCacheModel {
 
 		/** @type {string} */
 		this.type = null;
+
+		/** @type {number} */
+		this.isPrivate = 0;
 
 		Object.assign(this, properties);
 		return new Proxy(this, BaseCacheModel.ProxyHandler);

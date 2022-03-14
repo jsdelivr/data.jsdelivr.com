@@ -17,6 +17,10 @@ exports.seed = async (db) => {
 		return _.range(0, 60).map(i => ({ type, name: (type === 'npm' ? '' : 'user/') + `package-${i}` }));
 	})));
 
+	await db('package').insert(_.flatten(PACKAGE_TYPES.map((type) => {
+		return { type, name: (type === 'npm' ? '' : 'user/') + `package-60`, isPrivate: 1 };
+	})));
+
 	await db('package_version').insert(_.flatten(_.range(1, 121).map((packageId) => {
 		return _.range(0, 3).map(i => ({ packageId, version: `1.1.${i}` }));
 	})));
@@ -25,7 +29,11 @@ exports.seed = async (db) => {
 		return _.range(0, 2).map(i => ({ packageId, version: `branch-${i}`, type: 'branch' }));
 	})));
 
-	await db('file').insert(_.flatten(_.range(1, 363).map((packageVersionId) => {
+	await db('package_version').insert(_.flatten(_.range(121, 123).map((packageId) => {
+		return _.range(0, 3).map(i => ({ packageId, version: `1.1.${i}` }));
+	})));
+
+	await db('file').insert(_.flatten(_.range(1, 369).map((packageVersionId) => {
 		return _.range(0, 4).map((i) => {
 			return {
 				packageVersionId,
@@ -35,7 +43,7 @@ exports.seed = async (db) => {
 		});
 	})));
 
-	await db('file_hits').insert(_.flatten(_.range(1, 1449).map((fileId) => {
+	await db('file_hits').insert(_.flatten(_.range(1, 1473).map((fileId) => {
 		return _.range(0, 60).map((i) => {
 			return {
 				fileId,
