@@ -340,13 +340,15 @@ https://data.jsdelivr.com/v1/package/npm/jquery/badge?style=rounded
 ### Get a rank badge for your project
 
 ```
-/package/npm/:name/badge/rank/:period?
+/package/npm/:name/badge/:rankType/:period?
  - name: npm package name
+ - rankType: "rank" or "type-rank"
  - period: "day", "week", "month", or "year"; defaults to "month"
 
-/package/gh/:user/:repo/badge/rank/:period?
+/package/gh/:user/:repo/badge/:rankType/:period?
  - user: GitHub username
  - repo: GitHub repository name
+ - rankType: "rank" or "type-rank"
  - period: "day", "week", "month", or "year"; defaults to "month"
 ```
 
@@ -357,9 +359,14 @@ https://data.jsdelivr.com/v1/package/npm/jquery/badge/rank
 ![https://www.jsdelivr.com/package/npm/jquery](https://data.jsdelivr.com/v1/package/npm/jquery/badge/rank)
 
 ```
-https://data.jsdelivr.com/v1/package/npm/jquery/badge?style=rounded
+https://data.jsdelivr.com/v1/package/npm/jquery/badge/type-rank
 ```
-![https://www.jsdelivr.com/package/npm/jquery](https://data.jsdelivr.com/v1/package/npm/jquery/badge/rank?style=rounded)
+![https://www.jsdelivr.com/package/npm/jquery](https://data.jsdelivr.com/v1/package/npm/jquery/badge/type-rank)
+
+```
+https://data.jsdelivr.com/v1/package/npm/jquery/badge/type-rank?style=rounded
+```
+![https://www.jsdelivr.com/package/npm/jquery](https://data.jsdelivr.com/v1/package/npm/jquery/badge/type-rank?style=rounded)
 
 ### Get a CDN link/metadata from file hash
 
