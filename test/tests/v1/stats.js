@@ -59,13 +59,14 @@ function getExpectedStatsResponse (key, response, hasAllParams) {
 }
 
 function snapshotResponse (data, key) {
+	let diff = relativeDayUtc().valueOf() - relativeDayUtc(0, expectedResponses[key]?.date);
+
 	if (expectedResponses[key]) {
 		if (!snapshotResponsesOverwrite) {
 			return;
 		}
 
 		let currentData = _.cloneDeep(expectedResponses[key]);
-		let diff = relativeDayUtc().valueOf() - relativeDayUtc(0, currentData.date);
 		delete currentData.date;
 
 		if (_.isEqual(data, recalculateDates(currentData, diff))) {
@@ -76,7 +77,10 @@ function snapshotResponse (data, key) {
 	if (Array.isArray(data)) {
 		expectedResponses[key] = data;
 	} else {
-		expectedResponses[key] = { date: new Date().toISOString().substr(0, 10), ...data };
+		expectedResponses[key] = {
+			date: expectedResponses[key]?.date || new Date().toISOString().substr(0, 10),
+			...recalculateDates(data, -diff || 0),
+		};
 	}
 
 	let newExpectedResponses = _.fromPairs(Object.keys(expectedResponses).sort((a, b) => {
