@@ -5,7 +5,7 @@ const koaElasticUtils = require('elastic-apm-utils').koa;
 const LookupRequest = require('./lib/v1/LookupRequest');
 const PackageRequest = require('./lib/v1/PackageRequest');
 const StatsRequest = require('./lib/v1/StatsRequest');
-const router = new Router();
+const router = new Router({ strict: true, sensitive: true });
 
 /**
  * More accurate APM route names.

@@ -23,7 +23,7 @@ const v1Handler = require('./routes/v1');
 const serverConfig = config.get('server');
 
 let server = new Koa();
-let router = new Router();
+let router = new Router({ strict: true, sensitive: true });
 
 /**
  * Server config.
