@@ -73,8 +73,8 @@ koaElasticUtils.addRoutes(router, [
 });
 
 koaElasticUtils.addRoutes(router, [
-	[ '/package/npm/:name/badge/rank', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/badge/rank/:period(day|week|month|year|all)?' ],
-	[ '/package/gh/:user/:repo/badge/rank', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/badge/rank/:period(day|week|month|year|all)?' ],
+	[ '/package/npm/:name/badge/rank', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/badge/:rankType(rank|type-rank)/:period(day|week|month|year|all)?' ],
+	[ '/package/gh/:user/:repo/badge/rank', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/badge/:rankType(rank|type-rank)/:period(day|week|month|year|all)?' ],
 ], async (ctx) => {
 	return new PackageRequest(ctx).handlePackageBadgeRank();
 });

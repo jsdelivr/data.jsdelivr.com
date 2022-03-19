@@ -17,17 +17,18 @@ module.exports = async (db) => {
 
 				start transaction;
 
-				set @rankCounter = -1;
 				set @dateFrom = ${period === 'all' ? `'2017-08-17'` : `date_sub(aDate, interval ${days + 1} day)`};
 				set @dateTo = date_sub(aDate, interval 2 day);
-				set @hits = pow(2, 64);
 
 				delete from view_top_packages_${period} where \`date\` = aDate;
 				delete from view_top_packages_${period} where \`date\` < @dateTo;
 
 				insert into view_top_packages_${period}
-				(date, rank, type, name, hits, bandwidth)
-				select aDate, (select @rankCounter := if(t.hits < @hits, if(@hits := t.hits, @rankCounter + 1, @rankCounter + 1), @rankCounter)), t.*
+					(date, rank, typeRank, type, name, hits, bandwidth)
+				select aDate,
+					if(hits > 0, rank() over (order by hits desc) - 1, null),
+					if(hits > 0, rank() over (partition by type order by hits desc) - 1, null),
+					t.*
 				from (
 					select type, name, sum(hits) as hits, sum(bandwidth) as bandwidth
 					from package

@@ -150,9 +150,9 @@ class PackageRequest extends BaseRequest {
 		return this.fetchMetadata();
 	}
 
-	async getRank () {
+	async getRanks () {
 		let stats = await Package.getStatsForPeriod(this.params.type, this.params.name, this.period, this.date);
-		return stats ? stats.rank : null;
+		return stats ? { rank: stats.rank, typeRank: stats.typeRank } : { rank: null, typeRank: null };
 	}
 
 	async getResolvedVersion () {
@@ -239,12 +239,12 @@ class PackageRequest extends BaseRequest {
 
 	async handlePackageBadge () {
 		let stats = await Package.getStatsForPeriod(this.params.type, this.params.name, this.period, this.date);
-		let hits = stats ? stats.hits : 0;
+		let value = stats ? stats.hits : 0;
 
 		this.ctx.type = 'image/svg+xml; charset=utf-8';
 
 		this.ctx.body = badgeFactory.create({
-			text: [ 'jsDelivr', `${number.abbreviate(hits)} hits${this.period === 'all' ? '' : `/${this.period}`}` ],
+			text: [ 'jsDelivr', `${number.abbreviate(value)} hits${this.period === 'all' ? '' : `/${this.period}`}` ],
 			colorB: '#ff5627',
 			template: this.ctx.query.style === 'rounded' ? 'flat' : 'flat-square',
 		});
@@ -253,17 +253,19 @@ class PackageRequest extends BaseRequest {
 	}
 
 	async handlePackageBadgeRank () {
-		let rank = await this.getRank();
-		let text = 'error';
+		let ranks = await this.getRanks();
+		let rType = _.camelCase(this.params.rankType);
+		let texts = { rank: 'jsDelivr rank', typeRank: `jsDelivr ${this.params.type} rank` };
+		let value = 'error';
 
-		if (rank !== null) {
-			text = `#${rank}`;
+		if (ranks[rType] !== null) {
+			value = `#${ranks[rType]}`;
 		}
 
 		this.ctx.type = 'image/svg+xml; charset=utf-8';
 
 		this.ctx.body = badgeFactory.create({
-			text: [ 'jsDelivr rank', text ],
+			text: [ texts[rType], value ],
 			colorB: '#ff5627',
 			template: this.ctx.query.style === 'rounded' ? 'flat' : 'flat-square',
 		});
@@ -272,6 +274,8 @@ class PackageRequest extends BaseRequest {
 	}
 
 	async handlePackageStats () {
+		let ranksPromise = this.getRanks();
+
 		if (this.params.groupBy === 'date') {
 			let stats = this.params.statType === 'bandwidth'
 				? await Package.getSumDateBandwidthPerVersionByName(this.params.type, this.params.name, ...this.dateRange)
@@ -279,7 +283,7 @@ class PackageRequest extends BaseRequest {
 			let total = sumDeep(stats, 3);
 
 			this.ctx.body = {
-				rank: total ? await this.getRank() : null,
+				...await ranksPromise,
 				total,
 				dates: dateRange.fill(_.mapValues(stats, ({ versions, commits, branches }) => ({ total: sumDeep(versions), versions, commits, branches })), ...this.dateRange, { total: 0, versions: {}, commits: {}, branches: {} }),
 			};
@@ -291,7 +295,7 @@ class PackageRequest extends BaseRequest {
 			let fn = data => _.mapValues(data, dates => ({ total: sumDeep(dates), dates: dateRange.fill(dates, ...this.dateRange) }));
 
 			this.ctx.body = {
-				rank: total ? await this.getRank() : null,
+				...await ranksPromise,
 				total,
 				versions: fn(stats.versions),
 				commits: fn(stats.commits),

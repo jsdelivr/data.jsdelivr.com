@@ -9202,6 +9202,7 @@
 	"/v1/package/npm/package-0/stats/hits/date/month": {
 		"date": "2021-05-20",
 		"rank": null,
+		"typeRank": null,
 		"total": 0,
 		"dates": {
 			"2021-04-19": {
@@ -9916,6 +9917,7 @@
 	"/v1/package/npm/package-2/stats/bandwidth/date/all": {
 		"date": "2022-02-03",
 		"rank": 117,
+		"typeRank": 57,
 		"total": 23222400,
 		"dates": {
 			"2021-12-05": {
@@ -10513,6 +10515,7 @@
 	"/v1/package/npm/package-2/stats/bandwidth/date/day": {
 		"date": "2022-02-03",
 		"rank": 117,
+		"typeRank": 57,
 		"total": 393600,
 		"dates": {
 			"2022-02-01": {
@@ -10530,6 +10533,7 @@
 	"/v1/package/npm/package-2/stats/bandwidth/date/month": {
 		"date": "2022-02-03",
 		"rank": 117,
+		"typeRank": 57,
 		"total": 11808000,
 		"dates": {
 			"2022-01-03": {
@@ -10837,6 +10841,7 @@
 	"/v1/package/npm/package-2/stats/bandwidth/date/week": {
 		"date": "2022-02-03",
 		"rank": 117,
+		"typeRank": 57,
 		"total": 2755200,
 		"dates": {
 			"2022-01-26": {
@@ -10914,6 +10919,7 @@
 	"/v1/package/npm/package-2/stats/bandwidth/date/year": {
 		"date": "2022-02-03",
 		"rank": 117,
+		"typeRank": 57,
 		"total": 23222400,
 		"dates": {
 			"2021-02-02": {
@@ -13347,6 +13353,7 @@
 	"/v1/package/npm/package-2/stats/bandwidth/version/all": {
 		"date": "2022-02-03",
 		"rank": 117,
+		"typeRank": 57,
 		"total": 23222400,
 		"versions": {
 			"1.1.0": {
@@ -13548,6 +13555,7 @@
 	"/v1/package/npm/package-2/stats/bandwidth/version/day": {
 		"date": "2022-02-03",
 		"rank": 117,
+		"typeRank": 57,
 		"total": 393600,
 		"versions": {
 			"1.1.0": {
@@ -13575,6 +13583,7 @@
 	"/v1/package/npm/package-2/stats/bandwidth/version/month": {
 		"date": "2022-02-03",
 		"rank": 117,
+		"typeRank": 57,
 		"total": 11808000,
 		"versions": {
 			"1.1.0": {
@@ -13689,6 +13698,7 @@
 	"/v1/package/npm/package-2/stats/bandwidth/version/week": {
 		"date": "2022-02-03",
 		"rank": 117,
+		"typeRank": 57,
 		"total": 2755200,
 		"versions": {
 			"1.1.0": {
@@ -13734,6 +13744,7 @@
 	"/v1/package/npm/package-2/stats/bandwidth/version/year": {
 		"date": "2022-02-03",
 		"rank": 117,
+		"typeRank": 57,
 		"total": 23222400,
 		"versions": {
 			"1.1.0": {
@@ -14853,6 +14864,7 @@
 	"/v1/package/npm/package-2/stats/hits/date/all": {
 		"date": "2021-05-20",
 		"rank": 117,
+		"typeRank": 57,
 		"total": 1416,
 		"dates": {
 			"2021-03-21": {
@@ -15450,6 +15462,7 @@
 	"/v1/package/npm/package-2/stats/hits/date/day": {
 		"date": "2021-05-20",
 		"rank": 117,
+		"typeRank": 57,
 		"total": 24,
 		"dates": {
 			"2021-05-18": {
@@ -15467,6 +15480,7 @@
 	"/v1/package/npm/package-2/stats/hits/date/month": {
 		"date": "2021-05-20",
 		"rank": 117,
+		"typeRank": 57,
 		"total": 720,
 		"dates": {
 			"2021-04-19": {
@@ -15774,6 +15788,7 @@
 	"/v1/package/npm/package-2/stats/hits/date/week": {
 		"date": "2021-05-20",
 		"rank": 117,
+		"typeRank": 57,
 		"total": 168,
 		"dates": {
 			"2021-05-12": {
@@ -15851,6 +15866,7 @@
 	"/v1/package/npm/package-2/stats/hits/date/year": {
 		"date": "2021-05-20",
 		"rank": 117,
+		"typeRank": 57,
 		"total": 1416,
 		"dates": {
 			"2020-05-19": {
@@ -18284,6 +18300,7 @@
 	"/v1/package/npm/package-2/stats/hits/version/all": {
 		"date": "2021-05-20",
 		"rank": 117,
+		"typeRank": 57,
 		"total": 1416,
 		"versions": {
 			"1.1.0": {
@@ -18485,6 +18502,7 @@
 	"/v1/package/npm/package-2/stats/hits/version/day": {
 		"date": "2021-05-20",
 		"rank": 117,
+		"typeRank": 57,
 		"total": 24,
 		"versions": {
 			"1.1.0": {
@@ -18512,6 +18530,7 @@
 	"/v1/package/npm/package-2/stats/hits/version/month": {
 		"date": "2021-05-20",
 		"rank": 117,
+		"typeRank": 57,
 		"total": 720,
 		"versions": {
 			"1.1.0": {
@@ -18626,6 +18645,7 @@
 	"/v1/package/npm/package-2/stats/hits/version/week": {
 		"date": "2021-05-20",
 		"rank": 117,
+		"typeRank": 57,
 		"total": 168,
 		"versions": {
 			"1.1.0": {
@@ -18671,6 +18691,7 @@
 	"/v1/package/npm/package-2/stats/hits/version/year": {
 		"date": "2021-05-20",
 		"rank": 117,
+		"typeRank": 57,
 		"total": 1416,
 		"versions": {
 			"1.1.0": {
@@ -29062,12 +29083,14 @@
 	"/v1/package/npm/package-x/stats/hits/date/all": {
 		"date": "2021-05-20",
 		"rank": null,
+		"typeRank": null,
 		"total": 0,
 		"dates": {}
 	},
 	"/v1/package/npm/package-x/stats/hits/date/month": {
 		"date": "2021-05-20",
 		"rank": null,
+		"typeRank": null,
 		"total": 0,
 		"dates": {
 			"2021-04-19": {
@@ -29255,6 +29278,7 @@
 	"/v1/package/gh/user/package-59/stats/bandwidth/date/all": {
 		"date": "2022-02-03",
 		"rank": 0,
+		"typeRank": 0,
 		"total": 2310628800,
 		"dates": {
 			"2021-12-05": {
@@ -30029,6 +30053,7 @@
 	"/v1/package/gh/user/package-59/stats/bandwidth/date/day": {
 		"date": "2022-02-03",
 		"rank": 0,
+		"typeRank": 0,
 		"total": 39163200,
 		"dates": {
 			"2022-02-01": {
@@ -30049,6 +30074,7 @@
 	"/v1/package/gh/user/package-59/stats/bandwidth/date/month": {
 		"date": "2022-02-03",
 		"rank": 0,
+		"typeRank": 0,
 		"total": 1174896000,
 		"dates": {
 			"2022-01-03": {
@@ -30446,6 +30472,7 @@
 	"/v1/package/gh/user/package-59/stats/bandwidth/date/week": {
 		"date": "2022-02-03",
 		"rank": 0,
+		"typeRank": 0,
 		"total": 274142400,
 		"dates": {
 			"2022-01-26": {
@@ -30544,6 +30571,7 @@
 	"/v1/package/gh/user/package-59/stats/bandwidth/date/year": {
 		"date": "2022-02-03",
 		"rank": 0,
+		"typeRank": 0,
 		"total": 2310628800,
 		"dates": {
 			"2021-02-02": {
@@ -33154,6 +33182,7 @@
 	"/v1/package/gh/user/package-59/stats/bandwidth/version/all": {
 		"date": "2022-02-03",
 		"rank": 0,
+		"typeRank": 0,
 		"total": 2310628800,
 		"versions": {
 			"1.1.0": {
@@ -33484,6 +33513,7 @@
 	"/v1/package/gh/user/package-59/stats/bandwidth/version/day": {
 		"date": "2022-02-03",
 		"rank": 0,
+		"typeRank": 0,
 		"total": 39163200,
 		"versions": {
 			"1.1.0": {
@@ -33524,6 +33554,7 @@
 	"/v1/package/gh/user/package-59/stats/bandwidth/version/month": {
 		"date": "2022-02-03",
 		"rank": 0,
+		"typeRank": 0,
 		"total": 1174896000,
 		"versions": {
 			"1.1.0": {
@@ -33709,6 +33740,7 @@
 	"/v1/package/gh/user/package-59/stats/bandwidth/version/week": {
 		"date": "2022-02-03",
 		"rank": 0,
+		"typeRank": 0,
 		"total": 274142400,
 		"versions": {
 			"1.1.0": {
@@ -33779,6 +33811,7 @@
 	"/v1/package/gh/user/package-59/stats/bandwidth/version/year": {
 		"date": "2022-02-03",
 		"rank": 0,
+		"typeRank": 0,
 		"total": 2310628800,
 		"versions": {
 			"1.1.0": {
@@ -35639,6 +35672,7 @@
 	"/v1/package/gh/user/package-59/stats/hits/date/all": {
 		"date": "2021-05-20",
 		"rank": 0,
+		"typeRank": 0,
 		"total": 140892,
 		"dates": {
 			"2021-03-21": {
@@ -36413,6 +36447,7 @@
 	"/v1/package/gh/user/package-59/stats/hits/date/day": {
 		"date": "2021-05-20",
 		"rank": 0,
+		"typeRank": 0,
 		"total": 2388,
 		"dates": {
 			"2021-05-18": {
@@ -36433,6 +36468,7 @@
 	"/v1/package/gh/user/package-59/stats/hits/date/month": {
 		"date": "2021-05-20",
 		"rank": 0,
+		"typeRank": 0,
 		"total": 71640,
 		"dates": {
 			"2021-04-19": {
@@ -36830,6 +36866,7 @@
 	"/v1/package/gh/user/package-59/stats/hits/date/week": {
 		"date": "2021-05-20",
 		"rank": 0,
+		"typeRank": 0,
 		"total": 16716,
 		"dates": {
 			"2021-05-12": {
@@ -36928,6 +36965,7 @@
 	"/v1/package/gh/user/package-59/stats/hits/date/year": {
 		"date": "2021-05-20",
 		"rank": 0,
+		"typeRank": 0,
 		"total": 140892,
 		"dates": {
 			"2020-05-19": {
@@ -39538,6 +39576,7 @@
 	"/v1/package/gh/user/package-59/stats/hits/version/all": {
 		"date": "2021-05-20",
 		"rank": 0,
+		"typeRank": 0,
 		"total": 140892,
 		"versions": {
 			"1.1.0": {
@@ -39868,6 +39907,7 @@
 	"/v1/package/gh/user/package-59/stats/hits/version/day": {
 		"date": "2021-05-20",
 		"rank": 0,
+		"typeRank": 0,
 		"total": 2388,
 		"versions": {
 			"1.1.0": {
@@ -39908,6 +39948,7 @@
 	"/v1/package/gh/user/package-59/stats/hits/version/month": {
 		"date": "2021-05-20",
 		"rank": 0,
+		"typeRank": 0,
 		"total": 71640,
 		"versions": {
 			"1.1.0": {
@@ -40093,6 +40134,7 @@
 	"/v1/package/gh/user/package-59/stats/hits/version/week": {
 		"date": "2021-05-20",
 		"rank": 0,
+		"typeRank": 0,
 		"total": 16716,
 		"versions": {
 			"1.1.0": {
@@ -40163,6 +40205,7 @@
 	"/v1/package/gh/user/package-59/stats/hits/version/year": {
 		"date": "2021-05-20",
 		"rank": 0,
+		"typeRank": 0,
 		"total": 140892,
 		"versions": {
 			"1.1.0": {
