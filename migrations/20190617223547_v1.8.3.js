@@ -5,8 +5,6 @@ exports.up = async (db) => {
 		table.string('version');
 		table.text('listing', 'mediumtext');
 		table.primary([ 'type', 'name', 'version' ]);
-		table.charset('utf8mb4');
-		table.collate('utf8mb4_bin');
 	});
 
 	await db.schema.raw('alter table package_listing row_format = compressed;');

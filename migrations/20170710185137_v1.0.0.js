@@ -1,5 +1,9 @@
+const knexfile = require('../knexfile');
+const dbConfig = knexfile[process.env.NODE_ENV] || knexfile.development;
+
 exports.up = async (db) => {
 	await db.schema.raw('SET @@foreign_key_checks = 0;');
+	await db.schema.raw(`alter database \`${dbConfig.connection.database}\` character set utf8mb4 collate utf8mb4_unicode_ci;`);
 
 	await db.schema.createTable('package', (table) => {
 		table.increments();
