@@ -3,9 +3,7 @@ const updateSharedObjects = require('./shared/updateSharedObjects');
 
 exports.up = async (db) => {
 	await Bluebird.mapSeries([
-		'country_browser_version_hits',
 		'country_cdn_hits',
-		'country_platform_version_hits',
 		'file_hits',
 		'other_hits',
 		'package_hits',

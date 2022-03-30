@@ -21,15 +21,15 @@ end;
 
 
 drop function if exists updateOrInsertBrowser;
-create function updateOrInsertBrowser(aPlatformId int, aName varchar(255)) returns int
+create function updateOrInsertBrowser(aName varchar(255)) returns int
 begin
 	update `browser`
 	set `id` = last_insert_id(`id`)
-	where `platformId` = aPlatformId and `name` = aName;
+	where `name` = aName;
 
 	if row_count() = 0 then
-		insert into `browser` (platformId, name)
-		values (aPlatformId, aName)
+		insert into `browser` (name)
+		values (aName)
 		on duplicate key update `id` = last_insert_id(`id`);
 	end if;
 
@@ -55,15 +55,15 @@ end;
 
 
 drop function if exists updateOrInsertCountryBrowserVersionHits;
-create function updateOrInsertCountryBrowserVersionHits(aBrowserVersionId int, aCountryIso varchar(2), aDate date, aHits int, aBandwidth bigint) returns int
+create function updateOrInsertCountryBrowserVersionHits(aBrowserVersionId int, aPlatformId int, aCountryIso varchar(2), aDate date, aHits int, aBandwidth bigint) returns int
 begin
 	update `country_browser_version_hits`
 	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
 	where `browserVersionId` = aBrowserVersionId and `countryIso` = aCountryIso and `date` = aDate;
 
 	if row_count() = 0 then
-		insert into `country_browser_version_hits` (browserVersionId, countryIso, date, hits, bandwidth)
-		values (aBrowserVersionId, aCountryIso, aDate, aHits, aBandwidth)
+		insert into `country_browser_version_hits` (browserVersionId, platformId, countryIso, date, hits, bandwidth)
+		values (aBrowserVersionId, aPlatformId, aCountryIso, aDate, aHits, aBandwidth)
 		on duplicate key update `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth;
 	end if;
 
@@ -245,15 +245,15 @@ end;
 
 
 drop function if exists updateOrInsertPlatformVersion;
-create function updateOrInsertPlatformVersion(aPlatformId int, aVersion varchar(255)) returns int
+create function updateOrInsertPlatformVersion(aPlatformId int, aVersion varchar(255), aVersionName varchar(255)) returns int
 begin
 	update `platform_version`
 	set `id` = last_insert_id(`id`)
 	where `platformId` = aPlatformId and `version` = aVersion;
 
 	if row_count() = 0 then
-		insert into `platform_version` (platformId, version)
-		values (aPlatformId, aVersion)
+		insert into `platform_version` (platformId, version, versionName)
+		values (aPlatformId, aVersion, aVersionName)
 		on duplicate key update `id` = last_insert_id(`id`);
 	end if;
 

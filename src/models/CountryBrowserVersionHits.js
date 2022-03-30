@@ -2,8 +2,9 @@ const Joi = require('joi');
 const BaseModel = require('./BaseModel');
 
 const schema = Joi.object({
-	countryIso: Joi.string().length(2).required(),
 	browserVersionId: Joi.number().integer().min(0).required().allow(null),
+	platformId: Joi.number().integer().min(0).required().allow(null),
+	countryIso: Joi.string().length(2).required(),
 	date: Joi.date().required(),
 	hits: Joi.number().integer().min(0).required(),
 	bandwidth: Joi.number().min(0).required(),
@@ -19,17 +20,20 @@ class CountryBrowserVersionHits extends BaseModel {
 	}
 
 	static get unique () {
-		return [ 'countryIso', 'browserVersionId', 'date' ];
+		return [ 'browserVersionId', 'platformId', 'countryIso', 'date' ];
 	}
 
 	constructor (properties = {}) {
 		super();
 
-		/** @type {string} */
-		this.countryIso = null;
+		/** @type {number} */
+		this.browserVersionId = null;
+
+		/** @type {number} */
+		this.platformId = null;
 
 		/** @type {string} */
-		this.browserVersionId = null;
+		this.countryIso = null;
 
 		/** @type {Date} */
 		this.date = null;
@@ -45,7 +49,7 @@ class CountryBrowserVersionHits extends BaseModel {
 	}
 
 	toSqlFunctionCall () {
-		return db.raw(`select updateOrInsertCountryBrowserVersionHits(@lastIdBrowserVersion, ?, ?, ?, ?);`, [ this.countryIso, this.date, this.hits, this.bandwidth ]);
+		return db.raw(`select updateOrInsertCountryBrowserVersionHits(@lastIdBrowserVersion, @lastIdPlatform, ?, ?, ?, ?);`, [ this.countryIso, this.date, this.hits, this.bandwidth ]);
 	}
 }
 
