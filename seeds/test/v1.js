@@ -3,6 +3,7 @@ const crypto = require('crypto');
 const Bluebird = require('bluebird');
 const relativeDateUtc = require('relative-day-utc');
 const { listTables } = require('../../src/lib/db/utils');
+const entrypointTestCases = require('../../test/data/v1/entrypoints.json');
 
 const PACKAGE_TYPES = [ 'npm', 'gh' ];
 const STATS_START_TIMESTAMP = relativeDateUtc(-60).valueOf();
@@ -70,5 +71,33 @@ exports.seed = async (db) => {
 			bandwidth: 1600000,
 		};
 	})));
+
+	let seedEntrypointsData = async (entrypointsTestData) => {
+		let date = new Date(STATS_START_TIMESTAMP + 40 * 24 * 60 * 60 * 1000);
+
+		for (let [ packageName, data ] of Object.entries(entrypointsTestData)) {
+			let [ name, version ] = packageName.split('@');
+
+			if (data.db.entrypoints) {
+				await db('package_entrypoints').insert({ type: 'npm', name, version, entrypoints: JSON.stringify(data.db.entrypoints) });
+			}
+
+			if (data.db.cdnjs) {
+				await db('cdnjs_package').insert({ name, version, filename: data.db.cdnjs });
+			}
+
+			if (data.db.stats) {
+				let [ packageId ] = await db('package').insert({ name, type: 'npm' });
+				let [ versionId ] = await db('package_version').insert({ packageId, version, type: 'version' });
+
+				for (let st of data.db.stats) {
+					let [ fileId ] = await db('file').insert({ packageVersionId: versionId, filename: st.file });
+					await db('file_hits').insert({ fileId, date, hits: st.hits });
+				}
+			}
+		}
+	};
+
+	await seedEntrypointsData(entrypointTestCases);
 };
 

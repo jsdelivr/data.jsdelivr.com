@@ -4,7 +4,8 @@ const chaiHttp = require('chai-http');
 const relativeDayUtc = require('relative-day-utc');
 const expect = chai.expect;
 
-const server = require('../../../src');
+const config = require('config');
+const server = `http://127.0.0.1:${config.get(`server.port`)}`;
 const expectedResponsesPath = require.resolve('../../data/v1/expected/stats');
 const expectedResponses = require(expectedResponsesPath);
 const periodOptions = [ 'day', 'week', 'month', 'year', 'all', '' ];

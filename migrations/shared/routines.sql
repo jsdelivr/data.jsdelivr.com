@@ -323,6 +323,8 @@ begin
 
 	start transaction;
 
+	set @dateTo = date_sub(aDate, interval 2 day);
+
 	delete from view_network_packages;
 
 	insert into view_network_packages
@@ -330,14 +332,14 @@ begin
 	select date, sum(hits) as hits, sum(bandwidth) as bandwidth
 	from package
 		     join package_hits on package.id = package_hits.packageId
-	where date <= aDate
+	where date <= @dateTo
 	group by date;
 	commit;
 end;
 
 
 drop procedure if exists updateViewTopPackageFiles;
-create procedure updateViewTopPackageFiles(dateFrom date, dateTo date)
+create procedure updateViewTopPackageFiles(aDate date)
 begin
 	declare exit handler for sqlexception
 		begin
@@ -346,6 +348,9 @@ begin
 		end;
 
 	start transaction;
+
+	set @dateFrom = date_sub(aDate, interval 31 day);
+	set @dateTo = date_sub(aDate, interval 2 day);
 
 	delete from view_top_package_files;
 
@@ -362,7 +367,7 @@ begin
 			     inner join package on package_version.packageId = package.id
 			     inner join file on package_version.id = file.packageVersionId
 			     inner join file_hits on file.id = file_hits.fileId
-		where file_hits.date between dateFrom and dateTo
+		where file_hits.date between @dateFrom and @dateTo
 			and package.type = 'npm'
 			and file.filename RLIKE '^(?:(?!/(docs?|documentation|examples?|samples?|demos?|tests?|cjs|esm|es6?)/)(?!/[._]).)+\\.(js|css)$'
 		group by file.id

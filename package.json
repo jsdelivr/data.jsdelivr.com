@@ -101,7 +101,7 @@
 		"lint": "eslint bin config migrations seeds src test",
 		"lint:fix": "npm run lint -- --fix",
 		"migrate": "knex migrate:latest",
-		"mocha": "mocha --exit test/tests.js",
+		"mocha": "mocha",
 		"test": "npm run lint && npm run mocha"
 	},
 	"repository": {
