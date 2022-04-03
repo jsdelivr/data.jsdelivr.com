@@ -25,6 +25,7 @@ exports.up = async (db) => {
 		table.boolean('processed').index();
 		table.date('date').index();
 		table.unique([ 'filename', 'fileModificationTime' ]);
+		table.collate('utf8mb4_bin');
 	});
 
 	await db.schema.alterTable('proxy_hits', (table) => {
