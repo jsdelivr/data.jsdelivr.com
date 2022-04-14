@@ -1,5 +1,5 @@
 process.env.NODE_ENV = 'test';
-require('../src/lib/startup');
+require('../../src/lib/startup');
 
 const chai = require('chai');
 const chaiHttp = require('chai-http');
@@ -32,5 +32,5 @@ describe('Other', function () {
 	});
 });
 
-require('./tests/unit');
-require('./tests/v1');
+require('./unit');
+require('./v1');

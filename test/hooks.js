@@ -1,20 +1,30 @@
 process.env.NODE_ENV = 'test';
 
+const path = require('path');
 const nock = require('nock');
-const config = require('config');
 const chai = require('chai');
-const serverConfig = config.get('server');
+const config = require('config');
 
+const serverConfig = config.get('server');
 global.server = `http://127.0.0.1:${serverConfig.port}`;
 
-const afterEachCallbacks = [];
+const expectAssert = require('expect-assert');
+chai.expect = expectAssert(chai.expect);
 
-// expect-assert doesn't work with root hooks yet so we need to polyfill the required interface.
-global.afterEach = function afterEach (...args) {
-	afterEachCallbacks.push(args);
-};
+const chaiHttp = require('chai-http');
+chai.use(chaiHttp);
 
-chai.expect = require('expect-assert')(chai.expect);
+const chaiSnapshot = require('./plugins/snapshot');
+chai.use(chaiSnapshot({
+	path (file) {
+		return path.join(
+			__dirname,
+			'expected',
+			path.relative(path.join(__dirname, 'tests'), path.dirname(file)),
+			`${path.basename(file, path.extname(file))}.json`
+		);
+	},
+}));
 
 exports.mochaHooks = {
 	before () {
@@ -26,10 +36,5 @@ exports.mochaHooks = {
 
 		nock.disableNetConnect();
 		nock.enableNetConnect('127.0.0.1');
-	},
-	afterEach () {
-		afterEachCallbacks.forEach(([ , cb ]) => {
-			cb.call(this);
-		});
 	},
 };

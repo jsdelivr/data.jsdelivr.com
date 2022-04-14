@@ -1,12 +1,9 @@
 const chai = require('chai');
-const chaiHttp = require('chai-http');
 const expect = chai.expect;
 
 const testCases = require('../../data/v1/entrypoints.json');
 
-chai.use(chaiHttp);
-
-describe('/v1/package/:package/entrypoints', () => {
+describe('/v1/package/entrypoints', () => {
 	for (let [ packageName, data ] of Object.entries(testCases)) {
 		it(`GET /v1/package/npm/${packageName}/entrypoints`, () => {
 			return chai.request(server)

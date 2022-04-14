@@ -1,10 +1,7 @@
 const chai = require('chai');
-const chaiHttp = require('chai-http');
 const expect = chai.expect;
 
 const expectedResponses = require('../data/v1/expected.json');
-
-chai.use(chaiHttp);
 
 describe('v1', function () {
 	this.timeout(10000);

@@ -90,15 +90,16 @@
 		"eslint-plugin-node": "^11.1.0",
 		"eslint-plugin-prefer-let": "^3.0.1",
 		"eslint-plugin-promise": "^6.0.0",
-		"expect-assert": "0.0.2",
+		"expect-assert": "github:MartinKolarik/expect-assert",
 		"mocha": "^9.1.3",
 		"nock": "^13.1.4",
-		"nyc": "^15.1.0"
+		"nyc": "^15.1.0",
+		"url-template": "^2.0.8"
 	},
 	"scripts": {
 		"coverage": "nyc mocha --exit test/tests.js",
 		"knex": "knex",
-		"lint": "eslint bin config migrations seeds src test",
+		"lint": "eslint bin config migrations seeds src test *.js .*.js",
 		"lint:fix": "npm run lint -- --fix",
 		"migrate": "knex migrate:latest",
 		"mocha": "mocha",

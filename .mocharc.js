@@ -1,5 +1,6 @@
 module.exports = {
-	exit: true,
-	spec: [ './test/tests.js' ],
-	require: [ './test/setup.js', './test/hooks.js' ],
+	'exit': true,
+	'reporter-option': [ 'maxDiffSize=0' ],
+	'require': [ 'expect-assert/hooks', './test/setup.js', './test/hooks.js' ],
+	'spec': [ './test/tests/tests.js' ],
 };

@@ -1,12 +1,9 @@
 const chai = require('chai');
-const chaiHttp = require('chai-http');
 const expect = chai.expect;
 
 const config = require('config');
 const server = `http://127.0.0.1:${config.get(`server.port`)}`;
-const expectedResponses = require('../../data/v1/expected/package');
-
-chai.use(chaiHttp);
+const expectedResponses = require('../../expected/v1/package.json');
 
 describe('/v1/package', () => {
 	it('GET /v1/package/npm/jquery', () => {
