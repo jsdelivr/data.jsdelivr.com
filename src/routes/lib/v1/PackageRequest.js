@@ -1,11 +1,11 @@
 const got = require('got');
 const semver = require('semver');
 const config = require('config');
-const BadgeFactory = require('gh-badges').BadgeFactory;
+const { makeBadge } = require('badge-maker');
+
 const isSemverStatic = require('is-semver-static');
 const NumberAbbreviate = require('number-abbreviate');
 const number = new NumberAbbreviate([ 'k', 'M', 'B', 'T' ]);
-const badgeFactory = new BadgeFactory();
 
 const BaseRequest = require('./BaseRequest');
 const BadVersionError = require('../errors/BadVersionError');
@@ -243,10 +243,11 @@ class PackageRequest extends BaseRequest {
 
 		this.ctx.type = 'image/svg+xml; charset=utf-8';
 
-		this.ctx.body = badgeFactory.create({
-			text: [ 'jsDelivr', `${number.abbreviate(value)} hits${this.period === 'all' ? '' : `/${this.period}`}` ],
-			colorB: '#ff5627',
-			template: this.ctx.query.style === 'rounded' ? 'flat' : 'flat-square',
+		this.ctx.body = makeBadge({
+			label: 'jsDelivr',
+			message: `${number.abbreviate(value)} hits${this.period === 'all' ? '' : `/${this.period}`}`,
+			color: '#ff5627',
+			style: this.ctx.query.style === 'rounded' ? 'flat' : 'flat-square',
 		});
 
 		this.setCacheHeaderDelayed();
@@ -264,10 +265,11 @@ class PackageRequest extends BaseRequest {
 
 		this.ctx.type = 'image/svg+xml; charset=utf-8';
 
-		this.ctx.body = badgeFactory.create({
-			text: [ texts[rType], value ],
-			colorB: '#ff5627',
-			template: this.ctx.query.style === 'rounded' ? 'flat' : 'flat-square',
+		this.ctx.body = makeBadge({
+			label: texts[rType],
+			message: value,
+			color: '#ff5627',
+			style: this.ctx.query.style === 'rounded' ? 'flat' : 'flat-square',
 		});
 
 		this.setCacheHeaderDelayed();
