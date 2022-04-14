@@ -25,6 +25,7 @@ describe('v1', function () {
 	require('./v1/package');
 	require('./v1/package/badge');
 	require('./v1/package/entrypoints');
+	require('./v1/package/resolve');
 	require('./v1/package/stats');
 	require('./v1/stats');
 
