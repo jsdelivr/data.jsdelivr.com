@@ -1,7 +1,7 @@
 const chai = require('chai');
 const expect = chai.expect;
 
-const testCases = require('../../data/v1/entrypoints.json');
+const testCases = require('../../../data/v1/entrypoints.json');
 
 describe('/v1/package/entrypoints', () => {
 	for (let [ packageName, data ] of Object.entries(testCases)) {

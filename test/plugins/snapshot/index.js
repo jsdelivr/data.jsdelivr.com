@@ -1,14 +1,17 @@
 const fs = require('fs-extra');
 const relativeDayUtc = require('relative-day-utc');
-let currentFile;
 
-module.exports = ({ path, snapshotResponses, updateExistingSnapshots }) => {
+module.exports = ({ snapshotResponses = false, updateExistingSnapshots = false }) => {
 	let snapshotFiles = new Map();
+	let useTracker = new Map();
+	let currentFile;
 
 	function getFile () {
 		if (!snapshotFiles.has(currentFile)) {
+			useTracker.set(currentFile, new Map());
+
 			try {
-				snapshotFiles.set(currentFile, fs.readJsonSync(path(currentFile)));
+				snapshotFiles.set(currentFile, fs.readJsonSync(currentFile));
 			} catch {
 				snapshotFiles.set(currentFile, {});
 			}
@@ -17,11 +20,12 @@ module.exports = ({ path, snapshotResponses, updateExistingSnapshots }) => {
 		return snapshotFiles.get(currentFile);
 	}
 
-	function getResponseFromSnapshot (key, newResponse) {
+	function getResponseBodyFromSnapshot (key, newBody) {
 		let expectedResponses = getFile();
+		markUsed(currentFile, key);
 
-		if (newResponse && snapshotResponses) {
-			storeResponse(expectedResponses, key, newResponse.body);
+		if (newBody && snapshotResponses) {
+			storeResponse(expectedResponses, key, newBody);
 		}
 
 		if (!expectedResponses[key]) {
@@ -33,6 +37,18 @@ module.exports = ({ path, snapshotResponses, updateExistingSnapshots }) => {
 		delete data.date;
 
 		return recalculateDates(data, diff);
+	}
+
+	function isUsed (file, key) {
+		return useTracker.get(file).get(key);
+	}
+
+	function markUsed (file, key) {
+		useTracker.get(file).set(key, true);
+	}
+
+	function storeFile (path, contents) {
+		fs.outputJsonSync(path, contents, { spaces: '\t' });
 	}
 
 	function storeResponse (expectedResponses, key, data) {
@@ -71,18 +87,29 @@ module.exports = ({ path, snapshotResponses, updateExistingSnapshots }) => {
 			return aCount - bCount;
 		}).map(key => [ key, expectedResponses[key] ]));
 
-		fs.outputJsonSync(path(currentFile), newExpectedResponses, { spaces: '\t' });
+		storeFile(currentFile, newExpectedResponses);
 	}
 
-	return (chai) => {
+	return Object.assign((chai) => {
 		chai.Assertion.addMethod('matchSnapshot', function (snapshotName = this._obj.req.path, message) {
-			new chai.Assertion(this._obj.body).to.deep.equal(getResponseFromSnapshot(snapshotName, this._obj.body), message);
+			new chai.Assertion(this._obj.body).to.deep.equal(getResponseBodyFromSnapshot(snapshotName, this._obj.body), message);
 		});
-	};
-};
+	}, {
+		prune () {
+			for (let [ path, contents ] of snapshotFiles) {
+				for (let key of Object.keys(contents)) {
+					if (!isUsed(path, key)) {
+						delete contents[key];
+					}
+				}
 
-module.exports.setCurrentFile = (file) => {
-	currentFile = file;
+				storeFile(path, contents);
+			}
+		},
+		setCurrentFile (file) {
+			currentFile = file;
+		},
+	});
 };
 
 function recalculateDates (object, dateDiff) {

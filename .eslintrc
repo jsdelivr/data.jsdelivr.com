@@ -18,7 +18,8 @@
 				"test/**"
 			],
 			"globals": {
-				"server": false
+				"server": false,
+				"chaiSnapshotInstance": false
 			}
 		}
 	]

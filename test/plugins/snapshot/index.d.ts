@@ -6,7 +6,12 @@ declare global {
 	}
 }
 
-declare function chaiSnapshot (options: any): typeof chaiSnapshotPlugin;
+interface SnapshotOptions {
+	snapshotResponses?: boolean,
+	updateExistingSnapshots?: boolean
+}
+
+declare function chaiSnapshot (options: SnapshotOptions): typeof chaiSnapshotPlugin;
 declare function chaiSnapshotPlugin (chai: any, utils: any): void;
 
 export = chaiSnapshot;

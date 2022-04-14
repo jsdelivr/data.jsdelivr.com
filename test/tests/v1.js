@@ -23,7 +23,9 @@ describe('v1', function () {
 	});
 
 	require('./v1/package');
-	require('./v1/entrypoint');
+	require('./v1/package/badge');
+	require('./v1/package/entrypoints');
+	require('./v1/package/stats');
 	require('./v1/stats');
 
 	describe('/v1/lookup', () => {

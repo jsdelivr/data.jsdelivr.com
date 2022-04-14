@@ -84,6 +84,7 @@
 		"blocked": "^1.3.0",
 		"chai": "^4.3.4",
 		"chai-http": "^4.3.0",
+		"cross-env": "^7.0.3",
 		"eslint": "^8.2.0",
 		"eslint-plugin-chai-expect": "^3.0.0",
 		"eslint-plugin-html": "^6.2.0",
@@ -103,7 +104,10 @@
 		"lint:fix": "npm run lint -- --fix",
 		"migrate": "knex migrate:latest",
 		"mocha": "mocha",
-		"test": "npm run lint && npm run mocha"
+		"test": "npm run lint && npm run mocha",
+		"test:prune": "cross-env PRUNE_OLD_SNAPSHOTS=1 mocha",
+		"test:snapshot": "cross-env SNAPSHOT_RESPONSES=1 mocha",
+		"test:update": "cross-env UPDATE_EXISTING_SNAPSHOTS=1 mocha"
 	},
 	"repository": {
 		"type": "git",

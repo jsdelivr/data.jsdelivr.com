@@ -1,8 +1,8 @@
 const chai = require('chai');
 const expect = chai.expect;
 
+const path = require('path');
 const urlTemplate = require('url-template');
-const { setCurrentFile } = require('./plugins/snapshot');
 
 // based on https://stackoverflow.com/a/43053803
 const cartesian = (...sets) => {
@@ -61,7 +61,12 @@ function makeEndpointTests (uriTemplate, defaults, testTemplates) {
 
 module.exports = {
 	makeEndpointTests,
-	setupSnapshots (filename) {
-		setCurrentFile(filename);
+	setupSnapshots (file) {
+		chaiSnapshotInstance.setCurrentFile(path.join(
+			__dirname,
+			'expected',
+			path.relative(path.join(__dirname, 'tests'), path.dirname(file)),
+			`${path.basename(file, path.extname(file))}.json`
+		));
 	},
 };
