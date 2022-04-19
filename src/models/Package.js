@@ -57,8 +57,8 @@ class Package extends BaseCacheModel {
 	}
 
 	static async getStatsForPeriod (type, name, period, date) {
-		let sql = db(`view_top_packages_${period}`)
-			.where({ type, name, date });
+		let sql = db(`view_top_packages`)
+			.where({ type, name, period, date });
 
 		return sql.select().first();
 	}
@@ -98,8 +98,8 @@ class Package extends BaseCacheModel {
 	}
 
 	static async getTopPackages (period, date, type = undefined, limit = 100, page = 1) {
-		let sql = db(`view_top_packages_${period}`)
-			.where({ date })
+		let sql = db(`view_top_packages`)
+			.where({ period, date })
 			.orderBy('hits', 'DESC');
 
 		if (type) {

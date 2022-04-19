@@ -20,9 +20,5 @@ group by packageVersionId, date;
 
 set @date = utc_date();
 call updateViewNetworkPackages(@date);
-call updateViewTopPackagesDay(@date);
-call updateViewTopPackagesWeek(@date);
-call updateViewTopPackagesMonth(@date);
-call updateViewTopPackagesYear(@date);
-call updateViewTopPackagesAll(@date);
 call updateViewTopPackageFiles(@date);
+call updateViewTopPackages(@date);
