@@ -35,6 +35,9 @@ router.param('user', async (value, ctx, next) => {
 	return next();
 });
 
+/**
+ * Normalize version names.
+ */
 router.param('version', async (value, ctx, next) => {
 	if (value && value.charAt(0) === 'v') {
 		ctx.params.version = value.substr(1);
@@ -42,6 +45,14 @@ router.param('version', async (value, ctx, next) => {
 		ctx.params.version = value.toLowerCase();
 	}
 
+	return next();
+});
+
+/**
+ * Migrate the previous period path param to query strings params.
+ */
+router.param('period', async (value, ctx, next) => {
+	ctx.query.period = value;
 	return next();
 });
 

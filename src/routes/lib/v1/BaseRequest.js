@@ -16,7 +16,7 @@ class BaseRequest {
 		this.query = ctx.query;
 		this.ctx = ctx;
 		this.pagination = this.params.all ? [ null ] : pagination(this.query.limit, this.query.page);
-		this.period = this.params.period || 'month';
+		this.period = this.query.period || 'month';
 		ctx.type = 'json';
 
 		this.date = relativeDayUtc();

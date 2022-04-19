@@ -34,6 +34,10 @@ function makePackageStatsTests () {
 	makeEndpointTests('/v1/package/gh/{user}/{repo}/stats{/statType}{/groupBy}{/period}', defaults, [
 		{ user: 'user', repo: 'package-59', ...commonValues },
 	]);
+
+	makeEndpointTests('/v1/package/npm/{name}/stats{/statType}{/groupBy}/day{?period}', defaults, [
+		{ name: 'package-0', statType: 'hits', groupBy: 'date', period: 'all' },
+	], 'path period takes precedence over query string');
 }
 
 function makePackageVersionStatsTests () {

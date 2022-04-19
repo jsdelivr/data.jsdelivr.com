@@ -21,11 +21,11 @@ function getUriWithValues (template, values, defaults) {
 	return urlTemplate.parse(template).expand(defaults ? _.defaults(values, defaults) : values);
 }
 
-function makeEndpointTest (uriTemplate, defaults, values) {
+function makeEndpointTest (uriTemplate, defaults, values, note) {
 	let originalCallSite = new Error();
 	let getUri = full => getUriWithValues(uriTemplate, values, full);
 
-	it(`GET ${getUri()}`, () => {
+	it(`GET ${getUri()}${note ? ` - ${note}` : ''}`, () => {
 		return chai.request(server)
 			.get(getUri())
 			.then((response) => {
@@ -47,14 +47,14 @@ function makeEndpointTest (uriTemplate, defaults, values) {
 	});
 }
 
-function makeEndpointTests (uriTemplate, defaults, testTemplates) {
+function makeEndpointTests (uriTemplate, defaults, testTemplates, note) {
 	for (let testTemplate of testTemplates) {
 		let templateKeys = Object.keys(testTemplate);
 		let templateValues = Object.values(testTemplate).map(item => Array.isArray(item) ? item : [ item ]);
 		let testCases = cartesian(...templateValues).map(test => _.zipObject(templateKeys, test));
 
 		for (let testValues of testCases) {
-			makeEndpointTest(uriTemplate, defaults, testValues);
+			makeEndpointTest(uriTemplate, defaults, testValues, note);
 		}
 	}
 }

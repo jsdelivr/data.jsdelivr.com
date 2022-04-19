@@ -1,4 +1,22 @@
 {
+	"/v1/package/npm/package-0/stats/hits/date/day?period=all": {
+		"date": "2022-04-19",
+		"rank": null,
+		"typeRank": null,
+		"total": 0,
+		"dates": {
+			"2022-04-17": {
+				"total": 0,
+				"versions": {
+					"1.1.0": 0,
+					"1.1.1": 0,
+					"1.1.2": 0
+				},
+				"commits": {},
+				"branches": {}
+			}
+		}
+	},
 	"/v1/package/npm/package-0/stats/hits/date/month": {
 		"date": "2022-04-14",
 		"rank": null,
