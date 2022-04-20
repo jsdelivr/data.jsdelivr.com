@@ -27,6 +27,9 @@ class BaseCacheModel extends BaseModel {
 		return this.transform(transformKey, callback, expiration, a => a.map(v => this.fromJson(v)));
 	}
 
+	/**
+	 * @returns {ProxyTarget & this}
+	 */
 	static transform (transformKey, callback, expiration = 24 * 60 * 60, deserialize = v => v) {
 		return new Proxy(new ProxyTarget(this, transformKey, callback, expiration, deserialize), BaseCacheModel.ProxyTargetHandler);
 	}
