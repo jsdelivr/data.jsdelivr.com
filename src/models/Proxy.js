@@ -3,6 +3,7 @@ const BaseModel = require('./BaseModel');
 
 const schema = Joi.object({
 	id: Joi.number().integer().min(1).required().allow(null),
+	name: Joi.string().max(255).required(),
 	path: Joi.string().max(255).required(),
 });
 
@@ -16,7 +17,7 @@ class ProxyModel extends BaseModel {
 	}
 
 	static get unique () {
-		return [ 'id' ];
+		return [ 'id', 'name', 'path' ];
 	}
 
 	constructor (properties = {}) {
@@ -24,6 +25,9 @@ class ProxyModel extends BaseModel {
 
 		/** @type {number} */
 		this.id = null;
+
+		/** @type {string} */
+		this.name = '';
 
 		/** @type {string} */
 		this.path = '';
