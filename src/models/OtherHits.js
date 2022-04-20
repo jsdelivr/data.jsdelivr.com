@@ -1,5 +1,6 @@
 const Joi = require('joi');
 const BaseCacheModel = require('./BaseCacheModel');
+const { toIsoDate } = require('../lib/date');
 
 const schema = Joi.object({
 	date: Joi.date().required(),
@@ -51,10 +52,10 @@ class OtherHits extends BaseCacheModel {
 
 		return {
 			hits: _.fromPairs(_.map(data, (record) => {
-				return [ record.date.toISOString().substr(0, 10), record.hits ];
+				return [ toIsoDate(record.date), record.hits ];
 			})),
 			bandwidth: _.fromPairs(_.map(data, (record) => {
-				return [ record.date.toISOString().substr(0, 10), record.bandwidth ];
+				return [ toIsoDate(record.date), record.bandwidth ];
 			})),
 		};
 	}

@@ -1,5 +1,6 @@
 const Joi = require('joi');
 const BaseCacheModel = require('./BaseCacheModel');
+const { toIsoDate } = require('../lib/date');
 
 const schema = Joi.object({
 	id: Joi.number().integer().min(0).required().allow(null),
@@ -49,9 +50,9 @@ class Package extends BaseCacheModel {
 	}
 
 	static getSumDateStatPerVersionByName (stats) {
-		return _.mapValues(_.groupBy(stats, item => item.date.toISOString().substr(0, 10)), (versionStats) => {
+		return _.mapValues(_.groupBy(stats, record => toIsoDate(record.date)), (versionStats) => {
 			return _.mapValues(splitCommitsAndVersions(versionStats), (data) => {
-				return _.fromPairs(_.map(data, entry => [ entry.version, entry.stat ]));
+				return _.fromPairs(_.map(data, record => [ record.version, record.stat ]));
 			});
 		});
 	}
@@ -74,7 +75,7 @@ class Package extends BaseCacheModel {
 	static getSumVersionStatPerDateByName (stats) {
 		return _.mapValues(splitCommitsAndVersions(stats), (data) => {
 			return _.mapValues(_.groupBy(data, 'version'), (versionStats) => {
-				return _.fromPairs(_.map(versionStats, entry => [ entry.date.toISOString().substr(0, 10), entry.stat ]));
+				return _.fromPairs(_.map(versionStats, record => [ toIsoDate(record.date), record.stat ]));
 			});
 		});
 	}

@@ -1,4 +1,6 @@
 const relativeDayUtc = require('relative-day-utc');
+const { toIsoDate } = require('../../lib/date');
+
 const allPeriodFrom = Date.UTC(2017, 7, 19);
 
 module.exports = (period, date) => {
@@ -37,7 +39,7 @@ module.exports.fill = (data, from, to, defaultValue = 0) => {
 	}
 
 	for (let date = new Date(from); date <= to; date.setUTCDate(date.getUTCDate() + 1)) {
-		let key = date.toISOString().substr(0, 10);
+		let key = toIsoDate(date);
 		result[key] = data[key] || defaultValue;
 	}
 

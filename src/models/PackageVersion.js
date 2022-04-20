@@ -1,5 +1,6 @@
 const Joi = require('joi');
 const BaseModel = require('./BaseModel');
+const { toIsoDate } = require('../lib/date');
 
 const schema = Joi.object({
 	id: Joi.number().integer().min(0).required().allow(null),
@@ -77,8 +78,8 @@ class PackageVersion extends BaseModel {
 	}
 
 	static async getSumDateStatPerFileByName (stats) {
-		return _.mapValues(_.groupBy(stats, item => item.date.toISOString().substr(0, 10)), (versionHits) => {
-			return _.fromPairs(_.map(versionHits, entry => [ entry.filename, entry.stat ]));
+		return _.mapValues(_.groupBy(stats, record => toIsoDate(record.date)), (versionHits) => {
+			return _.fromPairs(_.map(versionHits, record => [ record.filename, record.stat ]));
 		});
 	}
 
@@ -92,7 +93,7 @@ class PackageVersion extends BaseModel {
 
 	static async getSumFileStatPerDateByName (stats) {
 		return _.mapValues(_.groupBy(stats, 'filename'), (versionHits) => {
-			return _.fromPairs(_.map(versionHits, entry => [ entry.date.toISOString().substr(0, 10), entry.stat ]));
+			return _.fromPairs(_.map(versionHits, record => [ toIsoDate(record.date), record.stat ]));
 		});
 	}
 
