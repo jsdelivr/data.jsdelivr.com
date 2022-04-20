@@ -4,7 +4,7 @@ const sql = fs.readFileSync(__filename + '.sql', 'utf8');
 exports.up = async (db) => {
 	await db.schema.createTable('proxy', (table) => {
 		table.increments();
-		table.string('path');
+		table.string('path').unique();
 	});
 
 	await db.schema.createTable('proxy_hits', (table) => {
