@@ -9,7 +9,12 @@ const PACKAGE_TYPES = [ 'npm', 'gh' ];
 const STATS_START_TIMESTAMP = relativeDateUtc(-70).valueOf();
 
 exports.seed = async (db) => {
-	await Bluebird.each(listTables(db), async (table) => {
+	let tablesToClean = _.difference(listTables(db), [
+		'knex_migrations',
+		'proxy',
+	]);
+
+	await Bluebird.each(tablesToClean, async (table) => {
 		await db(table).delete();
 		await db.schema.raw(`alter table \`${table}\` auto_increment = 0`);
 	});
