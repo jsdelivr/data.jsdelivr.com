@@ -24,13 +24,13 @@ class CdnJsPackage extends BaseModel {
 	constructor (properties = {}) {
 		super();
 
-		/** @type {string} */
+		/** @type {?string} */
 		this.name = null;
 
-		/** @type {string} */
+		/** @type {?string} */
 		this.version = null;
 
-		/** @type {string} */
+		/** @type {?string} */
 		this.filename = null;
 
 		/** @type {Date} */

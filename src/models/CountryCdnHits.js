@@ -25,10 +25,10 @@ class CountryCdnHits extends BaseModel {
 	constructor (properties = {}) {
 		super();
 
-		/** @type {string} */
+		/** @type {?string} */
 		this.countryIso = null;
 
-		/** @type {string} */
+		/** @type {?string} */
 		this.cdn = null;
 
 		/** @type {Date} */

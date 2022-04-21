@@ -25,16 +25,16 @@ class PackageEntrypoints extends BaseCacheModel {
 	constructor (properties = {}) {
 		super();
 
-		/** @type {string} */
+		/** @type {?string} */
 		this.type = null;
 
-		/** @type {string} */
+		/** @type {?string} */
 		this.name = null;
 
-		/** @type {string} */
+		/** @type {?string} */
 		this.version = null;
 
-		/** @type {string} */
+		/** @type {?string} */
 		this.entrypoints = null;
 
 		/** @type {Date} */

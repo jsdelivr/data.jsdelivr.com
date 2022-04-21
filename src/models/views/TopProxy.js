@@ -4,13 +4,13 @@ class TopProxy {
 	}
 
 	constructor (properties = {}) {
-		/** @type {string} */
+		/** @type {?string} */
 		this.period = null;
 
 		/** @type {Date} */
 		this.date = null;
 
-		/** @type {string} */
+		/** @type {?string} */
 		this.name = null;
 
 		/** @type {number} */

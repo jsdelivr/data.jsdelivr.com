@@ -24,7 +24,7 @@ class ReferrerHits extends BaseModel {
 	constructor (properties = {}) {
 		super();
 
-		/** @type {number} */
+		/** @type {?number} */
 		this.referrerId = null;
 
 		/** @type {Date} */

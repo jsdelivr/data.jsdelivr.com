@@ -22,10 +22,10 @@ class Platform extends BaseCacheModel {
 	constructor (properties = {}) {
 		super();
 
-		/** @type {number} */
+		/** @type {?number} */
 		this.id = null;
 
-		/** @type {string} */
+		/** @type {?string} */
 		this.name = null;
 
 		Object.assign(this, properties);

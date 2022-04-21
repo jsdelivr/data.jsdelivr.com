@@ -24,16 +24,16 @@ class PlatformVersion extends BaseModel {
 	constructor (properties = {}) {
 		super();
 
-		/** @type {number} */
+		/** @type {?number} */
 		this.id = null;
 
-		/** @type {number} */
+		/** @type {?number} */
 		this.platformId = null;
 
-		/** @type {string} */
+		/** @type {?string} */
 		this.version = null;
 
-		/** @type {string} */
+		/** @type {?string} */
 		this.versionName = null;
 
 		Object.assign(this, properties);

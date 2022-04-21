@@ -25,7 +25,7 @@ class PackageHits extends BaseCacheModel {
 	constructor (properties = {}) {
 		super();
 
-		/** @type {number} */
+		/** @type {?number} */
 		this.packageId = null;
 
 		/** @type {Date} */

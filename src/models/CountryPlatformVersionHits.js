@@ -25,10 +25,10 @@ class CountryPlatformVersionHits extends BaseModel {
 	constructor (properties = {}) {
 		super();
 
-		/** @type {number} */
+		/** @type {?number} */
 		this.platformVersionId = null;
 
-		/** @type {string} */
+		/** @type {?string} */
 		this.countryIso = null;
 
 		/** @type {Date} */

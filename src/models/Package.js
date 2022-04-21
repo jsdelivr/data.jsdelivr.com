@@ -25,13 +25,13 @@ class Package extends BaseCacheModel {
 	constructor (properties = {}) {
 		super();
 
-		/** @type {number} */
+		/** @type {?number} */
 		this.id = null;
 
-		/** @type {string} */
+		/** @type {?string} */
 		this.name = null;
 
-		/** @type {string} */
+		/** @type {?string} */
 		this.type = null;
 
 		/** @type {number} */

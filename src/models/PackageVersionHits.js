@@ -24,7 +24,7 @@ class PackageVersionHits extends BaseCacheModel {
 	constructor (properties = {}) {
 		super();
 
-		/** @type {number} */
+		/** @type {?number} */
 		this.packageVersionId = null;
 
 		/** @type {Date} */

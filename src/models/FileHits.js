@@ -24,7 +24,7 @@ class FileHits extends BaseCacheModel {
 	constructor (properties = {}) {
 		super();
 
-		/** @type {number} */
+		/** @type {?number} */
 		this.fileId = null;
 
 		/** @type {Date} */

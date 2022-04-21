@@ -25,13 +25,13 @@ class File extends BaseModel {
 	constructor (properties = {}) {
 		super();
 
-		/** @type {number} */
+		/** @type {?number} */
 		this.id = null;
 
-		/** @type {number} */
+		/** @type {?number} */
 		this.packageVersionId = null;
 
-		/** @type {string} */
+		/** @type {?string} */
 		this.filename = null;
 
 		/** @type {Buffer} */

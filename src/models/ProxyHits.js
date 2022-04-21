@@ -24,7 +24,7 @@ class ProxyHits extends BaseModel {
 	constructor (properties = {}) {
 		super();
 
-		/** @type {number} */
+		/** @type {?number} */
 		this.proxyId = null;
 
 		/** @type {Date} */

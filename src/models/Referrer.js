@@ -22,7 +22,7 @@ class Referrer extends BaseModel {
 	constructor (properties = {}) {
 		super();
 
-		/** @type {number} */
+		/** @type {?number} */
 		this.id = null;
 
 		/** @type {string} */

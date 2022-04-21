@@ -26,13 +26,13 @@ class CountryBrowserVersionHits extends BaseModel {
 	constructor (properties = {}) {
 		super();
 
-		/** @type {number} */
+		/** @type {?number} */
 		this.browserVersionId = null;
 
-		/** @type {number} */
+		/** @type {?number} */
 		this.platformId = null;
 
-		/** @type {string} */
+		/** @type {?string} */
 		this.countryIso = null;
 
 		/** @type {Date} */
