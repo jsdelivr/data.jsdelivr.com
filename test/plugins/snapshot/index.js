@@ -1,5 +1,6 @@
 const fs = require('fs-extra');
 const relativeDayUtc = require('relative-day-utc');
+const defaultSnapshotDate = '2010-12-31';
 
 module.exports = ({ snapshotResponses = false, updateExistingSnapshots = false }) => {
 	if (updateExistingSnapshots) {
@@ -68,7 +69,7 @@ module.exports = ({ snapshotResponses = false, updateExistingSnapshots = false }
 	}
 
 	function storeResponse (expectedResponses, key, data) {
-		let dateDiff = relativeDayUtc().valueOf() - relativeDayUtc(0, expectedResponses[key]?.date);
+		let dateDiff = relativeDayUtc().valueOf() - relativeDayUtc(0, expectedResponses[key]?.date || defaultSnapshotDate);
 
 		if (expectedResponses[key]) {
 			if (!updateExistingSnapshots) {
@@ -87,7 +88,7 @@ module.exports = ({ snapshotResponses = false, updateExistingSnapshots = false }
 			expectedResponses[key] = data;
 		} else {
 			expectedResponses[key] = {
-				date: expectedResponses[key]?.date || new Date().toISOString().substr(0, 10),
+				date: expectedResponses[key]?.date || defaultSnapshotDate,
 				...recalculateDates(data, -dateDiff || 0),
 			};
 		}
