@@ -6,6 +6,7 @@ const config = require('config');
 
 const serverConfig = config.get('server');
 global.server = `http://127.0.0.1:${serverConfig.port}`;
+global.log = logger.scope('test');
 
 const expectAssert = require('expect-assert');
 chai.expect = expectAssert(chai.expect);

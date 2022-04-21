@@ -133,14 +133,21 @@ module.exports.mochaGlobalSetup = async () => {
 		throw new Error(`Database name for test env needs to end with "-test". Got "${dbConfig.connection.database}".`);
 	}
 
+	log.debug('Dropping existing tables.');
 	await db.raw('SET @@foreign_key_checks = 0;');
 	await Bluebird.each(listTables(db), table => db.schema.raw(`drop table \`${table}\``));
 	await Bluebird.each(listViews(db), table => db.schema.raw(`drop view \`${table}\``));
 	await db.raw('SET @@foreign_key_checks = 1;');
 
+	log.debug('Setting up the database.');
 	await db.migrate.latest();
+
+	log.debug('Inserting test data.');
 	await db.seed.run();
 
+	log.debug('Generating materialized views.');
 	await db.schema.raw(fs.readFileSync(__dirname + '/data/schema.sql', 'utf8'));
+
+	log.debug('Test setup done.');
 };
 
