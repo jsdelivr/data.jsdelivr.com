@@ -52,7 +52,19 @@ module.exports = ({ snapshotResponses = false, updateExistingSnapshots = false }
 	}
 
 	function storeFile (path, contents) {
-		fs.outputJsonSync(path, contents, { spaces: '\t' });
+		// Sort the object to minimize serialization diffs.
+		let sortedContents = _.fromPairs(Object.keys(contents).sort((a, b) => {
+			let aCount = a.split('/').length;
+			let bCount = b.split('/').length;
+
+			if (aCount === bCount) {
+				return a < b ? -1 : b > a;
+			}
+
+			return aCount - bCount;
+		}).map(key => [ key, contents[key] ]));
+
+		fs.outputJsonSync(path, sortedContents, { spaces: '\t' });
 	}
 
 	function storeResponse (expectedResponses, key, data) {
@@ -79,19 +91,6 @@ module.exports = ({ snapshotResponses = false, updateExistingSnapshots = false }
 				...recalculateDates(data, -dateDiff || 0),
 			};
 		}
-
-		let newExpectedResponses = _.fromPairs(Object.keys(expectedResponses).sort((a, b) => {
-			let aCount = a.split('/').length;
-			let bCount = b.split('/').length;
-
-			if (aCount === bCount) {
-				return a < b ? -1 : b > a;
-			}
-
-			return aCount - bCount;
-		}).map(key => [ key, expectedResponses[key] ]));
-
-		storeFile(currentFile, newExpectedResponses);
 	}
 
 	return Object.assign((chai) => {
@@ -112,6 +111,11 @@ module.exports = ({ snapshotResponses = false, updateExistingSnapshots = false }
 		},
 		setCurrentFile (file) {
 			currentFile = file;
+		},
+		store () {
+			for (let [ path, contents ] of snapshotFiles) {
+				storeFile(path, contents);
+			}
 		},
 	});
 };

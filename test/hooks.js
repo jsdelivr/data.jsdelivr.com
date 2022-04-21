@@ -37,6 +37,8 @@ exports.mochaHooks = {
 	afterAll () {
 		if (Number(process.env.PRUNE_OLD_SNAPSHOTS)) {
 			chaiSnapshotInstance.prune();
+		} else if (Number(process.env.SNAPSHOT_RESPONSES) || Number(process.env.UPDATE_EXISTING_SNAPSHOTS)) {
+			chaiSnapshotInstance.store();
 		}
 	},
 };
