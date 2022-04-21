@@ -150,11 +150,6 @@ class PackageRequest extends BaseRequest {
 		return this.fetchMetadata();
 	}
 
-	async getRanks () {
-		let stats = await Package.getStatsForPeriod(this.params.type, this.params.name, this.period, this.date);
-		return stats ? { rank: stats.rank, typeRank: stats.typeRank } : { rank: null, typeRank: null };
-	}
-
 	async getResolvedVersion () {
 		return this.getMetadata().then((metadata) => {
 			let requestedVersion = this.params.version || 'latest';
@@ -190,6 +185,10 @@ class PackageRequest extends BaseRequest {
 				return entrypoint.fromFallbackFields(entrypoints);
 			},
 		]);
+	}
+
+	async getStatsForPeriod () {
+		return Package.getStatsForPeriod(this.params.type, this.params.name, this.period, this.date);
 	}
 
 	async handleResolveVersion () {
@@ -238,14 +237,13 @@ class PackageRequest extends BaseRequest {
 	}
 
 	async handlePackageBadge () {
-		let stats = await Package.getStatsForPeriod(this.params.type, this.params.name, this.period, this.date);
-		let value = stats ? stats.hits : 0;
+		let stats = await this.getStatsForPeriod();
 
 		this.ctx.type = 'image/svg+xml; charset=utf-8';
 
 		this.ctx.body = makeBadge({
 			label: 'jsDelivr',
-			message: `${number.abbreviate(value)} hits${this.period === 'all' ? '' : `/${this.period}`}`,
+			message: `${number.abbreviate(stats.hits.total)} hits${this.period === 'all' ? '' : `/${this.period}`}`,
 			color: '#ff5627',
 			style: this.ctx.query.style === 'rounded' ? 'flat' : 'flat-square',
 		});
@@ -254,13 +252,13 @@ class PackageRequest extends BaseRequest {
 	}
 
 	async handlePackageBadgeRank () {
-		let ranks = await this.getRanks();
+		let ranks = await this.getStatsForPeriod();
 		let rType = _.camelCase(this.params.rankType);
 		let texts = { rank: 'jsDelivr rank', typeRank: `jsDelivr ${this.params.type} rank` };
 		let value = 'error';
 
-		if (ranks[rType] !== null) {
-			value = `#${ranks[rType]}`;
+		if (ranks.hits[rType] !== null) {
+			value = `#${ranks.hits[rType]}`;
 		}
 
 		this.ctx.type = 'image/svg+xml; charset=utf-8';
@@ -276,29 +274,25 @@ class PackageRequest extends BaseRequest {
 	}
 
 	async handlePackageStats () {
-		let ranksPromise = this.getRanks();
+		let periodStats = this.getStatsForPeriod();
 
 		if (this.params.groupBy === 'date') {
 			let stats = this.params.statType === 'bandwidth'
 				? await Package.getSumDateBandwidthPerVersionByName(this.params.type, this.params.name, ...this.dateRange)
 				: await Package.getSumDateHitsPerVersionByName(this.params.type, this.params.name, ...this.dateRange);
-			let total = sumDeep(stats, 3);
 
 			this.ctx.body = {
-				...await ranksPromise,
-				total,
+				...(await periodStats)[this.params.statType || 'hits'],
 				dates: dateRange.fill(_.mapValues(stats, ({ versions, commits, branches }) => ({ total: sumDeep(versions), versions, commits, branches })), ...this.dateRange, { total: 0, versions: {}, commits: {}, branches: {} }),
 			};
 		} else {
 			let stats = this.params.statType === 'bandwidth'
 				? await Package.getSumVersionBandwidthPerDateByName(this.params.type, this.params.name, ...this.dateRange)
 				: await Package.getSumVersionHitsPerDateByName(this.params.type, this.params.name, ...this.dateRange);
-			let total = sumDeep(stats, 3);
 			let fn = data => _.mapValues(data, dates => ({ total: sumDeep(dates), dates: dateRange.fill(dates, ...this.dateRange) }));
 
 			this.ctx.body = {
-				...await ranksPromise,
-				total,
+				...(await periodStats)[this.params.statType || 'hits'],
 				versions: fn(stats.versions),
 				commits: fn(stats.commits),
 				branches: fn(stats.branches),

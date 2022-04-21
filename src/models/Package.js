@@ -42,11 +42,11 @@ class Package extends BaseCacheModel {
 	}
 
 	static async getSumDateBandwidthPerVersionByName (type, name, from, to) {
-		return this.getSumDateStatPerVersionByName(await this.getStatByName(type, name, from, to, 'bandwidth'));
+		return this.getSumDateStatPerVersionByName(await this.getDailyStatByName(type, name, from, to, 'bandwidth'));
 	}
 
 	static async getSumDateHitsPerVersionByName (type, name, from, to) {
-		return this.getSumDateStatPerVersionByName(await this.getStatByName(type, name, from, to, 'hits'));
+		return this.getSumDateStatPerVersionByName(await this.getDailyStatByName(type, name, from, to, 'hits'));
 	}
 
 	static getSumDateStatPerVersionByName (stats) {
@@ -58,18 +58,43 @@ class Package extends BaseCacheModel {
 	}
 
 	static async getStatsForPeriod (type, name, period, date) {
-		let sql = db(`view_top_packages`)
-			.where({ type, name, period, date });
+		let periodStats = await db(TopPackage.table)
+			.where({ type, name, period, date })
+			.select()
+			.first() || new TopPackage({ type, name, period, date });
 
-		return sql.select().first();
+		return {
+			hits: {
+				rank: periodStats.hitsRank,
+				typeRank: periodStats.hitsTypeRank,
+				total: periodStats.hits,
+			},
+			bandwidth: {
+				rank: periodStats.bandwidthRank,
+				typeRank: periodStats.bandwidthTypeRank,
+				total: periodStats.bandwidth,
+			},
+			prev: {
+				hits: {
+					rank: periodStats.prevHitsRank,
+					typeRank: periodStats.prevHitsTypeRank,
+					total: periodStats.prevHits,
+				},
+				bandwidth: {
+					rank: periodStats.prevBandwidthRank,
+					typeRank: periodStats.prevBandwidthTypeRank,
+					total: periodStats.prevBandwidth,
+				},
+			},
+		};
 	}
 
 	static async getSumVersionBandwidthPerDateByName (type, name, from, to) {
-		return this.getSumVersionStatPerDateByName(await this.getStatByName(type, name, from, to, 'bandwidth'));
+		return this.getSumVersionStatPerDateByName(await this.getDailyStatByName(type, name, from, to, 'bandwidth'));
 	}
 
 	static async getSumVersionHitsPerDateByName (type, name, from, to) {
-		return this.getSumVersionStatPerDateByName(await this.getStatByName(type, name, from, to, 'hits'));
+		return this.getSumVersionStatPerDateByName(await this.getDailyStatByName(type, name, from, to, 'hits'));
 	}
 
 	static getSumVersionStatPerDateByName (stats) {
@@ -80,7 +105,7 @@ class Package extends BaseCacheModel {
 		});
 	}
 
-	static async getStatByName (type, name, from, to, statType) {
+	static async getDailyStatByName (type, name, from, to, statType) {
 		let sql = db(this.table)
 			.where(`${this.table}.type`, type)
 			.andWhere(`${this.table}.name`, name)
@@ -99,7 +124,7 @@ class Package extends BaseCacheModel {
 	}
 
 	static async getTopPackages (period, date, type = undefined, limit = 100, page = 1) {
-		let sql = db(`view_top_packages`)
+		let sql = db(TopPackage.table)
 			.where({ period, date })
 			.orderBy('hits', 'DESC');
 
@@ -111,7 +136,12 @@ class Package extends BaseCacheModel {
 			sql.limit(limit).offset((page - 1) * limit);
 		}
 
-		return sql.select([ `type`, `name`, `hits`, `bandwidth` ]);
+		return _.map(await sql.select([ `type`, `name`, `hits`, `bandwidth`, `prevHits`, `prevBandwidth` ]), ({ type, name, hits, bandwidth, ...prev }) => {
+			return {
+				type, name, hits, bandwidth,
+				prev: { hits: prev.prevHits, bandwidth: prev.prevBandwidth },
+			};
+		});
 	}
 
 	toSqlFunctionCall () {
@@ -128,3 +158,4 @@ module.exports = Package;
 
 const PackageVersion = require('./PackageVersion');
 const PackageVersionHits = require('./PackageVersionHits');
+const TopPackage = require('./views/TopPackage');
