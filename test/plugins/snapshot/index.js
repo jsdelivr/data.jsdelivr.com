@@ -2,6 +2,10 @@ const fs = require('fs-extra');
 const relativeDayUtc = require('relative-day-utc');
 
 module.exports = ({ snapshotResponses = false, updateExistingSnapshots = false }) => {
+	if (updateExistingSnapshots) {
+		snapshotResponses = true;
+	}
+
 	let snapshotFiles = new Map();
 	let useTracker = new Map();
 	let currentFile;
