@@ -6,7 +6,7 @@ const { listTables } = require('../../src/lib/db/utils');
 const entrypointTestCases = require('../../test/data/v1/entrypoints.json');
 
 const PACKAGE_TYPES = [ 'npm', 'gh' ];
-const STATS_START_TIMESTAMP = relativeDateUtc(-60).valueOf();
+const STATS_START_TIMESTAMP = relativeDateUtc(-70).valueOf();
 
 exports.seed = async (db) => {
 	await Bluebird.each(listTables(db), async (table) => {
@@ -45,7 +45,7 @@ exports.seed = async (db) => {
 	})));
 
 	await db('file_hits').insert(_.flatten(_.range(1, 1473).map((fileId) => {
-		return _.range(0, 60).map((i) => {
+		return _.range(0, 70).map((i) => {
 			return {
 				fileId,
 				date: new Date(STATS_START_TIMESTAMP + (i * 86400000)),
@@ -55,7 +55,7 @@ exports.seed = async (db) => {
 		});
 	})));
 
-	await db('logs').insert(_.flatten(_.range(0, 60).map((i) => {
+	await db('logs').insert(_.flatten(_.range(0, 70).map((i) => {
 		return {
 			date: new Date(STATS_START_TIMESTAMP + (i * 86400000)),
 			records: 1000000000,
