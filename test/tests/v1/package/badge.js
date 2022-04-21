@@ -14,7 +14,7 @@ describe('/v1/package/badge', () => {
 				expect(response).to.have.header('Cache-Control', 'public, stale-while-revalidate=3600, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response.body.toString()).to.contain('720 hits/month');
+				expect(response.body.toString()).to.contain('16k hits/month');
 			});
 	});
 
