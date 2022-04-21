@@ -71,9 +71,9 @@ koaElasticUtils.addRoutes(router, [
 });
 
 koaElasticUtils.addRoutes(router, [
-	[ '/package/npm/:name/stats', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/stats/:statType(hits|bandwidth)?/:groupBy(version|date)?/:period(day|week|month|year|all)?' ],
-	[ '/package/gh/:user/:repo/stats', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/stats/:statType(hits|bandwidth)?/:groupBy(version|date)?/:period(day|week|month|year|all)?' ],
 ], async (ctx) => {
+	[ '/package/npm/:name/stats', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/stats/:groupBy(version|date)?/:period(day|week|month|year|all)?' ],
+	[ '/package/gh/:user/:repo/stats', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/stats/:groupBy(version|date)?/:period(day|week|month|year|all)?' ],
 	return new PackageRequest(ctx).handlePackageStats();
 });
 
@@ -105,8 +105,8 @@ koaElasticUtils.addRoutes(router, [
 });
 
 koaElasticUtils.addRoutes(router, [
-	[ '/package/npm/:name@:version/stats', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version/stats/:statType(hits|bandwidth)?/:groupBy(file|date)?/:period(day|week|month|year|all)?' ],
-	[ '/package/gh/:user/:repo@:version/stats', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version/stats/:statType(hits|bandwidth)?/:groupBy(file|date)?/:period(day|week|month|year|all)?' ],
+	[ '/package/npm/:name@:version/stats', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version/stats/:groupBy(file|date)?/:period(day|week|month|year|all)?' ],
+	[ '/package/gh/:user/:repo@:version/stats', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version/stats/:groupBy(file|date)?/:period(day|week|month|year|all)?' ],
 ], async (ctx) => {
 	return new PackageRequest(ctx).handleVersionStats();
 });

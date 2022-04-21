@@ -1,5 +1,5 @@
 {
-	"/v1/package/npm/package-0/stats/hits/date/day?period=all": {
+	"/v1/package/npm/package-0/stats/date/day?period=all": {
 		"date": "2010-12-31",
 		"rank": null,
 		"typeRank": null,
@@ -17,7 +17,7 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-0/stats/hits/date/month": {
+	"/v1/package/npm/package-0/stats/date/month": {
 		"date": "2010-12-31",
 		"rank": null,
 		"typeRank": null,
@@ -325,7 +325,7 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-0@1.1.0/stats/hits/date/month": {
+	"/v1/package/npm/package-0@1.1.0/stats/date/month": {
 		"date": "2010-12-31",
 		"total": 0,
 		"dates": {
@@ -601,12 +601,12 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-0@1.1.5/stats/hits/date/all": {
+	"/v1/package/npm/package-0@1.1.5/stats/date/all": {
 		"date": "2010-12-31",
 		"total": 0,
 		"dates": {}
 	},
-	"/v1/package/npm/package-0@1.1.5/stats/hits/date/month": {
+	"/v1/package/npm/package-0@1.1.5/stats/date/month": {
 		"date": "2010-12-31",
 		"total": 0,
 		"dates": {
@@ -732,7 +732,7 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-2/stats/hits/date/all": {
+	"/v1/package/npm/package-2/stats/date/all": {
 		"date": "2010-12-31",
 		"rank": 117,
 		"typeRank": 57,
@@ -1430,7 +1430,7 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-2/stats/hits/date/day": {
+	"/v1/package/npm/package-2/stats/date/day": {
 		"date": "2010-12-31",
 		"rank": 117,
 		"typeRank": 57,
@@ -1448,7 +1448,7 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-2/stats/hits/date/month": {
+	"/v1/package/npm/package-2/stats/date/month": {
 		"date": "2010-12-31",
 		"rank": 117,
 		"typeRank": 57,
@@ -1756,7 +1756,7 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-2/stats/hits/date/week": {
+	"/v1/package/npm/package-2/stats/date/week": {
 		"date": "2010-12-31",
 		"rank": 117,
 		"typeRank": 57,
@@ -1834,7 +1834,7 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-2/stats/hits/date/year": {
+	"/v1/package/npm/package-2/stats/date/year": {
 		"date": "2010-12-31",
 		"rank": 117,
 		"typeRank": 57,
@@ -4308,7 +4308,7 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-2/stats/hits/version/all": {
+	"/v1/package/npm/package-2/stats/version/all": {
 		"date": "2010-12-31",
 		"rank": 117,
 		"typeRank": 57,
@@ -4540,7 +4540,7 @@
 		"commits": {},
 		"branches": {}
 	},
-	"/v1/package/npm/package-2/stats/hits/version/day": {
+	"/v1/package/npm/package-2/stats/version/day": {
 		"date": "2010-12-31",
 		"rank": 117,
 		"typeRank": 57,
@@ -4568,7 +4568,7 @@
 		"commits": {},
 		"branches": {}
 	},
-	"/v1/package/npm/package-2/stats/hits/version/month": {
+	"/v1/package/npm/package-2/stats/version/month": {
 		"date": "2010-12-31",
 		"rank": 117,
 		"typeRank": 57,
@@ -4683,7 +4683,7 @@
 		"commits": {},
 		"branches": {}
 	},
-	"/v1/package/npm/package-2/stats/hits/version/week": {
+	"/v1/package/npm/package-2/stats/version/week": {
 		"date": "2010-12-31",
 		"rank": 117,
 		"typeRank": 57,
@@ -4729,7 +4729,7 @@
 		"commits": {},
 		"branches": {}
 	},
-	"/v1/package/npm/package-2/stats/hits/version/year": {
+	"/v1/package/npm/package-2/stats/version/year": {
 		"date": "2010-12-31",
 		"rank": 117,
 		"typeRank": 57,
@@ -5849,7 +5849,7 @@
 		"commits": {},
 		"branches": {}
 	},
-	"/v1/package/npm/package-2@1.1.0/stats/hits/date/all": {
+	"/v1/package/npm/package-2@1.1.0/stats/date/all": {
 		"date": "2010-12-31",
 		"total": 9936,
 		"dates": {
@@ -6476,7 +6476,7 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-2@1.1.0/stats/hits/date/day": {
+	"/v1/package/npm/package-2@1.1.0/stats/date/day": {
 		"date": "2010-12-31",
 		"total": 280,
 		"dates": {
@@ -6491,7 +6491,7 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-2@1.1.0/stats/hits/date/month": {
+	"/v1/package/npm/package-2@1.1.0/stats/date/month": {
 		"date": "2010-12-31",
 		"total": 6660,
 		"dates": {
@@ -6767,7 +6767,7 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-2@1.1.0/stats/hits/date/week": {
+	"/v1/package/npm/package-2@1.1.0/stats/date/week": {
 		"date": "2010-12-31",
 		"total": 1876,
 		"dates": {
@@ -6836,7 +6836,7 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-2@1.1.0/stats/hits/date/year": {
+	"/v1/package/npm/package-2@1.1.0/stats/date/year": {
 		"date": "2010-12-31",
 		"total": 9936,
 		"dates": {
@@ -8647,7 +8647,7 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-2@1.1.0/stats/hits/file/all": {
+	"/v1/package/npm/package-2@1.1.0/stats/file/all": {
 		"date": "2010-12-31",
 		"total": 9936,
 		"files": {
@@ -8949,7 +8949,7 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-2@1.1.0/stats/hits/file/day": {
+	"/v1/package/npm/package-2@1.1.0/stats/file/day": {
 		"date": "2010-12-31",
 		"total": 280,
 		"files": {
@@ -8979,7 +8979,7 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-2@1.1.0/stats/hits/file/month": {
+	"/v1/package/npm/package-2@1.1.0/stats/file/month": {
 		"date": "2010-12-31",
 		"total": 6660,
 		"files": {
@@ -9125,7 +9125,7 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-2@1.1.0/stats/hits/file/week": {
+	"/v1/package/npm/package-2@1.1.0/stats/file/week": {
 		"date": "2010-12-31",
 		"total": 1876,
 		"files": {
@@ -9179,7 +9179,7 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-2@1.1.0/stats/hits/file/year": {
+	"/v1/package/npm/package-2@1.1.0/stats/file/year": {
 		"date": "2010-12-31",
 		"total": 9936,
 		"files": {
@@ -10665,14 +10665,14 @@
 			}
 		}
 	},
-	"/v1/package/npm/package-x/stats/hits/date/all": {
+	"/v1/package/npm/package-x/stats/date/all": {
 		"date": "2010-12-31",
 		"rank": null,
 		"typeRank": null,
 		"total": 0,
 		"dates": {}
 	},
-	"/v1/package/npm/package-x/stats/hits/date/month": {
+	"/v1/package/npm/package-x/stats/date/month": {
 		"date": "2010-12-31",
 		"rank": null,
 		"typeRank": null,
@@ -10860,7 +10860,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59/stats/hits/date/all": {
+	"/v1/package/gh/user/package-59/stats/date/all": {
 		"date": "2010-12-31",
 		"rank": 0,
 		"typeRank": 0,
@@ -11765,7 +11765,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59/stats/hits/date/day": {
+	"/v1/package/gh/user/package-59/stats/date/day": {
 		"date": "2010-12-31",
 		"rank": 0,
 		"typeRank": 0,
@@ -11786,7 +11786,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59/stats/hits/date/month": {
+	"/v1/package/gh/user/package-59/stats/date/month": {
 		"date": "2010-12-31",
 		"rank": 0,
 		"typeRank": 0,
@@ -12184,7 +12184,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59/stats/hits/date/week": {
+	"/v1/package/gh/user/package-59/stats/date/week": {
 		"date": "2010-12-31",
 		"rank": 0,
 		"typeRank": 0,
@@ -12283,7 +12283,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59/stats/hits/date/year": {
+	"/v1/package/gh/user/package-59/stats/date/year": {
 		"date": "2010-12-31",
 		"rank": 0,
 		"typeRank": 0,
@@ -14964,7 +14964,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59/stats/hits/version/all": {
+	"/v1/package/gh/user/package-59/stats/version/all": {
 		"date": "2010-12-31",
 		"rank": 0,
 		"typeRank": 0,
@@ -15345,7 +15345,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59/stats/hits/version/day": {
+	"/v1/package/gh/user/package-59/stats/version/day": {
 		"date": "2010-12-31",
 		"rank": 0,
 		"typeRank": 0,
@@ -15386,7 +15386,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59/stats/hits/version/month": {
+	"/v1/package/gh/user/package-59/stats/version/month": {
 		"date": "2010-12-31",
 		"rank": 0,
 		"typeRank": 0,
@@ -15572,7 +15572,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59/stats/hits/version/week": {
+	"/v1/package/gh/user/package-59/stats/version/week": {
 		"date": "2010-12-31",
 		"rank": 0,
 		"typeRank": 0,
@@ -15643,7 +15643,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59/stats/hits/version/year": {
+	"/v1/package/gh/user/package-59/stats/version/year": {
 		"date": "2010-12-31",
 		"rank": 0,
 		"typeRank": 0,
@@ -17504,7 +17504,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@1.1.2/stats/hits/date/all": {
+	"/v1/package/gh/user/package-59@1.1.2/stats/date/all": {
 		"date": "2010-12-31",
 		"total": 42228,
 		"dates": {
@@ -18131,7 +18131,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@1.1.2/stats/hits/date/day": {
+	"/v1/package/gh/user/package-59@1.1.2/stats/date/day": {
 		"date": "2010-12-31",
 		"total": 748,
 		"dates": {
@@ -18146,7 +18146,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@1.1.2/stats/hits/date/month": {
+	"/v1/package/gh/user/package-59@1.1.2/stats/date/month": {
 		"date": "2010-12-31",
 		"total": 20700,
 		"dates": {
@@ -18422,7 +18422,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@1.1.2/stats/hits/date/week": {
+	"/v1/package/gh/user/package-59@1.1.2/stats/date/week": {
 		"date": "2010-12-31",
 		"total": 5152,
 		"dates": {
@@ -18491,7 +18491,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@1.1.2/stats/hits/date/year": {
+	"/v1/package/gh/user/package-59@1.1.2/stats/date/year": {
 		"date": "2010-12-31",
 		"total": 42228,
 		"dates": {
@@ -20302,7 +20302,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@1.1.2/stats/hits/file/all": {
+	"/v1/package/gh/user/package-59@1.1.2/stats/file/all": {
 		"date": "2010-12-31",
 		"total": 42228,
 		"files": {
@@ -20604,7 +20604,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@1.1.2/stats/hits/file/day": {
+	"/v1/package/gh/user/package-59@1.1.2/stats/file/day": {
 		"date": "2010-12-31",
 		"total": 748,
 		"files": {
@@ -20634,7 +20634,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@1.1.2/stats/hits/file/month": {
+	"/v1/package/gh/user/package-59@1.1.2/stats/file/month": {
 		"date": "2010-12-31",
 		"total": 20700,
 		"files": {
@@ -20780,7 +20780,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@1.1.2/stats/hits/file/week": {
+	"/v1/package/gh/user/package-59@1.1.2/stats/file/week": {
 		"date": "2010-12-31",
 		"total": 5152,
 		"files": {
@@ -20834,7 +20834,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@1.1.2/stats/hits/file/year": {
+	"/v1/package/gh/user/package-59@1.1.2/stats/file/year": {
 		"date": "2010-12-31",
 		"total": 42228,
 		"files": {
@@ -22320,7 +22320,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@branch-1/stats/hits/date/all": {
+	"/v1/package/gh/user/package-59@branch-1/stats/date/all": {
 		"date": "2010-12-31",
 		"total": 42504,
 		"dates": {
@@ -22947,7 +22947,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@branch-1/stats/hits/date/day": {
+	"/v1/package/gh/user/package-59@branch-1/stats/date/day": {
 		"date": "2010-12-31",
 		"total": 752,
 		"dates": {
@@ -22962,7 +22962,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@branch-1/stats/hits/date/month": {
+	"/v1/package/gh/user/package-59@branch-1/stats/date/month": {
 		"date": "2010-12-31",
 		"total": 20820,
 		"dates": {
@@ -23238,7 +23238,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@branch-1/stats/hits/date/week": {
+	"/v1/package/gh/user/package-59@branch-1/stats/date/week": {
 		"date": "2010-12-31",
 		"total": 5180,
 		"dates": {
@@ -23307,7 +23307,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@branch-1/stats/hits/date/year": {
+	"/v1/package/gh/user/package-59@branch-1/stats/date/year": {
 		"date": "2010-12-31",
 		"total": 42504,
 		"dates": {
@@ -25118,7 +25118,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@branch-1/stats/hits/file/all": {
+	"/v1/package/gh/user/package-59@branch-1/stats/file/all": {
 		"date": "2010-12-31",
 		"total": 42504,
 		"files": {
@@ -25420,7 +25420,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@branch-1/stats/hits/file/day": {
+	"/v1/package/gh/user/package-59@branch-1/stats/file/day": {
 		"date": "2010-12-31",
 		"total": 752,
 		"files": {
@@ -25450,7 +25450,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@branch-1/stats/hits/file/month": {
+	"/v1/package/gh/user/package-59@branch-1/stats/file/month": {
 		"date": "2010-12-31",
 		"total": 20820,
 		"files": {
@@ -25596,7 +25596,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@branch-1/stats/hits/file/week": {
+	"/v1/package/gh/user/package-59@branch-1/stats/file/week": {
 		"date": "2010-12-31",
 		"total": 5180,
 		"files": {
@@ -25650,7 +25650,7 @@
 			}
 		}
 	},
-	"/v1/package/gh/user/package-59@branch-1/stats/hits/file/year": {
+	"/v1/package/gh/user/package-59@branch-1/stats/file/year": {
 		"date": "2010-12-31",
 		"total": 42504,
 		"files": {
