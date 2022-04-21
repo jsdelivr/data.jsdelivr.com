@@ -19,7 +19,7 @@ function makePackageStatsTests () {
 	};
 
 	let commonValues = {
-		statType: [ 'hits', 'bandwidth', undefined ],
+		statType: [ 'hits' ],
 		groupBy: [ 'version', 'date', undefined ],
 		period: periodOptions,
 	};
