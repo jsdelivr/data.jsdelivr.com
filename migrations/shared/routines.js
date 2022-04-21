@@ -21,6 +21,24 @@ ${periods.map(period => topPackagesForPeriod(period)).join('\n')}
 		end;
 	`);
 
+	// language=MariaDB
+	await db.schema.raw(dedent`
+		drop procedure if exists updateViewTopProxies;
+		create procedure updateViewTopProxies(aDate date)
+		begin
+			declare exit handler for sqlexception
+				begin
+					rollback;
+					resignal;
+				end;
+
+			start transaction;
+
+${periods.map(period => topProxiesForPeriod(period)).join('\n')}
+
+			commit;
+		end;
+	`);
 
 	// language=MariaDB
 	await db.schema.raw(dedent`
@@ -43,6 +61,33 @@ ${periods.map(period => topPackagesForPeriod(period)).join('\n')}
 						if get_lock('update_top_packages', 0) = 1 then
 							call updateViewTopPackages(date_add(utc_date(), interval 1 day));
 							select release_lock('update_top_packages');
+						end if;
+					end if;
+				end if;
+			end;
+	`);
+
+	// language=MariaDB
+	await db.schema.raw(dedent`
+		drop event if exists top_proxies_update;
+		create event top_proxies_update
+			on schedule
+				every 5 minute
+				starts utc_date()
+			do
+			begin
+				if not exists(select * from view_top_proxies where \`date\` = utc_date()) then
+					if get_lock('update_top_proxies', 0) = 1 then
+						call updateViewTopPackages(utc_date());
+						select release_lock('update_top_proxies');
+					end if;
+				end if;
+
+				if utc_time() >= '22:00:00' then
+					if not exists(select * from view_top_proxies where \`date\` = date_add(utc_date(), interval 1 day)) then
+						if get_lock('update_top_proxies', 0) = 1 then
+							call updateViewTopPackages(date_add(utc_date(), interval 1 day));
+							select release_lock('update_top_proxies');
 						end if;
 					end if;
 				end if;
@@ -102,6 +147,34 @@ ${dateVarsForPeriod(days, period)}
 				     join package_hits on package.id = package_hits.packageId
 			where isPrivate = 0 and date >= @dateFrom and date <= @dateTo
 			group by packageId
+			order by hits desc
+		) t;
+	`;
+}
+
+function topProxiesForPeriod ([ days, period ]) {
+	// language=MariaDB
+	return `
+${dateVarsForPeriod(days, period)}
+
+		delete from view_top_proxies where \`period\` = '${period}' and \`date\` = aDate;
+		delete from view_top_proxies where \`period\` = '${period}' and\`date\` < @dateTo;
+
+		insert into view_top_proxies
+			(period, date, name, hits, bandwidth, prevHits, prevBandwidth)
+		select '${period}', aDate, name,
+			hits, bandwidth,
+			coalesce(prevHits, 0), coalesce(prevBandwidth, 0)
+		from (
+			select name,
+				sum(hits) as hits,
+				sum(bandwidth) as bandwidth,
+				(select sum(hits) from proxy_hits where proxyId = proxy.id and date >= @prevDateFrom and date <= @prevDateTo) as prevHits,
+				(select sum(bandwidth) from proxy_hits where proxyId = proxy.id and date >= @prevDateFrom and date <= @prevDateTo) as prevBandwidth
+			from proxy
+				     join proxy_hits on proxy.id = proxy_hits.proxyId
+			where date >= @dateFrom and date <= @dateTo
+			group by name
 			order by hits desc
 		) t;
 	`;

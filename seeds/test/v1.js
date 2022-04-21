@@ -77,6 +77,17 @@ exports.seed = async (db) => {
 		};
 	})));
 
+	await db('proxy_hits').insert(_.flatten(_.range(1, 16).map((proxyId) => {
+		return _.range(0, 70).map((i) => {
+			return {
+				proxyId,
+				date: new Date(STATS_START_TIMESTAMP + (i * 86400000)),
+				hits: proxyId * i,
+				bandwidth: proxyId * i * 16 * 1025,
+			};
+		});
+	})));
+
 	let seedEntrypointsData = async (entrypointsTestData) => {
 		let date = new Date(STATS_START_TIMESTAMP + 40 * 24 * 60 * 60 * 1000);
 

@@ -22,3 +22,4 @@ set @date = utc_date();
 call updateViewNetworkPackages(@date);
 call updateViewTopPackageFiles(@date);
 call updateViewTopPackages(@date);
+call updateViewTopProxies(@date);

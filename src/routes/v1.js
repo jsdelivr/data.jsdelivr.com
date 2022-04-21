@@ -4,6 +4,7 @@ const koaElasticUtils = require('elastic-apm-utils').koa;
 
 const LookupRequest = require('./lib/v1/LookupRequest');
 const PackageRequest = require('./lib/v1/PackageRequest');
+const ProxyRequest = require('./lib/v1/ProxyRequest');
 const StatsRequest = require('./lib/v1/StatsRequest');
 const router = new Router({ strict: true, sensitive: true });
 
@@ -117,6 +118,12 @@ koaElasticUtils.addRoutes(router, [
 	[ '/package/resolve/gh/:user/:repo', '/package/resolve/:type(gh)/:user([^/@]+)/:name([^/@]+)' ],
 ], async (ctx) => {
 	return new PackageRequest(ctx).handleResolveVersion();
+});
+
+koaElasticUtils.addRoutes(router, [
+	[ '/proxy/:name/stats', '/proxy/:name/stats' ],
+], async (ctx) => {
+	return new ProxyRequest(ctx).handleProxyStats();
 });
 
 koaElasticUtils.addRoutes(router, [
