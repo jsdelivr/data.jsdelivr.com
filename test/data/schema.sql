@@ -1,3 +1,10 @@
+drop table if exists _test;
+
+create table _test (
+	`key` varchar(255) not null primary key,
+	`value` varchar(255) null
+);
+
 drop table if exists package_hits;
 
 create view package_hits as
