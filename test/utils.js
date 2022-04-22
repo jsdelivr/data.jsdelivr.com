@@ -21,7 +21,7 @@ function getUriWithValues (template, values, defaults) {
 	return urlTemplate.parse(template).expand(defaults ? _.defaults(values, defaults) : values);
 }
 
-function makeEndpointTest (uriTemplate, defaults, values, note) {
+function makeEndpointTest (uriTemplate, defaults, values, { status = 200 } = {}, note) {
 	let originalCallSite = new Error();
 	let getUri = full => getUriWithValues(uriTemplate, values, full);
 
@@ -29,12 +29,18 @@ function makeEndpointTest (uriTemplate, defaults, values, note) {
 		return chai.request(server)
 			.get(getUri())
 			.then((response) => {
-				expect(response).to.have.status(200);
+				expect(response).to.have.status(status);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
-				expect(response).to.have.header('Cache-Control', 'public, stale-while-revalidate=3600, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
+
+				if (status < 400) {
+					expect(response).to.have.header('Cache-Control', 'public, stale-while-revalidate=3600, stale-if-error=86400');
+				} else {
+					expect(response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
+				}
+
 				expect(response).to.matchSnapshot(getUri(defaults));
 			}).catch((error) => {
 				// Stack traces pointing just to this function are not very useful,
@@ -47,14 +53,14 @@ function makeEndpointTest (uriTemplate, defaults, values, note) {
 	});
 }
 
-function makeEndpointTests (uriTemplate, defaults, testTemplates, note) {
+function makeEndpointTests (uriTemplate, defaults, testTemplates, options, note) {
 	for (let testTemplate of testTemplates) {
 		let templateKeys = Object.keys(testTemplate);
 		let templateValues = Object.values(testTemplate).map(item => Array.isArray(item) ? item : [ item ]);
 		let testCases = cartesian(...templateValues).map(test => _.zipObject(templateKeys, test));
 
 		for (let testValues of testCases) {
-			makeEndpointTest(uriTemplate, defaults, testValues, note);
+			makeEndpointTest(uriTemplate, defaults, testValues, options, note);
 		}
 	}
 }
