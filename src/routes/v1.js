@@ -1,6 +1,10 @@
 const Router = require('koa-router');
 const isSha = require('is-hexdigest');
 const koaElasticUtils = require('elastic-apm-utils').koa;
+const Joi = require('joi');
+
+const validate = require('./middleware/validate');
+const schema = require('./schemas/v1');
 
 const LookupRequest = require('./lib/v1/LookupRequest');
 const PackageRequest = require('./lib/v1/PackageRequest');
@@ -13,16 +17,10 @@ const router = new Router({ strict: true, sensitive: true });
  */
 router.use(koaElasticUtils.middleware(global.apmClient, { prefix: '/v1' }));
 
-router.param('hash', async (value, ctx, next) => {
-	if (!isSha(value, 'sha256')) {
-		return ctx.body = {
-			status: 400,
-			message: 'Hash must be a hex-encoded sha256 hash.',
-		};
-	}
-
-	return next();
-});
+/**
+ * Validate hash param.
+ */
+router.param('hash', validate.param(schema.hash));
 
 /**
  * name = @scope/name for npm, user/repo for GitHub
@@ -53,7 +51,10 @@ router.param('version', async (value, ctx, next) => {
  * Migrate the previous period path param to query strings params.
  */
 router.param('period', async (value, ctx, next) => {
-	ctx.query.period = value;
+	if (value) {
+		ctx.query.period = value;
+	}
+
 	return next();
 });
 
@@ -71,23 +72,36 @@ koaElasticUtils.addRoutes(router, [
 });
 
 koaElasticUtils.addRoutes(router, [
-], async (ctx) => {
 	[ '/package/npm/:name/stats', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/stats/:groupBy(version|date)?/:period(day|week|month|year|all)?' ],
 	[ '/package/gh/:user/:repo/stats', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/stats/:groupBy(version|date)?/:period(day|week|month|year|all)?' ],
+], validate({
+	query: Joi.object({
+		type: schema.type,
+		period: schema.period,
+	}),
+}), async (ctx) => {
 	return new PackageRequest(ctx).handlePackageStats();
 });
 
 koaElasticUtils.addRoutes(router, [
 	[ '/package/npm/:name/badge', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/badge/:period(day|week|month|year|all)?' ],
 	[ '/package/gh/:user/:repo/badge', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/badge/:period(day|week|month|year|all)?' ],
-], async (ctx) => {
+], validate({
+	query: Joi.object({
+		period: schema.period,
+	}),
+}), async (ctx) => {
 	return new PackageRequest(ctx).handlePackageBadge();
 });
 
 koaElasticUtils.addRoutes(router, [
 	[ '/package/npm/:name/badge/rank', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/badge/:rankType(rank|type-rank)/:period(day|week|month|year|all)?' ],
 	[ '/package/gh/:user/:repo/badge/rank', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/badge/:rankType(rank|type-rank)/:period(day|week|month|year|all)?' ],
-], async (ctx) => {
+], validate({
+	query: Joi.object({
+		period: schema.period,
+	}),
+}), async (ctx) => {
 	return new PackageRequest(ctx).handlePackageBadgeRank();
 });
 
@@ -107,7 +121,12 @@ koaElasticUtils.addRoutes(router, [
 koaElasticUtils.addRoutes(router, [
 	[ '/package/npm/:name@:version/stats', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version/stats/:groupBy(file|date)?/:period(day|week|month|year|all)?' ],
 	[ '/package/gh/:user/:repo@:version/stats', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version/stats/:groupBy(file|date)?/:period(day|week|month|year|all)?' ],
-], async (ctx) => {
+], validate({
+	query: Joi.object({
+		type: schema.type,
+		period: schema.period,
+	}),
+}), async (ctx) => {
 	return new PackageRequest(ctx).handleVersionStats();
 });
 
@@ -122,19 +141,31 @@ koaElasticUtils.addRoutes(router, [
 
 koaElasticUtils.addRoutes(router, [
 	[ '/proxy/:name/stats', '/proxy/:name/stats' ],
-], async (ctx) => {
+], validate({
+	query: Joi.object({
+		period: schema.period,
+	}),
+}), async (ctx) => {
 	return new ProxyRequest(ctx).handleProxyStats();
 });
 
 koaElasticUtils.addRoutes(router, [
 	[ '/stats/packages/:type(gh|npm)?', '/stats/packages/:type(gh|npm)?/:period(day|week|month|year|all)?/:all(all)?' ],
-], async (ctx) => {
+], validate({
+	query: Joi.object({
+		...schema.paginatedStats,
+	}),
+}), async (ctx) => {
 	return new StatsRequest(ctx).handlePackages();
 });
 
 koaElasticUtils.addRoutes(router, [
 	[ '/stats/network', '/stats/network/:period(day|week|month|year|all)?' ],
-], async (ctx) => {
+], validate({
+	query: Joi.object({
+		period: schema.period,
+	}),
+}), async (ctx) => {
 	return new StatsRequest(ctx).handleNetwork();
 });
 

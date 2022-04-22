@@ -13,14 +13,20 @@ class BaseRequest {
 	constructor (ctx) {
 		this.url = ctx.url;
 		this.params = ctx.params;
-		this.query = ctx.query;
+		this.query = ctx.state.query || {};
 		this.ctx = ctx;
 		this.pagination = this.params.all ? [ null ] : pagination(this.query.limit, this.query.page);
-		this.period = this.query.period || 'month';
 		ctx.type = 'json';
 
-		this.date = relativeDayUtc();
-		this.dateRange = dateRange(this.period, this.date);
+		if (typeof this.query.period === 'object') {
+			this.date = this.query.period.date;
+			this.period = this.query.period.period;
+			this.dateRange = dateRange(this.period, this.date);
+		}
+
+		// Enforce use of this.query which contains only validated params.
+		ctx.originalQuery = ctx.query;
+		ctx.query = {};
 	}
 
 	setCacheHeader (delay = 0) {

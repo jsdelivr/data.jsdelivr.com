@@ -245,7 +245,7 @@ class PackageRequest extends BaseRequest {
 			label: 'jsDelivr',
 			message: `${number.abbreviate(stats.hits.total)} hits${this.period === 'all' ? '' : `/${this.period}`}`,
 			color: '#ff5627',
-			style: this.ctx.query.style === 'rounded' ? 'flat' : 'flat-square',
+			style: this.query.style === 'rounded' ? 'flat' : 'flat-square',
 		});
 
 		this.setCacheHeaderDelayed();
@@ -267,7 +267,7 @@ class PackageRequest extends BaseRequest {
 			label: texts[rType],
 			message: value,
 			color: '#ff5627',
-			style: this.ctx.query.style === 'rounded' ? 'flat' : 'flat-square',
+			style: this.query.style === 'rounded' ? 'flat' : 'flat-square',
 		});
 
 		this.setCacheHeaderDelayed();
