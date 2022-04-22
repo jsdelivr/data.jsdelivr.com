@@ -32,6 +32,25 @@ describe('Unit tests', () => {
 			expect(range).to.deep.equal([ relativeDayUtc(0, Date.UTC(2017, 7, 19)), relativeDayUtc(-12) ]);
 		});
 
+		it('s-month', () => {
+			expect(dateRange('s-month', new Date('2022-01')))
+				.to.deep.equal([ new Date(Date.UTC(2022, 0, 1)), new Date(Date.UTC(2022, 0, 31)) ]);
+
+			expect(dateRange('s-month', new Date('2022-02')))
+				.to.deep.equal([ new Date(Date.UTC(2022, 1, 1)), new Date(Date.UTC(2022, 1, 28)) ]);
+
+			expect(dateRange('s-month', new Date('2020-02')))
+				.to.deep.equal([ new Date(Date.UTC(2020, 1, 1)), new Date(Date.UTC(2020, 1, 29)) ]);
+		});
+
+		it('s-year', () => {
+			expect(dateRange('s-year', new Date('2022')))
+				.to.deep.equal([ new Date(Date.UTC(2022, 0, 1)), new Date(Date.UTC(2022, 11, 31)) ]);
+
+			expect(dateRange('s-year', new Date('2020')))
+				.to.deep.equal([ new Date(Date.UTC(2020, 0, 1)), new Date(Date.UTC(2020, 11, 31)) ]);
+		});
+
 		it('invalid period', () => {
 			let range = () => dateRange('xxx', relativeDayUtc(-10));
 			expect(range).to.throw('period');
