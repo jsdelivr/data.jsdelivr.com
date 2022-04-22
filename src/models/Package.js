@@ -41,12 +41,33 @@ class Package extends BaseCacheModel {
 		return new Proxy(this, BaseCacheModel.ProxyHandler);
 	}
 
+	static async getDailyStatsByName (type, name, from, to) {
+		let sql = db(this.table)
+			.where({ type, name })
+			.join(PackageHits.table, `${this.table}.id`, '=', `${PackageHits.table}.packageId`);
+
+		if (from instanceof Date) {
+			sql.where(`${PackageHits.table}.date`, '>=', from);
+		}
+
+		if (to instanceof Date) {
+			sql.where(`${PackageHits.table}.date`, '<=', to);
+		}
+
+		let data = await sql.select([ `date`, `hits`, 'bandwidth' ]);
+
+		return {
+			hits: _.fromPairs(_.map(data, record => [ toIsoDate(record.date), record.hits ])),
+			bandwidth: _.fromPairs(_.map(data, record => [ toIsoDate(record.date), record.bandwidth ])),
+		};
+	}
+
 	static async getSumDateBandwidthPerVersionByName (type, name, from, to) {
-		return this.getSumDateStatPerVersionByName(await this.getDailyStatByName(type, name, from, to, 'bandwidth'));
+		return this.getSumDateStatPerVersionByName(await this.getStatByName(type, name, from, to, 'bandwidth'));
 	}
 
 	static async getSumDateHitsPerVersionByName (type, name, from, to) {
-		return this.getSumDateStatPerVersionByName(await this.getDailyStatByName(type, name, from, to, 'hits'));
+		return this.getSumDateStatPerVersionByName(await this.getStatByName(type, name, from, to, 'hits'));
 	}
 
 	static getSumDateStatPerVersionByName (stats) {
@@ -90,11 +111,11 @@ class Package extends BaseCacheModel {
 	}
 
 	static async getSumVersionBandwidthPerDateByName (type, name, from, to) {
-		return this.getSumVersionStatPerDateByName(await this.getDailyStatByName(type, name, from, to, 'bandwidth'));
+		return this.getSumVersionStatPerDateByName(await this.getStatByName(type, name, from, to, 'bandwidth'));
 	}
 
 	static async getSumVersionHitsPerDateByName (type, name, from, to) {
-		return this.getSumVersionStatPerDateByName(await this.getDailyStatByName(type, name, from, to, 'hits'));
+		return this.getSumVersionStatPerDateByName(await this.getStatByName(type, name, from, to, 'hits'));
 	}
 
 	static getSumVersionStatPerDateByName (stats) {
@@ -105,7 +126,7 @@ class Package extends BaseCacheModel {
 		});
 	}
 
-	static async getDailyStatByName (type, name, from, to, statType) {
+	static async getStatByName (type, name, from, to, statType) {
 		let sql = db(this.table)
 			.where(`${this.table}.type`, type)
 			.andWhere(`${this.table}.name`, name)
@@ -156,6 +177,7 @@ function splitCommitsAndVersions (collection) {
 
 module.exports = Package;
 
+const PackageHits = require('./PackageHits');
 const PackageVersion = require('./PackageVersion');
 const PackageVersionHits = require('./PackageVersionHits');
 const TopPackage = require('./views/TopPackage');

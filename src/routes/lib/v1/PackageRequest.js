@@ -274,6 +274,20 @@ class PackageRequest extends BaseRequest {
 	}
 
 	async handlePackageStats () {
+		let [ dailyStats, periodStats ] = await Promise.all([
+			Package.getDailyStatsByName(this.params.type, this.params.name, ...this.dateRange),
+			this.getStatsForPeriod(),
+		]);
+
+		this.ctx.body = {
+			...(await periodStats)[this.query.type],
+			dates: dateRange.fill(dailyStats[this.query.type], ...this.dateRange),
+		};
+
+		this.setCacheHeader();
+	}
+
+	async handlePackageStatsDeprecated () {
 		let periodStats = this.getStatsForPeriod();
 
 		if (this.params.groupBy === 'date') {
@@ -325,6 +339,17 @@ class PackageRequest extends BaseRequest {
 	}
 
 	async handleVersionStats () {
+		let dailyStats = await PackageVersion.getDailyStatsByNameAndVersion(this.params.type, this.params.name, this.params.version, ...this.dateRange);
+
+		this.ctx.body = {
+			total: sumDeep(dailyStats[this.query.type]),
+			dates: dateRange.fill(dailyStats[this.query.type], ...this.dateRange),
+		};
+
+		this.setCacheHeader();
+	}
+
+	async handleVersionStatsDeprecated () {
 		if (this.params.groupBy === 'date') {
 			let stats = await PackageVersion.getSumDateHitsPerFileByName(this.params.type, this.params.name, this.params.version, ...this.dateRange);
 

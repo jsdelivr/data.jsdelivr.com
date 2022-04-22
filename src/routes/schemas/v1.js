@@ -42,7 +42,12 @@ const composedTypes = {
 	paginatedStats: { limit: primitives.limit, page: primitives.page, period: primitives.period },
 };
 
+const composedSchemas = {
+	queryTypeRequired: Joi.object({ type: primitives.type.required() }),
+};
+
 module.exports = {
 	...primitives,
 	...composedTypes,
+	...composedSchemas,
 };

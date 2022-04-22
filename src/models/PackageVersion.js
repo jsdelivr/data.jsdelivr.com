@@ -41,6 +41,30 @@ class PackageVersion extends BaseModel {
 		return new Proxy(this, BaseModel.ProxyHandler);
 	}
 
+	static async getDailyStatsByNameAndVersion (type, name, version, from, to) {
+		let sql = db(this.table)
+			.where(`${Package.table}.type`, type)
+			.andWhere(`${Package.table}.name`, name)
+			.andWhere(`${this.table}.version`, version)
+			.join(Package.table, `${this.table}.packageId`, '=', `${Package.table}.id`)
+			.join(PackageVersionHits.table, `${this.table}.id`, '=', `${PackageVersionHits.table}.packageVersionId`);
+
+		if (from instanceof Date) {
+			sql.where(`${PackageVersionHits.table}.date`, '>=', from);
+		}
+
+		if (to instanceof Date) {
+			sql.where(`${PackageVersionHits.table}.date`, '<=', to);
+		}
+
+		let data = await sql.select([ `date`, `hits`, 'bandwidth' ]);
+
+		return {
+			hits: _.fromPairs(_.map(data, record => [ toIsoDate(record.date), record.hits ])),
+			bandwidth: _.fromPairs(_.map(data, record => [ toIsoDate(record.date), record.bandwidth ])),
+		};
+	}
+
 	static async getStatByNameAndVersion (type, name, version, from, to, statType) {
 		let sql = db(this.table)
 			.where(`${Package.table}.type`, type)
@@ -107,3 +131,5 @@ module.exports = PackageVersion;
 const Package = require('./Package');
 const File = require('./File');
 const FileHits = require('./FileHits');
+const PackageHits = require('./PackageHits');
+const PackageVersionHits = require('./PackageVersionHits');

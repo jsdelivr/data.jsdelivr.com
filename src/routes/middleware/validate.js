@@ -16,8 +16,6 @@ module.exports = ({ body, params, query }) => {
 	return async (ctx, next) => {
 		let isValid = validations.every((validation) => {
 			let result = validateSingle(validation.schema, ctx[validation.name], ctx);
-
-			ctx[validation.name] = {};
 			ctx.state[validation.name] = result || {};
 
 			return result;
@@ -27,12 +25,24 @@ module.exports = ({ body, params, query }) => {
 	};
 };
 
+/**
+ * @param {Joi.Schema} schema
+ * @returns {Router.IParamMiddleware}
+ */
 module.exports.param = (schema) => {
 	return async (value, ctx, next) => {
 		return validateSingle(schema, value, ctx) && next();
 	};
 };
 
+module.exports.single = validateSingle;
+
+/**
+ * @param {Joi.Schema} schema
+ * @param {*} value
+ * @param {Application.ParameterizedContext} ctx
+ * @returns {boolean|*}
+ */
 function validateSingle (schema, value, ctx) {
 	let result = schema.validate(value, {
 		abortEarly: false,

@@ -80,6 +80,14 @@ koaElasticUtils.addRoutes(router, [
 		period: schema.period,
 	}),
 }), async (ctx) => {
+	if (ctx.params.groupBy || ctx.params.period || (!ctx.query.type && !ctx.query.period)) {
+		return new PackageRequest(ctx).handlePackageStatsDeprecated();
+	}
+
+	if (!validate.single(schema.queryTypeRequired, ctx.query, ctx)) {
+		return;
+	}
+
 	return new PackageRequest(ctx).handlePackageStats();
 });
 
@@ -127,6 +135,14 @@ koaElasticUtils.addRoutes(router, [
 		period: schema.period,
 	}),
 }), async (ctx) => {
+	if (ctx.params.groupBy || ctx.params.period || (!ctx.query.type && !ctx.query.period)) {
+		return new PackageRequest(ctx).handleVersionStatsDeprecated();
+	}
+
+	if (!validate.single(schema.queryTypeRequired, ctx.query, ctx)) {
+		return;
+	}
+
 	return new PackageRequest(ctx).handleVersionStats();
 });
 
