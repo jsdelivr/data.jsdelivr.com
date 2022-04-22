@@ -22,6 +22,14 @@ function makeStatsPackagesTests () {
 			period: periodOptions,
 		},
 	]);
+
+	makeEndpointTests('/v1/stats/packages{/type}{/period}{?page,limit}', {
+		period: 'month',
+	}, [
+		{ page: 0 },
+		{ page: 'x' },
+		{ limit: 1000 },
+	], { status: 400 });
 }
 
 function makeStatsNetworkTests () {

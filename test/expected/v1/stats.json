@@ -5421,6 +5421,16 @@
 			}
 		}
 	],
+	"/v1/stats/packages/month?limit=1000": {
+		"date": "2010-12-31",
+		"status": 400,
+		"message": "Invalid parameter value: `limit` must be less than or equal to 100."
+	},
+	"/v1/stats/packages/month?page=0": {
+		"date": "2010-12-31",
+		"status": 400,
+		"message": "Invalid parameter value: `page` must be a positive number."
+	},
 	"/v1/stats/packages/month?page=2": [
 		{
 			"type": "npm",
@@ -5845,6 +5855,11 @@
 			}
 		}
 	],
+	"/v1/stats/packages/month?page=x": {
+		"date": "2010-12-31",
+		"status": 400,
+		"message": "Invalid parameter value: `page` must be a number."
+	},
 	"/v1/stats/packages/week": [
 		{
 			"type": "gh",
