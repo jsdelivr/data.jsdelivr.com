@@ -18,7 +18,7 @@ exports.up = async (db) => {
 		table.integer('platformVersionId').unsigned().references('id').inTable('platform_version').onUpdate('cascade').onDelete('cascade');
 		table.string('countryIso', 2);
 		table.date('date').index();
-		table.integer('hits').unsigned().defaultTo(0).notNullable();
+		table.bigInteger('hits').unsigned().defaultTo(0).notNullable();
 		table.bigInteger('bandwidth').unsigned().defaultTo(0).notNullable();
 		table.primary([ 'platformVersionId', 'countryIso', 'date' ]);
 	});
@@ -40,7 +40,7 @@ exports.up = async (db) => {
 		table.integer('platformId').unsigned().references('id').inTable('platform').onUpdate('cascade').onDelete('cascade');
 		table.string('countryIso', 2);
 		table.date('date').index();
-		table.integer('hits').unsigned().defaultTo(0).notNullable();
+		table.bigInteger('hits').unsigned().defaultTo(0).notNullable();
 		table.bigInteger('bandwidth').unsigned().defaultTo(0).notNullable();
 		table.primary([ 'browserVersionId', 'platformId', 'countryIso', 'date' ]);
 	});
