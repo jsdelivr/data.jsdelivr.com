@@ -84,7 +84,7 @@ module.exports = ({ snapshotResponses = false, updateExistingSnapshots = false }
 			}
 		}
 
-		if (Array.isArray(data)) {
+		if (typeof data !== 'object' || Array.isArray(data)) {
 			expectedResponses[key] = data;
 		} else {
 			expectedResponses[key] = {
@@ -96,7 +96,8 @@ module.exports = ({ snapshotResponses = false, updateExistingSnapshots = false }
 
 	return Object.assign((chai) => {
 		chai.Assertion.addMethod('matchSnapshot', function (snapshotName = this._obj.req.path, message) {
-			new chai.Assertion(this._obj.body).to.deep.equal(getResponseBodyFromSnapshot(snapshotName, this._obj.body), message);
+			let body = Buffer.isBuffer(this._obj.body) ? this._obj.body.toString() : this._obj.body;
+			new chai.Assertion(body).to.deep.equal(getResponseBodyFromSnapshot(snapshotName, body), message);
 		});
 	}, {
 		prune () {
