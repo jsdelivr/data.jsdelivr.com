@@ -5,9 +5,7 @@ create table _test (
 	`value` varchar(255) null
 );
 
-drop table if exists package_hits;
-
-create view package_hits as
+insert into package_hits
 select packageId, date, sum(hits) as hits, sum(bandwidth) as bandwidth
 from package
 	     join package_version on package.id = package_version.packageId
@@ -15,9 +13,7 @@ from package
 	     join file_hits on file.id = file_hits.fileId
 group by packageId, date;
 
-drop table if exists package_version_hits;
-
-create view package_version_hits as
+insert into package_version_hits
 select packageVersionId, date, sum(hits) as hits, sum(bandwidth) as bandwidth
 from package
 	     join package_version on package.id = package_version.packageId
