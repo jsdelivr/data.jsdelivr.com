@@ -2,9 +2,15 @@ const chai = require('chai');
 const expect = chai.expect;
 
 const config = require('config');
+const { setupSnapshots } = require('../../../utils');
+
 const server = `http://127.0.0.1:${config.get(`server.port`)}`;
 
 describe('/v1/package/badge', () => {
+	before(() => {
+		setupSnapshots(__filename);
+	});
+
 	it(`GET /v1/package/npm/package-2/badge`, () => {
 		return chai.request(server)
 			.get(`/v1/package/npm/package-2/badge`)
@@ -14,7 +20,7 @@ describe('/v1/package/badge', () => {
 				expect(response).to.have.header('Cache-Control', 'public, stale-while-revalidate=3600, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response.body.toString()).to.contain('20k hits/month');
+				expect(response).to.matchSnapshot();
 			});
 	});
 
@@ -27,7 +33,7 @@ describe('/v1/package/badge', () => {
 				expect(response).to.have.header('Cache-Control', 'public, stale-while-revalidate=3600, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response.body.toString()).to.contain('#117');
+				expect(response).to.matchSnapshot();
 			});
 	});
 
@@ -40,7 +46,7 @@ describe('/v1/package/badge', () => {
 				expect(response).to.have.header('Cache-Control', 'public, stale-while-revalidate=3600, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
-				expect(response.body.toString()).to.contain('#57');
+				expect(response).to.matchSnapshot();
 			});
 	});
 });
