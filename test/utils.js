@@ -58,8 +58,68 @@ function makeEndpointTests (uriTemplate, defaults, testTemplates, options, note)
 	}
 }
 
+function makePaginationTests (uri, params) {
+	describe(`GET ${uri} - pagination`, () => {
+		let first10;
+
+		before(async () => {
+			first10 = await chai.request(server)
+				.get(uri)
+				.query({ ...params, limit: 10 });
+		});
+
+		it(`returns at most 10 results`, async () => {
+			expect(first10).to.have.status(200);
+			expect(first10.body).to.have.length.lessThanOrEqual(10);
+		});
+
+		_.range(1, 11).forEach((index) => {
+			it(`works with limit=1&page=${index}`, () => {
+				return chai.request(server)
+					.get(uri)
+					.query({ ...params, limit: 1, page: index })
+					.then((response) => {
+						expect(response).to.have.status(200);
+						expect(response.body).to.deep.equal(first10.body.slice(index - 1, index));
+					});
+			});
+		});
+
+		_.range(1, 6).forEach((index) => {
+			it(`works with limit=2&page=${index}`, () => {
+				return chai.request(server)
+					.get(uri)
+					.query({ ...params, limit: 2, page: index })
+					.then((response) => {
+						expect(response).to.have.status(200);
+						expect(response.body).to.deep.equal(first10.body.slice((index - 1) * 2, (index - 1) * 2 + 2));
+					});
+			});
+		});
+
+		it('validates the limit param', () => {
+			return chai.request(server)
+				.get(uri)
+				.query({ ...params, limit: -1 })
+				.then((response) => {
+					expect(response).to.have.status(400);
+				});
+		});
+
+		it('validates the page param', () => {
+			return chai.request(server)
+				.get(uri)
+				.query({ ...params, page: -1 })
+				.then((response) => {
+					expect(response).to.have.status(400);
+				});
+		});
+	});
+}
+
 module.exports = {
 	makeEndpointTests,
+	makePaginationTests,
 	setupSnapshots (file) {
 		chaiSnapshotInstance.setCurrentFile(path.join(
 			__dirname,

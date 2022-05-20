@@ -92,6 +92,18 @@ koaElasticUtils.addRoutes(router, [
 });
 
 koaElasticUtils.addRoutes(router, [
+	[ '/package/npm/:name/stats/versions', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/stats/versions' ],
+	[ '/package/gh/:user/:repo/stats/versions', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/stats/versions' ],
+], validate({
+	query: Joi.object({
+		by: schema.by,
+		...schema.paginatedStats,
+	}),
+}), async (ctx) => {
+	return new PackageRequest(ctx).handleTopVersions();
+});
+
+koaElasticUtils.addRoutes(router, [
 	[ '/package/npm/:name/badge', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/badge/:period(day|week|month|year|all)?' ],
 	[ '/package/gh/:user/:repo/badge', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/badge/:period(day|week|month|year|all)?' ],
 ], validate({

@@ -165,6 +165,20 @@ class Package extends BaseCacheModel {
 		});
 	}
 
+	static async getTopVersions (type, name, by, from, to, limit = 100, page = 1) {
+		let stats = await this.getStatByName(type, name, from, to, by);
+		let start = (page - 1) * limit;
+
+		return _.map(_.groupBy(stats, record => `${record.type}:${record.version}`), (versionStats) => {
+			return {
+				type: versionStats[0].type,
+				version: versionStats[0].version,
+				total: _.sumBy(versionStats, 'stat'),
+				dates: _.fromPairs(_.map(versionStats, record => [ toIsoDate(record.date), record.stat ])),
+			};
+		}).sort((a, b) => b.total - a.total).slice(start, start + limit);
+	}
+
 	toSqlFunctionCall () {
 		return db.raw(`set @lastIdPackage = updateOrInsertPackage(?, ?);`, [ this.type, this.name ]);
 	}

@@ -131,5 +131,4 @@ module.exports = PackageVersion;
 const Package = require('./Package');
 const File = require('./File');
 const FileHits = require('./FileHits');
-const PackageHits = require('./PackageHits');
 const PackageVersionHits = require('./PackageVersionHits');

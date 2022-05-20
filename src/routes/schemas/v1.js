@@ -2,6 +2,9 @@ const Joi = require('joi');
 const dateRange = require('../utils/dateRange');
 
 const primitives = {
+	by:
+		Joi.valid('hits', 'bandwidth').required(),
+
 	hash:
 		Joi.string().hex().length(64).required()
 			.messages({ '*': 'must be a hex-encoded sha256 hash' })

@@ -312,6 +312,19 @@ class PackageRequest extends BaseRequest {
 		this.setCacheHeader();
 	}
 
+	async handleTopVersions () {
+		let stats = await Package.getTopVersions(this.params.type, this.params.name, this.query.by, ...this.dateRange, ...this.pagination);
+
+		this.ctx.body = stats.map((record) => {
+			return {
+				...record,
+				dates: dateRange.fill(record.dates, ...this.dateRange),
+			};
+		});
+
+		this.setCacheHeader();
+	}
+
 	async handleVersionFiles () {
 		try {
 			this.ctx.body = await this.getFiles(); // Can't use AsJson() version here because we need to set correct status code on cached errors.
