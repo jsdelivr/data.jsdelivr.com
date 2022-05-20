@@ -32,7 +32,7 @@ class StatsRequest extends BaseRequest {
 					total: sumFileHits,
 					dates: dateRange.fill(fileHits, ...this.dateRange),
 				},
-				proxy: {
+				proxies: {
 					total: sumProxyHits,
 					dates: dateRange.fill(proxyHits, ...this.dateRange),
 				},
@@ -47,7 +47,7 @@ class StatsRequest extends BaseRequest {
 					total: sumFileBandwidth,
 					dates: dateRange.fill(fileBandwidth, ...this.dateRange),
 				},
-				proxy: {
+				proxies: {
 					total: sumProxyBandwidth,
 					dates: dateRange.fill(proxyBandwidth, ...this.dateRange),
 				},
