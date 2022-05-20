@@ -38,7 +38,7 @@ module.exports = ({ snapshotResponses = false, updateExistingSnapshots = false }
 		}
 
 		let data = _.cloneDeep(expectedResponses[key]);
-		let diff = relativeDayUtc().valueOf() - relativeDayUtc(0, data.date);
+		let diff = relativeDayUtc().valueOf() - relativeDayUtc(0, data.date || defaultSnapshotDate);
 		delete data.date;
 
 		return recalculateDates(data, diff);
@@ -84,8 +84,10 @@ module.exports = ({ snapshotResponses = false, updateExistingSnapshots = false }
 			}
 		}
 
-		if (typeof data !== 'object' || Array.isArray(data)) {
+		if (typeof data !== 'object') {
 			expectedResponses[key] = data;
+		} else if (Array.isArray(data)) {
+			expectedResponses[key] = recalculateDates(data, -dateDiff);
 		} else {
 			expectedResponses[key] = {
 				date: expectedResponses[key]?.date || defaultSnapshotDate,
