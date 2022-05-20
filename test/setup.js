@@ -11,6 +11,7 @@ const readdir = require('recursive-readdir');
 
 const serverCallback = require('../src');
 const { listTables, listViews } = require('../src/lib/db/utils');
+const { toIsoDate } = require('../src/lib/date');
 
 const upstreamNpmResponses = require('./data/v1/npm.json');
 const upstreamCdnResponses = require('./data/v1/cdn.json');
@@ -178,5 +179,5 @@ async function hashDbSetupFiles () {
 
 	return files.reduce((hash, file) => {
 		return hash.update(file);
-	}, crypto.createHash('sha256')).digest('hex');
+	}, crypto.createHash('sha256')).update(toIsoDate(new Date())).digest('hex');
 }
