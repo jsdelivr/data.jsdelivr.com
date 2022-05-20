@@ -1,8 +1,7 @@
-const relativeDayUtc = require('relative-day-utc');
-
 const BaseRequest = require('./BaseRequest');
 const Package = require('../../../models/Package');
 const PackageHits = require('../../../models/PackageHits');
+const ProxyHits = require('../../../models/ProxyHits');
 const OtherHits = require('../../../models/OtherHits');
 const Logs = require('../../../models/Logs');
 const dateRange = require('../../utils/dateRange');
@@ -10,26 +9,32 @@ const sumDeep = require('../../utils/sumDeep');
 
 class StatsRequest extends BaseRequest {
 	async handleNetwork () {
-		this.ctx.body = await this.handleNetworkInternal(relativeDayUtc(1));
+		this.ctx.body = await this.handleNetworkInternal();
 		this.setCacheHeader();
 	}
 
-	async handleNetworkInternal (redisCacheExpirationDate) {
-		let { hits: fileHits, bandwidth: fileBandwidth } = await PackageHits.get(undefined, redisCacheExpirationDate).withLock().getSumPerDate(...this.dateRange);
-		let { hits: otherHits, bandwidth: otherBandwidth } = await OtherHits.get(undefined, redisCacheExpirationDate).withLock().getSumPerDate(...this.dateRange);
-		let datesTraffic = await Logs.get(undefined, redisCacheExpirationDate).withLock().getMegabytesPerDate(...this.dateRange);
+	async handleNetworkInternal () {
+		let { hits: fileHits, bandwidth: fileBandwidth } = await PackageHits.getSumPerDate(...this.dateRange);
+		let { hits: proxyHits, bandwidth: proxyBandwidth } = await ProxyHits.getSumPerDate(...this.dateRange);
+		let { hits: otherHits, bandwidth: otherBandwidth } = await OtherHits.getSumPerDate(...this.dateRange);
 
 		let sumFileHits = sumDeep(fileHits);
+		let sumProxyHits = sumDeep(proxyHits);
 		let sumOtherHits = sumDeep(otherHits);
 		let sumFileBandwidth = sumDeep(fileBandwidth);
+		let sumProxyBandwidth = sumDeep(proxyBandwidth);
 		let sumOtherBandwidth = sumDeep(otherBandwidth);
 
 		let result = {
 			hits: {
-				total: sumFileHits + sumOtherHits,
+				total: sumFileHits + sumProxyHits + sumOtherHits,
 				packages: {
 					total: sumFileHits,
 					dates: dateRange.fill(fileHits, ...this.dateRange),
+				},
+				proxy: {
+					total: sumProxyHits,
+					dates: dateRange.fill(proxyHits, ...this.dateRange),
 				},
 				other: {
 					total: sumOtherHits,
@@ -37,21 +42,21 @@ class StatsRequest extends BaseRequest {
 				},
 			},
 			bandwidth: {
-				total: sumFileBandwidth + sumOtherBandwidth,
+				total: sumFileBandwidth + sumProxyBandwidth + sumOtherBandwidth,
 				packages: {
 					total: sumFileBandwidth,
 					dates: dateRange.fill(fileBandwidth, ...this.dateRange),
+				},
+				proxy: {
+					total: sumProxyBandwidth,
+					dates: dateRange.fill(proxyBandwidth, ...this.dateRange),
 				},
 				other: {
 					total: sumOtherBandwidth,
 					dates: dateRange.fill(otherBandwidth, ...this.dateRange),
 				},
 			},
-			megabytes: {
-				total: sumDeep(datesTraffic),
-				dates: dateRange.fill(datesTraffic, ...this.dateRange),
-			},
-			meta: await Logs.get(undefined, redisCacheExpirationDate).withLock().getMetaStats(...this.dateRange),
+			meta: await Logs.getMetaStats(...this.dateRange),
 		};
 
 		if (!result.meta.records) {
@@ -66,7 +71,7 @@ class StatsRequest extends BaseRequest {
 	}
 
 	async handlePackages () {
-		this.ctx.body = await this.handlePackagesInternal(relativeDayUtc(1));
+		this.ctx.body = await Package.getTopPackages(this.period, this.date, this.params.type, ...this.pagination);
 		this.setCacheHeader();
 	}
 
