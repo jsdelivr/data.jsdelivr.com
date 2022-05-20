@@ -27,6 +27,7 @@ describe('v1', function () {
 	require('./v1/package/entrypoints');
 	require('./v1/package/resolve');
 	require('./v1/package/stats');
+	require('./v1/package/stats/files');
 	require('./v1/package/stats/versions');
 	require('./v1/proxy/stats');
 	require('./v1/stats');

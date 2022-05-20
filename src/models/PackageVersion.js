@@ -121,6 +121,19 @@ class PackageVersion extends BaseModel {
 		});
 	}
 
+	static async getTopFiles (type, name, version, by, from, to, limit = 100, page = 1) {
+		let stats = await this.getStatByNameAndVersion(type, name, version, from, to, by);
+		let start = (page - 1) * limit;
+
+		return _.map(_.groupBy(stats, 'filename'), (fileStats) => {
+			return {
+				name: fileStats[0].filename,
+				total: _.sumBy(fileStats, 'stat'),
+				dates: _.fromPairs(_.map(fileStats, record => [ toIsoDate(record.date), record.stat ])),
+			};
+		}).sort((a, b) => b.total - a.total).slice(start, start + limit);
+	}
+
 	toSqlFunctionCall () {
 		return db.raw(`set @lastIdPackageVersion = updateOrInsertPackageVersion(@lastIdPackage, ?, ?);`, [ this.version, this.type ]);
 	}

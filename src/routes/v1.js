@@ -159,6 +159,18 @@ koaElasticUtils.addRoutes(router, [
 });
 
 koaElasticUtils.addRoutes(router, [
+	[ '/package/npm/:name@:version/stats/files', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version/stats/files' ],
+	[ '/package/gh/:user/:repo@:version/stats/files', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version/stats/files' ],
+], validate({
+	query: Joi.object({
+		by: schema.by,
+		...schema.paginatedStats,
+	}),
+}), async (ctx) => {
+	return new PackageRequest(ctx).handleTopVersionFiles();
+});
+
+koaElasticUtils.addRoutes(router, [
 	[ '/package/resolve/npm/:name@:version', '/package/resolve/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version' ],
 	[ '/package/resolve/npm/:name', '/package/resolve/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)' ],
 	[ '/package/resolve/gh/:user/:repo@:version', '/package/resolve/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version' ],

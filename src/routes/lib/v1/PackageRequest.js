@@ -362,6 +362,19 @@ class PackageRequest extends BaseRequest {
 		this.setCacheHeader();
 	}
 
+	async handleTopVersionFiles () {
+		let stats = await PackageVersion.getTopFiles(this.params.type, this.params.name, this.params.version, this.query.by, ...this.dateRange, ...this.pagination);
+
+		this.ctx.body = stats.map((record) => {
+			return {
+				...record,
+				dates: dateRange.fill(record.dates, ...this.dateRange),
+			};
+		});
+
+		this.setCacheHeader();
+	}
+
 	async handleVersionStatsDeprecated () {
 		if (this.params.groupBy === 'date') {
 			let stats = await PackageVersion.getSumDateHitsPerFileByName(this.params.type, this.params.name, this.params.version, ...this.dateRange);
