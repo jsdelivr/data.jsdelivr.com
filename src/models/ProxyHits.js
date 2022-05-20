@@ -54,8 +54,9 @@ class ProxyHits extends BaseCacheModel {
 
 		let data = await sql
 			.sum(`${this.table}.hits as hits`)
+			.sum(`${this.table}.bandwidth as bandwidth`)
 			.groupBy(`${this.table}.date`)
-			.select([ `${this.table}.date`, `${this.table}.bandwidth` ]);
+			.select([ `${this.table}.date` ]);
 
 		return {
 			hits: _.fromPairs(_.map(data, (record) => {
