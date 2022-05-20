@@ -3,6 +3,7 @@ const expect = chai.expect;
 
 const path = require('path');
 const urlTemplate = require('url-template');
+require('./plugins/wrap-it');
 
 // based on https://stackoverflow.com/a/43053803
 const cartesian = (...sets) => {
@@ -22,7 +23,6 @@ function getUriWithValues (template, values, defaults) {
 }
 
 function makeEndpointTest (uriTemplate, defaults, values, { status = 200 } = {}, note) {
-	let originalCallSite = new Error();
 	let getUri = full => getUriWithValues(uriTemplate, values, full);
 
 	it(`GET ${getUri()}${note ? ` - ${note}` : ''}`, () => {
@@ -42,13 +42,6 @@ function makeEndpointTest (uriTemplate, defaults, values, { status = 200 } = {},
 				}
 
 				expect(response).to.matchSnapshot(getUri(defaults));
-			}).catch((error) => {
-				// Stack traces pointing just to this function are not very useful,
-				// so we extend them with location of the code that generated the test,
-				// and a condition that can be set in debugger for this particular configuration.
-				error.stack += `\n\nCondition:\n    getUri() === '${getUri()}'`;
-				error.stack += `\n\nTest generated:\n${originalCallSite.stack.split('\n').slice(3).join('\n')}`;
-				throw error;
 			});
 	});
 }
