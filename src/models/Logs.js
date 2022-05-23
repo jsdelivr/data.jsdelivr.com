@@ -59,8 +59,7 @@ class Logs extends BaseCacheModel {
 
 	static async getMetaStats (from, to) {
 		let sql = db(this.table)
-			.sum(`${this.table}.records as records`)
-			.sum(`${this.table}.megabytesLogs as megabytes`);
+			.sum(`${this.table}.records as records`);
 
 		if (from instanceof Date) {
 			sql.where(`${this.table}.date`, '>=', from);
@@ -70,7 +69,9 @@ class Logs extends BaseCacheModel {
 			sql.where(`${this.table}.date`, '<=', to);
 		}
 
-		return sql.select().first();
+		return sql.select([
+			db.raw(`sum(${this.table}.megabytesLogs * 1024 * 1024) as recordsBytes`),
+		]).first();
 	}
 
 	toSqlFunctionCall () {

@@ -319,7 +319,7 @@
 		},
 		"meta": {
 			"records": 69000000000,
-			"megabytes": 690000
+			"recordsBytes": 723517440000
 		}
 	},
 	"/v1/stats/network/day": {
@@ -368,7 +368,7 @@
 		},
 		"meta": {
 			"records": 1000000000,
-			"megabytes": 10000
+			"recordsBytes": 10485760000
 		}
 	},
 	"/v1/stats/network/month": {
@@ -591,7 +591,7 @@
 		},
 		"meta": {
 			"records": 30000000000,
-			"megabytes": 300000
+			"recordsBytes": 314572800000
 		}
 	},
 	"/v1/stats/network/week": {
@@ -676,7 +676,7 @@
 		},
 		"meta": {
 			"records": 7000000000,
-			"megabytes": 70000
+			"recordsBytes": 73400320000
 		}
 	},
 	"/v1/stats/network/year": {
@@ -2909,7 +2909,7 @@
 		},
 		"meta": {
 			"records": 69000000000,
-			"megabytes": 690000
+			"recordsBytes": 723517440000
 		}
 	},
 	"/v1/stats/packages/all": [

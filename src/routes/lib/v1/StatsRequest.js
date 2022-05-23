@@ -63,8 +63,8 @@ class StatsRequest extends BaseRequest {
 			result.meta.records = 0;
 		}
 
-		if (!result.meta.megabytes) {
-			result.meta.megabytes = 0;
+		if (!result.meta.recordsBytes) {
+			result.meta.recordsBytes = 0;
 		}
 
 		return result;
