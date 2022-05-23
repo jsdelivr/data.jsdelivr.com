@@ -3,6 +3,7 @@ const expect = chai.expect;
 
 const path = require('path');
 const urlTemplate = require('url-template');
+const dateRange = require('../src/routes/utils/dateRange');
 require('./plugins/wrap-it');
 
 // based on https://stackoverflow.com/a/43053803
@@ -29,6 +30,12 @@ function makeEndpointTest (uriTemplate, defaults, values, { status = 200 } = {},
 		return chai.request(server)
 			.get(getUri())
 			.then((response) => {
+				expect(response).to.matchSnapshot(getUri(defaults));
+
+				if (values.period) {
+					validateResponseForPeriod(response.body, values.period);
+				}
+
 				expect(response).to.have.status(status);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
@@ -40,8 +47,6 @@ function makeEndpointTest (uriTemplate, defaults, values, { status = 200 } = {},
 				} else {
 					expect(response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
 				}
-
-				expect(response).to.matchSnapshot(getUri(defaults));
 			});
 	});
 }
@@ -115,6 +120,29 @@ function makePaginationTests (uri, params) {
 				});
 		});
 	});
+}
+
+function validateResponseForPeriod (object, period) {
+	if (!_.isObject(object)) {
+		return true;
+	} else if (Array.isArray(object)) {
+		return object.every(value => validateResponseForPeriod(value, period));
+	}
+
+	let datePattern = /^\d{4}-\d{2}-\d{2}$/;
+	let keys = Object.keys(object);
+
+	if (keys.length > 1 && keys.every(key => datePattern.test(key))) {
+		let expectedLength = dateRange.getDuration(period);
+
+		if (expectedLength) {
+			expect(keys).to.have.lengthOf(expectedLength);
+		}
+
+		return true;
+	}
+
+	return _.every(object, value => validateResponseForPeriod(value, period));
 }
 
 module.exports = {

@@ -1,39 +1,55 @@
-drop event if exists top_package_files_update;
-create event top_package_files_update
+drop event if exists update_daily_data;
+create event update_daily_data
 	on schedule
 		every 5 minute
 			starts utc_date()
 	do
 	begin
-		if not exists(select * from view_top_package_files where `date` = utc_date()) then
-			if get_lock('update_top_package_files', 0) = 1 then
-				call updateViewTopPackageFiles(utc_date());
-				select release_lock('update_top_package_files');
+		if get_lock('update_daily_data', 0) = 1 then
+			if not exists(select * from view_network_cdns where `date` = utc_date()) then
+				call updateViewTopPackages(utc_date());
 			end if;
-		end if;
-	end;
 
-
-drop event if exists network_packages_update;
-create event network_packages_update
-	on schedule
-		every 5 minute
-			starts utc_date()
-	do
-	begin
-		if not exists(select * from view_network_packages where `date` = date_sub(utc_date(), interval 2 day)) then
-			if get_lock('update_network_packages', 0) = 1 then
-				call updateViewNetworkPackages(utc_date());
-				select release_lock('update_network_packages');
-			end if;
-		end if;
-
-		if utc_time() >= '22:00:00' then
-			if not exists(select * from view_network_packages where `date` = date_sub(utc_date(), interval 1 day)) then
-				if get_lock('update_network_packages', 0) = 1 then
-					call updateViewNetworkPackages(date_add(utc_date(), interval 1 day));
-					select release_lock('update_network_packages');
+			if utc_time() >= '22:00:00' then
+				if not exists(select * from view_network_cdns where `date` = date_add(utc_date(), interval 1 day)) then
+					call updateViewTopPackages(date_add(utc_date(), interval 1 day));
 				end if;
 			end if;
+
+			if not exists(select * from view_network_packages where `date` = date_sub(utc_date(), interval 2 day)) then
+				call updateViewNetworkPackages(utc_date());
+			end if;
+
+			if utc_time() >= '22:00:00' then
+				if not exists(select * from view_network_packages where `date` = date_sub(utc_date(), interval 1 day)) then
+					call updateViewNetworkPackages(date_add(utc_date(), interval 1 day));
+				end if;
+			end if;
+
+			if not exists(select * from view_top_package_files where `date` = utc_date()) then
+				call updateViewTopPackageFiles(utc_date());
+			end if;
+
+			if not exists(select * from view_top_packages where `date` = utc_date()) then
+				call updateViewTopPackages(utc_date());
+			end if;
+
+			if utc_time() >= '22:00:00' then
+				if not exists(select * from view_top_packages where `date` = date_add(utc_date(), interval 1 day)) then
+					call updateViewTopPackages(date_add(utc_date(), interval 1 day));
+				end if;
+			end if;
+
+			if not exists(select * from view_top_proxies where `date` = utc_date()) then
+				call updateViewTopPackages(utc_date());
+			end if;
+
+			if utc_time() >= '22:00:00' then
+				if not exists(select * from view_top_proxies where `date` = date_add(utc_date(), interval 1 day)) then
+					call updateViewTopPackages(date_add(utc_date(), interval 1 day));
+				end if;
+			end if;
+
+			select release_lock('update_daily_data');
 		end if;
 	end;

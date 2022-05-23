@@ -43,10 +43,11 @@ const primitives = {
 
 const composedTypes = {
 	paginatedStats: { limit: primitives.limit, page: primitives.page, period: primitives.period },
+	typeRequired: primitives.type.required(),
 };
 
 const composedSchemas = {
-	queryTypeRequired: Joi.object({ type: primitives.type.required() }),
+	queryTypeRequired: Joi.object({ type: composedTypes.typeRequired }),
 };
 
 module.exports = {

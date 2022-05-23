@@ -4,6 +4,8 @@ const Bluebird = require('bluebird');
 const relativeDateUtc = require('relative-day-utc');
 const { listTables } = require('../../src/lib/db/utils');
 const entrypointTestCases = require('../../test/data/v1/entrypoints.json');
+const countries = Object.keys(require('i18n-iso-countries').getAlpha2Codes());
+const providers = [ 'CF', 'FY', 'GC' ];
 
 const PACKAGE_TYPES = [ 'npm', 'gh' ];
 const STATS_START_TIMESTAMP = relativeDateUtc(-70).valueOf();
@@ -86,6 +88,20 @@ exports.seed = async (db) => {
 				bandwidth: proxyId * i * 16 * 1025,
 			};
 		});
+	})));
+
+	await db('country_cdn_hits').insert(_.flatten(countries.map((countryIso, index) => {
+		return _.flatten(providers.map((cdn) => {
+			return _.range(0, 70).map((i) => {
+				return {
+					countryIso,
+					cdn,
+					date: new Date(STATS_START_TIMESTAMP + (i * 86400000)),
+					hits: index * i,
+					bandwidth: index * i * 16 * 1025,
+				};
+			});
+		}));
 	})));
 
 	let seedEntrypointsData = async (entrypointsTestData) => {

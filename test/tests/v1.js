@@ -30,7 +30,9 @@ describe('v1', function () {
 	require('./v1/package/stats/files');
 	require('./v1/package/stats/versions');
 	require('./v1/proxy/stats');
-	require('./v1/stats');
+	require('./v1/stats/network');
+	require('./v1/stats/network/providers');
+	require('./v1/stats/packages');
 
 	describe('/v1/lookup', () => {
 		it('GET /v1/lookup/hash/xx', () => {

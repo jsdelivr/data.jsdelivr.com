@@ -6,6 +6,7 @@ const OtherHits = require('../../../models/OtherHits');
 const Logs = require('../../../models/Logs');
 const dateRange = require('../../utils/dateRange');
 const sumDeep = require('../../utils/sumDeep');
+const CountryCdnHits = require('../../../models/CountryCdnHits');
 
 class StatsRequest extends BaseRequest {
 	async handleNetwork () {
@@ -75,8 +76,27 @@ class StatsRequest extends BaseRequest {
 		this.setCacheHeader();
 	}
 
-	async handlePackagesInternal (redisCacheExpirationDate) {
-		return Package.get(undefined, redisCacheExpirationDate).withLock().asRawArray().getTopPackages(this.period, this.date, this.params.type, ...this.pagination);
+	async handleProviders () {
+		let [ dailyStats, periodStats ] = await Promise.all([
+			CountryCdnHits.getDailyProvidersStats(this.query.type, ...this.dateRange),
+			CountryCdnHits.getProvidersStatsForPeriod(this.period, this.date),
+		]);
+
+		this.ctx.body = _.mapValues(dailyStats, (providerStats, provider) => {
+			// No null checks here because the results should have the same set of providers.
+			// If they don't, throwing an error is the best possible action.
+			let providerPeriodStats = periodStats[provider];
+
+			return {
+				total: providerPeriodStats[this.query.type].total,
+				dates: dateRange.fill(providerStats, ...this.dateRange),
+				prev: {
+					total: providerPeriodStats.prev[this.query.type].total,
+				},
+			};
+		});
+
+		this.setCacheHeader();
 	}
 }
 

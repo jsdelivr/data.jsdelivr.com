@@ -1,14 +1,13 @@
-const { makeEndpointTests, setupSnapshots } = require('../../utils');
+const { makeEndpointTests, setupSnapshots } = require('../../../utils');
 
 const periodOptions = [ 'day', 'week', 'month', 'year', 'all', undefined ];
 
-describe('/v1/stats', () => {
+describe('/v1/stats/packages', () => {
 	before(() => {
 		setupSnapshots(__filename);
 	});
 
 	makeStatsPackagesTests();
-	makeStatsNetworkTests();
 });
 
 function makeStatsPackagesTests () {
@@ -30,14 +29,4 @@ function makeStatsPackagesTests () {
 		{ page: 'x' },
 		{ limit: 1000 },
 	], { status: 400 });
-}
-
-function makeStatsNetworkTests () {
-	makeEndpointTests('/v1/stats/network{/period}', {
-		period: 'month',
-	}, [
-		{
-			period: periodOptions,
-		},
-	]);
 }

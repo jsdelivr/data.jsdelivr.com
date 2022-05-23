@@ -1,7 +1,8 @@
 const relativeDayUtc = require('relative-day-utc');
 const { toIsoDate } = require('../../lib/date');
 
-const floatingPeriods = [ 'day', 'week', 'month', 'year', 'all' ];
+const floatingPeriodDurations = { day: 1, week: 7, month: 30, year: 365 };
+const floatingPeriods = [ ...Object.keys(floatingPeriodDurations), 'all' ];
 const allPeriodFrom = Date.UTC(2017, 7, 19);
 const staticPeriod = /^(\d{4})(?:-(\d{2}))?$/;
 
@@ -73,6 +74,10 @@ module.exports.fill = (data, from, to, defaultValue = 0) => {
 	}
 
 	return result;
+};
+
+module.exports.getDuration = (period) => {
+	return floatingPeriodDurations[period];
 };
 
 module.exports.isFloatingPeriod = (period) => {

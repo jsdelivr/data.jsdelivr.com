@@ -209,4 +209,15 @@ koaElasticUtils.addRoutes(router, [
 	return new StatsRequest(ctx).handleNetwork();
 });
 
+koaElasticUtils.addRoutes(router, [
+	[ '/stats/network/providers', '/stats/network/providers' ],
+], validate({
+	query: Joi.object({
+		period: schema.period,
+		type: schema.typeRequired,
+	}),
+}), async (ctx) => {
+	return new StatsRequest(ctx).handleProviders();
+});
+
 module.exports = router;

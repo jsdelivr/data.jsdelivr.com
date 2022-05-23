@@ -22,6 +22,7 @@ from package
 group by packageVersionId, date;
 
 set @date = utc_date();
+call updateViewNetworkCdns(@date);
 call updateViewNetworkPackages(@date);
 call updateViewTopPackageFiles(@date);
 call updateViewTopPackages(@date);
