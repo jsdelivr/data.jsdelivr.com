@@ -1,3 +1,4 @@
+const _ = require('lodash');
 const { continents, countries } = require('countries-list');
 const updateSharedObjects = require('./shared/updateSharedObjects');
 

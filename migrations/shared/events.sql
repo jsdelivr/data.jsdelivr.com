@@ -7,12 +7,12 @@ create event update_daily_data
 	begin
 		if get_lock('update_daily_data', 0) = 1 then
 			if not exists(select * from view_network_cdns where `date` = utc_date()) then
-				call updateViewTopPackages(utc_date());
+				call updateViewNetworkCdns(utc_date());
 			end if;
 
 			if utc_time() >= '22:00:00' then
 				if not exists(select * from view_network_cdns where `date` = date_add(utc_date(), interval 1 day)) then
-					call updateViewTopPackages(date_add(utc_date(), interval 1 day));
+					call updateViewNetworkCdns(date_add(utc_date(), interval 1 day));
 				end if;
 			end if;
 
@@ -41,12 +41,12 @@ create event update_daily_data
 			end if;
 
 			if not exists(select * from view_top_proxies where `date` = utc_date()) then
-				call updateViewTopPackages(utc_date());
+				call updateViewTopProxies(utc_date());
 			end if;
 
 			if utc_time() >= '22:00:00' then
 				if not exists(select * from view_top_proxies where `date` = date_add(utc_date(), interval 1 day)) then
-					call updateViewTopPackages(date_add(utc_date(), interval 1 day));
+					call updateViewTopProxies(date_add(utc_date(), interval 1 day));
 				end if;
 			end if;
 
