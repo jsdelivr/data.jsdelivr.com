@@ -1,5 +1,6 @@
 const Joi = require('joi');
 const BaseModel = require('./BaseModel');
+const Country = require('./Country');
 const NetworkCdn = require('./views/NetworkCdn');
 const { toIsoDate } = require('../lib/date');
 
@@ -46,8 +47,10 @@ class CountryCdnHits extends BaseModel {
 		return new Proxy(this, BaseModel.ProxyHandler);
 	}
 
-	static async getDailyProvidersStats (type, from, to) {
-		let sql = db(this.table);
+	static async getDailyProvidersStatsForLocation (type, locationFilter, from, to) {
+		let sql = db(this.table)
+			.join(Country.table, `${this.table}.countryIso`, '=', `${Country.table}.iso`)
+			.where(locationFilter);
 
 		if (from instanceof Date) {
 			sql.where(`${this.table}.date`, '>=', from);
@@ -67,9 +70,9 @@ class CountryCdnHits extends BaseModel {
 		});
 	}
 
-	static async getProvidersStatsForPeriod (period, date) {
+	static async getProvidersStatsForPeriodAndLocation (period, locationString, date) {
 		let periodStats = await db(NetworkCdn.table)
-			.where({ period, date })
+			.where({ location: locationString, period, date })
 			.select();
 
 		return _.fromPairs(periodStats.map((provider) => {

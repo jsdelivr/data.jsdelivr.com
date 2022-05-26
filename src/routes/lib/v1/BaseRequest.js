@@ -18,6 +18,17 @@ class BaseRequest {
 		this.pagination = this.params.all ? [ null ] : pagination(this.query.limit, this.query.page);
 		ctx.type = 'json';
 
+		if (this.query.country) {
+			this.locationFilter = { countryIso: this.query.country };
+			this.locationString = `country:${this.query.country}`;
+		} else if (this.query.continent) {
+			this.locationFilter = { continentCode: this.query.continent };
+			this.locationString = `continent:${this.query.continent}`;
+		} else {
+			this.locationFilter = {};
+			this.locationString = '';
+		}
+
 		if (typeof this.query.period === 'object') {
 			this.date = this.query.period.date;
 			this.period = this.query.period.period;

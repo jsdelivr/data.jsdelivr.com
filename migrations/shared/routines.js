@@ -154,8 +154,8 @@ ${dateVarsForPeriod(days, period)}
 		delete from view_network_cdns where \`period\` = '${period}' and\`date\` < @dateTo;
 
 		insert into view_network_cdns
-			(period, date, cdn, hits, bandwidth, prevHits, prevBandwidth)
-		select '${period}', aDate, cdn,
+			(period, location, date, cdn, hits, bandwidth, prevHits, prevBandwidth)
+		select '${period}', '', aDate, cdn,
 			hits, bandwidth,
 			coalesce(prevHits, 0), coalesce(prevBandwidth, 0)
 		from (
@@ -167,6 +167,57 @@ ${dateVarsForPeriod(days, period)}
 			from country_cdn_hits cch
 			where date >= @dateFrom and date <= @dateTo
 			group by cdn
+			order by hits desc
+		) t;
+
+		insert into view_network_cdns
+			(period, location, date, cdn, hits, bandwidth, prevHits, prevBandwidth)
+		select '${period}', concat('continent:', continentCode), aDate, cdn,
+			hits, bandwidth,
+			coalesce(prevHits, 0), coalesce(prevBandwidth, 0)
+		from (
+			select cdn,
+				continentCode,
+				sum(hits) as hits,
+				sum(bandwidth) as bandwidth,
+				(select sum(hits)
+					from country_cdn_hits cchi
+					join country ci on cchi.countryIso = ci.iso
+					where cch.cdn = cchi.cdn and c.continentCode = ci.continentCode and date >= @prevDateFrom and date <= @prevDateTo
+				) as prevHits,
+				(select sum(bandwidth)
+					from country_cdn_hits cchi
+					join country ci on cchi.countryIso = ci.iso
+					where cch.cdn = cchi.cdn and c.continentCode = ci.continentCode and date >= @prevDateFrom and date <= @prevDateTo
+				) as prevBandwidth
+			from country_cdn_hits cch
+			join country c on cch.countryIso = c.iso
+			where date >= @dateFrom and date <= @dateTo
+			group by cdn, c.continentCode
+			order by hits desc
+		) t;
+
+		insert into view_network_cdns
+			(period, location, date, cdn, hits, bandwidth, prevHits, prevBandwidth)
+		select '${period}', concat('country:', countryIso), aDate, cdn,
+			hits, bandwidth,
+			coalesce(prevHits, 0), coalesce(prevBandwidth, 0)
+		from (
+			select cdn,
+				countryIso,
+				sum(hits) as hits,
+				sum(bandwidth) as bandwidth,
+				(select sum(hits)
+					from country_cdn_hits cchi
+					where cch.cdn = cchi.cdn and cch.countryIso = cchi.countryIso and date >= @prevDateFrom and date <= @prevDateTo
+				) as prevHits,
+				(select sum(bandwidth)
+					from country_cdn_hits cchi
+					where cch.cdn = cchi.cdn and cch.countryIso = cchi.countryIso and date >= @prevDateFrom and date <= @prevDateTo
+				) as prevBandwidth
+			from country_cdn_hits cch
+			where date >= @dateFrom and date <= @dateTo
+			group by cdn, cch.countryIso
 			order by hits desc
 		) t;
 	`;

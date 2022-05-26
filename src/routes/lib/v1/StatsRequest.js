@@ -78,8 +78,8 @@ class StatsRequest extends BaseRequest {
 
 	async handleProviders () {
 		let [ dailyStats, periodStats ] = await Promise.all([
-			CountryCdnHits.getDailyProvidersStats(this.query.type, ...this.dateRange),
-			CountryCdnHits.getProvidersStatsForPeriod(this.period, this.date),
+			CountryCdnHits.getDailyProvidersStatsForLocation(this.query.type, this.locationFilter, ...this.dateRange),
+			CountryCdnHits.getProvidersStatsForPeriodAndLocation(this.period, this.locationString, this.date),
 		]);
 
 		this.ctx.body = _.mapValues(dailyStats, (providerStats, provider) => {

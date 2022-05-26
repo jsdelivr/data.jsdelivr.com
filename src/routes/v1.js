@@ -215,7 +215,7 @@ koaElasticUtils.addRoutes(router, [
 	query: Joi.object({
 		period: schema.period,
 		type: schema.typeRequired,
-	}),
+	}).concat(schema.location),
 }), async (ctx) => {
 	return new StatsRequest(ctx).handleProviders();
 });
