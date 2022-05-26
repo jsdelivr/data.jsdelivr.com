@@ -42,6 +42,25 @@ ${periods.map(period => topProxiesForPeriod(period)).join('\n')}
 
 	// language=MariaDB
 	await db.schema.raw(dedent`
+		drop procedure if exists updateViewNetworkCountries;
+		create procedure updateViewNetworkCountries(aDate date)
+		begin
+			declare exit handler for sqlexception
+				begin
+					rollback;
+					resignal;
+				end;
+
+			start transaction;
+
+${periods.map(period => countriesForPeriod(period)).join('\n')}
+
+			commit;
+		end;
+	`);
+
+	// language=MariaDB
+	await db.schema.raw(dedent`
 		drop procedure if exists updateViewNetworkCdns;
 		create procedure updateViewNetworkCdns(aDate date)
 		begin
@@ -140,6 +159,33 @@ ${dateVarsForPeriod(days, period)}
 				     join proxy_hits on proxy.id = proxy_hits.proxyId
 			where date >= @dateFrom and date <= @dateTo
 			group by name
+			order by hits desc
+		) t;
+	`;
+}
+
+function countriesForPeriod ([ days, period ]) {
+	// language=MariaDB
+	return `
+${dateVarsForPeriod(days, period)}
+
+		delete from view_network_countries where \`period\` = '${period}' and \`date\` = aDate;
+		delete from view_network_countries where \`period\` = '${period}' and\`date\` < @dateTo;
+
+		insert into view_network_countries
+			(period, date, countryIso, hits, bandwidth, prevHits, prevBandwidth)
+		select '${period}', aDate, countryIso,
+			hits, bandwidth,
+			coalesce(prevHits, 0), coalesce(prevBandwidth, 0)
+		from (
+			select countryIso,
+				sum(hits) as hits,
+				sum(bandwidth) as bandwidth,
+				(select sum(hits) from country_cdn_hits where cch.countryIso = country_cdn_hits.countryIso and date >= @prevDateFrom and date <= @prevDateTo) as prevHits,
+				(select sum(bandwidth) from country_cdn_hits where cch.countryIso = country_cdn_hits.countryIso and date >= @prevDateFrom and date <= @prevDateTo) as prevBandwidth
+			from country_cdn_hits cch
+			where date >= @dateFrom and date <= @dateTo
+			group by countryIso
 			order by hits desc
 		) t;
 	`;

@@ -31,6 +31,7 @@ describe('v1', function () {
 	require('./v1/package/stats/versions');
 	require('./v1/proxy/stats');
 	require('./v1/stats/network');
+	require('./v1/stats/network/countries');
 	require('./v1/stats/network/providers');
 	require('./v1/stats/packages');
 

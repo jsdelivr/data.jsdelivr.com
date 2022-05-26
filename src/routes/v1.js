@@ -210,6 +210,17 @@ koaElasticUtils.addRoutes(router, [
 });
 
 koaElasticUtils.addRoutes(router, [
+	[ '/stats/network/countries', '/stats/network/countries' ],
+], validate({
+	query: Joi.object({
+		period: schema.period,
+		type: schema.typeRequired,
+	}),
+}), async (ctx) => {
+	return new StatsRequest(ctx).handleCountries();
+});
+
+koaElasticUtils.addRoutes(router, [
 	[ '/stats/network/providers', '/stats/network/providers' ],
 ], validate({
 	query: Joi.object({

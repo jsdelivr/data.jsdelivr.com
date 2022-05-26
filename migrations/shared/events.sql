@@ -6,6 +6,16 @@ create event update_daily_data
 	do
 	begin
 		if get_lock('update_daily_data', 0) = 1 then
+			if not exists(select * from view_network_countries where `date` = utc_date()) then
+				call updateViewNetworkCountries(utc_date());
+			end if;
+
+			if utc_time() >= '22:00:00' then
+				if not exists(select * from view_network_countries where `date` = date_add(utc_date(), interval 1 day)) then
+					call updateViewNetworkCountries(date_add(utc_date(), interval 1 day));
+				end if;
+			end if;
+
 			if not exists(select * from view_network_cdns where `date` = utc_date()) then
 				call updateViewNetworkCdns(utc_date());
 			end if;

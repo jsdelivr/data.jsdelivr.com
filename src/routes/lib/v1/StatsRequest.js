@@ -76,6 +76,29 @@ class StatsRequest extends BaseRequest {
 		this.setCacheHeader();
 	}
 
+	async handleCountries () {
+		let [ dailyStats, periodStats ] = await Promise.all([
+			CountryCdnHits.getDailyCountryStats(this.query.type, ...this.dateRange),
+			CountryCdnHits.getCountryStatsForPeriod(this.period, this.date),
+		]);
+
+		this.ctx.body = _.mapValues(dailyStats, (providerStats, country) => {
+			// No null checks here because the results should have the same set of providers.
+			// If they don't, throwing an error is the best possible action.
+			let countryPeriodStats = periodStats[country];
+
+			return {
+				total: countryPeriodStats[this.query.type].total,
+				providers: providerStats,
+				prev: {
+					total: countryPeriodStats.prev[this.query.type].total,
+				},
+			};
+		});
+
+		this.setCacheHeader();
+	}
+
 	async handleProviders () {
 		let [ dailyStats, periodStats ] = await Promise.all([
 			CountryCdnHits.getDailyProvidersStatsForLocation(this.query.type, this.locationFilter, ...this.dateRange),
