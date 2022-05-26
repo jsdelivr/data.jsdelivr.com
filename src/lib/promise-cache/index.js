@@ -1,31 +1,23 @@
-const LRU = require('lru-cache');
+const TTL = require('@isaacs/ttlcache');
 
 class PromiseCache {
-	constructor ({ maxAge }) {
-		this.lru = new LRU({ maxAge });
-	}
-
-	autoClear () {
-		setInterval(() => {
-			this.lru.prune();
-		}, 60 * 1000);
-
-		return this;
+	constructor ({ ttl }) {
+		this.ttl = new TTL({ ttl });
 	}
 
 	delete (key) {
-		this.lru.del(key);
+		this.ttl.del(key);
 	}
 
 	get (key, fn) {
-		let value = this.lru.get(key);
+		let value = this.ttl.get(key);
 
 		if (value) {
 			return value;
 		}
 
 		value = fn();
-		this.lru.set(key, value);
+		this.ttl.set(key, value);
 		return value;
 	}
 }

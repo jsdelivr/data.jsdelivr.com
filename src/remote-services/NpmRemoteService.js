@@ -18,7 +18,7 @@ class NpmRemoteService extends RemoteService {
 		name = name.charAt(0) === '@' ? '@' + encodeURIComponent(name.substr(1)) : encodeURIComponent(name);
 
 		return this.requestWithCache(`/${name}`, (uri, cached) => {
-			return this.requestConditional(uri, cached, { json: true }).then((remoteResource) => {
+			return this.requestConditional(uri, cached, { responseType: 'json' }).then((remoteResource) => {
 				if (remoteResource.isFromCache) {
 					return remoteResource;
 				}
@@ -70,7 +70,7 @@ class NpmRemoteService extends RemoteService {
 		}).then((response) => {
 			return new NpmRemoteResource({ statusCode: response.statusCode, headers: response.headers, data: response.body });
 		}).catch((error) => {
-			throw new NpmRemoteResource({ statusCode: error.statusCode, headers: error.headers, data: error.body }, error);
+			throw new NpmRemoteResource({ statusCode: error.response?.statusCode, headers: error.response?.headers, data: error.response?.body }, error);
 		});
 	}
 }

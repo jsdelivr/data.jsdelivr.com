@@ -1,4 +1,4 @@
-const LRU = require('lru-cache');
+const TTL = require('@isaacs/ttlcache');
 const redis = require('../lib/redis');
 const JSONPP = require('../lib/jsonpp');
 
@@ -22,16 +22,7 @@ class PromiseCacheShared {
 	 */
 	constructor ({ prefix = 'rrrc/' } = {}) {
 		this.prefix = prefix;
-		this.pendingL = new LRU({});
-	}
-
-	autoClear () {
-		// istanbul ignore next
-		setInterval(() => {
-			this.pendingL.prune();
-		}, 60 * 1000);
-
-		return this;
+		this.pendingL = new TTL({ ttl: 60 * 1000 });
 	}
 
 	/**
@@ -39,7 +30,7 @@ class PromiseCacheShared {
 	 * @returns {Promise}
 	 */
 	async delete (key) {
-		this.pendingL.del(key);
+		this.pendingL.delete(key);
 		return redis.delAsync(this.getRedisKey(key));
 	}
 
@@ -78,22 +69,22 @@ class PromiseCacheShared {
 			throw error;
 		});
 
-		this.pendingL.set(key, value, value.ttlInternalStore);
+		this.pendingL.set(key, value);
 
 		// Wrapped in Promise.resolve() to make sure it's a Bluebird promise because
 		// .finally() behaves differently with some promises.
 		let done = Bluebird.resolve(value).finally(() => {
 			executor.then((v) => {
 				return this.store({ key, v, s: STATUS_RESOLVED }, v.ttlInternalStore).then(() => {
-					this.pendingL.del(key);
+					this.pendingL.delete(key);
 				});
 			}).catch((v) => {
 				if (staleIfErrorUsed) {
-					return this.pendingL.del(key);
+					return this.pendingL.delete(key);
 				}
 
 				return this.store({ key, v, s: STATUS_REJECTED }, v.ttlInternalStore).then(() => {
-					this.pendingL.del(key);
+					this.pendingL.delete(key);
 				});
 			});
 		});
@@ -210,7 +201,7 @@ class ScopedPromiseCacheShared {
 		this.scope = scope;
 
 		if (typeof module.exports.promiseCacheShared === 'undefined') {
-			module.exports.promiseCacheShared = new PromiseCacheShared().autoClear();
+			module.exports.promiseCacheShared = new PromiseCacheShared();
 		}
 	}
 

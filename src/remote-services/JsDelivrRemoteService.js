@@ -20,7 +20,7 @@ class JsDelivrRemoteService extends RemoteService {
 	 */
 	fetchPrivateData (type, name, version, modifier, columns) {
 		return this.requestWithCache(`/${type}/${name}@${encodeURIComponent(version)}/${modifier}`, (uri, cached) => {
-			return this.requestConditional(uri, cached, { json: true }).then((remoteResource) => {
+			return this.requestConditional(uri, cached, { responseType: 'json' }).then((remoteResource) => {
 				if (remoteResource.isFromCache) {
 					return remoteResource;
 				}
@@ -89,7 +89,7 @@ class JsDelivrRemoteService extends RemoteService {
 		}, { retries: 2 }).then((response) => {
 			return new JsDelivrRemoteResource({ statusCode: response.statusCode, headers: response.headers, data: response.body });
 		}).catch((error) => {
-			throw new JsDelivrRemoteResource({ statusCode: error.statusCode, headers: error.headers, data: error.body }, error);
+			throw new JsDelivrRemoteResource({ statusCode: error.response?.statusCode, headers: error.response?.headers, data: error.response?.body }, error);
 		});
 	}
 }

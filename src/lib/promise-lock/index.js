@@ -1,4 +1,4 @@
-const LRU = require('lru-cache');
+const TTL = require('@isaacs/ttlcache');
 const pTimeout = require('p-timeout');
 const redis = require('../redis');
 const createRedisClient = require('../redis').createClient;
@@ -28,25 +28,14 @@ class PromiseLock {
 		this.prefix = prefix;
 		this.channel = channel;
 
-		this.messages = new LRU({ maxAge: 60 * 1000 });
-		this.pendingR = new LRU({});
-		this.pendingL = new LRU({});
+		this.messages = new TTL({ ttl: 60 * 1000 });
+		this.pendingR = new TTL({});
+		this.pendingL = new TTL({});
 		this.pubClient = createRedisClient();
 		this.subClient = createRedisClient();
 
 		this.subClient.on('message', (channel, message) => this.onMessage(channel, message));
 		this.subClient.on('ready', () => this.subClient.subscribe(this.channel));
-	}
-
-	autoClear () {
-		// istanbul ignore next
-		setInterval(() => {
-			this.messages.prune();
-			this.pendingR.prune();
-			this.pendingL.prune();
-		}, 60 * 1000);
-
-		return this;
 	}
 
 	/**
@@ -55,8 +44,8 @@ class PromiseLock {
 	 * @returns {Promise}
 	 */
 	async delete (key) {
-		this.pendingR.del(key);
-		this.pendingL.del(key);
+		this.pendingR.delete(key);
+		this.pendingL.delete(key);
 		return redis.delAsync(this.getRedisKey(key));
 	}
 
@@ -78,11 +67,11 @@ class PromiseLock {
 	 *
 	 * @param {string} key
 	 * @param {function} fn
-	 * @param {number} [maxAge]
+	 * @param {number} [ttl]
 	 * @param {boolean} [lockOnly] - if true the result is removed from cache shortly after fn() finishes
 	 * @returns {Promise<*>}
 	 */
-	async get (key, fn, maxAge = 10 * 60 * 1000, lockOnly = false) {
+	async get (key, fn, ttl = 10 * 60 * 1000, lockOnly = false) {
 		// This is just an optimization.
 		let value = this.pendingL.get(key);
 
@@ -91,7 +80,7 @@ class PromiseLock {
 		}
 
 		let idBeforeLock = lastMessageId;
-		let lock = await this.getLockOrValue(key, maxAge);
+		let lock = await this.getLockOrValue(key, ttl);
 
 		// Already running in another process.
 		if (lock !== null) {
@@ -137,17 +126,17 @@ class PromiseLock {
 					return;
 				}
 
-				this.pendingR.set(key, { resolve, reject }, maxAge);
-			}), maxAge);
+				this.pendingR.set(key, { resolve, reject }, { ttl });
+			}), ttl);
 
 			// Cache the promise to make sure we don't create multiple for the same key.
-			this.pendingL.set(key, value, maxAge);
+			this.pendingL.set(key, value, { ttl });
 
 			return value;
 		}
 
 		value = fn();
-		this.pendingL.set(key, value, maxAge);
+		this.pendingL.set(key, value, { ttl });
 
 		// Wrapped in Promise.resolve() to make sure it's a Bluebird promise because
 		// .finally() behaves differently with some promises.
@@ -206,8 +195,8 @@ class PromiseLock {
 			}
 
 			this.messages.set(message.k, Object.assign({ id: getNextMessageId() }, message));
-			this.pendingR.del(message.k);
-			this.pendingL.del(message.k);
+			this.pendingR.delete(message.k);
+			this.pendingL.delete(message.k);
 		}).catch(() => {});
 	}
 
@@ -300,7 +289,7 @@ class ScopedLock {
 		this.scope = scope;
 
 		if (typeof module.exports.promiseLock === 'undefined') {
-			module.exports.promiseLock = new PromiseLock().autoClear();
+			module.exports.promiseLock = new PromiseLock();
 		}
 	}
 
