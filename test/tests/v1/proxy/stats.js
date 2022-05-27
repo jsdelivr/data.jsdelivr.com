@@ -15,7 +15,7 @@ function makeProxyStatsTests () {
 		period: 'month',
 	};
 
-	makeEndpointTests('/v1/proxy/{name}/stats{?period}', defaults, [
-		{ name: 'wp-plugins', period: periodOptions },
+	makeEndpointTests('/v1/proxy/{name}/stats{?type,period}', defaults, [
+		{ name: 'wp-plugins', type: [ 'hits', 'bandwidth' ], period: periodOptions },
 	]);
 }

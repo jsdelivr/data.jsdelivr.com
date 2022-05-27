@@ -10,16 +10,9 @@ class ProxyRequest extends BaseRequest {
 		]);
 
 		this.ctx.body = {
-			hits: {
-				...periodStats.hits,
-				dates: dateRange.fill(dailyStats.hits, ...this.dateRange),
-				prev: periodStats.prev.hits,
-			},
-			bandwidth: {
-				...periodStats.bandwidth,
-				dates: dateRange.fill(dailyStats.bandwidth, ...this.dateRange),
-				prev: periodStats.prev.bandwidth,
-			},
+			...periodStats[this.query.type],
+			dates: dateRange.fill(dailyStats[this.query.type], ...this.dateRange),
+			prev: periodStats.prev[this.query.type],
 		};
 
 		this.setCacheHeader();
