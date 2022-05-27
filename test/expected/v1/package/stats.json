@@ -35,6 +35,11 @@
 			"2010-12-27": 0,
 			"2010-12-28": 0,
 			"2010-12-29": 0
+		},
+		"prev": {
+			"rank": null,
+			"typeRank": null,
+			"total": 0
 		}
 	},
 	"/v1/package/npm/package-0/stats?type=hits&period=month": {
@@ -73,6 +78,11 @@
 			"2010-12-27": 0,
 			"2010-12-28": 0,
 			"2010-12-29": 0
+		},
+		"prev": {
+			"rank": null,
+			"typeRank": null,
+			"total": 0
 		}
 	},
 	"/v1/package/npm/package-0@1.1.0/stats?type=bandwidth&period=month": {
@@ -309,6 +319,11 @@
 			"2010-12-27": 1378392,
 			"2010-12-28": 1378404,
 			"2010-12-29": 1378416
+		},
+		"prev": {
+			"rank": null,
+			"typeRank": null,
+			"total": 0
 		}
 	},
 	"/v1/package/npm/package-2/stats?type=bandwidth&period=day": {
@@ -318,6 +333,11 @@
 		"total": 1378416,
 		"dates": {
 			"2010-12-29": 1378416
+		},
+		"prev": {
+			"rank": 117,
+			"typeRank": 57,
+			"total": 1378404
 		}
 	},
 	"/v1/package/npm/package-2/stats?type=bandwidth&period=month": {
@@ -356,6 +376,11 @@
 			"2010-12-27": 1378392,
 			"2010-12-28": 1378404,
 			"2010-12-29": 1378416
+		},
+		"prev": {
+			"rank": 117,
+			"typeRank": 57,
+			"total": 41336460
 		}
 	},
 	"/v1/package/npm/package-2/stats?type=bandwidth&period=week": {
@@ -371,6 +396,11 @@
 			"2010-12-27": 1378392,
 			"2010-12-28": 1378404,
 			"2010-12-29": 1378416
+		},
+		"prev": {
+			"rank": 117,
+			"typeRank": 57,
+			"total": 9648072
 		}
 	},
 	"/v1/package/npm/package-2/stats?type=bandwidth&period=year": {
@@ -744,6 +774,11 @@
 			"2010-12-27": 1378392,
 			"2010-12-28": 1378404,
 			"2010-12-29": 1378416
+		},
+		"prev": {
+			"rank": null,
+			"typeRank": null,
+			"total": 0
 		}
 	},
 	"/v1/package/npm/package-2/stats?type=hits&period=all": {
@@ -821,6 +856,11 @@
 			"2010-12-27": 876,
 			"2010-12-28": 888,
 			"2010-12-29": 900
+		},
+		"prev": {
+			"rank": null,
+			"typeRank": null,
+			"total": 0
 		}
 	},
 	"/v1/package/npm/package-2/stats?type=hits&period=day": {
@@ -830,6 +870,11 @@
 		"total": 900,
 		"dates": {
 			"2010-12-29": 900
+		},
+		"prev": {
+			"rank": 117,
+			"typeRank": 57,
+			"total": 888
 		}
 	},
 	"/v1/package/npm/package-2/stats?type=hits&period=month": {
@@ -868,6 +913,11 @@
 			"2010-12-27": 876,
 			"2010-12-28": 888,
 			"2010-12-29": 900
+		},
+		"prev": {
+			"rank": 117,
+			"typeRank": 57,
+			"total": 10980
 		}
 	},
 	"/v1/package/npm/package-2/stats?type=hits&period=week": {
@@ -883,6 +933,11 @@
 			"2010-12-27": 876,
 			"2010-12-28": 888,
 			"2010-12-29": 900
+		},
+		"prev": {
+			"rank": 117,
+			"typeRank": 57,
+			"total": 5460
 		}
 	},
 	"/v1/package/npm/package-2/stats?type=hits&period=x": {
@@ -1261,6 +1316,11 @@
 			"2010-12-27": 876,
 			"2010-12-28": 888,
 			"2010-12-29": 900
+		},
+		"prev": {
+			"rank": null,
+			"typeRank": null,
+			"total": 0
 		}
 	},
 	"/v1/package/npm/package-2/stats?type=x&period=month": {
@@ -2292,7 +2352,12 @@
 		"rank": null,
 		"typeRank": null,
 		"total": 0,
-		"dates": {}
+		"dates": {},
+		"prev": {
+			"rank": null,
+			"typeRank": null,
+			"total": 0
+		}
 	},
 	"/v1/package/npm/package-x/stats?type=bandwidth&period=month": {
 		"date": "2010-12-31",
@@ -2330,6 +2395,11 @@
 			"2010-12-27": 0,
 			"2010-12-28": 0,
 			"2010-12-29": 0
+		},
+		"prev": {
+			"rank": null,
+			"typeRank": null,
+			"total": 0
 		}
 	},
 	"/v1/package/npm/package-x/stats?type=hits&period=all": {
@@ -2337,7 +2407,12 @@
 		"rank": null,
 		"typeRank": null,
 		"total": 0,
-		"dates": {}
+		"dates": {},
+		"prev": {
+			"rank": null,
+			"typeRank": null,
+			"total": 0
+		}
 	},
 	"/v1/package/npm/package-x/stats?type=hits&period=month": {
 		"date": "2010-12-31",
@@ -2375,6 +2450,11 @@
 			"2010-12-27": 0,
 			"2010-12-28": 0,
 			"2010-12-29": 0
+		},
+		"prev": {
+			"rank": null,
+			"typeRank": null,
+			"total": 0
 		}
 	},
 	"/v1/package/gh/user/package-59/stats?period=month": {
@@ -2457,6 +2537,11 @@
 			"2010-12-27": 117753320,
 			"2010-12-28": 117753340,
 			"2010-12-29": 117753360
+		},
+		"prev": {
+			"rank": null,
+			"typeRank": null,
+			"total": 0
 		}
 	},
 	"/v1/package/gh/user/package-59/stats?type=bandwidth&period=day": {
@@ -2466,6 +2551,11 @@
 		"total": 117753360,
 		"dates": {
 			"2010-12-29": 117753360
+		},
+		"prev": {
+			"rank": 0,
+			"typeRank": 0,
+			"total": 117753340
 		}
 	},
 	"/v1/package/gh/user/package-59/stats?type=bandwidth&period=month": {
@@ -2504,6 +2594,11 @@
 			"2010-12-27": 117753320,
 			"2010-12-28": 117753340,
 			"2010-12-29": 117753360
+		},
+		"prev": {
+			"rank": 0,
+			"typeRank": 0,
+			"total": 3532574100
 		}
 	},
 	"/v1/package/gh/user/package-59/stats?type=bandwidth&period=week": {
@@ -2519,6 +2614,11 @@
 			"2010-12-27": 117753320,
 			"2010-12-28": 117753340,
 			"2010-12-29": 117753360
+		},
+		"prev": {
+			"rank": 0,
+			"typeRank": 0,
+			"total": 824272120
 		}
 	},
 	"/v1/package/gh/user/package-59/stats?type=bandwidth&period=year": {
@@ -2892,6 +2992,11 @@
 			"2010-12-27": 117753320,
 			"2010-12-28": 117753340,
 			"2010-12-29": 117753360
+		},
+		"prev": {
+			"rank": null,
+			"typeRank": null,
+			"total": 0
 		}
 	},
 	"/v1/package/gh/user/package-59/stats?type=hits&period=all": {
@@ -2969,6 +3074,11 @@
 			"2010-12-27": 8500,
 			"2010-12-28": 8520,
 			"2010-12-29": 8540
+		},
+		"prev": {
+			"rank": null,
+			"typeRank": null,
+			"total": 0
 		}
 	},
 	"/v1/package/gh/user/package-59/stats?type=hits&period=day": {
@@ -2978,6 +3088,11 @@
 		"total": 8540,
 		"dates": {
 			"2010-12-29": 8540
+		},
+		"prev": {
+			"rank": 0,
+			"typeRank": 0,
+			"total": 8520
 		}
 	},
 	"/v1/package/gh/user/package-59/stats?type=hits&period=month": {
@@ -3016,6 +3131,11 @@
 			"2010-12-27": 8500,
 			"2010-12-28": 8520,
 			"2010-12-29": 8540
+		},
+		"prev": {
+			"rank": 0,
+			"typeRank": 0,
+			"total": 229500
 		}
 	},
 	"/v1/package/gh/user/package-59/stats?type=hits&period=week": {
@@ -3031,6 +3151,11 @@
 			"2010-12-27": 8500,
 			"2010-12-28": 8520,
 			"2010-12-29": 8540
+		},
+		"prev": {
+			"rank": 0,
+			"typeRank": 0,
+			"total": 58380
 		}
 	},
 	"/v1/package/gh/user/package-59/stats?type=hits&period=x": {
@@ -3409,6 +3534,11 @@
 			"2010-12-27": 8500,
 			"2010-12-28": 8520,
 			"2010-12-29": 8540
+		},
+		"prev": {
+			"rank": null,
+			"typeRank": null,
+			"total": 0
 		}
 	},
 	"/v1/package/gh/user/package-59/stats?type=x&period=month": {

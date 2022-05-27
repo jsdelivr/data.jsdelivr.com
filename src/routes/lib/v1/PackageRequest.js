@@ -280,8 +280,9 @@ class PackageRequest extends BaseRequest {
 		]);
 
 		this.ctx.body = {
-			...(await periodStats)[this.query.type],
+			...periodStats[this.query.type],
 			dates: dateRange.fill(dailyStats[this.query.type], ...this.dateRange),
+			prev: periodStats.prev[this.query.type],
 		};
 
 		this.setCacheHeader();
