@@ -33,6 +33,7 @@ class BaseRequest {
 			this.date = this.query.period.date;
 			this.period = this.query.period.period;
 			this.dateRange = dateRange(this.period, this.date);
+			this.prevDateRange = dateRange(this.period, relativeDayUtc(1, this.dateRange[0]));
 		}
 
 		// Enforce use of this.query which contains only validated params.

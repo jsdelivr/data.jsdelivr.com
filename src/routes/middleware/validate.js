@@ -27,7 +27,7 @@ module.exports = ({ body, params, query }) => {
 
 /**
  * @param {Joi.Schema} schema
- * @returns {Router.IParamMiddleware}
+ * @returns {Router.IParamMiddleware<any, {}>}
  */
 module.exports.param = (schema) => {
 	return async (value, ctx, next) => {

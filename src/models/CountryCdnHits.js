@@ -48,7 +48,7 @@ class CountryCdnHits extends BaseModel {
 		return new Proxy(this, BaseModel.ProxyHandler);
 	}
 
-	static async getDailyCountryStats (type, from, to) {
+	static async getProviderCountryStats (type, from, to) {
 		let sql = db(this.table);
 
 		if (from instanceof Date) {

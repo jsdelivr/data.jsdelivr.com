@@ -183,6 +183,7 @@ koaElasticUtils.addRoutes(router, [
 	[ '/proxy/:name/stats', '/proxy/:name/stats' ],
 ], validate({
 	query: Joi.object({
+		type: schema.typeRequired,
 		period: schema.period,
 	}),
 }), async (ctx) => {

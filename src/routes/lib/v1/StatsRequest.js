@@ -15,9 +15,21 @@ class StatsRequest extends BaseRequest {
 	}
 
 	async handleNetworkInternal () {
-		let { hits: fileHits, bandwidth: fileBandwidth } = await PackageHits.getSumPerDate(...this.dateRange);
-		let { hits: proxyHits, bandwidth: proxyBandwidth } = await ProxyHits.getSumPerDate(...this.dateRange);
-		let { hits: otherHits, bandwidth: otherBandwidth } = await OtherHits.getSumPerDate(...this.dateRange);
+		let [
+			{ hits: fileHits, bandwidth: fileBandwidth },
+			{ hits: proxyHits, bandwidth: proxyBandwidth },
+			{ hits: otherHits, bandwidth: otherBandwidth },
+			{ hits: prevFileHits, bandwidth: prevFileBandwidth },
+			{ hits: prevProxyHits, bandwidth: prevProxyBandwidth },
+			{ hits: prevOtherHits, bandwidth: prevOtherBandwidth },
+		] = await Promise.all([
+			PackageHits.getSumPerDate(...this.dateRange),
+			ProxyHits.getSumPerDate(...this.dateRange),
+			OtherHits.getSumPerDate(...this.dateRange),
+			PackageHits.getSumPerDate(...this.prevDateRange),
+			ProxyHits.getSumPerDate(...this.prevDateRange),
+			OtherHits.getSumPerDate(...this.prevDateRange),
+		]);
 
 		let sumFileHits = sumDeep(fileHits);
 		let sumProxyHits = sumDeep(proxyHits);
@@ -26,36 +38,51 @@ class StatsRequest extends BaseRequest {
 		let sumProxyBandwidth = sumDeep(proxyBandwidth);
 		let sumOtherBandwidth = sumDeep(otherBandwidth);
 
+		let sumPrevFileHits = sumDeep(prevFileHits);
+		let sumPrevProxyHits = sumDeep(prevProxyHits);
+		let sumPrevOtherHits = sumDeep(prevOtherHits);
+		let sumPrevFileBandwidth = sumDeep(prevFileBandwidth);
+		let sumPrevProxyBandwidth = sumDeep(prevProxyBandwidth);
+		let sumPrevOtherBandwidth = sumDeep(prevOtherBandwidth);
+
 		let result = {
 			hits: {
 				total: sumFileHits + sumProxyHits + sumOtherHits,
 				packages: {
 					total: sumFileHits,
 					dates: dateRange.fill(fileHits, ...this.dateRange),
+					prev: { total: sumPrevFileHits },
 				},
 				proxies: {
 					total: sumProxyHits,
 					dates: dateRange.fill(proxyHits, ...this.dateRange),
+					prev: { total: sumPrevProxyHits },
 				},
 				other: {
 					total: sumOtherHits,
 					dates: dateRange.fill(otherHits, ...this.dateRange),
+					prev: { total: sumPrevOtherHits },
 				},
+				prev: { total: sumPrevFileHits + sumPrevProxyHits + sumPrevOtherHits },
 			},
 			bandwidth: {
 				total: sumFileBandwidth + sumProxyBandwidth + sumOtherBandwidth,
 				packages: {
 					total: sumFileBandwidth,
 					dates: dateRange.fill(fileBandwidth, ...this.dateRange),
+					prev: { total: sumPrevFileBandwidth },
 				},
 				proxies: {
 					total: sumProxyBandwidth,
 					dates: dateRange.fill(proxyBandwidth, ...this.dateRange),
+					prev: { total: sumPrevProxyBandwidth },
 				},
 				other: {
 					total: sumOtherBandwidth,
 					dates: dateRange.fill(otherBandwidth, ...this.dateRange),
+					prev: { total: sumPrevOtherBandwidth },
 				},
+				prev: { total: sumPrevFileBandwidth + sumPrevProxyBandwidth + sumPrevOtherBandwidth },
 			},
 			meta: await Logs.getMetaStats(...this.dateRange),
 		};
@@ -78,7 +105,7 @@ class StatsRequest extends BaseRequest {
 
 	async handleCountries () {
 		let [ dailyStats, periodStats ] = await Promise.all([
-			CountryCdnHits.getDailyCountryStats(this.query.type, ...this.dateRange),
+			CountryCdnHits.getProviderCountryStats(this.query.type, ...this.dateRange),
 			CountryCdnHits.getCountryStatsForPeriod(this.period, this.date),
 		]);
 
