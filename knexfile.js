@@ -12,7 +12,7 @@ module.exports = _.merge(...[ 'development', 'production', 'staging', 'test' ].m
 				multipleStatements: true,
 			}, dbConfig.connection),
 			pool: {
-				min: 2,
+				min: 0,
 				max: 40,
 				propagateCreateError: false,
 				afterCreate (connection, callback) {
