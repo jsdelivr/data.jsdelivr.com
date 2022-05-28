@@ -200,8 +200,8 @@ ${dateVarsForPeriod(days, period)}
 		delete from view_network_cdns where \`period\` = '${period}' and\`date\` < @dateTo;
 
 		insert into view_network_cdns
-			(period, location, date, cdn, hits, bandwidth, prevHits, prevBandwidth)
-		select '${period}', '', aDate, cdn,
+			(period, locationType, locationId, date, cdn, hits, bandwidth, prevHits, prevBandwidth)
+		select '${period}', 'global', '', aDate, cdn,
 			hits, bandwidth,
 			coalesce(prevHits, 0), coalesce(prevBandwidth, 0)
 		from (
@@ -217,8 +217,8 @@ ${dateVarsForPeriod(days, period)}
 		) t;
 
 		insert into view_network_cdns
-			(period, location, date, cdn, hits, bandwidth, prevHits, prevBandwidth)
-		select '${period}', concat('continent:', continentCode), aDate, cdn,
+			(period, locationType, locationId, date, cdn, hits, bandwidth, prevHits, prevBandwidth)
+		select '${period}', 'continent', continentCode, aDate, cdn,
 			hits, bandwidth,
 			coalesce(prevHits, 0), coalesce(prevBandwidth, 0)
 		from (
@@ -244,8 +244,8 @@ ${dateVarsForPeriod(days, period)}
 		) t;
 
 		insert into view_network_cdns
-			(period, location, date, cdn, hits, bandwidth, prevHits, prevBandwidth)
-		select '${period}', concat('country:', countryIso), aDate, cdn,
+			(period, locationType, locationId, date, cdn, hits, bandwidth, prevHits, prevBandwidth)
+		select '${period}', 'country', countryIso, aDate, cdn,
 			hits, bandwidth,
 			coalesce(prevHits, 0), coalesce(prevBandwidth, 0)
 		from (

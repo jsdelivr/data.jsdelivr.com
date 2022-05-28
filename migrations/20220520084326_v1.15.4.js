@@ -1,6 +1,7 @@
 const _ = require('lodash');
 const { continents, countries } = require('countries-list');
 const updateSharedObjects = require('./shared/updateSharedObjects');
+const locationTypes = [ 'continent', 'country', 'global' ];
 
 const periods = [
 	'day', 'week', 'month', 'year', 'all',
@@ -21,21 +22,22 @@ exports.up = async (db) => {
 
 	await db.schema.createTable('country', (table) => {
 		table.string('iso', 2).primary();
-		table.string('continentCode').references('code').inTable('continent');
+		table.string('continentCode', 2).references('code').inTable('continent');
 	});
 
 	await db('country').insert(_.map(countries, (value, iso) => ({ iso, continentCode: value.continent })));
 
 	await db.schema.createTable(`view_network_cdns`, (table) => {
 		table.enum('period', periods);
-		table.string('location');
 		table.date('date');
+		table.enum('locationType', locationTypes);
+		table.string('locationId', 2);
 		table.string('cdn');
 		table.bigInteger('hits').unsigned().defaultTo(0).notNullable();
 		table.bigInteger('bandwidth').unsigned().defaultTo(0).notNullable();
 		table.bigInteger('prevHits').unsigned().defaultTo(0).notNullable();
 		table.bigInteger('prevBandwidth').unsigned().defaultTo(0).notNullable();
-		table.primary([ 'period', 'location', 'date', 'cdn' ]);
+		table.primary([ 'period', 'date', 'locationType', 'locationId', 'cdn' ]);
 	});
 
 	await updateSharedObjects(db);

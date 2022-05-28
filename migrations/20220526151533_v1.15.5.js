@@ -9,7 +9,7 @@ exports.up = async (db) => {
 	await db.schema.createTable(`view_network_countries`, (table) => {
 		table.enum('period', periods);
 		table.date('date');
-		table.string('countryIso');
+		table.string('countryIso', 2);
 		table.bigInteger('hits').unsigned().defaultTo(0).notNullable();
 		table.bigInteger('bandwidth').unsigned().defaultTo(0).notNullable();
 		table.bigInteger('prevHits').unsigned().defaultTo(0).notNullable();

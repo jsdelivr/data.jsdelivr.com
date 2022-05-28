@@ -19,14 +19,14 @@ class BaseRequest {
 		ctx.type = 'json';
 
 		if (this.query.country) {
-			this.locationFilter = { countryIso: this.query.country };
-			this.locationString = `country:${this.query.country}`;
+			this.simpleLocationFilter = { countryIso: this.query.country };
+			this.composedLocationFilter = { locationType: 'country', locationId: this.query.country };
 		} else if (this.query.continent) {
-			this.locationFilter = { continentCode: this.query.continent };
-			this.locationString = `continent:${this.query.continent}`;
+			this.simpleLocationFilter = { continentCode: this.query.continent };
+			this.composedLocationFilter = { locationType: 'continent', locationId: this.query.continent };
 		} else {
-			this.locationFilter = {};
-			this.locationString = '';
+			this.simpleLocationFilter = {};
+			this.composedLocationFilter = { locationType: 'global' };
 		}
 
 		if (typeof this.query.period === 'object') {

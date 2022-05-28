@@ -69,10 +69,10 @@ class CountryCdnHits extends BaseModel {
 		});
 	}
 
-	static async getDailyProvidersStatsForLocation (type, locationFilter, from, to) {
+	static async getDailyProvidersStatsForLocation (type, simpleLocationFilter, from, to) {
 		let sql = db(this.table)
 			.join(Country.table, `${this.table}.countryIso`, '=', `${Country.table}.iso`)
-			.where(locationFilter);
+			.where(simpleLocationFilter);
 
 		if (from instanceof Date) {
 			sql.where(`${this.table}.date`, '>=', from);
@@ -120,9 +120,10 @@ class CountryCdnHits extends BaseModel {
 		}));
 	}
 
-	static async getProvidersStatsForPeriodAndLocation (period, locationString, date) {
+	static async getProvidersStatsForPeriodAndLocation (period, composedLocationFilter, date) {
 		let periodStats = await db(NetworkCdn.table)
-			.where({ location: locationString, period, date })
+			.where({ period, date })
+			.where(composedLocationFilter)
 			.select();
 
 		return _.fromPairs(periodStats.map((provider) => {
