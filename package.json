@@ -108,7 +108,8 @@
 		"test": "npm run lint && npm run mocha",
 		"test:prune": "cross-env PRUNE_OLD_SNAPSHOTS=1 mocha",
 		"test:snapshot": "cross-env SNAPSHOT_RESPONSES=1 mocha",
-		"test:update": "cross-env UPDATE_EXISTING_SNAPSHOTS=1 mocha"
+		"test:update": "cross-env UPDATE_EXISTING_SNAPSHOTS=1 PRUNE_OLD_SNAPSHOTS=1 mocha",
+		"test:updateNoPrune": "cross-env UPDATE_EXISTING_SNAPSHOTS=1 mocha"
 	},
 	"repository": {
 		"type": "git",
