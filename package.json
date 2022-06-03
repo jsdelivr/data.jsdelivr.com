@@ -91,6 +91,7 @@
 		"eslint-plugin-promise": "^6.0.0",
 		"expect-assert": "github:MartinKolarik/expect-assert",
 		"i18n-iso-countries": "^7.4.0",
+		"lint-staged": "^13.0.0",
 		"mocha": "^10.0.0",
 		"nock": "^13.1.4",
 		"nyc": "^15.1.0",
@@ -100,7 +101,7 @@
 	"scripts": {
 		"coverage": "nyc mocha --exit test/tests.js",
 		"knex": "knex",
-		"lint": "eslint bin config migrations seeds src test *.js .*.js",
+		"lint": "eslint --cache bin config migrations seeds src test *.js .*.js",
 		"lint:fix": "npm run lint -- --fix",
 		"migrate": "knex migrate:latest",
 		"mocha": "mocha",
@@ -110,6 +111,9 @@
 		"test:snapshot": "cross-env SNAPSHOT_RESPONSES=1 mocha",
 		"test:update": "cross-env UPDATE_EXISTING_SNAPSHOTS=1 PRUNE_OLD_SNAPSHOTS=1 mocha",
 		"test:updateNoPrune": "cross-env UPDATE_EXISTING_SNAPSHOTS=1 mocha"
+	},
+	"lint-staged": {
+		"*.js": "eslint --cache --fix"
 	},
 	"repository": {
 		"type": "git",

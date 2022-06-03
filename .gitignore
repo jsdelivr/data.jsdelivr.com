@@ -1,7 +1,8 @@
 .local/
 .docker/mysql/data
 .nyc_output/
-.DS_Store
 coverage/
 node_modules/
 config/local*
+.DS_Store
+.eslintcache
