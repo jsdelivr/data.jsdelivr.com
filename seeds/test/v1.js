@@ -4,7 +4,7 @@ const Bluebird = require('bluebird');
 const relativeDateUtc = require('relative-day-utc');
 const { listTables } = require('../../src/lib/db/utils');
 const entrypointTestCases = require('../../test/data/v1/entrypoints.json');
-const countries = Object.keys(require('i18n-iso-countries').getAlpha2Codes());
+const countries = Object.keys(require('countries-list').countries);
 const providers = [ 'CF', 'FY', 'GC', 'QT' ];
 
 const PACKAGE_TYPES = [ 'npm', 'gh' ];
