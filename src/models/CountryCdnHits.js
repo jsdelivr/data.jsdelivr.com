@@ -120,7 +120,7 @@ class CountryCdnHits extends BaseModel {
 		}));
 	}
 
-	static async getProvidersStatsForPeriodAndLocation (period, composedLocationFilter, date) {
+	static async getProvidersStatsForPeriodAndLocation (period, date, composedLocationFilter) {
 		let periodStats = await db(NetworkCdn.table)
 			.where({ period, date })
 			.where(composedLocationFilter)

@@ -60,12 +60,29 @@ const primitives = {
 			'*': '{{#label}} must be one of [day, week, month, year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM]',
 		}).default(() => dateRange.parseFloatingPeriod('month')),
 
+	periodStatic:
+		Joi.custom((value, helpers) => {
+			if (dateRange.isStaticPeriod(value)) {
+				let result = dateRange.parseStaticPeriod(value);
+
+				if (!result) {
+					return helpers.error('any.invalid');
+				}
+
+				return result;
+			}
+
+			return helpers.error('any.invalid');
+		}).messages({
+			'*': '{{#label}} must be a valid date in one of the following ISO formats [YYYY, YYYY-MM]',
+		}).required(),
+
 	type:
 		Joi.valid('hits', 'bandwidth'),
 };
 
 const composedTypes = {
-	paginatedStats: { limit: primitives.limit, page: primitives.page, period: primitives.period },
+	paginatedStats: { limit: primitives.limit, page: primitives.page },
 	typeRequired: primitives.type.required(),
 };
 

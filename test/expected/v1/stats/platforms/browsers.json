@@ -1,0 +1,118 @@
+{
+	"/v1/stats/platforms/platform%2019/browsers?continent=EU&country=PL": {
+		"date": "2010-12-31",
+		"status": 400,
+		"message": "Invalid parameter value: `period` must be a valid date in one of the following ISO formats [YYYY, YYYY-MM], object contains a conflict between optional exclusive peers [continent, country]."
+	},
+	"/v1/stats/platforms/platform%2019/browsers?continent=EU&period=2020": [
+		{
+			"browser": "browser 39",
+			"share": 7.39,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"browser": "browser 38",
+			"share": 7.07,
+			"prev": {
+				"share": null
+			}
+		}
+	],
+	"/v1/stats/platforms/platform%2019/browsers?continent=EU&period=2020-04": [
+		{
+			"browser": "browser 39",
+			"share": 7.62,
+			"prev": {
+				"share": 4.97
+			}
+		},
+		{
+			"browser": "browser 38",
+			"share": 7.28,
+			"prev": {
+				"share": 4.86
+			}
+		}
+	],
+	"/v1/stats/platforms/platform%2019/browsers?continent=X": {
+		"date": "2010-12-31",
+		"status": 400,
+		"message": "Invalid parameter value: `period` must be a valid date in one of the following ISO formats [YYYY, YYYY-MM], `continent` must be a valid continent code in uppercase."
+	},
+	"/v1/stats/platforms/platform%2019/browsers?country=PL&period=2020": [
+		{
+			"browser": "browser 39",
+			"share": 7.39,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"browser": "browser 38",
+			"share": 7.07,
+			"prev": {
+				"share": null
+			}
+		}
+	],
+	"/v1/stats/platforms/platform%2019/browsers?country=PL&period=2020-04": [
+		{
+			"browser": "browser 39",
+			"share": 7.62,
+			"prev": {
+				"share": 4.97
+			}
+		},
+		{
+			"browser": "browser 38",
+			"share": 7.28,
+			"prev": {
+				"share": 4.86
+			}
+		}
+	],
+	"/v1/stats/platforms/platform%2019/browsers?country=X": {
+		"date": "2010-12-31",
+		"status": 400,
+		"message": "Invalid parameter value: `period` must be a valid date in one of the following ISO formats [YYYY, YYYY-MM], `country` must be a valid ISO 3166-1 alpha-2 country code in uppercase."
+	},
+	"/v1/stats/platforms/platform%2019/browsers?period=2020": [
+		{
+			"browser": "browser 39",
+			"share": 7.39,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"browser": "browser 38",
+			"share": 7.07,
+			"prev": {
+				"share": null
+			}
+		}
+	],
+	"/v1/stats/platforms/platform%2019/browsers?period=2020-04": [
+		{
+			"browser": "browser 39",
+			"share": 7.62,
+			"prev": {
+				"share": 4.97
+			}
+		},
+		{
+			"browser": "browser 38",
+			"share": 7.28,
+			"prev": {
+				"share": 4.86
+			}
+		}
+	],
+	"/v1/stats/platforms/platform%2019/browsers?period=month": {
+		"date": "2010-12-31",
+		"status": 400,
+		"message": "Invalid parameter value: `period` must be a valid date in one of the following ISO formats [YYYY, YYYY-MM]."
+	}
+}

@@ -26,7 +26,7 @@ class BaseRequest {
 			this.composedLocationFilter = { locationType: 'continent', locationId: this.query.continent };
 		} else {
 			this.simpleLocationFilter = {};
-			this.composedLocationFilter = { locationType: 'global' };
+			this.composedLocationFilter = { locationType: 'global', locationId: '' };
 		}
 
 		if (typeof this.query.period === 'object') {

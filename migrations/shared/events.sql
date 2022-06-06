@@ -60,6 +60,9 @@ create event update_daily_data
 				end if;
 			end if;
 
+			call updateMonthlyViews(utc_date());
+			call updateYearlyViews(utc_date());
+
 			select release_lock('update_daily_data');
 		end if;
 	end;

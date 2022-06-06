@@ -23,18 +23,14 @@ function getUriWithValues (template, values, defaults) {
 	return urlTemplate.parse(template).expand(defaults ? _.defaults(values, defaults) : values);
 }
 
-function makeEndpointTest (uriTemplate, defaults, values, { status = 200 } = {}, note) {
-	let getUri = full => getUriWithValues(uriTemplate, values, full);
+function makeEndpointAssertion (uriTemplate, defaults, { params, assert }, { note, status = 200 } = {}) {
+	let getUri = d => getUriWithValues(uriTemplate, params, d);
 
 	it(`GET ${getUri()}${note ? ` - ${note}` : ''}`, () => {
 		return chai.request(server)
 			.get(getUri())
 			.then((response) => {
-				expect(response).to.matchSnapshot(getUri(defaults));
-
-				if (values.period) {
-					validateResponseForPeriod(response.body, values.period);
-				}
+				assert(response, getUri(defaults));
 
 				expect(response).to.have.status(status);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
@@ -51,19 +47,38 @@ function makeEndpointTest (uriTemplate, defaults, values, { status = 200 } = {},
 	});
 }
 
-function makeEndpointTests (uriTemplate, defaults, testTemplates, options, note) {
+function makeEndpointAssertions (uriTemplate, defaults, testCases, options) {
+	for (let testCase of testCases) {
+		makeEndpointAssertion(uriTemplate, defaults, testCase, options);
+	}
+}
+
+function makeEndpointSnapshotTest (uriTemplate, defaults, params, options) {
+	makeEndpointAssertion(uriTemplate, defaults, {
+		params,
+		assert: (response, uri) => {
+			expect(response).to.matchSnapshot(uri);
+
+			if (params.period) {
+				validateResponseForPeriod(response.body, params.period);
+			}
+		},
+	}, options);
+}
+
+function makeEndpointSnapshotTests (uriTemplate, defaults, testTemplates, options) {
 	for (let testTemplate of testTemplates) {
 		let templateKeys = Object.keys(testTemplate);
 		let templateValues = Object.values(testTemplate).map(item => Array.isArray(item) ? item : [ item ]);
 		let testCases = cartesian(...templateValues).map(test => _.zipObject(templateKeys, test));
 
 		for (let testValues of testCases) {
-			makeEndpointTest(uriTemplate, defaults, testValues, options, note);
+			makeEndpointSnapshotTest(uriTemplate, defaults, testValues, options);
 		}
 	}
 }
 
-function makePaginationTests (uri, params) {
+function makeEndpointPaginationTests (uri, params = {}) {
 	describe(`GET ${uri} - pagination`, () => {
 		let first10;
 
@@ -146,8 +161,9 @@ function validateResponseForPeriod (object, period) {
 }
 
 module.exports = {
-	makeEndpointTests,
-	makePaginationTests,
+	makeEndpointAssertions,
+	makeEndpointSnapshotTests,
+	makeEndpointPaginationTests,
 	setupSnapshots (file) {
 		chaiSnapshotInstance.setCurrentFile(path.join(
 			__dirname,

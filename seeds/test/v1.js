@@ -8,6 +8,7 @@ const countries = Object.keys(require('countries-list').countries);
 const providers = [ 'CF', 'FY', 'GC', 'QT' ];
 
 const PACKAGE_TYPES = [ 'npm', 'gh' ];
+const STATIC_MONTHS = [ '2020-02-01', '2020-03-01', '2020-04-01' ];
 const STATS_START_TIMESTAMP = relativeDateUtc(-70).valueOf();
 
 exports.seed = async (db) => {
@@ -99,6 +100,50 @@ exports.seed = async (db) => {
 					date: new Date(STATS_START_TIMESTAMP + (i * 86400000)),
 					hits: index * i,
 					bandwidth: index * i * 16 * 1025,
+				};
+			});
+		}));
+	})));
+
+	await db('browser').insert(_.range(0, 40).map(i => ({ name: `browser ${i}` })));
+
+	await db('browser_version').insert(_.flatten(_.range(1, 41).map((browserId) => {
+		return _.range(0, 3).map(i => ({ browserId, version: i }));
+	})));
+
+	await db('platform').insert(_.range(0, 20).map(i => ({ name: `platform ${i}` })));
+
+	await db('platform_version').insert(_.flatten(_.range(1, 21).map((platformId) => {
+		return _.range(0, 3).map(i => ({ platformId, version: i, versionName: i === 2 ? `version ${i}` : null }));
+	})));
+
+	await db('country_browser_version_hits').insert(_.flatten(countries.map((countryIso, countryIndex) => {
+		return _.flatten(_.range(1, 121).map((browserVersionId) => {
+			return STATIC_MONTHS.slice(0, browserVersionId < 43 ? -1 : undefined).map((month, mIndex) => {
+				let platformIndex = Math.floor((browserVersionId - 1) / 6);
+				let platformVersionIndex = Math.floor((browserVersionId - 1) / 2);
+
+				return {
+					browserVersionId,
+					platformId: platformIndex + 1,
+					countryIso,
+					date: new Date(month),
+					hits: countryIndex * platformVersionIndex * ((mIndex % 2 || platformVersionIndex) + 1),
+					bandwidth: countryIndex * platformVersionIndex * ((mIndex % 2 || platformVersionIndex) + 1) * 16 * 1025,
+				};
+			});
+		}));
+	})));
+
+	await db('country_platform_version_hits').insert(_.flatten(countries.map((countryIso, countryIndex) => {
+		return _.flatten(_.range(1, 61).map((platformVersionId, platformVersionIndex) => {
+			return STATIC_MONTHS.slice(0, platformVersionId < 22 ? -1 : undefined).map((month, mIndex) => {
+				return {
+					platformVersionId,
+					countryIso,
+					date: new Date(month),
+					hits: 2 * countryIndex * platformVersionIndex * ((mIndex % 2 || platformVersionIndex) + 1),
+					bandwidth: 2 * countryIndex * platformVersionIndex * ((mIndex % 2 || platformVersionIndex) + 1) * 16 * 1025,
 				};
 			});
 		}));

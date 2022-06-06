@@ -1,0 +1,727 @@
+{
+	"/v1/stats/platforms?continent=EU&country=PL": {
+		"date": "2010-12-31",
+		"status": 400,
+		"message": "Invalid parameter value: `period` must be a valid date in one of the following ISO formats [YYYY, YYYY-MM], object contains a conflict between optional exclusive peers [continent, country]."
+	},
+	"/v1/stats/platforms?continent=EU&period=2020": [
+		{
+			"name": "platform 19",
+			"share": 14.46,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 18",
+			"share": 13.03,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 17",
+			"share": 11.67,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 16",
+			"share": 10.38,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 15",
+			"share": 9.18,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 14",
+			"share": 8.04,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 13",
+			"share": 6.98,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 12",
+			"share": 6,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 11",
+			"share": 5.09,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 10",
+			"share": 4.25,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 9",
+			"share": 3.49,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 8",
+			"share": 2.81,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 7",
+			"share": 2.2,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 6",
+			"share": 0.87,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 5",
+			"share": 0.63,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 4",
+			"share": 0.43,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 3",
+			"share": 0.27,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 2",
+			"share": 0.15,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 1",
+			"share": 0.06,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 0",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			}
+		}
+	],
+	"/v1/stats/platforms?continent=EU&period=2020-04": [
+		{
+			"name": "platform 19",
+			"share": 14.9,
+			"prev": {
+				"share": 9.83
+			}
+		},
+		{
+			"name": "platform 18",
+			"share": 13.41,
+			"prev": {
+				"share": 9.32
+			}
+		},
+		{
+			"name": "platform 17",
+			"share": 12,
+			"prev": {
+				"share": 8.81
+			}
+		},
+		{
+			"name": "platform 16",
+			"share": 10.67,
+			"prev": {
+				"share": 8.31
+			}
+		},
+		{
+			"name": "platform 15",
+			"share": 9.42,
+			"prev": {
+				"share": 7.8
+			}
+		},
+		{
+			"name": "platform 14",
+			"share": 8.24,
+			"prev": {
+				"share": 7.29
+			}
+		},
+		{
+			"name": "platform 13",
+			"share": 7.14,
+			"prev": {
+				"share": 6.78
+			}
+		},
+		{
+			"name": "platform 12",
+			"share": 6.12,
+			"prev": {
+				"share": 6.27
+			}
+		},
+		{
+			"name": "platform 11",
+			"share": 5.18,
+			"prev": {
+				"share": 5.76
+			}
+		},
+		{
+			"name": "platform 10",
+			"share": 4.32,
+			"prev": {
+				"share": 5.25
+			}
+		},
+		{
+			"name": "platform 9",
+			"share": 3.54,
+			"prev": {
+				"share": 4.75
+			}
+		},
+		{
+			"name": "platform 8",
+			"share": 2.83,
+			"prev": {
+				"share": 4.24
+			}
+		},
+		{
+			"name": "platform 7",
+			"share": 2.21,
+			"prev": {
+				"share": 3.73
+			}
+		}
+	],
+	"/v1/stats/platforms?continent=X": {
+		"date": "2010-12-31",
+		"status": 400,
+		"message": "Invalid parameter value: `period` must be a valid date in one of the following ISO formats [YYYY, YYYY-MM], `continent` must be a valid continent code in uppercase."
+	},
+	"/v1/stats/platforms?country=PL&period=2020": [
+		{
+			"name": "platform 19",
+			"share": 14.46,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 18",
+			"share": 13.03,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 17",
+			"share": 11.67,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 16",
+			"share": 10.38,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 15",
+			"share": 9.18,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 14",
+			"share": 8.04,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 13",
+			"share": 6.98,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 12",
+			"share": 6,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 11",
+			"share": 5.09,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 10",
+			"share": 4.25,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 9",
+			"share": 3.49,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 8",
+			"share": 2.81,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 7",
+			"share": 2.2,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 6",
+			"share": 0.87,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 5",
+			"share": 0.63,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 4",
+			"share": 0.43,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 3",
+			"share": 0.27,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 2",
+			"share": 0.15,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 1",
+			"share": 0.06,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 0",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			}
+		}
+	],
+	"/v1/stats/platforms?country=PL&period=2020-04": [
+		{
+			"name": "platform 19",
+			"share": 14.9,
+			"prev": {
+				"share": 9.83
+			}
+		},
+		{
+			"name": "platform 18",
+			"share": 13.41,
+			"prev": {
+				"share": 9.32
+			}
+		},
+		{
+			"name": "platform 17",
+			"share": 12,
+			"prev": {
+				"share": 8.81
+			}
+		},
+		{
+			"name": "platform 16",
+			"share": 10.67,
+			"prev": {
+				"share": 8.31
+			}
+		},
+		{
+			"name": "platform 15",
+			"share": 9.42,
+			"prev": {
+				"share": 7.8
+			}
+		},
+		{
+			"name": "platform 14",
+			"share": 8.24,
+			"prev": {
+				"share": 7.29
+			}
+		},
+		{
+			"name": "platform 13",
+			"share": 7.14,
+			"prev": {
+				"share": 6.78
+			}
+		},
+		{
+			"name": "platform 12",
+			"share": 6.12,
+			"prev": {
+				"share": 6.27
+			}
+		},
+		{
+			"name": "platform 11",
+			"share": 5.18,
+			"prev": {
+				"share": 5.76
+			}
+		},
+		{
+			"name": "platform 10",
+			"share": 4.32,
+			"prev": {
+				"share": 5.25
+			}
+		},
+		{
+			"name": "platform 9",
+			"share": 3.54,
+			"prev": {
+				"share": 4.75
+			}
+		},
+		{
+			"name": "platform 8",
+			"share": 2.83,
+			"prev": {
+				"share": 4.24
+			}
+		},
+		{
+			"name": "platform 7",
+			"share": 2.21,
+			"prev": {
+				"share": 3.73
+			}
+		}
+	],
+	"/v1/stats/platforms?country=X": {
+		"date": "2010-12-31",
+		"status": 400,
+		"message": "Invalid parameter value: `period` must be a valid date in one of the following ISO formats [YYYY, YYYY-MM], `country` must be a valid ISO 3166-1 alpha-2 country code in uppercase."
+	},
+	"/v1/stats/platforms?period=2020": [
+		{
+			"name": "platform 19",
+			"share": 14.46,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 18",
+			"share": 13.03,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 17",
+			"share": 11.67,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 16",
+			"share": 10.38,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 15",
+			"share": 9.18,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 14",
+			"share": 8.04,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 13",
+			"share": 6.98,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 12",
+			"share": 6,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 11",
+			"share": 5.09,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 10",
+			"share": 4.25,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 9",
+			"share": 3.49,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 8",
+			"share": 2.81,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 7",
+			"share": 2.2,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 6",
+			"share": 0.87,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 5",
+			"share": 0.63,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 4",
+			"share": 0.43,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 3",
+			"share": 0.27,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 2",
+			"share": 0.15,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 1",
+			"share": 0.06,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 0",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			}
+		}
+	],
+	"/v1/stats/platforms?period=2020-04": [
+		{
+			"name": "platform 19",
+			"share": 14.9,
+			"prev": {
+				"share": 9.83
+			}
+		},
+		{
+			"name": "platform 18",
+			"share": 13.41,
+			"prev": {
+				"share": 9.32
+			}
+		},
+		{
+			"name": "platform 17",
+			"share": 12,
+			"prev": {
+				"share": 8.81
+			}
+		},
+		{
+			"name": "platform 16",
+			"share": 10.67,
+			"prev": {
+				"share": 8.31
+			}
+		},
+		{
+			"name": "platform 15",
+			"share": 9.42,
+			"prev": {
+				"share": 7.8
+			}
+		},
+		{
+			"name": "platform 14",
+			"share": 8.24,
+			"prev": {
+				"share": 7.29
+			}
+		},
+		{
+			"name": "platform 13",
+			"share": 7.14,
+			"prev": {
+				"share": 6.78
+			}
+		},
+		{
+			"name": "platform 12",
+			"share": 6.12,
+			"prev": {
+				"share": 6.27
+			}
+		},
+		{
+			"name": "platform 11",
+			"share": 5.18,
+			"prev": {
+				"share": 5.76
+			}
+		},
+		{
+			"name": "platform 10",
+			"share": 4.32,
+			"prev": {
+				"share": 5.25
+			}
+		},
+		{
+			"name": "platform 9",
+			"share": 3.54,
+			"prev": {
+				"share": 4.75
+			}
+		},
+		{
+			"name": "platform 8",
+			"share": 2.83,
+			"prev": {
+				"share": 4.24
+			}
+		},
+		{
+			"name": "platform 7",
+			"share": 2.21,
+			"prev": {
+				"share": 3.73
+			}
+		}
+	],
+	"/v1/stats/platforms?period=month": {
+		"date": "2010-12-31",
+		"status": 400,
+		"message": "Invalid parameter value: `period` must be a valid date in one of the following ISO formats [YYYY, YYYY-MM]."
+	}
+}

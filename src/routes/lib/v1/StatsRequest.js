@@ -1,12 +1,15 @@
 const BaseRequest = require('./BaseRequest');
+
 const Package = require('../../../models/Package');
+const CountryCdnHits = require('../../../models/CountryCdnHits');
 const PackageHits = require('../../../models/PackageHits');
 const ProxyHits = require('../../../models/ProxyHits');
 const OtherHits = require('../../../models/OtherHits');
+const Platform = require('../../../models/Platform');
 const Logs = require('../../../models/Logs');
+
 const dateRange = require('../../utils/dateRange');
 const sumDeep = require('../../utils/sumDeep');
-const CountryCdnHits = require('../../../models/CountryCdnHits');
 
 class StatsRequest extends BaseRequest {
 	async handleNetwork () {
@@ -129,7 +132,7 @@ class StatsRequest extends BaseRequest {
 	async handleProviders () {
 		let [ dailyStats, periodStats ] = await Promise.all([
 			CountryCdnHits.getDailyProvidersStatsForLocation(this.query.type, this.simpleLocationFilter, ...this.dateRange),
-			CountryCdnHits.getProvidersStatsForPeriodAndLocation(this.period, this.composedLocationFilter, this.date),
+			CountryCdnHits.getProvidersStatsForPeriodAndLocation(this.period, this.date, this.composedLocationFilter),
 		]);
 
 		this.ctx.body = _.mapValues(dailyStats, (providerStats, provider) => {
@@ -146,6 +149,26 @@ class StatsRequest extends BaseRequest {
 			};
 		});
 
+		this.setCacheHeader();
+	}
+
+	async handlePlatforms () {
+		this.ctx.body = await Platform.getTopPlatforms(this.period, this.date, this.composedLocationFilter, ...this.pagination);
+		this.setCacheHeader();
+	}
+
+	async handlePlatformsVersions () {
+		this.ctx.body = await Platform.getTopPlatformsVersions(this.period, this.date, this.composedLocationFilter, ...this.pagination);
+		this.setCacheHeader();
+	}
+
+	async handlePlatformBrowsers () {
+		this.ctx.body = await Platform.getTopPlatformBrowsers(this.params.name, this.period, this.date, this.composedLocationFilter, ...this.pagination);
+		this.setCacheHeader();
+	}
+
+	async handlePlatformVersions () {
+		this.ctx.body = await Platform.getTopPlatformVersions(this.params.name, this.period, this.date, this.composedLocationFilter, ...this.pagination);
 		this.setCacheHeader();
 	}
 }

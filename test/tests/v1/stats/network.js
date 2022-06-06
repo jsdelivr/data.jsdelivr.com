@@ -1,4 +1,4 @@
-const { makeEndpointTests, setupSnapshots } = require('../../../utils');
+const { makeEndpointSnapshotTests, setupSnapshots } = require('../../../utils');
 
 const periodOptions = [ 'day', 'week', 'month', 'year', 'all', undefined ];
 
@@ -11,7 +11,7 @@ describe('/v1/stats/network', () => {
 });
 
 function makeStatsNetworkTests () {
-	makeEndpointTests('/v1/stats/network{/period}', {
+	makeEndpointSnapshotTests('/v1/stats/network{/period}', {
 		period: 'month',
 	}, [
 		{

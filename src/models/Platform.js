@@ -1,5 +1,8 @@
 const Joi = require('joi');
 const BaseCacheModel = require('./BaseCacheModel');
+const TopPlatform = require('./views/TopPlatform');
+const TopPlatformBrowser = require('./views/TopPlatformBrowser');
+const TopPlatformVersion = require('./views/TopPlatformVersion');
 
 const schema = Joi.object({
 	id: Joi.number().integer().min(0).required().allow(null),
@@ -30,6 +33,93 @@ class Platform extends BaseCacheModel {
 
 		Object.assign(this, properties);
 		return new Proxy(this, BaseCacheModel.ProxyHandler);
+	}
+
+	static async getTopPlatforms (period, date, composedLocationFilter, limit = 100, page = 1) {
+		let sql = db(TopPlatform.table)
+			.where({ period, date })
+			.where(composedLocationFilter)
+			.orderBy('share', 'desc');
+
+		if (limit) {
+			sql.limit(limit).offset((page - 1) * limit);
+		}
+
+		return (await sql.select([ 'name', 'share', 'prevShare' ])).map((row) => {
+			return {
+				name: row.name,
+				share: row.share,
+				prev: {
+					share: row.prevShare,
+				},
+			};
+		});
+	}
+
+	static async getTopPlatformBrowsers (name, period, date, composedLocationFilter, limit = 100, page = 1) {
+		let sql = db(TopPlatformBrowser.table)
+			.where({ name, period, date })
+			.where(composedLocationFilter)
+			.orderBy('share', 'desc');
+
+		if (limit) {
+			sql.limit(limit).offset((page - 1) * limit);
+		}
+
+		return (await sql.select([ 'browser', 'share', 'prevShare' ])).map((row) => {
+			return {
+				browser: row.browser,
+				share: row.share,
+				prev: {
+					share: row.prevShare,
+				},
+			};
+		});
+	}
+
+	static async getTopPlatformVersions (name, period, date, composedLocationFilter, limit = 100, page = 1) {
+		let sql = db(TopPlatformVersion.table)
+			.where({ name, period, date })
+			.where(composedLocationFilter)
+			.orderBy('share', 'desc');
+
+		if (limit) {
+			sql.limit(limit).offset((page - 1) * limit);
+		}
+
+		return (await sql.select([ 'version', 'versionName', 'share', 'prevShare' ])).map((row) => {
+			return {
+				version: row.version,
+				versionName: row.versionName,
+				share: row.share,
+				prev: {
+					share: row.prevShare,
+				},
+			};
+		});
+	}
+
+	static async getTopPlatformsVersions (period, date, composedLocationFilter, limit = 100, page = 1) {
+		let sql = db(TopPlatformVersion.table)
+			.where({ period, date })
+			.where(composedLocationFilter)
+			.orderBy('share', 'desc');
+
+		if (limit) {
+			sql.limit(limit).offset((page - 1) * limit);
+		}
+
+		return (await sql.select([ 'name', 'version', 'versionName', 'share', 'prevShare' ])).map((row) => {
+			return {
+				name: row.name,
+				version: row.version,
+				versionName: row.versionName,
+				share: row.share,
+				prev: {
+					share: row.prevShare,
+				},
+			};
+		});
 	}
 
 	toSqlFunctionCall () {

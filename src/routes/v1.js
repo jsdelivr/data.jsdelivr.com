@@ -97,6 +97,7 @@ koaElasticUtils.addRoutes(router, [
 ], validate({
 	query: Joi.object({
 		by: schema.by,
+		period: schema.period,
 		...schema.paginatedStats,
 	}),
 }), async (ctx) => {
@@ -164,6 +165,7 @@ koaElasticUtils.addRoutes(router, [
 ], validate({
 	query: Joi.object({
 		by: schema.by,
+		period: schema.period,
 		...schema.paginatedStats,
 	}),
 }), async (ctx) => {
@@ -194,6 +196,7 @@ koaElasticUtils.addRoutes(router, [
 	[ '/stats/packages/:type(gh|npm)?', '/stats/packages/:type(gh|npm)?/:period(day|week|month|year|all)?/:all(all)?' ],
 ], validate({
 	query: Joi.object({
+		period: schema.period,
 		...schema.paginatedStats,
 	}),
 }), async (ctx) => {
@@ -230,6 +233,50 @@ koaElasticUtils.addRoutes(router, [
 	}).concat(schema.location),
 }), async (ctx) => {
 	return new StatsRequest(ctx).handleProviders();
+});
+
+koaElasticUtils.addRoutes(router, [
+	[ '/stats/platforms', '/stats/platforms' ],
+], validate({
+	query: Joi.object({
+		period: schema.periodStatic,
+		...schema.paginatedStats,
+	}).concat(schema.location),
+}), async (ctx) => {
+	return new StatsRequest(ctx).handlePlatforms();
+});
+
+koaElasticUtils.addRoutes(router, [
+	[ '/stats/platforms/versions', '/stats/platforms/versions' ],
+], validate({
+	query: Joi.object({
+		period: schema.periodStatic,
+		...schema.paginatedStats,
+	}).concat(schema.location),
+}), async (ctx) => {
+	return new StatsRequest(ctx).handlePlatformsVersions();
+});
+
+koaElasticUtils.addRoutes(router, [
+	[ '/stats/platforms/:name/browsers', '/stats/platforms/:name/browsers' ],
+], validate({
+	query: Joi.object({
+		period: schema.periodStatic,
+		...schema.paginatedStats,
+	}).concat(schema.location),
+}), async (ctx) => {
+	return new StatsRequest(ctx).handlePlatformBrowsers();
+});
+
+koaElasticUtils.addRoutes(router, [
+	[ '/stats/platforms/:name/versions', '/stats/platforms/:name/versions' ],
+], validate({
+	query: Joi.object({
+		period: schema.periodStatic,
+		...schema.paginatedStats,
+	}).concat(schema.location),
+}), async (ctx) => {
+	return new StatsRequest(ctx).handlePlatformVersions();
 });
 
 module.exports = router;

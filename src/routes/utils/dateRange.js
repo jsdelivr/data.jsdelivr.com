@@ -77,7 +77,23 @@ module.exports.fill = (data, from, to, defaultValue = 0) => {
 };
 
 module.exports.getDuration = (period) => {
-	return floatingPeriodDurations[period];
+	if (module.exports.isFloatingPeriod(period)) {
+		return floatingPeriodDurations[period];
+	}
+
+	if (module.exports.isStaticPeriod(period)) {
+		let result = module.exports.parseStaticPeriod(period);
+
+		if (result) {
+			if (result.period === 's-month') {
+				return new Date(period.date.getFullYear(), period.date.getMonth(), 0);
+			} else if (result.period === 's-year') {
+				return new Date(period.date.getFullYear(), 1, 29).getDate() === 29 ? 366 : 365;
+			}
+		}
+
+		return result;
+	}
 };
 
 module.exports.isFloatingPeriod = (period) => {
