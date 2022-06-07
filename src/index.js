@@ -34,6 +34,14 @@ server.silent = server.env === 'production';
 server.proxy = true;
 
 /**
+ * Set default headers.
+ */
+server.use(async (ctx, next) => {
+	ctx.set(serverConfig.headers);
+	return next();
+});
+
+/**
  * Handle favicon requests before anything else.
  */
 server.use(koaFavicon(__dirname + '/public/favicon.ico'));
@@ -164,14 +172,6 @@ server.use(async (ctx, next) => {
 		ctx.status = 500;
 		ctx.app.emit('error', e, ctx);
 	}
-});
-
-/**
- * Set default headers.
- */
-server.use(async (ctx, next) => {
-	ctx.set(serverConfig.headers);
-	return next();
 });
 
 /**
