@@ -41,6 +41,41 @@ class BaseRequest {
 		ctx.query = {};
 	}
 
+	deprecate (date, link) {
+		this.ctx.set('Deprecation', date.toGMTString());
+		this.ctx.append('Link', `<${link}>; rel="successor-version"`);
+		return this;
+	}
+
+	formatCombinedStats (dailyStats, periodStats) {
+		return {
+			hits: {
+				...periodStats.hits,
+				dates: dateRange.fill(dailyStats.hits, ...this.dateRange),
+				prev: periodStats.prev.hits,
+			},
+			bandwidth: {
+				...periodStats.bandwidth,
+				dates: dateRange.fill(dailyStats.bandwidth, ...this.dateRange),
+				prev: periodStats.prev.bandwidth,
+			},
+		};
+	}
+
+	formatDailyStats (dailyStats) {
+		return {
+			...dailyStats,
+			hits: {
+				...dailyStats.hits,
+				dates: dateRange.fill(dailyStats.hits, ...this.dateRange),
+			},
+			bandwidth: {
+				...dailyStats.bandwidth,
+				dates: dateRange.fill(dailyStats.bandwidth, ...this.dateRange),
+			},
+		};
+	}
+
 	setCacheHeader (delay = 0) {
 		this.ctx.expires = new Date(relativeDayUtc(1).valueOf() + delay).toUTCString();
 		this.ctx.maxStale = v1Config.maxStaleShort;

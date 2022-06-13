@@ -112,19 +112,26 @@ class StatsRequest extends BaseRequest {
 			CountryCdnHits.getCountryStatsForPeriod(this.period, this.date),
 		]);
 
-		this.ctx.body = _.mapValues(dailyStats, (providerStats, country) => {
-			// No null checks here because the results should have the same set of providers.
-			// If they don't, throwing an error is the best possible action.
-			let countryPeriodStats = periodStats[country];
+		this.ctx.body = {
+			countries: _.mapValues(dailyStats, (providerStats, country) => {
+				// No null checks here because the results should have the same set of providers.
+				// If they don't, throwing an error is the best possible action.
+				let countryPeriodStats = periodStats[country];
 
-			return {
-				total: countryPeriodStats[this.query.type].total,
-				providers: providerStats,
-				prev: {
-					total: countryPeriodStats.prev[this.query.type].total,
-				},
-			};
-		});
+				return {
+					hits: {
+						total: countryPeriodStats.hits.total,
+						providers: providerStats.hits,
+						prev: countryPeriodStats.hits.prev,
+					},
+					bandwidth: {
+						total: countryPeriodStats.bandwidth.total,
+						providers: providerStats.bandwidth,
+						prev: countryPeriodStats.bandwidth.prev,
+					},
+				};
+			}),
+		};
 
 		this.setCacheHeader();
 	}
@@ -135,19 +142,13 @@ class StatsRequest extends BaseRequest {
 			CountryCdnHits.getProvidersStatsForPeriodAndLocation(this.period, this.date, this.composedLocationFilter),
 		]);
 
-		this.ctx.body = _.mapValues(dailyStats, (providerStats, provider) => {
-			// No null checks here because the results should have the same set of providers.
-			// If they don't, throwing an error is the best possible action.
-			let providerPeriodStats = periodStats[provider];
-
-			return {
-				total: providerPeriodStats[this.query.type].total,
-				dates: dateRange.fill(providerStats, ...this.dateRange),
-				prev: {
-					total: providerPeriodStats.prev[this.query.type].total,
-				},
-			};
-		});
+		this.ctx.body = {
+			providers: _.mapValues(dailyStats, (providerStats, provider) => {
+				// No null checks here because the results should have the same set of providers.
+				// If they don't, throwing an error is the best possible action.
+				return this.formatCombinedStats(providerStats, periodStats[provider]);
+			}),
+		};
 
 		this.setCacheHeader();
 	}

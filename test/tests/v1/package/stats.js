@@ -1,6 +1,6 @@
 const { makeEndpointSnapshotTests, setupSnapshots } = require('../../../utils');
 
-const periodOptions = [ 'day', 'week', 'month', 'year', 'all', undefined ];
+const periodOptions = [ 'day', 'week', 'month', 'year', 'all' ];
 
 describe('/v1/package/stats', () => {
 	before(() => {
@@ -18,35 +18,32 @@ function makePackageStatsTests () {
 	};
 
 	let commonValues = {
-		type: [ 'hits', 'bandwidth' ],
 		period: periodOptions,
 	};
 
-	makeEndpointSnapshotTests('/v1/package/npm/{name}/stats{?type,period}', defaults, [
-		{ name: 'package-0', type: commonValues.type, period: 'month' },
-		{ name: 'package-x', type: commonValues.type, period: 'month' },
-		{ name: 'package-x', type: commonValues.type, period: 'all' },
+	makeEndpointSnapshotTests('/v1/package/npm/{name}/stats{?period}', defaults, [
+		{ name: 'package-0', period: 'month' },
+		{ name: 'package-x', period: 'month' },
+		{ name: 'package-x', period: 'all' },
 		{ name: 'package-2', ...commonValues },
 	]);
 
-	makeEndpointSnapshotTests('/v1/package/npm/{name}/stats{?type,period}', defaults, [
-		{ name: 'package-2', type: 'hits', period: 'x' },
-		{ name: 'package-2', type: [ 'x', undefined ], period: 'month' },
+	makeEndpointSnapshotTests('/v1/package/npm/{name}/stats{?period}', defaults, [
+		{ name: 'package-2', period: 'x' },
 	], { status: 400 });
 
-	makeEndpointSnapshotTests('/v1/package/gh/{user}/{repo}/stats{?type,period}', defaults, [
+	makeEndpointSnapshotTests('/v1/package/gh/{user}/{repo}/stats{?period}', defaults, [
 		{ user: 'user', repo: 'package-59', ...commonValues },
 	]);
 
-	makeEndpointSnapshotTests('/v1/package/gh/{user}/{repo}/stats{?type,period}', defaults, [
-		{ user: 'user', repo: 'package-59', type: 'hits', period: 'x' },
-		{ user: 'user', repo: 'package-59', type: [ 'x', undefined ], period: 'month' },
+	makeEndpointSnapshotTests('/v1/package/gh/{user}/{repo}/stats{?period}', defaults, [
+		{ user: 'user', repo: 'package-59', period: 'x' },
 	], { status: 400 });
 
 	// Legacy versions.
 	let commonLegacyValues = {
 		groupBy: [ 'version', 'date', undefined ],
-		period: periodOptions,
+		period: [ ...periodOptions, undefined ],
 	};
 
 	makeEndpointSnapshotTests('/v1/package/npm/{name}/stats{/groupBy}{/period}', defaults, [
@@ -76,32 +73,30 @@ function makePackageVersionStatsTests () {
 		period: periodOptions,
 	};
 
-	makeEndpointSnapshotTests('/v1/package/npm/{name}@{version}/stats{?type,period}', defaults, [
-		{ name: 'package-0', version: '1.1.0', type: commonValues.type, period: 'month' },
-		{ name: 'package-0', version: '1.1.5', type: commonValues.type, period: 'month' },
-		{ name: 'package-0', version: '1.1.5', type: commonValues.type, period: 'all' },
+	makeEndpointSnapshotTests('/v1/package/npm/{name}@{version}/stats{?period}', defaults, [
+		{ name: 'package-0', version: '1.1.0', period: 'month' },
+		{ name: 'package-0', version: '1.1.5', period: 'month' },
+		{ name: 'package-0', version: '1.1.5', period: 'all' },
 		{ name: 'package-2', version: '1.1.0', ...commonValues },
 	]);
 
-	makeEndpointSnapshotTests('/v1/package/npm/{name}@{version}/stats{?type,period}', defaults, [
-		{ name: 'package-2', version: '1.1.0', type: 'hits', period: 'x' },
-		{ name: 'package-2', version: '1.1.0', type: [ 'x', undefined ], period: 'month' },
+	makeEndpointSnapshotTests('/v1/package/npm/{name}@{version}/stats{?period}', defaults, [
+		{ name: 'package-2', version: '1.1.0', period: 'x' },
 	], { status: 400 });
 
-	makeEndpointSnapshotTests('/v1/package/gh/{user}/{repo}@{version}/stats{?type,period}', defaults, [
+	makeEndpointSnapshotTests('/v1/package/gh/{user}/{repo}@{version}/stats{?period}', defaults, [
 		{ user: 'user', repo: 'package-59', version: '1.1.2', ...commonValues },
 		{ user: 'user', repo: 'package-59', version: 'branch-1', ...commonValues },
 	]);
 
-	makeEndpointSnapshotTests('/v1/package/gh/{user}/{repo}@{version}/stats{?type,period}', defaults, [
-		{ user: 'user', repo: 'package-59', version: '1.1.2', type: 'hits', period: 'x' },
-		{ user: 'user', repo: 'package-59', version: 'branch-1', type: [ 'x', undefined ], period: 'month' },
+	makeEndpointSnapshotTests('/v1/package/gh/{user}/{repo}@{version}/stats{?period}', defaults, [
+		{ user: 'user', repo: 'package-59', version: 'branch-1', period: 'x' },
 	], { status: 400 });
 
 	// Legacy versions.
 	let commonLegacyValues = {
 		groupBy: [ 'file', 'date', undefined ],
-		period: periodOptions,
+		period: [ ...periodOptions, undefined ],
 	};
 
 	makeEndpointSnapshotTests('/v1/package/npm/{name}@{version}/stats{/groupBy}{/period}', defaults, [

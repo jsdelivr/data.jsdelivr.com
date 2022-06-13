@@ -62,18 +62,14 @@ class Package extends BaseCacheModel {
 		};
 	}
 
-	static async getSumDateBandwidthPerVersionByName (type, name, from, to) {
-		return this.getSumDateStatPerVersionByName(await this.getStatByName(type, name, from, to, 'bandwidth'));
-	}
-
 	static async getSumDateHitsPerVersionByName (type, name, from, to) {
-		return this.getSumDateStatPerVersionByName(await this.getStatByName(type, name, from, to, 'hits'));
+		return this.getSumDateStatPerVersionByName(await this.getStatsByName(type, name, from, to), 'hits');
 	}
 
-	static getSumDateStatPerVersionByName (stats) {
+	static getSumDateStatPerVersionByName (stats, statsType) {
 		return _.mapValues(_.groupBy(stats, record => toIsoDate(record.date)), (versionStats) => {
 			return _.mapValues(splitCommitsAndVersions(versionStats), (data) => {
-				return _.fromPairs(_.map(data, record => [ record.version, record.stat ]));
+				return _.fromPairs(_.map(data, record => [ record.version, record[statsType] ]));
 			});
 		});
 	}
@@ -110,23 +106,19 @@ class Package extends BaseCacheModel {
 		};
 	}
 
-	static async getSumVersionBandwidthPerDateByName (type, name, from, to) {
-		return this.getSumVersionStatPerDateByName(await this.getStatByName(type, name, from, to, 'bandwidth'));
-	}
-
 	static async getSumVersionHitsPerDateByName (type, name, from, to) {
-		return this.getSumVersionStatPerDateByName(await this.getStatByName(type, name, from, to, 'hits'));
+		return this.getSumVersionStatPerDateByName(await this.getStatsByName(type, name, from, to), 'hits');
 	}
 
-	static getSumVersionStatPerDateByName (stats) {
+	static getSumVersionStatPerDateByName (stats, statsType) {
 		return _.mapValues(splitCommitsAndVersions(stats), (data) => {
 			return _.mapValues(_.groupBy(data, 'version'), (versionStats) => {
-				return _.fromPairs(_.map(versionStats, record => [ toIsoDate(record.date), record.stat ]));
+				return _.fromPairs(_.map(versionStats, record => [ toIsoDate(record.date), record[statsType] ]));
 			});
 		});
 	}
 
-	static async getStatByName (type, name, from, to, statType) {
+	static async getStatsByName (type, name, from, to) {
 		let sql = db(this.table)
 			.where(`${this.table}.type`, type)
 			.andWhere(`${this.table}.name`, name)
@@ -141,7 +133,13 @@ class Package extends BaseCacheModel {
 			sql.where(`${PackageVersionHits.table}.date`, '<=', to);
 		}
 
-		return sql.select([ `${PackageVersion.table}.version`, `${PackageVersion.table}.type`, `${PackageVersionHits.table}.date`, `${PackageVersionHits.table}.${statType} as stat` ]);
+		return sql.select([
+			`${PackageVersion.table}.version`,
+			`${PackageVersion.table}.type`,
+			`${PackageVersionHits.table}.date`,
+			`${PackageVersionHits.table}.hits as hits`,
+			`${PackageVersionHits.table}.bandwidth as bandwidth`,
+		]);
 	}
 
 	static async getTopPackages (period, date, type = undefined, limit = 100, page = 1) {
@@ -166,15 +164,21 @@ class Package extends BaseCacheModel {
 	}
 
 	static async getTopVersions (type, name, by, from, to, limit = 100, page = 1) {
-		let stats = await this.getStatByName(type, name, from, to, by);
+		let stats = await this.getStatsByName(type, name, from, to);
 		let start = (page - 1) * limit;
 
 		return _.map(_.groupBy(stats, record => `${record.type}:${record.version}`), (versionStats) => {
 			return {
 				type: versionStats[0].type,
 				version: versionStats[0].version,
-				total: _.sumBy(versionStats, 'stat'),
-				dates: _.fromPairs(_.map(versionStats, record => [ toIsoDate(record.date), record.stat ])),
+				hits: {
+					total: _.sumBy(versionStats, 'hits'),
+					dates: _.fromPairs(_.map(versionStats, record => [ toIsoDate(record.date), record.hits ])),
+				},
+				bandwidth: {
+					total: _.sumBy(versionStats, 'bandwidth'),
+					dates: _.fromPairs(_.map(versionStats, record => [ toIsoDate(record.date), record.bandwidth ])),
+				},
 			};
 		}).sort((a, b) => b.total - a.total).slice(start, start + limit);
 	}

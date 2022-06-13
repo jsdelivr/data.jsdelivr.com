@@ -1,6 +1,5 @@
 const BaseRequest = require('./BaseRequest');
 const ProxyModel = require('../../../models/Proxy');
-const dateRange = require('../../utils/dateRange');
 
 class ProxyRequest extends BaseRequest {
 	async handleProxyStats () {
@@ -9,11 +8,7 @@ class ProxyRequest extends BaseRequest {
 			ProxyModel.getStatsForPeriod(this.params.name, this.period, this.date),
 		]);
 
-		this.ctx.body = {
-			...periodStats[this.query.type],
-			dates: dateRange.fill(dailyStats[this.query.type], ...this.dateRange),
-			prev: periodStats.prev[this.query.type],
-		};
+		this.ctx.body = this.formatCombinedStats(dailyStats, periodStats);
 
 		this.setCacheHeader();
 	}

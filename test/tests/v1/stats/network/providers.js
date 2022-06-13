@@ -1,6 +1,6 @@
 const { makeEndpointSnapshotTests, setupSnapshots } = require('../../../../utils');
 
-const periodOptions = [ 'day', 'week', 'month', 'year', 'all', undefined ];
+const periodOptions = [ 'day', 'week', 'month', 'year', 'all' ];
 
 describe('/v1/stats/network/providers', () => {
 	before(() => {

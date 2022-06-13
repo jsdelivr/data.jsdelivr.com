@@ -279,11 +279,7 @@ class PackageRequest extends BaseRequest {
 			this.getStatsForPeriod(),
 		]);
 
-		this.ctx.body = {
-			...periodStats[this.query.type],
-			dates: dateRange.fill(dailyStats[this.query.type], ...this.dateRange),
-			prev: periodStats.prev[this.query.type],
-		};
+		this.ctx.body = this.formatCombinedStats(dailyStats, periodStats);
 
 		this.setCacheHeader();
 	}
@@ -317,10 +313,7 @@ class PackageRequest extends BaseRequest {
 		let stats = await Package.getTopVersions(this.params.type, this.params.name, this.query.by, ...this.dateRange, ...this.pagination);
 
 		this.ctx.body = stats.map((record) => {
-			return {
-				...record,
-				dates: dateRange.fill(record.dates, ...this.dateRange),
-			};
+			return this.formatDailyStats(record);
 		});
 
 		this.setCacheHeader();
@@ -356,8 +349,14 @@ class PackageRequest extends BaseRequest {
 		let dailyStats = await PackageVersion.getDailyStatsByNameAndVersion(this.params.type, this.params.name, this.params.version, ...this.dateRange);
 
 		this.ctx.body = {
-			total: sumDeep(dailyStats[this.query.type]),
-			dates: dateRange.fill(dailyStats[this.query.type], ...this.dateRange),
+			hits: {
+				total: sumDeep(dailyStats.hits),
+				dates: dateRange.fill(dailyStats.hits, ...this.dateRange),
+			},
+			bandwidth: {
+				total: sumDeep(dailyStats.bandwidth),
+				dates: dateRange.fill(dailyStats.bandwidth, ...this.dateRange),
+			},
 		};
 
 		this.setCacheHeader();

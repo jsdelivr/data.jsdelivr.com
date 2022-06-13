@@ -78,14 +78,14 @@ function makeEndpointSnapshotTests (uriTemplate, defaults, testTemplates, option
 	}
 }
 
-function makeEndpointPaginationTests (uri, params = {}) {
+function makeEndpointPaginationTests (uri, query = {}) {
 	describe(`GET ${uri} - pagination`, () => {
 		let first10;
 
 		before(async () => {
 			first10 = await chai.request(server)
 				.get(uri)
-				.query({ ...params, limit: 10 });
+				.query({ ...query, limit: 10 });
 		});
 
 		it(`returns at most 10 results`, async () => {
@@ -97,7 +97,7 @@ function makeEndpointPaginationTests (uri, params = {}) {
 			it(`works with limit=1&page=${index}`, () => {
 				return chai.request(server)
 					.get(uri)
-					.query({ ...params, limit: 1, page: index })
+					.query({ ...query, limit: 1, page: index })
 					.then((response) => {
 						expect(response).to.have.status(200);
 						expect(response.body).to.deep.equal(first10.body.slice(index - 1, index));
@@ -109,7 +109,7 @@ function makeEndpointPaginationTests (uri, params = {}) {
 			it(`works with limit=2&page=${index}`, () => {
 				return chai.request(server)
 					.get(uri)
-					.query({ ...params, limit: 2, page: index })
+					.query({ ...query, limit: 2, page: index })
 					.then((response) => {
 						expect(response).to.have.status(200);
 						expect(response.body).to.deep.equal(first10.body.slice((index - 1) * 2, (index - 1) * 2 + 2));
@@ -120,7 +120,7 @@ function makeEndpointPaginationTests (uri, params = {}) {
 		it('validates the limit param', () => {
 			return chai.request(server)
 				.get(uri)
-				.query({ ...params, limit: -1 })
+				.query({ ...query, limit: -1 })
 				.then((response) => {
 					expect(response).to.have.status(400);
 				});
@@ -129,7 +129,7 @@ function makeEndpointPaginationTests (uri, params = {}) {
 		it('validates the page param', () => {
 			return chai.request(server)
 				.get(uri)
-				.query({ ...params, page: -1 })
+				.query({ ...query, page: -1 })
 				.then((response) => {
 					expect(response).to.have.status(400);
 				});

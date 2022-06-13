@@ -1,6 +1,6 @@
 const { makeEndpointSnapshotTests, makeEndpointPaginationTests, setupSnapshots } = require('../../../../utils');
 
-const periodOptions = [ 'day', 'week', 'month', 'year', 'all', undefined ];
+const periodOptions = [ 'day', 'week', 'month', 'year', 'all' ];
 
 describe('/v1/package/stats/files', () => {
 	before(() => {
@@ -41,6 +41,6 @@ function makePackageStatsTests () {
 		{ user: 'user', repo: 'package-59', version: '1.1.0', by: [ 'x', undefined ], period: 'month' },
 	], { status: 400 });
 
-	makeEndpointPaginationTests('/v1/package/npm/package-59@1.1.0/stats/files', { by: 'hits' });
-	makeEndpointPaginationTests('/v1/package/gh/user/package-59@1.1.0/stats/files', { by: 'hits' });
+	makeEndpointPaginationTests('/v1/package/npm/package-59@1.1.0/stats/files', { by: 'hits', period: 'month' });
+	makeEndpointPaginationTests('/v1/package/gh/user/package-59@1.1.0/stats/files', { by: 'hits', period: 'month' });
 }

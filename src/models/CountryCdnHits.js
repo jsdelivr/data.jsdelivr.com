@@ -48,7 +48,7 @@ class CountryCdnHits extends BaseModel {
 		return new Proxy(this, BaseModel.ProxyHandler);
 	}
 
-	static async getProviderCountryStats (type, from, to) {
+	static async getProviderCountryStats (from, to) {
 		let sql = db(this.table);
 
 		if (from instanceof Date) {
@@ -60,12 +60,16 @@ class CountryCdnHits extends BaseModel {
 		}
 
 		let stats = await sql
-			.sum(`${this.table}.${type} as stat`)
+			.sum(`${this.table}.hits as hits`)
+			.sum(`${this.table}.bandwidth as bandwidth`)
 			.groupBy([ `${this.table}.cdn`, `${this.table}.countryIso` ])
 			.select([ `${this.table}.cdn`, `${this.table}.countryIso` ]);
 
 		return _.mapValues(_.groupBy(stats, 'countryIso'), (countryStats) => {
-			return _.fromPairs(_.map(countryStats, record => [ record.cdn, record.stat ]));
+			return {
+				hits: _.fromPairs(_.map(countryStats, record => [ record.cdn, record.hits ])),
+				bandwidth: _.fromPairs(_.map(countryStats, record => [ record.cdn, record.bandwidth ])),
+			};
 		});
 	}
 
@@ -83,12 +87,16 @@ class CountryCdnHits extends BaseModel {
 		}
 
 		let stats = await sql
-			.sum(`${this.table}.${type} as stat`)
+			.sum(`${this.table}.hits as hits`)
+			.sum(`${this.table}.bandwidth as bandwidth`)
 			.groupBy([ `${this.table}.cdn`, `${this.table}.date` ])
 			.select([ `${this.table}.cdn`, `${this.table}.date` ]);
 
 		return _.mapValues(_.groupBy(stats, 'cdn'), (cdnStats) => {
-			return _.fromPairs(_.map(cdnStats, record => [ toIsoDate(record.date), record.stat ]));
+			return {
+				hits: _.fromPairs(_.map(cdnStats, record => [ toIsoDate(record.date), record.hits ])),
+				bandwidth: _.fromPairs(_.map(cdnStats, record => [ toIsoDate(record.date), record.bandwidth ])),
+			};
 		});
 	}
 

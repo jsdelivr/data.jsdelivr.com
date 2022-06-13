@@ -76,16 +76,11 @@ koaElasticUtils.addRoutes(router, [
 	[ '/package/gh/:user/:repo/stats', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/stats/:groupBy(version|date)?/:period(day|week|month|year|all)?' ],
 ], validate({
 	query: Joi.object({
-		type: schema.type,
-		period: schema.period,
+		period: schema.periodOptional,
 	}),
 }), async (ctx) => {
-	if (ctx.params.groupBy || ctx.params.period || (!ctx.query.type && !ctx.query.period)) {
+	if (ctx.params.groupBy || ctx.params.period || !ctx.query.period) {
 		return new PackageRequest(ctx).handlePackageStatsDeprecated();
-	}
-
-	if (!validate.single(schema.queryTypeRequired, ctx.query, ctx)) {
-		return;
 	}
 
 	return new PackageRequest(ctx).handlePackageStats();
@@ -109,7 +104,7 @@ koaElasticUtils.addRoutes(router, [
 	[ '/package/gh/:user/:repo/badge', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/badge/:period(day|week|month|year|all)?' ],
 ], validate({
 	query: Joi.object({
-		period: schema.period,
+		period: schema.periodOptional,
 	}),
 }), async (ctx) => {
 	return new PackageRequest(ctx).handlePackageBadge();
@@ -120,7 +115,7 @@ koaElasticUtils.addRoutes(router, [
 	[ '/package/gh/:user/:repo/badge/rank', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/badge/:rankType(rank|type-rank)/:period(day|week|month|year|all)?' ],
 ], validate({
 	query: Joi.object({
-		period: schema.period,
+		period: schema.periodOptional,
 	}),
 }), async (ctx) => {
 	return new PackageRequest(ctx).handlePackageBadgeRank();
@@ -144,16 +139,11 @@ koaElasticUtils.addRoutes(router, [
 	[ '/package/gh/:user/:repo@:version/stats', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version/stats/:groupBy(file|date)?/:period(day|week|month|year|all)?' ],
 ], validate({
 	query: Joi.object({
-		type: schema.type,
-		period: schema.period,
+		period: schema.periodOptional,
 	}),
 }), async (ctx) => {
-	if (ctx.params.groupBy || ctx.params.period || (!ctx.query.type && !ctx.query.period)) {
+	if (ctx.params.groupBy || ctx.params.period || !ctx.query.period) {
 		return new PackageRequest(ctx).handleVersionStatsDeprecated();
-	}
-
-	if (!validate.single(schema.queryTypeRequired, ctx.query, ctx)) {
-		return;
 	}
 
 	return new PackageRequest(ctx).handleVersionStats();
@@ -185,7 +175,6 @@ koaElasticUtils.addRoutes(router, [
 	[ '/proxy/:name/stats', '/proxy/:name/stats' ],
 ], validate({
 	query: Joi.object({
-		type: schema.typeRequired,
 		period: schema.period,
 	}),
 }), async (ctx) => {
@@ -196,7 +185,7 @@ koaElasticUtils.addRoutes(router, [
 	[ '/stats/packages/:type(gh|npm)?', '/stats/packages/:type(gh|npm)?/:period(day|week|month|year|all)?/:all(all)?' ],
 ], validate({
 	query: Joi.object({
-		period: schema.period,
+		period: schema.periodOptional,
 		...schema.paginatedStats,
 	}),
 }), async (ctx) => {
@@ -207,7 +196,7 @@ koaElasticUtils.addRoutes(router, [
 	[ '/stats/network', '/stats/network/:period(day|week|month|year|all)?' ],
 ], validate({
 	query: Joi.object({
-		period: schema.period,
+		period: schema.periodOptional,
 	}),
 }), async (ctx) => {
 	return new StatsRequest(ctx).handleNetwork();
@@ -218,7 +207,6 @@ koaElasticUtils.addRoutes(router, [
 ], validate({
 	query: Joi.object({
 		period: schema.period,
-		type: schema.typeRequired,
 	}),
 }), async (ctx) => {
 	return new StatsRequest(ctx).handleCountries();
@@ -229,7 +217,6 @@ koaElasticUtils.addRoutes(router, [
 ], validate({
 	query: Joi.object({
 		period: schema.period,
-		type: schema.typeRequired,
 	}).concat(schema.location),
 }), async (ctx) => {
 	return new StatsRequest(ctx).handleProviders();
