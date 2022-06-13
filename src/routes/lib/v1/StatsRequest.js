@@ -102,7 +102,7 @@ class StatsRequest extends BaseRequest {
 	}
 
 	async handlePackages () {
-		this.ctx.body = await Package.getTopPackages(this.period, this.date, this.params.type, ...this.pagination);
+		this.ctx.body = await Package.getTopPackages(this.query.by, this.period, this.date, this.params.type, ...this.pagination);
 		this.setCacheHeader();
 	}
 

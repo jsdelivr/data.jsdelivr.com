@@ -4,7 +4,7 @@ const dateRange = require('../utils/dateRange');
 
 const primitives = {
 	byOptional:
-		Joi.valid('hits', 'bandwidth').required(),
+		Joi.valid('hits', 'bandwidth').default('hits'),
 
 	continent:
 		Joi.valid(...Object.keys(continents)).messages({

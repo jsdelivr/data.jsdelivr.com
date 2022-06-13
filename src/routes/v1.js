@@ -185,6 +185,7 @@ koaElasticUtils.addRoutes(router, [
 	[ '/stats/packages/:type(gh|npm)?', '/stats/packages/:type(gh|npm)?/:period(day|week|month|year|all)?/:all(all)?' ],
 ], validate({
 	query: Joi.object({
+		by: schema.byOptional,
 		period: schema.periodOptional,
 		...schema.paginatedStats,
 	}),
