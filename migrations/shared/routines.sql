@@ -710,7 +710,7 @@ begin
 			set @dateFrom = @latestStart;
 			set @dateTo = date_sub(date_add(@dateFrom, interval 1 month), interval 1 day);
 			set @prevDateFrom = date_sub(@dateFrom, interval 1 month);
-			set @prevDateTo = date_sub(@dateTo, interval 1 month);
+			set @prevDateTo = date_sub(@dateFrom, interval 1 day);
 
 			if not exists(select * from view_top_platforms where `date` = @latestStart and period = 's-month') then
 				call updateViewTopPlatforms('s-month', @dateFrom, @dateTo, @prevDateFrom, @prevDateTo);
@@ -739,7 +739,7 @@ begin
 			set @dateFrom = @latestStart;
 			set @dateTo = date_sub(date_add(@dateFrom, interval 1 year), interval 1 day);
 			set @prevDateFrom = date_sub(@dateFrom, interval 1 year);
-			set @prevDateTo = date_sub(@dateTo, interval 1 year);
+			set @prevDateTo = date_sub(@dateFrom, interval 1 day);
 
 			if not exists(select * from view_top_platforms where `date` = @latestStart and period = 's-year') then
 				call updateViewTopPlatforms('s-year', @dateFrom, @dateTo, @prevDateFrom, @prevDateTo);
