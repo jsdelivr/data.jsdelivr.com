@@ -526,24 +526,6 @@
 			"prev": {
 				"share": null
 			}
-		},
-		{
-			"name": "platform 0",
-			"version": "0",
-			"versionName": null,
-			"share": 0,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 0",
-			"version": "1",
-			"versionName": null,
-			"share": 0,
-			"prev": {
-				"share": null
-			}
 		}
 	],
 	"/v1/stats/platforms/versions?continent=EU&period=2020-02": [
@@ -1065,24 +1047,6 @@
 			"version": "2",
 			"versionName": "version 2",
 			"share": 0.01,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 0",
-			"version": "0",
-			"versionName": null,
-			"share": 0,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 0",
-			"version": "1",
-			"versionName": null,
-			"share": 0,
 			"prev": {
 				"share": null
 			}
@@ -1968,24 +1932,6 @@
 			"prev": {
 				"share": null
 			}
-		},
-		{
-			"name": "platform 0",
-			"version": "0",
-			"versionName": null,
-			"share": 0,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 0",
-			"version": "1",
-			"versionName": null,
-			"share": 0,
-			"prev": {
-				"share": null
-			}
 		}
 	],
 	"/v1/stats/platforms/versions?country=PL&period=2020-02": [
@@ -2507,24 +2453,6 @@
 			"version": "2",
 			"versionName": "version 2",
 			"share": 0.01,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 0",
-			"version": "0",
-			"versionName": null,
-			"share": 0,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 0",
-			"version": "1",
-			"versionName": null,
-			"share": 0,
 			"prev": {
 				"share": null
 			}
@@ -3410,24 +3338,6 @@
 			"prev": {
 				"share": null
 			}
-		},
-		{
-			"name": "platform 0",
-			"version": "0",
-			"versionName": null,
-			"share": 0,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 0",
-			"version": "1",
-			"versionName": null,
-			"share": 0,
-			"prev": {
-				"share": null
-			}
 		}
 	],
 	"/v1/stats/platforms/versions?period=2020-02": [
@@ -3949,24 +3859,6 @@
 			"version": "2",
 			"versionName": "version 2",
 			"share": 0.01,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 0",
-			"version": "0",
-			"versionName": null,
-			"share": 0,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 0",
-			"version": "1",
-			"versionName": null,
-			"share": 0,
 			"prev": {
 				"share": null
 			}
