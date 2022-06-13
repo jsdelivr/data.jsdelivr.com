@@ -20,6 +20,22 @@
 			}
 		}
 	],
+	"/v1/stats/platforms/platform%2019/browsers?continent=EU&period=2020-02": [
+		{
+			"browser": "browser 39",
+			"share": 7.3,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"browser": "browser 38",
+			"share": 6.97,
+			"prev": {
+				"share": null
+			}
+		}
+	],
 	"/v1/stats/platforms/platform%2019/browsers?continent=EU&period=2020-04": [
 		{
 			"browser": "browser 39",
@@ -57,6 +73,22 @@
 			}
 		}
 	],
+	"/v1/stats/platforms/platform%2019/browsers?country=PL&period=2020-02": [
+		{
+			"browser": "browser 39",
+			"share": 7.3,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"browser": "browser 38",
+			"share": 6.97,
+			"prev": {
+				"share": null
+			}
+		}
+	],
 	"/v1/stats/platforms/platform%2019/browsers?country=PL&period=2020-04": [
 		{
 			"browser": "browser 39",
@@ -89,6 +121,22 @@
 		{
 			"browser": "browser 38",
 			"share": 7.07,
+			"prev": {
+				"share": null
+			}
+		}
+	],
+	"/v1/stats/platforms/platform%2019/browsers?period=2020-02": [
+		{
+			"browser": "browser 39",
+			"share": 7.3,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"browser": "browser 38",
+			"share": 6.97,
 			"prev": {
 				"share": null
 			}

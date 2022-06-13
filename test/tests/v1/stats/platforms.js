@@ -36,6 +36,30 @@ function makeStatsPlatformsTests () {
 			},
 		},
 		{
+			params: { period: '2020-02' },
+			assert: (response) => {
+				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
+				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
+				expect(response).to.matchSnapshot();
+			},
+		},
+		{
+			params: { period: '2020-02', continent: 'EU' },
+			assert: (response) => {
+				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
+				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
+				expect(response).to.matchSnapshot();
+			},
+		},
+		{
+			params: { period: '2020-02', country: 'PL' },
+			assert: (response) => {
+				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
+				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
+				expect(response).to.matchSnapshot();
+			},
+		},
+		{
 			params: { period: '2020' },
 			assert: (response) => {
 				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);

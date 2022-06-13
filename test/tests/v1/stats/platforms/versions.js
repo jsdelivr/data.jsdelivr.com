@@ -37,6 +37,30 @@ function makeStatsPlatformsVersionTests () {
 			},
 		},
 		{
+			params: { period: '2020-02' },
+			assert: (response) => {
+				expect(_.sumBy(response.body, 'share')).to.be.closeTo(14.26, .1);
+				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
+				expect(response).to.matchSnapshot();
+			},
+		},
+		{
+			params: { period: '2020-02', continent: 'EU' },
+			assert: (response) => {
+				expect(_.sumBy(response.body, 'share')).to.be.closeTo(14.26, .1);
+				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
+				expect(response).to.matchSnapshot();
+			},
+		},
+		{
+			params: { period: '2020-02', country: 'PL' },
+			assert: (response) => {
+				expect(_.sumBy(response.body, 'share')).to.be.closeTo(14.26, .1);
+				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
+				expect(response).to.matchSnapshot();
+			},
+		},
+		{
 			params: { period: '2020', continent: 'EU' },
 			assert: (response) => {
 				expect(_.sumBy(response.body, 'share')).to.be.closeTo(14.42, .1);
@@ -101,6 +125,30 @@ function makeStatsPlatformsVersionsTests () {
 			assert: (response) => {
 				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
 				expect(_.sumBy(response.body, 'prev.share')).to.be.closeTo(88.14, .1);
+				expect(response).to.matchSnapshot();
+			},
+		},
+		{
+			params: { period: '2020-02' },
+			assert: (response) => {
+				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
+				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
+				expect(response).to.matchSnapshot();
+			},
+		},
+		{
+			params: { period: '2020-02', continent: 'EU' },
+			assert: (response) => {
+				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
+				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
+				expect(response).to.matchSnapshot();
+			},
+		},
+		{
+			params: { period: '2020-02', country: 'PL' },
+			assert: (response) => {
+				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
+				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
 				expect(response).to.matchSnapshot();
 			},
 		},

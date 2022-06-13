@@ -546,6 +546,548 @@
 			}
 		}
 	],
+	"/v1/stats/platforms/versions?continent=EU&period=2020-02": [
+		{
+			"name": "platform 19",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 4.92,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 19",
+			"version": "1",
+			"versionName": null,
+			"share": 4.75,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 19",
+			"version": "0",
+			"versionName": null,
+			"share": 4.59,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 18",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 4.43,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 18",
+			"version": "1",
+			"versionName": null,
+			"share": 4.28,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 18",
+			"version": "0",
+			"versionName": null,
+			"share": 4.13,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 17",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.98,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 17",
+			"version": "1",
+			"versionName": null,
+			"share": 3.83,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 17",
+			"version": "0",
+			"versionName": null,
+			"share": 3.68,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 16",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.54,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 16",
+			"version": "1",
+			"versionName": null,
+			"share": 3.4,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 16",
+			"version": "0",
+			"versionName": null,
+			"share": 3.27,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 15",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.13,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 15",
+			"version": "1",
+			"versionName": null,
+			"share": 3,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 15",
+			"version": "0",
+			"versionName": null,
+			"share": 2.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 14",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 2.75,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 14",
+			"version": "1",
+			"versionName": null,
+			"share": 2.63,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 14",
+			"version": "0",
+			"versionName": null,
+			"share": 2.51,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 13",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 2.39,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 13",
+			"version": "1",
+			"versionName": null,
+			"share": 2.28,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 13",
+			"version": "0",
+			"versionName": null,
+			"share": 2.17,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 12",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 2.06,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 12",
+			"version": "1",
+			"versionName": null,
+			"share": 1.95,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 12",
+			"version": "0",
+			"versionName": null,
+			"share": 1.85,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 11",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.75,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 11",
+			"version": "1",
+			"versionName": null,
+			"share": 1.65,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 11",
+			"version": "0",
+			"versionName": null,
+			"share": 1.56,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 10",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.47,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 10",
+			"version": "1",
+			"versionName": null,
+			"share": 1.38,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 10",
+			"version": "0",
+			"versionName": null,
+			"share": 1.29,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 9",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.21,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 9",
+			"version": "1",
+			"versionName": null,
+			"share": 1.13,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 9",
+			"version": "0",
+			"versionName": null,
+			"share": 1.05,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 8",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.98,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 8",
+			"version": "1",
+			"versionName": null,
+			"share": 0.9,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 8",
+			"version": "0",
+			"versionName": null,
+			"share": 0.83,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 7",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.77,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 7",
+			"version": "1",
+			"versionName": null,
+			"share": 0.7,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 7",
+			"version": "0",
+			"versionName": null,
+			"share": 0.64,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 6",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.58,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 6",
+			"version": "1",
+			"versionName": null,
+			"share": 0.53,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 6",
+			"version": "0",
+			"versionName": null,
+			"share": 0.48,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 5",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.43,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 5",
+			"version": "1",
+			"versionName": null,
+			"share": 0.38,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 5",
+			"version": "0",
+			"versionName": null,
+			"share": 0.33,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 4",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.29,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 4",
+			"version": "1",
+			"versionName": null,
+			"share": 0.25,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 4",
+			"version": "0",
+			"versionName": null,
+			"share": 0.22,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 3",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.18,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 3",
+			"version": "1",
+			"versionName": null,
+			"share": 0.15,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 3",
+			"version": "0",
+			"versionName": null,
+			"share": 0.13,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 2",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.1,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 2",
+			"version": "1",
+			"versionName": null,
+			"share": 0.08,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 2",
+			"version": "0",
+			"versionName": null,
+			"share": 0.06,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 1",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.04,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 1",
+			"version": "1",
+			"versionName": null,
+			"share": 0.03,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 1",
+			"version": "0",
+			"versionName": null,
+			"share": 0.02,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 0",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 0",
+			"version": "0",
+			"versionName": null,
+			"share": 0,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 0",
+			"version": "1",
+			"versionName": null,
+			"share": 0,
+			"prev": {
+				"share": null
+			}
+		}
+	],
 	"/v1/stats/platforms/versions?continent=EU&period=2020-04": [
 		{
 			"name": "platform 19",
@@ -1422,6 +1964,548 @@
 			"name": "platform 1",
 			"version": "0",
 			"versionName": null,
+			"share": 0.01,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 0",
+			"version": "0",
+			"versionName": null,
+			"share": 0,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 0",
+			"version": "1",
+			"versionName": null,
+			"share": 0,
+			"prev": {
+				"share": null
+			}
+		}
+	],
+	"/v1/stats/platforms/versions?country=PL&period=2020-02": [
+		{
+			"name": "platform 19",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 4.92,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 19",
+			"version": "1",
+			"versionName": null,
+			"share": 4.75,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 19",
+			"version": "0",
+			"versionName": null,
+			"share": 4.59,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 18",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 4.43,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 18",
+			"version": "1",
+			"versionName": null,
+			"share": 4.28,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 18",
+			"version": "0",
+			"versionName": null,
+			"share": 4.13,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 17",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.98,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 17",
+			"version": "1",
+			"versionName": null,
+			"share": 3.83,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 17",
+			"version": "0",
+			"versionName": null,
+			"share": 3.68,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 16",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.54,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 16",
+			"version": "1",
+			"versionName": null,
+			"share": 3.4,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 16",
+			"version": "0",
+			"versionName": null,
+			"share": 3.27,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 15",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.13,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 15",
+			"version": "1",
+			"versionName": null,
+			"share": 3,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 15",
+			"version": "0",
+			"versionName": null,
+			"share": 2.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 14",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 2.75,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 14",
+			"version": "1",
+			"versionName": null,
+			"share": 2.63,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 14",
+			"version": "0",
+			"versionName": null,
+			"share": 2.51,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 13",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 2.39,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 13",
+			"version": "1",
+			"versionName": null,
+			"share": 2.28,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 13",
+			"version": "0",
+			"versionName": null,
+			"share": 2.17,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 12",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 2.06,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 12",
+			"version": "1",
+			"versionName": null,
+			"share": 1.95,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 12",
+			"version": "0",
+			"versionName": null,
+			"share": 1.85,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 11",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.75,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 11",
+			"version": "1",
+			"versionName": null,
+			"share": 1.65,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 11",
+			"version": "0",
+			"versionName": null,
+			"share": 1.56,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 10",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.47,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 10",
+			"version": "1",
+			"versionName": null,
+			"share": 1.38,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 10",
+			"version": "0",
+			"versionName": null,
+			"share": 1.29,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 9",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.21,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 9",
+			"version": "1",
+			"versionName": null,
+			"share": 1.13,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 9",
+			"version": "0",
+			"versionName": null,
+			"share": 1.05,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 8",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.98,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 8",
+			"version": "1",
+			"versionName": null,
+			"share": 0.9,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 8",
+			"version": "0",
+			"versionName": null,
+			"share": 0.83,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 7",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.77,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 7",
+			"version": "1",
+			"versionName": null,
+			"share": 0.7,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 7",
+			"version": "0",
+			"versionName": null,
+			"share": 0.64,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 6",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.58,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 6",
+			"version": "1",
+			"versionName": null,
+			"share": 0.53,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 6",
+			"version": "0",
+			"versionName": null,
+			"share": 0.48,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 5",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.43,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 5",
+			"version": "1",
+			"versionName": null,
+			"share": 0.38,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 5",
+			"version": "0",
+			"versionName": null,
+			"share": 0.33,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 4",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.29,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 4",
+			"version": "1",
+			"versionName": null,
+			"share": 0.25,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 4",
+			"version": "0",
+			"versionName": null,
+			"share": 0.22,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 3",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.18,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 3",
+			"version": "1",
+			"versionName": null,
+			"share": 0.15,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 3",
+			"version": "0",
+			"versionName": null,
+			"share": 0.13,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 2",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.1,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 2",
+			"version": "1",
+			"versionName": null,
+			"share": 0.08,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 2",
+			"version": "0",
+			"versionName": null,
+			"share": 0.06,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 1",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.04,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 1",
+			"version": "1",
+			"versionName": null,
+			"share": 0.03,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 1",
+			"version": "0",
+			"versionName": null,
+			"share": 0.02,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 0",
+			"version": "2",
+			"versionName": "version 2",
 			"share": 0.01,
 			"prev": {
 				"share": null
@@ -2346,6 +3430,548 @@
 			}
 		}
 	],
+	"/v1/stats/platforms/versions?period=2020-02": [
+		{
+			"name": "platform 19",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 4.92,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 19",
+			"version": "1",
+			"versionName": null,
+			"share": 4.75,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 19",
+			"version": "0",
+			"versionName": null,
+			"share": 4.59,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 18",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 4.43,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 18",
+			"version": "1",
+			"versionName": null,
+			"share": 4.28,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 18",
+			"version": "0",
+			"versionName": null,
+			"share": 4.13,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 17",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.98,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 17",
+			"version": "1",
+			"versionName": null,
+			"share": 3.83,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 17",
+			"version": "0",
+			"versionName": null,
+			"share": 3.68,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 16",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.54,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 16",
+			"version": "1",
+			"versionName": null,
+			"share": 3.4,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 16",
+			"version": "0",
+			"versionName": null,
+			"share": 3.27,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 15",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.13,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 15",
+			"version": "1",
+			"versionName": null,
+			"share": 3,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 15",
+			"version": "0",
+			"versionName": null,
+			"share": 2.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 14",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 2.75,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 14",
+			"version": "1",
+			"versionName": null,
+			"share": 2.63,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 14",
+			"version": "0",
+			"versionName": null,
+			"share": 2.51,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 13",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 2.39,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 13",
+			"version": "1",
+			"versionName": null,
+			"share": 2.28,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 13",
+			"version": "0",
+			"versionName": null,
+			"share": 2.17,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 12",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 2.06,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 12",
+			"version": "1",
+			"versionName": null,
+			"share": 1.95,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 12",
+			"version": "0",
+			"versionName": null,
+			"share": 1.85,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 11",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.75,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 11",
+			"version": "1",
+			"versionName": null,
+			"share": 1.65,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 11",
+			"version": "0",
+			"versionName": null,
+			"share": 1.56,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 10",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.47,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 10",
+			"version": "1",
+			"versionName": null,
+			"share": 1.38,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 10",
+			"version": "0",
+			"versionName": null,
+			"share": 1.29,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 9",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.21,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 9",
+			"version": "1",
+			"versionName": null,
+			"share": 1.13,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 9",
+			"version": "0",
+			"versionName": null,
+			"share": 1.05,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 8",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.98,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 8",
+			"version": "1",
+			"versionName": null,
+			"share": 0.9,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 8",
+			"version": "0",
+			"versionName": null,
+			"share": 0.83,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 7",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.77,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 7",
+			"version": "1",
+			"versionName": null,
+			"share": 0.7,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 7",
+			"version": "0",
+			"versionName": null,
+			"share": 0.64,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 6",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.58,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 6",
+			"version": "1",
+			"versionName": null,
+			"share": 0.53,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 6",
+			"version": "0",
+			"versionName": null,
+			"share": 0.48,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 5",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.43,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 5",
+			"version": "1",
+			"versionName": null,
+			"share": 0.38,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 5",
+			"version": "0",
+			"versionName": null,
+			"share": 0.33,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 4",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.29,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 4",
+			"version": "1",
+			"versionName": null,
+			"share": 0.25,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 4",
+			"version": "0",
+			"versionName": null,
+			"share": 0.22,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 3",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.18,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 3",
+			"version": "1",
+			"versionName": null,
+			"share": 0.15,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 3",
+			"version": "0",
+			"versionName": null,
+			"share": 0.13,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 2",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.1,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 2",
+			"version": "1",
+			"versionName": null,
+			"share": 0.08,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 2",
+			"version": "0",
+			"versionName": null,
+			"share": 0.06,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 1",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.04,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 1",
+			"version": "1",
+			"versionName": null,
+			"share": 0.03,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 1",
+			"version": "0",
+			"versionName": null,
+			"share": 0.02,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 0",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 0",
+			"version": "0",
+			"versionName": null,
+			"share": 0,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 0",
+			"version": "1",
+			"versionName": null,
+			"share": 0,
+			"prev": {
+				"share": null
+			}
+		}
+	],
 	"/v1/stats/platforms/versions?period=2020-04": [
 		{
 			"name": "platform 19",
@@ -2735,6 +4361,32 @@
 			}
 		}
 	],
+	"/v1/stats/platforms/platform%2019/versions?continent=EU&period=2020-02": [
+		{
+			"version": "2",
+			"versionName": "version 2",
+			"share": 4.92,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"version": "1",
+			"versionName": null,
+			"share": 4.75,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"version": "0",
+			"versionName": null,
+			"share": 4.59,
+			"prev": {
+				"share": null
+			}
+		}
+	],
 	"/v1/stats/platforms/platform%2019/versions?continent=EU&period=2020-04": [
 		{
 			"version": "2",
@@ -2792,6 +4444,32 @@
 			}
 		}
 	],
+	"/v1/stats/platforms/platform%2019/versions?country=PL&period=2020-02": [
+		{
+			"version": "2",
+			"versionName": "version 2",
+			"share": 4.92,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"version": "1",
+			"versionName": null,
+			"share": 4.75,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"version": "0",
+			"versionName": null,
+			"share": 4.59,
+			"prev": {
+				"share": null
+			}
+		}
+	],
 	"/v1/stats/platforms/platform%2019/versions?country=PL&period=2020-04": [
 		{
 			"version": "2",
@@ -2844,6 +4522,32 @@
 			"version": "0",
 			"versionName": null,
 			"share": 4.66,
+			"prev": {
+				"share": null
+			}
+		}
+	],
+	"/v1/stats/platforms/platform%2019/versions?period=2020-02": [
+		{
+			"version": "2",
+			"versionName": "version 2",
+			"share": 4.92,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"version": "1",
+			"versionName": null,
+			"share": 4.75,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"version": "0",
+			"versionName": null,
+			"share": 4.59,
 			"prev": {
 				"share": null
 			}

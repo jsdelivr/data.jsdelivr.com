@@ -146,6 +146,148 @@
 			}
 		}
 	],
+	"/v1/stats/platforms?continent=EU&period=2020-02": [
+		{
+			"name": "platform 19",
+			"share": 14.27,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 18",
+			"share": 12.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 17",
+			"share": 11.49,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 16",
+			"share": 10.21,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 15",
+			"share": 9.01,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 14",
+			"share": 7.89,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 13",
+			"share": 6.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 12",
+			"share": 5.86,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 11",
+			"share": 4.96,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 10",
+			"share": 4.14,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 9",
+			"share": 3.39,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 8",
+			"share": 2.71,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 7",
+			"share": 2.11,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 6",
+			"share": 1.59,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 5",
+			"share": 1.14,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 4",
+			"share": 0.76,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 3",
+			"share": 0.46,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 2",
+			"share": 0.24,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 1",
+			"share": 0.09,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 0",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			}
+		}
+	],
 	"/v1/stats/platforms?continent=EU&period=2020-04": [
 		{
 			"name": "platform 19",
@@ -386,6 +528,148 @@
 			}
 		}
 	],
+	"/v1/stats/platforms?country=PL&period=2020-02": [
+		{
+			"name": "platform 19",
+			"share": 14.27,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 18",
+			"share": 12.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 17",
+			"share": 11.49,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 16",
+			"share": 10.21,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 15",
+			"share": 9.01,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 14",
+			"share": 7.89,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 13",
+			"share": 6.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 12",
+			"share": 5.86,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 11",
+			"share": 4.96,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 10",
+			"share": 4.14,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 9",
+			"share": 3.39,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 8",
+			"share": 2.71,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 7",
+			"share": 2.11,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 6",
+			"share": 1.59,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 5",
+			"share": 1.14,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 4",
+			"share": 0.76,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 3",
+			"share": 0.46,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 2",
+			"share": 0.24,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 1",
+			"share": 0.09,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 0",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			}
+		}
+	],
 	"/v1/stats/platforms?country=PL&period=2020-04": [
 		{
 			"name": "platform 19",
@@ -614,6 +898,148 @@
 		{
 			"name": "platform 1",
 			"share": 0.06,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 0",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			}
+		}
+	],
+	"/v1/stats/platforms?period=2020-02": [
+		{
+			"name": "platform 19",
+			"share": 14.27,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 18",
+			"share": 12.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 17",
+			"share": 11.49,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 16",
+			"share": 10.21,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 15",
+			"share": 9.01,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 14",
+			"share": 7.89,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 13",
+			"share": 6.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 12",
+			"share": 5.86,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 11",
+			"share": 4.96,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 10",
+			"share": 4.14,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 9",
+			"share": 3.39,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 8",
+			"share": 2.71,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 7",
+			"share": 2.11,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 6",
+			"share": 1.59,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 5",
+			"share": 1.14,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 4",
+			"share": 0.76,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 3",
+			"share": 0.46,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 2",
+			"share": 0.24,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 1",
+			"share": 0.09,
 			"prev": {
 				"share": null
 			}
