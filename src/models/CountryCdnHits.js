@@ -73,7 +73,7 @@ class CountryCdnHits extends BaseModel {
 		});
 	}
 
-	static async getDailyProvidersStatsForLocation (type, simpleLocationFilter, from, to) {
+	static async getDailyProvidersStatsForLocation (simpleLocationFilter, from, to) {
 		let sql = db(this.table)
 			.join(Country.table, `${this.table}.countryIso`, '=', `${Country.table}.iso`)
 			.where(simpleLocationFilter);

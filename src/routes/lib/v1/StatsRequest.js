@@ -108,7 +108,7 @@ class StatsRequest extends BaseRequest {
 
 	async handleCountries () {
 		let [ dailyStats, periodStats ] = await Promise.all([
-			CountryCdnHits.getProviderCountryStats(this.query.type, ...this.dateRange),
+			CountryCdnHits.getProviderCountryStats(...this.dateRange),
 			CountryCdnHits.getCountryStatsForPeriod(this.period, this.date),
 		]);
 
@@ -138,7 +138,7 @@ class StatsRequest extends BaseRequest {
 
 	async handleProviders () {
 		let [ dailyStats, periodStats ] = await Promise.all([
-			CountryCdnHits.getDailyProvidersStatsForLocation(this.query.type, this.simpleLocationFilter, ...this.dateRange),
+			CountryCdnHits.getDailyProvidersStatsForLocation(this.simpleLocationFilter, ...this.dateRange),
 			CountryCdnHits.getProvidersStatsForPeriodAndLocation(this.period, this.date, this.composedLocationFilter),
 		]);
 
