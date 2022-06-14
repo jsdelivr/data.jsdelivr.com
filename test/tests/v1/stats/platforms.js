@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const { makeEndpointAssertions, makeEndpointSnapshotTests, makeEndpointPaginationTests, setupSnapshots } = require('../../../utils');
+const { makeEndpointSnapshotTests, makeEndpointPaginationTests, makePaginatedEndpointAssertions, setupSnapshots } = require('../../../utils');
 
 describe('/v1/stats/platforms', () => {
 	before(() => {
@@ -10,12 +10,13 @@ describe('/v1/stats/platforms', () => {
 });
 
 function makeStatsPlatformsTests () {
-	makeEndpointAssertions('/v1/stats/platforms{?continent,country,period}', {}, [
+	makePaginatedEndpointAssertions('/v1/stats/platforms{?continent,country,period}', {}, [
 		{
 			params: { period: '2020-04' },
 			assert: (response) => {
 				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
 				expect(_.sumBy(response.body, 'prev.share')).to.be.closeTo(91.74, .1);
+				expect(response.body).to.have.lengthOf(14);
 				expect(response).to.matchSnapshot();
 			},
 		},
@@ -24,6 +25,7 @@ function makeStatsPlatformsTests () {
 			assert: (response) => {
 				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
 				expect(_.sumBy(response.body, 'prev.share')).to.be.closeTo(91.74, .1);
+				expect(response.body).to.have.lengthOf(14);
 				expect(response).to.matchSnapshot();
 			},
 		},
@@ -32,6 +34,7 @@ function makeStatsPlatformsTests () {
 			assert: (response) => {
 				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
 				expect(_.sumBy(response.body, 'prev.share')).to.be.closeTo(91.74, .1);
+				expect(response.body).to.have.lengthOf(14);
 				expect(response).to.matchSnapshot();
 			},
 		},
@@ -40,6 +43,7 @@ function makeStatsPlatformsTests () {
 			assert: (response) => {
 				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
 				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
+				expect(response.body).to.have.lengthOf(20);
 				expect(response).to.matchSnapshot();
 			},
 		},
@@ -48,6 +52,7 @@ function makeStatsPlatformsTests () {
 			assert: (response) => {
 				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
 				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
+				expect(response.body).to.have.lengthOf(20);
 				expect(response).to.matchSnapshot();
 			},
 		},
@@ -56,6 +61,7 @@ function makeStatsPlatformsTests () {
 			assert: (response) => {
 				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
 				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
+				expect(response.body).to.have.lengthOf(20);
 				expect(response).to.matchSnapshot();
 			},
 		},
@@ -64,6 +70,7 @@ function makeStatsPlatformsTests () {
 			assert: (response) => {
 				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
 				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
+				expect(response.body).to.have.lengthOf(20);
 				expect(response).to.matchSnapshot();
 			},
 		},
@@ -72,6 +79,7 @@ function makeStatsPlatformsTests () {
 			assert: (response) => {
 				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
 				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
+				expect(response.body).to.have.lengthOf(20);
 				expect(response).to.matchSnapshot();
 			},
 		},
@@ -80,6 +88,7 @@ function makeStatsPlatformsTests () {
 			assert: (response) => {
 				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
 				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
+				expect(response.body).to.have.lengthOf(20);
 				expect(response).to.matchSnapshot();
 			},
 		},

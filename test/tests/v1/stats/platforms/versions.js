@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const { makeEndpointAssertions, makeEndpointSnapshotTests, makeEndpointPaginationTests, setupSnapshots } = require('../../../../utils');
+const { makeEndpointSnapshotTests, makeEndpointPaginationTests, makePaginatedEndpointAssertions, setupSnapshots } = require('../../../../utils');
 
 describe('/v1/stats/platforms/versions', () => {
 	before(() => {
@@ -11,12 +11,13 @@ describe('/v1/stats/platforms/versions', () => {
 });
 
 function makeStatsPlatformsVersionTests () {
-	makeEndpointAssertions('/v1/stats/platforms/platform%2019/versions{?continent,country,period}', {}, [
+	makePaginatedEndpointAssertions('/v1/stats/platforms/platform%2019/versions{?continent,country,period}', {}, [
 		{
 			params: { period: '2020-04' },
 			assert: (response) => {
 				expect(_.sumBy(response.body, 'share')).to.be.closeTo(14.26, .1);
 				expect(_.sumBy(response.body, 'prev.share')).to.be.closeTo(9.66, .1);
+				expect(response.body).to.have.lengthOf(3);
 				expect(response).to.matchSnapshot();
 			},
 		},
@@ -25,6 +26,7 @@ function makeStatsPlatformsVersionTests () {
 			assert: (response) => {
 				expect(_.sumBy(response.body, 'share')).to.be.closeTo(14.26, .1);
 				expect(_.sumBy(response.body, 'prev.share')).to.be.closeTo(9.66, .1);
+				expect(response.body).to.have.lengthOf(3);
 				expect(response).to.matchSnapshot();
 			},
 		},
@@ -33,6 +35,7 @@ function makeStatsPlatformsVersionTests () {
 			assert: (response) => {
 				expect(_.sumBy(response.body, 'share')).to.be.closeTo(14.26, .1);
 				expect(_.sumBy(response.body, 'prev.share')).to.be.closeTo(9.66, .1);
+				expect(response.body).to.have.lengthOf(3);
 				expect(response).to.matchSnapshot();
 			},
 		},
@@ -41,6 +44,7 @@ function makeStatsPlatformsVersionTests () {
 			assert: (response) => {
 				expect(_.sumBy(response.body, 'share')).to.be.closeTo(13.56, .1);
 				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
+				expect(response.body).to.have.lengthOf(3);
 				expect(response).to.matchSnapshot();
 			},
 		},
@@ -49,6 +53,7 @@ function makeStatsPlatformsVersionTests () {
 			assert: (response) => {
 				expect(_.sumBy(response.body, 'share')).to.be.closeTo(13.56, .1);
 				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
+				expect(response.body).to.have.lengthOf(3);
 				expect(response).to.matchSnapshot();
 			},
 		},
@@ -57,6 +62,7 @@ function makeStatsPlatformsVersionTests () {
 			assert: (response) => {
 				expect(_.sumBy(response.body, 'share')).to.be.closeTo(13.56, .1);
 				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
+				expect(response.body).to.have.lengthOf(3);
 				expect(response).to.matchSnapshot();
 			},
 		},
@@ -65,6 +71,7 @@ function makeStatsPlatformsVersionTests () {
 			assert: (response) => {
 				expect(_.sumBy(response.body, 'share')).to.be.closeTo(13.70, .1);
 				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
+				expect(response.body).to.have.lengthOf(3);
 				expect(response).to.matchSnapshot();
 			},
 		},
@@ -73,6 +80,7 @@ function makeStatsPlatformsVersionTests () {
 			assert: (response) => {
 				expect(_.sumBy(response.body, 'share')).to.be.closeTo(13.70, .1);
 				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
+				expect(response.body).to.have.lengthOf(3);
 				expect(response).to.matchSnapshot();
 			},
 		},
@@ -81,6 +89,7 @@ function makeStatsPlatformsVersionTests () {
 			assert: (response) => {
 				expect(_.sumBy(response.body, 'share')).to.be.closeTo(13.70, .1);
 				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
+				expect(response.body).to.have.lengthOf(3);
 				expect(response).to.matchSnapshot();
 			},
 		},
@@ -103,12 +112,13 @@ function makeStatsPlatformsVersionTests () {
 }
 
 function makeStatsPlatformsVersionsTests () {
-	makeEndpointAssertions('/v1/stats/platforms/versions{?continent,country,period}', {}, [
+	makePaginatedEndpointAssertions('/v1/stats/platforms/versions{?continent,country,period}', {}, [
 		{
 			params: { period: '2020-04' },
 			assert: (response) => {
 				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
 				expect(_.sumBy(response.body, 'prev.share')).to.be.closeTo(87.30, .1);
+				expect(response.body).to.have.lengthOf(38);
 				expect(response).to.matchSnapshot();
 			},
 		},
@@ -117,6 +127,7 @@ function makeStatsPlatformsVersionsTests () {
 			assert: (response) => {
 				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
 				expect(_.sumBy(response.body, 'prev.share')).to.be.closeTo(87.30, .1);
+				expect(response.body).to.have.lengthOf(38);
 				expect(response).to.matchSnapshot();
 			},
 		},
@@ -125,6 +136,7 @@ function makeStatsPlatformsVersionsTests () {
 			assert: (response) => {
 				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
 				expect(_.sumBy(response.body, 'prev.share')).to.be.closeTo(87.30, .1);
+				expect(response.body).to.have.lengthOf(38);
 				expect(response).to.matchSnapshot();
 			},
 		},
@@ -133,6 +145,7 @@ function makeStatsPlatformsVersionsTests () {
 			assert: (response) => {
 				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
 				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
+				expect(response.body).to.have.lengthOf(58);
 				expect(response).to.matchSnapshot();
 			},
 		},
@@ -141,6 +154,7 @@ function makeStatsPlatformsVersionsTests () {
 			assert: (response) => {
 				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
 				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
+				expect(response.body).to.have.lengthOf(58);
 				expect(response).to.matchSnapshot();
 			},
 		},
@@ -149,6 +163,7 @@ function makeStatsPlatformsVersionsTests () {
 			assert: (response) => {
 				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
 				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
+				expect(response.body).to.have.lengthOf(58);
 				expect(response).to.matchSnapshot();
 			},
 		},
@@ -157,6 +172,7 @@ function makeStatsPlatformsVersionsTests () {
 			assert: (response) => {
 				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
 				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
+				expect(response.body).to.have.lengthOf(58);
 				expect(response).to.matchSnapshot();
 			},
 		},
@@ -165,6 +181,7 @@ function makeStatsPlatformsVersionsTests () {
 			assert: (response) => {
 				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
 				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
+				expect(response.body).to.have.lengthOf(58);
 				expect(response).to.matchSnapshot();
 			},
 		},
@@ -173,6 +190,7 @@ function makeStatsPlatformsVersionsTests () {
 			assert: (response) => {
 				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
 				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
+				expect(response.body).to.have.lengthOf(58);
 				expect(response).to.matchSnapshot();
 			},
 		},
