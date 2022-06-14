@@ -7,140 +7,140 @@
 	"/v1/stats/platforms?continent=EU&period=2020": [
 		{
 			"name": "platform 19",
-			"share": 14.46,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 18",
-			"share": 13.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 17",
-			"share": 11.67,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 16",
-			"share": 10.38,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 15",
-			"share": 9.18,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 14",
-			"share": 8.04,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 13",
-			"share": 6.98,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 12",
-			"share": 6,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 11",
-			"share": 5.09,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 10",
-			"share": 4.25,
+			"share": 13.7,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 9",
-			"share": 3.49,
+			"share": 13.7,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 18",
+			"share": 11.01,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 8",
-			"share": 2.81,
+			"share": 11.01,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 17",
+			"share": 8.61,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 7",
-			"share": 2.2,
+			"share": 8.61,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 16",
+			"share": 6.51,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 6",
-			"share": 0.87,
+			"share": 6.51,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 15",
+			"share": 4.7,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 5",
-			"share": 0.63,
+			"share": 4.7,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 14",
+			"share": 3.19,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 4",
-			"share": 0.43,
+			"share": 3.19,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 13",
+			"share": 1.42,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 3",
-			"share": 0.27,
+			"share": 1.42,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 12",
+			"share": 0.58,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 2",
-			"share": 0.15,
+			"share": 0.58,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 1",
-			"share": 0.06,
+			"share": 0.23,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 11",
+			"share": 0.23,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 0",
-			"share": 0.01,
+			"share": 0.04,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 10",
+			"share": 0.04,
 			"prev": {
 				"share": null
 			}
@@ -149,140 +149,140 @@
 	"/v1/stats/platforms?continent=EU&period=2020-02": [
 		{
 			"name": "platform 19",
-			"share": 14.27,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 18",
-			"share": 12.84,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 17",
-			"share": 11.49,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 16",
-			"share": 10.21,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 15",
-			"share": 9.01,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 14",
-			"share": 7.89,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 13",
-			"share": 6.84,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 12",
-			"share": 5.86,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 11",
-			"share": 4.96,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 10",
-			"share": 4.14,
+			"share": 13.56,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 9",
-			"share": 3.39,
+			"share": 13.56,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 18",
+			"share": 10.86,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 8",
-			"share": 2.71,
+			"share": 10.86,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 17",
+			"share": 8.45,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 7",
-			"share": 2.11,
+			"share": 8.45,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 16",
+			"share": 6.35,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 6",
-			"share": 1.59,
+			"share": 6.35,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 15",
+			"share": 4.55,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 5",
-			"share": 1.14,
+			"share": 4.55,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 14",
+			"share": 3.05,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 4",
-			"share": 0.76,
+			"share": 3.05,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 13",
+			"share": 1.85,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 3",
-			"share": 0.46,
+			"share": 1.85,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 12",
+			"share": 0.95,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 2",
-			"share": 0.24,
+			"share": 0.95,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 1",
-			"share": 0.09,
+			"share": 0.34,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 11",
+			"share": 0.34,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 0",
-			"share": 0.01,
+			"share": 0.04,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 10",
+			"share": 0.04,
 			"prev": {
 				"share": null
 			}
@@ -291,93 +291,100 @@
 	"/v1/stats/platforms?continent=EU&period=2020-04": [
 		{
 			"name": "platform 19",
-			"share": 14.9,
+			"share": 14.26,
 			"prev": {
-				"share": 9.83
-			}
-		},
-		{
-			"name": "platform 18",
-			"share": 13.41,
-			"prev": {
-				"share": 9.32
-			}
-		},
-		{
-			"name": "platform 17",
-			"share": 12,
-			"prev": {
-				"share": 8.81
-			}
-		},
-		{
-			"name": "platform 16",
-			"share": 10.67,
-			"prev": {
-				"share": 8.31
-			}
-		},
-		{
-			"name": "platform 15",
-			"share": 9.42,
-			"prev": {
-				"share": 7.8
-			}
-		},
-		{
-			"name": "platform 14",
-			"share": 8.24,
-			"prev": {
-				"share": 7.29
-			}
-		},
-		{
-			"name": "platform 13",
-			"share": 7.14,
-			"prev": {
-				"share": 6.78
-			}
-		},
-		{
-			"name": "platform 12",
-			"share": 6.12,
-			"prev": {
-				"share": 6.27
-			}
-		},
-		{
-			"name": "platform 11",
-			"share": 5.18,
-			"prev": {
-				"share": 5.76
-			}
-		},
-		{
-			"name": "platform 10",
-			"share": 4.32,
-			"prev": {
-				"share": 5.25
+				"share": 9.66
 			}
 		},
 		{
 			"name": "platform 9",
-			"share": 3.54,
+			"share": 14.26,
 			"prev": {
-				"share": 4.75
+				"share": 9.66
+			}
+		},
+		{
+			"name": "platform 18",
+			"share": 11.42,
+			"prev": {
+				"share": 8.62
 			}
 		},
 		{
 			"name": "platform 8",
-			"share": 2.83,
+			"share": 11.42,
 			"prev": {
-				"share": 4.24
+				"share": 8.62
+			}
+		},
+		{
+			"name": "platform 17",
+			"share": 8.89,
+			"prev": {
+				"share": 7.59
 			}
 		},
 		{
 			"name": "platform 7",
-			"share": 2.21,
+			"share": 8.89,
 			"prev": {
-				"share": 3.73
+				"share": 7.59
+			}
+		},
+		{
+			"name": "platform 16",
+			"share": 6.68,
+			"prev": {
+				"share": 6.55
+			}
+		},
+		{
+			"name": "platform 6",
+			"share": 6.68,
+			"prev": {
+				"share": 6.55
+			}
+		},
+		{
+			"name": "platform 15",
+			"share": 4.78,
+			"prev": {
+				"share": 5.52
+			}
+		},
+		{
+			"name": "platform 5",
+			"share": 4.78,
+			"prev": {
+				"share": 5.52
+			}
+		},
+		{
+			"name": "platform 14",
+			"share": 3.2,
+			"prev": {
+				"share": 4.48
+			}
+		},
+		{
+			"name": "platform 4",
+			"share": 3.2,
+			"prev": {
+				"share": 4.48
+			}
+		},
+		{
+			"name": "platform 13",
+			"share": 0.77,
+			"prev": {
+				"share": 3.45
+			}
+		},
+		{
+			"name": "platform 3",
+			"share": 0.77,
+			"prev": {
+				"share": 3.45
 			}
 		}
 	],
@@ -389,140 +396,140 @@
 	"/v1/stats/platforms?country=PL&period=2020": [
 		{
 			"name": "platform 19",
-			"share": 14.46,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 18",
-			"share": 13.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 17",
-			"share": 11.67,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 16",
-			"share": 10.38,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 15",
-			"share": 9.18,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 14",
-			"share": 8.04,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 13",
-			"share": 6.98,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 12",
-			"share": 6,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 11",
-			"share": 5.09,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 10",
-			"share": 4.25,
+			"share": 13.7,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 9",
-			"share": 3.49,
+			"share": 13.7,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 18",
+			"share": 11.01,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 8",
-			"share": 2.81,
+			"share": 11.01,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 17",
+			"share": 8.61,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 7",
-			"share": 2.2,
+			"share": 8.61,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 16",
+			"share": 6.51,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 6",
-			"share": 0.87,
+			"share": 6.51,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 15",
+			"share": 4.7,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 5",
-			"share": 0.63,
+			"share": 4.7,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 14",
+			"share": 3.19,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 4",
-			"share": 0.43,
+			"share": 3.19,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 13",
+			"share": 1.42,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 3",
-			"share": 0.27,
+			"share": 1.42,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 12",
+			"share": 0.58,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 2",
-			"share": 0.15,
+			"share": 0.58,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 1",
-			"share": 0.06,
+			"share": 0.23,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 11",
+			"share": 0.23,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 0",
-			"share": 0.01,
+			"share": 0.04,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 10",
+			"share": 0.04,
 			"prev": {
 				"share": null
 			}
@@ -531,140 +538,140 @@
 	"/v1/stats/platforms?country=PL&period=2020-02": [
 		{
 			"name": "platform 19",
-			"share": 14.27,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 18",
-			"share": 12.84,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 17",
-			"share": 11.49,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 16",
-			"share": 10.21,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 15",
-			"share": 9.01,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 14",
-			"share": 7.89,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 13",
-			"share": 6.84,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 12",
-			"share": 5.86,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 11",
-			"share": 4.96,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 10",
-			"share": 4.14,
+			"share": 13.56,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 9",
-			"share": 3.39,
+			"share": 13.56,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 18",
+			"share": 10.86,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 8",
-			"share": 2.71,
+			"share": 10.86,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 17",
+			"share": 8.45,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 7",
-			"share": 2.11,
+			"share": 8.45,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 16",
+			"share": 6.35,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 6",
-			"share": 1.59,
+			"share": 6.35,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 15",
+			"share": 4.55,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 5",
-			"share": 1.14,
+			"share": 4.55,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 14",
+			"share": 3.05,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 4",
-			"share": 0.76,
+			"share": 3.05,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 13",
+			"share": 1.85,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 3",
-			"share": 0.46,
+			"share": 1.85,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 12",
+			"share": 0.95,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 2",
-			"share": 0.24,
+			"share": 0.95,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 1",
-			"share": 0.09,
+			"share": 0.34,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 11",
+			"share": 0.34,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 0",
-			"share": 0.01,
+			"share": 0.04,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 10",
+			"share": 0.04,
 			"prev": {
 				"share": null
 			}
@@ -673,93 +680,100 @@
 	"/v1/stats/platforms?country=PL&period=2020-04": [
 		{
 			"name": "platform 19",
-			"share": 14.9,
+			"share": 14.26,
 			"prev": {
-				"share": 9.83
-			}
-		},
-		{
-			"name": "platform 18",
-			"share": 13.41,
-			"prev": {
-				"share": 9.32
-			}
-		},
-		{
-			"name": "platform 17",
-			"share": 12,
-			"prev": {
-				"share": 8.81
-			}
-		},
-		{
-			"name": "platform 16",
-			"share": 10.67,
-			"prev": {
-				"share": 8.31
-			}
-		},
-		{
-			"name": "platform 15",
-			"share": 9.42,
-			"prev": {
-				"share": 7.8
-			}
-		},
-		{
-			"name": "platform 14",
-			"share": 8.24,
-			"prev": {
-				"share": 7.29
-			}
-		},
-		{
-			"name": "platform 13",
-			"share": 7.14,
-			"prev": {
-				"share": 6.78
-			}
-		},
-		{
-			"name": "platform 12",
-			"share": 6.12,
-			"prev": {
-				"share": 6.27
-			}
-		},
-		{
-			"name": "platform 11",
-			"share": 5.18,
-			"prev": {
-				"share": 5.76
-			}
-		},
-		{
-			"name": "platform 10",
-			"share": 4.32,
-			"prev": {
-				"share": 5.25
+				"share": 9.66
 			}
 		},
 		{
 			"name": "platform 9",
-			"share": 3.54,
+			"share": 14.26,
 			"prev": {
-				"share": 4.75
+				"share": 9.66
+			}
+		},
+		{
+			"name": "platform 18",
+			"share": 11.42,
+			"prev": {
+				"share": 8.62
 			}
 		},
 		{
 			"name": "platform 8",
-			"share": 2.83,
+			"share": 11.42,
 			"prev": {
-				"share": 4.24
+				"share": 8.62
+			}
+		},
+		{
+			"name": "platform 17",
+			"share": 8.89,
+			"prev": {
+				"share": 7.59
 			}
 		},
 		{
 			"name": "platform 7",
-			"share": 2.21,
+			"share": 8.89,
 			"prev": {
-				"share": 3.73
+				"share": 7.59
+			}
+		},
+		{
+			"name": "platform 16",
+			"share": 6.68,
+			"prev": {
+				"share": 6.55
+			}
+		},
+		{
+			"name": "platform 6",
+			"share": 6.68,
+			"prev": {
+				"share": 6.55
+			}
+		},
+		{
+			"name": "platform 15",
+			"share": 4.78,
+			"prev": {
+				"share": 5.52
+			}
+		},
+		{
+			"name": "platform 5",
+			"share": 4.78,
+			"prev": {
+				"share": 5.52
+			}
+		},
+		{
+			"name": "platform 14",
+			"share": 3.2,
+			"prev": {
+				"share": 4.48
+			}
+		},
+		{
+			"name": "platform 4",
+			"share": 3.2,
+			"prev": {
+				"share": 4.48
+			}
+		},
+		{
+			"name": "platform 13",
+			"share": 0.77,
+			"prev": {
+				"share": 3.45
+			}
+		},
+		{
+			"name": "platform 3",
+			"share": 0.77,
+			"prev": {
+				"share": 3.45
 			}
 		}
 	],
@@ -771,140 +785,140 @@
 	"/v1/stats/platforms?period=2020": [
 		{
 			"name": "platform 19",
-			"share": 14.46,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 18",
-			"share": 13.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 17",
-			"share": 11.67,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 16",
-			"share": 10.38,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 15",
-			"share": 9.18,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 14",
-			"share": 8.04,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 13",
-			"share": 6.98,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 12",
-			"share": 6,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 11",
-			"share": 5.09,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 10",
-			"share": 4.25,
+			"share": 13.7,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 9",
-			"share": 3.49,
+			"share": 13.7,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 18",
+			"share": 11.01,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 8",
-			"share": 2.81,
+			"share": 11.01,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 17",
+			"share": 8.61,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 7",
-			"share": 2.2,
+			"share": 8.61,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 16",
+			"share": 6.51,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 6",
-			"share": 0.87,
+			"share": 6.51,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 15",
+			"share": 4.7,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 5",
-			"share": 0.63,
+			"share": 4.7,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 14",
+			"share": 3.19,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 4",
-			"share": 0.43,
+			"share": 3.19,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 13",
+			"share": 1.42,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 3",
-			"share": 0.27,
+			"share": 1.42,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 12",
+			"share": 0.58,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 2",
-			"share": 0.15,
+			"share": 0.58,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 1",
-			"share": 0.06,
+			"share": 0.23,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 11",
+			"share": 0.23,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 0",
-			"share": 0.01,
+			"share": 0.04,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 10",
+			"share": 0.04,
 			"prev": {
 				"share": null
 			}
@@ -913,140 +927,140 @@
 	"/v1/stats/platforms?period=2020-02": [
 		{
 			"name": "platform 19",
-			"share": 14.27,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 18",
-			"share": 12.84,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 17",
-			"share": 11.49,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 16",
-			"share": 10.21,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 15",
-			"share": 9.01,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 14",
-			"share": 7.89,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 13",
-			"share": 6.84,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 12",
-			"share": 5.86,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 11",
-			"share": 4.96,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"name": "platform 10",
-			"share": 4.14,
+			"share": 13.56,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 9",
-			"share": 3.39,
+			"share": 13.56,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 18",
+			"share": 10.86,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 8",
-			"share": 2.71,
+			"share": 10.86,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 17",
+			"share": 8.45,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 7",
-			"share": 2.11,
+			"share": 8.45,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 16",
+			"share": 6.35,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 6",
-			"share": 1.59,
+			"share": 6.35,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 15",
+			"share": 4.55,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 5",
-			"share": 1.14,
+			"share": 4.55,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 14",
+			"share": 3.05,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 4",
-			"share": 0.76,
+			"share": 3.05,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 13",
+			"share": 1.85,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 3",
-			"share": 0.46,
+			"share": 1.85,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 12",
+			"share": 0.95,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 2",
-			"share": 0.24,
+			"share": 0.95,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 1",
-			"share": 0.09,
+			"share": 0.34,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 11",
+			"share": 0.34,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"name": "platform 0",
-			"share": 0.01,
+			"share": 0.04,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "platform 10",
+			"share": 0.04,
 			"prev": {
 				"share": null
 			}
@@ -1055,93 +1069,100 @@
 	"/v1/stats/platforms?period=2020-04": [
 		{
 			"name": "platform 19",
-			"share": 14.9,
+			"share": 14.26,
 			"prev": {
-				"share": 9.83
-			}
-		},
-		{
-			"name": "platform 18",
-			"share": 13.41,
-			"prev": {
-				"share": 9.32
-			}
-		},
-		{
-			"name": "platform 17",
-			"share": 12,
-			"prev": {
-				"share": 8.81
-			}
-		},
-		{
-			"name": "platform 16",
-			"share": 10.67,
-			"prev": {
-				"share": 8.31
-			}
-		},
-		{
-			"name": "platform 15",
-			"share": 9.42,
-			"prev": {
-				"share": 7.8
-			}
-		},
-		{
-			"name": "platform 14",
-			"share": 8.24,
-			"prev": {
-				"share": 7.29
-			}
-		},
-		{
-			"name": "platform 13",
-			"share": 7.14,
-			"prev": {
-				"share": 6.78
-			}
-		},
-		{
-			"name": "platform 12",
-			"share": 6.12,
-			"prev": {
-				"share": 6.27
-			}
-		},
-		{
-			"name": "platform 11",
-			"share": 5.18,
-			"prev": {
-				"share": 5.76
-			}
-		},
-		{
-			"name": "platform 10",
-			"share": 4.32,
-			"prev": {
-				"share": 5.25
+				"share": 9.66
 			}
 		},
 		{
 			"name": "platform 9",
-			"share": 3.54,
+			"share": 14.26,
 			"prev": {
-				"share": 4.75
+				"share": 9.66
+			}
+		},
+		{
+			"name": "platform 18",
+			"share": 11.42,
+			"prev": {
+				"share": 8.62
 			}
 		},
 		{
 			"name": "platform 8",
-			"share": 2.83,
+			"share": 11.42,
 			"prev": {
-				"share": 4.24
+				"share": 8.62
+			}
+		},
+		{
+			"name": "platform 17",
+			"share": 8.89,
+			"prev": {
+				"share": 7.59
 			}
 		},
 		{
 			"name": "platform 7",
-			"share": 2.21,
+			"share": 8.89,
 			"prev": {
-				"share": 3.73
+				"share": 7.59
+			}
+		},
+		{
+			"name": "platform 16",
+			"share": 6.68,
+			"prev": {
+				"share": 6.55
+			}
+		},
+		{
+			"name": "platform 6",
+			"share": 6.68,
+			"prev": {
+				"share": 6.55
+			}
+		},
+		{
+			"name": "platform 15",
+			"share": 4.78,
+			"prev": {
+				"share": 5.52
+			}
+		},
+		{
+			"name": "platform 5",
+			"share": 4.78,
+			"prev": {
+				"share": 5.52
+			}
+		},
+		{
+			"name": "platform 14",
+			"share": 3.2,
+			"prev": {
+				"share": 4.48
+			}
+		},
+		{
+			"name": "platform 4",
+			"share": 3.2,
+			"prev": {
+				"share": 4.48
+			}
+		},
+		{
+			"name": "platform 13",
+			"share": 0.77,
+			"prev": {
+				"share": 3.45
+			}
+		},
+		{
+			"name": "platform 3",
+			"share": 0.77,
+			"prev": {
+				"share": 3.45
 			}
 		}
 	],

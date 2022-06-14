@@ -118,34 +118,53 @@ exports.seed = async (db) => {
 	})));
 
 	await db('country_browser_version_hits').insert(_.flatten(countries.map((countryIso, countryIndex) => {
-		return _.flatten(_.range(1, 121).map((browserVersionId) => {
-			return STATIC_MONTHS.slice(0, browserVersionId < 43 ? -1 : undefined).map((month, mIndex) => {
+		return _.flatten(_.range(1, 61).map((browserVersionId) => {
+			return _.flatten(STATIC_MONTHS.slice(0, browserVersionId < 23 ? -1 : undefined).map((month, mIndex) => {
 				let platformIndex = Math.floor((browserVersionId - 1) / 6);
 				let platformVersionIndex = Math.floor((browserVersionId - 1) / 2);
 
-				return {
-					browserVersionId,
-					platformId: platformIndex + 1,
-					countryIso,
-					date: new Date(month),
-					hits: countryIndex * platformVersionIndex * ((mIndex % 2 || platformVersionIndex) + 1),
-					bandwidth: countryIndex * platformVersionIndex * ((mIndex % 2 || platformVersionIndex) + 1) * 16 * 1025,
-				};
-			});
+				return [
+					{
+						browserVersionId,
+						platformId: platformIndex + 1,
+						countryIso,
+						date: new Date(month),
+						hits: countryIndex * platformVersionIndex * ((mIndex % 2 || platformVersionIndex) + 1),
+						bandwidth: countryIndex * platformVersionIndex * ((mIndex % 2 || platformVersionIndex) + 1) * 16 * 1025,
+					},
+					{
+						browserVersionId,
+						platformId: 10 + platformIndex + 1,
+						countryIso,
+						date: new Date(month),
+						hits: countryIndex * platformVersionIndex * ((mIndex % 2 || platformVersionIndex) + 1),
+						bandwidth: countryIndex * platformVersionIndex * ((mIndex % 2 || platformVersionIndex) + 1) * 16 * 1025,
+					},
+				];
+			}));
 		}));
 	})));
 
 	await db('country_platform_version_hits').insert(_.flatten(countries.map((countryIso, countryIndex) => {
-		return _.flatten(_.range(1, 61).map((platformVersionId, platformVersionIndex) => {
-			return STATIC_MONTHS.slice(0, platformVersionId < 22 ? -1 : undefined).map((month, mIndex) => {
-				return {
-					platformVersionId,
-					countryIso,
-					date: new Date(month),
-					hits: 2 * countryIndex * platformVersionIndex * ((mIndex % 2 || platformVersionIndex) + 1),
-					bandwidth: 2 * countryIndex * platformVersionIndex * ((mIndex % 2 || platformVersionIndex) + 1) * 16 * 1025,
-				};
-			});
+		return _.flatten(_.range(1, 31).map((platformVersionId, platformVersionIndex) => {
+			return _.flatten(STATIC_MONTHS.slice(0, platformVersionId < 12 ? -1 : undefined).map((month, mIndex) => {
+				return [
+					{
+						platformVersionId,
+						countryIso,
+						date: new Date(month),
+						hits: 2 * countryIndex * platformVersionIndex * ((mIndex % 2 || platformVersionIndex) + 1),
+						bandwidth: 2 * countryIndex * platformVersionIndex * ((mIndex % 2 || platformVersionIndex) + 1) * 16 * 1025,
+					},
+					{
+						platformVersionId: 30 + platformVersionId,
+						countryIso,
+						date: new Date(month),
+						hits: 2 * countryIndex * platformVersionIndex * ((mIndex % 2 || platformVersionIndex) + 1),
+						bandwidth: 2 * countryIndex * platformVersionIndex * ((mIndex % 2 || platformVersionIndex) + 1) * 16 * 1025,
+					},
+				];
+			}));
 		}));
 	})));
 

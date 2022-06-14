@@ -39,7 +39,7 @@ class Platform extends BaseCacheModel {
 		let sql = db(TopPlatform.table)
 			.where({ period, date })
 			.where(composedLocationFilter)
-			.orderBy('share', 'desc');
+			.orderBy([{ column: 'share', order: 'desc' }, { column: 'name' }]);
 
 		if (limit) {
 			sql.limit(limit).offset((page - 1) * limit);
@@ -60,7 +60,7 @@ class Platform extends BaseCacheModel {
 		let sql = db(TopPlatformBrowser.table)
 			.where({ name, period, date })
 			.where(composedLocationFilter)
-			.orderBy('share', 'desc');
+			.orderBy([{ column: 'share', order: 'desc' }, { column: 'browser' }]);
 
 		if (limit) {
 			sql.limit(limit).offset((page - 1) * limit);
@@ -81,7 +81,7 @@ class Platform extends BaseCacheModel {
 		let sql = db(TopPlatformVersion.table)
 			.where({ name, period, date })
 			.where(composedLocationFilter)
-			.orderBy('share', 'desc');
+			.orderBy([{ column: 'share', order: 'desc' }, { column: 'version' }]);
 
 		if (limit) {
 			sql.limit(limit).offset((page - 1) * limit);
@@ -103,7 +103,7 @@ class Platform extends BaseCacheModel {
 		let sql = db(TopPlatformVersion.table)
 			.where({ period, date })
 			.where(composedLocationFilter)
-			.orderBy('share', 'desc');
+			.orderBy([{ column: 'share', order: 'desc' }, { column: 'name' }, { column: 'version' }]);
 
 		if (limit) {
 			sql.limit(limit).offset((page - 1) * limit);

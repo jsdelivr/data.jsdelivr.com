@@ -522,7 +522,7 @@ begin
 					from platform
 						join platform_version pvi on platform.id = pvi.platformId
 						join country_platform_version_hits cpvhi on pvi.id = cpvhi.platformVersionId
-					where pvi.id = pv.id and date >= aPrevDateFrom and date <= aPrevDateTo
+					where platform.id = p.id and pvi.id = pv.id and date >= aPrevDateFrom and date <= aPrevDateTo
 				) as prevHits
 			from platform p
 				join platform_version pv on p.id = pv.platformId
@@ -556,7 +556,7 @@ begin
 						join platform_version pvi on platform.id = pvi.platformId
 						join country_platform_version_hits cpvhi on pvi.id = cpvhi.platformVersionId
 						join country ci on cpvhi.countryIso = ci.iso
-					where pvi.id = pv.id and ci.continentCode = c.continentCode and date >= aPrevDateFrom and date <= aPrevDateTo
+					where platform.id = p.id and pvi.id = pv.id and ci.continentCode = c.continentCode and date >= aPrevDateFrom and date <= aPrevDateTo
 				) as prevHits
 			from platform p
 				join platform_version pv on p.id = pv.platformId
@@ -589,7 +589,7 @@ begin
 					from platform
 						join platform_version pvi on platform.id = pvi.platformId
 						join country_platform_version_hits cpvhi on pvi.id = cpvhi.platformVersionId
-					where pvi.id = pv.id and cpvhi.countryIso = cpvh.countryIso and date >= aPrevDateFrom and date <= aPrevDateTo
+					where platform.id = p.id and pvi.id = pv.id and cpvhi.countryIso = cpvh.countryIso and date >= aPrevDateFrom and date <= aPrevDateTo
 				) as prevHits
 			from platform p
 				join platform_version pv on p.id = pv.platformId
@@ -637,7 +637,7 @@ begin
 						join browser_version bvi on bi.id = bvi.browserId
 						join country_browser_version_hits cbvhi on bvi.id = cbvhi.browserVersionId
 						join platform pi on cbvhi.platformId = pi.id
-					where bi.id = b.id and date >= aPrevDateFrom and date <= aPrevDateTo
+					where pi.id = p.id and bi.id = b.id and date >= aPrevDateFrom and date <= aPrevDateTo
 				) as prevHits
 			from browser b
 				join browser_version bv on b.id = bv.browserId
@@ -673,7 +673,7 @@ begin
 						join country_browser_version_hits cbvhi on bvi.id = cbvhi.browserVersionId
 						join platform pi on cbvhi.platformId = pi.id
 						join country ci on cbvhi.countryIso = ci.iso
-					where bi.id = b.id and ci.continentCode = c.continentCode and date >= aPrevDateFrom and date <= aPrevDateTo
+					where pi.id = p.id and bi.id = b.id and ci.continentCode = c.continentCode and date >= aPrevDateFrom and date <= aPrevDateTo
 				) as prevHits
 			from browser b
 				join browser_version bv on b.id = bv.browserId
@@ -708,7 +708,7 @@ begin
 						join browser_version bvi on bi.id = bvi.browserId
 						join country_browser_version_hits cbvhi on bvi.id = cbvhi.browserVersionId
 						join platform pi on cbvhi.platformId = pi.id
-					where bi.id = b.id and cbvhi.countryIso = cbvh.countryIso and date >= aPrevDateFrom and date <= aPrevDateTo
+					where pi.id = p.id and bi.id = b.id and cbvhi.countryIso = cbvh.countryIso and date >= aPrevDateFrom and date <= aPrevDateTo
 				) as prevHits
 			from browser b
 				join browser_version bv on b.id = bv.browserId

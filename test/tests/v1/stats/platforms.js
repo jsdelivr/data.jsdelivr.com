@@ -15,7 +15,7 @@ function makeStatsPlatformsTests () {
 			params: { period: '2020-04' },
 			assert: (response) => {
 				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
-				expect(_.sumBy(response.body, 'prev.share')).to.be.closeTo(88.14, .1);
+				expect(_.sumBy(response.body, 'prev.share')).to.be.closeTo(91.74, .1);
 				expect(response).to.matchSnapshot();
 			},
 		},
@@ -23,7 +23,7 @@ function makeStatsPlatformsTests () {
 			params: { period: '2020-04', continent: 'EU' },
 			assert: (response) => {
 				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
-				expect(_.sumBy(response.body, 'prev.share')).to.be.closeTo(88.14, .1);
+				expect(_.sumBy(response.body, 'prev.share')).to.be.closeTo(91.74, .1);
 				expect(response).to.matchSnapshot();
 			},
 		},
@@ -31,7 +31,7 @@ function makeStatsPlatformsTests () {
 			params: { period: '2020-04', country: 'PL' },
 			assert: (response) => {
 				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
-				expect(_.sumBy(response.body, 'prev.share')).to.be.closeTo(88.14, .1);
+				expect(_.sumBy(response.body, 'prev.share')).to.be.closeTo(91.74, .1);
 				expect(response).to.matchSnapshot();
 			},
 		},

@@ -6,15 +6,15 @@
 	},
 	"/v1/stats/platforms/platform%2019/browsers?continent=EU&period=2020": [
 		{
-			"browser": "browser 39",
-			"share": 7.39,
+			"browser": "browser 19",
+			"share": 7.16,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"browser": "browser 38",
-			"share": 7.07,
+			"browser": "browser 18",
+			"share": 6.53,
 			"prev": {
 				"share": null
 			}
@@ -22,15 +22,15 @@
 	],
 	"/v1/stats/platforms/platform%2019/browsers?continent=EU&period=2020-02": [
 		{
-			"browser": "browser 39",
-			"share": 7.3,
+			"browser": "browser 19",
+			"share": 7.1,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"browser": "browser 38",
-			"share": 6.97,
+			"browser": "browser 18",
+			"share": 6.46,
 			"prev": {
 				"share": null
 			}
@@ -38,17 +38,17 @@
 	],
 	"/v1/stats/platforms/platform%2019/browsers?continent=EU&period=2020-04": [
 		{
-			"browser": "browser 39",
-			"share": 7.62,
+			"browser": "browser 19",
+			"share": 7.46,
 			"prev": {
-				"share": 4.97
+				"share": 4.94
 			}
 		},
 		{
-			"browser": "browser 38",
-			"share": 7.28,
+			"browser": "browser 18",
+			"share": 6.8,
 			"prev": {
-				"share": 4.86
+				"share": 4.71
 			}
 		}
 	],
@@ -59,15 +59,15 @@
 	},
 	"/v1/stats/platforms/platform%2019/browsers?country=PL&period=2020": [
 		{
-			"browser": "browser 39",
-			"share": 7.39,
+			"browser": "browser 19",
+			"share": 7.16,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"browser": "browser 38",
-			"share": 7.07,
+			"browser": "browser 18",
+			"share": 6.53,
 			"prev": {
 				"share": null
 			}
@@ -75,15 +75,15 @@
 	],
 	"/v1/stats/platforms/platform%2019/browsers?country=PL&period=2020-02": [
 		{
-			"browser": "browser 39",
-			"share": 7.3,
+			"browser": "browser 19",
+			"share": 7.1,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"browser": "browser 38",
-			"share": 6.97,
+			"browser": "browser 18",
+			"share": 6.46,
 			"prev": {
 				"share": null
 			}
@@ -91,17 +91,17 @@
 	],
 	"/v1/stats/platforms/platform%2019/browsers?country=PL&period=2020-04": [
 		{
-			"browser": "browser 39",
-			"share": 7.62,
+			"browser": "browser 19",
+			"share": 7.46,
 			"prev": {
-				"share": 4.97
+				"share": 4.94
 			}
 		},
 		{
-			"browser": "browser 38",
-			"share": 7.28,
+			"browser": "browser 18",
+			"share": 6.8,
 			"prev": {
-				"share": 4.86
+				"share": 4.71
 			}
 		}
 	],
@@ -112,15 +112,15 @@
 	},
 	"/v1/stats/platforms/platform%2019/browsers?period=2020": [
 		{
-			"browser": "browser 39",
-			"share": 7.39,
+			"browser": "browser 19",
+			"share": 7.16,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"browser": "browser 38",
-			"share": 7.07,
+			"browser": "browser 18",
+			"share": 6.53,
 			"prev": {
 				"share": null
 			}
@@ -128,15 +128,15 @@
 	],
 	"/v1/stats/platforms/platform%2019/browsers?period=2020-02": [
 		{
-			"browser": "browser 39",
-			"share": 7.3,
+			"browser": "browser 19",
+			"share": 7.1,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"browser": "browser 38",
-			"share": 6.97,
+			"browser": "browser 18",
+			"share": 6.46,
 			"prev": {
 				"share": null
 			}
@@ -144,17 +144,17 @@
 	],
 	"/v1/stats/platforms/platform%2019/browsers?period=2020-04": [
 		{
-			"browser": "browser 39",
-			"share": 7.62,
+			"browser": "browser 19",
+			"share": 7.46,
 			"prev": {
-				"share": 4.97
+				"share": 4.94
 			}
 		},
 		{
-			"browser": "browser 38",
-			"share": 7.28,
+			"browser": "browser 18",
+			"share": 6.8,
 			"prev": {
-				"share": 4.86
+				"share": 4.71
 			}
 		}
 	],
