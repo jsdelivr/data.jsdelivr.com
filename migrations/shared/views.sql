@@ -1,5 +1,4 @@
-drop view if exists view_file_hits;
-create view view_file_hits as
+create or replace view view_file_hits as
 select package.type as type,
 	package.name as name,
 	package_version.version as version,
@@ -15,8 +14,7 @@ group by file_hits.fileId, file_hits.date
 order by file_hits.date desc, hits desc;
 
 
-drop view if exists view_package_hits;
-create view view_package_hits as
+create or replace view view_package_hits as
 select package.type as type,
 	package.name as name,
 	package_hits.date as date,
@@ -28,8 +26,7 @@ group by package.id, package_hits.date
 order by package_hits.date desc, hits desc;
 
 
-drop view if exists view_package_version_hits;
-create view view_package_version_hits as
+create or replace view view_package_version_hits as
 select package.type as type,
 	package.name as name,
 	package_version.version as version,
@@ -43,8 +40,7 @@ group by package_version.id, package_version_hits.date
 order by package_version_hits.date desc, hits desc;
 
 
-drop view if exists view_proxy_hits;
-create view view_proxy_hits as
+create or replace view view_proxy_hits as
 select proxy.path,
 	proxy_hits.date as date,
 	sum(proxy_hits.hits) as hits,
@@ -55,8 +51,7 @@ group by proxy.id, proxy_hits.date
 order by proxy_hits.date desc, hits desc;
 
 
-drop view if exists view_referrer_hits;
-create view view_referrer_hits as
+create or replace view view_referrer_hits as
 select referrer.referrer,
 	referrer_hits.date as date,
 	sum(referrer_hits.hits) as hits,

@@ -1,5 +1,4 @@
-drop procedure if exists updateViewTopPackageFiles;
-create procedure updateViewTopPackageFiles(dateFrom date, dateTo date)
+create or replace procedure updateViewTopPackageFiles(dateFrom date, dateTo date)
 begin
     declare exit handler for sqlexception
         begin
@@ -33,8 +32,7 @@ begin
     commit;
 end;
 
-drop event if exists top_package_files_update;
-create event top_package_files_update
+create or replace event top_package_files_update
     on schedule
         every 5 minute
         starts utc_date()

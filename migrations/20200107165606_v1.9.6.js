@@ -9,8 +9,7 @@ exports.up = async (db) => {
 
 	// language=MariaDB
 	await db.schema.raw(dedent`
-		drop procedure if exists updateViewNetworkPackages;
-		create procedure updateViewNetworkPackages(aDate date)
+		create or replace procedure updateViewNetworkPackages(aDate date)
 		begin
 			declare exit handler for sqlexception
 				begin
@@ -35,8 +34,7 @@ exports.up = async (db) => {
 
 	// language=MariaDB
 	await db.schema.raw(dedent`
-		drop event if exists network_packages_update;
-		create event network_packages_update
+		create or replace event network_packages_update
 			on schedule
 				every 5 minute
 				starts utc_date()

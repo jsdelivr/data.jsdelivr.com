@@ -1,5 +1,4 @@
-drop function if exists updateLogFile;
-create function updateLogFile(aFilename varchar(255), aUpdatedAt datetime) returns int
+create or replace function updateLogFile(aFilename varchar(255), aUpdatedAt datetime) returns int
 begin
 	update `log_file`
 	set `processed` = `processed` + 1, updatedAt = aUpdatedAt
@@ -9,8 +8,7 @@ begin
 end;
 
 
-drop function if exists updateNormalizedRawLogFile;
-create function updateNormalizedRawLogFile(aFilename varchar(255), aFileModificationTime int, aUpdatedAt datetime) returns int
+create or replace function updateNormalizedRawLogFile(aFilename varchar(255), aFileModificationTime int, aUpdatedAt datetime) returns int
 begin
 	update `normalized_raw_log_file`
 	set `processed` = `processed` + 1, updatedAt = aUpdatedAt
@@ -20,8 +18,7 @@ begin
 end;
 
 
-drop function if exists updateOrInsertBrowser;
-create function updateOrInsertBrowser(aName varchar(255)) returns int
+create or replace function updateOrInsertBrowser(aName varchar(255)) returns int
 begin
 	update `browser`
 	set `id` = last_insert_id(`id`)
@@ -37,8 +34,7 @@ begin
 end;
 
 
-drop function if exists updateOrInsertBrowserVersion;
-create function updateOrInsertBrowserVersion(aBrowserId int, aVersion varchar(255)) returns int
+create or replace function updateOrInsertBrowserVersion(aBrowserId int, aVersion varchar(255)) returns int
 begin
 	update `browser_version`
 	set `id` = last_insert_id(`id`)
@@ -54,8 +50,7 @@ begin
 end;
 
 
-drop function if exists updateOrInsertCountryBrowserVersionHits;
-create function updateOrInsertCountryBrowserVersionHits(aBrowserVersionId int, aPlatformId int, aCountryIso varchar(2), aDate date, aHits int, aBandwidth bigint) returns int
+create or replace function updateOrInsertCountryBrowserVersionHits(aBrowserVersionId int, aPlatformId int, aCountryIso varchar(2), aDate date, aHits int, aBandwidth bigint) returns int
 begin
 	update `country_browser_version_hits`
 	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
@@ -71,8 +66,7 @@ begin
 end;
 
 
-drop function if exists updateOrInsertCountryCdnHits;
-create function updateOrInsertCountryCdnHits(aCountryIso varchar(2), aCdn varchar(255), aDate date, aHits int, aBandwidth bigint) returns int
+create or replace function updateOrInsertCountryCdnHits(aCountryIso varchar(2), aCdn varchar(255), aDate date, aHits int, aBandwidth bigint) returns int
 begin
 	update `country_cdn_hits`
 	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
@@ -88,8 +82,7 @@ begin
 end;
 
 
-drop function if exists updateOrInsertCountryPlatformVersionHits;
-create function updateOrInsertCountryPlatformVersionHits(aPlatformVersionId int, aCountryIso varchar(2), aDate date, aHits int, aBandwidth bigint) returns int
+create or replace function updateOrInsertCountryPlatformVersionHits(aPlatformVersionId int, aCountryIso varchar(2), aDate date, aHits int, aBandwidth bigint) returns int
 begin
 	update `country_platform_version_hits`
 	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
@@ -105,8 +98,7 @@ begin
 end;
 
 
-drop function if exists updateOrInsertFile;
-create function updateOrInsertFile(aPackageVersionId int, aFilename varchar(255), aFetchAttemptsLeft int) returns int
+create or replace function updateOrInsertFile(aPackageVersionId int, aFilename varchar(255), aFetchAttemptsLeft int) returns int
 begin
 	update `file`
 	set `id` = last_insert_id(`id`)
@@ -122,8 +114,7 @@ begin
 end;
 
 
-drop function if exists updateOrInsertFileHits;
-create function updateOrInsertFileHits(aPackageId int, aPackageVersionId int, aFileId int, aDate date, aHits int, aBandwidth bigint) returns int
+create or replace function updateOrInsertFileHits(aPackageId int, aPackageVersionId int, aFileId int, aDate date, aHits int, aBandwidth bigint) returns int
 begin
 	update `file_hits`
 	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
@@ -159,8 +150,7 @@ begin
 end;
 
 
-drop function if exists updateOrInsertLogs;
-create function updateOrInsertLogs(aDate date, aRecords int, aMegabytesLogs int, aMegabytesTraffic int) returns int
+create or replace function updateOrInsertLogs(aDate date, aRecords int, aMegabytesLogs int, aMegabytesTraffic int) returns int
 begin
 	update `logs`
 	set `records` = `records` + aRecords, `megabytesLogs` = `megabytesLogs` + aMegabytesLogs, `megabytesTraffic` = `megabytesTraffic` + aMegabytesTraffic
@@ -176,8 +166,7 @@ begin
 end;
 
 
-drop function if exists updateOrInsertOtherHits;
-create function updateOrInsertOtherHits(aDate date, aHits int, aBandwidth bigint) returns int
+create or replace function updateOrInsertOtherHits(aDate date, aHits int, aBandwidth bigint) returns int
 begin
 	update `other_hits`
 	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
@@ -193,8 +182,7 @@ begin
 end;
 
 
-drop function if exists updateOrInsertPackage;
-create function updateOrInsertPackage(aType varchar(255), aName varchar(255)) returns int
+create or replace function updateOrInsertPackage(aType varchar(255), aName varchar(255)) returns int
 begin
 	update `package`
 	set `id` = last_insert_id(`id`)
@@ -210,8 +198,7 @@ begin
 end;
 
 
-drop function if exists updateOrInsertPackageVersion;
-create function updateOrInsertPackageVersion(aPackageId int, aVersion varchar(255), aType varchar(16)) returns int
+create or replace function updateOrInsertPackageVersion(aPackageId int, aVersion varchar(255), aType varchar(16)) returns int
 begin
 	update `package_version`
 	set `id` = last_insert_id(`id`)
@@ -227,8 +214,7 @@ begin
 end;
 
 
-drop function if exists updateOrInsertPlatform;
-create function updateOrInsertPlatform(aName varchar(255)) returns int
+create or replace function updateOrInsertPlatform(aName varchar(255)) returns int
 begin
 	update `platform`
 	set `id` = last_insert_id(`id`)
@@ -244,8 +230,7 @@ begin
 end;
 
 
-drop function if exists updateOrInsertPlatformVersion;
-create function updateOrInsertPlatformVersion(aPlatformId int, aVersion varchar(255), aVersionName varchar(255)) returns int
+create or replace function updateOrInsertPlatformVersion(aPlatformId int, aVersion varchar(255), aVersionName varchar(255)) returns int
 begin
 	update `platform_version`
 	set `id` = last_insert_id(`id`)
@@ -261,8 +246,7 @@ begin
 end;
 
 
-drop function if exists updateOrInsertProxyHits;
-create function updateOrInsertProxyHits(aProxyId int, aDate date, aHits int, aBandwidth bigint) returns int
+create or replace function updateOrInsertProxyHits(aProxyId int, aDate date, aHits int, aBandwidth bigint) returns int
 begin
 	update `proxy_hits`
 	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
@@ -278,8 +262,7 @@ begin
 end;
 
 
-drop function if exists updateOrInsertReferrer;
-create function updateOrInsertReferrer(aReferrer varchar(255)) returns int
+create or replace function updateOrInsertReferrer(aReferrer varchar(255)) returns int
 begin
 	update `referrer`
 	set `id` = last_insert_id(`id`)
@@ -295,8 +278,7 @@ begin
 end;
 
 
-drop function if exists updateOrInsertReferrerHits;
-create function updateOrInsertReferrerHits(aReferrerId int, aDate date, aHits int, aBandwidth bigint) returns int
+create or replace function updateOrInsertReferrerHits(aReferrerId int, aDate date, aHits int, aBandwidth bigint) returns int
 begin
 	update `referrer_hits`
 	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
@@ -312,8 +294,7 @@ begin
 end;
 
 
-drop procedure if exists updateViewNetworkPackages;
-create procedure updateViewNetworkPackages(aDate date)
+create or replace procedure updateViewNetworkPackages(aDate date)
 begin
 	declare exit handler for sqlexception
 		begin
@@ -338,8 +319,7 @@ begin
 end;
 
 
-drop procedure if exists updateViewTopPackageFiles;
-create procedure updateViewTopPackageFiles(aDate date)
+create or replace procedure updateViewTopPackageFiles(aDate date)
 begin
 	declare exit handler for sqlexception
 		begin
@@ -377,8 +357,7 @@ begin
 end;
 
 
-drop procedure if exists updateViewTopPlatforms;
-create procedure updateViewTopPlatforms(aPeriod varchar(255), aDateFrom date, aDateTo date, aPrevDateFrom date, aPrevDateTo date)
+create or replace procedure updateViewTopPlatforms(aPeriod varchar(255), aDateFrom date, aDateTo date, aPrevDateFrom date, aPrevDateTo date)
 begin
 	declare exit handler for sqlexception
 		begin
@@ -491,8 +470,7 @@ begin
 end;
 
 
-drop procedure if exists updateViewTopPlatformVersions;
-create procedure updateViewTopPlatformVersions(aPeriod varchar(255), aDateFrom date, aDateTo date, aPrevDateFrom date, aPrevDateTo date)
+create or replace procedure updateViewTopPlatformVersions(aPeriod varchar(255), aDateFrom date, aDateTo date, aPrevDateFrom date, aPrevDateTo date)
 begin
 	declare exit handler for sqlexception
 		begin
@@ -605,8 +583,7 @@ begin
 end;
 
 
-drop procedure if exists updateViewTopPlatformBrowsers;
-create procedure updateViewTopPlatformBrowsers(aPeriod varchar(255), aDateFrom date, aDateTo date, aPrevDateFrom date, aPrevDateTo date)
+create or replace procedure updateViewTopPlatformBrowsers(aPeriod varchar(255), aDateFrom date, aDateTo date, aPrevDateFrom date, aPrevDateTo date)
 begin
 	declare exit handler for sqlexception
 		begin
@@ -725,8 +702,7 @@ begin
 end;
 
 
-drop procedure if exists updateViewTopPlatformCountries;
-create procedure updateViewTopPlatformCountries(aPeriod varchar(255), aDateFrom date, aDateTo date, aPrevDateFrom date, aPrevDateTo date)
+create or replace procedure updateViewTopPlatformCountries(aPeriod varchar(255), aDateFrom date, aDateTo date, aPrevDateFrom date, aPrevDateTo date)
 begin
 	declare exit handler for sqlexception
 		begin
@@ -808,8 +784,7 @@ end;
 
 
 
-drop procedure if exists updateViewTopPlatformVersionCountries;
-create procedure updateViewTopPlatformVersionCountries(aPeriod varchar(255), aDateFrom date, aDateTo date, aPrevDateFrom date, aPrevDateTo date)
+create or replace procedure updateViewTopPlatformVersionCountries(aPeriod varchar(255), aDateFrom date, aDateTo date, aPrevDateFrom date, aPrevDateTo date)
 begin
 	declare exit handler for sqlexception
 		begin

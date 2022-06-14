@@ -1,5 +1,4 @@
-drop function if exists updateOrInsertCountryCdnHits;
-create function updateOrInsertCountryCdnHits(aCountryIso varchar(2), aCdn varchar(255), aDate date, aHits int, aBandwidth float) returns int
+create or replace function updateOrInsertCountryCdnHits(aCountryIso varchar(2), aCdn varchar(255), aDate date, aHits int, aBandwidth float) returns int
 begin
 	update `country_cdn_hits`
 	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
@@ -14,8 +13,7 @@ begin
 	return 0;
 end;
 
-drop function if exists updateNormalizedRawLogFile;
-create function updateNormalizedRawLogFile(aFilename varchar(255), aFileModificationTime int, aUpdatedAt datetime) returns int
+create or replace function updateNormalizedRawLogFile(aFilename varchar(255), aFileModificationTime int, aUpdatedAt datetime) returns int
 begin
 	update `normalized_raw_log_file`
 	set `processed` = `processed` + 1, updatedAt = aUpdatedAt

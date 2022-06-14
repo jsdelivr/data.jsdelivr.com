@@ -1,5 +1,4 @@
-drop function if exists updateOrInsertPackageVersion;
-create function updateOrInsertPackageVersion(aPackageId int, aVersion varchar(255), aType varchar(16)) returns int
+create or replace function updateOrInsertPackageVersion(aPackageId int, aVersion varchar(255), aType varchar(16)) returns int
 begin
     update `package_version`
     set `id` = last_insert_id(`id`)
@@ -14,8 +13,7 @@ begin
     return last_insert_id();
 end;
 
-drop function if exists updateOrInsertFile;
-create function updateOrInsertFile(aPackageVersionId int, aFilename varchar(255), aFetchAttemptsLeft int) returns int
+create or replace function updateOrInsertFile(aPackageVersionId int, aFilename varchar(255), aFetchAttemptsLeft int) returns int
 begin
     update `file`
     set `id` = last_insert_id(`id`)

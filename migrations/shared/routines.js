@@ -4,8 +4,7 @@ const periods = [ [ 1, 'day' ], [ 7, 'week' ], [ 30, 'month' ], [ 365, 'year' ],
 module.exports = async (db) => {
 	// language=MariaDB
 	await db.schema.raw(dedent`
-		drop procedure if exists updateViewTopPackages;
-		create procedure updateViewTopPackages(aDate date)
+		create or replace procedure updateViewTopPackages(aDate date)
 		begin
 			declare exit handler for sqlexception
 				begin
@@ -23,8 +22,7 @@ ${periods.map(period => topPackagesForPeriod(period)).join('\n')}
 
 	// language=MariaDB
 	await db.schema.raw(dedent`
-		drop procedure if exists updateViewTopProxies;
-		create procedure updateViewTopProxies(aDate date)
+		create or replace procedure updateViewTopProxies(aDate date)
 		begin
 			declare exit handler for sqlexception
 				begin
@@ -42,8 +40,7 @@ ${periods.map(period => topProxiesForPeriod(period)).join('\n')}
 
 	// language=MariaDB
 	await db.schema.raw(dedent`
-		drop procedure if exists updateViewNetworkCountries;
-		create procedure updateViewNetworkCountries(aDate date)
+		create or replace procedure updateViewNetworkCountries(aDate date)
 		begin
 			declare exit handler for sqlexception
 				begin
@@ -61,8 +58,7 @@ ${periods.map(period => countriesForPeriod(period)).join('\n')}
 
 	// language=MariaDB
 	await db.schema.raw(dedent`
-		drop procedure if exists updateViewNetworkCdns;
-		create procedure updateViewNetworkCdns(aDate date)
+		create or replace procedure updateViewNetworkCdns(aDate date)
 		begin
 			declare exit handler for sqlexception
 				begin

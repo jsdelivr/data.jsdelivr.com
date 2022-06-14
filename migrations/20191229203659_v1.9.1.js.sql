@@ -1,5 +1,4 @@
-drop function if exists updateOrInsertProxyHits;
-create function updateOrInsertProxyHits(aProxyId int, aDate date, aHits int, aBandwidth float) returns int
+create or replace function updateOrInsertProxyHits(aProxyId int, aDate date, aHits int, aBandwidth float) returns int
 begin
 	update `proxy_hits`
 	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
@@ -14,8 +13,7 @@ begin
 	return 0;
 end;
 
-drop view if exists view_proxy_hits;
-create view view_proxy_hits as
+create or replace view view_proxy_hits as
 select proxy.path,
 	proxy_hits.date as date,
 	sum(proxy_hits.hits) as hits,

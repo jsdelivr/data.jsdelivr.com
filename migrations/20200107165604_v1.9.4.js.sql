@@ -1,8 +1,7 @@
 drop function if exists updateOrInsertPackageHits;
 drop function if exists updateOrInsertPackageVersionHits;
 
-drop function if exists updateOrInsertFileHits;
-create function updateOrInsertFileHits(aPackageId int, aPackageVersionId int, aFileId int, aDate date, aHits int, aBandwidth float) returns int
+create or replace function updateOrInsertFileHits(aPackageId int, aPackageVersionId int, aFileId int, aDate date, aHits int, aBandwidth float) returns int
 begin
 	update `file_hits`
 	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
@@ -37,8 +36,7 @@ begin
 	return 0;
 end;
 
-drop view if exists view_package_version_hits;
-create view view_package_version_hits as
+create or replace view view_package_version_hits as
 select package.type as type,
 	package.name as name,
 	package_version.version as version,

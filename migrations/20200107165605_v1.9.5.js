@@ -55,8 +55,7 @@ exports.up = async (db) => {
 
 	// language=MariaDB
 	await db.schema.raw(dedent`
-		drop event if exists top_packages_update;
-		create event top_packages_update
+		create or replace event top_packages_update
 			on schedule
 				every 5 minute
 				starts utc_date()

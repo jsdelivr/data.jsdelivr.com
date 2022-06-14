@@ -1,5 +1,4 @@
-drop function if exists updateOrInsertFileHits;
-create function updateOrInsertFileHits(aFileId int, aDate date, aHits int, aBandwidth float) returns int
+create or replace function updateOrInsertFileHits(aFileId int, aDate date, aHits int, aBandwidth float) returns int
 begin
 	update `file_hits`
 	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
@@ -14,8 +13,7 @@ begin
 	return 0;
 end;
 
-drop function if exists updateOrInsertFileHitsCdn;
-create function updateOrInsertFileHitsCdn(aFileId int, aCdn varchar(255), aDate date, aHits int, aBandwidth float) returns int
+create or replace function updateOrInsertFileHitsCdn(aFileId int, aCdn varchar(255), aDate date, aHits int, aBandwidth float) returns int
 begin
 	update `file_hits_cdn`
 	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
@@ -30,8 +28,7 @@ begin
 	return 0;
 end;
 
-drop function if exists updateOrInsertOtherHits;
-create function updateOrInsertOtherHits(aDate date, aHits int, aBandwidth float) returns int
+create or replace function updateOrInsertOtherHits(aDate date, aHits int, aBandwidth float) returns int
 begin
 	update `other_hits`
 	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
@@ -46,8 +43,7 @@ begin
 	return 0;
 end;
 
-drop function if exists updateOrInsertReferrerHits;
-create function updateOrInsertReferrerHits(aReferrerId int, aDate date, aHits int, aBandwidth float) returns int
+create or replace function updateOrInsertReferrerHits(aReferrerId int, aDate date, aHits int, aBandwidth float) returns int
 begin
 	update `referrer_hits`
 	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
@@ -62,8 +58,7 @@ begin
 	return 0;
 end;
 
-drop function if exists updateOrInsertPackageHits;
-create function updateOrInsertPackageHits(aPackageId int, aDate date, aHits int, aBandwidth float) returns int
+create or replace function updateOrInsertPackageHits(aPackageId int, aDate date, aHits int, aBandwidth float) returns int
 begin
 	update `package_hits`
 	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
@@ -78,8 +73,7 @@ begin
 	return 0;
 end;
 
-drop view if exists view_file_hits;
-create view view_file_hits as
+create or replace view view_file_hits as
 select package.type as type,
 	package.name as name,
 	package_version.version as version,
@@ -94,8 +88,7 @@ from package
 group by file_hits.fileId, file_hits.date
 order by file_hits.date desc, hits desc;
 
-drop view if exists view_package_version_hits;
-create view view_package_version_hits as
+create or replace view view_package_version_hits as
 select package.type as type,
 	package.name as name,
 	package_version.version as version,
@@ -109,8 +102,7 @@ from package
 group by package_version.id, file_hits.date
 order by file_hits.date desc, hits desc;
 
-drop view if exists view_package_hits;
-create view view_package_hits as
+create or replace view view_package_hits as
 select package.type as type,
 	package.name as name,
 	package_hits.date as date,
@@ -121,8 +113,7 @@ from package
 group by package.id, package_hits.date
 order by package_hits.date desc, hits desc;
 
-drop view if exists view_referrer_hits;
-create view view_referrer_hits as
+create or replace view view_referrer_hits as
 select referrer.referrer,
 	referrer_hits.date as date,
 	sum(referrer_hits.hits) as hits,

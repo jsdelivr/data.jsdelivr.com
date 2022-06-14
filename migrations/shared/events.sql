@@ -1,5 +1,4 @@
-drop event if exists update_daily_data;
-create event update_daily_data
+create or replace event update_daily_data
 	on schedule
 		every 5 minute
 			starts utc_date()
