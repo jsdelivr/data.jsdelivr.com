@@ -99,7 +99,14 @@ module.exports = ({ snapshotResponses = false, updateExistingSnapshots = false }
 	return Object.assign((chai) => {
 		chai.Assertion.addMethod('matchSnapshot', function (snapshotName = this._obj.req.path, message) {
 			let body = Buffer.isBuffer(this._obj.body) ? this._obj.body.toString() : this._obj.body;
-			new chai.Assertion(body).to.deep.equal(getResponseBodyFromSnapshot(snapshotName, body), message);
+			let expected = getResponseBodyFromSnapshot(snapshotName, body);
+
+			try {
+				new chai.Assertion(body).to.deep.equal(expected, message);
+			} catch (error) {
+				error.stack += `\n\nUsing snapshot:\n    ${snapshotName}`;
+				throw error;
+			}
 		});
 	}, {
 		prune () {
