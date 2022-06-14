@@ -257,6 +257,30 @@ koaElasticUtils.addRoutes(router, [
 });
 
 koaElasticUtils.addRoutes(router, [
+	[ '/stats/platforms/:name/countries', '/stats/platforms/:name/countries' ],
+], validate({
+	query: Joi.object({
+		continent: schema.continent,
+		period: schema.periodStatic,
+		...schema.paginatedStats,
+	}),
+}), async (ctx) => {
+	return new StatsRequest(ctx).handlePlatformCountries();
+});
+
+koaElasticUtils.addRoutes(router, [
+	[ '/stats/platforms/:name/versions/:version/countries', '/stats/platforms/:name/versions/:version/countries' ],
+], validate({
+	query: Joi.object({
+		continent: schema.continent,
+		period: schema.periodStatic,
+		...schema.paginatedStats,
+	}),
+}), async (ctx) => {
+	return new StatsRequest(ctx).handlePlatformVersionCountries();
+});
+
+koaElasticUtils.addRoutes(router, [
 	[ '/stats/platforms/:name/versions', '/stats/platforms/:name/versions' ],
 ], validate({
 	query: Joi.object({

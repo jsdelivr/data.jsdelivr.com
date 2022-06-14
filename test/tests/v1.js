@@ -36,7 +36,9 @@ describe('v1', function () {
 	require('./v1/stats/packages');
 	require('./v1/stats/platforms');
 	require('./v1/stats/platforms/browsers');
+	require('./v1/stats/platforms/countries');
 	require('./v1/stats/platforms/versions');
+	require('./v1/stats/platforms/versions/countries');
 
 	describe('/v1/lookup', () => {
 		it('GET /v1/lookup/hash/xx', () => {

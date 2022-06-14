@@ -23,13 +23,29 @@ function getUriWithValues (template, values, defaults) {
 	return urlTemplate.parse(template).expand(defaults ? _.defaults(values, defaults) : values);
 }
 
-function makeEndpointAssertion (uriTemplate, defaults, { params, assert }, { note, status = 200 } = {}) {
+function makeEndpointAssertion (uriTemplate, defaults, { params, assert }, { limit = params.limit || 100, note, status = 200 } = {}) {
 	let getUri = d => getUriWithValues(uriTemplate, params, d);
+	let apiLimit = params.limit || 100;
+	let page = params.page || 1, response;
 
 	it(`GET ${getUri()}${note ? ` - ${note}` : ''}`, () => {
-		return chai.request(server)
-			.get(getUri())
-			.then((response) => {
+		let request = uri => chai.request(server)
+			.get(uri)
+			.then((partialResponse) => {
+				if (!response) {
+					response = partialResponse;
+				} else {
+					response.body.push(...partialResponse.body);
+				}
+
+				if (Array.isArray(partialResponse.body)) {
+					if (partialResponse.body.length >= apiLimit && partialResponse.body.length < limit) {
+						return request(getUriWithValues(uriTemplate, { ...params, page: ++page }));
+					}
+
+					response.body.splice(limit);
+				}
+
 				assert(response, getUri(defaults));
 
 				expect(response).to.have.status(status);
@@ -44,12 +60,22 @@ function makeEndpointAssertion (uriTemplate, defaults, { params, assert }, { not
 					expect(response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
 				}
 			});
+
+		return request(getUri());
 	});
 }
 
 function makeEndpointAssertions (uriTemplate, defaults, testCases, options) {
 	for (let testCase of testCases) {
 		makeEndpointAssertion(uriTemplate, defaults, testCase, options);
+	}
+}
+
+function makePaginatedEndpointAssertions (uriTemplate, defaults, testCases, options) {
+	uriTemplate += `${uriTemplate.includes('{?') ? '{&' : '{?'}page,limit}`;
+
+	for (let testCase of testCases) {
+		makeEndpointAssertion(uriTemplate, defaults, testCase, { ...options, limit: Infinity });
 	}
 }
 
@@ -164,6 +190,7 @@ module.exports = {
 	makeEndpointAssertions,
 	makeEndpointSnapshotTests,
 	makeEndpointPaginationTests,
+	makePaginatedEndpointAssertions,
 	setupSnapshots (file) {
 		chaiSnapshotInstance.setCurrentFile(path.join(
 			__dirname,

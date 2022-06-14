@@ -168,6 +168,16 @@ class StatsRequest extends BaseRequest {
 		this.setCacheHeader();
 	}
 
+	async handlePlatformCountries () {
+		this.ctx.body = await Platform.getTopPlatformCountries(this.params.name, this.period, this.date, this.composedLocationFilter, ...this.pagination);
+		this.setCacheHeader();
+	}
+
+	async handlePlatformVersionCountries () {
+		this.ctx.body = await Platform.getTopPlatformVersionCountries(this.params.name, this.params.version, this.period, this.date, this.composedLocationFilter, ...this.pagination);
+		this.setCacheHeader();
+	}
+
 	async handlePlatformVersions () {
 		this.ctx.body = await Platform.getTopPlatformVersions(this.params.name, this.period, this.date, this.composedLocationFilter, ...this.pagination);
 		this.setCacheHeader();

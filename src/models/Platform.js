@@ -2,6 +2,8 @@ const Joi = require('joi');
 const BaseCacheModel = require('./BaseCacheModel');
 const TopPlatform = require('./views/TopPlatform');
 const TopPlatformBrowser = require('./views/TopPlatformBrowser');
+const TopPlatformCountry = require('./views/TopPlatformCountry');
+const TopPlatformVersionCountry = require('./views/TopPlatformVersionCountry');
 const TopPlatformVersion = require('./views/TopPlatformVersion');
 
 const schema = Joi.object({
@@ -69,6 +71,48 @@ class Platform extends BaseCacheModel {
 		return (await sql.select([ 'browser', 'share', 'prevShare' ])).map((row) => {
 			return {
 				browser: row.browser,
+				share: row.share,
+				prev: {
+					share: row.prevShare,
+				},
+			};
+		});
+	}
+
+	static async getTopPlatformCountries (name, period, date, composedLocationFilter, limit = 100, page = 1) {
+		let sql = db(TopPlatformCountry.table)
+			.where({ name, period, date })
+			.where(composedLocationFilter)
+			.orderBy([{ column: 'share', order: 'desc' }, { column: 'countryIso' }]);
+
+		if (limit) {
+			sql.limit(limit).offset((page - 1) * limit);
+		}
+
+		return (await sql.select([ 'countryIso', 'share', 'prevShare' ])).map((row) => {
+			return {
+				country: row.countryIso,
+				share: row.share,
+				prev: {
+					share: row.prevShare,
+				},
+			};
+		});
+	}
+
+	static async getTopPlatformVersionCountries (name, version, period, date, composedLocationFilter, limit = 100, page = 1) {
+		let sql = db(TopPlatformVersionCountry.table)
+			.where({ name, version, period, date })
+			.where(composedLocationFilter)
+			.orderBy([{ column: 'share', order: 'desc' }, { column: 'countryIso' }]);
+
+		if (limit) {
+			sql.limit(limit).offset((page - 1) * limit);
+		}
+
+		return (await sql.select([ 'countryIso', 'share', 'prevShare' ])).map((row) => {
+			return {
+				country: row.countryIso,
 				share: row.share,
 				prev: {
 					share: row.prevShare,

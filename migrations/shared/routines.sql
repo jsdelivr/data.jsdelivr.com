@@ -725,6 +725,171 @@ begin
 end;
 
 
+drop procedure if exists updateViewTopPlatformCountries;
+create procedure updateViewTopPlatformCountries(aPeriod varchar(255), aDateFrom date, aDateTo date, aPrevDateFrom date, aPrevDateTo date)
+begin
+	declare exit handler for sqlexception
+		begin
+			rollback;
+			resignal;
+		end;
+
+	start transaction;
+
+	delete from view_top_platform_countries where `period` = aPeriod and `date` = aDateFrom;
+
+	insert into view_top_platform_countries
+	(period, date, locationType, locationId, name, countryIso, share, prevShare)
+	with prevTotals as (
+		select sum(hits) as hits
+		from country_platform_version_hits
+		where date >= aPrevDateFrom and date <= aPrevDateTo
+	)
+	select * from (
+		select aPeriod, aDateFrom, 'global', '', name, countryIso,
+			round(hits / nullif((sum(hits) over ()), 0) * 100, 2) as share,
+			round(coalesce(prevHits, 0) / nullif((select hits from prevTotals), 0) * 100, 2) as prevShare
+		from (
+			select name, countryIso,
+				sum(hits) as hits,
+				(select sum(hits)
+					from platform
+						join platform_version pvi on platform.id = pvi.platformId
+						join country_platform_version_hits cpvhi on pvi.id = cpvhi.platformVersionId
+					where platform.id = p.id and cpvhi.countryIso = cpvh.countryIso and date >= aPrevDateFrom and date <= aPrevDateTo
+				) as prevHits
+			from platform p
+				join platform_version pv on p.id = pv.platformId
+				join country_platform_version_hits cpvh on pv.id = cpvh.platformVersionId
+			where date >= aDateFrom and date <= aDateTo
+			group by name, countryIso
+			order by hits desc
+		) t
+	) t2
+	where share > 0;
+
+	insert into view_top_platform_countries
+	(period, date, locationType, locationId, name, countryIso, share, prevShare)
+	with prevTotals as (
+		select continentCode, sum(hits) as hits
+		from country_platform_version_hits cpvh
+			join country c on cpvh.countryIso = c.iso
+		where date >= aPrevDateFrom and date <= aPrevDateTo
+		group by continentCode
+	)
+	select * from (
+		select aPeriod, aDateFrom, 'continent', continentCode, name, countryIso,
+			round(hits / nullif((sum(hits) over (partition by continentCode)), 0) * 100, 2) as share,
+			round(coalesce(prevHits, 0) / nullif((select hits from prevTotals where continentCode = t.continentCode), 0) * 100, 2) as prevShare
+		from (
+			select name, countryIso,
+				continentCode,
+				sum(hits) as hits,
+				(select sum(hits)
+					from platform
+						join platform_version pvi on platform.id = pvi.platformId
+						join country_platform_version_hits cpvhi on pvi.id = cpvhi.platformVersionId
+						join country ci on cpvhi.countryIso = ci.iso
+					where platform.id = p.id and cpvhi.countryIso = cpvh.countryIso and ci.continentCode = c.continentCode and date >= aPrevDateFrom and date <= aPrevDateTo
+				) as prevHits
+			from platform p
+				join platform_version pv on p.id = pv.platformId
+				join country_platform_version_hits cpvh on pv.id = cpvh.platformVersionId
+				join country c on cpvh.countryIso = c.iso
+			where date >= aDateFrom and date <= aDateTo
+			group by name, countryIso, c.continentCode
+			order by hits desc
+		) t
+	) t2
+	where share > 0;
+
+	commit;
+end;
+
+
+
+drop procedure if exists updateViewTopPlatformVersionCountries;
+create procedure updateViewTopPlatformVersionCountries(aPeriod varchar(255), aDateFrom date, aDateTo date, aPrevDateFrom date, aPrevDateTo date)
+begin
+	declare exit handler for sqlexception
+		begin
+			rollback;
+			resignal;
+		end;
+
+	start transaction;
+
+	delete from view_top_platform_version_countries where `period` = aPeriod and `date` = aDateFrom;
+
+	insert into view_top_platform_version_countries
+	(period, date, locationType, locationId, name, version, countryIso, share, prevShare)
+	with prevTotals as (
+		select sum(hits) as hits
+		from country_platform_version_hits
+		where date >= aPrevDateFrom and date <= aPrevDateTo
+	)
+	select * from (
+		select aPeriod, aDateFrom, 'global', '', name, version, countryIso,
+			round(hits / nullif((sum(hits) over ()), 0) * 100, 2) as share,
+			round(coalesce(prevHits, 0) / nullif((select hits from prevTotals), 0) * 100, 2) as prevShare
+		from (
+			select name, version, countryIso,
+				sum(hits) as hits,
+				(select sum(hits)
+					from platform
+						join platform_version pvi on platform.id = pvi.platformId
+						join country_platform_version_hits cpvhi on pvi.id = cpvhi.platformVersionId
+					where platform.id = p.id and pvi.id = pv.id and cpvhi.countryIso = cpvh.countryIso and date >= aPrevDateFrom and date <= aPrevDateTo
+				) as prevHits
+			from platform p
+				join platform_version pv on p.id = pv.platformId
+				join country_platform_version_hits cpvh on pv.id = cpvh.platformVersionId
+			where date >= aDateFrom and date <= aDateTo
+			group by name, version, countryIso
+			order by hits desc
+		) t
+	) t2
+	where share > 0;
+
+	insert into view_top_platform_version_countries
+	(period, date, locationType, locationId, name, version, countryIso, share, prevShare)
+	with prevTotals as (
+		select continentCode, sum(hits) as hits
+		from country_platform_version_hits cpvh
+			join country c on cpvh.countryIso = c.iso
+		where date >= aPrevDateFrom and date <= aPrevDateTo
+		group by continentCode
+	)
+	select * from (
+		select aPeriod, aDateFrom, 'continent', continentCode, name, version, countryIso,
+			round(hits / nullif((sum(hits) over (partition by continentCode)), 0) * 100, 2) as share,
+			round(coalesce(prevHits, 0) / nullif((select hits from prevTotals where continentCode = t.continentCode), 0) * 100, 2) as prevShare
+		from (
+			select name, version, countryIso,
+				continentCode,
+				sum(hits) as hits,
+				(select sum(hits)
+					from platform
+						join platform_version pvi on platform.id = pvi.platformId
+						join country_platform_version_hits cpvhi on pvi.id = cpvhi.platformVersionId
+						join country ci on cpvhi.countryIso = ci.iso
+					where platform.id = p.id and pvi.id = pv.id and cpvhi.countryIso = cpvh.countryIso and ci.continentCode = c.continentCode and date >= aPrevDateFrom and date <= aPrevDateTo
+				) as prevHits
+			from platform p
+				join platform_version pv on p.id = pv.platformId
+				join country_platform_version_hits cpvh on pv.id = cpvh.platformVersionId
+				join country c on cpvh.countryIso = c.iso
+			where date >= aDateFrom and date <= aDateTo
+			group by name, version, countryIso, c.continentCode
+			order by hits desc
+		) t
+	) t2
+	where share > 0;
+
+	commit;
+end;
+
+
 create or replace procedure updateMonthlyViews(aDate date)
 begin
 	set aDate = date_sub(aDate, interval 3 day);
@@ -749,6 +914,14 @@ begin
 
 			if not exists(select * from view_top_platform_browsers where `date` = @latestStart and period = 's-month') then
 				call updateViewTopPlatformBrowsers('s-month', @dateFrom, @dateTo, @prevDateFrom, @prevDateTo);
+			end if;
+
+			if not exists(select * from view_top_platform_countries where `date` = @latestStart and period = 's-month') then
+				call updateViewTopPlatformCountries('s-month', @dateFrom, @dateTo, @prevDateFrom, @prevDateTo);
+			end if;
+
+			if not exists(select * from view_top_platform_version_countries where `date` = @latestStart and period = 's-month') then
+				call updateViewTopPlatformVersionCountries('s-month', @dateFrom, @dateTo, @prevDateFrom, @prevDateTo);
 			end if;
 		end while;
 end;
@@ -778,6 +951,14 @@ begin
 
 			if not exists(select * from view_top_platform_browsers where `date` = @latestStart and period = 's-year') then
 				call updateViewTopPlatformBrowsers('s-year', @dateFrom, @dateTo, @prevDateFrom, @prevDateTo);
+			end if;
+
+			if not exists(select * from view_top_platform_countries where `date` = @latestStart and period = 's-year') then
+				call updateViewTopPlatformCountries('s-year', @dateFrom, @dateTo, @prevDateFrom, @prevDateTo);
+			end if;
+
+			if not exists(select * from view_top_platform_version_countries where `date` = @latestStart and period = 's-year') then
+				call updateViewTopPlatformVersionCountries('s-year', @dateFrom, @dateTo, @prevDateFrom, @prevDateTo);
 			end if;
 		end while;
 end;
