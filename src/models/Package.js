@@ -145,7 +145,7 @@ class Package extends BaseCacheModel {
 	static async getTopPackages (by, period, date, type = undefined, limit = 100, page = 1) {
 		let sql = db(TopPackage.table)
 			.where({ period, date })
-			.orderBy(by, 'DESC');
+			.orderBy([{ column: by, order: 'desc' }, { column: 'type' }, { column: 'name' }]);
 
 		if (type) {
 			sql.where({ type });

@@ -24662,7 +24662,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-based-on-stats-only-no-css",
+			"name": "entrypoint-based-on-stats-only",
 			"hits": 136,
 			"bandwidth": 0,
 			"prev": {
@@ -24672,7 +24672,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-based-on-stats-only",
+			"name": "entrypoint-based-on-stats-only-no-css",
 			"hits": 136,
 			"bandwidth": 0,
 			"prev": {
@@ -24702,7 +24702,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-safe-style-stats-based-js",
+			"name": "entrypoint-safe-js-stats-based-style",
 			"hits": 36,
 			"bandwidth": 0,
 			"prev": {
@@ -24722,7 +24722,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-safe-js-stats-based-style",
+			"name": "entrypoint-safe-style-stats-based-js",
 			"hits": 36,
 			"bandwidth": 0,
 			"prev": {
@@ -24742,7 +24742,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-stats-based-js-is-the-same",
+			"name": "entrypoint-main-is-css-and-stats-based-alt",
 			"hits": 18,
 			"bandwidth": 0,
 			"prev": {
@@ -24762,7 +24762,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-main-is-css-and-stats-based-alt",
+			"name": "entrypoint-stats-based-js-is-the-same",
 			"hits": 18,
 			"bandwidth": 0,
 			"prev": {
@@ -25374,8 +25374,8 @@
 		},
 		{
 			"type": "npm",
-			"name": "package-0",
-			"hits": 0,
+			"name": "entrypoint-based-on-stats-only",
+			"hits": 136,
 			"bandwidth": 0,
 			"prev": {
 				"hits": 0,
@@ -25384,7 +25384,17 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-stats-based-js-is-the-same",
+			"name": "entrypoint-based-on-stats-only-no-css",
+			"hits": 136,
+			"bandwidth": 0,
+			"prev": {
+				"hits": 0,
+				"bandwidth": 0
+			}
+		},
+		{
+			"type": "npm",
+			"name": "entrypoint-main-is-css-and-stats-based-alt",
 			"hits": 18,
 			"bandwidth": 0,
 			"prev": {
@@ -25394,8 +25404,8 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-stats-alt-js-default-style",
-			"hits": 47,
+			"name": "entrypoint-main-is-css-and-stats-based-css-is-the-same",
+			"hits": 18,
 			"bandwidth": 0,
 			"prev": {
 				"hits": 0,
@@ -25404,8 +25414,8 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-stats-alt-js",
-			"hits": 435,
+			"name": "entrypoint-main-no-extension-and-stats",
+			"hits": 20,
 			"bandwidth": 0,
 			"prev": {
 				"hits": 0,
@@ -25414,7 +25424,17 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-safe-style-stats-based-js",
+			"name": "entrypoint-no-trash-in-db",
+			"hits": 130,
+			"bandwidth": 0,
+			"prev": {
+				"hits": 0,
+				"bandwidth": 0
+			}
+		},
+		{
+			"type": "npm",
+			"name": "entrypoint-safe-js-stats-based-style",
 			"hits": 36,
 			"bandwidth": 0,
 			"prev": {
@@ -25434,7 +25454,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-safe-js-stats-based-style",
+			"name": "entrypoint-safe-style-stats-based-js",
 			"hits": 36,
 			"bandwidth": 0,
 			"prev": {
@@ -25444,8 +25464,8 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-no-trash-in-db",
-			"hits": 130,
+			"name": "entrypoint-stats-alt-js",
+			"hits": 435,
 			"bandwidth": 0,
 			"prev": {
 				"hits": 0,
@@ -25454,8 +25474,8 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-main-no-extension-and-stats",
-			"hits": 20,
+			"name": "entrypoint-stats-alt-js-default-style",
+			"hits": 47,
 			"bandwidth": 0,
 			"prev": {
 				"hits": 0,
@@ -25464,7 +25484,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-main-is-css-and-stats-based-css-is-the-same",
+			"name": "entrypoint-stats-based-js-is-the-same",
 			"hits": 18,
 			"bandwidth": 0,
 			"prev": {
@@ -25474,28 +25494,8 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-main-is-css-and-stats-based-alt",
-			"hits": 18,
-			"bandwidth": 0,
-			"prev": {
-				"hits": 0,
-				"bandwidth": 0
-			}
-		},
-		{
-			"type": "npm",
-			"name": "entrypoint-based-on-stats-only-no-css",
-			"hits": 136,
-			"bandwidth": 0,
-			"prev": {
-				"hits": 0,
-				"bandwidth": 0
-			}
-		},
-		{
-			"type": "npm",
-			"name": "entrypoint-based-on-stats-only",
-			"hits": 136,
+			"name": "package-0",
+			"hits": 0,
 			"bandwidth": 0,
 			"prev": {
 				"hits": 0,
@@ -26106,7 +26106,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-based-on-stats-only-no-css",
+			"name": "entrypoint-based-on-stats-only",
 			"hits": 136,
 			"bandwidth": 0,
 			"prev": {
@@ -26116,7 +26116,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-based-on-stats-only",
+			"name": "entrypoint-based-on-stats-only-no-css",
 			"hits": 136,
 			"bandwidth": 0,
 			"prev": {
@@ -26146,7 +26146,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-safe-style-stats-based-js",
+			"name": "entrypoint-safe-js-stats-based-style",
 			"hits": 36,
 			"bandwidth": 0,
 			"prev": {
@@ -26166,7 +26166,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-safe-js-stats-based-style",
+			"name": "entrypoint-safe-style-stats-based-js",
 			"hits": 36,
 			"bandwidth": 0,
 			"prev": {
@@ -26186,7 +26186,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-stats-based-js-is-the-same",
+			"name": "entrypoint-main-is-css-and-stats-based-alt",
 			"hits": 18,
 			"bandwidth": 0,
 			"prev": {
@@ -26206,7 +26206,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-main-is-css-and-stats-based-alt",
+			"name": "entrypoint-stats-based-js-is-the-same",
 			"hits": 18,
 			"bandwidth": 0,
 			"prev": {
@@ -28634,7 +28634,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-based-on-stats-only-no-css",
+			"name": "entrypoint-based-on-stats-only",
 			"hits": 136,
 			"bandwidth": 0,
 			"prev": {
@@ -28644,7 +28644,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-based-on-stats-only",
+			"name": "entrypoint-based-on-stats-only-no-css",
 			"hits": 136,
 			"bandwidth": 0,
 			"prev": {
@@ -28674,7 +28674,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-safe-style-stats-based-js",
+			"name": "entrypoint-safe-js-stats-based-style",
 			"hits": 36,
 			"bandwidth": 0,
 			"prev": {
@@ -28694,7 +28694,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-safe-js-stats-based-style",
+			"name": "entrypoint-safe-style-stats-based-js",
 			"hits": 36,
 			"bandwidth": 0,
 			"prev": {
@@ -28714,7 +28714,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-stats-based-js-is-the-same",
+			"name": "entrypoint-main-is-css-and-stats-based-alt",
 			"hits": 18,
 			"bandwidth": 0,
 			"prev": {
@@ -28734,7 +28734,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-main-is-css-and-stats-based-alt",
+			"name": "entrypoint-stats-based-js-is-the-same",
 			"hits": 18,
 			"bandwidth": 0,
 			"prev": {
@@ -29346,8 +29346,8 @@
 		},
 		{
 			"type": "npm",
-			"name": "package-0",
-			"hits": 0,
+			"name": "entrypoint-based-on-stats-only",
+			"hits": 136,
 			"bandwidth": 0,
 			"prev": {
 				"hits": 0,
@@ -29356,7 +29356,17 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-stats-based-js-is-the-same",
+			"name": "entrypoint-based-on-stats-only-no-css",
+			"hits": 136,
+			"bandwidth": 0,
+			"prev": {
+				"hits": 0,
+				"bandwidth": 0
+			}
+		},
+		{
+			"type": "npm",
+			"name": "entrypoint-main-is-css-and-stats-based-alt",
 			"hits": 18,
 			"bandwidth": 0,
 			"prev": {
@@ -29366,8 +29376,8 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-stats-alt-js-default-style",
-			"hits": 47,
+			"name": "entrypoint-main-is-css-and-stats-based-css-is-the-same",
+			"hits": 18,
 			"bandwidth": 0,
 			"prev": {
 				"hits": 0,
@@ -29376,8 +29386,8 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-stats-alt-js",
-			"hits": 435,
+			"name": "entrypoint-main-no-extension-and-stats",
+			"hits": 20,
 			"bandwidth": 0,
 			"prev": {
 				"hits": 0,
@@ -29386,7 +29396,17 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-safe-style-stats-based-js",
+			"name": "entrypoint-no-trash-in-db",
+			"hits": 130,
+			"bandwidth": 0,
+			"prev": {
+				"hits": 0,
+				"bandwidth": 0
+			}
+		},
+		{
+			"type": "npm",
+			"name": "entrypoint-safe-js-stats-based-style",
 			"hits": 36,
 			"bandwidth": 0,
 			"prev": {
@@ -29406,7 +29426,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-safe-js-stats-based-style",
+			"name": "entrypoint-safe-style-stats-based-js",
 			"hits": 36,
 			"bandwidth": 0,
 			"prev": {
@@ -29416,8 +29436,8 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-no-trash-in-db",
-			"hits": 130,
+			"name": "entrypoint-stats-alt-js",
+			"hits": 435,
 			"bandwidth": 0,
 			"prev": {
 				"hits": 0,
@@ -29426,8 +29446,8 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-main-no-extension-and-stats",
-			"hits": 20,
+			"name": "entrypoint-stats-alt-js-default-style",
+			"hits": 47,
 			"bandwidth": 0,
 			"prev": {
 				"hits": 0,
@@ -29436,7 +29456,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-main-is-css-and-stats-based-css-is-the-same",
+			"name": "entrypoint-stats-based-js-is-the-same",
 			"hits": 18,
 			"bandwidth": 0,
 			"prev": {
@@ -29446,28 +29466,8 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-main-is-css-and-stats-based-alt",
-			"hits": 18,
-			"bandwidth": 0,
-			"prev": {
-				"hits": 0,
-				"bandwidth": 0
-			}
-		},
-		{
-			"type": "npm",
-			"name": "entrypoint-based-on-stats-only-no-css",
-			"hits": 136,
-			"bandwidth": 0,
-			"prev": {
-				"hits": 0,
-				"bandwidth": 0
-			}
-		},
-		{
-			"type": "npm",
-			"name": "entrypoint-based-on-stats-only",
-			"hits": 136,
+			"name": "package-0",
+			"hits": 0,
 			"bandwidth": 0,
 			"prev": {
 				"hits": 0,
@@ -30078,7 +30078,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-based-on-stats-only-no-css",
+			"name": "entrypoint-based-on-stats-only",
 			"hits": 136,
 			"bandwidth": 0,
 			"prev": {
@@ -30088,7 +30088,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-based-on-stats-only",
+			"name": "entrypoint-based-on-stats-only-no-css",
 			"hits": 136,
 			"bandwidth": 0,
 			"prev": {
@@ -30118,7 +30118,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-safe-style-stats-based-js",
+			"name": "entrypoint-safe-js-stats-based-style",
 			"hits": 36,
 			"bandwidth": 0,
 			"prev": {
@@ -30138,7 +30138,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-safe-js-stats-based-style",
+			"name": "entrypoint-safe-style-stats-based-js",
 			"hits": 36,
 			"bandwidth": 0,
 			"prev": {
@@ -30158,7 +30158,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-stats-based-js-is-the-same",
+			"name": "entrypoint-main-is-css-and-stats-based-alt",
 			"hits": 18,
 			"bandwidth": 0,
 			"prev": {
@@ -30178,7 +30178,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-main-is-css-and-stats-based-alt",
+			"name": "entrypoint-stats-based-js-is-the-same",
 			"hits": 18,
 			"bandwidth": 0,
 			"prev": {
@@ -32606,7 +32606,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-based-on-stats-only-no-css",
+			"name": "entrypoint-based-on-stats-only",
 			"hits": 136,
 			"bandwidth": 0,
 			"prev": {
@@ -32616,7 +32616,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-based-on-stats-only",
+			"name": "entrypoint-based-on-stats-only-no-css",
 			"hits": 136,
 			"bandwidth": 0,
 			"prev": {
@@ -32646,7 +32646,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-safe-style-stats-based-js",
+			"name": "entrypoint-safe-js-stats-based-style",
 			"hits": 36,
 			"bandwidth": 0,
 			"prev": {
@@ -32666,7 +32666,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-safe-js-stats-based-style",
+			"name": "entrypoint-safe-style-stats-based-js",
 			"hits": 36,
 			"bandwidth": 0,
 			"prev": {
@@ -32686,7 +32686,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-stats-based-js-is-the-same",
+			"name": "entrypoint-main-is-css-and-stats-based-alt",
 			"hits": 18,
 			"bandwidth": 0,
 			"prev": {
@@ -32706,7 +32706,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-main-is-css-and-stats-based-alt",
+			"name": "entrypoint-stats-based-js-is-the-same",
 			"hits": 18,
 			"bandwidth": 0,
 			"prev": {
@@ -33318,8 +33318,8 @@
 		},
 		{
 			"type": "npm",
-			"name": "package-0",
-			"hits": 0,
+			"name": "entrypoint-based-on-stats-only",
+			"hits": 136,
 			"bandwidth": 0,
 			"prev": {
 				"hits": 0,
@@ -33328,7 +33328,17 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-stats-based-js-is-the-same",
+			"name": "entrypoint-based-on-stats-only-no-css",
+			"hits": 136,
+			"bandwidth": 0,
+			"prev": {
+				"hits": 0,
+				"bandwidth": 0
+			}
+		},
+		{
+			"type": "npm",
+			"name": "entrypoint-main-is-css-and-stats-based-alt",
 			"hits": 18,
 			"bandwidth": 0,
 			"prev": {
@@ -33338,8 +33348,8 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-stats-alt-js-default-style",
-			"hits": 47,
+			"name": "entrypoint-main-is-css-and-stats-based-css-is-the-same",
+			"hits": 18,
 			"bandwidth": 0,
 			"prev": {
 				"hits": 0,
@@ -33348,8 +33358,8 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-stats-alt-js",
-			"hits": 435,
+			"name": "entrypoint-main-no-extension-and-stats",
+			"hits": 20,
 			"bandwidth": 0,
 			"prev": {
 				"hits": 0,
@@ -33358,7 +33368,17 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-safe-style-stats-based-js",
+			"name": "entrypoint-no-trash-in-db",
+			"hits": 130,
+			"bandwidth": 0,
+			"prev": {
+				"hits": 0,
+				"bandwidth": 0
+			}
+		},
+		{
+			"type": "npm",
+			"name": "entrypoint-safe-js-stats-based-style",
 			"hits": 36,
 			"bandwidth": 0,
 			"prev": {
@@ -33378,7 +33398,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-safe-js-stats-based-style",
+			"name": "entrypoint-safe-style-stats-based-js",
 			"hits": 36,
 			"bandwidth": 0,
 			"prev": {
@@ -33388,8 +33408,8 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-no-trash-in-db",
-			"hits": 130,
+			"name": "entrypoint-stats-alt-js",
+			"hits": 435,
 			"bandwidth": 0,
 			"prev": {
 				"hits": 0,
@@ -33398,8 +33418,8 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-main-no-extension-and-stats",
-			"hits": 20,
+			"name": "entrypoint-stats-alt-js-default-style",
+			"hits": 47,
 			"bandwidth": 0,
 			"prev": {
 				"hits": 0,
@@ -33408,7 +33428,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-main-is-css-and-stats-based-css-is-the-same",
+			"name": "entrypoint-stats-based-js-is-the-same",
 			"hits": 18,
 			"bandwidth": 0,
 			"prev": {
@@ -33418,28 +33438,8 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-main-is-css-and-stats-based-alt",
-			"hits": 18,
-			"bandwidth": 0,
-			"prev": {
-				"hits": 0,
-				"bandwidth": 0
-			}
-		},
-		{
-			"type": "npm",
-			"name": "entrypoint-based-on-stats-only-no-css",
-			"hits": 136,
-			"bandwidth": 0,
-			"prev": {
-				"hits": 0,
-				"bandwidth": 0
-			}
-		},
-		{
-			"type": "npm",
-			"name": "entrypoint-based-on-stats-only",
-			"hits": 136,
+			"name": "package-0",
+			"hits": 0,
 			"bandwidth": 0,
 			"prev": {
 				"hits": 0,
@@ -34050,7 +34050,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-based-on-stats-only-no-css",
+			"name": "entrypoint-based-on-stats-only",
 			"hits": 136,
 			"bandwidth": 0,
 			"prev": {
@@ -34060,7 +34060,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-based-on-stats-only",
+			"name": "entrypoint-based-on-stats-only-no-css",
 			"hits": 136,
 			"bandwidth": 0,
 			"prev": {
@@ -34090,7 +34090,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-safe-style-stats-based-js",
+			"name": "entrypoint-safe-js-stats-based-style",
 			"hits": 36,
 			"bandwidth": 0,
 			"prev": {
@@ -34110,7 +34110,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-safe-js-stats-based-style",
+			"name": "entrypoint-safe-style-stats-based-js",
 			"hits": 36,
 			"bandwidth": 0,
 			"prev": {
@@ -34130,7 +34130,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-stats-based-js-is-the-same",
+			"name": "entrypoint-main-is-css-and-stats-based-alt",
 			"hits": 18,
 			"bandwidth": 0,
 			"prev": {
@@ -34150,7 +34150,7 @@
 		},
 		{
 			"type": "npm",
-			"name": "entrypoint-main-is-css-and-stats-based-alt",
+			"name": "entrypoint-stats-based-js-is-the-same",
 			"hits": 18,
 			"bandwidth": 0,
 			"prev": {
