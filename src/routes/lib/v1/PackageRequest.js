@@ -91,7 +91,7 @@ class PackageRequest extends BaseRequest {
 				let dirName = name.substr(0, index);
 				let absDirName = dir + '/' + dirName;
 
-				if (!{}.hasOwnProperty.call(dirs, absDirName)) {
+				if (!Object.hasOwn(dirs, absDirName)) {
 					dirs[absDirName] = { type: 'directory', name: dirName, files: [] };
 
 					// List directories before files.
@@ -157,7 +157,7 @@ class PackageRequest extends BaseRequest {
 
 			if (metadata.versions.includes(requestedVersion)) {
 				return requestedVersion;
-			} else if ({}.hasOwnProperty.call(metadata.tags, requestedVersion)) {
+			} else if (Object.hasOwn(metadata.tags, requestedVersion)) {
 				return metadata.tags[requestedVersion];
 			}
 
