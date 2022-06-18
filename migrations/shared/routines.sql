@@ -94,6 +94,22 @@ begin
 			if not exists(select * from view_top_platform_version_countries where `date` = @latestStart and period = 's-month') then
 				call updateViewTopPlatformVersionCountries('s-month', @dateFrom, @dateTo, @prevDateFrom, @prevDateTo);
 			end if;
+
+			if not exists(select * from view_top_browsers where `date` = @latestStart and period = 's-month') then
+				call updateViewTopBrowsers('s-month', @dateFrom, @dateTo, @prevDateFrom, @prevDateTo);
+			end if;
+
+			if not exists(select * from view_top_browser_versions where `date` = @latestStart and period = 's-month') then
+				call updateViewTopBrowserVersions('s-month', @dateFrom, @dateTo, @prevDateFrom, @prevDateTo);
+			end if;
+
+			if not exists(select * from view_top_browser_countries where `date` = @latestStart and period = 's-month') then
+				call updateViewTopBrowserCountries('s-month', @dateFrom, @dateTo, @prevDateFrom, @prevDateTo);
+			end if;
+
+			if not exists(select * from view_top_browser_version_countries where `date` = @latestStart and period = 's-month') then
+				call updateViewTopBrowserVersionCountries('s-month', @dateFrom, @dateTo, @prevDateFrom, @prevDateTo);
+			end if;
 		end while;
 end;
 
@@ -130,6 +146,22 @@ begin
 
 			if not exists(select * from view_top_platform_version_countries where `date` = @latestStart and period = 's-year') then
 				call updateViewTopPlatformVersionCountries('s-year', @dateFrom, @dateTo, @prevDateFrom, @prevDateTo);
+			end if;
+
+			if not exists(select * from view_top_browsers where `date` = @latestStart and period = 's-year') then
+				call updateViewTopBrowsers('s-year', @dateFrom, @dateTo, @prevDateFrom, @prevDateTo);
+			end if;
+
+			if not exists(select * from view_top_browser_versions where `date` = @latestStart and period = 's-year') then
+				call updateViewTopBrowserVersions('s-year', @dateFrom, @dateTo, @prevDateFrom, @prevDateTo);
+			end if;
+
+			if not exists(select * from view_top_browser_countries where `date` = @latestStart and period = 's-year') then
+				call updateViewTopBrowserCountries('s-year', @dateFrom, @dateTo, @prevDateFrom, @prevDateTo);
+			end if;
+
+			if not exists(select * from view_top_browser_version_countries where `date` = @latestStart and period = 's-year') then
+				call updateViewTopBrowserVersionCountries('s-year', @dateFrom, @dateTo, @prevDateFrom, @prevDateTo);
 			end if;
 		end while;
 end;

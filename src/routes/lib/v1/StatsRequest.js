@@ -6,6 +6,7 @@ const PackageHits = require('../../../models/PackageHits');
 const ProxyHits = require('../../../models/ProxyHits');
 const OtherHits = require('../../../models/OtherHits');
 const Platform = require('../../../models/Platform');
+const Browser = require('../../../models/Browser');
 const Logs = require('../../../models/Logs');
 
 const dateRange = require('../../utils/dateRange');
@@ -180,6 +181,36 @@ class StatsRequest extends BaseRequest {
 
 	async handlePlatformVersions () {
 		this.ctx.body = await Platform.getTopPlatformVersions(this.params.name, this.period, this.date, this.composedLocationFilter, ...this.pagination);
+		this.setCacheHeader();
+	}
+
+	async handleBrowsers () {
+		this.ctx.body = await Browser.getTopBrowsers(this.period, this.date, this.composedLocationFilter, ...this.pagination);
+		this.setCacheHeader();
+	}
+
+	async handleBrowsersVersions () {
+		this.ctx.body = await Browser.getTopBrowsersVersions(this.period, this.date, this.composedLocationFilter, ...this.pagination);
+		this.setCacheHeader();
+	}
+
+	async handleBrowserPlatforms () {
+		this.ctx.body = await Browser.getTopBrowserPlatforms(this.params.name, this.period, this.date, this.composedLocationFilter, ...this.pagination);
+		this.setCacheHeader();
+	}
+
+	async handleBrowserCountries () {
+		this.ctx.body = await Browser.getTopBrowserCountries(this.params.name, this.period, this.date, this.composedLocationFilter, ...this.pagination);
+		this.setCacheHeader();
+	}
+
+	async handleBrowserVersionCountries () {
+		this.ctx.body = await Browser.getTopBrowserVersionCountries(this.params.name, this.params.version, this.period, this.date, this.composedLocationFilter, ...this.pagination);
+		this.setCacheHeader();
+	}
+
+	async handleBrowserVersions () {
+		this.ctx.body = await Browser.getTopBrowserVersions(this.params.name, this.period, this.date, this.composedLocationFilter, ...this.pagination);
 		this.setCacheHeader();
 	}
 }

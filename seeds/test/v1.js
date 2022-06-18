@@ -105,9 +105,9 @@ exports.seed = async (db) => {
 		}));
 	})));
 
-	await db('browser').insert(_.range(0, 40).map(i => ({ name: `browser ${i}` })));
+	await db('browser').insert(_.range(0, 20).map(i => ({ name: `browser ${i}` })));
 
-	await db('browser_version').insert(_.flatten(_.range(1, 41).map((browserId) => {
+	await db('browser_version').insert(_.flatten(_.range(1, 21).map((browserId) => {
 		return _.range(0, 3).map(i => ({ browserId, version: i }));
 	})));
 

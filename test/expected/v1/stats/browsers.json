@@ -1,0 +1,1153 @@
+{
+	"/v1/stats/browsers?continent=EU&country=PL": {
+		"date": "2010-12-31",
+		"status": 400,
+		"message": "Invalid parameter value: `period` must be a valid date in one of the following ISO formats [YYYY, YYYY-MM], object contains a conflict between optional exclusive peers [continent, country]."
+	},
+	"/v1/stats/browsers?continent=EU&period=2020": [
+		{
+			"name": "browser 19",
+			"share": 14.33,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 18",
+			"share": 13.07,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 17",
+			"share": 11.58,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 16",
+			"share": 10.45,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 15",
+			"share": 9.11,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 14",
+			"share": 8.12,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 13",
+			"share": 6.95,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 12",
+			"share": 6.08,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 11",
+			"share": 5.07,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 10",
+			"share": 4.33,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 9",
+			"share": 3.49,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 8",
+			"share": 2.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 7",
+			"share": 1.91,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 6",
+			"share": 0.94,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 5",
+			"share": 0.67,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 4",
+			"share": 0.48,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 3",
+			"share": 0.29,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 2",
+			"share": 0.17,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 1",
+			"share": 0.07,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 0",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			}
+		}
+	],
+	"/v1/stats/browsers?continent=EU&period=2020-02": [
+		{
+			"name": "browser 19",
+			"share": 14.19,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 18",
+			"share": 12.93,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 17",
+			"share": 11.42,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 16",
+			"share": 10.29,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 15",
+			"share": 8.95,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 14",
+			"share": 7.95,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 13",
+			"share": 6.79,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 12",
+			"share": 5.92,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 11",
+			"share": 4.92,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 10",
+			"share": 4.18,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 9",
+			"share": 3.35,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 8",
+			"share": 2.75,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 7",
+			"share": 2.08,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 6",
+			"share": 1.61,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 5",
+			"share": 1.11,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 4",
+			"share": 0.78,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 3",
+			"share": 0.44,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 2",
+			"share": 0.24,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 1",
+			"share": 0.08,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 0",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			}
+		}
+	],
+	"/v1/stats/browsers?continent=EU&period=2020-04": [
+		{
+			"name": "browser 19",
+			"share": 14.92,
+			"prev": {
+				"share": 9.89
+			}
+		},
+		{
+			"name": "browser 18",
+			"share": 13.59,
+			"prev": {
+				"share": 9.43
+			}
+		},
+		{
+			"name": "browser 17",
+			"share": 12.01,
+			"prev": {
+				"share": 8.85
+			}
+		},
+		{
+			"name": "browser 16",
+			"share": 10.82,
+			"prev": {
+				"share": 8.39
+			}
+		},
+		{
+			"name": "browser 15",
+			"share": 9.42,
+			"prev": {
+				"share": 7.82
+			}
+		},
+		{
+			"name": "browser 14",
+			"share": 8.36,
+			"prev": {
+				"share": 7.36
+			}
+		},
+		{
+			"name": "browser 13",
+			"share": 7.13,
+			"prev": {
+				"share": 6.78
+			}
+		},
+		{
+			"name": "browser 12",
+			"share": 6.22,
+			"prev": {
+				"share": 6.32
+			}
+		},
+		{
+			"name": "browser 11",
+			"share": 5.17,
+			"prev": {
+				"share": 5.75
+			}
+		},
+		{
+			"name": "browser 10",
+			"share": 4.4,
+			"prev": {
+				"share": 5.29
+			}
+		},
+		{
+			"name": "browser 9",
+			"share": 3.52,
+			"prev": {
+				"share": 4.71
+			}
+		},
+		{
+			"name": "browser 8",
+			"share": 2.89,
+			"prev": {
+				"share": 4.25
+			}
+		},
+		{
+			"name": "browser 7",
+			"share": 1.54,
+			"prev": {
+				"share": 3.68
+			}
+		}
+	],
+	"/v1/stats/browsers?continent=X": {
+		"date": "2010-12-31",
+		"status": 400,
+		"message": "Invalid parameter value: `period` must be a valid date in one of the following ISO formats [YYYY, YYYY-MM], `continent` must be a valid continent code in uppercase."
+	},
+	"/v1/stats/browsers?country=PL&period=2020": [
+		{
+			"name": "browser 19",
+			"share": 14.33,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 18",
+			"share": 13.07,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 17",
+			"share": 11.58,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 16",
+			"share": 10.45,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 15",
+			"share": 9.11,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 14",
+			"share": 8.12,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 13",
+			"share": 6.95,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 12",
+			"share": 6.08,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 11",
+			"share": 5.07,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 10",
+			"share": 4.33,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 9",
+			"share": 3.49,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 8",
+			"share": 2.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 7",
+			"share": 1.91,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 6",
+			"share": 0.94,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 5",
+			"share": 0.67,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 4",
+			"share": 0.48,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 3",
+			"share": 0.29,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 2",
+			"share": 0.17,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 1",
+			"share": 0.07,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 0",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			}
+		}
+	],
+	"/v1/stats/browsers?country=PL&period=2020-02": [
+		{
+			"name": "browser 19",
+			"share": 14.19,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 18",
+			"share": 12.93,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 17",
+			"share": 11.42,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 16",
+			"share": 10.29,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 15",
+			"share": 8.95,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 14",
+			"share": 7.95,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 13",
+			"share": 6.79,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 12",
+			"share": 5.92,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 11",
+			"share": 4.92,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 10",
+			"share": 4.18,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 9",
+			"share": 3.35,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 8",
+			"share": 2.75,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 7",
+			"share": 2.08,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 6",
+			"share": 1.61,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 5",
+			"share": 1.11,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 4",
+			"share": 0.78,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 3",
+			"share": 0.44,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 2",
+			"share": 0.24,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 1",
+			"share": 0.08,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 0",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			}
+		}
+	],
+	"/v1/stats/browsers?country=PL&period=2020-04": [
+		{
+			"name": "browser 19",
+			"share": 14.92,
+			"prev": {
+				"share": 9.89
+			}
+		},
+		{
+			"name": "browser 18",
+			"share": 13.59,
+			"prev": {
+				"share": 9.43
+			}
+		},
+		{
+			"name": "browser 17",
+			"share": 12.01,
+			"prev": {
+				"share": 8.85
+			}
+		},
+		{
+			"name": "browser 16",
+			"share": 10.82,
+			"prev": {
+				"share": 8.39
+			}
+		},
+		{
+			"name": "browser 15",
+			"share": 9.42,
+			"prev": {
+				"share": 7.82
+			}
+		},
+		{
+			"name": "browser 14",
+			"share": 8.36,
+			"prev": {
+				"share": 7.36
+			}
+		},
+		{
+			"name": "browser 13",
+			"share": 7.13,
+			"prev": {
+				"share": 6.78
+			}
+		},
+		{
+			"name": "browser 12",
+			"share": 6.22,
+			"prev": {
+				"share": 6.32
+			}
+		},
+		{
+			"name": "browser 11",
+			"share": 5.17,
+			"prev": {
+				"share": 5.75
+			}
+		},
+		{
+			"name": "browser 10",
+			"share": 4.4,
+			"prev": {
+				"share": 5.29
+			}
+		},
+		{
+			"name": "browser 9",
+			"share": 3.52,
+			"prev": {
+				"share": 4.71
+			}
+		},
+		{
+			"name": "browser 8",
+			"share": 2.89,
+			"prev": {
+				"share": 4.25
+			}
+		},
+		{
+			"name": "browser 7",
+			"share": 1.54,
+			"prev": {
+				"share": 3.68
+			}
+		}
+	],
+	"/v1/stats/browsers?country=X": {
+		"date": "2010-12-31",
+		"status": 400,
+		"message": "Invalid parameter value: `period` must be a valid date in one of the following ISO formats [YYYY, YYYY-MM], `country` must be a valid ISO 3166-1 alpha-2 country code in uppercase."
+	},
+	"/v1/stats/browsers?period=2020": [
+		{
+			"name": "browser 19",
+			"share": 14.33,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 18",
+			"share": 13.07,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 17",
+			"share": 11.58,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 16",
+			"share": 10.45,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 15",
+			"share": 9.11,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 14",
+			"share": 8.12,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 13",
+			"share": 6.95,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 12",
+			"share": 6.08,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 11",
+			"share": 5.07,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 10",
+			"share": 4.33,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 9",
+			"share": 3.49,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 8",
+			"share": 2.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 7",
+			"share": 1.91,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 6",
+			"share": 0.94,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 5",
+			"share": 0.67,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 4",
+			"share": 0.48,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 3",
+			"share": 0.29,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 2",
+			"share": 0.17,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 1",
+			"share": 0.07,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 0",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			}
+		}
+	],
+	"/v1/stats/browsers?period=2020-02": [
+		{
+			"name": "browser 19",
+			"share": 14.19,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 18",
+			"share": 12.93,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 17",
+			"share": 11.42,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 16",
+			"share": 10.29,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 15",
+			"share": 8.95,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 14",
+			"share": 7.95,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 13",
+			"share": 6.79,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 12",
+			"share": 5.92,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 11",
+			"share": 4.92,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 10",
+			"share": 4.18,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 9",
+			"share": 3.35,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 8",
+			"share": 2.75,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 7",
+			"share": 2.08,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 6",
+			"share": 1.61,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 5",
+			"share": 1.11,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 4",
+			"share": 0.78,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 3",
+			"share": 0.44,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 2",
+			"share": 0.24,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 1",
+			"share": 0.08,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 0",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			}
+		}
+	],
+	"/v1/stats/browsers?period=2020-04": [
+		{
+			"name": "browser 19",
+			"share": 14.92,
+			"prev": {
+				"share": 9.89
+			}
+		},
+		{
+			"name": "browser 18",
+			"share": 13.59,
+			"prev": {
+				"share": 9.43
+			}
+		},
+		{
+			"name": "browser 17",
+			"share": 12.01,
+			"prev": {
+				"share": 8.85
+			}
+		},
+		{
+			"name": "browser 16",
+			"share": 10.82,
+			"prev": {
+				"share": 8.39
+			}
+		},
+		{
+			"name": "browser 15",
+			"share": 9.42,
+			"prev": {
+				"share": 7.82
+			}
+		},
+		{
+			"name": "browser 14",
+			"share": 8.36,
+			"prev": {
+				"share": 7.36
+			}
+		},
+		{
+			"name": "browser 13",
+			"share": 7.13,
+			"prev": {
+				"share": 6.78
+			}
+		},
+		{
+			"name": "browser 12",
+			"share": 6.22,
+			"prev": {
+				"share": 6.32
+			}
+		},
+		{
+			"name": "browser 11",
+			"share": 5.17,
+			"prev": {
+				"share": 5.75
+			}
+		},
+		{
+			"name": "browser 10",
+			"share": 4.4,
+			"prev": {
+				"share": 5.29
+			}
+		},
+		{
+			"name": "browser 9",
+			"share": 3.52,
+			"prev": {
+				"share": 4.71
+			}
+		},
+		{
+			"name": "browser 8",
+			"share": 2.89,
+			"prev": {
+				"share": 4.25
+			}
+		},
+		{
+			"name": "browser 7",
+			"share": 1.54,
+			"prev": {
+				"share": 3.68
+			}
+		}
+	],
+	"/v1/stats/browsers?period=month": {
+		"date": "2010-12-31",
+		"status": 400,
+		"message": "Invalid parameter value: `period` must be a valid date in one of the following ISO formats [YYYY, YYYY-MM]."
+	}
+}

@@ -37,12 +37,12 @@ exports.up = async (db) => {
 
 	await db.schema.createTable('country_browser_version_hits', (table) => {
 		table.integer('browserVersionId').unsigned().references('id').inTable('browser_version').onUpdate('cascade').onDelete('cascade');
-		table.integer('platformId').unsigned().references('id').inTable('platform').onUpdate('cascade').onDelete('cascade');
 		table.string('countryIso', 2);
+		table.integer('platformId').unsigned().references('id').inTable('platform').onUpdate('cascade').onDelete('cascade');
 		table.date('date').index();
 		table.bigInteger('hits').unsigned().defaultTo(0).notNullable();
 		table.bigInteger('bandwidth').unsigned().defaultTo(0).notNullable();
-		table.primary([ 'browserVersionId', 'platformId', 'countryIso', 'date' ]);
+		table.primary([ 'browserVersionId', 'countryIso', 'platformId', 'date' ]);
 	});
 
 	await updateSharedObjects(db);

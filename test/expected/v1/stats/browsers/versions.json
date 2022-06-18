@@ -1,0 +1,3963 @@
+{
+	"/v1/stats/browsers/versions?continent=EU&country=PL": {
+		"date": "2010-12-31",
+		"status": 400,
+		"message": "Invalid parameter value: `period` must be a valid date in one of the following ISO formats [YYYY, YYYY-MM], object contains a conflict between optional exclusive peers [continent, country]."
+	},
+	"/v1/stats/browsers/versions?continent=EU&period=2020": [
+		{
+			"name": "browser 19",
+			"version": "1",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 19",
+			"version": "2",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 18",
+			"version": "2",
+			"share": 4.56,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 19",
+			"version": "0",
+			"share": 4.56,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 18",
+			"version": "0",
+			"share": 4.25,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 18",
+			"version": "1",
+			"share": 4.25,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 17",
+			"version": "1",
+			"share": 3.95,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 17",
+			"version": "2",
+			"share": 3.95,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 16",
+			"version": "2",
+			"share": 3.67,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 17",
+			"version": "0",
+			"share": 3.67,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 16",
+			"version": "0",
+			"share": 3.39,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 16",
+			"version": "1",
+			"share": 3.39,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 15",
+			"version": "1",
+			"share": 3.12,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 15",
+			"version": "2",
+			"share": 3.12,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 14",
+			"version": "2",
+			"share": 2.87,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 15",
+			"version": "0",
+			"share": 2.87,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 14",
+			"version": "0",
+			"share": 2.62,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 14",
+			"version": "1",
+			"share": 2.62,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 13",
+			"version": "1",
+			"share": 2.39,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 13",
+			"version": "2",
+			"share": 2.39,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 12",
+			"version": "2",
+			"share": 2.17,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 13",
+			"version": "0",
+			"share": 2.17,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 12",
+			"version": "0",
+			"share": 1.96,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 12",
+			"version": "1",
+			"share": 1.96,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 11",
+			"version": "1",
+			"share": 1.75,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 11",
+			"version": "2",
+			"share": 1.75,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 10",
+			"version": "2",
+			"share": 1.56,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 11",
+			"version": "0",
+			"share": 1.56,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 10",
+			"version": "0",
+			"share": 1.39,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 10",
+			"version": "1",
+			"share": 1.39,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 9",
+			"version": "1",
+			"share": 1.22,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 9",
+			"version": "2",
+			"share": 1.22,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 8",
+			"version": "2",
+			"share": 1.06,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 9",
+			"version": "0",
+			"share": 1.06,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 8",
+			"version": "0",
+			"share": 0.91,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 8",
+			"version": "1",
+			"share": 0.91,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 7",
+			"version": "1",
+			"share": 0.78,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 7",
+			"version": "2",
+			"share": 0.78,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 6",
+			"version": "2",
+			"share": 0.35,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 7",
+			"version": "0",
+			"share": 0.35,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 6",
+			"version": "0",
+			"share": 0.29,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 6",
+			"version": "1",
+			"share": 0.29,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 5",
+			"version": "1",
+			"share": 0.24,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 5",
+			"version": "2",
+			"share": 0.24,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 4",
+			"version": "2",
+			"share": 0.19,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 5",
+			"version": "0",
+			"share": 0.19,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 4",
+			"version": "0",
+			"share": 0.15,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 4",
+			"version": "1",
+			"share": 0.15,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 3",
+			"version": "1",
+			"share": 0.11,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 3",
+			"version": "2",
+			"share": 0.11,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 2",
+			"version": "2",
+			"share": 0.08,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 3",
+			"version": "0",
+			"share": 0.08,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 2",
+			"version": "0",
+			"share": 0.05,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 2",
+			"version": "1",
+			"share": 0.05,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 1",
+			"version": "1",
+			"share": 0.03,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 1",
+			"version": "2",
+			"share": 0.03,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 0",
+			"version": "2",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 1",
+			"version": "0",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			}
+		}
+	],
+	"/v1/stats/browsers/versions?continent=EU&period=2020-02": [
+		{
+			"name": "browser 19",
+			"version": "1",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 19",
+			"version": "2",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 18",
+			"version": "2",
+			"share": 4.52,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 19",
+			"version": "0",
+			"share": 4.52,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 18",
+			"version": "0",
+			"share": 4.2,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 18",
+			"version": "1",
+			"share": 4.2,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 17",
+			"version": "1",
+			"share": 3.9,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 17",
+			"version": "2",
+			"share": 3.9,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 16",
+			"version": "2",
+			"share": 3.62,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 17",
+			"version": "0",
+			"share": 3.62,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 16",
+			"version": "0",
+			"share": 3.34,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 16",
+			"version": "1",
+			"share": 3.34,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 15",
+			"version": "1",
+			"share": 3.07,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 15",
+			"version": "2",
+			"share": 3.07,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 14",
+			"version": "2",
+			"share": 2.81,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 15",
+			"version": "0",
+			"share": 2.81,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 14",
+			"version": "0",
+			"share": 2.57,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 14",
+			"version": "1",
+			"share": 2.57,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 13",
+			"version": "1",
+			"share": 2.34,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 13",
+			"version": "2",
+			"share": 2.34,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 12",
+			"version": "2",
+			"share": 2.11,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 13",
+			"version": "0",
+			"share": 2.11,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 12",
+			"version": "0",
+			"share": 1.9,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 12",
+			"version": "1",
+			"share": 1.9,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 11",
+			"version": "1",
+			"share": 1.7,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 11",
+			"version": "2",
+			"share": 1.7,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 10",
+			"version": "2",
+			"share": 1.51,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 11",
+			"version": "0",
+			"share": 1.51,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 10",
+			"version": "0",
+			"share": 1.33,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 10",
+			"version": "1",
+			"share": 1.33,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 9",
+			"version": "1",
+			"share": 1.17,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 9",
+			"version": "2",
+			"share": 1.17,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 8",
+			"version": "2",
+			"share": 1.01,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 9",
+			"version": "0",
+			"share": 1.01,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 8",
+			"version": "0",
+			"share": 0.87,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 8",
+			"version": "1",
+			"share": 0.87,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 7",
+			"version": "1",
+			"share": 0.73,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 7",
+			"version": "2",
+			"share": 0.73,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 6",
+			"version": "2",
+			"share": 0.61,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 7",
+			"version": "0",
+			"share": 0.61,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 6",
+			"version": "0",
+			"share": 0.5,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 6",
+			"version": "1",
+			"share": 0.5,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 5",
+			"version": "1",
+			"share": 0.4,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 5",
+			"version": "2",
+			"share": 0.4,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 4",
+			"version": "2",
+			"share": 0.31,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 5",
+			"version": "0",
+			"share": 0.31,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 4",
+			"version": "0",
+			"share": 0.23,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 4",
+			"version": "1",
+			"share": 0.23,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 3",
+			"version": "1",
+			"share": 0.17,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 3",
+			"version": "2",
+			"share": 0.17,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 2",
+			"version": "2",
+			"share": 0.11,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 3",
+			"version": "0",
+			"share": 0.11,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 2",
+			"version": "0",
+			"share": 0.07,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 2",
+			"version": "1",
+			"share": 0.07,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 1",
+			"version": "1",
+			"share": 0.03,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 1",
+			"version": "2",
+			"share": 0.03,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 0",
+			"version": "2",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 1",
+			"version": "0",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			}
+		}
+	],
+	"/v1/stats/browsers/versions?continent=EU&period=2020-04": [
+		{
+			"name": "browser 19",
+			"version": "1",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"name": "browser 19",
+			"version": "2",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"name": "browser 18",
+			"version": "2",
+			"share": 4.75,
+			"prev": {
+				"share": 3.22
+			}
+		},
+		{
+			"name": "browser 19",
+			"version": "0",
+			"share": 4.75,
+			"prev": {
+				"share": 3.22
+			}
+		},
+		{
+			"name": "browser 18",
+			"version": "0",
+			"share": 4.42,
+			"prev": {
+				"share": 3.1
+			}
+		},
+		{
+			"name": "browser 18",
+			"version": "1",
+			"share": 4.42,
+			"prev": {
+				"share": 3.1
+			}
+		},
+		{
+			"name": "browser 17",
+			"version": "1",
+			"share": 4.11,
+			"prev": {
+				"share": 2.99
+			}
+		},
+		{
+			"name": "browser 17",
+			"version": "2",
+			"share": 4.11,
+			"prev": {
+				"share": 2.99
+			}
+		},
+		{
+			"name": "browser 16",
+			"version": "2",
+			"share": 3.8,
+			"prev": {
+				"share": 2.87
+			}
+		},
+		{
+			"name": "browser 17",
+			"version": "0",
+			"share": 3.8,
+			"prev": {
+				"share": 2.87
+			}
+		},
+		{
+			"name": "browser 16",
+			"version": "0",
+			"share": 3.51,
+			"prev": {
+				"share": 2.76
+			}
+		},
+		{
+			"name": "browser 16",
+			"version": "1",
+			"share": 3.51,
+			"prev": {
+				"share": 2.76
+			}
+		},
+		{
+			"name": "browser 15",
+			"version": "1",
+			"share": 3.23,
+			"prev": {
+				"share": 2.64
+			}
+		},
+		{
+			"name": "browser 15",
+			"version": "2",
+			"share": 3.23,
+			"prev": {
+				"share": 2.64
+			}
+		},
+		{
+			"name": "browser 14",
+			"version": "2",
+			"share": 2.96,
+			"prev": {
+				"share": 2.53
+			}
+		},
+		{
+			"name": "browser 15",
+			"version": "0",
+			"share": 2.96,
+			"prev": {
+				"share": 2.53
+			}
+		},
+		{
+			"name": "browser 14",
+			"version": "0",
+			"share": 2.7,
+			"prev": {
+				"share": 2.41
+			}
+		},
+		{
+			"name": "browser 14",
+			"version": "1",
+			"share": 2.7,
+			"prev": {
+				"share": 2.41
+			}
+		},
+		{
+			"name": "browser 13",
+			"version": "1",
+			"share": 2.46,
+			"prev": {
+				"share": 2.3
+			}
+		},
+		{
+			"name": "browser 13",
+			"version": "2",
+			"share": 2.46,
+			"prev": {
+				"share": 2.3
+			}
+		},
+		{
+			"name": "browser 12",
+			"version": "2",
+			"share": 2.22,
+			"prev": {
+				"share": 2.18
+			}
+		},
+		{
+			"name": "browser 13",
+			"version": "0",
+			"share": 2.22,
+			"prev": {
+				"share": 2.18
+			}
+		},
+		{
+			"name": "browser 12",
+			"version": "0",
+			"share": 2,
+			"prev": {
+				"share": 2.07
+			}
+		},
+		{
+			"name": "browser 12",
+			"version": "1",
+			"share": 2,
+			"prev": {
+				"share": 2.07
+			}
+		},
+		{
+			"name": "browser 11",
+			"version": "1",
+			"share": 1.79,
+			"prev": {
+				"share": 1.95
+			}
+		},
+		{
+			"name": "browser 11",
+			"version": "2",
+			"share": 1.79,
+			"prev": {
+				"share": 1.95
+			}
+		},
+		{
+			"name": "browser 10",
+			"version": "2",
+			"share": 1.59,
+			"prev": {
+				"share": 1.84
+			}
+		},
+		{
+			"name": "browser 11",
+			"version": "0",
+			"share": 1.59,
+			"prev": {
+				"share": 1.84
+			}
+		},
+		{
+			"name": "browser 10",
+			"version": "0",
+			"share": 1.4,
+			"prev": {
+				"share": 1.72
+			}
+		},
+		{
+			"name": "browser 10",
+			"version": "1",
+			"share": 1.4,
+			"prev": {
+				"share": 1.72
+			}
+		},
+		{
+			"name": "browser 9",
+			"version": "1",
+			"share": 1.23,
+			"prev": {
+				"share": 1.61
+			}
+		},
+		{
+			"name": "browser 9",
+			"version": "2",
+			"share": 1.23,
+			"prev": {
+				"share": 1.61
+			}
+		},
+		{
+			"name": "browser 8",
+			"version": "2",
+			"share": 1.06,
+			"prev": {
+				"share": 1.49
+			}
+		},
+		{
+			"name": "browser 9",
+			"version": "0",
+			"share": 1.06,
+			"prev": {
+				"share": 1.49
+			}
+		},
+		{
+			"name": "browser 8",
+			"version": "0",
+			"share": 0.91,
+			"prev": {
+				"share": 1.38
+			}
+		},
+		{
+			"name": "browser 8",
+			"version": "1",
+			"share": 0.91,
+			"prev": {
+				"share": 1.38
+			}
+		},
+		{
+			"name": "browser 7",
+			"version": "1",
+			"share": 0.77,
+			"prev": {
+				"share": 1.26
+			}
+		},
+		{
+			"name": "browser 7",
+			"version": "2",
+			"share": 0.77,
+			"prev": {
+				"share": 1.26
+			}
+		}
+	],
+	"/v1/stats/browsers/versions?continent=X": {
+		"date": "2010-12-31",
+		"status": 400,
+		"message": "Invalid parameter value: `period` must be a valid date in one of the following ISO formats [YYYY, YYYY-MM], `continent` must be a valid continent code in uppercase."
+	},
+	"/v1/stats/browsers/versions?country=PL&period=2020": [
+		{
+			"name": "browser 19",
+			"version": "1",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 19",
+			"version": "2",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 18",
+			"version": "2",
+			"share": 4.56,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 19",
+			"version": "0",
+			"share": 4.56,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 18",
+			"version": "0",
+			"share": 4.25,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 18",
+			"version": "1",
+			"share": 4.25,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 17",
+			"version": "1",
+			"share": 3.95,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 17",
+			"version": "2",
+			"share": 3.95,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 16",
+			"version": "2",
+			"share": 3.67,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 17",
+			"version": "0",
+			"share": 3.67,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 16",
+			"version": "0",
+			"share": 3.39,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 16",
+			"version": "1",
+			"share": 3.39,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 15",
+			"version": "1",
+			"share": 3.12,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 15",
+			"version": "2",
+			"share": 3.12,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 14",
+			"version": "2",
+			"share": 2.87,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 15",
+			"version": "0",
+			"share": 2.87,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 14",
+			"version": "0",
+			"share": 2.62,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 14",
+			"version": "1",
+			"share": 2.62,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 13",
+			"version": "1",
+			"share": 2.39,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 13",
+			"version": "2",
+			"share": 2.39,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 12",
+			"version": "2",
+			"share": 2.17,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 13",
+			"version": "0",
+			"share": 2.17,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 12",
+			"version": "0",
+			"share": 1.96,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 12",
+			"version": "1",
+			"share": 1.96,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 11",
+			"version": "1",
+			"share": 1.75,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 11",
+			"version": "2",
+			"share": 1.75,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 10",
+			"version": "2",
+			"share": 1.56,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 11",
+			"version": "0",
+			"share": 1.56,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 10",
+			"version": "0",
+			"share": 1.39,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 10",
+			"version": "1",
+			"share": 1.39,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 9",
+			"version": "1",
+			"share": 1.22,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 9",
+			"version": "2",
+			"share": 1.22,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 8",
+			"version": "2",
+			"share": 1.06,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 9",
+			"version": "0",
+			"share": 1.06,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 8",
+			"version": "0",
+			"share": 0.91,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 8",
+			"version": "1",
+			"share": 0.91,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 7",
+			"version": "1",
+			"share": 0.78,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 7",
+			"version": "2",
+			"share": 0.78,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 6",
+			"version": "2",
+			"share": 0.35,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 7",
+			"version": "0",
+			"share": 0.35,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 6",
+			"version": "0",
+			"share": 0.29,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 6",
+			"version": "1",
+			"share": 0.29,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 5",
+			"version": "1",
+			"share": 0.24,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 5",
+			"version": "2",
+			"share": 0.24,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 4",
+			"version": "2",
+			"share": 0.19,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 5",
+			"version": "0",
+			"share": 0.19,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 4",
+			"version": "0",
+			"share": 0.15,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 4",
+			"version": "1",
+			"share": 0.15,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 3",
+			"version": "1",
+			"share": 0.11,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 3",
+			"version": "2",
+			"share": 0.11,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 2",
+			"version": "2",
+			"share": 0.08,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 3",
+			"version": "0",
+			"share": 0.08,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 2",
+			"version": "0",
+			"share": 0.05,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 2",
+			"version": "1",
+			"share": 0.05,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 1",
+			"version": "1",
+			"share": 0.03,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 1",
+			"version": "2",
+			"share": 0.03,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 0",
+			"version": "2",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 1",
+			"version": "0",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			}
+		}
+	],
+	"/v1/stats/browsers/versions?country=PL&period=2020-02": [
+		{
+			"name": "browser 19",
+			"version": "1",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 19",
+			"version": "2",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 18",
+			"version": "2",
+			"share": 4.52,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 19",
+			"version": "0",
+			"share": 4.52,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 18",
+			"version": "0",
+			"share": 4.2,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 18",
+			"version": "1",
+			"share": 4.2,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 17",
+			"version": "1",
+			"share": 3.9,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 17",
+			"version": "2",
+			"share": 3.9,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 16",
+			"version": "2",
+			"share": 3.62,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 17",
+			"version": "0",
+			"share": 3.62,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 16",
+			"version": "0",
+			"share": 3.34,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 16",
+			"version": "1",
+			"share": 3.34,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 15",
+			"version": "1",
+			"share": 3.07,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 15",
+			"version": "2",
+			"share": 3.07,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 14",
+			"version": "2",
+			"share": 2.81,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 15",
+			"version": "0",
+			"share": 2.81,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 14",
+			"version": "0",
+			"share": 2.57,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 14",
+			"version": "1",
+			"share": 2.57,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 13",
+			"version": "1",
+			"share": 2.34,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 13",
+			"version": "2",
+			"share": 2.34,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 12",
+			"version": "2",
+			"share": 2.11,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 13",
+			"version": "0",
+			"share": 2.11,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 12",
+			"version": "0",
+			"share": 1.9,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 12",
+			"version": "1",
+			"share": 1.9,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 11",
+			"version": "1",
+			"share": 1.7,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 11",
+			"version": "2",
+			"share": 1.7,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 10",
+			"version": "2",
+			"share": 1.51,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 11",
+			"version": "0",
+			"share": 1.51,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 10",
+			"version": "0",
+			"share": 1.33,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 10",
+			"version": "1",
+			"share": 1.33,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 9",
+			"version": "1",
+			"share": 1.17,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 9",
+			"version": "2",
+			"share": 1.17,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 8",
+			"version": "2",
+			"share": 1.01,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 9",
+			"version": "0",
+			"share": 1.01,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 8",
+			"version": "0",
+			"share": 0.87,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 8",
+			"version": "1",
+			"share": 0.87,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 7",
+			"version": "1",
+			"share": 0.73,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 7",
+			"version": "2",
+			"share": 0.73,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 6",
+			"version": "2",
+			"share": 0.61,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 7",
+			"version": "0",
+			"share": 0.61,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 6",
+			"version": "0",
+			"share": 0.5,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 6",
+			"version": "1",
+			"share": 0.5,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 5",
+			"version": "1",
+			"share": 0.4,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 5",
+			"version": "2",
+			"share": 0.4,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 4",
+			"version": "2",
+			"share": 0.31,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 5",
+			"version": "0",
+			"share": 0.31,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 4",
+			"version": "0",
+			"share": 0.23,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 4",
+			"version": "1",
+			"share": 0.23,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 3",
+			"version": "1",
+			"share": 0.17,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 3",
+			"version": "2",
+			"share": 0.17,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 2",
+			"version": "2",
+			"share": 0.11,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 3",
+			"version": "0",
+			"share": 0.11,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 2",
+			"version": "0",
+			"share": 0.07,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 2",
+			"version": "1",
+			"share": 0.07,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 1",
+			"version": "1",
+			"share": 0.03,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 1",
+			"version": "2",
+			"share": 0.03,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 0",
+			"version": "2",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 1",
+			"version": "0",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			}
+		}
+	],
+	"/v1/stats/browsers/versions?country=PL&period=2020-04": [
+		{
+			"name": "browser 19",
+			"version": "1",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"name": "browser 19",
+			"version": "2",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"name": "browser 18",
+			"version": "2",
+			"share": 4.75,
+			"prev": {
+				"share": 3.22
+			}
+		},
+		{
+			"name": "browser 19",
+			"version": "0",
+			"share": 4.75,
+			"prev": {
+				"share": 3.22
+			}
+		},
+		{
+			"name": "browser 18",
+			"version": "0",
+			"share": 4.42,
+			"prev": {
+				"share": 3.1
+			}
+		},
+		{
+			"name": "browser 18",
+			"version": "1",
+			"share": 4.42,
+			"prev": {
+				"share": 3.1
+			}
+		},
+		{
+			"name": "browser 17",
+			"version": "1",
+			"share": 4.11,
+			"prev": {
+				"share": 2.99
+			}
+		},
+		{
+			"name": "browser 17",
+			"version": "2",
+			"share": 4.11,
+			"prev": {
+				"share": 2.99
+			}
+		},
+		{
+			"name": "browser 16",
+			"version": "2",
+			"share": 3.8,
+			"prev": {
+				"share": 2.87
+			}
+		},
+		{
+			"name": "browser 17",
+			"version": "0",
+			"share": 3.8,
+			"prev": {
+				"share": 2.87
+			}
+		},
+		{
+			"name": "browser 16",
+			"version": "0",
+			"share": 3.51,
+			"prev": {
+				"share": 2.76
+			}
+		},
+		{
+			"name": "browser 16",
+			"version": "1",
+			"share": 3.51,
+			"prev": {
+				"share": 2.76
+			}
+		},
+		{
+			"name": "browser 15",
+			"version": "1",
+			"share": 3.23,
+			"prev": {
+				"share": 2.64
+			}
+		},
+		{
+			"name": "browser 15",
+			"version": "2",
+			"share": 3.23,
+			"prev": {
+				"share": 2.64
+			}
+		},
+		{
+			"name": "browser 14",
+			"version": "2",
+			"share": 2.96,
+			"prev": {
+				"share": 2.53
+			}
+		},
+		{
+			"name": "browser 15",
+			"version": "0",
+			"share": 2.96,
+			"prev": {
+				"share": 2.53
+			}
+		},
+		{
+			"name": "browser 14",
+			"version": "0",
+			"share": 2.7,
+			"prev": {
+				"share": 2.41
+			}
+		},
+		{
+			"name": "browser 14",
+			"version": "1",
+			"share": 2.7,
+			"prev": {
+				"share": 2.41
+			}
+		},
+		{
+			"name": "browser 13",
+			"version": "1",
+			"share": 2.46,
+			"prev": {
+				"share": 2.3
+			}
+		},
+		{
+			"name": "browser 13",
+			"version": "2",
+			"share": 2.46,
+			"prev": {
+				"share": 2.3
+			}
+		},
+		{
+			"name": "browser 12",
+			"version": "2",
+			"share": 2.22,
+			"prev": {
+				"share": 2.18
+			}
+		},
+		{
+			"name": "browser 13",
+			"version": "0",
+			"share": 2.22,
+			"prev": {
+				"share": 2.18
+			}
+		},
+		{
+			"name": "browser 12",
+			"version": "0",
+			"share": 2,
+			"prev": {
+				"share": 2.07
+			}
+		},
+		{
+			"name": "browser 12",
+			"version": "1",
+			"share": 2,
+			"prev": {
+				"share": 2.07
+			}
+		},
+		{
+			"name": "browser 11",
+			"version": "1",
+			"share": 1.79,
+			"prev": {
+				"share": 1.95
+			}
+		},
+		{
+			"name": "browser 11",
+			"version": "2",
+			"share": 1.79,
+			"prev": {
+				"share": 1.95
+			}
+		},
+		{
+			"name": "browser 10",
+			"version": "2",
+			"share": 1.59,
+			"prev": {
+				"share": 1.84
+			}
+		},
+		{
+			"name": "browser 11",
+			"version": "0",
+			"share": 1.59,
+			"prev": {
+				"share": 1.84
+			}
+		},
+		{
+			"name": "browser 10",
+			"version": "0",
+			"share": 1.4,
+			"prev": {
+				"share": 1.72
+			}
+		},
+		{
+			"name": "browser 10",
+			"version": "1",
+			"share": 1.4,
+			"prev": {
+				"share": 1.72
+			}
+		},
+		{
+			"name": "browser 9",
+			"version": "1",
+			"share": 1.23,
+			"prev": {
+				"share": 1.61
+			}
+		},
+		{
+			"name": "browser 9",
+			"version": "2",
+			"share": 1.23,
+			"prev": {
+				"share": 1.61
+			}
+		},
+		{
+			"name": "browser 8",
+			"version": "2",
+			"share": 1.06,
+			"prev": {
+				"share": 1.49
+			}
+		},
+		{
+			"name": "browser 9",
+			"version": "0",
+			"share": 1.06,
+			"prev": {
+				"share": 1.49
+			}
+		},
+		{
+			"name": "browser 8",
+			"version": "0",
+			"share": 0.91,
+			"prev": {
+				"share": 1.38
+			}
+		},
+		{
+			"name": "browser 8",
+			"version": "1",
+			"share": 0.91,
+			"prev": {
+				"share": 1.38
+			}
+		},
+		{
+			"name": "browser 7",
+			"version": "1",
+			"share": 0.77,
+			"prev": {
+				"share": 1.26
+			}
+		},
+		{
+			"name": "browser 7",
+			"version": "2",
+			"share": 0.77,
+			"prev": {
+				"share": 1.26
+			}
+		}
+	],
+	"/v1/stats/browsers/versions?country=X": {
+		"date": "2010-12-31",
+		"status": 400,
+		"message": "Invalid parameter value: `period` must be a valid date in one of the following ISO formats [YYYY, YYYY-MM], `country` must be a valid ISO 3166-1 alpha-2 country code in uppercase."
+	},
+	"/v1/stats/browsers/versions?period=2020": [
+		{
+			"name": "browser 19",
+			"version": "1",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 19",
+			"version": "2",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 18",
+			"version": "2",
+			"share": 4.56,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 19",
+			"version": "0",
+			"share": 4.56,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 18",
+			"version": "0",
+			"share": 4.25,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 18",
+			"version": "1",
+			"share": 4.25,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 17",
+			"version": "1",
+			"share": 3.95,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 17",
+			"version": "2",
+			"share": 3.95,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 16",
+			"version": "2",
+			"share": 3.67,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 17",
+			"version": "0",
+			"share": 3.67,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 16",
+			"version": "0",
+			"share": 3.39,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 16",
+			"version": "1",
+			"share": 3.39,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 15",
+			"version": "1",
+			"share": 3.12,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 15",
+			"version": "2",
+			"share": 3.12,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 14",
+			"version": "2",
+			"share": 2.87,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 15",
+			"version": "0",
+			"share": 2.87,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 14",
+			"version": "0",
+			"share": 2.62,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 14",
+			"version": "1",
+			"share": 2.62,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 13",
+			"version": "1",
+			"share": 2.39,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 13",
+			"version": "2",
+			"share": 2.39,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 12",
+			"version": "2",
+			"share": 2.17,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 13",
+			"version": "0",
+			"share": 2.17,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 12",
+			"version": "0",
+			"share": 1.96,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 12",
+			"version": "1",
+			"share": 1.96,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 11",
+			"version": "1",
+			"share": 1.75,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 11",
+			"version": "2",
+			"share": 1.75,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 10",
+			"version": "2",
+			"share": 1.56,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 11",
+			"version": "0",
+			"share": 1.56,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 10",
+			"version": "0",
+			"share": 1.39,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 10",
+			"version": "1",
+			"share": 1.39,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 9",
+			"version": "1",
+			"share": 1.22,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 9",
+			"version": "2",
+			"share": 1.22,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 8",
+			"version": "2",
+			"share": 1.06,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 9",
+			"version": "0",
+			"share": 1.06,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 8",
+			"version": "0",
+			"share": 0.91,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 8",
+			"version": "1",
+			"share": 0.91,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 7",
+			"version": "1",
+			"share": 0.78,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 7",
+			"version": "2",
+			"share": 0.78,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 6",
+			"version": "2",
+			"share": 0.35,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 7",
+			"version": "0",
+			"share": 0.35,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 6",
+			"version": "0",
+			"share": 0.29,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 6",
+			"version": "1",
+			"share": 0.29,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 5",
+			"version": "1",
+			"share": 0.24,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 5",
+			"version": "2",
+			"share": 0.24,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 4",
+			"version": "2",
+			"share": 0.19,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 5",
+			"version": "0",
+			"share": 0.19,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 4",
+			"version": "0",
+			"share": 0.15,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 4",
+			"version": "1",
+			"share": 0.15,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 3",
+			"version": "1",
+			"share": 0.11,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 3",
+			"version": "2",
+			"share": 0.11,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 2",
+			"version": "2",
+			"share": 0.08,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 3",
+			"version": "0",
+			"share": 0.08,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 2",
+			"version": "0",
+			"share": 0.05,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 2",
+			"version": "1",
+			"share": 0.05,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 1",
+			"version": "1",
+			"share": 0.03,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 1",
+			"version": "2",
+			"share": 0.03,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 0",
+			"version": "2",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 1",
+			"version": "0",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			}
+		}
+	],
+	"/v1/stats/browsers/versions?period=2020-02": [
+		{
+			"name": "browser 19",
+			"version": "1",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 19",
+			"version": "2",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 18",
+			"version": "2",
+			"share": 4.52,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 19",
+			"version": "0",
+			"share": 4.52,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 18",
+			"version": "0",
+			"share": 4.2,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 18",
+			"version": "1",
+			"share": 4.2,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 17",
+			"version": "1",
+			"share": 3.9,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 17",
+			"version": "2",
+			"share": 3.9,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 16",
+			"version": "2",
+			"share": 3.62,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 17",
+			"version": "0",
+			"share": 3.62,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 16",
+			"version": "0",
+			"share": 3.34,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 16",
+			"version": "1",
+			"share": 3.34,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 15",
+			"version": "1",
+			"share": 3.07,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 15",
+			"version": "2",
+			"share": 3.07,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 14",
+			"version": "2",
+			"share": 2.81,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 15",
+			"version": "0",
+			"share": 2.81,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 14",
+			"version": "0",
+			"share": 2.57,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 14",
+			"version": "1",
+			"share": 2.57,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 13",
+			"version": "1",
+			"share": 2.34,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 13",
+			"version": "2",
+			"share": 2.34,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 12",
+			"version": "2",
+			"share": 2.11,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 13",
+			"version": "0",
+			"share": 2.11,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 12",
+			"version": "0",
+			"share": 1.9,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 12",
+			"version": "1",
+			"share": 1.9,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 11",
+			"version": "1",
+			"share": 1.7,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 11",
+			"version": "2",
+			"share": 1.7,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 10",
+			"version": "2",
+			"share": 1.51,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 11",
+			"version": "0",
+			"share": 1.51,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 10",
+			"version": "0",
+			"share": 1.33,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 10",
+			"version": "1",
+			"share": 1.33,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 9",
+			"version": "1",
+			"share": 1.17,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 9",
+			"version": "2",
+			"share": 1.17,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 8",
+			"version": "2",
+			"share": 1.01,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 9",
+			"version": "0",
+			"share": 1.01,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 8",
+			"version": "0",
+			"share": 0.87,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 8",
+			"version": "1",
+			"share": 0.87,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 7",
+			"version": "1",
+			"share": 0.73,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 7",
+			"version": "2",
+			"share": 0.73,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 6",
+			"version": "2",
+			"share": 0.61,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 7",
+			"version": "0",
+			"share": 0.61,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 6",
+			"version": "0",
+			"share": 0.5,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 6",
+			"version": "1",
+			"share": 0.5,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 5",
+			"version": "1",
+			"share": 0.4,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 5",
+			"version": "2",
+			"share": 0.4,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 4",
+			"version": "2",
+			"share": 0.31,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 5",
+			"version": "0",
+			"share": 0.31,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 4",
+			"version": "0",
+			"share": 0.23,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 4",
+			"version": "1",
+			"share": 0.23,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 3",
+			"version": "1",
+			"share": 0.17,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 3",
+			"version": "2",
+			"share": 0.17,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 2",
+			"version": "2",
+			"share": 0.11,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 3",
+			"version": "0",
+			"share": 0.11,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 2",
+			"version": "0",
+			"share": 0.07,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 2",
+			"version": "1",
+			"share": 0.07,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 1",
+			"version": "1",
+			"share": 0.03,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 1",
+			"version": "2",
+			"share": 0.03,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 0",
+			"version": "2",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 1",
+			"version": "0",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			}
+		}
+	],
+	"/v1/stats/browsers/versions?period=2020-04": [
+		{
+			"name": "browser 19",
+			"version": "1",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"name": "browser 19",
+			"version": "2",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"name": "browser 18",
+			"version": "2",
+			"share": 4.75,
+			"prev": {
+				"share": 3.22
+			}
+		},
+		{
+			"name": "browser 19",
+			"version": "0",
+			"share": 4.75,
+			"prev": {
+				"share": 3.22
+			}
+		},
+		{
+			"name": "browser 18",
+			"version": "0",
+			"share": 4.42,
+			"prev": {
+				"share": 3.1
+			}
+		},
+		{
+			"name": "browser 18",
+			"version": "1",
+			"share": 4.42,
+			"prev": {
+				"share": 3.1
+			}
+		},
+		{
+			"name": "browser 17",
+			"version": "1",
+			"share": 4.11,
+			"prev": {
+				"share": 2.99
+			}
+		},
+		{
+			"name": "browser 17",
+			"version": "2",
+			"share": 4.11,
+			"prev": {
+				"share": 2.99
+			}
+		},
+		{
+			"name": "browser 16",
+			"version": "2",
+			"share": 3.8,
+			"prev": {
+				"share": 2.87
+			}
+		},
+		{
+			"name": "browser 17",
+			"version": "0",
+			"share": 3.8,
+			"prev": {
+				"share": 2.87
+			}
+		},
+		{
+			"name": "browser 16",
+			"version": "0",
+			"share": 3.51,
+			"prev": {
+				"share": 2.76
+			}
+		},
+		{
+			"name": "browser 16",
+			"version": "1",
+			"share": 3.51,
+			"prev": {
+				"share": 2.76
+			}
+		},
+		{
+			"name": "browser 15",
+			"version": "1",
+			"share": 3.23,
+			"prev": {
+				"share": 2.64
+			}
+		},
+		{
+			"name": "browser 15",
+			"version": "2",
+			"share": 3.23,
+			"prev": {
+				"share": 2.64
+			}
+		},
+		{
+			"name": "browser 14",
+			"version": "2",
+			"share": 2.96,
+			"prev": {
+				"share": 2.53
+			}
+		},
+		{
+			"name": "browser 15",
+			"version": "0",
+			"share": 2.96,
+			"prev": {
+				"share": 2.53
+			}
+		},
+		{
+			"name": "browser 14",
+			"version": "0",
+			"share": 2.7,
+			"prev": {
+				"share": 2.41
+			}
+		},
+		{
+			"name": "browser 14",
+			"version": "1",
+			"share": 2.7,
+			"prev": {
+				"share": 2.41
+			}
+		},
+		{
+			"name": "browser 13",
+			"version": "1",
+			"share": 2.46,
+			"prev": {
+				"share": 2.3
+			}
+		},
+		{
+			"name": "browser 13",
+			"version": "2",
+			"share": 2.46,
+			"prev": {
+				"share": 2.3
+			}
+		},
+		{
+			"name": "browser 12",
+			"version": "2",
+			"share": 2.22,
+			"prev": {
+				"share": 2.18
+			}
+		},
+		{
+			"name": "browser 13",
+			"version": "0",
+			"share": 2.22,
+			"prev": {
+				"share": 2.18
+			}
+		},
+		{
+			"name": "browser 12",
+			"version": "0",
+			"share": 2,
+			"prev": {
+				"share": 2.07
+			}
+		},
+		{
+			"name": "browser 12",
+			"version": "1",
+			"share": 2,
+			"prev": {
+				"share": 2.07
+			}
+		},
+		{
+			"name": "browser 11",
+			"version": "1",
+			"share": 1.79,
+			"prev": {
+				"share": 1.95
+			}
+		},
+		{
+			"name": "browser 11",
+			"version": "2",
+			"share": 1.79,
+			"prev": {
+				"share": 1.95
+			}
+		},
+		{
+			"name": "browser 10",
+			"version": "2",
+			"share": 1.59,
+			"prev": {
+				"share": 1.84
+			}
+		},
+		{
+			"name": "browser 11",
+			"version": "0",
+			"share": 1.59,
+			"prev": {
+				"share": 1.84
+			}
+		},
+		{
+			"name": "browser 10",
+			"version": "0",
+			"share": 1.4,
+			"prev": {
+				"share": 1.72
+			}
+		},
+		{
+			"name": "browser 10",
+			"version": "1",
+			"share": 1.4,
+			"prev": {
+				"share": 1.72
+			}
+		},
+		{
+			"name": "browser 9",
+			"version": "1",
+			"share": 1.23,
+			"prev": {
+				"share": 1.61
+			}
+		},
+		{
+			"name": "browser 9",
+			"version": "2",
+			"share": 1.23,
+			"prev": {
+				"share": 1.61
+			}
+		},
+		{
+			"name": "browser 8",
+			"version": "2",
+			"share": 1.06,
+			"prev": {
+				"share": 1.49
+			}
+		},
+		{
+			"name": "browser 9",
+			"version": "0",
+			"share": 1.06,
+			"prev": {
+				"share": 1.49
+			}
+		},
+		{
+			"name": "browser 8",
+			"version": "0",
+			"share": 0.91,
+			"prev": {
+				"share": 1.38
+			}
+		},
+		{
+			"name": "browser 8",
+			"version": "1",
+			"share": 0.91,
+			"prev": {
+				"share": 1.38
+			}
+		},
+		{
+			"name": "browser 7",
+			"version": "1",
+			"share": 0.77,
+			"prev": {
+				"share": 1.26
+			}
+		},
+		{
+			"name": "browser 7",
+			"version": "2",
+			"share": 0.77,
+			"prev": {
+				"share": 1.26
+			}
+		}
+	],
+	"/v1/stats/browsers/versions?period=month": {
+		"date": "2010-12-31",
+		"status": 400,
+		"message": "Invalid parameter value: `period` must be a valid date in one of the following ISO formats [YYYY, YYYY-MM]."
+	},
+	"/v1/stats/browsers/browser%2019/versions?continent=EU&country=PL": {
+		"date": "2010-12-31",
+		"status": 400,
+		"message": "Invalid parameter value: `period` must be a valid date in one of the following ISO formats [YYYY, YYYY-MM], object contains a conflict between optional exclusive peers [continent, country]."
+	},
+	"/v1/stats/browsers/browser%2019/versions?continent=EU&period=2020": [
+		{
+			"version": "1",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"version": "2",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"version": "0",
+			"share": 4.56,
+			"prev": {
+				"share": null
+			}
+		}
+	],
+	"/v1/stats/browsers/browser%2019/versions?continent=EU&period=2020-02": [
+		{
+			"version": "1",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"version": "2",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"version": "0",
+			"share": 4.52,
+			"prev": {
+				"share": null
+			}
+		}
+	],
+	"/v1/stats/browsers/browser%2019/versions?continent=EU&period=2020-04": [
+		{
+			"version": "1",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"version": "2",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"version": "0",
+			"share": 4.75,
+			"prev": {
+				"share": 3.22
+			}
+		}
+	],
+	"/v1/stats/browsers/browser%2019/versions?continent=X": {
+		"date": "2010-12-31",
+		"status": 400,
+		"message": "Invalid parameter value: `period` must be a valid date in one of the following ISO formats [YYYY, YYYY-MM], `continent` must be a valid continent code in uppercase."
+	},
+	"/v1/stats/browsers/browser%2019/versions?country=PL&period=2020": [
+		{
+			"version": "1",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"version": "2",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"version": "0",
+			"share": 4.56,
+			"prev": {
+				"share": null
+			}
+		}
+	],
+	"/v1/stats/browsers/browser%2019/versions?country=PL&period=2020-02": [
+		{
+			"version": "1",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"version": "2",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"version": "0",
+			"share": 4.52,
+			"prev": {
+				"share": null
+			}
+		}
+	],
+	"/v1/stats/browsers/browser%2019/versions?country=PL&period=2020-04": [
+		{
+			"version": "1",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"version": "2",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"version": "0",
+			"share": 4.75,
+			"prev": {
+				"share": 3.22
+			}
+		}
+	],
+	"/v1/stats/browsers/browser%2019/versions?country=X": {
+		"date": "2010-12-31",
+		"status": 400,
+		"message": "Invalid parameter value: `period` must be a valid date in one of the following ISO formats [YYYY, YYYY-MM], `country` must be a valid ISO 3166-1 alpha-2 country code in uppercase."
+	},
+	"/v1/stats/browsers/browser%2019/versions?period=2020": [
+		{
+			"version": "1",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"version": "2",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"version": "0",
+			"share": 4.56,
+			"prev": {
+				"share": null
+			}
+		}
+	],
+	"/v1/stats/browsers/browser%2019/versions?period=2020-02": [
+		{
+			"version": "1",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"version": "2",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"version": "0",
+			"share": 4.52,
+			"prev": {
+				"share": null
+			}
+		}
+	],
+	"/v1/stats/browsers/browser%2019/versions?period=2020-04": [
+		{
+			"version": "1",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"version": "2",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"version": "0",
+			"share": 4.75,
+			"prev": {
+				"share": 3.22
+			}
+		}
+	],
+	"/v1/stats/browsers/browser%2019/versions?period=month": {
+		"date": "2010-12-31",
+		"status": 400,
+		"message": "Invalid parameter value: `period` must be a valid date in one of the following ISO formats [YYYY, YYYY-MM]."
+	}
+}
