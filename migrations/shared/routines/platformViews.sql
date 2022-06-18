@@ -22,23 +22,22 @@ begin
 			round(hits / nullif((sum(hits) over ()), 0) * 100, 2) as share,
 			round(coalesce(prevHits, 0) / nullif((select hits from prevTotals), 0) * 100, 2) as prevShare
 		from (
-			select name,
+			select platformId,
 				sum(hits) as hits,
 				(select sum(hits)
-					from platform
-						join platform_version pvi on platform.id = pvi.platformId
+					from platform_version pvi
 						join country_platform_version_hits cpvhi on pvi.id = cpvhi.platformVersionId
-					where platform.id = p.id and date >= aPrevDateFrom and date <= aPrevDateTo
+					where pvi.platformId = pv.platformId and date >= aPrevDateFrom and date <= aPrevDateTo
 				) as prevHits
-			from platform p
-				join platform_version pv on p.id = pv.platformId
+			from platform_version pv
 				join country_platform_version_hits cpvh on pv.id = cpvh.platformVersionId
 			where date >= aDateFrom and date <= aDateTo
-			group by name
-			order by hits desc
+			group by platformId
 		) t
+		join platform p on t.platformId = p.id
 	) t2
-	where share > 0;
+	where share > 0
+	order by share desc;
 
 	insert into view_top_platforms
 	(period, date, locationType, locationId, name, share, prevShare)
@@ -54,26 +53,25 @@ begin
 			round(hits / nullif((sum(hits) over (partition by continentCode)), 0) * 100, 2) as share,
 			round(coalesce(prevHits, 0) / nullif((select hits from prevTotals where continentCode = t.continentCode), 0) * 100, 2) as prevShare
 		from (
-			select name,
+			select platformId,
 				continentCode,
 				sum(hits) as hits,
 				(select sum(hits)
-					from platform
-						join platform_version pvi on platform.id = pvi.platformId
+					from platform_version pvi
 						join country_platform_version_hits cpvhi on pvi.id = cpvhi.platformVersionId
 						join country ci on cpvhi.countryIso = ci.iso
-					where platform.id = p.id and ci.continentCode = c.continentCode and date >= aPrevDateFrom and date <= aPrevDateTo
+					where pvi.platformId = pv.platformId and ci.continentCode = c.continentCode and date >= aPrevDateFrom and date <= aPrevDateTo
 				) as prevHits
-			from platform p
-				join platform_version pv on p.id = pv.platformId
+			from platform_version pv
 				join country_platform_version_hits cpvh on pv.id = cpvh.platformVersionId
 				join country c on cpvh.countryIso = c.iso
 			where date >= aDateFrom and date <= aDateTo
-			group by name, c.continentCode
-			order by hits desc
+			group by platformId, c.continentCode
 		) t
+		join platform p on t.platformId = p.id
 	) t2
-	where share > 0;
+	where share > 0
+	order by share desc;
 
 	insert into view_top_platforms
 	(period, date, locationType, locationId, name, share, prevShare)
@@ -88,24 +86,23 @@ begin
 			round(hits / nullif((sum(hits) over (partition by countryIso)), 0) * 100, 2) as share,
 			round(coalesce(prevHits, 0) / nullif((select hits from prevTotals where countryIso = t.countryIso), 0) * 100, 2) as prevShare
 		from (
-			select name,
+			select platformId,
 				countryIso,
 				sum(hits) as hits,
 				(select sum(hits)
-					from platform
-						join platform_version pvi on platform.id = pvi.platformId
+					from platform_version pvi
 						join country_platform_version_hits cpvhi on pvi.id = cpvhi.platformVersionId
-					where platform.id = p.id and cpvhi.countryIso = cpvh.countryIso and date >= aPrevDateFrom and date <= aPrevDateTo
+					where pvi.platformId = pv.platformId and cpvhi.countryIso = cpvh.countryIso and date >= aPrevDateFrom and date <= aPrevDateTo
 				) as prevHits
-			from platform p
-				join platform_version pv on p.id = pv.platformId
+			from platform_version pv
 				join country_platform_version_hits cpvh on pv.id = cpvh.platformVersionId
 			where date >= aDateFrom and date <= aDateTo
-			group by name, countryIso
-			order by hits desc
+			group by platformId, countryIso
 		) t
+		join platform p on t.platformId = p.id
 	) t2
-	where share > 0;
+	where share > 0
+	order by share desc;
 
 	commit;
 end;
@@ -135,23 +132,21 @@ begin
 			round(hits / nullif((sum(hits) over ()), 0) * 100, 2) as share,
 			round(coalesce(prevHits, 0) / nullif((select hits from prevTotals), 0) * 100, 2) as prevShare
 		from (
-			select name, version, versionName,
+			select platformVersionId,
 				sum(hits) as hits,
 				(select sum(hits)
-					from platform
-						join platform_version pvi on platform.id = pvi.platformId
-						join country_platform_version_hits cpvhi on pvi.id = cpvhi.platformVersionId
-					where platform.id = p.id and pvi.id = pv.id and date >= aPrevDateFrom and date <= aPrevDateTo
+					from country_platform_version_hits cpvhi
+					where cpvhi.platformVersionId = cpvh.platformVersionId and date >= aPrevDateFrom and date <= aPrevDateTo
 				) as prevHits
-			from platform p
-				join platform_version pv on p.id = pv.platformId
-				join country_platform_version_hits cpvh on pv.id = cpvh.platformVersionId
+			from country_platform_version_hits cpvh
 			where date >= aDateFrom and date <= aDateTo
-			group by name, version, versionName
-			order by hits desc
+			group by platformVersionId
 		) t
+		join platform_version pv on t.platformVersionId = pv.id
+		join platform p on pv.platformId = p.id
 	) t2
-	where share > 0;
+	where share > 0
+	order by share desc;
 
 	insert into view_top_platform_versions
 	(period, date, locationType, locationId, name, version, versionName, share, prevShare)
@@ -167,26 +162,24 @@ begin
 			round(hits / nullif((sum(hits) over (partition by continentCode)), 0) * 100, 2) as share,
 			round(coalesce(prevHits, 0) / nullif((select hits from prevTotals where continentCode = t.continentCode), 0) * 100, 2) as prevShare
 		from (
-			select name, version, versionName,
+			select platformVersionId,
 				continentCode,
 				sum(hits) as hits,
 				(select sum(hits)
-					from platform
-						join platform_version pvi on platform.id = pvi.platformId
-						join country_platform_version_hits cpvhi on pvi.id = cpvhi.platformVersionId
+					from country_platform_version_hits cpvhi
 						join country ci on cpvhi.countryIso = ci.iso
-					where platform.id = p.id and pvi.id = pv.id and ci.continentCode = c.continentCode and date >= aPrevDateFrom and date <= aPrevDateTo
+					where cpvhi.platformVersionId = cpvh.platformVersionId and ci.continentCode = c.continentCode and date >= aPrevDateFrom and date <= aPrevDateTo
 				) as prevHits
-			from platform p
-				join platform_version pv on p.id = pv.platformId
-				join country_platform_version_hits cpvh on pv.id = cpvh.platformVersionId
+			from country_platform_version_hits cpvh
 				join country c on cpvh.countryIso = c.iso
 			where date >= aDateFrom and date <= aDateTo
-			group by name, version, versionName, c.continentCode
-			order by hits desc
+			group by platformVersionId, c.continentCode
 		) t
+		join platform_version pv on t.platformVersionId = pv.id
+		join platform p on pv.platformId = p.id
 	) t2
-	where share > 0;
+	where share > 0
+	order by share desc;
 
 	insert into view_top_platform_versions
 	(period, date, locationType, locationId, name, version, versionName, share, prevShare)
@@ -201,24 +194,22 @@ begin
 			round(hits / nullif((sum(hits) over (partition by countryIso)), 0) * 100, 2) as share,
 			round(coalesce(prevHits, 0) / nullif((select hits from prevTotals where countryIso = t.countryIso), 0) * 100, 2) as prevShare
 		from (
-			select name, version, versionName,
+			select platformVersionId,
 				countryIso,
 				sum(hits) as hits,
 				(select sum(hits)
-					from platform
-						join platform_version pvi on platform.id = pvi.platformId
-						join country_platform_version_hits cpvhi on pvi.id = cpvhi.platformVersionId
-					where platform.id = p.id and pvi.id = pv.id and cpvhi.countryIso = cpvh.countryIso and date >= aPrevDateFrom and date <= aPrevDateTo
+					from country_platform_version_hits cpvhi
+					where cpvhi.platformVersionId = cpvh.platformVersionId and cpvhi.countryIso = cpvh.countryIso and date >= aPrevDateFrom and date <= aPrevDateTo
 				) as prevHits
-			from platform p
-				join platform_version pv on p.id = pv.platformId
-				join country_platform_version_hits cpvh on pv.id = cpvh.platformVersionId
+			from country_platform_version_hits cpvh
 			where date >= aDateFrom and date <= aDateTo
-			group by name, version, versionName, countryIso
-			order by hits desc
+			group by platformVersionId, countryIso
 		) t
+		join platform_version pv on t.platformVersionId = pv.id
+		join platform p on pv.platformId = p.id
 	) t2
-	where share > 0;
+	where share > 0
+	order by share desc;
 
 	commit;
 end;
@@ -244,29 +235,27 @@ begin
 		where date >= aPrevDateFrom and date <= aPrevDateTo
 	)
 	select * from (
-		select aPeriod, aDateFrom, 'global', '', name, browser,
+		select aPeriod, aDateFrom, 'global', '', p.name as name, b.name as browser,
 			round(hits / nullif((sum(hits) over ()), 0) * 100, 2) as share,
 			round(coalesce(prevHits, 0) / nullif((select hits from totals), 0) * 100, 2) as prevShare
 		from (
-			select p.name as name, b.name as browser,
+			select platformId, browserId,
 				sum(hits) as hits,
 				(select sum(hits)
-					from browser bi
-						join browser_version bvi on bi.id = bvi.browserId
+					from browser_version bvi
 						join country_browser_version_hits cbvhi on bvi.id = cbvhi.browserVersionId
-						join platform pi on cbvhi.platformId = pi.id
-					where pi.id = p.id and bi.id = b.id and date >= aPrevDateFrom and date <= aPrevDateTo
+					where cbvhi.platformId = cbvh.platformId and bvi.browserId = bv.browserId and date >= aPrevDateFrom and date <= aPrevDateTo
 				) as prevHits
-			from browser b
-				join browser_version bv on b.id = bv.browserId
+			from browser_version bv
 				join country_browser_version_hits cbvh on bv.id = cbvh.browserVersionId
-				join platform p on cbvh.platformId = p.id
 			where date >= aDateFrom and date <= aDateTo
-			group by name, browser
-			order by hits desc
+			group by platformId, browserId
 		) t
+		join platform p on t.platformId = p.id
+		join browser b on t.browserId = b.id
 	) t2
-	where share > 0;
+	where share > 0
+	order by share desc;
 
 	insert into view_top_platform_browsers
 	(period, date, locationType, locationId, name, browser, share, prevShare)
@@ -278,32 +267,30 @@ begin
 		group by continentCode
 	)
 	select * from (
-		select aPeriod, aDateFrom, 'continent', continentCode, name, browser,
+		select aPeriod, aDateFrom, 'continent', continentCode, p.name as name, b.name as browser,
 			round(hits / nullif((sum(hits) over (partition by continentCode)), 0) * 100, 2) as share,
 			round(coalesce(prevHits, 0) / nullif((select hits from totals where continentCode = t.continentCode), 0) * 100, 2) as prevShare
 		from (
-			select p.name as name, b.name as browser,
+			select platformId, browserId,
 				continentCode,
 				sum(hits) as hits,
 				(select sum(hits)
-					from browser bi
-						join browser_version bvi on bi.id = bvi.browserId
+					from browser_version bvi
 						join country_browser_version_hits cbvhi on bvi.id = cbvhi.browserVersionId
-						join platform pi on cbvhi.platformId = pi.id
 						join country ci on cbvhi.countryIso = ci.iso
-					where pi.id = p.id and bi.id = b.id and ci.continentCode = c.continentCode and date >= aPrevDateFrom and date <= aPrevDateTo
+					where cbvhi.platformId = cbvh.platformId and bvi.browserId = bv.browserId and ci.continentCode = c.continentCode and date >= aPrevDateFrom and date <= aPrevDateTo
 				) as prevHits
-			from browser b
-				join browser_version bv on b.id = bv.browserId
+			from browser_version bv
 				join country_browser_version_hits cbvh on bv.id = cbvh.browserVersionId
-				join platform p on cbvh.platformId = p.id
 				join country c on cbvh.countryIso = c.iso
 			where date >= aDateFrom and date <= aDateTo
-			group by name, browser, c.continentCode
-			order by hits desc
+			group by platformId, browserId, c.continentCode
 		) t
+		join platform p on t.platformId = p.id
+		join browser b on t.browserId = b.id
 	) t2
-	where share > 0;
+	where share > 0
+	order by share desc;
 
 	insert into view_top_platform_browsers
 	(period, date, locationType, locationId, name, browser, share, prevShare)
@@ -314,30 +301,28 @@ begin
 		group by countryIso
 	)
 	select * from (
-		select aPeriod, aDateFrom, 'country', countryIso, name, browser,
+		select aPeriod, aDateFrom, 'country', countryIso, p.name as name, b.name as browser,
 			round(hits / nullif((sum(hits) over (partition by countryIso)), 0) * 100, 2) as share,
 			round(coalesce(prevHits, 0) / nullif((select hits from totals where countryIso = t.countryIso), 0) * 100, 2) as prevShare
 		from (
-			select p.name as name, b.name as browser,
+			select platformId, browserId,
 				countryIso,
 				sum(hits) as hits,
 				(select sum(hits)
-					from browser bi
-						join browser_version bvi on bi.id = bvi.browserId
+					from browser_version bvi
 						join country_browser_version_hits cbvhi on bvi.id = cbvhi.browserVersionId
-						join platform pi on cbvhi.platformId = pi.id
-					where pi.id = p.id and bi.id = b.id and cbvhi.countryIso = cbvh.countryIso and date >= aPrevDateFrom and date <= aPrevDateTo
+					where cbvhi.platformId = cbvh.platformId and bvi.browserId = bv.browserId and cbvhi.countryIso = cbvh.countryIso and date >= aPrevDateFrom and date <= aPrevDateTo
 				) as prevHits
-			from browser b
-				join browser_version bv on b.id = bv.browserId
+			from browser_version bv
 				join country_browser_version_hits cbvh on bv.id = cbvh.browserVersionId
-				join platform p on cbvh.platformId = p.id
 			where date >= aDateFrom and date <= aDateTo
-			group by name, browser, countryIso
-			order by hits desc
+			group by platformId, browserId, countryIso
 		) t
+		join platform p on t.platformId = p.id
+		join browser b on t.browserId = b.id
 	) t2
-	where share > 0;
+	where share > 0
+	order by share desc;
 
 	commit;
 end;
@@ -367,23 +352,22 @@ begin
 			round(hits / nullif((sum(hits) over ()), 0) * 100, 2) as share,
 			round(coalesce(prevHits, 0) / nullif((select hits from prevTotals), 0) * 100, 2) as prevShare
 		from (
-			select name, countryIso,
+			select platformId, countryIso,
 				sum(hits) as hits,
 				(select sum(hits)
-					from platform
-						join platform_version pvi on platform.id = pvi.platformId
+					from platform_version pvi
 						join country_platform_version_hits cpvhi on pvi.id = cpvhi.platformVersionId
-					where platform.id = p.id and cpvhi.countryIso = cpvh.countryIso and date >= aPrevDateFrom and date <= aPrevDateTo
+					where pv.platformId = pvi.platformId and cpvhi.countryIso = cpvh.countryIso and date >= aPrevDateFrom and date <= aPrevDateTo
 				) as prevHits
-			from platform p
-				join platform_version pv on p.id = pv.platformId
+			from platform_version pv
 				join country_platform_version_hits cpvh on pv.id = cpvh.platformVersionId
 			where date >= aDateFrom and date <= aDateTo
-			group by name, countryIso
-			order by hits desc
+			group by platformId, countryIso
 		) t
+		join platform p on t.platformId = p.id
 	) t2
-	where share > 0;
+	where share > 0
+	order by share desc;
 
 	insert into view_top_platform_countries
 	(period, date, locationType, locationId, name, countryIso, share, prevShare)
@@ -399,30 +383,28 @@ begin
 			round(hits / nullif((sum(hits) over (partition by continentCode)), 0) * 100, 2) as share,
 			round(coalesce(prevHits, 0) / nullif((select hits from prevTotals where continentCode = t.continentCode), 0) * 100, 2) as prevShare
 		from (
-			select name, countryIso,
+			select platformId, countryIso,
 				continentCode,
 				sum(hits) as hits,
 				(select sum(hits)
-					from platform
-						join platform_version pvi on platform.id = pvi.platformId
+					from platform_version pvi
 						join country_platform_version_hits cpvhi on pvi.id = cpvhi.platformVersionId
 						join country ci on cpvhi.countryIso = ci.iso
-					where platform.id = p.id and cpvhi.countryIso = cpvh.countryIso and ci.continentCode = c.continentCode and date >= aPrevDateFrom and date <= aPrevDateTo
+					where pv.platformId = pvi.platformId and cpvhi.countryIso = cpvh.countryIso and date >= aPrevDateFrom and date <= aPrevDateTo
 				) as prevHits
-			from platform p
-				join platform_version pv on p.id = pv.platformId
+			from platform_version pv
 				join country_platform_version_hits cpvh on pv.id = cpvh.platformVersionId
 				join country c on cpvh.countryIso = c.iso
 			where date >= aDateFrom and date <= aDateTo
-			group by name, countryIso, c.continentCode
-			order by hits desc
+			group by platformId, countryIso, c.continentCode
 		) t
+		join platform p on t.platformId = p.id
 	) t2
-	where share > 0;
+	where share > 0
+	order by share desc;
 
 	commit;
 end;
-
 
 
 create or replace procedure updateViewTopPlatformVersionCountries(aPeriod varchar(255), aDateFrom date, aDateTo date, aPrevDateFrom date, aPrevDateTo date)
@@ -449,23 +431,22 @@ begin
 			round(hits / nullif((sum(hits) over ()), 0) * 100, 2) as share,
 			round(coalesce(prevHits, 0) / nullif((select hits from prevTotals), 0) * 100, 2) as prevShare
 		from (
-			select name, version, countryIso,
+			select platformVersionId, countryIso,
 				sum(hits) as hits,
 				(select sum(hits)
-					from platform
-						join platform_version pvi on platform.id = pvi.platformId
-						join country_platform_version_hits cpvhi on pvi.id = cpvhi.platformVersionId
-					where platform.id = p.id and pvi.id = pv.id and cpvhi.countryIso = cpvh.countryIso and date >= aPrevDateFrom and date <= aPrevDateTo
+					from country_platform_version_hits cpvhi
+						join country ci on cpvhi.countryIso = ci.iso
+					where platformVersionId = cpvh.platformVersionId and countryIso = cpvh.countryIso and date >= aPrevDateFrom and date <= aPrevDateTo
 				) as prevHits
-			from platform p
-				join platform_version pv on p.id = pv.platformId
-				join country_platform_version_hits cpvh on pv.id = cpvh.platformVersionId
+			from country_platform_version_hits cpvh
 			where date >= aDateFrom and date <= aDateTo
-			group by name, version, countryIso
-			order by hits desc
+			group by platformVersionId, countryIso
 		) t
+		join platform_version pv on t.platformVersionId = pv.id
+		join platform p on pv.platformId = p.id
 	) t2
-	where share > 0;
+	where share > 0
+	order by share desc;
 
 	insert into view_top_platform_version_countries
 	(period, date, locationType, locationId, name, version, countryIso, share, prevShare)
@@ -481,26 +462,24 @@ begin
 			round(hits / nullif((sum(hits) over (partition by continentCode)), 0) * 100, 2) as share,
 			round(coalesce(prevHits, 0) / nullif((select hits from prevTotals where continentCode = t.continentCode), 0) * 100, 2) as prevShare
 		from (
-			select name, version, countryIso,
+			select platformVersionId, countryIso,
 				continentCode,
 				sum(hits) as hits,
 				(select sum(hits)
-					from platform
-						join platform_version pvi on platform.id = pvi.platformId
-						join country_platform_version_hits cpvhi on pvi.id = cpvhi.platformVersionId
+					from country_platform_version_hits cpvhi
 						join country ci on cpvhi.countryIso = ci.iso
-					where platform.id = p.id and pvi.id = pv.id and cpvhi.countryIso = cpvh.countryIso and ci.continentCode = c.continentCode and date >= aPrevDateFrom and date <= aPrevDateTo
+					where platformVersionId = cpvh.platformVersionId and countryIso = cpvh.countryIso and date >= aPrevDateFrom and date <= aPrevDateTo
 				) as prevHits
-			from platform p
-				join platform_version pv on p.id = pv.platformId
-				join country_platform_version_hits cpvh on pv.id = cpvh.platformVersionId
+			from country_platform_version_hits cpvh
 				join country c on cpvh.countryIso = c.iso
 			where date >= aDateFrom and date <= aDateTo
-			group by name, version, countryIso, c.continentCode
-			order by hits desc
+			group by platformVersionId, countryIso, c.continentCode
 		) t
+		join platform_version pv on t.platformVersionId = pv.id
+		join platform p on pv.platformId = p.id
 	) t2
-	where share > 0;
+	where share > 0
+	order by share desc;
 
 	commit;
 end;
