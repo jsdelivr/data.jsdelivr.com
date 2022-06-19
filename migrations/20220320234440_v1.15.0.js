@@ -43,6 +43,7 @@ exports.up = async (db) => {
 		table.bigInteger('hits').unsigned().defaultTo(0).notNullable();
 		table.bigInteger('bandwidth').unsigned().defaultTo(0).notNullable();
 		table.primary([ 'browserVersionId', 'countryIso', 'platformId', 'date' ]);
+		table.index([ 'platformId', 'countryIso' ]);
 	});
 
 	await updateSharedObjects(db);

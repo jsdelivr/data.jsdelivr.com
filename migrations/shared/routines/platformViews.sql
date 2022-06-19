@@ -229,15 +229,14 @@ begin
 
 	insert into view_top_platform_browsers
 	(period, date, locationType, locationId, name, browser, share, prevShare)
-	with totals as (
-		select sum(hits) as hits
-		from country_browser_version_hits
-		where date >= aPrevDateFrom and date <= aPrevDateTo
-	)
 	select * from (
 		select aPeriod, aDateFrom, 'global', '', p.name as name, b.name as browser,
-			round(hits / nullif((sum(hits) over ()), 0) * 100, 2) as share,
-			round(coalesce(prevHits, 0) / nullif((select hits from totals), 0) * 100, 2) as prevShare
+			round(hits / nullif((sum(hits) over (partition by platformId)), 0) * 100, 2) as share,
+			round(coalesce(prevHits, 0) / nullif((
+				select sum(hits)
+				from country_browser_version_hits
+				where platformId = t.platformId and date >= aPrevDateFrom and date <= aPrevDateTo
+			), 0) * 100, 2) as prevShare
 		from (
 			select platformId, browserId,
 				sum(hits) as hits,
@@ -259,17 +258,15 @@ begin
 
 	insert into view_top_platform_browsers
 	(period, date, locationType, locationId, name, browser, share, prevShare)
-	with totals as (
-		select continentCode, sum(hits) as hits
-		from country_browser_version_hits cbvh
-			join country c on cbvh.countryIso = c.iso
-		where date >= aPrevDateFrom and date <= aPrevDateTo
-		group by continentCode
-	)
 	select * from (
 		select aPeriod, aDateFrom, 'continent', continentCode, p.name as name, b.name as browser,
-			round(hits / nullif((sum(hits) over (partition by continentCode)), 0) * 100, 2) as share,
-			round(coalesce(prevHits, 0) / nullif((select hits from totals where continentCode = t.continentCode), 0) * 100, 2) as prevShare
+			round(hits / nullif((sum(hits) over (partition by platformId, continentCode)), 0) * 100, 2) as share,
+			round(coalesce(prevHits, 0) / nullif((
+				select sum(hits)
+				from country_browser_version_hits cbvh
+				    join country c on cbvh.countryIso = c.iso
+				where platformId = t.platformId and continentCode = t.continentCode and date >= aPrevDateFrom and date <= aPrevDateTo
+			), 0) * 100, 2) as prevShare
 		from (
 			select platformId, browserId,
 				continentCode,
@@ -294,16 +291,14 @@ begin
 
 	insert into view_top_platform_browsers
 	(period, date, locationType, locationId, name, browser, share, prevShare)
-	with totals as (
-		select countryIso, sum(hits) as hits
-		from country_browser_version_hits
-		where date >= aPrevDateFrom and date <= aPrevDateTo
-		group by countryIso
-	)
 	select * from (
 		select aPeriod, aDateFrom, 'country', countryIso, p.name as name, b.name as browser,
-			round(hits / nullif((sum(hits) over (partition by countryIso)), 0) * 100, 2) as share,
-			round(coalesce(prevHits, 0) / nullif((select hits from totals where countryIso = t.countryIso), 0) * 100, 2) as prevShare
+			round(hits / nullif((sum(hits) over (partition by platformId, countryIso)), 0) * 100, 2) as share,
+			round(coalesce(prevHits, 0) / nullif((
+				select sum(hits)
+				from country_browser_version_hits
+				where platformId = t.platformId and countryIso = t.countryIso and date >= aPrevDateFrom and date <= aPrevDateTo
+			), 0) * 100, 2) as prevShare
 		from (
 			select platformId, browserId,
 				countryIso,
