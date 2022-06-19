@@ -1,7 +1,7 @@
 const Joi = require('joi');
 const BaseCacheModel = require('./BaseCacheModel');
 const TopBrowser = require('./views/TopBrowser');
-const TopPlatformBrowser = require('./views/TopPlatformBrowser');
+const TopBrowserPlatform = require('./views/TopBrowserPlatform');
 const TopBrowserCountry = require('./views/TopBrowserCountry');
 const TopBrowserVersionCountry = require('./views/TopBrowserVersionCountry');
 const TopBrowserVersion = require('./views/TopBrowserVersion');
@@ -58,9 +58,9 @@ class Browser extends BaseCacheModel {
 		});
 	}
 
-	static async getTopBrowserPlatforms (browser, period, date, composedLocationFilter, limit = 100, page = 1) {
-		let sql = db(TopPlatformBrowser.table)
-			.where({ browser, period, date })
+	static async getTopBrowserPlatforms (name, period, date, composedLocationFilter, limit = 100, page = 1) {
+		let sql = db(TopBrowserPlatform.table)
+			.where({ name, period, date })
 			.where(composedLocationFilter)
 			.orderBy([{ column: 'share', order: 'desc' }, { column: 'name' }]);
 
@@ -68,7 +68,7 @@ class Browser extends BaseCacheModel {
 			sql.limit(limit).offset((page - 1) * limit);
 		}
 
-		return (await sql.select([ 'name as platform', 'share', 'prevShare' ])).map((row) => {
+		return (await sql.select([ 'platform', 'share', 'prevShare' ])).map((row) => {
 			return {
 				platform: row.platform,
 				share: row.share,

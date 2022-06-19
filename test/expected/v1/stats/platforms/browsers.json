@@ -7,14 +7,14 @@
 	"/v1/stats/platforms/platform%2019/browsers?continent=EU&period=2020": [
 		{
 			"browser": "browser 19",
-			"share": 7.16,
+			"share": 52.3,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"browser": "browser 18",
-			"share": 6.53,
+			"share": 47.7,
 			"prev": {
 				"share": null
 			}
@@ -23,14 +23,14 @@
 	"/v1/stats/platforms/platform%2019/browsers?continent=EU&period=2020-02": [
 		{
 			"browser": "browser 19",
-			"share": 7.1,
+			"share": 52.34,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"browser": "browser 18",
-			"share": 6.46,
+			"share": 47.66,
 			"prev": {
 				"share": null
 			}
@@ -39,16 +39,16 @@
 	"/v1/stats/platforms/platform%2019/browsers?continent=EU&period=2020-04": [
 		{
 			"browser": "browser 19",
-			"share": 7.46,
+			"share": 52.34,
 			"prev": {
-				"share": 4.94
+				"share": 51.19
 			}
 		},
 		{
 			"browser": "browser 18",
-			"share": 6.8,
+			"share": 47.66,
 			"prev": {
-				"share": 4.71
+				"share": 48.81
 			}
 		}
 	],
@@ -60,14 +60,14 @@
 	"/v1/stats/platforms/platform%2019/browsers?country=PL&period=2020": [
 		{
 			"browser": "browser 19",
-			"share": 7.16,
+			"share": 52.3,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"browser": "browser 18",
-			"share": 6.53,
+			"share": 47.7,
 			"prev": {
 				"share": null
 			}
@@ -76,14 +76,14 @@
 	"/v1/stats/platforms/platform%2019/browsers?country=PL&period=2020-02": [
 		{
 			"browser": "browser 19",
-			"share": 7.1,
+			"share": 52.34,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"browser": "browser 18",
-			"share": 6.46,
+			"share": 47.66,
 			"prev": {
 				"share": null
 			}
@@ -92,16 +92,16 @@
 	"/v1/stats/platforms/platform%2019/browsers?country=PL&period=2020-04": [
 		{
 			"browser": "browser 19",
-			"share": 7.46,
+			"share": 52.34,
 			"prev": {
-				"share": 4.94
+				"share": 51.19
 			}
 		},
 		{
 			"browser": "browser 18",
-			"share": 6.8,
+			"share": 47.66,
 			"prev": {
-				"share": 4.71
+				"share": 48.81
 			}
 		}
 	],
@@ -113,14 +113,14 @@
 	"/v1/stats/platforms/platform%2019/browsers?period=2020": [
 		{
 			"browser": "browser 19",
-			"share": 7.16,
+			"share": 52.3,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"browser": "browser 18",
-			"share": 6.53,
+			"share": 47.7,
 			"prev": {
 				"share": null
 			}
@@ -129,14 +129,14 @@
 	"/v1/stats/platforms/platform%2019/browsers?period=2020-02": [
 		{
 			"browser": "browser 19",
-			"share": 7.1,
+			"share": 52.34,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"browser": "browser 18",
-			"share": 6.46,
+			"share": 47.66,
 			"prev": {
 				"share": null
 			}
@@ -145,16 +145,16 @@
 	"/v1/stats/platforms/platform%2019/browsers?period=2020-04": [
 		{
 			"browser": "browser 19",
-			"share": 7.46,
+			"share": 52.34,
 			"prev": {
-				"share": 4.94
+				"share": 51.19
 			}
 		},
 		{
 			"browser": "browser 18",
-			"share": 6.8,
+			"share": 47.66,
 			"prev": {
-				"share": 4.71
+				"share": 48.81
 			}
 		}
 	],

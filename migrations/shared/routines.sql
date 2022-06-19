@@ -1,3 +1,14 @@
+create or replace procedure analyzeAllTables()
+begin
+	for row in (
+		select table_name from information_schema.tables
+		where table_schema = database() and table_type = 'base table'
+	)
+	do
+		execute immediate concat('analyze table `', row.table_name, '`');
+	end for;
+end;
+
 create or replace procedure updateViewNetworkPackages(aDate date)
 begin
 	declare exit handler for sqlexception
@@ -103,6 +114,10 @@ begin
 				call updateViewTopBrowserVersions('s-month', @dateFrom, @dateTo, @prevDateFrom, @prevDateTo);
 			end if;
 
+			if not exists(select * from view_top_browser_platforms where `date` = @latestStart and period = 's-month') then
+				call updateViewTopBrowserPlatforms('s-month', @dateFrom, @dateTo, @prevDateFrom, @prevDateTo);
+			end if;
+
 			if not exists(select * from view_top_browser_countries where `date` = @latestStart and period = 's-month') then
 				call updateViewTopBrowserCountries('s-month', @dateFrom, @dateTo, @prevDateFrom, @prevDateTo);
 			end if;
@@ -154,6 +169,10 @@ begin
 
 			if not exists(select * from view_top_browser_versions where `date` = @latestStart and period = 's-year') then
 				call updateViewTopBrowserVersions('s-year', @dateFrom, @dateTo, @prevDateFrom, @prevDateTo);
+			end if;
+
+			if not exists(select * from view_top_browser_platforms where `date` = @latestStart and period = 's-year') then
+				call updateViewTopBrowserPlatforms('s-year', @dateFrom, @dateTo, @prevDateFrom, @prevDateTo);
 			end if;
 
 			if not exists(select * from view_top_browser_countries where `date` = @latestStart and period = 's-year') then

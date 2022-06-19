@@ -14,8 +14,8 @@ function makeStatsPlatformsVersionTests () {
 		{
 			params: { period: '2020-04' },
 			assert: (response) => {
-				expect(_.sumBy(response.body, 'share')).to.be.closeTo(14.26, .1);
-				expect(_.sumBy(response.body, 'prev.share')).to.be.closeTo(9.66, .1);
+				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
+				expect(_.sumBy(response.body, 'prev.share')).to.be.closeTo(100, .1);
 				expect(response.body).to.have.lengthOf(2);
 				expect(response).to.matchSnapshot();
 			},
@@ -23,8 +23,8 @@ function makeStatsPlatformsVersionTests () {
 		{
 			params: { period: '2020-04', continent: 'EU' },
 			assert: (response) => {
-				expect(_.sumBy(response.body, 'share')).to.be.closeTo(14.26, .1);
-				expect(_.sumBy(response.body, 'prev.share')).to.be.closeTo(9.66, .1);
+				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
+				expect(_.sumBy(response.body, 'prev.share')).to.be.closeTo(100, .1);
 				expect(response.body).to.have.lengthOf(2);
 				expect(response).to.matchSnapshot();
 			},
@@ -32,8 +32,8 @@ function makeStatsPlatformsVersionTests () {
 		{
 			params: { period: '2020-04', country: 'PL' },
 			assert: (response) => {
-				expect(_.sumBy(response.body, 'share')).to.be.closeTo(14.26, .1);
-				expect(_.sumBy(response.body, 'prev.share')).to.be.closeTo(9.66, .1);
+				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
+				expect(_.sumBy(response.body, 'prev.share')).to.be.closeTo(100, .1);
 				expect(response.body).to.have.lengthOf(2);
 				expect(response).to.matchSnapshot();
 			},
@@ -41,7 +41,7 @@ function makeStatsPlatformsVersionTests () {
 		{
 			params: { period: '2020-02' },
 			assert: (response) => {
-				expect(_.sumBy(response.body, 'share')).to.be.closeTo(13.56, .1);
+				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
 				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
 				expect(response.body).to.have.lengthOf(2);
 				expect(response).to.matchSnapshot();
@@ -50,7 +50,7 @@ function makeStatsPlatformsVersionTests () {
 		{
 			params: { period: '2020-02', continent: 'EU' },
 			assert: (response) => {
-				expect(_.sumBy(response.body, 'share')).to.be.closeTo(13.56, .1);
+				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
 				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
 				expect(response.body).to.have.lengthOf(2);
 				expect(response).to.matchSnapshot();
@@ -59,7 +59,7 @@ function makeStatsPlatformsVersionTests () {
 		{
 			params: { period: '2020-02', country: 'PL' },
 			assert: (response) => {
-				expect(_.sumBy(response.body, 'share')).to.be.closeTo(13.56, .1);
+				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
 				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
 				expect(response.body).to.have.lengthOf(2);
 				expect(response).to.matchSnapshot();
@@ -68,7 +68,7 @@ function makeStatsPlatformsVersionTests () {
 		{
 			params: { period: '2020' },
 			assert: (response) => {
-				expect(_.sumBy(response.body, 'share')).to.be.closeTo(13.70, .1);
+				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
 				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
 				expect(response.body).to.have.lengthOf(2);
 				expect(response).to.matchSnapshot();
@@ -77,7 +77,7 @@ function makeStatsPlatformsVersionTests () {
 		{
 			params: { period: '2020', continent: 'EU' },
 			assert: (response) => {
-				expect(_.sumBy(response.body, 'share')).to.be.closeTo(13.70, .1);
+				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
 				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
 				expect(response.body).to.have.lengthOf(2);
 				expect(response).to.matchSnapshot();
@@ -86,7 +86,7 @@ function makeStatsPlatformsVersionTests () {
 		{
 			params: { period: '2020', country: 'PL' },
 			assert: (response) => {
-				expect(_.sumBy(response.body, 'share')).to.be.closeTo(13.70, .1);
+				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
 				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
 				expect(response.body).to.have.lengthOf(2);
 				expect(response).to.matchSnapshot();

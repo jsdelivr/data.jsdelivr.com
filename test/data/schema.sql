@@ -22,6 +22,7 @@ from package
 group by packageVersionId, date;
 
 set @date = utc_date();
+call analyzeAllTables();
 call updateViewNetworkCountries(@date);
 call updateViewNetworkCdns(@date);
 call updateViewNetworkPackages(@date);
@@ -30,3 +31,4 @@ call updateViewTopPackages(@date);
 call updateViewTopProxies(@date);
 call updateMonthlyViews(@date);
 call updateYearlyViews(@date);
+call analyzeAllTables();
