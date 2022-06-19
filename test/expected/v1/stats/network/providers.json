@@ -2,7 +2,7 @@
 	"/v1/stats/network/providers?continent=EU&country=PL&type=hits&period=month": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: `period` must be one of [day, week, month, year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM], object contains a conflict between optional exclusive peers [continent, country]."
+		"message": "Invalid parameter value: `period` must be one of [day, week, month, year, s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM], object contains a conflict between optional exclusive peers [continent, country]."
 	},
 	"/v1/stats/network/providers?continent=EU&type=bandwidth&period=all": {
 		"date": "2010-12-31",
@@ -7957,7 +7957,7 @@
 	"/v1/stats/network/providers?continent=X&type=hits&period=month": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: `period` must be one of [day, week, month, year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM], `continent` must be a valid continent code in uppercase."
+		"message": "Invalid parameter value: `period` must be one of [day, week, month, year, s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM], `continent` must be a valid continent code in uppercase."
 	},
 	"/v1/stats/network/providers?country=PL&type=bandwidth&period=all": {
 		"date": "2010-12-31",
@@ -15912,12 +15912,12 @@
 	"/v1/stats/network/providers?country=X&type=hits&period=month": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: `period` must be one of [day, week, month, year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM], `country` must be a valid ISO 3166-1 alpha-2 country code in uppercase."
+		"message": "Invalid parameter value: `period` must be one of [day, week, month, year, s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM], `country` must be a valid ISO 3166-1 alpha-2 country code in uppercase."
 	},
 	"/v1/stats/network/providers?type=X&period=month": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: `period` must be one of [day, week, month, year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM]."
+		"message": "Invalid parameter value: `period` must be one of [day, week, month, year, s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM]."
 	},
 	"/v1/stats/network/providers?type=bandwidth&period=all": {
 		"date": "2010-12-31",
@@ -19897,7 +19897,7 @@
 	"/v1/stats/network/providers?type=hits&period=X": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: `period` must be one of [day, week, month, year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM]."
+		"message": "Invalid parameter value: `period` must be one of [day, week, month, year, s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM]."
 	},
 	"/v1/stats/network/providers?type=hits&period=all": {
 		"date": "2010-12-31",

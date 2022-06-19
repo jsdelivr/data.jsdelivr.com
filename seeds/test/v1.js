@@ -3,12 +3,17 @@ const crypto = require('crypto');
 const Bluebird = require('bluebird');
 const relativeDateUtc = require('relative-day-utc');
 const { listTables } = require('../../src/lib/db/utils');
+const dateRange = require('../../src/routes/utils/dateRange');
 const entrypointTestCases = require('../../test/data/v1/entrypoints.json');
 const countries = Object.keys(require('countries-list').countries);
 const providers = [ 'CF', 'FY', 'GC', 'QT' ];
 
 const PACKAGE_TYPES = [ 'npm', 'gh' ];
 const STATIC_MONTHS = [ '2020-02-01', '2020-03-01', '2020-04-01' ];
+const FLOATING_MONTHS = [
+	dateRange.parseStaticPeriod('s-month').date,
+	dateRange.parseStaticPeriod('s-year').date,
+];
 const STATS_START_TIMESTAMP = relativeDateUtc(-70).valueOf();
 
 exports.seed = async (db) => {
@@ -143,7 +148,33 @@ exports.seed = async (db) => {
 				];
 			}));
 		}));
-	})));
+	})).concat(_.flatten(countries.slice(0, 10).map((countryIso, countryIndex) => {
+		return _.flatten(_.range(1, 21).map((browserVersionId) => {
+			return _.flatten(FLOATING_MONTHS.map((month, mIndex) => {
+				let platformIndex = Math.floor((browserVersionId - 1) / 6);
+				let platformVersionIndex = Math.floor((browserVersionId - 1) / 2);
+
+				return [
+					{
+						browserVersionId,
+						platformId: platformIndex + 1,
+						countryIso,
+						date: new Date(month),
+						hits: countryIndex * platformVersionIndex * ((mIndex % 2 || platformVersionIndex) + 1),
+						bandwidth: countryIndex * platformVersionIndex * ((mIndex % 2 || platformVersionIndex) + 1) * 16 * 1025,
+					},
+					{
+						browserVersionId,
+						platformId: 10 + platformIndex + 1,
+						countryIso,
+						date: new Date(month),
+						hits: countryIndex * platformVersionIndex * ((mIndex % 2 || platformVersionIndex) + 1),
+						bandwidth: countryIndex * platformVersionIndex * ((mIndex % 2 || platformVersionIndex) + 1) * 16 * 1025,
+					},
+				];
+			}));
+		}));
+	}))));
 
 	await db('country_platform_version_hits').insert(_.flatten(countries.map((countryIso, countryIndex) => {
 		return _.flatten(_.range(1, 31).map((platformVersionId, platformVersionIndex) => {
@@ -166,7 +197,28 @@ exports.seed = async (db) => {
 				];
 			}));
 		}));
-	})));
+	})).concat(_.flatten(countries.slice(0, 10).map((countryIso, countryIndex) => {
+		return _.flatten(_.range(1, 11).map((platformVersionId, platformVersionIndex) => {
+			return _.flatten(FLOATING_MONTHS.map((month, mIndex) => {
+				return [
+					{
+						platformVersionId,
+						countryIso,
+						date: new Date(month),
+						hits: 2 * countryIndex * platformVersionIndex * ((mIndex % 2 || platformVersionIndex) + 1),
+						bandwidth: 2 * countryIndex * platformVersionIndex * ((mIndex % 2 || platformVersionIndex) + 1) * 16 * 1025,
+					},
+					{
+						platformVersionId: 30 + platformVersionId,
+						countryIso,
+						date: new Date(month),
+						hits: 2 * countryIndex * platformVersionIndex * ((mIndex % 2 || platformVersionIndex) + 1),
+						bandwidth: 2 * countryIndex * platformVersionIndex * ((mIndex % 2 || platformVersionIndex) + 1) * 16 * 1025,
+					},
+				];
+			}));
+		}));
+	}))));
 
 	let seedEntrypointsData = async (entrypointsTestData) => {
 		let date = new Date(STATS_START_TIMESTAMP + 40 * 24 * 60 * 60 * 1000);

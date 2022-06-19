@@ -1100,7 +1100,7 @@
 	"/v1/stats/browsers/browser%2019/versions/2/countries?continent=X": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: `continent` must be a valid continent code in uppercase, `period` must be a valid date in one of the following ISO formats [YYYY, YYYY-MM]."
+		"message": "Invalid parameter value: `continent` must be a valid continent code in uppercase, `period` must be one of [s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM]."
 	},
 	"/v1/stats/browsers/browser%2019/versions/2/countries?period=2020&all=true": [
 		{
@@ -6340,6 +6340,6 @@
 	"/v1/stats/browsers/browser%2019/versions/2/countries?period=month": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: `period` must be a valid date in one of the following ISO formats [YYYY, YYYY-MM]."
+		"message": "Invalid parameter value: `period` must be one of [s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM]."
 	}
 }

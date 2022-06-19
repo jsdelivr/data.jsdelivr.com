@@ -41,6 +41,24 @@ describe('Unit tests', () => {
 
 			expect(dateRange('s-month', new Date('2020-02')))
 				.to.deep.equal([ new Date(Date.UTC(2020, 1, 1)), new Date(Date.UTC(2020, 1, 29)) ]);
+
+			expect(dateRange.parseStaticPeriod('s-month', new Date('2020-01-31')).date)
+				.to.deep.equal(new Date(Date.UTC(2019, 11, 1)));
+
+			expect(dateRange.parseStaticPeriod('s-month', new Date('2020-02-01')).date)
+				.to.deep.equal(new Date(Date.UTC(2019, 11, 1)));
+
+			expect(dateRange.parseStaticPeriod('s-month', new Date('2020-02-02')).date)
+				.to.deep.equal(new Date(Date.UTC(2019, 11, 1)));
+
+			expect(dateRange.parseStaticPeriod('s-month', new Date('2020-02-3')).date)
+				.to.deep.equal(new Date(Date.UTC(2019, 11, 1)));
+
+			expect(dateRange.parseStaticPeriod('s-month', new Date('2020-02-04')).date)
+				.to.deep.equal(new Date(Date.UTC(2019, 11, 1)));
+
+			expect(dateRange.parseStaticPeriod('s-month', new Date('2020-02-05')).date)
+				.to.deep.equal(new Date(Date.UTC(2020, 0, 1)));
 		});
 
 		it('s-year', () => {
@@ -49,6 +67,24 @@ describe('Unit tests', () => {
 
 			expect(dateRange('s-year', new Date('2020')))
 				.to.deep.equal([ new Date(Date.UTC(2020, 0, 1)), new Date(Date.UTC(2020, 11, 31)) ]);
+
+			expect(dateRange.parseStaticPeriod('s-year', new Date('2019-12-31')).date)
+				.to.deep.equal(new Date(Date.UTC(2018, 0, 1)));
+
+			expect(dateRange.parseStaticPeriod('s-year', new Date('2020-01-01')).date)
+				.to.deep.equal(new Date(Date.UTC(2018, 0, 1)));
+
+			expect(dateRange.parseStaticPeriod('s-year', new Date('2020-01-02')).date)
+				.to.deep.equal(new Date(Date.UTC(2018, 0, 1)));
+
+			expect(dateRange.parseStaticPeriod('s-year', new Date('2020-01-03')).date)
+				.to.deep.equal(new Date(Date.UTC(2018, 0, 1)));
+
+			expect(dateRange.parseStaticPeriod('s-year', new Date('2020-01-04')).date)
+				.to.deep.equal(new Date(Date.UTC(2018, 0, 1)));
+
+			expect(dateRange.parseStaticPeriod('s-year', new Date('2020-01-05')).date)
+				.to.deep.equal(new Date(Date.UTC(2019, 0, 1)));
 		});
 
 		it('invalid period', () => {

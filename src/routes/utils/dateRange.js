@@ -4,7 +4,8 @@ const { toIsoDate } = require('../../lib/date');
 const floatingPeriodDurations = { day: 1, week: 7, month: 30, year: 365 };
 const floatingPeriods = [ ...Object.keys(floatingPeriodDurations), 'all' ];
 const allPeriodFrom = Date.UTC(2017, 7, 19);
-const staticPeriod = /^(\d{4})(?:-(\d{2}))?$/;
+const staticPeriods = [ 's-month', 's-year' ];
+const staticPeriodPattern = /^(\d{4})(?:-(\d{2}))?$/;
 
 module.exports = (period, date) => {
 	return [
@@ -101,20 +102,33 @@ module.exports.isFloatingPeriod = (period) => {
 };
 
 module.exports.isStaticPeriod = (period) => {
-	return staticPeriod.test(period);
+	return staticPeriods.includes(period) || staticPeriodPattern.test(period);
 };
 
-module.exports.parseFloatingPeriod = (period) => {
+module.exports.parseFloatingPeriod = (period, date = new Date()) => {
 	return {
 		period,
-		date: relativeDayUtc(),
+		date: relativeDayUtc(0, date),
 	};
 };
 
-module.exports.parseStaticPeriod = (period) => {
+module.exports.parseStaticPeriod = (period, date = new Date()) => {
+	date = relativeDayUtc(-4, date);
 	let match;
 
-	if (match = staticPeriod.exec(period)) {
+	if (period === 's-month') {
+		return {
+			date: new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth() - 1, 1)),
+			period,
+		};
+	} else if (period === 's-year') {
+		return {
+			date: new Date(Date.UTC(date.getUTCFullYear() - 1, 0, 1)),
+			period,
+		};
+	}
+
+	if (match = staticPeriodPattern.exec(period)) {
 		let date = new Date(period);
 
 		if (!isNaN(date.valueOf())) {

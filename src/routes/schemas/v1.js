@@ -45,7 +45,7 @@ const primitives = {
 
 			return helpers.error('any.invalid');
 		}).messages({
-			'*': '{{#label}} must be one of [day, week, month, year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM]',
+			'*': '{{#label}} must be one of [day, week, month, year, s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM]',
 		}).default(() => dateRange.parseFloatingPeriod('month')),
 
 	periodStatic:
@@ -62,7 +62,7 @@ const primitives = {
 
 			return helpers.error('any.invalid');
 		}).messages({
-			'*': '{{#label}} must be a valid date in one of the following ISO formats [YYYY, YYYY-MM]',
+			'*': '{{#label}} must be one of [s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM]',
 		}).required(),
 };
 

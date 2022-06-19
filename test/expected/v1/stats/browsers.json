@@ -2,7 +2,7 @@
 	"/v1/stats/browsers?continent=EU&country=PL": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: `period` must be a valid date in one of the following ISO formats [YYYY, YYYY-MM], object contains a conflict between optional exclusive peers [continent, country]."
+		"message": "Invalid parameter value: `period` must be one of [s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM], object contains a conflict between optional exclusive peers [continent, country]."
 	},
 	"/v1/stats/browsers?continent=EU&period=2020": [
 		{
@@ -381,11 +381,215 @@
 			}
 		}
 	],
+	"/v1/stats/browsers?continent=EU&period=s-month": [
+		{
+			"name": "browser 5",
+			"share": 30.3,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 6",
+			"share": 27.27,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 4",
+			"share": 21.21,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 3",
+			"share": 12.12,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 2",
+			"share": 6.67,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 1",
+			"share": 2.12,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 0",
+			"share": 0.3,
+			"prev": {
+				"share": null
+			}
+		}
+	],
+	"/v1/stats/browsers?continent=EU&period=s-year": [
+		{
+			"name": "browser 5",
+			"share": 25.56,
+			"prev": {
+				"share": 0.67
+			}
+		},
+		{
+			"name": "browser 4",
+			"share": 21.11,
+			"prev": {
+				"share": 0.48
+			}
+		},
+		{
+			"name": "browser 6",
+			"share": 20,
+			"prev": {
+				"share": 0.94
+			}
+		},
+		{
+			"name": "browser 3",
+			"share": 15.56,
+			"prev": {
+				"share": 0.29
+			}
+		},
+		{
+			"name": "browser 2",
+			"share": 11.11,
+			"prev": {
+				"share": 0.17
+			}
+		},
+		{
+			"name": "browser 1",
+			"share": 5.56,
+			"prev": {
+				"share": 0.07
+			}
+		},
+		{
+			"name": "browser 0",
+			"share": 1.11,
+			"prev": {
+				"share": 0.01
+			}
+		}
+	],
 	"/v1/stats/browsers?continent=X": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: `period` must be a valid date in one of the following ISO formats [YYYY, YYYY-MM], `continent` must be a valid continent code in uppercase."
+		"message": "Invalid parameter value: `period` must be one of [s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM], `continent` must be a valid continent code in uppercase."
 	},
+	"/v1/stats/browsers?country=AE&period=s-month": [
+		{
+			"name": "browser 5",
+			"share": 30.3,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 6",
+			"share": 27.27,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 4",
+			"share": 21.21,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 3",
+			"share": 12.12,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 2",
+			"share": 6.67,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 1",
+			"share": 2.12,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 0",
+			"share": 0.3,
+			"prev": {
+				"share": null
+			}
+		}
+	],
+	"/v1/stats/browsers?country=AE&period=s-year": [
+		{
+			"name": "browser 5",
+			"share": 25.56,
+			"prev": {
+				"share": 0.67
+			}
+		},
+		{
+			"name": "browser 4",
+			"share": 21.11,
+			"prev": {
+				"share": 0.48
+			}
+		},
+		{
+			"name": "browser 6",
+			"share": 20,
+			"prev": {
+				"share": 0.94
+			}
+		},
+		{
+			"name": "browser 3",
+			"share": 15.56,
+			"prev": {
+				"share": 0.29
+			}
+		},
+		{
+			"name": "browser 2",
+			"share": 11.11,
+			"prev": {
+				"share": 0.17
+			}
+		},
+		{
+			"name": "browser 1",
+			"share": 5.56,
+			"prev": {
+				"share": 0.07
+			}
+		},
+		{
+			"name": "browser 0",
+			"share": 1.11,
+			"prev": {
+				"share": 0.01
+			}
+		}
+	],
 	"/v1/stats/browsers?country=PL&period=2020": [
 		{
 			"name": "browser 19",
@@ -766,7 +970,7 @@
 	"/v1/stats/browsers?country=X": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: `period` must be a valid date in one of the following ISO formats [YYYY, YYYY-MM], `country` must be a valid ISO 3166-1 alpha-2 country code in uppercase."
+		"message": "Invalid parameter value: `period` must be one of [s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM], `country` must be a valid ISO 3166-1 alpha-2 country code in uppercase."
 	},
 	"/v1/stats/browsers?period=2020": [
 		{
@@ -1148,6 +1352,108 @@
 	"/v1/stats/browsers?period=month": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: `period` must be a valid date in one of the following ISO formats [YYYY, YYYY-MM]."
-	}
+		"message": "Invalid parameter value: `period` must be one of [s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM]."
+	},
+	"/v1/stats/browsers?period=s-month": [
+		{
+			"name": "browser 5",
+			"share": 30.3,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 6",
+			"share": 27.27,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 4",
+			"share": 21.21,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 3",
+			"share": 12.12,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 2",
+			"share": 6.67,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 1",
+			"share": 2.12,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"name": "browser 0",
+			"share": 0.3,
+			"prev": {
+				"share": null
+			}
+		}
+	],
+	"/v1/stats/browsers?period=s-year": [
+		{
+			"name": "browser 5",
+			"share": 25.56,
+			"prev": {
+				"share": 0.67
+			}
+		},
+		{
+			"name": "browser 4",
+			"share": 21.11,
+			"prev": {
+				"share": 0.48
+			}
+		},
+		{
+			"name": "browser 6",
+			"share": 20,
+			"prev": {
+				"share": 0.94
+			}
+		},
+		{
+			"name": "browser 3",
+			"share": 15.56,
+			"prev": {
+				"share": 0.29
+			}
+		},
+		{
+			"name": "browser 2",
+			"share": 11.11,
+			"prev": {
+				"share": 0.17
+			}
+		},
+		{
+			"name": "browser 1",
+			"share": 5.56,
+			"prev": {
+				"share": 0.07
+			}
+		},
+		{
+			"name": "browser 0",
+			"share": 1.11,
+			"prev": {
+				"share": 0.01
+			}
+		}
+	]
 }
