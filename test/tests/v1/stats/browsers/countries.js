@@ -14,17 +14,17 @@ function makeStatsBrowsersVersionTests () {
 		{
 			params: { period: '2020-04' },
 			assert: (response) => {
-				expect(_.sumBy(response.body, 'share')).to.be.closeTo(14.92, .1);
-				expect(_.sumBy(response.body, 'prev.share')).to.be.closeTo(9.89, .1);
-				expect(response.body).to.have.lengthOf(239); // only those with at least 0.01 % share
+				response.body.forEach(country => expect(country.share).to.be.closeTo(14.92, .1));
+				response.body.forEach(country => expect(country.prev.share).to.be.closeTo(9.89, .1));
+				expect(response.body).to.have.lengthOf(249);
 				expect(response).to.matchSnapshot();
 			},
 		},
 		{
 			params: { period: '2020-04', continent: 'EU' },
 			assert: (response) => {
-				expect(_.sumBy(response.body, 'share')).to.be.closeTo(14.92, .1);
-				expect(_.sumBy(response.body, 'prev.share')).to.be.closeTo(9.89, .1);
+				response.body.forEach(country => expect(country.share).to.be.closeTo(14.92, .1));
+				response.body.forEach(country => expect(country.prev.share).to.be.closeTo(9.89, .1));
 				expect(response.body).to.have.lengthOf(52);
 				expect(response).to.matchSnapshot();
 			},
@@ -32,17 +32,17 @@ function makeStatsBrowsersVersionTests () {
 		{
 			params: { period: '2020-02' },
 			assert: (response) => {
-				expect(_.sumBy(response.body, 'share')).to.be.closeTo(14.19, .1);
-				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
-				expect(response.body).to.have.lengthOf(239);
+				response.body.forEach(country => expect(country.share).to.be.closeTo(14.19, .1));
+				response.body.forEach(country => expect(country.prev.share).to.be.null);
+				expect(response.body).to.have.lengthOf(249);
 				expect(response).to.matchSnapshot();
 			},
 		},
 		{
 			params: { period: '2020-02', continent: 'EU' },
 			assert: (response) => {
-				expect(_.sumBy(response.body, 'share')).to.be.closeTo(14.19, .1);
-				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
+				response.body.forEach(country => expect(country.share).to.be.closeTo(14.19, .1));
+				response.body.forEach(country => expect(country.prev.share).to.be.null);
 				expect(response.body).to.have.lengthOf(52);
 				expect(response).to.matchSnapshot();
 			},
@@ -50,17 +50,17 @@ function makeStatsBrowsersVersionTests () {
 		{
 			params: { period: '2020' },
 			assert: (response) => {
-				expect(_.sumBy(response.body, 'share')).to.be.closeTo(14.33, .1);
-				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
-				expect(response.body).to.have.lengthOf(239);
+				response.body.forEach(country => expect(country.share).to.be.closeTo(14.33, .1));
+				response.body.forEach(country => expect(country.prev.share).to.be.null);
+				expect(response.body).to.have.lengthOf(249);
 				expect(response).to.matchSnapshot();
 			},
 		},
 		{
 			params: { period: '2020', continent: 'EU' },
 			assert: (response) => {
-				expect(_.sumBy(response.body, 'share')).to.be.closeTo(14.33, .1);
-				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
+				response.body.forEach(country => expect(country.share).to.be.closeTo(14.33, .1));
+				response.body.forEach(country => expect(country.prev.share).to.be.null);
 				expect(response.body).to.have.lengthOf(52);
 				expect(response).to.matchSnapshot();
 			},

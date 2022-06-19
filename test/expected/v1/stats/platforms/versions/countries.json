@@ -1,358 +1,365 @@
 {
 	"/v1/stats/platforms/platform%2019/versions/2/countries?continent=EU&period=2020": [
 		{
-			"country": "XK",
-			"share": 0.2,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "UA",
-			"share": 0.19,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "VA",
-			"share": 0.19,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SM",
-			"share": 0.17,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SE",
-			"share": 0.16,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SI",
-			"share": 0.16,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SJ",
-			"share": 0.16,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SK",
-			"share": 0.16,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "PL",
-			"share": 0.15,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "PT",
-			"share": 0.15,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "RO",
-			"share": 0.15,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "RS",
-			"share": 0.15,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "RU",
-			"share": 0.15,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "NO",
-			"share": 0.14,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "NL",
-			"share": 0.13,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MK",
-			"share": 0.12,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MT",
-			"share": 0.12,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "LT",
-			"share": 0.11,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "LU",
-			"share": 0.11,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "LV",
-			"share": 0.11,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MC",
-			"share": 0.11,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MD",
-			"share": 0.11,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "ME",
-			"share": 0.11,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "LI",
-			"share": 0.1,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "IS",
-			"share": 0.09,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "IT",
-			"share": 0.09,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "JE",
-			"share": 0.09,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "HR",
-			"share": 0.08,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "HU",
-			"share": 0.08,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "IE",
-			"share": 0.08,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "IM",
-			"share": 0.08,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "GG",
-			"share": 0.07,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "GI",
-			"share": 0.07,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "GR",
-			"share": 0.07,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "FI",
-			"share": 0.06,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "FO",
-			"share": 0.06,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "FR",
-			"share": 0.06,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "GB",
-			"share": 0.06,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "DE",
-			"share": 0.05,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "DK",
-			"share": 0.05,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "EE",
-			"share": 0.05,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "ES",
-			"share": 0.05,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "CY",
-			"share": 0.04,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "CZ",
-			"share": 0.04,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "BY",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "CH",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "BE",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "BG",
-			"share": 0.02,
+			"country": "AL",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "AT",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "AX",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "BA",
-			"share": 0.01,
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "BE",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "BG",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "BY",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "CH",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "CY",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "CZ",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "DE",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "DK",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "EE",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "ES",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "FI",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "FO",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "FR",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "GB",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "GG",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "GI",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "GR",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "HR",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "HU",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "IE",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "IM",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "IS",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "IT",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "JE",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "LI",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "LT",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "LU",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "LV",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MC",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MD",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "ME",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MK",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MT",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "NL",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "NO",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "PL",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "PT",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "RO",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "RS",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "RU",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SE",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SI",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SJ",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SK",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SM",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "UA",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "VA",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "XK",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
@@ -360,358 +367,365 @@
 	],
 	"/v1/stats/platforms/platform%2019/versions/2/countries?continent=EU&period=2020-02": [
 		{
-			"country": "XK",
-			"share": 0.2,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "UA",
-			"share": 0.19,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "VA",
-			"share": 0.19,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SE",
-			"share": 0.16,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SI",
-			"share": 0.16,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SJ",
-			"share": 0.16,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SK",
-			"share": 0.16,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SM",
-			"share": 0.16,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "PT",
-			"share": 0.15,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "RO",
-			"share": 0.15,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "RS",
-			"share": 0.15,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "RU",
-			"share": 0.15,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "PL",
-			"share": 0.14,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "NL",
-			"share": 0.13,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "NO",
-			"share": 0.13,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MK",
-			"share": 0.12,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MT",
-			"share": 0.12,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "LT",
-			"share": 0.11,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "LU",
-			"share": 0.11,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "LV",
-			"share": 0.11,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MC",
-			"share": 0.11,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MD",
-			"share": 0.11,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "ME",
-			"share": 0.11,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "LI",
-			"share": 0.1,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "IS",
-			"share": 0.09,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "IT",
-			"share": 0.09,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "JE",
-			"share": 0.09,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "HR",
-			"share": 0.08,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "HU",
-			"share": 0.08,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "IE",
-			"share": 0.08,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "IM",
-			"share": 0.08,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "GI",
-			"share": 0.07,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "GR",
-			"share": 0.07,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "FI",
-			"share": 0.06,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "FO",
-			"share": 0.06,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "FR",
-			"share": 0.06,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "GB",
-			"share": 0.06,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "GG",
-			"share": 0.06,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "DE",
-			"share": 0.05,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "DK",
-			"share": 0.05,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "EE",
-			"share": 0.05,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "ES",
-			"share": 0.05,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "CY",
-			"share": 0.04,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "CZ",
-			"share": 0.04,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "BY",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "CH",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "BE",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "BG",
-			"share": 0.02,
+			"country": "AL",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "AT",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "AX",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "BA",
-			"share": 0.01,
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "BE",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "BG",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "BY",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "CH",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "CY",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "CZ",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "DE",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "DK",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "EE",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "ES",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "FI",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "FO",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "FR",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "GB",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "GG",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "GI",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "GR",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "HR",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "HU",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "IE",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "IM",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "IS",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "IT",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "JE",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "LI",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "LT",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "LU",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "LV",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MC",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MD",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "ME",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MK",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MT",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "NL",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "NO",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "PL",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "PT",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "RO",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "RS",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "RU",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SE",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SI",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SJ",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SK",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SM",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "UA",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "VA",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "XK",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
@@ -719,360 +733,367 @@
 	],
 	"/v1/stats/platforms/platform%2019/versions/2/countries?continent=EU&period=2020-04": [
 		{
-			"country": "XK",
-			"share": 0.21,
+			"country": "AL",
+			"share": 5.09,
 			"prev": {
-				"share": 0.14
-			}
-		},
-		{
-			"country": "VA",
-			"share": 0.2,
-			"prev": {
-				"share": 0.13
-			}
-		},
-		{
-			"country": "UA",
-			"share": 0.19,
-			"prev": {
-				"share": 0.13
-			}
-		},
-		{
-			"country": "SE",
-			"share": 0.17,
-			"prev": {
-				"share": 0.11
-			}
-		},
-		{
-			"country": "SI",
-			"share": 0.17,
-			"prev": {
-				"share": 0.11
-			}
-		},
-		{
-			"country": "SJ",
-			"share": 0.17,
-			"prev": {
-				"share": 0.11
-			}
-		},
-		{
-			"country": "SK",
-			"share": 0.17,
-			"prev": {
-				"share": 0.11
-			}
-		},
-		{
-			"country": "SM",
-			"share": 0.17,
-			"prev": {
-				"share": 0.11
-			}
-		},
-		{
-			"country": "PT",
-			"share": 0.16,
-			"prev": {
-				"share": 0.1
-			}
-		},
-		{
-			"country": "RO",
-			"share": 0.16,
-			"prev": {
-				"share": 0.1
-			}
-		},
-		{
-			"country": "RS",
-			"share": 0.16,
-			"prev": {
-				"share": 0.11
-			}
-		},
-		{
-			"country": "RU",
-			"share": 0.16,
-			"prev": {
-				"share": 0.11
-			}
-		},
-		{
-			"country": "PL",
-			"share": 0.15,
-			"prev": {
-				"share": 0.1
-			}
-		},
-		{
-			"country": "NL",
-			"share": 0.14,
-			"prev": {
-				"share": 0.09
-			}
-		},
-		{
-			"country": "NO",
-			"share": 0.14,
-			"prev": {
-				"share": 0.09
-			}
-		},
-		{
-			"country": "MT",
-			"share": 0.13,
-			"prev": {
-				"share": 0.08
-			}
-		},
-		{
-			"country": "MC",
-			"share": 0.12,
-			"prev": {
-				"share": 0.08
-			}
-		},
-		{
-			"country": "MD",
-			"share": 0.12,
-			"prev": {
-				"share": 0.08
-			}
-		},
-		{
-			"country": "ME",
-			"share": 0.12,
-			"prev": {
-				"share": 0.08
-			}
-		},
-		{
-			"country": "MK",
-			"share": 0.12,
-			"prev": {
-				"share": 0.08
-			}
-		},
-		{
-			"country": "LI",
-			"share": 0.11,
-			"prev": {
-				"share": 0.07
-			}
-		},
-		{
-			"country": "LT",
-			"share": 0.11,
-			"prev": {
-				"share": 0.07
-			}
-		},
-		{
-			"country": "LU",
-			"share": 0.11,
-			"prev": {
-				"share": 0.07
-			}
-		},
-		{
-			"country": "LV",
-			"share": 0.11,
-			"prev": {
-				"share": 0.07
-			}
-		},
-		{
-			"country": "IE",
-			"share": 0.09,
-			"prev": {
-				"share": 0.06
-			}
-		},
-		{
-			"country": "IM",
-			"share": 0.09,
-			"prev": {
-				"share": 0.06
-			}
-		},
-		{
-			"country": "IS",
-			"share": 0.09,
-			"prev": {
-				"share": 0.06
-			}
-		},
-		{
-			"country": "IT",
-			"share": 0.09,
-			"prev": {
-				"share": 0.06
-			}
-		},
-		{
-			"country": "JE",
-			"share": 0.09,
-			"prev": {
-				"share": 0.06
-			}
-		},
-		{
-			"country": "HR",
-			"share": 0.08,
-			"prev": {
-				"share": 0.05
-			}
-		},
-		{
-			"country": "HU",
-			"share": 0.08,
-			"prev": {
-				"share": 0.06
-			}
-		},
-		{
-			"country": "GG",
-			"share": 0.07,
-			"prev": {
-				"share": 0.04
-			}
-		},
-		{
-			"country": "GI",
-			"share": 0.07,
-			"prev": {
-				"share": 0.05
-			}
-		},
-		{
-			"country": "GR",
-			"share": 0.07,
-			"prev": {
-				"share": 0.05
-			}
-		},
-		{
-			"country": "ES",
-			"share": 0.06,
-			"prev": {
-				"share": 0.04
-			}
-		},
-		{
-			"country": "FI",
-			"share": 0.06,
-			"prev": {
-				"share": 0.04
-			}
-		},
-		{
-			"country": "FO",
-			"share": 0.06,
-			"prev": {
-				"share": 0.04
-			}
-		},
-		{
-			"country": "FR",
-			"share": 0.06,
-			"prev": {
-				"share": 0.04
-			}
-		},
-		{
-			"country": "GB",
-			"share": 0.06,
-			"prev": {
-				"share": 0.04
-			}
-		},
-		{
-			"country": "CY",
-			"share": 0.05,
-			"prev": {
-				"share": 0.03
-			}
-		},
-		{
-			"country": "CZ",
-			"share": 0.05,
-			"prev": {
-				"share": 0.03
-			}
-		},
-		{
-			"country": "DE",
-			"share": 0.05,
-			"prev": {
-				"share": 0.03
-			}
-		},
-		{
-			"country": "DK",
-			"share": 0.05,
-			"prev": {
-				"share": 0.03
-			}
-		},
-		{
-			"country": "EE",
-			"share": 0.05,
-			"prev": {
-				"share": 0.04
-			}
-		},
-		{
-			"country": "CH",
-			"share": 0.04,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "BY",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "BE",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "BG",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "AT",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "AX",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "BA",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
+			}
+		},
+		{
+			"country": "BE",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "BG",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "BY",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "CH",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "CY",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "CZ",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "DE",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "DK",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "EE",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "ES",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "FI",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "FO",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "FR",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "GB",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "GG",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "GI",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "GR",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "HR",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "HU",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "IE",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "IM",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "IS",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "IT",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "JE",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "LI",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "LT",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "LU",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "LV",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "MC",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "MD",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "ME",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "MK",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "MT",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "NL",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "NO",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "PL",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "PT",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "RO",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "RS",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "RU",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "SE",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "SI",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "SJ",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "SK",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "SM",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "UA",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "VA",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "XK",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
 			}
 		}
 	],
@@ -1083,1527 +1104,1744 @@
 	},
 	"/v1/stats/platforms/platform%2019/versions/2/countries?period=2020": [
 		{
-			"country": "TR",
-			"share": 0.04,
+			"country": "AE",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "TT",
-			"share": 0.04,
+			"country": "AF",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "TV",
-			"share": 0.04,
+			"country": "AG",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "TW",
-			"share": 0.04,
+			"country": "AI",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "TZ",
-			"share": 0.04,
+			"country": "AL",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "UA",
-			"share": 0.04,
+			"country": "AM",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "UG",
-			"share": 0.04,
+			"country": "AO",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "UM",
-			"share": 0.04,
+			"country": "AQ",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "US",
-			"share": 0.04,
+			"country": "AR",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "UY",
-			"share": 0.04,
+			"country": "AS",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "UZ",
-			"share": 0.04,
+			"country": "AT",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "VA",
-			"share": 0.04,
+			"country": "AU",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "VC",
-			"share": 0.04,
+			"country": "AW",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "VE",
-			"share": 0.04,
+			"country": "AX",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "VG",
-			"share": 0.04,
+			"country": "AZ",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "VI",
-			"share": 0.04,
+			"country": "BA",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "VN",
-			"share": 0.04,
+			"country": "BB",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "VU",
-			"share": 0.04,
+			"country": "BD",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "WF",
-			"share": 0.04,
+			"country": "BE",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "WS",
-			"share": 0.04,
+			"country": "BF",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "XK",
-			"share": 0.04,
+			"country": "BG",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "YE",
-			"share": 0.04,
+			"country": "BH",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "YT",
-			"share": 0.04,
+			"country": "BI",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "ZA",
-			"share": 0.04,
+			"country": "BJ",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "ZM",
-			"share": 0.04,
+			"country": "BL",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "ZW",
-			"share": 0.04,
+			"country": "BM",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "NC",
-			"share": 0.03,
+			"country": "BN",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "NE",
-			"share": 0.03,
+			"country": "BO",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "NF",
-			"share": 0.03,
+			"country": "BQ",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "NG",
-			"share": 0.03,
+			"country": "BR",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "NI",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "NL",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "NO",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "NP",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "NR",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "NU",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "NZ",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "OM",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "PA",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "PE",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "PF",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "PG",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "PH",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "PK",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "PL",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "PM",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "PN",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "PR",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "PS",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "PT",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "PW",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "PY",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "QA",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "RE",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "RO",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "RS",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "RU",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "RW",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SA",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SB",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SC",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SD",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SE",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SG",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SH",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SI",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SJ",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SK",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SL",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SM",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SN",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SO",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SR",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SS",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "ST",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SV",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SX",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SY",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SZ",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "TC",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "TD",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "TF",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "TG",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "TH",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "TJ",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "TK",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "TL",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "TM",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "TN",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "TO",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "HN",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "HR",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "HT",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "HU",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "ID",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "IE",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "IL",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "IM",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "IN",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "IO",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "IQ",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "IR",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "IS",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "IT",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "JE",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "JM",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "JO",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "JP",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "KE",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "KG",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "KH",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "KI",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "KM",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "KN",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "KP",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "KR",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "KW",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "KY",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "KZ",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "LA",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "LB",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "LC",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "LI",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "LK",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "LR",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "LS",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "LT",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "LU",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "LV",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "LY",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MA",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MC",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MD",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "ME",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MF",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MG",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MH",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MK",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "ML",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MM",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MN",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MO",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MP",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MQ",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MR",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MS",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MT",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MU",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MV",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MW",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MX",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MY",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MZ",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "NA",
-			"share": 0.02,
+			"country": "BS",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "BT",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "BV",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "BW",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "BY",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "BZ",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CA",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CC",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CD",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CF",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CG",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CH",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CI",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CK",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CL",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CM",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CN",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CO",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CR",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CU",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CV",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CW",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CX",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CY",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CZ",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "DE",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "DJ",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "DK",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "DM",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "DO",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "DZ",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "EC",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "EE",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "EG",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "EH",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "ER",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "ES",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "ET",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "FI",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "FJ",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "FK",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "FM",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "FO",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "FR",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GA",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GB",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GD",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GE",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GF",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GG",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GH",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GI",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GL",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GM",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GN",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GP",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GQ",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GR",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GS",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GT",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GU",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GW",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GY",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "HK",
-			"share": 0.01,
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "HM",
-			"share": 0.01,
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "HN",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "HR",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "HT",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "HU",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "ID",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "IE",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "IL",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "IM",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "IN",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "IO",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "IQ",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "IR",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "IS",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "IT",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "JE",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "JM",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "JO",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "JP",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "KE",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "KG",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "KH",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "KI",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "KM",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "KN",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "KP",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "KR",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "KW",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "KY",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "KZ",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "LA",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "LB",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "LC",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "LI",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "LK",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "LR",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "LS",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "LT",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "LU",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "LV",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "LY",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MA",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MC",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MD",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "ME",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MF",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MG",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MH",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MK",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "ML",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MM",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MN",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MO",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MP",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MQ",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MR",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MS",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MT",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MU",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MV",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MW",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MX",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MY",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MZ",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "NA",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "NC",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "NE",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "NF",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "NG",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "NI",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "NL",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "NO",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "NP",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "NR",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "NU",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "NZ",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "OM",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "PA",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "PE",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "PF",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "PG",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "PH",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "PK",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "PL",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "PM",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "PN",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "PR",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "PS",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "PT",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "PW",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "PY",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "QA",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "RE",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "RO",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "RS",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "RU",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "RW",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SA",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SB",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SC",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SD",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SE",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SG",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SH",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SI",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SJ",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SK",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SL",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SM",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SN",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SO",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SR",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SS",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "ST",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SV",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SX",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SY",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SZ",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "TC",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "TD",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "TF",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "TG",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "TH",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "TJ",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "TK",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "TL",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "TM",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "TN",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "TO",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "TR",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "TT",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "TV",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "TW",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "TZ",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "UA",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "UG",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "UM",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "US",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "UY",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "UZ",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "VA",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "VC",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "VE",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "VG",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "VI",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "VN",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "VU",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "WF",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "WS",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "XK",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "YE",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "YT",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "ZA",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "ZM",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "ZW",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			}
@@ -2611,1520 +2849,1744 @@
 	],
 	"/v1/stats/platforms/platform%2019/versions/2/countries?period=2020-02": [
 		{
-			"country": "TV",
-			"share": 0.04,
+			"country": "AE",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "TW",
-			"share": 0.04,
+			"country": "AF",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "TZ",
-			"share": 0.04,
+			"country": "AG",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "UA",
-			"share": 0.04,
+			"country": "AI",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "UG",
-			"share": 0.04,
+			"country": "AL",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "UM",
-			"share": 0.04,
+			"country": "AM",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "US",
-			"share": 0.04,
+			"country": "AO",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "UY",
-			"share": 0.04,
+			"country": "AQ",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "UZ",
-			"share": 0.04,
+			"country": "AR",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "VA",
-			"share": 0.04,
+			"country": "AS",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "VC",
-			"share": 0.04,
+			"country": "AT",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "VE",
-			"share": 0.04,
+			"country": "AU",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "VG",
-			"share": 0.04,
+			"country": "AW",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "VI",
-			"share": 0.04,
+			"country": "AX",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "VN",
-			"share": 0.04,
+			"country": "AZ",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "VU",
-			"share": 0.04,
+			"country": "BA",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "WF",
-			"share": 0.04,
+			"country": "BB",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "WS",
-			"share": 0.04,
+			"country": "BD",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "XK",
-			"share": 0.04,
+			"country": "BE",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "YE",
-			"share": 0.04,
+			"country": "BF",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "YT",
-			"share": 0.04,
+			"country": "BG",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "ZA",
-			"share": 0.04,
+			"country": "BH",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "ZM",
-			"share": 0.04,
+			"country": "BI",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "ZW",
-			"share": 0.04,
+			"country": "BJ",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "NE",
-			"share": 0.03,
+			"country": "BL",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "NF",
-			"share": 0.03,
+			"country": "BM",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "NG",
-			"share": 0.03,
+			"country": "BN",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "NI",
-			"share": 0.03,
+			"country": "BO",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "NL",
-			"share": 0.03,
+			"country": "BQ",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "NO",
-			"share": 0.03,
+			"country": "BR",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "NP",
-			"share": 0.03,
+			"country": "BS",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
-			"country": "NR",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "NU",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "NZ",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "OM",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "PA",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "PE",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "PF",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "PG",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "PH",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "PK",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "PL",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "PM",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "PN",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "PR",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "PS",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "PT",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "PW",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "PY",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "QA",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "RE",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "RO",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "RS",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "RU",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "RW",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SA",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SB",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SC",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SD",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SE",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SG",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SH",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SI",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SJ",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SK",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SL",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SM",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SN",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SO",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SR",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SS",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "ST",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SV",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SX",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SY",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "SZ",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "TC",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "TD",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "TF",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "TG",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "TH",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "TJ",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "TK",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "TL",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "TM",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "TN",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "TO",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "TR",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "TT",
-			"share": 0.03,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "HR",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "HT",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "HU",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "ID",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "IE",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "IL",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "IM",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "IN",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "IO",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "IQ",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "IR",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "IS",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "IT",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "JE",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "JM",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "JO",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "JP",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "KE",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "KG",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "KH",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "KI",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "KM",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "KN",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "KP",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "KR",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "KW",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "KY",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "KZ",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "LA",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "LB",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "LC",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "LI",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "LK",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "LR",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "LS",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "LT",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "LU",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "LV",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "LY",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MA",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MC",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MD",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "ME",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MF",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MG",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MH",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MK",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "ML",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MM",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MN",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MO",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MP",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MQ",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MR",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MS",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MT",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MU",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MV",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MW",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MX",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MY",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "MZ",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "NA",
-			"share": 0.02,
-			"prev": {
-				"share": null
-			}
-		},
-		{
-			"country": "NC",
-			"share": 0.02,
+			"country": "BT",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "BV",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "BW",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "BY",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "BZ",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CA",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CC",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CD",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CF",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CG",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CH",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CI",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CK",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CL",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CM",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CN",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CO",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CR",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CU",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CV",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CW",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CX",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CY",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "CZ",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "DE",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "DJ",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "DK",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "DM",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "DO",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "DZ",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "EC",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "EE",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "EG",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "EH",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "ER",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "ES",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "ET",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "FI",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "FJ",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "FK",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "FM",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "FO",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "FR",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GA",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GB",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GD",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GE",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GF",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GG",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GH",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GI",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GL",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GM",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GN",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GP",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GQ",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GR",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GS",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GT",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GU",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GW",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "GY",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "HK",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "HM",
-			"share": 0.01,
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
 		},
 		{
 			"country": "HN",
-			"share": 0.01,
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "HR",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "HT",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "HU",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "ID",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "IE",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "IL",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "IM",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "IN",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "IO",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "IQ",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "IR",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "IS",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "IT",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "JE",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "JM",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "JO",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "JP",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "KE",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "KG",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "KH",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "KI",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "KM",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "KN",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "KP",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "KR",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "KW",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "KY",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "KZ",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "LA",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "LB",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "LC",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "LI",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "LK",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "LR",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "LS",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "LT",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "LU",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "LV",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "LY",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MA",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MC",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MD",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "ME",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MF",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MG",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MH",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MK",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "ML",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MM",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MN",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MO",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MP",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MQ",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MR",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MS",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MT",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MU",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MV",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MW",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MX",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MY",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "MZ",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "NA",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "NC",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "NE",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "NF",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "NG",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "NI",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "NL",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "NO",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "NP",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "NR",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "NU",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "NZ",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "OM",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "PA",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "PE",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "PF",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "PG",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "PH",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "PK",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "PL",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "PM",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "PN",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "PR",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "PS",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "PT",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "PW",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "PY",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "QA",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "RE",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "RO",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "RS",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "RU",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "RW",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SA",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SB",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SC",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SD",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SE",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SG",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SH",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SI",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SJ",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SK",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SL",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SM",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SN",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SO",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SR",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SS",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "ST",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SV",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SX",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SY",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "SZ",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "TC",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "TD",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "TF",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "TG",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "TH",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "TJ",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "TK",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "TL",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "TM",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "TN",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "TO",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "TR",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "TT",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "TV",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "TW",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "TZ",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "UA",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "UG",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "UM",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "US",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "UY",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "UZ",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "VA",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "VC",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "VE",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "VG",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "VI",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "VN",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "VU",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "WF",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "WS",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "XK",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "YE",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "YT",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "ZA",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "ZM",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			}
+		},
+		{
+			"country": "ZW",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			}
@@ -4132,1536 +4594,1746 @@
 	],
 	"/v1/stats/platforms/platform%2019/versions/2/countries?period=2020-04": [
 		{
-			"country": "TF",
-			"share": 0.04,
+			"country": "AE",
+			"share": 5.09,
 			"prev": {
-				"share": 0.02
+				"share": 3.33
 			}
 		},
 		{
-			"country": "TG",
-			"share": 0.04,
+			"country": "AF",
+			"share": 5.09,
 			"prev": {
-				"share": 0.02
+				"share": 3.33
 			}
 		},
 		{
-			"country": "TH",
-			"share": 0.04,
+			"country": "AG",
+			"share": 5.09,
 			"prev": {
-				"share": 0.02
+				"share": 3.33
 			}
 		},
 		{
-			"country": "TJ",
-			"share": 0.04,
+			"country": "AI",
+			"share": 5.09,
 			"prev": {
-				"share": 0.02
+				"share": 3.33
 			}
 		},
 		{
-			"country": "TK",
-			"share": 0.04,
+			"country": "AL",
+			"share": 5.09,
 			"prev": {
-				"share": 0.02
+				"share": 3.33
 			}
 		},
 		{
-			"country": "TL",
-			"share": 0.04,
+			"country": "AM",
+			"share": 5.09,
 			"prev": {
-				"share": 0.02
+				"share": 3.33
 			}
 		},
 		{
-			"country": "TM",
-			"share": 0.04,
+			"country": "AO",
+			"share": 5.09,
 			"prev": {
-				"share": 0.02
+				"share": 3.33
 			}
 		},
 		{
-			"country": "TN",
-			"share": 0.04,
+			"country": "AQ",
+			"share": 5.09,
 			"prev": {
-				"share": 0.02
+				"share": 3.33
 			}
 		},
 		{
-			"country": "TO",
-			"share": 0.04,
+			"country": "AR",
+			"share": 5.09,
 			"prev": {
-				"share": 0.02
+				"share": 3.33
 			}
 		},
 		{
-			"country": "TR",
-			"share": 0.04,
+			"country": "AS",
+			"share": 5.09,
 			"prev": {
-				"share": 0.02
+				"share": 3.33
 			}
 		},
 		{
-			"country": "TT",
-			"share": 0.04,
+			"country": "AT",
+			"share": 5.09,
 			"prev": {
-				"share": 0.02
+				"share": 3.33
 			}
 		},
 		{
-			"country": "TV",
-			"share": 0.04,
+			"country": "AU",
+			"share": 5.09,
 			"prev": {
-				"share": 0.02
+				"share": 3.33
 			}
 		},
 		{
-			"country": "TW",
-			"share": 0.04,
+			"country": "AW",
+			"share": 5.09,
 			"prev": {
-				"share": 0.02
+				"share": 3.33
 			}
 		},
 		{
-			"country": "TZ",
-			"share": 0.04,
+			"country": "AX",
+			"share": 5.09,
 			"prev": {
-				"share": 0.02
+				"share": 3.33
 			}
 		},
 		{
-			"country": "UA",
-			"share": 0.04,
+			"country": "AZ",
+			"share": 5.09,
 			"prev": {
-				"share": 0.02
+				"share": 3.33
 			}
 		},
 		{
-			"country": "UG",
-			"share": 0.04,
+			"country": "BA",
+			"share": 5.09,
 			"prev": {
-				"share": 0.02
+				"share": 3.33
 			}
 		},
 		{
-			"country": "UM",
-			"share": 0.04,
+			"country": "BB",
+			"share": 5.09,
 			"prev": {
-				"share": 0.02
+				"share": 3.33
 			}
 		},
 		{
-			"country": "US",
-			"share": 0.04,
+			"country": "BD",
+			"share": 5.09,
 			"prev": {
-				"share": 0.02
+				"share": 3.33
 			}
 		},
 		{
-			"country": "UY",
-			"share": 0.04,
+			"country": "BE",
+			"share": 5.09,
 			"prev": {
-				"share": 0.02
+				"share": 3.33
 			}
 		},
 		{
-			"country": "UZ",
-			"share": 0.04,
+			"country": "BF",
+			"share": 5.09,
 			"prev": {
-				"share": 0.03
+				"share": 3.33
 			}
 		},
 		{
-			"country": "VA",
-			"share": 0.04,
+			"country": "BG",
+			"share": 5.09,
 			"prev": {
-				"share": 0.03
+				"share": 3.33
 			}
 		},
 		{
-			"country": "VC",
-			"share": 0.04,
+			"country": "BH",
+			"share": 5.09,
 			"prev": {
-				"share": 0.03
+				"share": 3.33
 			}
 		},
 		{
-			"country": "VE",
-			"share": 0.04,
+			"country": "BI",
+			"share": 5.09,
 			"prev": {
-				"share": 0.03
+				"share": 3.33
 			}
 		},
 		{
-			"country": "VG",
-			"share": 0.04,
+			"country": "BJ",
+			"share": 5.09,
 			"prev": {
-				"share": 0.03
+				"share": 3.33
 			}
 		},
 		{
-			"country": "VI",
-			"share": 0.04,
+			"country": "BL",
+			"share": 5.09,
 			"prev": {
-				"share": 0.03
+				"share": 3.33
 			}
 		},
 		{
-			"country": "VN",
-			"share": 0.04,
+			"country": "BM",
+			"share": 5.09,
 			"prev": {
-				"share": 0.03
+				"share": 3.33
 			}
 		},
 		{
-			"country": "VU",
-			"share": 0.04,
+			"country": "BN",
+			"share": 5.09,
 			"prev": {
-				"share": 0.03
+				"share": 3.33
 			}
 		},
 		{
-			"country": "WF",
-			"share": 0.04,
+			"country": "BO",
+			"share": 5.09,
 			"prev": {
-				"share": 0.03
+				"share": 3.33
 			}
 		},
 		{
-			"country": "WS",
-			"share": 0.04,
+			"country": "BQ",
+			"share": 5.09,
 			"prev": {
-				"share": 0.03
+				"share": 3.33
 			}
 		},
 		{
-			"country": "XK",
-			"share": 0.04,
+			"country": "BR",
+			"share": 5.09,
 			"prev": {
-				"share": 0.03
-			}
-		},
-		{
-			"country": "YE",
-			"share": 0.04,
-			"prev": {
-				"share": 0.03
-			}
-		},
-		{
-			"country": "YT",
-			"share": 0.04,
-			"prev": {
-				"share": 0.03
-			}
-		},
-		{
-			"country": "ZA",
-			"share": 0.04,
-			"prev": {
-				"share": 0.03
-			}
-		},
-		{
-			"country": "ZM",
-			"share": 0.04,
-			"prev": {
-				"share": 0.03
-			}
-		},
-		{
-			"country": "ZW",
-			"share": 0.04,
-			"prev": {
-				"share": 0.03
-			}
-		},
-		{
-			"country": "MU",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "MV",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "MW",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "MX",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "MY",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "MZ",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "NA",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "NC",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "NE",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "NF",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "NG",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "NI",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "NL",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "NO",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "NP",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "NR",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "NU",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "NZ",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "OM",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "PA",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "PE",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "PF",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "PG",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "PH",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "PK",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "PL",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "PM",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "PN",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "PR",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "PS",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "PT",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "PW",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "PY",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "QA",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "RE",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "RO",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "RS",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "RU",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "RW",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "SA",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "SB",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "SC",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "SD",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "SE",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "SG",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "SH",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "SI",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "SJ",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "SK",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "SL",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "SM",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "SN",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "SO",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "SR",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "SS",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "ST",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "SV",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "SX",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "SY",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "SZ",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "TC",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "TD",
-			"share": 0.03,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "GW",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "GY",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "HK",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "HM",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "HN",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "HR",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "HT",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "HU",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "ID",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "IE",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "IL",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "IM",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "IN",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "IO",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "IQ",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "IR",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "IS",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "IT",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "JE",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "JM",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "JO",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "JP",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "KE",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "KG",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "KH",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "KI",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "KM",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "KN",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "KP",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "KR",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "KW",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "KY",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "KZ",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "LA",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "LB",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "LC",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "LI",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "LK",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "LR",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "LS",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "LT",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "LU",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "LV",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "LY",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "MA",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "MC",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "MD",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "ME",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "MF",
-			"share": 0.02,
-			"prev": {
-				"share": 0.01
-			}
-		},
-		{
-			"country": "MG",
-			"share": 0.02,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "MH",
-			"share": 0.02,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "MK",
-			"share": 0.02,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "ML",
-			"share": 0.02,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "MM",
-			"share": 0.02,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "MN",
-			"share": 0.02,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "MO",
-			"share": 0.02,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "MP",
-			"share": 0.02,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "MQ",
-			"share": 0.02,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "MR",
-			"share": 0.02,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "MS",
-			"share": 0.02,
-			"prev": {
-				"share": 0.02
-			}
-		},
-		{
-			"country": "MT",
-			"share": 0.02,
-			"prev": {
-				"share": 0.02
+				"share": 3.33
 			}
 		},
 		{
 			"country": "BS",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0
+				"share": 3.33
 			}
 		},
 		{
 			"country": "BT",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0
+				"share": 3.33
 			}
 		},
 		{
 			"country": "BV",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0
+				"share": 3.33
 			}
 		},
 		{
 			"country": "BW",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0
+				"share": 3.33
 			}
 		},
 		{
 			"country": "BY",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0
+				"share": 3.33
 			}
 		},
 		{
 			"country": "BZ",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0
+				"share": 3.33
 			}
 		},
 		{
 			"country": "CA",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0
+				"share": 3.33
 			}
 		},
 		{
 			"country": "CC",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0
+				"share": 3.33
 			}
 		},
 		{
 			"country": "CD",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0
+				"share": 3.33
 			}
 		},
 		{
 			"country": "CF",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0
+				"share": 3.33
 			}
 		},
 		{
 			"country": "CG",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0
+				"share": 3.33
 			}
 		},
 		{
 			"country": "CH",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0
+				"share": 3.33
 			}
 		},
 		{
 			"country": "CI",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0
+				"share": 3.33
 			}
 		},
 		{
 			"country": "CK",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0
+				"share": 3.33
 			}
 		},
 		{
 			"country": "CL",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0
+				"share": 3.33
 			}
 		},
 		{
 			"country": "CM",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0
+				"share": 3.33
 			}
 		},
 		{
 			"country": "CN",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "CO",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "CR",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "CU",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "CV",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "CW",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "CX",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "CY",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "CZ",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "DE",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "DJ",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "DK",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "DM",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "DO",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "DZ",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "EC",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "EE",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "EG",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "EH",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "ER",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "ES",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "ET",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "FI",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "FJ",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "FK",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "FM",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "FO",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "FR",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "GA",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "GB",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "GD",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "GE",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "GF",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "GG",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "GH",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "GI",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "GL",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "GM",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "GN",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "GP",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "GQ",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "GR",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "GS",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "GT",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
 			}
 		},
 		{
 			"country": "GU",
-			"share": 0.01,
+			"share": 5.09,
 			"prev": {
-				"share": 0.01
+				"share": 3.33
+			}
+		},
+		{
+			"country": "GW",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "GY",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "HK",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "HM",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "HN",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "HR",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "HT",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "HU",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "ID",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "IE",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "IL",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "IM",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "IN",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "IO",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "IQ",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "IR",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "IS",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "IT",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "JE",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "JM",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "JO",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "JP",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "KE",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "KG",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "KH",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "KI",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "KM",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "KN",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "KP",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "KR",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "KW",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "KY",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "KZ",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "LA",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "LB",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "LC",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "LI",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "LK",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "LR",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "LS",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "LT",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "LU",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "LV",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "LY",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "MA",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "MC",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "MD",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "ME",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "MF",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "MG",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "MH",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "MK",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "ML",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "MM",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "MN",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "MO",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "MP",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "MQ",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "MR",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "MS",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "MT",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "MU",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "MV",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "MW",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "MX",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "MY",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "MZ",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "NA",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "NC",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "NE",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "NF",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "NG",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "NI",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "NL",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "NO",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "NP",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "NR",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "NU",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "NZ",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "OM",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "PA",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "PE",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "PF",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "PG",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "PH",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "PK",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "PL",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "PM",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "PN",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "PR",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "PS",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "PT",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "PW",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "PY",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "QA",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "RE",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "RO",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "RS",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "RU",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "RW",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "SA",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "SB",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "SC",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "SD",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "SE",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "SG",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "SH",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "SI",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "SJ",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "SK",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "SL",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "SM",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "SN",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "SO",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "SR",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "SS",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "ST",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "SV",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "SX",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "SY",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "SZ",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "TC",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "TD",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "TF",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "TG",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "TH",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "TJ",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "TK",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "TL",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "TM",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "TN",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "TO",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "TR",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "TT",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "TV",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "TW",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "TZ",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "UA",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "UG",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "UM",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "US",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "UY",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "UZ",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "VA",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "VC",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "VE",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "VG",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "VI",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "VN",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "VU",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "WF",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "WS",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "XK",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "YE",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "YT",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "ZA",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "ZM",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			}
+		},
+		{
+			"country": "ZW",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
 			}
 		}
 	],

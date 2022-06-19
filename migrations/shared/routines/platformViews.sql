@@ -343,14 +343,15 @@ begin
 	insert into view_top_platform_countries
 	(period, date, locationType, locationId, name, countryIso, share, prevShare)
 	with prevTotals as (
-		select sum(hits) as hits
+		select countryIso, sum(hits) as hits
 		from country_platform_version_hits
 		where date >= aPrevDateFrom and date <= aPrevDateTo
+		group by countryIso
 	)
 	select * from (
 		select aPeriod, aDateFrom, 'global', '', name, countryIso,
-			round(hits / nullif((sum(hits) over ()), 0) * 100, 2) as share,
-			round(coalesce(prevHits, 0) / nullif((select hits from prevTotals), 0) * 100, 2) as prevShare
+			round(hits / nullif((sum(hits) over (partition by countryIso)), 0) * 100, 2) as share,
+			round(coalesce(prevHits, 0) / nullif((select hits from prevTotals where countryIso = t.countryIso), 0) * 100, 2) as prevShare
 		from (
 			select platformId, countryIso,
 				sum(hits) as hits,
@@ -372,16 +373,15 @@ begin
 	insert into view_top_platform_countries
 	(period, date, locationType, locationId, name, countryIso, share, prevShare)
 	with prevTotals as (
-		select continentCode, sum(hits) as hits
-		from country_platform_version_hits cpvh
-			join country c on cpvh.countryIso = c.iso
+		select countryIso, sum(hits) as hits
+		from country_platform_version_hits
 		where date >= aPrevDateFrom and date <= aPrevDateTo
-		group by continentCode
+		group by countryIso
 	)
 	select * from (
 		select aPeriod, aDateFrom, 'continent', continentCode, name, countryIso,
-			round(hits / nullif((sum(hits) over (partition by continentCode)), 0) * 100, 2) as share,
-			round(coalesce(prevHits, 0) / nullif((select hits from prevTotals where continentCode = t.continentCode), 0) * 100, 2) as prevShare
+			round(hits / nullif((sum(hits) over (partition by countryIso)), 0) * 100, 2) as share,
+			round(coalesce(prevHits, 0) / nullif((select hits from prevTotals where countryIso = t.countryIso), 0) * 100, 2) as prevShare
 		from (
 			select platformId, countryIso,
 				continentCode,
@@ -422,14 +422,15 @@ begin
 	insert into view_top_platform_version_countries
 	(period, date, locationType, locationId, name, version, countryIso, share, prevShare)
 	with prevTotals as (
-		select sum(hits) as hits
+		select countryIso, sum(hits) as hits
 		from country_platform_version_hits
 		where date >= aPrevDateFrom and date <= aPrevDateTo
+		group by countryIso
 	)
 	select * from (
 		select aPeriod, aDateFrom, 'global', '', name, version, countryIso,
-			round(hits / nullif((sum(hits) over ()), 0) * 100, 2) as share,
-			round(coalesce(prevHits, 0) / nullif((select hits from prevTotals), 0) * 100, 2) as prevShare
+			round(hits / nullif((sum(hits) over (partition by countryIso)), 0) * 100, 2) as share,
+			round(coalesce(prevHits, 0) / nullif((select hits from prevTotals where countryIso = t.countryIso), 0) * 100, 2) as prevShare
 		from (
 			select platformVersionId, countryIso,
 				sum(hits) as hits,
@@ -451,16 +452,15 @@ begin
 	insert into view_top_platform_version_countries
 	(period, date, locationType, locationId, name, version, countryIso, share, prevShare)
 	with prevTotals as (
-		select continentCode, sum(hits) as hits
-		from country_platform_version_hits cpvh
-			join country c on cpvh.countryIso = c.iso
+		select countryIso, sum(hits) as hits
+		from country_platform_version_hits
 		where date >= aPrevDateFrom and date <= aPrevDateTo
-		group by continentCode
+		group by countryIso
 	)
 	select * from (
 		select aPeriod, aDateFrom, 'continent', continentCode, name, version, countryIso,
-			round(hits / nullif((sum(hits) over (partition by continentCode)), 0) * 100, 2) as share,
-			round(coalesce(prevHits, 0) / nullif((select hits from prevTotals where continentCode = t.continentCode), 0) * 100, 2) as prevShare
+			round(hits / nullif((sum(hits) over (partition by countryIso)), 0) * 100, 2) as share,
+			round(coalesce(prevHits, 0) / nullif((select hits from prevTotals where countryIso = t.countryIso), 0) * 100, 2) as prevShare
 		from (
 			select platformVersionId, countryIso,
 				continentCode,
