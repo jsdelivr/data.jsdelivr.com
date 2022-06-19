@@ -1102,7 +1102,7 @@
 		"status": 400,
 		"message": "Invalid parameter value: `continent` must be a valid continent code in uppercase, `period` must be a valid date in one of the following ISO formats [YYYY, YYYY-MM]."
 	},
-	"/v1/stats/browsers/browser%2019/countries?period=2020": [
+	"/v1/stats/browsers/browser%2019/countries?period=2020&all=true": [
 		{
 			"country": "AE",
 			"share": 14.33,
@@ -2847,7 +2847,7 @@
 			}
 		}
 	],
-	"/v1/stats/browsers/browser%2019/countries?period=2020-02": [
+	"/v1/stats/browsers/browser%2019/countries?period=2020-02&all=true": [
 		{
 			"country": "AE",
 			"share": 14.19,
@@ -4592,7 +4592,7 @@
 			}
 		}
 	],
-	"/v1/stats/browsers/browser%2019/countries?period=2020-04": [
+	"/v1/stats/browsers/browser%2019/countries?period=2020-04&all=true": [
 		{
 			"country": "AE",
 			"share": 14.92,

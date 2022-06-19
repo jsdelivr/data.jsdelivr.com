@@ -46,7 +46,9 @@ function makeEndpointAssertion (uriTemplate, defaults, { params, assert }, { lim
 					response.body.splice(limit);
 				}
 
-				assert(response, getUri(defaults));
+				// Append ?all=true to the URI if we fetched multiple pages to avoid snapshotting collisions.
+				response.req.path = getUriWithValues(uriTemplate, { ...params, all: response.body.length > apiLimit ? true : undefined }, defaults);
+				assert(response, response.req.path);
 
 				expect(response).to.have.status(status);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
@@ -72,7 +74,7 @@ function makeEndpointAssertions (uriTemplate, defaults, testCases, options) {
 }
 
 function makePaginatedEndpointAssertions (uriTemplate, defaults, testCases, options) {
-	uriTemplate += `${uriTemplate.includes('{?') ? '{&' : '{?'}page,limit}`;
+	uriTemplate += `${uriTemplate.includes('{?') ? '{&' : '{?'}page,limit,all}`;
 
 	for (let testCase of testCases) {
 		makeEndpointAssertion(uriTemplate, defaults, testCase, { ...options, limit: Infinity });
