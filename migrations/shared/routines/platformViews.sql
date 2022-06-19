@@ -77,7 +77,7 @@ begin
 	(period, date, locationType, locationId, name, share, prevShare)
 	with prevTotals as (
 		select countryIso, sum(hits) as hits
-		from country_platform_version_hits cpvh
+		from country_platform_version_hits
 		where date >= aPrevDateFrom and date <= aPrevDateTo
 		group by countryIso
 	)
@@ -185,7 +185,7 @@ begin
 	(period, date, locationType, locationId, name, version, versionName, share, prevShare)
 	with prevTotals as (
 		select countryIso, sum(hits) as hits
-		from country_platform_version_hits cpvh
+		from country_platform_version_hits
 		where date >= aPrevDateFrom and date <= aPrevDateTo
 		group by countryIso
 	)
@@ -231,7 +231,7 @@ begin
 	(period, date, locationType, locationId, name, browser, share, prevShare)
 	with totals as (
 		select sum(hits) as hits
-		from country_browser_version_hits cbvh
+		from country_browser_version_hits
 		where date >= aPrevDateFrom and date <= aPrevDateTo
 	)
 	select * from (
@@ -296,7 +296,7 @@ begin
 	(period, date, locationType, locationId, name, browser, share, prevShare)
 	with totals as (
 		select countryIso, sum(hits) as hits
-		from country_browser_version_hits cbvh
+		from country_browser_version_hits
 		where date >= aPrevDateFrom and date <= aPrevDateTo
 		group by countryIso
 	)
@@ -389,7 +389,6 @@ begin
 				(select sum(hits)
 					from platform_version pvi
 						join country_platform_version_hits cpvhi on pvi.id = cpvhi.platformVersionId
-						join country ci on cpvhi.countryIso = ci.iso
 					where pv.platformId = pvi.platformId and cpvhi.countryIso = cpvh.countryIso and date >= aPrevDateFrom and date <= aPrevDateTo
 				) as prevHits
 			from platform_version pv
@@ -436,8 +435,7 @@ begin
 				sum(hits) as hits,
 				(select sum(hits)
 					from country_platform_version_hits cpvhi
-						join country ci on cpvhi.countryIso = ci.iso
-					where platformVersionId = cpvh.platformVersionId and countryIso = cpvh.countryIso and date >= aPrevDateFrom and date <= aPrevDateTo
+					where cpvhi.platformVersionId = cpvh.platformVersionId and cpvhi.countryIso = cpvh.countryIso and date >= aPrevDateFrom and date <= aPrevDateTo
 				) as prevHits
 			from country_platform_version_hits cpvh
 			where date >= aDateFrom and date <= aDateTo
@@ -467,8 +465,7 @@ begin
 				sum(hits) as hits,
 				(select sum(hits)
 					from country_platform_version_hits cpvhi
-						join country ci on cpvhi.countryIso = ci.iso
-					where platformVersionId = cpvh.platformVersionId and countryIso = cpvh.countryIso and date >= aPrevDateFrom and date <= aPrevDateTo
+					where cpvhi.platformVersionId = cpvh.platformVersionId and cpvhi.countryIso = cpvh.countryIso and date >= aPrevDateFrom and date <= aPrevDateTo
 				) as prevHits
 			from country_platform_version_hits cpvh
 				join country c on cpvh.countryIso = c.iso

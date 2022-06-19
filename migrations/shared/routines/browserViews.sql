@@ -77,7 +77,7 @@ begin
 	(period, date, locationType, locationId, name, share, prevShare)
 	with prevTotals as (
 		select countryIso, sum(hits) as hits
-		from country_browser_version_hits cbvh
+		from country_browser_version_hits
 		where date >= aPrevDateFrom and date <= aPrevDateTo
 		group by countryIso
 	)
@@ -185,7 +185,7 @@ begin
 	(period, date, locationType, locationId, name, version, share, prevShare)
 	with prevTotals as (
 		select countryIso, sum(hits) as hits
-		from country_browser_version_hits cbvh
+		from country_browser_version_hits
 		where date >= aPrevDateFrom and date <= aPrevDateTo
 		group by countryIso
 	)
@@ -276,7 +276,6 @@ begin
 				(select sum(hits)
 					from browser_version bvi
 						join country_browser_version_hits cbvhi on bvi.id = cbvhi.browserVersionId
-						join country ci on cbvhi.countryIso = ci.iso
 					where bv.browserId = bvi.browserId and cbvhi.countryIso = cbvh.countryIso and date >= aPrevDateFrom and date <= aPrevDateTo
 				) as prevHits
 			from browser_version bv
@@ -323,8 +322,7 @@ begin
 				sum(hits) as hits,
 				(select sum(hits)
 					from country_browser_version_hits cbvhi
-						join country ci on cbvhi.countryIso = ci.iso
-					where browserVersionId = cbvh.browserVersionId and countryIso = cbvh.countryIso and date >= aPrevDateFrom and date <= aPrevDateTo
+					where cbvhi.browserVersionId = cbvh.browserVersionId and countryIso = cbvh.countryIso and date >= aPrevDateFrom and date <= aPrevDateTo
 				) as prevHits
 			from country_browser_version_hits cbvh
 			where date >= aDateFrom and date <= aDateTo
@@ -354,8 +352,7 @@ begin
 				sum(hits) as hits,
 				(select sum(hits)
 					from country_browser_version_hits cbvhi
-						join country ci on cbvhi.countryIso = ci.iso
-					where browserVersionId = cbvh.browserVersionId and countryIso = cbvh.countryIso and date >= aPrevDateFrom and date <= aPrevDateTo
+					where cbvhi.browserVersionId = cbvh.browserVersionId and countryIso = cbvh.countryIso and date >= aPrevDateFrom and date <= aPrevDateTo
 				) as prevHits
 			from country_browser_version_hits cbvh
 				join country c on cbvh.countryIso = c.iso
