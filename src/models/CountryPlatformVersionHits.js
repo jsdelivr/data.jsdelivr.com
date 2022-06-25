@@ -2,8 +2,8 @@ const Joi = require('joi');
 const BaseModel = require('./BaseModel');
 
 const schema = Joi.object({
-	countryIso: Joi.string().length(2).required(),
 	platformVersionId: Joi.number().integer().min(0).required().allow(null),
+	countryIso: Joi.string().length(2).required(),
 	date: Joi.date().required(),
 	hits: Joi.number().integer().min(0).required(),
 	bandwidth: Joi.number().min(0).required(),
@@ -19,17 +19,17 @@ class CountryPlatformVersionHits extends BaseModel {
 	}
 
 	static get unique () {
-		return [ 'countryIso', 'platformVersionId', 'date' ];
+		return [ 'platformVersionId', 'countryIso', 'date' ];
 	}
 
 	constructor (properties = {}) {
 		super();
 
-		/** @type {string} */
-		this.countryIso = null;
+		/** @type {number} */
+		this.platformVersionId = null;
 
 		/** @type {string} */
-		this.platformVersionId = null;
+		this.countryIso = null;
 
 		/** @type {Date} */
 		this.date = null;

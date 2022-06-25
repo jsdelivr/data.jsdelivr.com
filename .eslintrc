@@ -11,5 +11,16 @@
 	},
 	"plugins": [
 		"html"
+	],
+	"overrides": [
+		{
+			"files": [
+				"test/**"
+			],
+			"globals": {
+				"server": false,
+				"chaiSnapshotInstance": false
+			}
+		}
 	]
 }

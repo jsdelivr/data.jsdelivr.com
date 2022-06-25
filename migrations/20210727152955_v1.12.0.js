@@ -8,8 +8,6 @@ exports.up = async (db) => {
 		table.string('filename');
 		table.dateTime('updatedAt');
 		table.primary([ 'name', 'version' ]);
-		table.charset('utf8mb4');
-		table.collate('utf8mb4_bin');
 	});
 
 	await db.schema.createTable('package_entrypoints', (table) => {
@@ -19,8 +17,6 @@ exports.up = async (db) => {
 		table.text('entrypoints', 'mediumtext');
 		table.dateTime('updatedAt').index();
 		table.primary([ 'type', 'name', 'version' ]);
-		table.charset('utf8mb4');
-		table.collate('utf8mb4_bin');
 	});
 
 	await db.schema.raw('alter table package_entrypoints row_format = compressed;');

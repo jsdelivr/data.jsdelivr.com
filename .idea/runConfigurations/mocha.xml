@@ -6,9 +6,9 @@
     <working-directory>$PROJECT_DIR$</working-directory>
     <pass-parent-env>true</pass-parent-env>
     <ui>bdd</ui>
-    <extra-mocha-options>--exit</extra-mocha-options>
+    <extra-mocha-options />
     <test-kind>TEST_FILE</test-kind>
-    <test-file>$PROJECT_DIR$/test/tests.js</test-file>
+    <test-file>$PROJECT_DIR$/test/tests/tests.js</test-file>
     <method v="2" />
   </configuration>
 </component>

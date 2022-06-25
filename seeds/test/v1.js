@@ -3,6 +3,7 @@ const crypto = require('crypto');
 const Bluebird = require('bluebird');
 const relativeDateUtc = require('relative-day-utc');
 const { listTables } = require('../../src/lib/db/utils');
+const entrypointTestCases = require('../../test/data/v1/entrypoints.json');
 
 const PACKAGE_TYPES = [ 'npm', 'gh' ];
 const STATS_START_TIMESTAMP = relativeDateUtc(-60).valueOf();
@@ -17,6 +18,10 @@ exports.seed = async (db) => {
 		return _.range(0, 60).map(i => ({ type, name: (type === 'npm' ? '' : 'user/') + `package-${i}` }));
 	})));
 
+	await db('package').insert(_.flatten(PACKAGE_TYPES.map((type) => {
+		return { type, name: (type === 'npm' ? '' : 'user/') + `package-60`, isPrivate: 1 };
+	})));
+
 	await db('package_version').insert(_.flatten(_.range(1, 121).map((packageId) => {
 		return _.range(0, 3).map(i => ({ packageId, version: `1.1.${i}` }));
 	})));
@@ -25,7 +30,11 @@ exports.seed = async (db) => {
 		return _.range(0, 2).map(i => ({ packageId, version: `branch-${i}`, type: 'branch' }));
 	})));
 
-	await db('file').insert(_.flatten(_.range(1, 363).map((packageVersionId) => {
+	await db('package_version').insert(_.flatten(_.range(121, 123).map((packageId) => {
+		return _.range(0, 3).map(i => ({ packageId, version: `1.1.${i}` }));
+	})));
+
+	await db('file').insert(_.flatten(_.range(1, 369).map((packageVersionId) => {
 		return _.range(0, 4).map((i) => {
 			return {
 				packageVersionId,
@@ -35,12 +44,13 @@ exports.seed = async (db) => {
 		});
 	})));
 
-	await db('file_hits').insert(_.flatten(_.range(1, 1449).map((fileId) => {
+	await db('file_hits').insert(_.flatten(_.range(1, 1473).map((fileId) => {
 		return _.range(0, 60).map((i) => {
 			return {
 				fileId,
 				date: new Date(STATS_START_TIMESTAMP + (i * 86400000)),
 				hits: Math.floor((fileId - 1) / 12),
+				bandwidth: Math.floor((fileId - 1) / 12) * 16 * 1025,
 			};
 		});
 	})));
@@ -58,7 +68,36 @@ exports.seed = async (db) => {
 		return {
 			date: new Date(STATS_START_TIMESTAMP + (i * 86400000)),
 			hits: 100000,
+			bandwidth: 1600000,
 		};
 	})));
+
+	let seedEntrypointsData = async (entrypointsTestData) => {
+		let date = new Date(STATS_START_TIMESTAMP + 40 * 24 * 60 * 60 * 1000);
+
+		for (let [ packageName, data ] of Object.entries(entrypointsTestData)) {
+			let [ name, version ] = packageName.split('@');
+
+			if (data.db.entrypoints) {
+				await db('package_entrypoints').insert({ type: 'npm', name, version, entrypoints: JSON.stringify(data.db.entrypoints) });
+			}
+
+			if (data.db.cdnjs) {
+				await db('cdnjs_package').insert({ name, version, filename: data.db.cdnjs });
+			}
+
+			if (data.db.stats) {
+				let [ packageId ] = await db('package').insert({ name, type: 'npm' });
+				let [ versionId ] = await db('package_version').insert({ packageId, version, type: 'version' });
+
+				for (let st of data.db.stats) {
+					let [ fileId ] = await db('file').insert({ packageVersionId: versionId, filename: st.file });
+					await db('file_hits').insert({ fileId, date, hits: st.hits });
+				}
+			}
+		}
+	};
+
+	await seedEntrypointsData(entrypointTestCases);
 };
 

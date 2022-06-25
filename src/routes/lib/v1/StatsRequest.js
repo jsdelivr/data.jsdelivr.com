@@ -15,11 +15,14 @@ class StatsRequest extends BaseRequest {
 	}
 
 	async handleNetworkInternal (redisCacheExpirationDate) {
-		let fileHits = await PackageHits.get(undefined, redisCacheExpirationDate).withLock().getSumPerDate(...this.dateRange);
-		let otherHits = await OtherHits.get(undefined, redisCacheExpirationDate).withLock().getSumPerDate(...this.dateRange);
+		let { hits: fileHits, bandwidth: fileBandwidth } = await PackageHits.get(undefined, redisCacheExpirationDate).withLock().getSumPerDate(...this.dateRange);
+		let { hits: otherHits, bandwidth: otherBandwidth } = await OtherHits.get(undefined, redisCacheExpirationDate).withLock().getSumPerDate(...this.dateRange);
 		let datesTraffic = await Logs.get(undefined, redisCacheExpirationDate).withLock().getMegabytesPerDate(...this.dateRange);
+
 		let sumFileHits = sumDeep(fileHits);
 		let sumOtherHits = sumDeep(otherHits);
+		let sumFileBandwidth = sumDeep(fileBandwidth);
+		let sumOtherBandwidth = sumDeep(otherBandwidth);
 
 		let result = {
 			hits: {
@@ -31,6 +34,17 @@ class StatsRequest extends BaseRequest {
 				other: {
 					total: sumOtherHits,
 					dates: dateRange.fill(otherHits, ...this.dateRange),
+				},
+			},
+			bandwidth: {
+				total: sumFileBandwidth + sumOtherBandwidth,
+				packages: {
+					total: sumFileBandwidth,
+					dates: dateRange.fill(fileBandwidth, ...this.dateRange),
+				},
+				other: {
+					total: sumOtherBandwidth,
+					dates: dateRange.fill(otherBandwidth, ...this.dateRange),
 				},
 			},
 			megabytes: {

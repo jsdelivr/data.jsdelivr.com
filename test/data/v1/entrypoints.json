@@ -12,120 +12,55 @@
 			"stats": [
 				{
 					"file": "/doc/file.js",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 10
-						}
-					]
+					"hits": 10
 				},
 				{
 					"file": "/docs/file.js",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 10
-						}
-					]
+					"hits": 10
 				},
 				{
 					"file": "/__internal__/file.css",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 10
-						}
-					]
+					"hits": 10
 				},
 				{
 					"file": "/.style.css",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 10
-						}
-					]
+					"hits": 10
 				},
 				{
 					"file": "/_style.css",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 10
-						}
-					]
+					"hits": 10
 				},
 				{
 					"file": "/style.scss",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 10
-						}
-					]
+					"hits": 10
 				},
 				{
 					"file": "/.style.scss",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 10
-						}
-					]
+					"hits": 10
 				},
 				{
 					"file": "/_style.scss",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 10
-						}
-					]
+					"hits": 10
 				},
 				{
 					"file": "/nested/.hidden/file.js",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 10
-						}
-					]
+					"hits": 10
 				},
 				{
 					"file": "/nested/_hidden/file.js",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 10
-						}
-					]
+					"hits": 10
 				},
 				{
 					"file": "/nested/.file.js",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 10
-						}
-					]
+					"hits": 10
 				},
 				{
 					"file": "/nested/_file.js",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 10
-						}
-					]
+					"hits": 10
 				},
 				{
 					"file": "/nested/docs/file.js",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 10
-						}
-					]
+					"hits": 10
 				}
 			]
 		}
@@ -201,12 +136,7 @@
 			"stats": [
 				{
 					"file": "/main.js",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 20
-						}
-					]
+					"hits": 20
 				}
 			]
 		}
@@ -413,21 +343,11 @@
 			"stats": [
 				{
 					"file": "/script.js",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 18
-						}
-					]
+					"hits": 18
 				},
 				{
 					"file": "/stats-alt.css",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 18
-						}
-					]
+					"hits": 18
 				}
 			]
 		}
@@ -446,57 +366,27 @@
 			"stats": [
 				{
 					"file": "/stats-first.js",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 20
-						}
-					]
+					"hits": 20
 				},
 				{
 					"file": "/stats-second.js",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 15
-						}
-					]
+					"hits": 15
 				},
 				{
 					"file": "/docs/index.js",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 100
-						}
-					]
+					"hits": 100
 				},
 				{
 					"file": "/tests/index.js",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 100
-						}
-					]
+					"hits": 100
 				},
 				{
 					"file": "/samples/index.js",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 100
-						}
-					]
+					"hits": 100
 				},
 				{
 					"file": "/dist/",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 100
-						}
-					]
+					"hits": 100
 				}
 			]
 		}
@@ -520,30 +410,15 @@
 			"stats": [
 				{
 					"file": "/stats-first.js",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 20
-						}
-					]
+					"hits": 20
 				},
 				{
 					"file": "/stats-second.js",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 12
-						}
-					]
+					"hits": 12
 				},
 				{
 					"file": "/style.min.css",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 15
-						}
-					]
+					"hits": 15
 				}
 			]
 		}
@@ -564,30 +439,15 @@
 			"stats": [
 				{
 					"file": "/script.js",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 18
-						}
-					]
+					"hits": 18
 				},
 				{
 					"file": "/style.css",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 18
-						}
-					]
+					"hits": 18
 				},
 				{
 					"file": "/sourcemap.map",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 100
-						}
-					]
+					"hits": 100
 				}
 			]
 		}
@@ -604,30 +464,15 @@
 			"stats": [
 				{
 					"file": "/script.js",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 18
-						}
-					]
+					"hits": 18
 				},
 				{
 					"file": "/style.scss",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 18
-						}
-					]
+					"hits": 18
 				},
 				{
 					"file": "/sourcemap.map",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 100
-						}
-					]
+					"hits": 100
 				}
 			]
 		}
@@ -646,12 +491,7 @@
 			"stats": [
 				{
 					"file": "/style-alt.min.css",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 18
-						}
-					]
+					"hits": 18
 				}
 			]
 		}
@@ -711,21 +551,11 @@
 			"stats": [
 				{
 					"file": "/script.js",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 18
-						}
-					]
+					"hits": 18
 				},
 				{
 					"file": "/style.css",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 18
-						}
-					]
+					"hits": 18
 				}
 			]
 		}
@@ -748,21 +578,11 @@
 			"stats": [
 				{
 					"file": "/script.js",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 18
-						}
-					]
+					"hits": 18
 				},
 				{
 					"file": "/stats-alt.css",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 18
-						}
-					]
+					"hits": 18
 				}
 			]
 		}
@@ -781,12 +601,7 @@
 			"stats": [
 				{
 					"file": "/script.js",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 18
-						}
-					]
+					"hits": 18
 				}
 			]
 		}
@@ -805,12 +620,7 @@
 			"stats": [
 				{
 					"file": "/style.min.css",
-					"hits": [
-						{
-							"date": "2021-08-01",
-							"hits": 18
-						}
-					]
+					"hits": 18
 				}
 			]
 		}

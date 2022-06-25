@@ -47,9 +47,16 @@ class OtherHits extends BaseCacheModel {
 			sql.where(`${this.table}.date`, '<=', to);
 		}
 
-		return _.fromPairs(_.map(await sql.select([ `${this.table}.date`, `${this.table}.hits` ]), (record) => {
-			return [ record.date.toISOString().substr(0, 10), record.hits ];
-		}));
+		let data = await sql.select([ `${this.table}.date`, `${this.table}.hits`, `${this.table}.bandwidth` ]);
+
+		return {
+			hits: _.fromPairs(_.map(data, (record) => {
+				return [ record.date.toISOString().substr(0, 10), record.hits ];
+			})),
+			bandwidth: _.fromPairs(_.map(data, (record) => {
+				return [ record.date.toISOString().substr(0, 10), record.bandwidth ];
+			})),
+		};
 	}
 
 	toSqlFunctionCall () {

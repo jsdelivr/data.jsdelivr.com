@@ -25,3 +25,4 @@ call updateViewTopPackagesWeek(@date);
 call updateViewTopPackagesMonth(@date);
 call updateViewTopPackagesYear(@date);
 call updateViewTopPackagesAll(@date);
+call updateViewTopPackageFiles(@date);

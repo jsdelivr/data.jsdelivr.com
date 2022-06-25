@@ -1,11 +1,11 @@
 const got = require('got');
 const semver = require('semver');
 const config = require('config');
-const BadgeFactory = require('gh-badges').BadgeFactory;
+const { makeBadge } = require('badge-maker');
+
 const isSemverStatic = require('is-semver-static');
 const NumberAbbreviate = require('number-abbreviate');
 const number = new NumberAbbreviate([ 'k', 'M', 'B', 'T' ]);
-const badgeFactory = new BadgeFactory();
 
 const BaseRequest = require('./BaseRequest');
 const BadVersionError = require('../errors/BadVersionError');
@@ -150,9 +150,9 @@ class PackageRequest extends BaseRequest {
 		return this.fetchMetadata();
 	}
 
-	async getRank () {
+	async getRanks () {
 		let stats = await Package.getStatsForPeriod(this.params.type, this.params.name, this.period, this.date);
-		return stats ? stats.rank : null;
+		return stats ? { rank: stats.rank, typeRank: stats.typeRank } : { rank: null, typeRank: null };
 	}
 
 	async getResolvedVersion () {
@@ -239,59 +239,69 @@ class PackageRequest extends BaseRequest {
 
 	async handlePackageBadge () {
 		let stats = await Package.getStatsForPeriod(this.params.type, this.params.name, this.period, this.date);
-		let hits = stats ? stats.hits : 0;
+		let value = stats ? stats.hits : 0;
 
 		this.ctx.type = 'image/svg+xml; charset=utf-8';
 
-		this.ctx.body = badgeFactory.create({
-			text: [ 'jsDelivr', `${number.abbreviate(hits)} hits${this.period === 'all' ? '' : `/${this.period}`}` ],
-			colorB: '#ff5627',
-			template: this.ctx.query.style === 'rounded' ? 'flat' : 'flat-square',
+		this.ctx.body = makeBadge({
+			label: 'jsDelivr',
+			message: `${number.abbreviate(value)} hits${this.period === 'all' ? '' : `/${this.period}`}`,
+			color: '#ff5627',
+			style: this.ctx.query.style === 'rounded' ? 'flat' : 'flat-square',
 		});
 
 		this.setCacheHeaderDelayed();
 	}
 
 	async handlePackageBadgeRank () {
-		let rank = await this.getRank();
-		let text = 'error';
+		let ranks = await this.getRanks();
+		let rType = _.camelCase(this.params.rankType);
+		let texts = { rank: 'jsDelivr rank', typeRank: `jsDelivr ${this.params.type} rank` };
+		let value = 'error';
 
-		if (rank !== null) {
-			text = `#${rank}`;
+		if (ranks[rType] !== null) {
+			value = `#${ranks[rType]}`;
 		}
 
 		this.ctx.type = 'image/svg+xml; charset=utf-8';
 
-		this.ctx.body = badgeFactory.create({
-			text: [ 'jsDelivr rank', text ],
-			colorB: '#ff5627',
-			template: this.ctx.query.style === 'rounded' ? 'flat' : 'flat-square',
+		this.ctx.body = makeBadge({
+			label: texts[rType],
+			message: value,
+			color: '#ff5627',
+			style: this.ctx.query.style === 'rounded' ? 'flat' : 'flat-square',
 		});
 
 		this.setCacheHeaderDelayed();
 	}
 
 	async handlePackageStats () {
+		let ranksPromise = this.getRanks();
+
 		if (this.params.groupBy === 'date') {
-			let data = await Package.getSumDateHitsPerVersionByName(this.params.type, this.params.name, ...this.dateRange);
-			let total = sumDeep(data, 3);
+			let stats = this.params.statType === 'bandwidth'
+				? await Package.getSumDateBandwidthPerVersionByName(this.params.type, this.params.name, ...this.dateRange)
+				: await Package.getSumDateHitsPerVersionByName(this.params.type, this.params.name, ...this.dateRange);
+			let total = sumDeep(stats, 3);
 
 			this.ctx.body = {
-				rank: total ? await this.getRank() : null,
+				...await ranksPromise,
 				total,
-				dates: dateRange.fill(_.mapValues(data, ({ versions, commits, branches }) => ({ total: sumDeep(versions), versions, commits, branches })), ...this.dateRange, { total: 0, versions: {}, commits: {}, branches: {} }),
+				dates: dateRange.fill(_.mapValues(stats, ({ versions, commits, branches }) => ({ total: sumDeep(versions), versions, commits, branches })), ...this.dateRange, { total: 0, versions: {}, commits: {}, branches: {} }),
 			};
 		} else {
-			let data = await Package.getSumVersionHitsPerDateByName(this.params.type, this.params.name, ...this.dateRange);
-			let total = sumDeep(data, 3);
+			let stats = this.params.statType === 'bandwidth'
+				? await Package.getSumVersionBandwidthPerDateByName(this.params.type, this.params.name, ...this.dateRange)
+				: await Package.getSumVersionHitsPerDateByName(this.params.type, this.params.name, ...this.dateRange);
+			let total = sumDeep(stats, 3);
 			let fn = data => _.mapValues(data, dates => ({ total: sumDeep(dates), dates: dateRange.fill(dates, ...this.dateRange) }));
 
 			this.ctx.body = {
-				rank: total ? await this.getRank() : null,
+				...await ranksPromise,
 				total,
-				versions: fn(data.versions),
-				commits: fn(data.commits),
-				branches: fn(data.branches),
+				versions: fn(stats.versions),
+				commits: fn(stats.commits),
+				branches: fn(stats.branches),
 			};
 		}
 
@@ -326,18 +336,22 @@ class PackageRequest extends BaseRequest {
 
 	async handleVersionStats () {
 		if (this.params.groupBy === 'date') {
-			let data = await PackageVersion.getSumDateHitsPerFileByName(this.params.type, this.params.name, this.params.version, ...this.dateRange);
+			let stats = this.params.statType === 'bandwidth'
+				? await PackageVersion.getSumDateBandwidthPerFileByName(this.params.type, this.params.name, this.params.version, ...this.dateRange)
+				: await PackageVersion.getSumDateHitsPerFileByName(this.params.type, this.params.name, this.params.version, ...this.dateRange);
 
 			this.ctx.body = {
-				total: sumDeep(data, 2),
-				dates: dateRange.fill(_.mapValues(data, files => ({ total: sumDeep(files), files })), ...this.dateRange, { total: 0, files: {} }),
+				total: sumDeep(stats, 2),
+				dates: dateRange.fill(_.mapValues(stats, files => ({ total: sumDeep(files), files })), ...this.dateRange, { total: 0, files: {} }),
 			};
 		} else {
-			let data = await PackageVersion.getSumFileHitsPerDateByName(this.params.type, this.params.name, this.params.version, ...this.dateRange);
+			let stats = this.params.statType === 'bandwidth'
+				? await PackageVersion.getSumFileBandwidthPerDateByName(this.params.type, this.params.name, this.params.version, ...this.dateRange)
+				: await PackageVersion.getSumFileHitsPerDateByName(this.params.type, this.params.name, this.params.version, ...this.dateRange);
 
 			this.ctx.body = {
-				total: sumDeep(data, 2),
-				files: _.mapValues(data, dates => ({ total: sumDeep(dates), dates: dateRange.fill(dates, ...this.dateRange) })),
+				total: sumDeep(stats, 2),
+				files: _.mapValues(stats, dates => ({ total: sumDeep(dates), dates: dateRange.fill(dates, ...this.dateRange) })),
 			};
 		}
 

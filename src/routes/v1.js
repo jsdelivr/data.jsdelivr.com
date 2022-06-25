@@ -5,7 +5,7 @@ const koaElasticUtils = require('elastic-apm-utils').koa;
 const LookupRequest = require('./lib/v1/LookupRequest');
 const PackageRequest = require('./lib/v1/PackageRequest');
 const StatsRequest = require('./lib/v1/StatsRequest');
-const router = new Router();
+const router = new Router({ strict: true, sensitive: true });
 
 /**
  * More accurate APM route names.
@@ -59,8 +59,8 @@ koaElasticUtils.addRoutes(router, [
 });
 
 koaElasticUtils.addRoutes(router, [
-	[ '/package/npm/:name/stats', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/stats/:groupBy(version|date)?/:period(day|week|month|year|all)?' ],
-	[ '/package/gh/:user/:repo/stats', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/stats/:groupBy(version|date)?/:period(day|week|month|year|all)?' ],
+	[ '/package/npm/:name/stats', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/stats/:statType(hits|bandwidth)?/:groupBy(version|date)?/:period(day|week|month|year|all)?' ],
+	[ '/package/gh/:user/:repo/stats', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/stats/:statType(hits|bandwidth)?/:groupBy(version|date)?/:period(day|week|month|year|all)?' ],
 ], async (ctx) => {
 	return new PackageRequest(ctx).handlePackageStats();
 });
@@ -73,8 +73,8 @@ koaElasticUtils.addRoutes(router, [
 });
 
 koaElasticUtils.addRoutes(router, [
-	[ '/package/npm/:name/badge/rank', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/badge/rank/:period(day|week|month|year|all)?' ],
-	[ '/package/gh/:user/:repo/badge/rank', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/badge/rank/:period(day|week|month|year|all)?' ],
+	[ '/package/npm/:name/badge/rank', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/badge/:rankType(rank|type-rank)/:period(day|week|month|year|all)?' ],
+	[ '/package/gh/:user/:repo/badge/rank', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/badge/:rankType(rank|type-rank)/:period(day|week|month|year|all)?' ],
 ], async (ctx) => {
 	return new PackageRequest(ctx).handlePackageBadgeRank();
 });
@@ -93,8 +93,8 @@ koaElasticUtils.addRoutes(router, [
 });
 
 koaElasticUtils.addRoutes(router, [
-	[ '/package/npm/:name@:version/stats', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version/stats/:groupBy(file|date)?/:period(day|week|month|year|all)?' ],
-	[ '/package/gh/:user/:repo@:version/stats', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version/stats/:groupBy(file|date)?/:period(day|week|month|year|all)?' ],
+	[ '/package/npm/:name@:version/stats', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version/stats/:statType(hits|bandwidth)?/:groupBy(file|date)?/:period(day|week|month|year|all)?' ],
+	[ '/package/gh/:user/:repo@:version/stats', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version/stats/:statType(hits|bandwidth)?/:groupBy(file|date)?/:period(day|week|month|year|all)?' ],
 ], async (ctx) => {
 	return new PackageRequest(ctx).handleVersionStats();
 });

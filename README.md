@@ -1,9 +1,5 @@
 # jsDelivr API
 
-[![Build Status](https://img.shields.io/travis/jsdelivr/data.jsdelivr.com.svg?style=flat-square)](https://travis-ci.org/jsdelivr/data.jsdelivr.com)
-[![dependencies](https://img.shields.io/david/jsdelivr/data.jsdelivr.com.svg?style=flat-square)](https://david-dm.org/jsdelivr/data.jsdelivr.com)
-[![devDependencies](https://img.shields.io/david/dev/jsdelivr/data.jsdelivr.com.svg?style=flat-square)](https://david-dm.org/jsdelivr/data.jsdelivr.com?type=dev)
-
 Related projects:
  - [jsDelivr CDN](https://github.com/jsdelivr/jsdelivr)
  - [jsDelivr website](https://github.com/jsdelivr/www.jsdelivr.com)
@@ -209,6 +205,7 @@ https://data.jsdelivr.com/v1/package/npm/jquery/stats
 // =>
 {
     "rank": 7, // number of packages with more hits; null if the package doesn't have any hits
+    "typeRank": 6, // number of packages of the same type (npm, gh) with more hits; null if the package doesn't have any hits
     "total": 122152394,
     "versions": {
         "2.2.4": {
@@ -343,13 +340,15 @@ https://data.jsdelivr.com/v1/package/npm/jquery/badge?style=rounded
 ### Get a rank badge for your project
 
 ```
-/package/npm/:name/badge/rank/:period?
+/package/npm/:name/badge/:rankType/:period?
  - name: npm package name
+ - rankType: "rank" or "type-rank"
  - period: "day", "week", "month", or "year"; defaults to "month"
 
-/package/gh/:user/:repo/badge/rank/:period?
+/package/gh/:user/:repo/badge/:rankType/:period?
  - user: GitHub username
  - repo: GitHub repository name
+ - rankType: "rank" or "type-rank"
  - period: "day", "week", "month", or "year"; defaults to "month"
 ```
 
@@ -360,9 +359,14 @@ https://data.jsdelivr.com/v1/package/npm/jquery/badge/rank
 ![https://www.jsdelivr.com/package/npm/jquery](https://data.jsdelivr.com/v1/package/npm/jquery/badge/rank)
 
 ```
-https://data.jsdelivr.com/v1/package/npm/jquery/badge?style=rounded
+https://data.jsdelivr.com/v1/package/npm/jquery/badge/type-rank
 ```
-![https://www.jsdelivr.com/package/npm/jquery](https://data.jsdelivr.com/v1/package/npm/jquery/badge/rank?style=rounded)
+![https://www.jsdelivr.com/package/npm/jquery](https://data.jsdelivr.com/v1/package/npm/jquery/badge/type-rank)
+
+```
+https://data.jsdelivr.com/v1/package/npm/jquery/badge/type-rank?style=rounded
+```
+![https://www.jsdelivr.com/package/npm/jquery](https://data.jsdelivr.com/v1/package/npm/jquery/badge/type-rank?style=rounded)
 
 ### Get a CDN link/metadata from file hash
 

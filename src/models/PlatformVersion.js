@@ -5,6 +5,7 @@ const schema = Joi.object({
 	id: Joi.number().integer().min(0).required().allow(null),
 	platformId: Joi.number().integer().min(0).required().allow(null),
 	version: Joi.string().max(255).required().allow(''),
+	versionName: Joi.string().max(255).required().allow(''),
 });
 
 class PlatformVersion extends BaseModel {
@@ -32,12 +33,15 @@ class PlatformVersion extends BaseModel {
 		/** @type {string} */
 		this.version = null;
 
+		/** @type {string} */
+		this.versionName = null;
+
 		Object.assign(this, properties);
 		return new Proxy(this, BaseModel.ProxyHandler);
 	}
 
 	toSqlFunctionCall () {
-		return db.raw(`set @lastIdPlatformVersion = updateOrInsertPlatformVersion(@lastIdPlatform, ?);`, [ this.version ]);
+		return db.raw(`set @lastIdPlatformVersion = updateOrInsertPlatformVersion(@lastIdPlatform, ?, ?);`, [ this.version, this.versionName ]);
 	}
 }
 
