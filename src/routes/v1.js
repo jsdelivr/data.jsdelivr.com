@@ -124,6 +124,7 @@ koaElasticUtils.addRoutes(router, [
 	[ '/debug/:status?/:cache?', '/debug/:status?/:cache?' ],
 ], async (ctx) => {
 	if (ctx.params.cache) {
+		ctx.cache = ctx.params.cache;
 		ctx.maxAge = Number(ctx.params.cache);
 	}
 

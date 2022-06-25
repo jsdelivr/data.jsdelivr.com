@@ -139,7 +139,7 @@ server.use(async (ctx, next) => {
 		ctx.status = ctx.body.status;
 	}
 
-	if (ctx.params?.cache === 'none') {
+	if (ctx.cache === 'none') {
 		ctx.remove('Cache-Control');
 		return;
 	}
