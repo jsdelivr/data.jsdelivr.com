@@ -1,16 +1,16 @@
 const BaseRequest = require('./BaseRequest');
 
-const Package = require('../../../models/Package');
-const CountryCdnHits = require('../../../models/CountryCdnHits');
-const PackageHits = require('../../../models/PackageHits');
-const ProxyHits = require('../../../models/ProxyHits');
-const OtherHits = require('../../../models/OtherHits');
-const Platform = require('../../../models/Platform');
-const Browser = require('../../../models/Browser');
-const Logs = require('../../../models/Logs');
+const Package = require('../../models/Package');
+const CountryCdnHits = require('../../models/CountryCdnHits');
+const PackageHits = require('../../models/PackageHits');
+const ProxyHits = require('../../models/ProxyHits');
+const OtherHits = require('../../models/OtherHits');
+const Platform = require('../../models/Platform');
+const Browser = require('../../models/Browser');
+const Logs = require('../../models/Logs');
 
-const dateRange = require('../../utils/dateRange');
-const sumDeep = require('../../utils/sumDeep');
+const dateRange = require('../utils/dateRange');
+const sumDeep = require('../utils/sumDeep');
 
 class StatsRequest extends BaseRequest {
 	async handleNetwork () {

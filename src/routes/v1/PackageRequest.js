@@ -9,19 +9,19 @@ const number = new NumberAbbreviate([ 'k', 'M', 'B', 'T' ]);
 
 const BaseRequest = require('./BaseRequest');
 const BadVersionError = require('../errors/BadVersionError');
-const Package = require('../../../models/Package');
-const PackageListing = require('../../../models/PackageListing');
-const PackageEntrypoints = require('../../../models/PackageEntrypoints');
-const PackageVersion = require('../../../models/PackageVersion');
-const CdnJsPackage = require('../../../models/CdnJsPackage');
-const dateRange = require('../../utils/dateRange');
-const sumDeep = require('../../utils/sumDeep');
-const entrypoint = require('../../utils/packageEntrypoint');
+const Package = require('../../models/Package');
+const PackageListing = require('../../models/PackageListing');
+const PackageEntrypoints = require('../../models/PackageEntrypoints');
+const PackageVersion = require('../../models/PackageVersion');
+const CdnJsPackage = require('../../models/CdnJsPackage');
+const dateRange = require('../utils/dateRange');
+const sumDeep = require('../utils/sumDeep');
+const entrypoint = require('../utils/packageEntrypoint');
 
-const NpmRemoteService = require('../../../remote-services/NpmRemoteService');
-const GitHubRemoteService = require('../../../remote-services/GitHubRemoteService');
-const JsDelivrRemoteService = require('../../../remote-services/JsDelivrRemoteService');
-const RedisRemoteResourceCache = require('../../../remote-services/RedisRemoteResourceCache');
+const NpmRemoteService = require('../../remote-services/NpmRemoteService');
+const GitHubRemoteService = require('../../remote-services/GitHubRemoteService');
+const JsDelivrRemoteService = require('../../remote-services/JsDelivrRemoteService');
+const RedisRemoteResourceCache = require('../../remote-services/RedisRemoteResourceCache');
 
 const v1Config = config.get('v1');
 const npmRemoteService = new NpmRemoteService({ baseUrl: v1Config.npm.sourceUrl }, new RedisRemoteResourceCache('pr/npm'));

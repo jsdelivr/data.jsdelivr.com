@@ -3,13 +3,13 @@ const isSha = require('is-hexdigest');
 const koaElasticUtils = require('elastic-apm-utils').koa;
 const Joi = require('joi');
 
-const validate = require('./middleware/validate');
+const validate = require('../middleware/validate');
 const schema = require('./schemas/v1');
 
-const LookupRequest = require('./lib/v1/LookupRequest');
-const PackageRequest = require('./lib/v1/PackageRequest');
-const ProxyRequest = require('./lib/v1/ProxyRequest');
-const StatsRequest = require('./lib/v1/StatsRequest');
+const LookupRequest = require('./v1/LookupRequest');
+const PackageRequest = require('./v1/PackageRequest');
+const ProxyRequest = require('./v1/ProxyRequest');
+const StatsRequest = require('./v1/StatsRequest');
 const router = new Router({ strict: true, sensitive: true });
 
 /**

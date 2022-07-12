@@ -1,6 +1,6 @@
 const config = require('config');
 const BaseRequest = require('./BaseRequest');
-const File = require('../../../models/File');
+const File = require('../../models/File');
 const v1Config = config.get('v1');
 
 class LookupRequest extends BaseRequest {

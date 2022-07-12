@@ -1,5 +1,5 @@
 const BaseRequest = require('./BaseRequest');
-const ProxyModel = require('../../../models/Proxy');
+const ProxyModel = require('../../models/Proxy');
 
 class ProxyRequest extends BaseRequest {
 	async handleProxyStats () {

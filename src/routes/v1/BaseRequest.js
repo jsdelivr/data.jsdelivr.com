@@ -1,8 +1,8 @@
 const config = require('config');
 const relativeDayUtc = require('relative-day-utc');
 
-const dateRange = require('../../utils/dateRange');
-const pagination = require('../../utils/pagination');
+const dateRange = require('../utils/dateRange');
+const pagination = require('../utils/pagination');
 
 const v1Config = config.get('v1');
 
