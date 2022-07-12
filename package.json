@@ -8,7 +8,7 @@
 	"dependencies": {
 		"@elastic/elasticsearch": "^8.1.0",
 		"@isaacs/ttlcache": "^1.0.3",
-		"@octokit/rest": "^18.12.0",
+		"@octokit/rest": "^19.0.3",
 		"badge-maker": "^3.3.1",
 		"bluebird": "^3.7.2",
 		"config": "^3.3.6",
@@ -35,7 +35,7 @@
 		"koa-json": "^2.0.2",
 		"koa-logger": "^3.2.1",
 		"koa-response-time": "^2.1.0",
-		"koa-router": "^10.1.1",
+		"koa-router": "^11.0.1",
 		"lodash": "^4.17.21",
 		"micromatch": "^4.0.4",
 		"mysql": "^2.18.1",
