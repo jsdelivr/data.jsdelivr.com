@@ -58,7 +58,7 @@ function validateSingle (schema, value, ctx) {
 	if (result.error) {
 		ctx.body = {
 			status: 400,
-			message: `Invalid parameter value: ${result.error.details.map(detail => detail.message).join(', ')}.`,
+			message: `Invalid parameter value: ${_.sortBy(result.error.details, 'path').map(detail => detail.message).join(', ')}.`,
 		};
 
 		return false;
