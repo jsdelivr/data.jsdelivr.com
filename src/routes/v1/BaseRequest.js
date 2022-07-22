@@ -42,7 +42,7 @@ class BaseRequest {
 	}
 
 	deprecate (date, link) {
-		this.ctx.set('Deprecation', date.toGMTString());
+		this.ctx.set('Deprecation', date.toUTCString());
 		this.ctx.append('Link', `<${link}>; rel="successor-version"`);
 		return this;
 	}
