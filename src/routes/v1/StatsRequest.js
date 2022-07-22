@@ -13,6 +13,45 @@ const dateRange = require('../utils/dateRange');
 const sumDeep = require('../utils/sumDeep');
 
 class StatsRequest extends BaseRequest {
+	static platformBrowserStats = {
+		'/platforms': (r) => {
+			return Platform.getTopPlatforms(r.period, r.date, r.composedLocationFilter, ...r.pagination);
+		},
+		'/platforms/versions': (r) => {
+			return Platform.getTopPlatformsVersions(r.period, r.date, r.composedLocationFilter, ...r.pagination);
+		},
+		'/platforms/:name/browsers': (r) => {
+			return Platform.getTopPlatformBrowsers(r.params.name, r.period, r.date, r.composedLocationFilter, ...r.pagination);
+		},
+		'/platforms/:name/countries': (r) => {
+			return Platform.getTopPlatformCountries(r.params.name, r.period, r.date, r.composedLocationFilter, ...r.pagination);
+		},
+		'/platforms/:name/versions': (r) => {
+			return Platform.getTopPlatformVersions(r.params.name, r.period, r.date, r.composedLocationFilter, ...r.pagination);
+		},
+		'/platforms/:name/versions/:version/countries': (r) => {
+			return Platform.getTopPlatformVersionCountries(r.params.name, r.params.version, r.period, r.date, r.composedLocationFilter, ...r.pagination);
+		},
+		'/browsers': (r) => {
+			return Browser.getTopBrowsers(r.period, r.date, r.composedLocationFilter, ...r.pagination);
+		},
+		'/browsers/versions': (r) => {
+			return Browser.getTopBrowsersVersions(r.period, r.date, r.composedLocationFilter, ...r.pagination);
+		},
+		'/browsers/:name/countries': (r) => {
+			return Browser.getTopBrowserCountries(r.params.name, r.period, r.date, r.composedLocationFilter, ...r.pagination);
+		},
+		'/browsers/:name/platforms': (r) => {
+			return Browser.getTopBrowserPlatforms(r.params.name, r.period, r.date, r.composedLocationFilter, ...r.pagination);
+		},
+		'/browsers/:name/versions': (r) => {
+			return Browser.getTopBrowserVersions(r.params.name, r.period, r.date, r.composedLocationFilter, ...r.pagination);
+		},
+		'/browsers/:name/versions/:version/countries': (r) => {
+			return Browser.getTopBrowserVersionCountries(r.params.name, r.params.version, r.period, r.date, r.composedLocationFilter, ...r.pagination);
+		},
+	};
+
 	async handleNetwork () {
 		this.ctx.body = await this.handleNetworkInternal();
 		this.setCacheHeader();
@@ -154,63 +193,8 @@ class StatsRequest extends BaseRequest {
 		this.setCacheHeader();
 	}
 
-	async handlePlatforms () {
-		this.ctx.body = await Platform.getTopPlatforms(this.period, this.date, this.composedLocationFilter, ...this.pagination);
-		this.setCacheHeader();
-	}
-
-	async handlePlatformsVersions () {
-		this.ctx.body = await Platform.getTopPlatformsVersions(this.period, this.date, this.composedLocationFilter, ...this.pagination);
-		this.setCacheHeader();
-	}
-
-	async handlePlatformBrowsers () {
-		this.ctx.body = await Platform.getTopPlatformBrowsers(this.params.name, this.period, this.date, this.composedLocationFilter, ...this.pagination);
-		this.setCacheHeader();
-	}
-
-	async handlePlatformCountries () {
-		this.ctx.body = await Platform.getTopPlatformCountries(this.params.name, this.period, this.date, this.composedLocationFilter, ...this.pagination);
-		this.setCacheHeader();
-	}
-
-	async handlePlatformVersionCountries () {
-		this.ctx.body = await Platform.getTopPlatformVersionCountries(this.params.name, this.params.version, this.period, this.date, this.composedLocationFilter, ...this.pagination);
-		this.setCacheHeader();
-	}
-
-	async handlePlatformVersions () {
-		this.ctx.body = await Platform.getTopPlatformVersions(this.params.name, this.period, this.date, this.composedLocationFilter, ...this.pagination);
-		this.setCacheHeader();
-	}
-
-	async handleBrowsers () {
-		this.ctx.body = await Browser.getTopBrowsers(this.period, this.date, this.composedLocationFilter, ...this.pagination);
-		this.setCacheHeader();
-	}
-
-	async handleBrowsersVersions () {
-		this.ctx.body = await Browser.getTopBrowsersVersions(this.period, this.date, this.composedLocationFilter, ...this.pagination);
-		this.setCacheHeader();
-	}
-
-	async handleBrowserPlatforms () {
-		this.ctx.body = await Browser.getTopBrowserPlatforms(this.params.name, this.period, this.date, this.composedLocationFilter, ...this.pagination);
-		this.setCacheHeader();
-	}
-
-	async handleBrowserCountries () {
-		this.ctx.body = await Browser.getTopBrowserCountries(this.params.name, this.period, this.date, this.composedLocationFilter, ...this.pagination);
-		this.setCacheHeader();
-	}
-
-	async handleBrowserVersionCountries () {
-		this.ctx.body = await Browser.getTopBrowserVersionCountries(this.params.name, this.params.version, this.period, this.date, this.composedLocationFilter, ...this.pagination);
-		this.setCacheHeader();
-	}
-
-	async handleBrowserVersions () {
-		this.ctx.body = await Browser.getTopBrowserVersions(this.params.name, this.period, this.date, this.composedLocationFilter, ...this.pagination);
+	async handleUsing (handler) {
+		this.ctx.body = await handler(this);
 		this.setCacheHeader();
 	}
 }

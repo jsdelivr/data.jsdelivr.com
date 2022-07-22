@@ -223,140 +223,17 @@ koaElasticUtils.addRoutes(router, [
 	return new StatsRequest(ctx).handleProviders();
 });
 
-koaElasticUtils.addRoutes(router, [
-	[ '/stats/platforms', '/stats/platforms' ],
-], validate({
-	query: Joi.object({
-		period: schema.periodStatic,
-		...schema.paginatedStats,
-	}).concat(schema.location),
-}), async (ctx) => {
-	return new StatsRequest(ctx).handlePlatforms();
-});
-
-koaElasticUtils.addRoutes(router, [
-	[ '/stats/platforms/versions', '/stats/platforms/versions' ],
-], validate({
-	query: Joi.object({
-		period: schema.periodStatic,
-		...schema.paginatedStats,
-	}).concat(schema.location),
-}), async (ctx) => {
-	return new StatsRequest(ctx).handlePlatformsVersions();
-});
-
-koaElasticUtils.addRoutes(router, [
-	[ '/stats/platforms/:name/browsers', '/stats/platforms/:name/browsers' ],
-], validate({
-	query: Joi.object({
-		period: schema.periodStatic,
-		...schema.paginatedStats,
-	}).concat(schema.location),
-}), async (ctx) => {
-	return new StatsRequest(ctx).handlePlatformBrowsers();
-});
-
-koaElasticUtils.addRoutes(router, [
-	[ '/stats/platforms/:name/countries', '/stats/platforms/:name/countries' ],
-], validate({
-	query: Joi.object({
-		continent: schema.continent,
-		period: schema.periodStatic,
-		...schema.paginatedStats,
-	}),
-}), async (ctx) => {
-	return new StatsRequest(ctx).handlePlatformCountries();
-});
-
-koaElasticUtils.addRoutes(router, [
-	[ '/stats/platforms/:name/versions/:version/countries', '/stats/platforms/:name/versions/:version/countries' ],
-], validate({
-	query: Joi.object({
-		continent: schema.continent,
-		period: schema.periodStatic,
-		...schema.paginatedStats,
-	}),
-}), async (ctx) => {
-	return new StatsRequest(ctx).handlePlatformVersionCountries();
-});
-
-koaElasticUtils.addRoutes(router, [
-	[ '/stats/platforms/:name/versions', '/stats/platforms/:name/versions' ],
-], validate({
-	query: Joi.object({
-		period: schema.periodStatic,
-		...schema.paginatedStats,
-	}).concat(schema.location),
-}), async (ctx) => {
-	return new StatsRequest(ctx).handlePlatformVersions();
-});
-
-koaElasticUtils.addRoutes(router, [
-	[ '/stats/browsers', '/stats/browsers' ],
-], validate({
-	query: Joi.object({
-		period: schema.periodStatic,
-		...schema.paginatedStats,
-	}).concat(schema.location),
-}), async (ctx) => {
-	return new StatsRequest(ctx).handleBrowsers();
-});
-
-koaElasticUtils.addRoutes(router, [
-	[ '/stats/browsers/versions', '/stats/browsers/versions' ],
-], validate({
-	query: Joi.object({
-		period: schema.periodStatic,
-		...schema.paginatedStats,
-	}).concat(schema.location),
-}), async (ctx) => {
-	return new StatsRequest(ctx).handleBrowsersVersions();
-});
-
-koaElasticUtils.addRoutes(router, [
-	[ '/stats/browsers/:name/platforms', '/stats/browsers/:name/platforms' ],
-], validate({
-	query: Joi.object({
-		period: schema.periodStatic,
-		...schema.paginatedStats,
-	}).concat(schema.location),
-}), async (ctx) => {
-	return new StatsRequest(ctx).handleBrowserPlatforms();
-});
-
-koaElasticUtils.addRoutes(router, [
-	[ '/stats/browsers/:name/countries', '/stats/browsers/:name/countries' ],
-], validate({
-	query: Joi.object({
-		continent: schema.continent,
-		period: schema.periodStatic,
-		...schema.paginatedStats,
-	}),
-}), async (ctx) => {
-	return new StatsRequest(ctx).handleBrowserCountries();
-});
-
-koaElasticUtils.addRoutes(router, [
-	[ '/stats/browsers/:name/versions/:version/countries', '/stats/browsers/:name/versions/:version/countries' ],
-], validate({
-	query: Joi.object({
-		continent: schema.continent,
-		period: schema.periodStatic,
-		...schema.paginatedStats,
-	}),
-}), async (ctx) => {
-	return new StatsRequest(ctx).handleBrowserVersionCountries();
-});
-
-koaElasticUtils.addRoutes(router, [
-	[ '/stats/browsers/:name/versions', '/stats/browsers/:name/versions' ],
-], validate({
-	query: Joi.object({
-		period: schema.periodStatic,
-		...schema.paginatedStats,
-	}).concat(schema.location),
-}), async (ctx) => {
-	return new StatsRequest(ctx).handleBrowserVersions();
+Object.entries(StatsRequest.platformBrowserStats).forEach(([ path, handler ]) => {
+	koaElasticUtils.addRoutes(router, [
+		[ `/stats${path}`, `/stats${path}` ],
+	], validate({
+		query: Joi.object({
+			period: schema.periodStatic,
+			...schema.paginatedStats,
+		}).concat(schema.location),
+	}), async (ctx) => {
+		return new StatsRequest(ctx).handleUsing(handler);
+	});
 });
 
 module.exports = router;
