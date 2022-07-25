@@ -273,17 +273,6 @@ class PackageRequest extends BaseRequest {
 		this.setCacheHeaderDelayed();
 	}
 
-	async handlePackageStats () {
-		let [ dailyStats, periodStats ] = await Promise.all([
-			Package.getDailyStatsByName(this.params.type, this.params.name, ...this.dateRange),
-			this.getStatsForPeriod(),
-		]);
-
-		this.ctx.body = this.formatCombinedStats(dailyStats, periodStats);
-
-		this.setCacheHeader();
-	}
-
 	async handlePackageStatsDeprecated () {
 		let periodStats = this.getStatsForPeriod();
 
@@ -292,7 +281,9 @@ class PackageRequest extends BaseRequest {
 
 			this.ctx.body = {
 				...(await periodStats).hits,
-				dates: dateRange.fill(_.mapValues(stats, ({ versions, commits, branches }) => ({ total: sumDeep(versions), versions, commits, branches })), ...this.dateRange, { total: 0, versions: {}, commits: {}, branches: {} }),
+				dates: dateRange.fill(_.mapValues(stats, ({ versions, commits, branches }) => {
+					return { total: sumDeep(versions), versions, commits, branches };
+				}), ...this.dateRange, { total: 0, versions: {}, commits: {}, branches: {} }),
 			};
 		} else {
 			let stats = await Package.getSumVersionHitsPerDateByName(this.params.type, this.params.name, ...this.dateRange);
@@ -343,23 +334,6 @@ class PackageRequest extends BaseRequest {
 
 			throw remoteResourceOrError;
 		}
-	}
-
-	async handleVersionStats () {
-		let dailyStats = await PackageVersion.getDailyStatsByNameAndVersion(this.params.type, this.params.name, this.params.version, ...this.dateRange);
-
-		this.ctx.body = {
-			hits: {
-				total: sumDeep(dailyStats.hits),
-				dates: dateRange.fill(dailyStats.hits, ...this.dateRange),
-			},
-			bandwidth: {
-				total: sumDeep(dailyStats.bandwidth),
-				dates: dateRange.fill(dailyStats.bandwidth, ...this.dateRange),
-			},
-		};
-
-		this.setCacheHeader();
 	}
 
 	async handleTopVersionFiles () {

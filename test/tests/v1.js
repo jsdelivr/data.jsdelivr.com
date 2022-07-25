@@ -27,9 +27,6 @@ describe('v1', function () {
 	require('./v1/package/entrypoints');
 	require('./v1/package/resolve');
 	require('./v1/package/stats');
-	require('./v1/package/stats/files');
-	require('./v1/package/stats/versions');
-	require('./v1/proxy/stats');
 	require('./v1/stats/browsers');
 	require('./v1/stats/browsers/countries');
 	require('./v1/stats/browsers/platforms');
@@ -39,11 +36,16 @@ describe('v1', function () {
 	require('./v1/stats/network/countries');
 	require('./v1/stats/network/providers');
 	require('./v1/stats/packages');
+	require('./v1/stats/packages/package');
+	require('./v1/stats/packages/package/versions');
+	require('./v1/stats/packages/package-version');
+	require('./v1/stats/packages/package-version/files');
 	require('./v1/stats/platforms');
 	require('./v1/stats/platforms/browsers');
 	require('./v1/stats/platforms/countries');
 	require('./v1/stats/platforms/versions');
 	require('./v1/stats/platforms/versions/countries');
+	require('./v1/stats/proxies/proxy');
 
 	describe('/v1/lookup', () => {
 		it('GET /v1/lookup/hash/xx', () => {

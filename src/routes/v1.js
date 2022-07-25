@@ -8,7 +8,6 @@ const schema = require('./schemas/v1');
 
 const LookupRequest = require('./v1/LookupRequest');
 const PackageRequest = require('./v1/PackageRequest');
-const ProxyRequest = require('./v1/ProxyRequest');
 const StatsRequest = require('./v1/StatsRequest');
 const router = new Router({ strict: true, sensitive: true });
 
@@ -58,12 +57,18 @@ router.param('period', async (value, ctx, next) => {
 	return next();
 });
 
+/**
+ * Lookup
+ */
 koaElasticUtils.addRoutes(router, [
 	[ '/lookup/hash/:hash', '/lookup/hash/:hash' ],
 ], async (ctx) => {
 	return new LookupRequest(ctx).handleHash();
 });
 
+/**
+ * Package
+ */
 koaElasticUtils.addRoutes(router, [
 	[ '/package/npm/:name', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)' ],
 	[ '/package/gh/:user/:repo', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)' ],
@@ -79,27 +84,11 @@ koaElasticUtils.addRoutes(router, [
 		period: schema.periodOptional,
 	}),
 }), async (ctx) => {
-	if (ctx.params.groupBy || ctx.params.period || !ctx.query.period) {
-		return new PackageRequest(ctx).handlePackageStatsDeprecated();
-	}
-
-	return new PackageRequest(ctx).handlePackageStats();
+	return new PackageRequest(ctx).handlePackageStatsDeprecated();
 });
 
 koaElasticUtils.addRoutes(router, [
-	[ '/package/npm/:name/stats/versions', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/stats/versions' ],
-	[ '/package/gh/:user/:repo/stats/versions', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/stats/versions' ],
-], validate({
-	query: Joi.object({
-		by: schema.by,
-		period: schema.period,
-		...schema.paginatedStats,
-	}),
-}), async (ctx) => {
-	return new PackageRequest(ctx).handleTopVersions();
-});
-
-koaElasticUtils.addRoutes(router, [
+	// TODO: move this to /stats too?
 	[ '/package/npm/:name/badge', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/badge/:period(day|week|month|year|all)?' ],
 	[ '/package/gh/:user/:repo/badge', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/badge/:period(day|week|month|year|all)?' ],
 ], validate({
@@ -142,24 +131,7 @@ koaElasticUtils.addRoutes(router, [
 		period: schema.periodOptional,
 	}),
 }), async (ctx) => {
-	if (ctx.params.groupBy || ctx.params.period || !ctx.query.period) {
-		return new PackageRequest(ctx).handleVersionStatsDeprecated();
-	}
-
-	return new PackageRequest(ctx).handleVersionStats();
-});
-
-koaElasticUtils.addRoutes(router, [
-	[ '/package/npm/:name@:version/stats/files', '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version/stats/files' ],
-	[ '/package/gh/:user/:repo@:version/stats/files', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version/stats/files' ],
-], validate({
-	query: Joi.object({
-		by: schema.by,
-		period: schema.period,
-		...schema.paginatedStats,
-	}),
-}), async (ctx) => {
-	return new PackageRequest(ctx).handleTopVersionFiles();
+	return new PackageRequest(ctx).handleVersionStatsDeprecated();
 });
 
 koaElasticUtils.addRoutes(router, [
@@ -171,18 +143,13 @@ koaElasticUtils.addRoutes(router, [
 	return new PackageRequest(ctx).handleResolveVersion();
 });
 
+/**
+ * Stats
+ */
 koaElasticUtils.addRoutes(router, [
-	[ '/proxy/:name/stats', '/proxy/:name/stats' ],
-], validate({
-	query: Joi.object({
-		period: schema.period,
-	}),
-}), async (ctx) => {
-	return new ProxyRequest(ctx).handleProxyStats();
-});
-
-koaElasticUtils.addRoutes(router, [
-	[ '/stats/packages/:type(gh|npm)?', '/stats/packages/:type(gh|npm)?/:period(day|week|month|year|all)?/:all(all)?' ],
+	// TODO: removed the "type" param here to avoid overlap with new package stats endpoints,
+	// TODO: which is a breaking change but it was undocumented and only used by Algolia. Send them a PR with a fix.
+	[ '/stats/packages', '/stats/packages/:period(day|week|month|year|all)?/:all(all)?' ],
 ], validate({
 	query: Joi.object({
 		by: schema.byOptional,
@@ -191,6 +158,64 @@ koaElasticUtils.addRoutes(router, [
 	}),
 }), async (ctx) => {
 	return new StatsRequest(ctx).handlePackages();
+});
+
+koaElasticUtils.addRoutes(router, [
+	[ '/stats/packages/npm/:name', '/stats/packages/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)' ],
+	[ '/stats/packages/gh/:user/:repo', '/stats/packages/:type(gh)/:user([^/@]+)/:name([^/@]+)' ],
+], validate({
+	query: Joi.object({
+		period: schema.periodOptional,
+	}),
+}), async (ctx) => {
+	return new StatsRequest(ctx).handlePackageStats();
+});
+
+koaElasticUtils.addRoutes(router, [
+	[ '/stats/packages/npm/:name@:version', '/stats/packages/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version' ],
+	[ '/stats/packages/gh/:user/:repo@:version', '/stats/packages/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version' ],
+], validate({
+	query: Joi.object({
+		period: schema.periodOptional,
+	}),
+}), async (ctx) => {
+	return new StatsRequest(ctx).handlePackageVersionStats();
+});
+
+koaElasticUtils.addRoutes(router, [
+	[ '/stats/packages/npm/:name/versions', '/stats/packages/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/versions' ],
+	[ '/stats/packages/gh/:user/:repo/versions', '/stats/packages/:type(gh)/:user([^/@]+)/:name([^/@]+)/versions' ],
+], validate({
+	query: Joi.object({
+		by: schema.by,
+		period: schema.period,
+		...schema.paginatedStats,
+	}),
+}), async (ctx) => {
+	return new PackageRequest(ctx).handleTopVersions();
+});
+
+koaElasticUtils.addRoutes(router, [
+	[ '/stats/packages/npm/:name@:version/files', '/stats/packages/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version/files' ],
+	[ '/stats/packages/gh/:user/:repo@:version/files', '/stats/packages/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version/files' ],
+], validate({
+	query: Joi.object({
+		by: schema.by,
+		period: schema.period,
+		...schema.paginatedStats,
+	}),
+}), async (ctx) => {
+	return new PackageRequest(ctx).handleTopVersionFiles();
+});
+
+koaElasticUtils.addRoutes(router, [
+	[ '/stats/proxies/:name/', '/stats/proxies/:name' ],
+], validate({
+	query: Joi.object({
+		period: schema.period,
+	}),
+}), async (ctx) => {
+	return new StatsRequest(ctx).handleProxyStats();
 });
 
 koaElasticUtils.addRoutes(router, [

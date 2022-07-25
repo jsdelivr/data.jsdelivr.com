@@ -3,6 +3,8 @@ const BaseRequest = require('./BaseRequest');
 const Package = require('../../models/Package');
 const CountryCdnHits = require('../../models/CountryCdnHits');
 const PackageHits = require('../../models/PackageHits');
+const PackageVersion = require('../../models/PackageVersion');
+const ProxyModel = require('../../models/Proxy');
 const ProxyHits = require('../../models/ProxyHits');
 const OtherHits = require('../../models/OtherHits');
 const Platform = require('../../models/Platform');
@@ -142,7 +144,7 @@ class StatsRequest extends BaseRequest {
 	}
 
 	async handlePackages () {
-		this.ctx.body = await Package.getTopPackages(this.query.by, this.period, this.date, this.params.type, ...this.pagination);
+		this.ctx.body = await Package.getTopPackages(this.query.by, this.period, this.date, undefined, ...this.pagination);
 		this.setCacheHeader();
 	}
 
@@ -176,6 +178,34 @@ class StatsRequest extends BaseRequest {
 		this.setCacheHeader();
 	}
 
+	async handlePackageStats () {
+		let [ dailyStats, periodStats ] = await Promise.all([
+			Package.getDailyStatsByName(this.params.type, this.params.name, ...this.dateRange),
+			Package.getStatsForPeriod(this.params.type, this.params.name, this.period, this.date),
+		]);
+
+		this.ctx.body = this.formatCombinedStats(dailyStats, periodStats);
+
+		this.setCacheHeader();
+	}
+
+	async handlePackageVersionStats () {
+		let dailyStats = await PackageVersion.getDailyStatsByNameAndVersion(this.params.type, this.params.name, this.params.version, ...this.dateRange);
+
+		this.ctx.body = {
+			hits: {
+				total: sumDeep(dailyStats.hits),
+				dates: dateRange.fill(dailyStats.hits, ...this.dateRange),
+			},
+			bandwidth: {
+				total: sumDeep(dailyStats.bandwidth),
+				dates: dateRange.fill(dailyStats.bandwidth, ...this.dateRange),
+			},
+		};
+
+		this.setCacheHeader();
+	}
+
 	async handleProviders () {
 		let [ dailyStats, periodStats ] = await Promise.all([
 			CountryCdnHits.getDailyProvidersStatsForLocation(this.simpleLocationFilter, ...this.dateRange),
@@ -189,6 +219,17 @@ class StatsRequest extends BaseRequest {
 				return this.formatCombinedStats(providerStats, periodStats[provider]);
 			}),
 		};
+
+		this.setCacheHeader();
+	}
+
+	async handleProxyStats () {
+		let [ dailyStats, periodStats ] = await Promise.all([
+			ProxyModel.getDailyStatsByName(this.params.name, ...this.dateRange),
+			ProxyModel.getStatsForPeriod(this.params.name, this.period, this.date),
+		]);
+
+		this.ctx.body = this.formatCombinedStats(dailyStats, periodStats);
 
 		this.setCacheHeader();
 	}
