@@ -1,6 +1,6 @@
 const { makeEndpointSnapshotTests, setupSnapshots } = require('../../../../utils');
 
-const periodOptions = [ 'day', 'week', 'month', 'year', 'all' ];
+const periodOptions = [ 'day', 'week', 'month', 'year', 'all', undefined ];
 
 describe('/v1/stats/network/countries', () => {
 	before(() => {
@@ -11,19 +11,17 @@ describe('/v1/stats/network/countries', () => {
 });
 
 function makeStatsNetworkCountriesTests () {
-	makeEndpointSnapshotTests('/v1/stats/network/countries{?type,period}', {
+	makeEndpointSnapshotTests('/v1/stats/network/countries{?period}', {
 		period: 'month',
 	}, [
 		{
-			type: [ 'hits', 'bandwidth' ],
 			period: periodOptions,
 		},
 	]);
 
-	makeEndpointSnapshotTests('/v1/stats/network/countries{?type,period}', {
+	makeEndpointSnapshotTests('/v1/stats/network/countries{?period}', {
 		period: 'month',
 	}, [
-		{ type: 'X' },
-		{ type: 'hits', period: 'X' },
+		{ period: 'X' },
 	], { status: 400 });
 }

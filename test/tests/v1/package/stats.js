@@ -1,6 +1,6 @@
 const { makeEndpointSnapshotTests, setupSnapshots } = require('../../../utils');
 
-const periodOptions = [ 'day', 'week', 'month', 'year', 'all' ];
+const periodOptions = [ 'day', 'week', 'month', 'year', 'all', undefined ];
 
 describe('/v1/package/stats', () => {
 	before(() => {
@@ -20,7 +20,7 @@ function makePackageStatsTests () {
 	// Legacy versions.
 	let commonLegacyValues = {
 		groupBy: [ 'version', 'date', undefined ],
-		period: [ ...periodOptions, undefined ],
+		period: periodOptions,
 	};
 
 	makeEndpointSnapshotTests('/v1/package/npm/{name}/stats{/groupBy}{/period}', defaults, [
@@ -48,7 +48,7 @@ function makePackageVersionStatsTests () {
 	// Legacy versions.
 	let commonLegacyValues = {
 		groupBy: [ 'file', 'date', undefined ],
-		period: [ ...periodOptions, undefined ],
+		period: periodOptions,
 	};
 
 	makeEndpointSnapshotTests('/v1/package/npm/{name}@{version}/stats{/groupBy}{/period}', defaults, [

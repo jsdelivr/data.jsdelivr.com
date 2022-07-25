@@ -11,11 +11,20 @@ describe('/v1/stats/packages', () => {
 });
 
 function makeStatsPackagesTests () {
-	makeEndpointSnapshotTests('/v1/stats/packages{/period}{?by}', {
+	makeEndpointSnapshotTests('/v1/stats/packages{?by,period}', {
 		period: 'month',
 	}, [
 		{
 			by: [ 'hits', 'bandwidth', undefined ],
+			period: periodOptions,
+		},
+	]);
+
+	// Legacy version.
+	makeEndpointSnapshotTests('/v1/stats/packages{/period}', {
+		period: 'month',
+	}, [
+		{
 			period: periodOptions,
 		},
 	]);

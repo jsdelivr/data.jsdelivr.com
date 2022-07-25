@@ -27,7 +27,7 @@ const primitives = {
 	page:
 		Joi.number().integer().positive(),
 
-	periodOptional:
+	period:
 		Joi.custom((value, helpers) => {
 			if (dateRange.isFloatingPeriod(value)) {
 				return dateRange.parseFloatingPeriod(value);
@@ -63,13 +63,12 @@ const primitives = {
 			return helpers.error('any.invalid');
 		}).messages({
 			'*': '{{#label}} must be one of [s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM]',
-		}).required(),
+		}).default(() => dateRange.parseStaticPeriod('s-month')),
 };
 
 const composedTypes = {
 	by: primitives.byOptional.required(),
 	paginatedStats: { limit: primitives.limit, page: primitives.page },
-	period: primitives.periodOptional.required(),
 };
 
 const composedSchemas = {

@@ -1,6 +1,6 @@
 const { makeEndpointSnapshotTests, setupSnapshots } = require('../../../../utils');
 
-const periodOptions = [ 'day', 'week', 'month', 'year', 'all' ];
+const periodOptions = [ 'day', 'week', 'month', 'year', 'all', undefined ];
 
 describe('/v1/stats/proxies/proxy', () => {
 	before(() => {
@@ -15,7 +15,7 @@ function makeProxyStatsTests () {
 		period: 'month',
 	};
 
-	makeEndpointSnapshotTests('/v1/stats/proxies/{name}{?type,period}', defaults, [
-		{ name: 'wp-plugins', type: [ 'hits', 'bandwidth' ], period: periodOptions },
+	makeEndpointSnapshotTests('/v1/stats/proxies/{name}{?period}', defaults, [
+		{ name: 'wp-plugins', period: periodOptions },
 	]);
 }

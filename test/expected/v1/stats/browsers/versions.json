@@ -2,7 +2,7 @@
 	"/v1/stats/browsers/versions?continent=EU&country=PL": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: object contains a conflict between optional exclusive peers [continent, country], `period` must be one of [s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM]."
+		"message": "Invalid parameter value: object contains a conflict between optional exclusive peers [continent, country]."
 	},
 	"/v1/stats/browsers/versions?continent=EU&period=2020": [
 		{
@@ -1245,7 +1245,7 @@
 	"/v1/stats/browsers/versions?continent=X": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: `continent` must be a valid continent code in uppercase, `period` must be one of [s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM]."
+		"message": "Invalid parameter value: `continent` must be a valid continent code in uppercase."
 	},
 	"/v1/stats/browsers/versions?country=PL&period=2020": [
 		{
@@ -2488,7 +2488,7 @@
 	"/v1/stats/browsers/versions?country=X": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: `country` must be a valid ISO 3166-1 alpha-2 country code in uppercase, `period` must be one of [s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM]."
+		"message": "Invalid parameter value: `country` must be a valid ISO 3166-1 alpha-2 country code in uppercase."
 	},
 	"/v1/stats/browsers/versions?period=2020": [
 		{
@@ -3736,7 +3736,7 @@
 	"/v1/stats/browsers/browser%2019/versions?continent=EU&country=PL": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: object contains a conflict between optional exclusive peers [continent, country], `period` must be one of [s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM]."
+		"message": "Invalid parameter value: object contains a conflict between optional exclusive peers [continent, country]."
 	},
 	"/v1/stats/browsers/browser%2019/versions?continent=EU&period=2020": [
 		{
@@ -3810,7 +3810,7 @@
 	"/v1/stats/browsers/browser%2019/versions?continent=X": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: `continent` must be a valid continent code in uppercase, `period` must be one of [s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM]."
+		"message": "Invalid parameter value: `continent` must be a valid continent code in uppercase."
 	},
 	"/v1/stats/browsers/browser%2019/versions?country=PL&period=2020": [
 		{
@@ -3884,7 +3884,7 @@
 	"/v1/stats/browsers/browser%2019/versions?country=X": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: `country` must be a valid ISO 3166-1 alpha-2 country code in uppercase, `period` must be one of [s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM]."
+		"message": "Invalid parameter value: `country` must be a valid ISO 3166-1 alpha-2 country code in uppercase."
 	},
 	"/v1/stats/browsers/browser%2019/versions?period=2020": [
 		{

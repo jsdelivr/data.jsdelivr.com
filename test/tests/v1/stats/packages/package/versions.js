@@ -1,6 +1,6 @@
 const { makeEndpointSnapshotTests, makeEndpointPaginationTests, setupSnapshots } = require('../../../../../utils');
 
-const periodOptions = [ 'day', 'week', 'month', 'year', 'all' ];
+const periodOptions = [ 'day', 'week', 'month', 'year', 'all', undefined ];
 
 describe('/v1/stats/packages/versions', () => {
 	before(() => {

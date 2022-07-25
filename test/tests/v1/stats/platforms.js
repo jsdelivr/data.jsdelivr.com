@@ -66,6 +66,15 @@ function makeStatsPlatformsTests () {
 			},
 		},
 		{
+			params: {},
+			assert: (response) => {
+				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);
+				expect(_.every(response.body, result => result.prev.share === null)).to.be.true;
+				expect(response.body).to.have.lengthOf(8);
+				expect(response).to.matchSnapshot(`${response.req.path}?period=s-month`);
+			},
+		},
+		{
 			params: { period: 's-month' },
 			assert: (response) => {
 				expect(_.sumBy(response.body, 'share')).to.be.closeTo(100, .1);

@@ -1,6 +1,6 @@
 const { makeEndpointSnapshotTests, setupSnapshots } = require('../../../../utils');
 
-const periodOptions = [ 'day', 'week', 'month', 'year', 'all' ];
+const periodOptions = [ 'day', 'week', 'month', 'year', 'all', undefined ];
 
 describe('/v1/stats/packages/:type/:name@version', () => {
 	before(() => {
@@ -16,7 +16,6 @@ function makePackageVersionStatsTests () {
 	};
 
 	let commonValues = {
-		type: [ 'hits', 'bandwidth' ],
 		period: periodOptions,
 	};
 

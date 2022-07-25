@@ -81,7 +81,7 @@ koaElasticUtils.addRoutes(router, [
 	[ '/package/gh/:user/:repo/stats', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/stats/:groupBy(version|date)?/:period(day|week|month|year|all)?' ],
 ], validate({
 	query: Joi.object({
-		period: schema.periodOptional,
+		period: schema.period,
 	}),
 }), async (ctx) => {
 	return new PackageRequest(ctx).handlePackageStatsDeprecated();
@@ -93,7 +93,7 @@ koaElasticUtils.addRoutes(router, [
 	[ '/package/gh/:user/:repo/badge', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/badge/:period(day|week|month|year|all)?' ],
 ], validate({
 	query: Joi.object({
-		period: schema.periodOptional,
+		period: schema.period,
 	}),
 }), async (ctx) => {
 	return new PackageRequest(ctx).handlePackageBadge();
@@ -104,7 +104,7 @@ koaElasticUtils.addRoutes(router, [
 	[ '/package/gh/:user/:repo/badge/rank', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/badge/:rankType(rank|type-rank)/:period(day|week|month|year|all)?' ],
 ], validate({
 	query: Joi.object({
-		period: schema.periodOptional,
+		period: schema.period,
 	}),
 }), async (ctx) => {
 	return new PackageRequest(ctx).handlePackageBadgeRank();
@@ -128,7 +128,7 @@ koaElasticUtils.addRoutes(router, [
 	[ '/package/gh/:user/:repo@:version/stats', '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version/stats/:groupBy(file|date)?/:period(day|week|month|year|all)?' ],
 ], validate({
 	query: Joi.object({
-		period: schema.periodOptional,
+		period: schema.period,
 	}),
 }), async (ctx) => {
 	return new PackageRequest(ctx).handleVersionStatsDeprecated();
@@ -153,7 +153,7 @@ koaElasticUtils.addRoutes(router, [
 ], validate({
 	query: Joi.object({
 		by: schema.byOptional,
-		period: schema.periodOptional,
+		period: schema.period,
 		...schema.paginatedStats,
 	}),
 }), async (ctx) => {
@@ -165,7 +165,7 @@ koaElasticUtils.addRoutes(router, [
 	[ '/stats/packages/gh/:user/:repo', '/stats/packages/:type(gh)/:user([^/@]+)/:name([^/@]+)' ],
 ], validate({
 	query: Joi.object({
-		period: schema.periodOptional,
+		period: schema.period,
 	}),
 }), async (ctx) => {
 	return new StatsRequest(ctx).handlePackageStats();
@@ -176,7 +176,7 @@ koaElasticUtils.addRoutes(router, [
 	[ '/stats/packages/gh/:user/:repo@:version', '/stats/packages/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version' ],
 ], validate({
 	query: Joi.object({
-		period: schema.periodOptional,
+		period: schema.period,
 	}),
 }), async (ctx) => {
 	return new StatsRequest(ctx).handlePackageVersionStats();
@@ -222,7 +222,7 @@ koaElasticUtils.addRoutes(router, [
 	[ '/stats/network', '/stats/network/:period(day|week|month|year|all)?' ],
 ], validate({
 	query: Joi.object({
-		period: schema.periodOptional,
+		period: schema.period,
 	}),
 }), async (ctx) => {
 	return new StatsRequest(ctx).handleNetwork();

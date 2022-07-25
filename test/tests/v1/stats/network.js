@@ -11,6 +11,15 @@ describe('/v1/stats/network', () => {
 });
 
 function makeStatsNetworkTests () {
+	makeEndpointSnapshotTests('/v1/stats/network{?period}', {
+		period: 'month',
+	}, [
+		{
+			period: periodOptions,
+		},
+	]);
+
+	// Legacy version.
 	makeEndpointSnapshotTests('/v1/stats/network{/period}', {
 		period: 'month',
 	}, [
