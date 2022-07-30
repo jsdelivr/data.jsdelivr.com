@@ -1,4 +1,5 @@
 const Joi = require('joi');
+const dateRange = require('../routes/utils/dateRange');
 const getProperties = _.memoize(schema => Object.keys(schema.describe().keys));
 
 class BaseModel {
@@ -64,6 +65,19 @@ class BaseModel {
 		}
 
 		return Bluebird.map(sql.select(), data => new this(data).dbOut(), { concurrency: 8 });
+	}
+
+	static async _getPeriods (table) {
+		let sql = db(table)
+			.whereIn('period', [ 's-day', 's-week', 's-month', 's-year' ])
+			.orderBy([{ column: 'period', order: 'desc' }, { column: 'date', order: 'desc' }]);
+
+		return (await sql.distinct([ 'period', 'date' ])).map((row) => {
+			return {
+				period: dateRange.periodToString(row.period, row.date),
+				periodType: row.period,
+			};
+		});
 	}
 
 	dbIn () {

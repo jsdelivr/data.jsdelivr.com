@@ -206,6 +206,30 @@ class StatsRequest extends BaseRequest {
 		this.setCacheHeader();
 	}
 
+	async handlePeriods () {
+		this.ctx.body = this.linkBuilder
+			.refs({
+				browsers: '/stats/browsers',
+				platforms: '/stats/platforms',
+			})
+			.includeQuery([ 'period' ])
+			.buildRef('browsers', await Browser.getPeriods())
+			.buildRef('platforms', await Platform.getPeriods())
+			.mergeBy('period')
+			.sort((a, b) => {
+				return a.period > b.period ? -1 : a.period < b.period;
+			})
+			.sort((a, b) => {
+				if (a.period.substr(0, 4) !== b.period.substr(0, 4)) {
+					return 0;
+				}
+
+				return a.period.length - b.period.length;
+			});
+
+		this.setCacheHeader();
+	}
+
 	async handleProviders () {
 		let [ dailyStats, periodStats ] = await Promise.all([
 			CountryCdnHits.getDailyProvidersStatsForLocation(this.simpleLocationFilter, ...this.dateRange),

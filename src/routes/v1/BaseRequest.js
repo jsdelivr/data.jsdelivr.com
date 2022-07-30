@@ -3,6 +3,7 @@ const relativeDayUtc = require('relative-day-utc');
 
 const dateRange = require('../utils/dateRange');
 const pagination = require('../utils/pagination');
+const LinkBuilder = require('../utils/LinkBuilder');
 
 const v1Config = config.get('v1');
 
@@ -16,6 +17,7 @@ class BaseRequest {
 		this.query = ctx.state.query || {};
 		this.ctx = ctx;
 		this.pagination = this.params.all ? [ null ] : pagination(this.query.limit, this.query.page);
+		this.linkBuilder = new LinkBuilder(ctx);
 		ctx.type = 'json';
 
 		if (this.query.country) {

@@ -209,6 +209,12 @@ koaElasticUtils.addRoutes(router, [
 });
 
 koaElasticUtils.addRoutes(router, [
+	[ '/stats/periods', '/stats/periods' ],
+], async (ctx) => {
+	return new StatsRequest(ctx).handlePeriods();
+});
+
+koaElasticUtils.addRoutes(router, [
 	[ '/stats/proxies/:name/', '/stats/proxies/:name' ],
 ], validate({
 	query: Joi.object({

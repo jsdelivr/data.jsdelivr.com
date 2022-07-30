@@ -37,6 +37,10 @@ class Platform extends BaseCacheModel {
 		return new Proxy(this, BaseCacheModel.ProxyHandler);
 	}
 
+	static async getPeriods () {
+		return this._getPeriods(TopPlatform.table);
+	}
+
 	static async getTopPlatforms (period, date, composedLocationFilter, limit = 100, page = 1) {
 		let sql = db(TopPlatform.table)
 			.where({ period, date })

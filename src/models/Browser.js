@@ -37,6 +37,10 @@ class Browser extends BaseCacheModel {
 		return new Proxy(this, BaseCacheModel.ProxyHandler);
 	}
 
+	static async getPeriods () {
+		return this._getPeriods(TopBrowser.table);
+	}
+
 	static async getTopBrowsers (period, date, composedLocationFilter, limit = 100, page = 1) {
 		let sql = db(TopBrowser.table)
 			.where({ period, date })

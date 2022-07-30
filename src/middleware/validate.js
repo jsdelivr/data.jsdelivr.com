@@ -13,7 +13,7 @@ module.exports = ({ body, params, query }) => {
 		{ name: 'query', schema: query },
 	].filter(validation => validation.schema);
 
-	return async (ctx, next) => {
+	return Object.assign(async (ctx, next) => {
 		let isValid = validations.every((validation) => {
 			let result = validateSingle(validation.schema, ctx[validation.name], ctx);
 			ctx.state[validation.name] = result || {};
@@ -22,7 +22,18 @@ module.exports = ({ body, params, query }) => {
 		});
 
 		return isValid && next();
-	};
+	}, {
+		schema: {
+			body,
+			params,
+			query,
+		},
+		schemaKeys: {
+			body: body ? Array.from(body._ids._byKey.keys()) : undefined,
+			params: params ? Array.from(params._ids._byKey.keys()) : undefined,
+			query: query ? Array.from(query._ids._byKey.keys()) : undefined,
+		},
+	});
 };
 
 /**

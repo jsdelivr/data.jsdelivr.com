@@ -1,5 +1,5 @@
 const relativeDayUtc = require('relative-day-utc');
-const { toIsoDate } = require('../../lib/date');
+const { toIsoDate, toIsoMonth, toIsoYear } = require('../../lib/date');
 
 const floatingPeriodDurations = { day: 1, week: 7, month: 30, year: 365 };
 const floatingPeriods = [ ...Object.keys(floatingPeriodDurations), 'all' ];
@@ -137,5 +137,22 @@ module.exports.parseStaticPeriod = (period, date = new Date()) => {
 				period: match[2] ? 's-month' : 's-year',
 			};
 		}
+	}
+};
+
+module.exports.periodToString = (period, date) => {
+	if (module.exports.isFloatingPeriod(period)) {
+		return period;
+	}
+
+	switch (period) {
+		case 's-month':
+			return toIsoMonth(date);
+
+		case 's-year':
+			return toIsoYear(date);
+
+		default:
+			throw new Error(`Invalid period value: ${period}`);
 	}
 };

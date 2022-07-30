@@ -1,0 +1,60 @@
+{
+	"/v1/stats/periods": [
+		{
+			"period": "2022-06",
+			"periodType": "s-month",
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/browsers?period=2022-06",
+				"platforms": "http://localhost:4454/v1/stats/platforms?period=2022-06"
+			}
+		},
+		{
+			"period": "2021",
+			"periodType": "s-year",
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/browsers?period=2021",
+				"platforms": "http://localhost:4454/v1/stats/platforms?period=2021"
+			}
+		},
+		{
+			"period": "2021-01",
+			"periodType": "s-month",
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/browsers?period=2021-01",
+				"platforms": "http://localhost:4454/v1/stats/platforms?period=2021-01"
+			}
+		},
+		{
+			"period": "2020",
+			"periodType": "s-year",
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/browsers?period=2020",
+				"platforms": "http://localhost:4454/v1/stats/platforms?period=2020"
+			}
+		},
+		{
+			"period": "2020-04",
+			"periodType": "s-month",
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/browsers?period=2020-04",
+				"platforms": "http://localhost:4454/v1/stats/platforms?period=2020-04"
+			}
+		},
+		{
+			"period": "2020-03",
+			"periodType": "s-month",
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/browsers?period=2020-03",
+				"platforms": "http://localhost:4454/v1/stats/platforms?period=2020-03"
+			}
+		},
+		{
+			"period": "2020-02",
+			"periodType": "s-month",
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/browsers?period=2020-02",
+				"platforms": "http://localhost:4454/v1/stats/platforms?period=2020-02"
+			}
+		}
+	]
+}

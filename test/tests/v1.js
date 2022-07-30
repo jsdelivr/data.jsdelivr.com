@@ -40,6 +40,7 @@ describe('v1', function () {
 	require('./v1/stats/packages/package/versions');
 	require('./v1/stats/packages/package-version');
 	require('./v1/stats/packages/package-version/files');
+	require('./v1/stats/periods');
 	require('./v1/stats/platforms');
 	require('./v1/stats/platforms/browsers');
 	require('./v1/stats/platforms/countries');
