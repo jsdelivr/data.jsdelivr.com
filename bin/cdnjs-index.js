@@ -46,7 +46,7 @@ const httpClient = got.extend({
 });
 
 const tarballUrl = 'https://github.com/cdnjs/packages/tarball/master';
-const versionedListUrl = `https://api.cdnjs.com/libraries/?fields=version,filename&t=${Date.now()}`;
+const versionedListUrl = `https://api.cdnjs.com/libraries?fields=version,filename&t=${Date.now()}`;
 
 const insertBatch = async (batch) => {
 	if (!batch.length) {
