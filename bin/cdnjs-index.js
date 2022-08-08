@@ -212,7 +212,12 @@ Bluebird.all([ fetchVersionsList(), fetchExistingPackages() ])
 	})
 	.finally(() => {
 		log.info(`Execution time: ${Date.now() - start} ms`);
+	})
+	.then(() => {
 		setTimeout(() => process.exit(), 2000);
 	})
-	.catch(err => log.error(`Error during sync`, err));
+	.catch((error) => {
+		log.error(`Error during sync`, error);
+		setTimeout(() => process.exit(1), 2000);
+	});
 
