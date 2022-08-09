@@ -6,6 +6,7 @@ const tar = require('tar-stream');
 const config = require('config');
 const zlib = require('zlib');
 const got = require('got');
+const promiseRetry = require('promise-retry');
 const micromatch = require('micromatch');
 const Bluebird = require('bluebird');
 const pipeline = require('util').promisify(require('stream').pipeline);
@@ -202,13 +203,15 @@ let start = Date.now();
 
 Bluebird.all([ fetchVersionsList(), fetchExistingPackages() ])
 	.then(([ versionsList, existingPackages ]) => {
-		let packages = [];
+		return promiseRetry((retry) => {
+			let packages = [];
 
-		return pipeline(
-			httpClient.stream(tarballUrl),
-			zlib.createGunzip(),
-			fetchPackages(versionsList, existingPackages, packages)
-		).then(() => storePackages(packages));
+			return pipeline(
+				httpClient.stream(tarballUrl),
+				zlib.createGunzip(),
+				fetchPackages(versionsList, existingPackages, packages)
+			).then(() => packages).catch(retry);
+		}, { retries: 2 }).then(packages => storePackages(packages));
 	})
 	.finally(() => {
 		log.info(`Execution time: ${Date.now() - start} ms`);
