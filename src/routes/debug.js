@@ -1,5 +1,6 @@
 const os = require('os');
 const childProcess = require('child_process');
+const relativeDayUtc = require('relative-day-utc');
 const config = require('config');
 const version = require('../../package.json').version;
 const serverConfig = config.get('server');
@@ -23,5 +24,7 @@ module.exports = async (ctx) => {
 		loadAverage: os.loadavg(),
 		hostname: os.hostname(),
 		networkInterfaces: os.networkInterfaces(),
+		date: new Date().toISOString().substr(0, 10),
+		date2d: relativeDayUtc(-2).toISOString().substr(0, 10),
 	};
 };
