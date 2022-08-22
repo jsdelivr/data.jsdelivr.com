@@ -29,9 +29,14 @@ module.exports = ({ body, params, query }) => {
 			query,
 		},
 		schemaKeys: {
-			body: body ? Array.from(body._ids._byKey.keys()) : undefined,
-			params: params ? Array.from(params._ids._byKey.keys()) : undefined,
-			query: query ? Array.from(query._ids._byKey.keys()) : undefined,
+			body: getSchemaKeys(body),
+			params: getSchemaKeys(params),
+			query: getSchemaKeys(query),
+		},
+		requiredSchemaKeys: {
+			body: getRequiredSchemaKeys(body),
+			params: getRequiredSchemaKeys(params),
+			query: getRequiredSchemaKeys(query),
 		},
 	});
 };
@@ -76,4 +81,12 @@ function validateSingle (schema, value, ctx) {
 	}
 
 	return result.value;
+}
+
+function getSchemaKeys (schema) {
+	return schema ? Array.from(schema._ids._byKey.keys()) : undefined;
+}
+
+function getRequiredSchemaKeys (schema) {
+	return schema ? Array.from(schema._ids._byKey.entries()).filter(([ , v ]) => v.schema._flags.presence === 'required').map(([ k ]) => k) : undefined;
 }
