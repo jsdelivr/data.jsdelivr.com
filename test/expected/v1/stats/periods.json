@@ -1,14 +1,6 @@
 {
 	"/v1/stats/periods": [
 		{
-			"period": "2022-06",
-			"periodType": "s-month",
-			"links": {
-				"browsers": "http://localhost:4454/v1/stats/browsers?period=2022-06",
-				"platforms": "http://localhost:4454/v1/stats/platforms?period=2022-06"
-			}
-		},
-		{
 			"period": "2021",
 			"periodType": "s-year",
 			"links": {

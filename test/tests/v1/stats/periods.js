@@ -17,6 +17,9 @@ function makeStatsPeriodsTests () {
 				expect(_.every(response.body, item => item.links.browsers)).to.be.true;
 				expect(_.every(response.body, item => item.links.platforms)).to.be.true;
 				expect(response.body).to.have.lengthOf(7);
+
+				// Delete the floating periods which would mess up snapshots.
+				response.body.splice(0, 1);
 				expect(response).to.matchSnapshot();
 			},
 		},
