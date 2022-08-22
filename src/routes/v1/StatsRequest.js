@@ -249,12 +249,12 @@ class StatsRequest extends BaseRequest {
 					hits: {
 						total: countryPeriodStats.hits.total,
 						providers: providerStats.hits,
-						prev: countryPeriodStats.hits.prev,
+						prev: countryPeriodStats.prev.hits,
 					},
 					bandwidth: {
 						total: countryPeriodStats.bandwidth.total,
 						providers: providerStats.bandwidth,
-						prev: countryPeriodStats.bandwidth.prev,
+						prev: countryPeriodStats.prev.bandwidth,
 					},
 				};
 			}),
