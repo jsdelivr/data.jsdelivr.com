@@ -471,119 +471,7 @@
 			}
 		}
 	],
-	"/v1/stats/packages/npm/package-2/versions?by=bandwidth&period=all": [
-		{
-			"type": "version",
-			"version": "1.1.0",
-			"hits": {
-				"total": 11040,
-				"dates": {}
-			},
-			"bandwidth": {
-				"total": 27167784,
-				"dates": {}
-			},
-			"links": {
-				"self": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.0?period=all",
-				"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.0/files?by=bandwidth&period=all"
-			}
-		},
-		{
-			"type": "version",
-			"version": "1.1.1",
-			"hits": {
-				"total": 11316,
-				"dates": {}
-			},
-			"bandwidth": {
-				"total": 31694184,
-				"dates": {}
-			},
-			"links": {
-				"self": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.1?period=all",
-				"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.1/files?by=bandwidth&period=all"
-			}
-		},
-		{
-			"type": "version",
-			"version": "1.1.2",
-			"hits": {
-				"total": 11592,
-				"dates": {}
-			},
-			"bandwidth": {
-				"total": 36220584,
-				"dates": {}
-			},
-			"links": {
-				"self": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.2?period=all",
-				"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.2/files?by=bandwidth&period=all"
-			}
-		}
-	],
-	"/v1/stats/packages/npm/package-2/versions?by=bandwidth&period=day": [
-		{
-			"type": "version",
-			"version": "1.1.0",
-			"hits": {
-				"total": 296,
-				"dates": {
-					"2010-12-29": 0
-				}
-			},
-			"bandwidth": {
-				"total": 393872,
-				"dates": {
-					"2010-12-29": 0
-				}
-			},
-			"links": {
-				"self": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.0?period=day",
-				"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.0/files?by=bandwidth&period=day"
-			}
-		},
-		{
-			"type": "version",
-			"version": "1.1.1",
-			"hits": {
-				"total": 300,
-				"dates": {
-					"2010-12-29": 0
-				}
-			},
-			"bandwidth": {
-				"total": 459472,
-				"dates": {
-					"2010-12-29": 0
-				}
-			},
-			"links": {
-				"self": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.1?period=day",
-				"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.1/files?by=bandwidth&period=day"
-			}
-		},
-		{
-			"type": "version",
-			"version": "1.1.2",
-			"hits": {
-				"total": 304,
-				"dates": {
-					"2010-12-29": 0
-				}
-			},
-			"bandwidth": {
-				"total": 525072,
-				"dates": {
-					"2010-12-29": 0
-				}
-			},
-			"links": {
-				"self": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.2?period=day",
-				"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.2/files?by=bandwidth&period=day"
-			}
-		}
-	],
-	"/v1/stats/packages/npm/package-2/versions?by=bandwidth&period=month": [
+	"/v1/stats/packages/npm/package-2/versions?by=bandwidth": [
 		{
 			"type": "version",
 			"version": "1.1.0",
@@ -816,6 +704,354 @@
 			"links": {
 				"self": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.2",
 				"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.2/files?by=bandwidth"
+			}
+		}
+	],
+	"/v1/stats/packages/npm/package-2/versions?by=bandwidth&period=all": [
+		{
+			"type": "version",
+			"version": "1.1.0",
+			"hits": {
+				"total": 11040,
+				"dates": {}
+			},
+			"bandwidth": {
+				"total": 27167784,
+				"dates": {}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.0?period=all",
+				"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.0/files?by=bandwidth&period=all"
+			}
+		},
+		{
+			"type": "version",
+			"version": "1.1.1",
+			"hits": {
+				"total": 11316,
+				"dates": {}
+			},
+			"bandwidth": {
+				"total": 31694184,
+				"dates": {}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.1?period=all",
+				"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.1/files?by=bandwidth&period=all"
+			}
+		},
+		{
+			"type": "version",
+			"version": "1.1.2",
+			"hits": {
+				"total": 11592,
+				"dates": {}
+			},
+			"bandwidth": {
+				"total": 36220584,
+				"dates": {}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.2?period=all",
+				"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.2/files?by=bandwidth&period=all"
+			}
+		}
+	],
+	"/v1/stats/packages/npm/package-2/versions?by=bandwidth&period=day": [
+		{
+			"type": "version",
+			"version": "1.1.0",
+			"hits": {
+				"total": 296,
+				"dates": {
+					"2010-12-29": 0
+				}
+			},
+			"bandwidth": {
+				"total": 393872,
+				"dates": {
+					"2010-12-29": 0
+				}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.0?period=day",
+				"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.0/files?by=bandwidth&period=day"
+			}
+		},
+		{
+			"type": "version",
+			"version": "1.1.1",
+			"hits": {
+				"total": 300,
+				"dates": {
+					"2010-12-29": 0
+				}
+			},
+			"bandwidth": {
+				"total": 459472,
+				"dates": {
+					"2010-12-29": 0
+				}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.1?period=day",
+				"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.1/files?by=bandwidth&period=day"
+			}
+		},
+		{
+			"type": "version",
+			"version": "1.1.2",
+			"hits": {
+				"total": 304,
+				"dates": {
+					"2010-12-29": 0
+				}
+			},
+			"bandwidth": {
+				"total": 525072,
+				"dates": {
+					"2010-12-29": 0
+				}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.2?period=day",
+				"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.2/files?by=bandwidth&period=day"
+			}
+		}
+	],
+	"/v1/stats/packages/npm/package-2/versions?by=bandwidth&period=month": [
+		{
+			"type": "version",
+			"version": "1.1.0",
+			"hits": {
+				"total": 7140,
+				"dates": {
+					"2010-11-30": 0,
+					"2010-12-01": 0,
+					"2010-12-02": 0,
+					"2010-12-03": 0,
+					"2010-12-04": 0,
+					"2010-12-05": 0,
+					"2010-12-06": 0,
+					"2010-12-07": 0,
+					"2010-12-08": 0,
+					"2010-12-09": 0,
+					"2010-12-10": 0,
+					"2010-12-11": 0,
+					"2010-12-12": 0,
+					"2010-12-13": 0,
+					"2010-12-14": 0,
+					"2010-12-15": 0,
+					"2010-12-16": 0,
+					"2010-12-17": 0,
+					"2010-12-18": 0,
+					"2010-12-19": 0,
+					"2010-12-20": 0,
+					"2010-12-21": 0,
+					"2010-12-22": 0,
+					"2010-12-23": 0,
+					"2010-12-24": 0,
+					"2010-12-25": 0,
+					"2010-12-26": 0,
+					"2010-12-27": 0,
+					"2010-12-28": 0,
+					"2010-12-29": 0
+				}
+			},
+			"bandwidth": {
+				"total": 11814420,
+				"dates": {
+					"2010-11-30": 0,
+					"2010-12-01": 0,
+					"2010-12-02": 0,
+					"2010-12-03": 0,
+					"2010-12-04": 0,
+					"2010-12-05": 0,
+					"2010-12-06": 0,
+					"2010-12-07": 0,
+					"2010-12-08": 0,
+					"2010-12-09": 0,
+					"2010-12-10": 0,
+					"2010-12-11": 0,
+					"2010-12-12": 0,
+					"2010-12-13": 0,
+					"2010-12-14": 0,
+					"2010-12-15": 0,
+					"2010-12-16": 0,
+					"2010-12-17": 0,
+					"2010-12-18": 0,
+					"2010-12-19": 0,
+					"2010-12-20": 0,
+					"2010-12-21": 0,
+					"2010-12-22": 0,
+					"2010-12-23": 0,
+					"2010-12-24": 0,
+					"2010-12-25": 0,
+					"2010-12-26": 0,
+					"2010-12-27": 0,
+					"2010-12-28": 0,
+					"2010-12-29": 0
+				}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.0?period=month",
+				"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.0/files?by=bandwidth&period=month"
+			}
+		},
+		{
+			"type": "version",
+			"version": "1.1.1",
+			"hits": {
+				"total": 7260,
+				"dates": {
+					"2010-11-30": 0,
+					"2010-12-01": 0,
+					"2010-12-02": 0,
+					"2010-12-03": 0,
+					"2010-12-04": 0,
+					"2010-12-05": 0,
+					"2010-12-06": 0,
+					"2010-12-07": 0,
+					"2010-12-08": 0,
+					"2010-12-09": 0,
+					"2010-12-10": 0,
+					"2010-12-11": 0,
+					"2010-12-12": 0,
+					"2010-12-13": 0,
+					"2010-12-14": 0,
+					"2010-12-15": 0,
+					"2010-12-16": 0,
+					"2010-12-17": 0,
+					"2010-12-18": 0,
+					"2010-12-19": 0,
+					"2010-12-20": 0,
+					"2010-12-21": 0,
+					"2010-12-22": 0,
+					"2010-12-23": 0,
+					"2010-12-24": 0,
+					"2010-12-25": 0,
+					"2010-12-26": 0,
+					"2010-12-27": 0,
+					"2010-12-28": 0,
+					"2010-12-29": 0
+				}
+			},
+			"bandwidth": {
+				"total": 13782420,
+				"dates": {
+					"2010-11-30": 0,
+					"2010-12-01": 0,
+					"2010-12-02": 0,
+					"2010-12-03": 0,
+					"2010-12-04": 0,
+					"2010-12-05": 0,
+					"2010-12-06": 0,
+					"2010-12-07": 0,
+					"2010-12-08": 0,
+					"2010-12-09": 0,
+					"2010-12-10": 0,
+					"2010-12-11": 0,
+					"2010-12-12": 0,
+					"2010-12-13": 0,
+					"2010-12-14": 0,
+					"2010-12-15": 0,
+					"2010-12-16": 0,
+					"2010-12-17": 0,
+					"2010-12-18": 0,
+					"2010-12-19": 0,
+					"2010-12-20": 0,
+					"2010-12-21": 0,
+					"2010-12-22": 0,
+					"2010-12-23": 0,
+					"2010-12-24": 0,
+					"2010-12-25": 0,
+					"2010-12-26": 0,
+					"2010-12-27": 0,
+					"2010-12-28": 0,
+					"2010-12-29": 0
+				}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.1?period=month",
+				"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.1/files?by=bandwidth&period=month"
+			}
+		},
+		{
+			"type": "version",
+			"version": "1.1.2",
+			"hits": {
+				"total": 7380,
+				"dates": {
+					"2010-11-30": 0,
+					"2010-12-01": 0,
+					"2010-12-02": 0,
+					"2010-12-03": 0,
+					"2010-12-04": 0,
+					"2010-12-05": 0,
+					"2010-12-06": 0,
+					"2010-12-07": 0,
+					"2010-12-08": 0,
+					"2010-12-09": 0,
+					"2010-12-10": 0,
+					"2010-12-11": 0,
+					"2010-12-12": 0,
+					"2010-12-13": 0,
+					"2010-12-14": 0,
+					"2010-12-15": 0,
+					"2010-12-16": 0,
+					"2010-12-17": 0,
+					"2010-12-18": 0,
+					"2010-12-19": 0,
+					"2010-12-20": 0,
+					"2010-12-21": 0,
+					"2010-12-22": 0,
+					"2010-12-23": 0,
+					"2010-12-24": 0,
+					"2010-12-25": 0,
+					"2010-12-26": 0,
+					"2010-12-27": 0,
+					"2010-12-28": 0,
+					"2010-12-29": 0
+				}
+			},
+			"bandwidth": {
+				"total": 15750420,
+				"dates": {
+					"2010-11-30": 0,
+					"2010-12-01": 0,
+					"2010-12-02": 0,
+					"2010-12-03": 0,
+					"2010-12-04": 0,
+					"2010-12-05": 0,
+					"2010-12-06": 0,
+					"2010-12-07": 0,
+					"2010-12-08": 0,
+					"2010-12-09": 0,
+					"2010-12-10": 0,
+					"2010-12-11": 0,
+					"2010-12-12": 0,
+					"2010-12-13": 0,
+					"2010-12-14": 0,
+					"2010-12-15": 0,
+					"2010-12-16": 0,
+					"2010-12-17": 0,
+					"2010-12-18": 0,
+					"2010-12-19": 0,
+					"2010-12-20": 0,
+					"2010-12-21": 0,
+					"2010-12-22": 0,
+					"2010-12-23": 0,
+					"2010-12-24": 0,
+					"2010-12-25": 0,
+					"2010-12-26": 0,
+					"2010-12-27": 0,
+					"2010-12-28": 0,
+					"2010-12-29": 0
+				}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.2?period=month",
+				"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.2/files?by=bandwidth&period=month"
 			}
 		}
 	],
@@ -3163,119 +3399,7 @@
 			}
 		}
 	],
-	"/v1/stats/packages/npm/package-2/versions?by=hits&period=all": [
-		{
-			"type": "version",
-			"version": "1.1.0",
-			"hits": {
-				"total": 11040,
-				"dates": {}
-			},
-			"bandwidth": {
-				"total": 27167784,
-				"dates": {}
-			},
-			"links": {
-				"self": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.0?period=all",
-				"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.0/files?by=hits&period=all"
-			}
-		},
-		{
-			"type": "version",
-			"version": "1.1.1",
-			"hits": {
-				"total": 11316,
-				"dates": {}
-			},
-			"bandwidth": {
-				"total": 31694184,
-				"dates": {}
-			},
-			"links": {
-				"self": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.1?period=all",
-				"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.1/files?by=hits&period=all"
-			}
-		},
-		{
-			"type": "version",
-			"version": "1.1.2",
-			"hits": {
-				"total": 11592,
-				"dates": {}
-			},
-			"bandwidth": {
-				"total": 36220584,
-				"dates": {}
-			},
-			"links": {
-				"self": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.2?period=all",
-				"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.2/files?by=hits&period=all"
-			}
-		}
-	],
-	"/v1/stats/packages/npm/package-2/versions?by=hits&period=day": [
-		{
-			"type": "version",
-			"version": "1.1.0",
-			"hits": {
-				"total": 296,
-				"dates": {
-					"2010-12-29": 0
-				}
-			},
-			"bandwidth": {
-				"total": 393872,
-				"dates": {
-					"2010-12-29": 0
-				}
-			},
-			"links": {
-				"self": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.0?period=day",
-				"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.0/files?by=hits&period=day"
-			}
-		},
-		{
-			"type": "version",
-			"version": "1.1.1",
-			"hits": {
-				"total": 300,
-				"dates": {
-					"2010-12-29": 0
-				}
-			},
-			"bandwidth": {
-				"total": 459472,
-				"dates": {
-					"2010-12-29": 0
-				}
-			},
-			"links": {
-				"self": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.1?period=day",
-				"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.1/files?by=hits&period=day"
-			}
-		},
-		{
-			"type": "version",
-			"version": "1.1.2",
-			"hits": {
-				"total": 304,
-				"dates": {
-					"2010-12-29": 0
-				}
-			},
-			"bandwidth": {
-				"total": 525072,
-				"dates": {
-					"2010-12-29": 0
-				}
-			},
-			"links": {
-				"self": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.2?period=day",
-				"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.2/files?by=hits&period=day"
-			}
-		}
-	],
-	"/v1/stats/packages/npm/package-2/versions?by=hits&period=month": [
+	"/v1/stats/packages/npm/package-2/versions?by=hits": [
 		{
 			"type": "version",
 			"version": "1.1.0",
@@ -3508,6 +3632,354 @@
 			"links": {
 				"self": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.2",
 				"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.2/files?by=hits"
+			}
+		}
+	],
+	"/v1/stats/packages/npm/package-2/versions?by=hits&period=all": [
+		{
+			"type": "version",
+			"version": "1.1.0",
+			"hits": {
+				"total": 11040,
+				"dates": {}
+			},
+			"bandwidth": {
+				"total": 27167784,
+				"dates": {}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.0?period=all",
+				"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.0/files?by=hits&period=all"
+			}
+		},
+		{
+			"type": "version",
+			"version": "1.1.1",
+			"hits": {
+				"total": 11316,
+				"dates": {}
+			},
+			"bandwidth": {
+				"total": 31694184,
+				"dates": {}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.1?period=all",
+				"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.1/files?by=hits&period=all"
+			}
+		},
+		{
+			"type": "version",
+			"version": "1.1.2",
+			"hits": {
+				"total": 11592,
+				"dates": {}
+			},
+			"bandwidth": {
+				"total": 36220584,
+				"dates": {}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.2?period=all",
+				"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.2/files?by=hits&period=all"
+			}
+		}
+	],
+	"/v1/stats/packages/npm/package-2/versions?by=hits&period=day": [
+		{
+			"type": "version",
+			"version": "1.1.0",
+			"hits": {
+				"total": 296,
+				"dates": {
+					"2010-12-29": 0
+				}
+			},
+			"bandwidth": {
+				"total": 393872,
+				"dates": {
+					"2010-12-29": 0
+				}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.0?period=day",
+				"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.0/files?by=hits&period=day"
+			}
+		},
+		{
+			"type": "version",
+			"version": "1.1.1",
+			"hits": {
+				"total": 300,
+				"dates": {
+					"2010-12-29": 0
+				}
+			},
+			"bandwidth": {
+				"total": 459472,
+				"dates": {
+					"2010-12-29": 0
+				}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.1?period=day",
+				"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.1/files?by=hits&period=day"
+			}
+		},
+		{
+			"type": "version",
+			"version": "1.1.2",
+			"hits": {
+				"total": 304,
+				"dates": {
+					"2010-12-29": 0
+				}
+			},
+			"bandwidth": {
+				"total": 525072,
+				"dates": {
+					"2010-12-29": 0
+				}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.2?period=day",
+				"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.2/files?by=hits&period=day"
+			}
+		}
+	],
+	"/v1/stats/packages/npm/package-2/versions?by=hits&period=month": [
+		{
+			"type": "version",
+			"version": "1.1.0",
+			"hits": {
+				"total": 7140,
+				"dates": {
+					"2010-11-30": 0,
+					"2010-12-01": 0,
+					"2010-12-02": 0,
+					"2010-12-03": 0,
+					"2010-12-04": 0,
+					"2010-12-05": 0,
+					"2010-12-06": 0,
+					"2010-12-07": 0,
+					"2010-12-08": 0,
+					"2010-12-09": 0,
+					"2010-12-10": 0,
+					"2010-12-11": 0,
+					"2010-12-12": 0,
+					"2010-12-13": 0,
+					"2010-12-14": 0,
+					"2010-12-15": 0,
+					"2010-12-16": 0,
+					"2010-12-17": 0,
+					"2010-12-18": 0,
+					"2010-12-19": 0,
+					"2010-12-20": 0,
+					"2010-12-21": 0,
+					"2010-12-22": 0,
+					"2010-12-23": 0,
+					"2010-12-24": 0,
+					"2010-12-25": 0,
+					"2010-12-26": 0,
+					"2010-12-27": 0,
+					"2010-12-28": 0,
+					"2010-12-29": 0
+				}
+			},
+			"bandwidth": {
+				"total": 11814420,
+				"dates": {
+					"2010-11-30": 0,
+					"2010-12-01": 0,
+					"2010-12-02": 0,
+					"2010-12-03": 0,
+					"2010-12-04": 0,
+					"2010-12-05": 0,
+					"2010-12-06": 0,
+					"2010-12-07": 0,
+					"2010-12-08": 0,
+					"2010-12-09": 0,
+					"2010-12-10": 0,
+					"2010-12-11": 0,
+					"2010-12-12": 0,
+					"2010-12-13": 0,
+					"2010-12-14": 0,
+					"2010-12-15": 0,
+					"2010-12-16": 0,
+					"2010-12-17": 0,
+					"2010-12-18": 0,
+					"2010-12-19": 0,
+					"2010-12-20": 0,
+					"2010-12-21": 0,
+					"2010-12-22": 0,
+					"2010-12-23": 0,
+					"2010-12-24": 0,
+					"2010-12-25": 0,
+					"2010-12-26": 0,
+					"2010-12-27": 0,
+					"2010-12-28": 0,
+					"2010-12-29": 0
+				}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.0?period=month",
+				"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.0/files?by=hits&period=month"
+			}
+		},
+		{
+			"type": "version",
+			"version": "1.1.1",
+			"hits": {
+				"total": 7260,
+				"dates": {
+					"2010-11-30": 0,
+					"2010-12-01": 0,
+					"2010-12-02": 0,
+					"2010-12-03": 0,
+					"2010-12-04": 0,
+					"2010-12-05": 0,
+					"2010-12-06": 0,
+					"2010-12-07": 0,
+					"2010-12-08": 0,
+					"2010-12-09": 0,
+					"2010-12-10": 0,
+					"2010-12-11": 0,
+					"2010-12-12": 0,
+					"2010-12-13": 0,
+					"2010-12-14": 0,
+					"2010-12-15": 0,
+					"2010-12-16": 0,
+					"2010-12-17": 0,
+					"2010-12-18": 0,
+					"2010-12-19": 0,
+					"2010-12-20": 0,
+					"2010-12-21": 0,
+					"2010-12-22": 0,
+					"2010-12-23": 0,
+					"2010-12-24": 0,
+					"2010-12-25": 0,
+					"2010-12-26": 0,
+					"2010-12-27": 0,
+					"2010-12-28": 0,
+					"2010-12-29": 0
+				}
+			},
+			"bandwidth": {
+				"total": 13782420,
+				"dates": {
+					"2010-11-30": 0,
+					"2010-12-01": 0,
+					"2010-12-02": 0,
+					"2010-12-03": 0,
+					"2010-12-04": 0,
+					"2010-12-05": 0,
+					"2010-12-06": 0,
+					"2010-12-07": 0,
+					"2010-12-08": 0,
+					"2010-12-09": 0,
+					"2010-12-10": 0,
+					"2010-12-11": 0,
+					"2010-12-12": 0,
+					"2010-12-13": 0,
+					"2010-12-14": 0,
+					"2010-12-15": 0,
+					"2010-12-16": 0,
+					"2010-12-17": 0,
+					"2010-12-18": 0,
+					"2010-12-19": 0,
+					"2010-12-20": 0,
+					"2010-12-21": 0,
+					"2010-12-22": 0,
+					"2010-12-23": 0,
+					"2010-12-24": 0,
+					"2010-12-25": 0,
+					"2010-12-26": 0,
+					"2010-12-27": 0,
+					"2010-12-28": 0,
+					"2010-12-29": 0
+				}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.1?period=month",
+				"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.1/files?by=hits&period=month"
+			}
+		},
+		{
+			"type": "version",
+			"version": "1.1.2",
+			"hits": {
+				"total": 7380,
+				"dates": {
+					"2010-11-30": 0,
+					"2010-12-01": 0,
+					"2010-12-02": 0,
+					"2010-12-03": 0,
+					"2010-12-04": 0,
+					"2010-12-05": 0,
+					"2010-12-06": 0,
+					"2010-12-07": 0,
+					"2010-12-08": 0,
+					"2010-12-09": 0,
+					"2010-12-10": 0,
+					"2010-12-11": 0,
+					"2010-12-12": 0,
+					"2010-12-13": 0,
+					"2010-12-14": 0,
+					"2010-12-15": 0,
+					"2010-12-16": 0,
+					"2010-12-17": 0,
+					"2010-12-18": 0,
+					"2010-12-19": 0,
+					"2010-12-20": 0,
+					"2010-12-21": 0,
+					"2010-12-22": 0,
+					"2010-12-23": 0,
+					"2010-12-24": 0,
+					"2010-12-25": 0,
+					"2010-12-26": 0,
+					"2010-12-27": 0,
+					"2010-12-28": 0,
+					"2010-12-29": 0
+				}
+			},
+			"bandwidth": {
+				"total": 15750420,
+				"dates": {
+					"2010-11-30": 0,
+					"2010-12-01": 0,
+					"2010-12-02": 0,
+					"2010-12-03": 0,
+					"2010-12-04": 0,
+					"2010-12-05": 0,
+					"2010-12-06": 0,
+					"2010-12-07": 0,
+					"2010-12-08": 0,
+					"2010-12-09": 0,
+					"2010-12-10": 0,
+					"2010-12-11": 0,
+					"2010-12-12": 0,
+					"2010-12-13": 0,
+					"2010-12-14": 0,
+					"2010-12-15": 0,
+					"2010-12-16": 0,
+					"2010-12-17": 0,
+					"2010-12-18": 0,
+					"2010-12-19": 0,
+					"2010-12-20": 0,
+					"2010-12-21": 0,
+					"2010-12-22": 0,
+					"2010-12-23": 0,
+					"2010-12-24": 0,
+					"2010-12-25": 0,
+					"2010-12-26": 0,
+					"2010-12-27": 0,
+					"2010-12-28": 0,
+					"2010-12-29": 0
+				}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.2?period=month",
+				"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.2/files?by=hits&period=month"
 			}
 		}
 	],
@@ -5874,191 +6346,7 @@
 	"/v1/stats/packages/npm/package-x/versions?by=bandwidth&period=month": [],
 	"/v1/stats/packages/npm/package-x/versions?by=hits&period=all": [],
 	"/v1/stats/packages/npm/package-x/versions?by=hits&period=month": [],
-	"/v1/stats/packages/gh/user/package-59/versions?by=bandwidth&period=all": [
-		{
-			"type": "version",
-			"version": "1.1.0",
-			"hits": {
-				"total": 107916,
-				"dates": {}
-			},
-			"bandwidth": {
-				"total": 1615934184,
-				"dates": {}
-			},
-			"links": {
-				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.0?period=all",
-				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.0/files?by=bandwidth&period=all"
-			}
-		},
-		{
-			"type": "version",
-			"version": "1.1.1",
-			"hits": {
-				"total": 108192,
-				"dates": {}
-			},
-			"bandwidth": {
-				"total": 1620460584,
-				"dates": {}
-			},
-			"links": {
-				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.1?period=all",
-				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.1/files?by=bandwidth&period=all"
-			}
-		},
-		{
-			"type": "version",
-			"version": "1.1.2",
-			"hits": {
-				"total": 108468,
-				"dates": {}
-			},
-			"bandwidth": {
-				"total": 1624986984,
-				"dates": {}
-			},
-			"links": {
-				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.2?period=all",
-				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.2/files?by=bandwidth&period=all"
-			}
-		},
-		{
-			"type": "branch",
-			"version": "branch-0",
-			"hits": {
-				"total": 108744,
-				"dates": {}
-			},
-			"bandwidth": {
-				"total": 1629513384,
-				"dates": {}
-			},
-			"links": {
-				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-0?period=all",
-				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-0/files?by=bandwidth&period=all"
-			}
-		},
-		{
-			"type": "branch",
-			"version": "branch-1",
-			"hits": {
-				"total": 109020,
-				"dates": {}
-			},
-			"bandwidth": {
-				"total": 1634039784,
-				"dates": {}
-			},
-			"links": {
-				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-1?period=all",
-				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-1/files?by=bandwidth&period=all"
-			}
-		}
-	],
-	"/v1/stats/packages/gh/user/package-59/versions?by=bandwidth&period=day": [
-		{
-			"type": "version",
-			"version": "1.1.0",
-			"hits": {
-				"total": 1700,
-				"dates": {
-					"2010-12-29": 0
-				}
-			},
-			"bandwidth": {
-				"total": 23419472,
-				"dates": {
-					"2010-12-29": 0
-				}
-			},
-			"links": {
-				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.0?period=day",
-				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.0/files?by=bandwidth&period=day"
-			}
-		},
-		{
-			"type": "version",
-			"version": "1.1.1",
-			"hits": {
-				"total": 1704,
-				"dates": {
-					"2010-12-29": 0
-				}
-			},
-			"bandwidth": {
-				"total": 23485072,
-				"dates": {
-					"2010-12-29": 0
-				}
-			},
-			"links": {
-				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.1?period=day",
-				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.1/files?by=bandwidth&period=day"
-			}
-		},
-		{
-			"type": "version",
-			"version": "1.1.2",
-			"hits": {
-				"total": 1708,
-				"dates": {
-					"2010-12-29": 0
-				}
-			},
-			"bandwidth": {
-				"total": 23550672,
-				"dates": {
-					"2010-12-29": 0
-				}
-			},
-			"links": {
-				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.2?period=day",
-				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.2/files?by=bandwidth&period=day"
-			}
-		},
-		{
-			"type": "branch",
-			"version": "branch-0",
-			"hits": {
-				"total": 1712,
-				"dates": {
-					"2010-12-29": 0
-				}
-			},
-			"bandwidth": {
-				"total": 23616272,
-				"dates": {
-					"2010-12-29": 0
-				}
-			},
-			"links": {
-				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-0?period=day",
-				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-0/files?by=bandwidth&period=day"
-			}
-		},
-		{
-			"type": "branch",
-			"version": "branch-1",
-			"hits": {
-				"total": 1716,
-				"dates": {
-					"2010-12-29": 0
-				}
-			},
-			"bandwidth": {
-				"total": 23681872,
-				"dates": {
-					"2010-12-29": 0
-				}
-			},
-			"links": {
-				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-1?period=day",
-				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-1/files?by=bandwidth&period=day"
-			}
-		}
-	],
-	"/v1/stats/packages/gh/user/package-59/versions?by=bandwidth&period=month": [
+	"/v1/stats/packages/gh/user/package-59/versions?by=bandwidth": [
 		{
 			"type": "version",
 			"version": "1.1.0",
@@ -6447,6 +6735,582 @@
 			"links": {
 				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-1",
 				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-1/files?by=bandwidth"
+			}
+		}
+	],
+	"/v1/stats/packages/gh/user/package-59/versions?by=bandwidth&period=all": [
+		{
+			"type": "version",
+			"version": "1.1.0",
+			"hits": {
+				"total": 107916,
+				"dates": {}
+			},
+			"bandwidth": {
+				"total": 1615934184,
+				"dates": {}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.0?period=all",
+				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.0/files?by=bandwidth&period=all"
+			}
+		},
+		{
+			"type": "version",
+			"version": "1.1.1",
+			"hits": {
+				"total": 108192,
+				"dates": {}
+			},
+			"bandwidth": {
+				"total": 1620460584,
+				"dates": {}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.1?period=all",
+				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.1/files?by=bandwidth&period=all"
+			}
+		},
+		{
+			"type": "version",
+			"version": "1.1.2",
+			"hits": {
+				"total": 108468,
+				"dates": {}
+			},
+			"bandwidth": {
+				"total": 1624986984,
+				"dates": {}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.2?period=all",
+				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.2/files?by=bandwidth&period=all"
+			}
+		},
+		{
+			"type": "branch",
+			"version": "branch-0",
+			"hits": {
+				"total": 108744,
+				"dates": {}
+			},
+			"bandwidth": {
+				"total": 1629513384,
+				"dates": {}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-0?period=all",
+				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-0/files?by=bandwidth&period=all"
+			}
+		},
+		{
+			"type": "branch",
+			"version": "branch-1",
+			"hits": {
+				"total": 109020,
+				"dates": {}
+			},
+			"bandwidth": {
+				"total": 1634039784,
+				"dates": {}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-1?period=all",
+				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-1/files?by=bandwidth&period=all"
+			}
+		}
+	],
+	"/v1/stats/packages/gh/user/package-59/versions?by=bandwidth&period=day": [
+		{
+			"type": "version",
+			"version": "1.1.0",
+			"hits": {
+				"total": 1700,
+				"dates": {
+					"2010-12-29": 0
+				}
+			},
+			"bandwidth": {
+				"total": 23419472,
+				"dates": {
+					"2010-12-29": 0
+				}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.0?period=day",
+				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.0/files?by=bandwidth&period=day"
+			}
+		},
+		{
+			"type": "version",
+			"version": "1.1.1",
+			"hits": {
+				"total": 1704,
+				"dates": {
+					"2010-12-29": 0
+				}
+			},
+			"bandwidth": {
+				"total": 23485072,
+				"dates": {
+					"2010-12-29": 0
+				}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.1?period=day",
+				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.1/files?by=bandwidth&period=day"
+			}
+		},
+		{
+			"type": "version",
+			"version": "1.1.2",
+			"hits": {
+				"total": 1708,
+				"dates": {
+					"2010-12-29": 0
+				}
+			},
+			"bandwidth": {
+				"total": 23550672,
+				"dates": {
+					"2010-12-29": 0
+				}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.2?period=day",
+				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.2/files?by=bandwidth&period=day"
+			}
+		},
+		{
+			"type": "branch",
+			"version": "branch-0",
+			"hits": {
+				"total": 1712,
+				"dates": {
+					"2010-12-29": 0
+				}
+			},
+			"bandwidth": {
+				"total": 23616272,
+				"dates": {
+					"2010-12-29": 0
+				}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-0?period=day",
+				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-0/files?by=bandwidth&period=day"
+			}
+		},
+		{
+			"type": "branch",
+			"version": "branch-1",
+			"hits": {
+				"total": 1716,
+				"dates": {
+					"2010-12-29": 0
+				}
+			},
+			"bandwidth": {
+				"total": 23681872,
+				"dates": {
+					"2010-12-29": 0
+				}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-1?period=day",
+				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-1/files?by=bandwidth&period=day"
+			}
+		}
+	],
+	"/v1/stats/packages/gh/user/package-59/versions?by=bandwidth&period=month": [
+		{
+			"type": "version",
+			"version": "1.1.0",
+			"hits": {
+				"total": 49260,
+				"dates": {
+					"2010-11-30": 0,
+					"2010-12-01": 0,
+					"2010-12-02": 0,
+					"2010-12-03": 0,
+					"2010-12-04": 0,
+					"2010-12-05": 0,
+					"2010-12-06": 0,
+					"2010-12-07": 0,
+					"2010-12-08": 0,
+					"2010-12-09": 0,
+					"2010-12-10": 0,
+					"2010-12-11": 0,
+					"2010-12-12": 0,
+					"2010-12-13": 0,
+					"2010-12-14": 0,
+					"2010-12-15": 0,
+					"2010-12-16": 0,
+					"2010-12-17": 0,
+					"2010-12-18": 0,
+					"2010-12-19": 0,
+					"2010-12-20": 0,
+					"2010-12-21": 0,
+					"2010-12-22": 0,
+					"2010-12-23": 0,
+					"2010-12-24": 0,
+					"2010-12-25": 0,
+					"2010-12-26": 0,
+					"2010-12-27": 0,
+					"2010-12-28": 0,
+					"2010-12-29": 0
+				}
+			},
+			"bandwidth": {
+				"total": 702582420,
+				"dates": {
+					"2010-11-30": 0,
+					"2010-12-01": 0,
+					"2010-12-02": 0,
+					"2010-12-03": 0,
+					"2010-12-04": 0,
+					"2010-12-05": 0,
+					"2010-12-06": 0,
+					"2010-12-07": 0,
+					"2010-12-08": 0,
+					"2010-12-09": 0,
+					"2010-12-10": 0,
+					"2010-12-11": 0,
+					"2010-12-12": 0,
+					"2010-12-13": 0,
+					"2010-12-14": 0,
+					"2010-12-15": 0,
+					"2010-12-16": 0,
+					"2010-12-17": 0,
+					"2010-12-18": 0,
+					"2010-12-19": 0,
+					"2010-12-20": 0,
+					"2010-12-21": 0,
+					"2010-12-22": 0,
+					"2010-12-23": 0,
+					"2010-12-24": 0,
+					"2010-12-25": 0,
+					"2010-12-26": 0,
+					"2010-12-27": 0,
+					"2010-12-28": 0,
+					"2010-12-29": 0
+				}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.0?period=month",
+				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.0/files?by=bandwidth&period=month"
+			}
+		},
+		{
+			"type": "version",
+			"version": "1.1.1",
+			"hits": {
+				"total": 49380,
+				"dates": {
+					"2010-11-30": 0,
+					"2010-12-01": 0,
+					"2010-12-02": 0,
+					"2010-12-03": 0,
+					"2010-12-04": 0,
+					"2010-12-05": 0,
+					"2010-12-06": 0,
+					"2010-12-07": 0,
+					"2010-12-08": 0,
+					"2010-12-09": 0,
+					"2010-12-10": 0,
+					"2010-12-11": 0,
+					"2010-12-12": 0,
+					"2010-12-13": 0,
+					"2010-12-14": 0,
+					"2010-12-15": 0,
+					"2010-12-16": 0,
+					"2010-12-17": 0,
+					"2010-12-18": 0,
+					"2010-12-19": 0,
+					"2010-12-20": 0,
+					"2010-12-21": 0,
+					"2010-12-22": 0,
+					"2010-12-23": 0,
+					"2010-12-24": 0,
+					"2010-12-25": 0,
+					"2010-12-26": 0,
+					"2010-12-27": 0,
+					"2010-12-28": 0,
+					"2010-12-29": 0
+				}
+			},
+			"bandwidth": {
+				"total": 704550420,
+				"dates": {
+					"2010-11-30": 0,
+					"2010-12-01": 0,
+					"2010-12-02": 0,
+					"2010-12-03": 0,
+					"2010-12-04": 0,
+					"2010-12-05": 0,
+					"2010-12-06": 0,
+					"2010-12-07": 0,
+					"2010-12-08": 0,
+					"2010-12-09": 0,
+					"2010-12-10": 0,
+					"2010-12-11": 0,
+					"2010-12-12": 0,
+					"2010-12-13": 0,
+					"2010-12-14": 0,
+					"2010-12-15": 0,
+					"2010-12-16": 0,
+					"2010-12-17": 0,
+					"2010-12-18": 0,
+					"2010-12-19": 0,
+					"2010-12-20": 0,
+					"2010-12-21": 0,
+					"2010-12-22": 0,
+					"2010-12-23": 0,
+					"2010-12-24": 0,
+					"2010-12-25": 0,
+					"2010-12-26": 0,
+					"2010-12-27": 0,
+					"2010-12-28": 0,
+					"2010-12-29": 0
+				}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.1?period=month",
+				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.1/files?by=bandwidth&period=month"
+			}
+		},
+		{
+			"type": "version",
+			"version": "1.1.2",
+			"hits": {
+				"total": 49500,
+				"dates": {
+					"2010-11-30": 0,
+					"2010-12-01": 0,
+					"2010-12-02": 0,
+					"2010-12-03": 0,
+					"2010-12-04": 0,
+					"2010-12-05": 0,
+					"2010-12-06": 0,
+					"2010-12-07": 0,
+					"2010-12-08": 0,
+					"2010-12-09": 0,
+					"2010-12-10": 0,
+					"2010-12-11": 0,
+					"2010-12-12": 0,
+					"2010-12-13": 0,
+					"2010-12-14": 0,
+					"2010-12-15": 0,
+					"2010-12-16": 0,
+					"2010-12-17": 0,
+					"2010-12-18": 0,
+					"2010-12-19": 0,
+					"2010-12-20": 0,
+					"2010-12-21": 0,
+					"2010-12-22": 0,
+					"2010-12-23": 0,
+					"2010-12-24": 0,
+					"2010-12-25": 0,
+					"2010-12-26": 0,
+					"2010-12-27": 0,
+					"2010-12-28": 0,
+					"2010-12-29": 0
+				}
+			},
+			"bandwidth": {
+				"total": 706518420,
+				"dates": {
+					"2010-11-30": 0,
+					"2010-12-01": 0,
+					"2010-12-02": 0,
+					"2010-12-03": 0,
+					"2010-12-04": 0,
+					"2010-12-05": 0,
+					"2010-12-06": 0,
+					"2010-12-07": 0,
+					"2010-12-08": 0,
+					"2010-12-09": 0,
+					"2010-12-10": 0,
+					"2010-12-11": 0,
+					"2010-12-12": 0,
+					"2010-12-13": 0,
+					"2010-12-14": 0,
+					"2010-12-15": 0,
+					"2010-12-16": 0,
+					"2010-12-17": 0,
+					"2010-12-18": 0,
+					"2010-12-19": 0,
+					"2010-12-20": 0,
+					"2010-12-21": 0,
+					"2010-12-22": 0,
+					"2010-12-23": 0,
+					"2010-12-24": 0,
+					"2010-12-25": 0,
+					"2010-12-26": 0,
+					"2010-12-27": 0,
+					"2010-12-28": 0,
+					"2010-12-29": 0
+				}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.2?period=month",
+				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.2/files?by=bandwidth&period=month"
+			}
+		},
+		{
+			"type": "branch",
+			"version": "branch-0",
+			"hits": {
+				"total": 49620,
+				"dates": {
+					"2010-11-30": 0,
+					"2010-12-01": 0,
+					"2010-12-02": 0,
+					"2010-12-03": 0,
+					"2010-12-04": 0,
+					"2010-12-05": 0,
+					"2010-12-06": 0,
+					"2010-12-07": 0,
+					"2010-12-08": 0,
+					"2010-12-09": 0,
+					"2010-12-10": 0,
+					"2010-12-11": 0,
+					"2010-12-12": 0,
+					"2010-12-13": 0,
+					"2010-12-14": 0,
+					"2010-12-15": 0,
+					"2010-12-16": 0,
+					"2010-12-17": 0,
+					"2010-12-18": 0,
+					"2010-12-19": 0,
+					"2010-12-20": 0,
+					"2010-12-21": 0,
+					"2010-12-22": 0,
+					"2010-12-23": 0,
+					"2010-12-24": 0,
+					"2010-12-25": 0,
+					"2010-12-26": 0,
+					"2010-12-27": 0,
+					"2010-12-28": 0,
+					"2010-12-29": 0
+				}
+			},
+			"bandwidth": {
+				"total": 708486420,
+				"dates": {
+					"2010-11-30": 0,
+					"2010-12-01": 0,
+					"2010-12-02": 0,
+					"2010-12-03": 0,
+					"2010-12-04": 0,
+					"2010-12-05": 0,
+					"2010-12-06": 0,
+					"2010-12-07": 0,
+					"2010-12-08": 0,
+					"2010-12-09": 0,
+					"2010-12-10": 0,
+					"2010-12-11": 0,
+					"2010-12-12": 0,
+					"2010-12-13": 0,
+					"2010-12-14": 0,
+					"2010-12-15": 0,
+					"2010-12-16": 0,
+					"2010-12-17": 0,
+					"2010-12-18": 0,
+					"2010-12-19": 0,
+					"2010-12-20": 0,
+					"2010-12-21": 0,
+					"2010-12-22": 0,
+					"2010-12-23": 0,
+					"2010-12-24": 0,
+					"2010-12-25": 0,
+					"2010-12-26": 0,
+					"2010-12-27": 0,
+					"2010-12-28": 0,
+					"2010-12-29": 0
+				}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-0?period=month",
+				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-0/files?by=bandwidth&period=month"
+			}
+		},
+		{
+			"type": "branch",
+			"version": "branch-1",
+			"hits": {
+				"total": 49740,
+				"dates": {
+					"2010-11-30": 0,
+					"2010-12-01": 0,
+					"2010-12-02": 0,
+					"2010-12-03": 0,
+					"2010-12-04": 0,
+					"2010-12-05": 0,
+					"2010-12-06": 0,
+					"2010-12-07": 0,
+					"2010-12-08": 0,
+					"2010-12-09": 0,
+					"2010-12-10": 0,
+					"2010-12-11": 0,
+					"2010-12-12": 0,
+					"2010-12-13": 0,
+					"2010-12-14": 0,
+					"2010-12-15": 0,
+					"2010-12-16": 0,
+					"2010-12-17": 0,
+					"2010-12-18": 0,
+					"2010-12-19": 0,
+					"2010-12-20": 0,
+					"2010-12-21": 0,
+					"2010-12-22": 0,
+					"2010-12-23": 0,
+					"2010-12-24": 0,
+					"2010-12-25": 0,
+					"2010-12-26": 0,
+					"2010-12-27": 0,
+					"2010-12-28": 0,
+					"2010-12-29": 0
+				}
+			},
+			"bandwidth": {
+				"total": 710454420,
+				"dates": {
+					"2010-11-30": 0,
+					"2010-12-01": 0,
+					"2010-12-02": 0,
+					"2010-12-03": 0,
+					"2010-12-04": 0,
+					"2010-12-05": 0,
+					"2010-12-06": 0,
+					"2010-12-07": 0,
+					"2010-12-08": 0,
+					"2010-12-09": 0,
+					"2010-12-10": 0,
+					"2010-12-11": 0,
+					"2010-12-12": 0,
+					"2010-12-13": 0,
+					"2010-12-14": 0,
+					"2010-12-15": 0,
+					"2010-12-16": 0,
+					"2010-12-17": 0,
+					"2010-12-18": 0,
+					"2010-12-19": 0,
+					"2010-12-20": 0,
+					"2010-12-21": 0,
+					"2010-12-22": 0,
+					"2010-12-23": 0,
+					"2010-12-24": 0,
+					"2010-12-25": 0,
+					"2010-12-26": 0,
+					"2010-12-27": 0,
+					"2010-12-28": 0,
+					"2010-12-29": 0
+				}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-1?period=month",
+				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-1/files?by=bandwidth&period=month"
 			}
 		}
 	],
@@ -10354,191 +11218,7 @@
 			}
 		}
 	],
-	"/v1/stats/packages/gh/user/package-59/versions?by=hits&period=all": [
-		{
-			"type": "version",
-			"version": "1.1.0",
-			"hits": {
-				"total": 107916,
-				"dates": {}
-			},
-			"bandwidth": {
-				"total": 1615934184,
-				"dates": {}
-			},
-			"links": {
-				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.0?period=all",
-				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.0/files?by=hits&period=all"
-			}
-		},
-		{
-			"type": "version",
-			"version": "1.1.1",
-			"hits": {
-				"total": 108192,
-				"dates": {}
-			},
-			"bandwidth": {
-				"total": 1620460584,
-				"dates": {}
-			},
-			"links": {
-				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.1?period=all",
-				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.1/files?by=hits&period=all"
-			}
-		},
-		{
-			"type": "version",
-			"version": "1.1.2",
-			"hits": {
-				"total": 108468,
-				"dates": {}
-			},
-			"bandwidth": {
-				"total": 1624986984,
-				"dates": {}
-			},
-			"links": {
-				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.2?period=all",
-				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.2/files?by=hits&period=all"
-			}
-		},
-		{
-			"type": "branch",
-			"version": "branch-0",
-			"hits": {
-				"total": 108744,
-				"dates": {}
-			},
-			"bandwidth": {
-				"total": 1629513384,
-				"dates": {}
-			},
-			"links": {
-				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-0?period=all",
-				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-0/files?by=hits&period=all"
-			}
-		},
-		{
-			"type": "branch",
-			"version": "branch-1",
-			"hits": {
-				"total": 109020,
-				"dates": {}
-			},
-			"bandwidth": {
-				"total": 1634039784,
-				"dates": {}
-			},
-			"links": {
-				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-1?period=all",
-				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-1/files?by=hits&period=all"
-			}
-		}
-	],
-	"/v1/stats/packages/gh/user/package-59/versions?by=hits&period=day": [
-		{
-			"type": "version",
-			"version": "1.1.0",
-			"hits": {
-				"total": 1700,
-				"dates": {
-					"2010-12-29": 0
-				}
-			},
-			"bandwidth": {
-				"total": 23419472,
-				"dates": {
-					"2010-12-29": 0
-				}
-			},
-			"links": {
-				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.0?period=day",
-				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.0/files?by=hits&period=day"
-			}
-		},
-		{
-			"type": "version",
-			"version": "1.1.1",
-			"hits": {
-				"total": 1704,
-				"dates": {
-					"2010-12-29": 0
-				}
-			},
-			"bandwidth": {
-				"total": 23485072,
-				"dates": {
-					"2010-12-29": 0
-				}
-			},
-			"links": {
-				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.1?period=day",
-				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.1/files?by=hits&period=day"
-			}
-		},
-		{
-			"type": "version",
-			"version": "1.1.2",
-			"hits": {
-				"total": 1708,
-				"dates": {
-					"2010-12-29": 0
-				}
-			},
-			"bandwidth": {
-				"total": 23550672,
-				"dates": {
-					"2010-12-29": 0
-				}
-			},
-			"links": {
-				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.2?period=day",
-				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.2/files?by=hits&period=day"
-			}
-		},
-		{
-			"type": "branch",
-			"version": "branch-0",
-			"hits": {
-				"total": 1712,
-				"dates": {
-					"2010-12-29": 0
-				}
-			},
-			"bandwidth": {
-				"total": 23616272,
-				"dates": {
-					"2010-12-29": 0
-				}
-			},
-			"links": {
-				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-0?period=day",
-				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-0/files?by=hits&period=day"
-			}
-		},
-		{
-			"type": "branch",
-			"version": "branch-1",
-			"hits": {
-				"total": 1716,
-				"dates": {
-					"2010-12-29": 0
-				}
-			},
-			"bandwidth": {
-				"total": 23681872,
-				"dates": {
-					"2010-12-29": 0
-				}
-			},
-			"links": {
-				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-1?period=day",
-				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-1/files?by=hits&period=day"
-			}
-		}
-	],
-	"/v1/stats/packages/gh/user/package-59/versions?by=hits&period=month": [
+	"/v1/stats/packages/gh/user/package-59/versions?by=hits": [
 		{
 			"type": "version",
 			"version": "1.1.0",
@@ -10927,6 +11607,582 @@
 			"links": {
 				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-1",
 				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-1/files?by=hits"
+			}
+		}
+	],
+	"/v1/stats/packages/gh/user/package-59/versions?by=hits&period=all": [
+		{
+			"type": "version",
+			"version": "1.1.0",
+			"hits": {
+				"total": 107916,
+				"dates": {}
+			},
+			"bandwidth": {
+				"total": 1615934184,
+				"dates": {}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.0?period=all",
+				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.0/files?by=hits&period=all"
+			}
+		},
+		{
+			"type": "version",
+			"version": "1.1.1",
+			"hits": {
+				"total": 108192,
+				"dates": {}
+			},
+			"bandwidth": {
+				"total": 1620460584,
+				"dates": {}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.1?period=all",
+				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.1/files?by=hits&period=all"
+			}
+		},
+		{
+			"type": "version",
+			"version": "1.1.2",
+			"hits": {
+				"total": 108468,
+				"dates": {}
+			},
+			"bandwidth": {
+				"total": 1624986984,
+				"dates": {}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.2?period=all",
+				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.2/files?by=hits&period=all"
+			}
+		},
+		{
+			"type": "branch",
+			"version": "branch-0",
+			"hits": {
+				"total": 108744,
+				"dates": {}
+			},
+			"bandwidth": {
+				"total": 1629513384,
+				"dates": {}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-0?period=all",
+				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-0/files?by=hits&period=all"
+			}
+		},
+		{
+			"type": "branch",
+			"version": "branch-1",
+			"hits": {
+				"total": 109020,
+				"dates": {}
+			},
+			"bandwidth": {
+				"total": 1634039784,
+				"dates": {}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-1?period=all",
+				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-1/files?by=hits&period=all"
+			}
+		}
+	],
+	"/v1/stats/packages/gh/user/package-59/versions?by=hits&period=day": [
+		{
+			"type": "version",
+			"version": "1.1.0",
+			"hits": {
+				"total": 1700,
+				"dates": {
+					"2010-12-29": 0
+				}
+			},
+			"bandwidth": {
+				"total": 23419472,
+				"dates": {
+					"2010-12-29": 0
+				}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.0?period=day",
+				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.0/files?by=hits&period=day"
+			}
+		},
+		{
+			"type": "version",
+			"version": "1.1.1",
+			"hits": {
+				"total": 1704,
+				"dates": {
+					"2010-12-29": 0
+				}
+			},
+			"bandwidth": {
+				"total": 23485072,
+				"dates": {
+					"2010-12-29": 0
+				}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.1?period=day",
+				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.1/files?by=hits&period=day"
+			}
+		},
+		{
+			"type": "version",
+			"version": "1.1.2",
+			"hits": {
+				"total": 1708,
+				"dates": {
+					"2010-12-29": 0
+				}
+			},
+			"bandwidth": {
+				"total": 23550672,
+				"dates": {
+					"2010-12-29": 0
+				}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.2?period=day",
+				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.2/files?by=hits&period=day"
+			}
+		},
+		{
+			"type": "branch",
+			"version": "branch-0",
+			"hits": {
+				"total": 1712,
+				"dates": {
+					"2010-12-29": 0
+				}
+			},
+			"bandwidth": {
+				"total": 23616272,
+				"dates": {
+					"2010-12-29": 0
+				}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-0?period=day",
+				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-0/files?by=hits&period=day"
+			}
+		},
+		{
+			"type": "branch",
+			"version": "branch-1",
+			"hits": {
+				"total": 1716,
+				"dates": {
+					"2010-12-29": 0
+				}
+			},
+			"bandwidth": {
+				"total": 23681872,
+				"dates": {
+					"2010-12-29": 0
+				}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-1?period=day",
+				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-1/files?by=hits&period=day"
+			}
+		}
+	],
+	"/v1/stats/packages/gh/user/package-59/versions?by=hits&period=month": [
+		{
+			"type": "version",
+			"version": "1.1.0",
+			"hits": {
+				"total": 49260,
+				"dates": {
+					"2010-11-30": 0,
+					"2010-12-01": 0,
+					"2010-12-02": 0,
+					"2010-12-03": 0,
+					"2010-12-04": 0,
+					"2010-12-05": 0,
+					"2010-12-06": 0,
+					"2010-12-07": 0,
+					"2010-12-08": 0,
+					"2010-12-09": 0,
+					"2010-12-10": 0,
+					"2010-12-11": 0,
+					"2010-12-12": 0,
+					"2010-12-13": 0,
+					"2010-12-14": 0,
+					"2010-12-15": 0,
+					"2010-12-16": 0,
+					"2010-12-17": 0,
+					"2010-12-18": 0,
+					"2010-12-19": 0,
+					"2010-12-20": 0,
+					"2010-12-21": 0,
+					"2010-12-22": 0,
+					"2010-12-23": 0,
+					"2010-12-24": 0,
+					"2010-12-25": 0,
+					"2010-12-26": 0,
+					"2010-12-27": 0,
+					"2010-12-28": 0,
+					"2010-12-29": 0
+				}
+			},
+			"bandwidth": {
+				"total": 702582420,
+				"dates": {
+					"2010-11-30": 0,
+					"2010-12-01": 0,
+					"2010-12-02": 0,
+					"2010-12-03": 0,
+					"2010-12-04": 0,
+					"2010-12-05": 0,
+					"2010-12-06": 0,
+					"2010-12-07": 0,
+					"2010-12-08": 0,
+					"2010-12-09": 0,
+					"2010-12-10": 0,
+					"2010-12-11": 0,
+					"2010-12-12": 0,
+					"2010-12-13": 0,
+					"2010-12-14": 0,
+					"2010-12-15": 0,
+					"2010-12-16": 0,
+					"2010-12-17": 0,
+					"2010-12-18": 0,
+					"2010-12-19": 0,
+					"2010-12-20": 0,
+					"2010-12-21": 0,
+					"2010-12-22": 0,
+					"2010-12-23": 0,
+					"2010-12-24": 0,
+					"2010-12-25": 0,
+					"2010-12-26": 0,
+					"2010-12-27": 0,
+					"2010-12-28": 0,
+					"2010-12-29": 0
+				}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.0?period=month",
+				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.0/files?by=hits&period=month"
+			}
+		},
+		{
+			"type": "version",
+			"version": "1.1.1",
+			"hits": {
+				"total": 49380,
+				"dates": {
+					"2010-11-30": 0,
+					"2010-12-01": 0,
+					"2010-12-02": 0,
+					"2010-12-03": 0,
+					"2010-12-04": 0,
+					"2010-12-05": 0,
+					"2010-12-06": 0,
+					"2010-12-07": 0,
+					"2010-12-08": 0,
+					"2010-12-09": 0,
+					"2010-12-10": 0,
+					"2010-12-11": 0,
+					"2010-12-12": 0,
+					"2010-12-13": 0,
+					"2010-12-14": 0,
+					"2010-12-15": 0,
+					"2010-12-16": 0,
+					"2010-12-17": 0,
+					"2010-12-18": 0,
+					"2010-12-19": 0,
+					"2010-12-20": 0,
+					"2010-12-21": 0,
+					"2010-12-22": 0,
+					"2010-12-23": 0,
+					"2010-12-24": 0,
+					"2010-12-25": 0,
+					"2010-12-26": 0,
+					"2010-12-27": 0,
+					"2010-12-28": 0,
+					"2010-12-29": 0
+				}
+			},
+			"bandwidth": {
+				"total": 704550420,
+				"dates": {
+					"2010-11-30": 0,
+					"2010-12-01": 0,
+					"2010-12-02": 0,
+					"2010-12-03": 0,
+					"2010-12-04": 0,
+					"2010-12-05": 0,
+					"2010-12-06": 0,
+					"2010-12-07": 0,
+					"2010-12-08": 0,
+					"2010-12-09": 0,
+					"2010-12-10": 0,
+					"2010-12-11": 0,
+					"2010-12-12": 0,
+					"2010-12-13": 0,
+					"2010-12-14": 0,
+					"2010-12-15": 0,
+					"2010-12-16": 0,
+					"2010-12-17": 0,
+					"2010-12-18": 0,
+					"2010-12-19": 0,
+					"2010-12-20": 0,
+					"2010-12-21": 0,
+					"2010-12-22": 0,
+					"2010-12-23": 0,
+					"2010-12-24": 0,
+					"2010-12-25": 0,
+					"2010-12-26": 0,
+					"2010-12-27": 0,
+					"2010-12-28": 0,
+					"2010-12-29": 0
+				}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.1?period=month",
+				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.1/files?by=hits&period=month"
+			}
+		},
+		{
+			"type": "version",
+			"version": "1.1.2",
+			"hits": {
+				"total": 49500,
+				"dates": {
+					"2010-11-30": 0,
+					"2010-12-01": 0,
+					"2010-12-02": 0,
+					"2010-12-03": 0,
+					"2010-12-04": 0,
+					"2010-12-05": 0,
+					"2010-12-06": 0,
+					"2010-12-07": 0,
+					"2010-12-08": 0,
+					"2010-12-09": 0,
+					"2010-12-10": 0,
+					"2010-12-11": 0,
+					"2010-12-12": 0,
+					"2010-12-13": 0,
+					"2010-12-14": 0,
+					"2010-12-15": 0,
+					"2010-12-16": 0,
+					"2010-12-17": 0,
+					"2010-12-18": 0,
+					"2010-12-19": 0,
+					"2010-12-20": 0,
+					"2010-12-21": 0,
+					"2010-12-22": 0,
+					"2010-12-23": 0,
+					"2010-12-24": 0,
+					"2010-12-25": 0,
+					"2010-12-26": 0,
+					"2010-12-27": 0,
+					"2010-12-28": 0,
+					"2010-12-29": 0
+				}
+			},
+			"bandwidth": {
+				"total": 706518420,
+				"dates": {
+					"2010-11-30": 0,
+					"2010-12-01": 0,
+					"2010-12-02": 0,
+					"2010-12-03": 0,
+					"2010-12-04": 0,
+					"2010-12-05": 0,
+					"2010-12-06": 0,
+					"2010-12-07": 0,
+					"2010-12-08": 0,
+					"2010-12-09": 0,
+					"2010-12-10": 0,
+					"2010-12-11": 0,
+					"2010-12-12": 0,
+					"2010-12-13": 0,
+					"2010-12-14": 0,
+					"2010-12-15": 0,
+					"2010-12-16": 0,
+					"2010-12-17": 0,
+					"2010-12-18": 0,
+					"2010-12-19": 0,
+					"2010-12-20": 0,
+					"2010-12-21": 0,
+					"2010-12-22": 0,
+					"2010-12-23": 0,
+					"2010-12-24": 0,
+					"2010-12-25": 0,
+					"2010-12-26": 0,
+					"2010-12-27": 0,
+					"2010-12-28": 0,
+					"2010-12-29": 0
+				}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.2?period=month",
+				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.2/files?by=hits&period=month"
+			}
+		},
+		{
+			"type": "branch",
+			"version": "branch-0",
+			"hits": {
+				"total": 49620,
+				"dates": {
+					"2010-11-30": 0,
+					"2010-12-01": 0,
+					"2010-12-02": 0,
+					"2010-12-03": 0,
+					"2010-12-04": 0,
+					"2010-12-05": 0,
+					"2010-12-06": 0,
+					"2010-12-07": 0,
+					"2010-12-08": 0,
+					"2010-12-09": 0,
+					"2010-12-10": 0,
+					"2010-12-11": 0,
+					"2010-12-12": 0,
+					"2010-12-13": 0,
+					"2010-12-14": 0,
+					"2010-12-15": 0,
+					"2010-12-16": 0,
+					"2010-12-17": 0,
+					"2010-12-18": 0,
+					"2010-12-19": 0,
+					"2010-12-20": 0,
+					"2010-12-21": 0,
+					"2010-12-22": 0,
+					"2010-12-23": 0,
+					"2010-12-24": 0,
+					"2010-12-25": 0,
+					"2010-12-26": 0,
+					"2010-12-27": 0,
+					"2010-12-28": 0,
+					"2010-12-29": 0
+				}
+			},
+			"bandwidth": {
+				"total": 708486420,
+				"dates": {
+					"2010-11-30": 0,
+					"2010-12-01": 0,
+					"2010-12-02": 0,
+					"2010-12-03": 0,
+					"2010-12-04": 0,
+					"2010-12-05": 0,
+					"2010-12-06": 0,
+					"2010-12-07": 0,
+					"2010-12-08": 0,
+					"2010-12-09": 0,
+					"2010-12-10": 0,
+					"2010-12-11": 0,
+					"2010-12-12": 0,
+					"2010-12-13": 0,
+					"2010-12-14": 0,
+					"2010-12-15": 0,
+					"2010-12-16": 0,
+					"2010-12-17": 0,
+					"2010-12-18": 0,
+					"2010-12-19": 0,
+					"2010-12-20": 0,
+					"2010-12-21": 0,
+					"2010-12-22": 0,
+					"2010-12-23": 0,
+					"2010-12-24": 0,
+					"2010-12-25": 0,
+					"2010-12-26": 0,
+					"2010-12-27": 0,
+					"2010-12-28": 0,
+					"2010-12-29": 0
+				}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-0?period=month",
+				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-0/files?by=hits&period=month"
+			}
+		},
+		{
+			"type": "branch",
+			"version": "branch-1",
+			"hits": {
+				"total": 49740,
+				"dates": {
+					"2010-11-30": 0,
+					"2010-12-01": 0,
+					"2010-12-02": 0,
+					"2010-12-03": 0,
+					"2010-12-04": 0,
+					"2010-12-05": 0,
+					"2010-12-06": 0,
+					"2010-12-07": 0,
+					"2010-12-08": 0,
+					"2010-12-09": 0,
+					"2010-12-10": 0,
+					"2010-12-11": 0,
+					"2010-12-12": 0,
+					"2010-12-13": 0,
+					"2010-12-14": 0,
+					"2010-12-15": 0,
+					"2010-12-16": 0,
+					"2010-12-17": 0,
+					"2010-12-18": 0,
+					"2010-12-19": 0,
+					"2010-12-20": 0,
+					"2010-12-21": 0,
+					"2010-12-22": 0,
+					"2010-12-23": 0,
+					"2010-12-24": 0,
+					"2010-12-25": 0,
+					"2010-12-26": 0,
+					"2010-12-27": 0,
+					"2010-12-28": 0,
+					"2010-12-29": 0
+				}
+			},
+			"bandwidth": {
+				"total": 710454420,
+				"dates": {
+					"2010-11-30": 0,
+					"2010-12-01": 0,
+					"2010-12-02": 0,
+					"2010-12-03": 0,
+					"2010-12-04": 0,
+					"2010-12-05": 0,
+					"2010-12-06": 0,
+					"2010-12-07": 0,
+					"2010-12-08": 0,
+					"2010-12-09": 0,
+					"2010-12-10": 0,
+					"2010-12-11": 0,
+					"2010-12-12": 0,
+					"2010-12-13": 0,
+					"2010-12-14": 0,
+					"2010-12-15": 0,
+					"2010-12-16": 0,
+					"2010-12-17": 0,
+					"2010-12-18": 0,
+					"2010-12-19": 0,
+					"2010-12-20": 0,
+					"2010-12-21": 0,
+					"2010-12-22": 0,
+					"2010-12-23": 0,
+					"2010-12-24": 0,
+					"2010-12-25": 0,
+					"2010-12-26": 0,
+					"2010-12-27": 0,
+					"2010-12-28": 0,
+					"2010-12-29": 0
+				}
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-1?period=month",
+				"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-1/files?by=hits&period=month"
 			}
 		}
 	],

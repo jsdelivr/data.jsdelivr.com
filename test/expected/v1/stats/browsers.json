@@ -1,4 +1,90 @@
 {
+	"/v1/stats/browsers": [
+		{
+			"name": "browser 5",
+			"share": 30.3,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%205/countries",
+				"platforms": "http://localhost:4454/v1/stats/browsers/browser%205/platforms",
+				"versions": "http://localhost:4454/v1/stats/browsers/browser%205/versions"
+			}
+		},
+		{
+			"name": "browser 6",
+			"share": 27.27,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%206/countries",
+				"platforms": "http://localhost:4454/v1/stats/browsers/browser%206/platforms",
+				"versions": "http://localhost:4454/v1/stats/browsers/browser%206/versions"
+			}
+		},
+		{
+			"name": "browser 4",
+			"share": 21.21,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%204/countries",
+				"platforms": "http://localhost:4454/v1/stats/browsers/browser%204/platforms",
+				"versions": "http://localhost:4454/v1/stats/browsers/browser%204/versions"
+			}
+		},
+		{
+			"name": "browser 3",
+			"share": 12.12,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%203/countries",
+				"platforms": "http://localhost:4454/v1/stats/browsers/browser%203/platforms",
+				"versions": "http://localhost:4454/v1/stats/browsers/browser%203/versions"
+			}
+		},
+		{
+			"name": "browser 2",
+			"share": 6.67,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%202/countries",
+				"platforms": "http://localhost:4454/v1/stats/browsers/browser%202/platforms",
+				"versions": "http://localhost:4454/v1/stats/browsers/browser%202/versions"
+			}
+		},
+		{
+			"name": "browser 1",
+			"share": 2.12,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%201/countries",
+				"platforms": "http://localhost:4454/v1/stats/browsers/browser%201/platforms",
+				"versions": "http://localhost:4454/v1/stats/browsers/browser%201/versions"
+			}
+		},
+		{
+			"name": "browser 0",
+			"share": 0.3,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%200/countries",
+				"platforms": "http://localhost:4454/v1/stats/browsers/browser%200/platforms",
+				"versions": "http://localhost:4454/v1/stats/browsers/browser%200/versions"
+			}
+		}
+	],
 	"/v1/stats/browsers?continent=EU&country=PL": {
 		"date": "2010-12-31",
 		"status": 400,

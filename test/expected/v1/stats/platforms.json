@@ -1,4 +1,102 @@
 {
+	"/v1/stats/platforms": [
+		{
+			"name": "platform 12",
+			"share": 25.76,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2012/browsers",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2012/countries",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2012/versions"
+			}
+		},
+		{
+			"name": "platform 2",
+			"share": 25.76,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%202/browsers",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%202/countries",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%202/versions"
+			}
+		},
+		{
+			"name": "platform 13",
+			"share": 13.64,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2013/browsers",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2013/countries",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2013/versions"
+			}
+		},
+		{
+			"name": "platform 3",
+			"share": 13.64,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%203/browsers",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%203/countries",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%203/versions"
+			}
+		},
+		{
+			"name": "platform 1",
+			"share": 9.39,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%201/browsers",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%201/countries",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%201/versions"
+			}
+		},
+		{
+			"name": "platform 11",
+			"share": 9.39,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2011/browsers",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2011/countries",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2011/versions"
+			}
+		},
+		{
+			"name": "platform 0",
+			"share": 1.21,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%200/browsers",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%200/countries",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%200/versions"
+			}
+		},
+		{
+			"name": "platform 10",
+			"share": 1.21,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2010/browsers",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2010/countries",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2010/versions"
+			}
+		}
+	],
 	"/v1/stats/platforms?continent=EU&country=PL": {
 		"date": "2010-12-31",
 		"status": 400,
