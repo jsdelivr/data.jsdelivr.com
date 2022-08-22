@@ -1,3 +1,5 @@
+'use strict';
+
 const fs = require('fs-extra');
 const relativeDayUtc = require('relative-day-utc');
 const defaultSnapshotDate = '2010-12-31';
@@ -30,8 +32,14 @@ module.exports = ({ snapshotResponses = false, updateExistingSnapshots = false }
 		markUsed(currentFile, key);
 
 		if (newBody && snapshotResponses) {
-			storeResponse(expectedResponses, key, newBody);
+			try {
+				storeResponse(expectedResponses, key, newBody);
+			} catch (e) {
+				throw new Error('Failed to store the response.', { cause: e });
+			}
 		}
+
+		lockKey(expectedResponses, key);
 
 		if (!expectedResponses[key]) {
 			return undefined;
@@ -46,6 +54,10 @@ module.exports = ({ snapshotResponses = false, updateExistingSnapshots = false }
 
 	function isUsed (file, key) {
 		return useTracker.get(file).get(key);
+	}
+
+	function lockKey (expectedResponses, key) {
+		Object.defineProperty(expectedResponses, key, { writable: false });
 	}
 
 	function markUsed (file, key) {
