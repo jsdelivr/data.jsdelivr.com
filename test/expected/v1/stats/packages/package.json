@@ -84,6 +84,9 @@
 				"typeRank": null,
 				"total": 0
 			}
+		},
+		"links": {
+			"versions": "http://localhost:4454/v1/stats/packages/npm/package-0/versions?period=month&by=hits"
 		}
 	},
 	"/v1/stats/packages/npm/package-2?period=all": {
@@ -249,6 +252,9 @@
 				"typeRank": null,
 				"total": 0
 			}
+		},
+		"links": {
+			"versions": "http://localhost:4454/v1/stats/packages/npm/package-2/versions?period=all&by=hits"
 		}
 	},
 	"/v1/stats/packages/npm/package-2?period=day": {
@@ -278,6 +284,9 @@
 				"typeRank": 57,
 				"total": 1378404
 			}
+		},
+		"links": {
+			"versions": "http://localhost:4454/v1/stats/packages/npm/package-2/versions?period=day&by=hits"
 		}
 	},
 	"/v1/stats/packages/npm/package-2?period=month": {
@@ -365,6 +374,9 @@
 				"typeRank": 57,
 				"total": 41336460
 			}
+		},
+		"links": {
+			"versions": "http://localhost:4454/v1/stats/packages/npm/package-2/versions?by=hits"
 		}
 	},
 	"/v1/stats/packages/npm/package-2?period=week": {
@@ -406,6 +418,9 @@
 				"typeRank": 57,
 				"total": 9648072
 			}
+		},
+		"links": {
+			"versions": "http://localhost:4454/v1/stats/packages/npm/package-2/versions?period=week&by=hits"
 		}
 	},
 	"/v1/stats/packages/npm/package-2?period=x": {
@@ -1168,6 +1183,9 @@
 				"typeRank": null,
 				"total": 0
 			}
+		},
+		"links": {
+			"versions": "http://localhost:4454/v1/stats/packages/npm/package-2/versions?period=year&by=hits"
 		}
 	},
 	"/v1/stats/packages/npm/package-x?period=all": {
@@ -1193,6 +1211,9 @@
 				"typeRank": null,
 				"total": 0
 			}
+		},
+		"links": {
+			"versions": "http://localhost:4454/v1/stats/packages/npm/package-x/versions?period=all&by=hits"
 		}
 	},
 	"/v1/stats/packages/npm/package-x?period=month": {
@@ -1280,6 +1301,9 @@
 				"typeRank": null,
 				"total": 0
 			}
+		},
+		"links": {
+			"versions": "http://localhost:4454/v1/stats/packages/npm/package-x/versions?period=month&by=hits"
 		}
 	},
 	"/v1/stats/packages/gh/user/package-59?period=all": {
@@ -1445,6 +1469,9 @@
 				"typeRank": null,
 				"total": 0
 			}
+		},
+		"links": {
+			"versions": "http://localhost:4454/v1/stats/packages/gh/user/package-59/versions?period=all&by=hits"
 		}
 	},
 	"/v1/stats/packages/gh/user/package-59?period=day": {
@@ -1474,6 +1501,9 @@
 				"typeRank": 0,
 				"total": 117753340
 			}
+		},
+		"links": {
+			"versions": "http://localhost:4454/v1/stats/packages/gh/user/package-59/versions?period=day&by=hits"
 		}
 	},
 	"/v1/stats/packages/gh/user/package-59?period=month": {
@@ -1561,6 +1591,9 @@
 				"typeRank": 0,
 				"total": 3532574100
 			}
+		},
+		"links": {
+			"versions": "http://localhost:4454/v1/stats/packages/gh/user/package-59/versions?by=hits"
 		}
 	},
 	"/v1/stats/packages/gh/user/package-59?period=week": {
@@ -1602,6 +1635,9 @@
 				"typeRank": 0,
 				"total": 824272120
 			}
+		},
+		"links": {
+			"versions": "http://localhost:4454/v1/stats/packages/gh/user/package-59/versions?period=week&by=hits"
 		}
 	},
 	"/v1/stats/packages/gh/user/package-59?period=x": {
@@ -2364,6 +2400,9 @@
 				"typeRank": null,
 				"total": 0
 			}
+		},
+		"links": {
+			"versions": "http://localhost:4454/v1/stats/packages/gh/user/package-59/versions?period=year&by=hits"
 		}
 	}
 }

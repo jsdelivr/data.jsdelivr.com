@@ -74,7 +74,7 @@ class Browser extends BaseCacheModel {
 
 		return (await sql.select([ 'platform', 'share', 'prevShare' ])).map((row) => {
 			return {
-				platform: row.platform,
+				name: row.platform,
 				share: row.share,
 				prev: {
 					share: row.prevShare,

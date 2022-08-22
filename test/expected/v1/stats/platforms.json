@@ -10,6 +10,11 @@
 			"share": 13.7,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2019/browsers?period=2020&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/countries?period=2020&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2019/versions?period=2020&continent=EU"
 			}
 		},
 		{
@@ -17,6 +22,11 @@
 			"share": 13.7,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%209/browsers?period=2020&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%209/countries?period=2020&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%209/versions?period=2020&continent=EU"
 			}
 		},
 		{
@@ -24,6 +34,11 @@
 			"share": 11.01,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2018/browsers?period=2020&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2018/countries?period=2020&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2018/versions?period=2020&continent=EU"
 			}
 		},
 		{
@@ -31,6 +46,11 @@
 			"share": 11.01,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%208/browsers?period=2020&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%208/countries?period=2020&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%208/versions?period=2020&continent=EU"
 			}
 		},
 		{
@@ -38,6 +58,11 @@
 			"share": 8.61,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2017/browsers?period=2020&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2017/countries?period=2020&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2017/versions?period=2020&continent=EU"
 			}
 		},
 		{
@@ -45,6 +70,11 @@
 			"share": 8.61,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%207/browsers?period=2020&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%207/countries?period=2020&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%207/versions?period=2020&continent=EU"
 			}
 		},
 		{
@@ -52,6 +82,11 @@
 			"share": 6.51,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2016/browsers?period=2020&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2016/countries?period=2020&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2016/versions?period=2020&continent=EU"
 			}
 		},
 		{
@@ -59,6 +94,11 @@
 			"share": 6.51,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%206/browsers?period=2020&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%206/countries?period=2020&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%206/versions?period=2020&continent=EU"
 			}
 		},
 		{
@@ -66,6 +106,11 @@
 			"share": 4.7,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2015/browsers?period=2020&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2015/countries?period=2020&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2015/versions?period=2020&continent=EU"
 			}
 		},
 		{
@@ -73,6 +118,11 @@
 			"share": 4.7,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%205/browsers?period=2020&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%205/countries?period=2020&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%205/versions?period=2020&continent=EU"
 			}
 		},
 		{
@@ -80,6 +130,11 @@
 			"share": 3.19,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2014/browsers?period=2020&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2014/countries?period=2020&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2014/versions?period=2020&continent=EU"
 			}
 		},
 		{
@@ -87,6 +142,11 @@
 			"share": 3.19,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%204/browsers?period=2020&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%204/countries?period=2020&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%204/versions?period=2020&continent=EU"
 			}
 		},
 		{
@@ -94,6 +154,11 @@
 			"share": 1.42,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2013/browsers?period=2020&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2013/countries?period=2020&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2013/versions?period=2020&continent=EU"
 			}
 		},
 		{
@@ -101,6 +166,11 @@
 			"share": 1.42,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%203/browsers?period=2020&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%203/countries?period=2020&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%203/versions?period=2020&continent=EU"
 			}
 		},
 		{
@@ -108,6 +178,11 @@
 			"share": 0.58,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2012/browsers?period=2020&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2012/countries?period=2020&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2012/versions?period=2020&continent=EU"
 			}
 		},
 		{
@@ -115,6 +190,11 @@
 			"share": 0.58,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%202/browsers?period=2020&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%202/countries?period=2020&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%202/versions?period=2020&continent=EU"
 			}
 		},
 		{
@@ -122,6 +202,11 @@
 			"share": 0.23,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%201/browsers?period=2020&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%201/countries?period=2020&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%201/versions?period=2020&continent=EU"
 			}
 		},
 		{
@@ -129,6 +214,11 @@
 			"share": 0.23,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2011/browsers?period=2020&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2011/countries?period=2020&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2011/versions?period=2020&continent=EU"
 			}
 		},
 		{
@@ -136,6 +226,11 @@
 			"share": 0.04,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%200/browsers?period=2020&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%200/countries?period=2020&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%200/versions?period=2020&continent=EU"
 			}
 		},
 		{
@@ -143,6 +238,11 @@
 			"share": 0.04,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2010/browsers?period=2020&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2010/countries?period=2020&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2010/versions?period=2020&continent=EU"
 			}
 		}
 	],
@@ -152,6 +252,11 @@
 			"share": 13.56,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2019/browsers?period=2020-02&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/countries?period=2020-02&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2019/versions?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -159,6 +264,11 @@
 			"share": 13.56,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%209/browsers?period=2020-02&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%209/countries?period=2020-02&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%209/versions?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -166,6 +276,11 @@
 			"share": 10.86,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2018/browsers?period=2020-02&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2018/countries?period=2020-02&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2018/versions?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -173,6 +288,11 @@
 			"share": 10.86,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%208/browsers?period=2020-02&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%208/countries?period=2020-02&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%208/versions?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -180,6 +300,11 @@
 			"share": 8.45,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2017/browsers?period=2020-02&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2017/countries?period=2020-02&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2017/versions?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -187,6 +312,11 @@
 			"share": 8.45,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%207/browsers?period=2020-02&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%207/countries?period=2020-02&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%207/versions?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -194,6 +324,11 @@
 			"share": 6.35,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2016/browsers?period=2020-02&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2016/countries?period=2020-02&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2016/versions?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -201,6 +336,11 @@
 			"share": 6.35,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%206/browsers?period=2020-02&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%206/countries?period=2020-02&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%206/versions?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -208,6 +348,11 @@
 			"share": 4.55,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2015/browsers?period=2020-02&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2015/countries?period=2020-02&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2015/versions?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -215,6 +360,11 @@
 			"share": 4.55,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%205/browsers?period=2020-02&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%205/countries?period=2020-02&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%205/versions?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -222,6 +372,11 @@
 			"share": 3.05,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2014/browsers?period=2020-02&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2014/countries?period=2020-02&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2014/versions?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -229,6 +384,11 @@
 			"share": 3.05,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%204/browsers?period=2020-02&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%204/countries?period=2020-02&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%204/versions?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -236,6 +396,11 @@
 			"share": 1.85,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2013/browsers?period=2020-02&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2013/countries?period=2020-02&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2013/versions?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -243,6 +408,11 @@
 			"share": 1.85,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%203/browsers?period=2020-02&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%203/countries?period=2020-02&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%203/versions?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -250,6 +420,11 @@
 			"share": 0.95,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2012/browsers?period=2020-02&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2012/countries?period=2020-02&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2012/versions?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -257,6 +432,11 @@
 			"share": 0.95,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%202/browsers?period=2020-02&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%202/countries?period=2020-02&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%202/versions?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -264,6 +444,11 @@
 			"share": 0.34,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%201/browsers?period=2020-02&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%201/countries?period=2020-02&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%201/versions?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -271,6 +456,11 @@
 			"share": 0.34,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2011/browsers?period=2020-02&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2011/countries?period=2020-02&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2011/versions?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -278,6 +468,11 @@
 			"share": 0.04,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%200/browsers?period=2020-02&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%200/countries?period=2020-02&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%200/versions?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -285,6 +480,11 @@
 			"share": 0.04,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2010/browsers?period=2020-02&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2010/countries?period=2020-02&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2010/versions?period=2020-02&continent=EU"
 			}
 		}
 	],
@@ -294,6 +494,11 @@
 			"share": 14.26,
 			"prev": {
 				"share": 9.66
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2019/browsers?period=2020-04&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/countries?period=2020-04&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2019/versions?period=2020-04&continent=EU"
 			}
 		},
 		{
@@ -301,6 +506,11 @@
 			"share": 14.26,
 			"prev": {
 				"share": 9.66
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%209/browsers?period=2020-04&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%209/countries?period=2020-04&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%209/versions?period=2020-04&continent=EU"
 			}
 		},
 		{
@@ -308,6 +518,11 @@
 			"share": 11.42,
 			"prev": {
 				"share": 8.62
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2018/browsers?period=2020-04&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2018/countries?period=2020-04&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2018/versions?period=2020-04&continent=EU"
 			}
 		},
 		{
@@ -315,6 +530,11 @@
 			"share": 11.42,
 			"prev": {
 				"share": 8.62
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%208/browsers?period=2020-04&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%208/countries?period=2020-04&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%208/versions?period=2020-04&continent=EU"
 			}
 		},
 		{
@@ -322,6 +542,11 @@
 			"share": 8.89,
 			"prev": {
 				"share": 7.59
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2017/browsers?period=2020-04&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2017/countries?period=2020-04&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2017/versions?period=2020-04&continent=EU"
 			}
 		},
 		{
@@ -329,6 +554,11 @@
 			"share": 8.89,
 			"prev": {
 				"share": 7.59
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%207/browsers?period=2020-04&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%207/countries?period=2020-04&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%207/versions?period=2020-04&continent=EU"
 			}
 		},
 		{
@@ -336,6 +566,11 @@
 			"share": 6.68,
 			"prev": {
 				"share": 6.55
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2016/browsers?period=2020-04&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2016/countries?period=2020-04&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2016/versions?period=2020-04&continent=EU"
 			}
 		},
 		{
@@ -343,6 +578,11 @@
 			"share": 6.68,
 			"prev": {
 				"share": 6.55
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%206/browsers?period=2020-04&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%206/countries?period=2020-04&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%206/versions?period=2020-04&continent=EU"
 			}
 		},
 		{
@@ -350,6 +590,11 @@
 			"share": 4.78,
 			"prev": {
 				"share": 5.52
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2015/browsers?period=2020-04&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2015/countries?period=2020-04&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2015/versions?period=2020-04&continent=EU"
 			}
 		},
 		{
@@ -357,6 +602,11 @@
 			"share": 4.78,
 			"prev": {
 				"share": 5.52
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%205/browsers?period=2020-04&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%205/countries?period=2020-04&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%205/versions?period=2020-04&continent=EU"
 			}
 		},
 		{
@@ -364,6 +614,11 @@
 			"share": 3.2,
 			"prev": {
 				"share": 4.48
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2014/browsers?period=2020-04&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2014/countries?period=2020-04&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2014/versions?period=2020-04&continent=EU"
 			}
 		},
 		{
@@ -371,6 +626,11 @@
 			"share": 3.2,
 			"prev": {
 				"share": 4.48
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%204/browsers?period=2020-04&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%204/countries?period=2020-04&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%204/versions?period=2020-04&continent=EU"
 			}
 		},
 		{
@@ -378,6 +638,11 @@
 			"share": 0.77,
 			"prev": {
 				"share": 3.45
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2013/browsers?period=2020-04&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2013/countries?period=2020-04&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2013/versions?period=2020-04&continent=EU"
 			}
 		},
 		{
@@ -385,6 +650,11 @@
 			"share": 0.77,
 			"prev": {
 				"share": 3.45
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%203/browsers?period=2020-04&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%203/countries?period=2020-04&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%203/versions?period=2020-04&continent=EU"
 			}
 		}
 	],
@@ -394,6 +664,11 @@
 			"share": 25.76,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2012/browsers?period=s-month&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2012/countries?period=s-month&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2012/versions?period=s-month&continent=EU"
 			}
 		},
 		{
@@ -401,6 +676,11 @@
 			"share": 25.76,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%202/browsers?period=s-month&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%202/countries?period=s-month&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%202/versions?period=s-month&continent=EU"
 			}
 		},
 		{
@@ -408,6 +688,11 @@
 			"share": 13.64,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2013/browsers?period=s-month&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2013/countries?period=s-month&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2013/versions?period=s-month&continent=EU"
 			}
 		},
 		{
@@ -415,6 +700,11 @@
 			"share": 13.64,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%203/browsers?period=s-month&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%203/countries?period=s-month&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%203/versions?period=s-month&continent=EU"
 			}
 		},
 		{
@@ -422,6 +712,11 @@
 			"share": 9.39,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%201/browsers?period=s-month&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%201/countries?period=s-month&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%201/versions?period=s-month&continent=EU"
 			}
 		},
 		{
@@ -429,6 +724,11 @@
 			"share": 9.39,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2011/browsers?period=s-month&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2011/countries?period=s-month&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2011/versions?period=s-month&continent=EU"
 			}
 		},
 		{
@@ -436,6 +736,11 @@
 			"share": 1.21,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%200/browsers?period=s-month&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%200/countries?period=s-month&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%200/versions?period=s-month&continent=EU"
 			}
 		},
 		{
@@ -443,6 +748,11 @@
 			"share": 1.21,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2010/browsers?period=s-month&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2010/countries?period=s-month&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2010/versions?period=s-month&continent=EU"
 			}
 		}
 	],
@@ -452,6 +762,11 @@
 			"share": 23.33,
 			"prev": {
 				"share": 0.58
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2012/browsers?period=s-year&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2012/countries?period=s-year&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2012/versions?period=s-year&continent=EU"
 			}
 		},
 		{
@@ -459,6 +774,11 @@
 			"share": 23.33,
 			"prev": {
 				"share": 0.58
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%202/browsers?period=s-year&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%202/countries?period=s-year&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%202/versions?period=s-year&continent=EU"
 			}
 		},
 		{
@@ -466,6 +786,11 @@
 			"share": 13.33,
 			"prev": {
 				"share": 0.23
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%201/browsers?period=s-year&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%201/countries?period=s-year&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%201/versions?period=s-year&continent=EU"
 			}
 		},
 		{
@@ -473,6 +798,11 @@
 			"share": 13.33,
 			"prev": {
 				"share": 0.23
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2011/browsers?period=s-year&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2011/countries?period=s-year&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2011/versions?period=s-year&continent=EU"
 			}
 		},
 		{
@@ -480,6 +810,11 @@
 			"share": 10,
 			"prev": {
 				"share": 1.42
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2013/browsers?period=s-year&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2013/countries?period=s-year&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2013/versions?period=s-year&continent=EU"
 			}
 		},
 		{
@@ -487,6 +822,11 @@
 			"share": 10,
 			"prev": {
 				"share": 1.42
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%203/browsers?period=s-year&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%203/countries?period=s-year&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%203/versions?period=s-year&continent=EU"
 			}
 		},
 		{
@@ -494,6 +834,11 @@
 			"share": 3.33,
 			"prev": {
 				"share": 0.04
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%200/browsers?period=s-year&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%200/countries?period=s-year&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%200/versions?period=s-year&continent=EU"
 			}
 		},
 		{
@@ -501,6 +846,11 @@
 			"share": 3.33,
 			"prev": {
 				"share": 0.04
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2010/browsers?period=s-year&continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2010/countries?period=s-year&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2010/versions?period=s-year&continent=EU"
 			}
 		}
 	],
@@ -515,6 +865,10 @@
 			"share": 25.76,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2012/browsers?period=s-month&country=AE",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2012/versions?period=s-month&country=AE"
 			}
 		},
 		{
@@ -522,6 +876,10 @@
 			"share": 25.76,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%202/browsers?period=s-month&country=AE",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%202/versions?period=s-month&country=AE"
 			}
 		},
 		{
@@ -529,6 +887,10 @@
 			"share": 13.64,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2013/browsers?period=s-month&country=AE",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2013/versions?period=s-month&country=AE"
 			}
 		},
 		{
@@ -536,6 +898,10 @@
 			"share": 13.64,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%203/browsers?period=s-month&country=AE",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%203/versions?period=s-month&country=AE"
 			}
 		},
 		{
@@ -543,6 +909,10 @@
 			"share": 9.39,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%201/browsers?period=s-month&country=AE",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%201/versions?period=s-month&country=AE"
 			}
 		},
 		{
@@ -550,6 +920,10 @@
 			"share": 9.39,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2011/browsers?period=s-month&country=AE",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2011/versions?period=s-month&country=AE"
 			}
 		},
 		{
@@ -557,6 +931,10 @@
 			"share": 1.21,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%200/browsers?period=s-month&country=AE",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%200/versions?period=s-month&country=AE"
 			}
 		},
 		{
@@ -564,6 +942,10 @@
 			"share": 1.21,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2010/browsers?period=s-month&country=AE",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2010/versions?period=s-month&country=AE"
 			}
 		}
 	],
@@ -573,6 +955,10 @@
 			"share": 23.33,
 			"prev": {
 				"share": 0.58
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2012/browsers?period=s-year&country=AE",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2012/versions?period=s-year&country=AE"
 			}
 		},
 		{
@@ -580,6 +966,10 @@
 			"share": 23.33,
 			"prev": {
 				"share": 0.58
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%202/browsers?period=s-year&country=AE",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%202/versions?period=s-year&country=AE"
 			}
 		},
 		{
@@ -587,6 +977,10 @@
 			"share": 13.33,
 			"prev": {
 				"share": 0.23
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%201/browsers?period=s-year&country=AE",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%201/versions?period=s-year&country=AE"
 			}
 		},
 		{
@@ -594,6 +988,10 @@
 			"share": 13.33,
 			"prev": {
 				"share": 0.23
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2011/browsers?period=s-year&country=AE",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2011/versions?period=s-year&country=AE"
 			}
 		},
 		{
@@ -601,6 +999,10 @@
 			"share": 10,
 			"prev": {
 				"share": 1.42
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2013/browsers?period=s-year&country=AE",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2013/versions?period=s-year&country=AE"
 			}
 		},
 		{
@@ -608,6 +1010,10 @@
 			"share": 10,
 			"prev": {
 				"share": 1.42
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%203/browsers?period=s-year&country=AE",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%203/versions?period=s-year&country=AE"
 			}
 		},
 		{
@@ -615,6 +1021,10 @@
 			"share": 3.33,
 			"prev": {
 				"share": 0.04
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%200/browsers?period=s-year&country=AE",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%200/versions?period=s-year&country=AE"
 			}
 		},
 		{
@@ -622,6 +1032,10 @@
 			"share": 3.33,
 			"prev": {
 				"share": 0.04
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2010/browsers?period=s-year&country=AE",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2010/versions?period=s-year&country=AE"
 			}
 		}
 	],
@@ -631,6 +1045,10 @@
 			"share": 13.7,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2019/browsers?period=2020&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2019/versions?period=2020&country=PL"
 			}
 		},
 		{
@@ -638,6 +1056,10 @@
 			"share": 13.7,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%209/browsers?period=2020&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%209/versions?period=2020&country=PL"
 			}
 		},
 		{
@@ -645,6 +1067,10 @@
 			"share": 11.01,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2018/browsers?period=2020&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2018/versions?period=2020&country=PL"
 			}
 		},
 		{
@@ -652,6 +1078,10 @@
 			"share": 11.01,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%208/browsers?period=2020&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%208/versions?period=2020&country=PL"
 			}
 		},
 		{
@@ -659,6 +1089,10 @@
 			"share": 8.61,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2017/browsers?period=2020&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2017/versions?period=2020&country=PL"
 			}
 		},
 		{
@@ -666,6 +1100,10 @@
 			"share": 8.61,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%207/browsers?period=2020&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%207/versions?period=2020&country=PL"
 			}
 		},
 		{
@@ -673,6 +1111,10 @@
 			"share": 6.51,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2016/browsers?period=2020&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2016/versions?period=2020&country=PL"
 			}
 		},
 		{
@@ -680,6 +1122,10 @@
 			"share": 6.51,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%206/browsers?period=2020&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%206/versions?period=2020&country=PL"
 			}
 		},
 		{
@@ -687,6 +1133,10 @@
 			"share": 4.7,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2015/browsers?period=2020&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2015/versions?period=2020&country=PL"
 			}
 		},
 		{
@@ -694,6 +1144,10 @@
 			"share": 4.7,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%205/browsers?period=2020&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%205/versions?period=2020&country=PL"
 			}
 		},
 		{
@@ -701,6 +1155,10 @@
 			"share": 3.19,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2014/browsers?period=2020&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2014/versions?period=2020&country=PL"
 			}
 		},
 		{
@@ -708,6 +1166,10 @@
 			"share": 3.19,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%204/browsers?period=2020&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%204/versions?period=2020&country=PL"
 			}
 		},
 		{
@@ -715,6 +1177,10 @@
 			"share": 1.42,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2013/browsers?period=2020&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2013/versions?period=2020&country=PL"
 			}
 		},
 		{
@@ -722,6 +1188,10 @@
 			"share": 1.42,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%203/browsers?period=2020&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%203/versions?period=2020&country=PL"
 			}
 		},
 		{
@@ -729,6 +1199,10 @@
 			"share": 0.58,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2012/browsers?period=2020&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2012/versions?period=2020&country=PL"
 			}
 		},
 		{
@@ -736,6 +1210,10 @@
 			"share": 0.58,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%202/browsers?period=2020&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%202/versions?period=2020&country=PL"
 			}
 		},
 		{
@@ -743,6 +1221,10 @@
 			"share": 0.23,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%201/browsers?period=2020&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%201/versions?period=2020&country=PL"
 			}
 		},
 		{
@@ -750,6 +1232,10 @@
 			"share": 0.23,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2011/browsers?period=2020&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2011/versions?period=2020&country=PL"
 			}
 		},
 		{
@@ -757,6 +1243,10 @@
 			"share": 0.04,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%200/browsers?period=2020&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%200/versions?period=2020&country=PL"
 			}
 		},
 		{
@@ -764,6 +1254,10 @@
 			"share": 0.04,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2010/browsers?period=2020&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2010/versions?period=2020&country=PL"
 			}
 		}
 	],
@@ -773,6 +1267,10 @@
 			"share": 13.56,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2019/browsers?period=2020-02&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2019/versions?period=2020-02&country=PL"
 			}
 		},
 		{
@@ -780,6 +1278,10 @@
 			"share": 13.56,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%209/browsers?period=2020-02&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%209/versions?period=2020-02&country=PL"
 			}
 		},
 		{
@@ -787,6 +1289,10 @@
 			"share": 10.86,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2018/browsers?period=2020-02&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2018/versions?period=2020-02&country=PL"
 			}
 		},
 		{
@@ -794,6 +1300,10 @@
 			"share": 10.86,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%208/browsers?period=2020-02&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%208/versions?period=2020-02&country=PL"
 			}
 		},
 		{
@@ -801,6 +1311,10 @@
 			"share": 8.45,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2017/browsers?period=2020-02&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2017/versions?period=2020-02&country=PL"
 			}
 		},
 		{
@@ -808,6 +1322,10 @@
 			"share": 8.45,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%207/browsers?period=2020-02&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%207/versions?period=2020-02&country=PL"
 			}
 		},
 		{
@@ -815,6 +1333,10 @@
 			"share": 6.35,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2016/browsers?period=2020-02&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2016/versions?period=2020-02&country=PL"
 			}
 		},
 		{
@@ -822,6 +1344,10 @@
 			"share": 6.35,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%206/browsers?period=2020-02&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%206/versions?period=2020-02&country=PL"
 			}
 		},
 		{
@@ -829,6 +1355,10 @@
 			"share": 4.55,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2015/browsers?period=2020-02&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2015/versions?period=2020-02&country=PL"
 			}
 		},
 		{
@@ -836,6 +1366,10 @@
 			"share": 4.55,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%205/browsers?period=2020-02&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%205/versions?period=2020-02&country=PL"
 			}
 		},
 		{
@@ -843,6 +1377,10 @@
 			"share": 3.05,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2014/browsers?period=2020-02&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2014/versions?period=2020-02&country=PL"
 			}
 		},
 		{
@@ -850,6 +1388,10 @@
 			"share": 3.05,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%204/browsers?period=2020-02&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%204/versions?period=2020-02&country=PL"
 			}
 		},
 		{
@@ -857,6 +1399,10 @@
 			"share": 1.85,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2013/browsers?period=2020-02&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2013/versions?period=2020-02&country=PL"
 			}
 		},
 		{
@@ -864,6 +1410,10 @@
 			"share": 1.85,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%203/browsers?period=2020-02&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%203/versions?period=2020-02&country=PL"
 			}
 		},
 		{
@@ -871,6 +1421,10 @@
 			"share": 0.95,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2012/browsers?period=2020-02&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2012/versions?period=2020-02&country=PL"
 			}
 		},
 		{
@@ -878,6 +1432,10 @@
 			"share": 0.95,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%202/browsers?period=2020-02&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%202/versions?period=2020-02&country=PL"
 			}
 		},
 		{
@@ -885,6 +1443,10 @@
 			"share": 0.34,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%201/browsers?period=2020-02&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%201/versions?period=2020-02&country=PL"
 			}
 		},
 		{
@@ -892,6 +1454,10 @@
 			"share": 0.34,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2011/browsers?period=2020-02&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2011/versions?period=2020-02&country=PL"
 			}
 		},
 		{
@@ -899,6 +1465,10 @@
 			"share": 0.04,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%200/browsers?period=2020-02&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%200/versions?period=2020-02&country=PL"
 			}
 		},
 		{
@@ -906,6 +1476,10 @@
 			"share": 0.04,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2010/browsers?period=2020-02&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2010/versions?period=2020-02&country=PL"
 			}
 		}
 	],
@@ -915,6 +1489,10 @@
 			"share": 14.26,
 			"prev": {
 				"share": 9.66
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2019/browsers?period=2020-04&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2019/versions?period=2020-04&country=PL"
 			}
 		},
 		{
@@ -922,6 +1500,10 @@
 			"share": 14.26,
 			"prev": {
 				"share": 9.66
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%209/browsers?period=2020-04&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%209/versions?period=2020-04&country=PL"
 			}
 		},
 		{
@@ -929,6 +1511,10 @@
 			"share": 11.42,
 			"prev": {
 				"share": 8.62
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2018/browsers?period=2020-04&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2018/versions?period=2020-04&country=PL"
 			}
 		},
 		{
@@ -936,6 +1522,10 @@
 			"share": 11.42,
 			"prev": {
 				"share": 8.62
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%208/browsers?period=2020-04&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%208/versions?period=2020-04&country=PL"
 			}
 		},
 		{
@@ -943,6 +1533,10 @@
 			"share": 8.89,
 			"prev": {
 				"share": 7.59
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2017/browsers?period=2020-04&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2017/versions?period=2020-04&country=PL"
 			}
 		},
 		{
@@ -950,6 +1544,10 @@
 			"share": 8.89,
 			"prev": {
 				"share": 7.59
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%207/browsers?period=2020-04&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%207/versions?period=2020-04&country=PL"
 			}
 		},
 		{
@@ -957,6 +1555,10 @@
 			"share": 6.68,
 			"prev": {
 				"share": 6.55
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2016/browsers?period=2020-04&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2016/versions?period=2020-04&country=PL"
 			}
 		},
 		{
@@ -964,6 +1566,10 @@
 			"share": 6.68,
 			"prev": {
 				"share": 6.55
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%206/browsers?period=2020-04&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%206/versions?period=2020-04&country=PL"
 			}
 		},
 		{
@@ -971,6 +1577,10 @@
 			"share": 4.78,
 			"prev": {
 				"share": 5.52
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2015/browsers?period=2020-04&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2015/versions?period=2020-04&country=PL"
 			}
 		},
 		{
@@ -978,6 +1588,10 @@
 			"share": 4.78,
 			"prev": {
 				"share": 5.52
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%205/browsers?period=2020-04&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%205/versions?period=2020-04&country=PL"
 			}
 		},
 		{
@@ -985,6 +1599,10 @@
 			"share": 3.2,
 			"prev": {
 				"share": 4.48
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2014/browsers?period=2020-04&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2014/versions?period=2020-04&country=PL"
 			}
 		},
 		{
@@ -992,6 +1610,10 @@
 			"share": 3.2,
 			"prev": {
 				"share": 4.48
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%204/browsers?period=2020-04&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%204/versions?period=2020-04&country=PL"
 			}
 		},
 		{
@@ -999,6 +1621,10 @@
 			"share": 0.77,
 			"prev": {
 				"share": 3.45
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2013/browsers?period=2020-04&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2013/versions?period=2020-04&country=PL"
 			}
 		},
 		{
@@ -1006,6 +1632,10 @@
 			"share": 0.77,
 			"prev": {
 				"share": 3.45
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%203/browsers?period=2020-04&country=PL",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%203/versions?period=2020-04&country=PL"
 			}
 		}
 	],
@@ -1020,6 +1650,11 @@
 			"share": 13.7,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2019/browsers?period=2020",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/countries?period=2020",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2019/versions?period=2020"
 			}
 		},
 		{
@@ -1027,6 +1662,11 @@
 			"share": 13.7,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%209/browsers?period=2020",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%209/countries?period=2020",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%209/versions?period=2020"
 			}
 		},
 		{
@@ -1034,6 +1674,11 @@
 			"share": 11.01,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2018/browsers?period=2020",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2018/countries?period=2020",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2018/versions?period=2020"
 			}
 		},
 		{
@@ -1041,6 +1686,11 @@
 			"share": 11.01,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%208/browsers?period=2020",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%208/countries?period=2020",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%208/versions?period=2020"
 			}
 		},
 		{
@@ -1048,6 +1698,11 @@
 			"share": 8.61,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2017/browsers?period=2020",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2017/countries?period=2020",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2017/versions?period=2020"
 			}
 		},
 		{
@@ -1055,6 +1710,11 @@
 			"share": 8.61,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%207/browsers?period=2020",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%207/countries?period=2020",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%207/versions?period=2020"
 			}
 		},
 		{
@@ -1062,6 +1722,11 @@
 			"share": 6.51,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2016/browsers?period=2020",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2016/countries?period=2020",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2016/versions?period=2020"
 			}
 		},
 		{
@@ -1069,6 +1734,11 @@
 			"share": 6.51,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%206/browsers?period=2020",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%206/countries?period=2020",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%206/versions?period=2020"
 			}
 		},
 		{
@@ -1076,6 +1746,11 @@
 			"share": 4.7,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2015/browsers?period=2020",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2015/countries?period=2020",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2015/versions?period=2020"
 			}
 		},
 		{
@@ -1083,6 +1758,11 @@
 			"share": 4.7,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%205/browsers?period=2020",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%205/countries?period=2020",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%205/versions?period=2020"
 			}
 		},
 		{
@@ -1090,6 +1770,11 @@
 			"share": 3.19,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2014/browsers?period=2020",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2014/countries?period=2020",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2014/versions?period=2020"
 			}
 		},
 		{
@@ -1097,6 +1782,11 @@
 			"share": 3.19,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%204/browsers?period=2020",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%204/countries?period=2020",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%204/versions?period=2020"
 			}
 		},
 		{
@@ -1104,6 +1794,11 @@
 			"share": 1.42,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2013/browsers?period=2020",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2013/countries?period=2020",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2013/versions?period=2020"
 			}
 		},
 		{
@@ -1111,6 +1806,11 @@
 			"share": 1.42,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%203/browsers?period=2020",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%203/countries?period=2020",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%203/versions?period=2020"
 			}
 		},
 		{
@@ -1118,6 +1818,11 @@
 			"share": 0.58,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2012/browsers?period=2020",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2012/countries?period=2020",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2012/versions?period=2020"
 			}
 		},
 		{
@@ -1125,6 +1830,11 @@
 			"share": 0.58,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%202/browsers?period=2020",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%202/countries?period=2020",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%202/versions?period=2020"
 			}
 		},
 		{
@@ -1132,6 +1842,11 @@
 			"share": 0.23,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%201/browsers?period=2020",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%201/countries?period=2020",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%201/versions?period=2020"
 			}
 		},
 		{
@@ -1139,6 +1854,11 @@
 			"share": 0.23,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2011/browsers?period=2020",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2011/countries?period=2020",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2011/versions?period=2020"
 			}
 		},
 		{
@@ -1146,6 +1866,11 @@
 			"share": 0.04,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%200/browsers?period=2020",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%200/countries?period=2020",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%200/versions?period=2020"
 			}
 		},
 		{
@@ -1153,6 +1878,11 @@
 			"share": 0.04,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2010/browsers?period=2020",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2010/countries?period=2020",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2010/versions?period=2020"
 			}
 		}
 	],
@@ -1162,6 +1892,11 @@
 			"share": 13.56,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2019/browsers?period=2020-02",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/countries?period=2020-02",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2019/versions?period=2020-02"
 			}
 		},
 		{
@@ -1169,6 +1904,11 @@
 			"share": 13.56,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%209/browsers?period=2020-02",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%209/countries?period=2020-02",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%209/versions?period=2020-02"
 			}
 		},
 		{
@@ -1176,6 +1916,11 @@
 			"share": 10.86,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2018/browsers?period=2020-02",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2018/countries?period=2020-02",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2018/versions?period=2020-02"
 			}
 		},
 		{
@@ -1183,6 +1928,11 @@
 			"share": 10.86,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%208/browsers?period=2020-02",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%208/countries?period=2020-02",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%208/versions?period=2020-02"
 			}
 		},
 		{
@@ -1190,6 +1940,11 @@
 			"share": 8.45,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2017/browsers?period=2020-02",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2017/countries?period=2020-02",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2017/versions?period=2020-02"
 			}
 		},
 		{
@@ -1197,6 +1952,11 @@
 			"share": 8.45,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%207/browsers?period=2020-02",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%207/countries?period=2020-02",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%207/versions?period=2020-02"
 			}
 		},
 		{
@@ -1204,6 +1964,11 @@
 			"share": 6.35,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2016/browsers?period=2020-02",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2016/countries?period=2020-02",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2016/versions?period=2020-02"
 			}
 		},
 		{
@@ -1211,6 +1976,11 @@
 			"share": 6.35,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%206/browsers?period=2020-02",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%206/countries?period=2020-02",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%206/versions?period=2020-02"
 			}
 		},
 		{
@@ -1218,6 +1988,11 @@
 			"share": 4.55,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2015/browsers?period=2020-02",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2015/countries?period=2020-02",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2015/versions?period=2020-02"
 			}
 		},
 		{
@@ -1225,6 +2000,11 @@
 			"share": 4.55,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%205/browsers?period=2020-02",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%205/countries?period=2020-02",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%205/versions?period=2020-02"
 			}
 		},
 		{
@@ -1232,6 +2012,11 @@
 			"share": 3.05,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2014/browsers?period=2020-02",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2014/countries?period=2020-02",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2014/versions?period=2020-02"
 			}
 		},
 		{
@@ -1239,6 +2024,11 @@
 			"share": 3.05,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%204/browsers?period=2020-02",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%204/countries?period=2020-02",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%204/versions?period=2020-02"
 			}
 		},
 		{
@@ -1246,6 +2036,11 @@
 			"share": 1.85,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2013/browsers?period=2020-02",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2013/countries?period=2020-02",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2013/versions?period=2020-02"
 			}
 		},
 		{
@@ -1253,6 +2048,11 @@
 			"share": 1.85,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%203/browsers?period=2020-02",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%203/countries?period=2020-02",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%203/versions?period=2020-02"
 			}
 		},
 		{
@@ -1260,6 +2060,11 @@
 			"share": 0.95,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2012/browsers?period=2020-02",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2012/countries?period=2020-02",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2012/versions?period=2020-02"
 			}
 		},
 		{
@@ -1267,6 +2072,11 @@
 			"share": 0.95,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%202/browsers?period=2020-02",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%202/countries?period=2020-02",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%202/versions?period=2020-02"
 			}
 		},
 		{
@@ -1274,6 +2084,11 @@
 			"share": 0.34,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%201/browsers?period=2020-02",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%201/countries?period=2020-02",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%201/versions?period=2020-02"
 			}
 		},
 		{
@@ -1281,6 +2096,11 @@
 			"share": 0.34,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2011/browsers?period=2020-02",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2011/countries?period=2020-02",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2011/versions?period=2020-02"
 			}
 		},
 		{
@@ -1288,6 +2108,11 @@
 			"share": 0.04,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%200/browsers?period=2020-02",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%200/countries?period=2020-02",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%200/versions?period=2020-02"
 			}
 		},
 		{
@@ -1295,6 +2120,11 @@
 			"share": 0.04,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2010/browsers?period=2020-02",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2010/countries?period=2020-02",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2010/versions?period=2020-02"
 			}
 		}
 	],
@@ -1304,6 +2134,11 @@
 			"share": 14.26,
 			"prev": {
 				"share": 9.66
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2019/browsers?period=2020-04",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/countries?period=2020-04",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2019/versions?period=2020-04"
 			}
 		},
 		{
@@ -1311,6 +2146,11 @@
 			"share": 14.26,
 			"prev": {
 				"share": 9.66
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%209/browsers?period=2020-04",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%209/countries?period=2020-04",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%209/versions?period=2020-04"
 			}
 		},
 		{
@@ -1318,6 +2158,11 @@
 			"share": 11.42,
 			"prev": {
 				"share": 8.62
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2018/browsers?period=2020-04",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2018/countries?period=2020-04",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2018/versions?period=2020-04"
 			}
 		},
 		{
@@ -1325,6 +2170,11 @@
 			"share": 11.42,
 			"prev": {
 				"share": 8.62
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%208/browsers?period=2020-04",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%208/countries?period=2020-04",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%208/versions?period=2020-04"
 			}
 		},
 		{
@@ -1332,6 +2182,11 @@
 			"share": 8.89,
 			"prev": {
 				"share": 7.59
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2017/browsers?period=2020-04",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2017/countries?period=2020-04",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2017/versions?period=2020-04"
 			}
 		},
 		{
@@ -1339,6 +2194,11 @@
 			"share": 8.89,
 			"prev": {
 				"share": 7.59
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%207/browsers?period=2020-04",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%207/countries?period=2020-04",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%207/versions?period=2020-04"
 			}
 		},
 		{
@@ -1346,6 +2206,11 @@
 			"share": 6.68,
 			"prev": {
 				"share": 6.55
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2016/browsers?period=2020-04",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2016/countries?period=2020-04",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2016/versions?period=2020-04"
 			}
 		},
 		{
@@ -1353,6 +2218,11 @@
 			"share": 6.68,
 			"prev": {
 				"share": 6.55
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%206/browsers?period=2020-04",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%206/countries?period=2020-04",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%206/versions?period=2020-04"
 			}
 		},
 		{
@@ -1360,6 +2230,11 @@
 			"share": 4.78,
 			"prev": {
 				"share": 5.52
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2015/browsers?period=2020-04",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2015/countries?period=2020-04",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2015/versions?period=2020-04"
 			}
 		},
 		{
@@ -1367,6 +2242,11 @@
 			"share": 4.78,
 			"prev": {
 				"share": 5.52
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%205/browsers?period=2020-04",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%205/countries?period=2020-04",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%205/versions?period=2020-04"
 			}
 		},
 		{
@@ -1374,6 +2254,11 @@
 			"share": 3.2,
 			"prev": {
 				"share": 4.48
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2014/browsers?period=2020-04",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2014/countries?period=2020-04",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2014/versions?period=2020-04"
 			}
 		},
 		{
@@ -1381,6 +2266,11 @@
 			"share": 3.2,
 			"prev": {
 				"share": 4.48
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%204/browsers?period=2020-04",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%204/countries?period=2020-04",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%204/versions?period=2020-04"
 			}
 		},
 		{
@@ -1388,6 +2278,11 @@
 			"share": 0.77,
 			"prev": {
 				"share": 3.45
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2013/browsers?period=2020-04",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2013/countries?period=2020-04",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2013/versions?period=2020-04"
 			}
 		},
 		{
@@ -1395,6 +2290,11 @@
 			"share": 0.77,
 			"prev": {
 				"share": 3.45
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%203/browsers?period=2020-04",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%203/countries?period=2020-04",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%203/versions?period=2020-04"
 			}
 		}
 	],
@@ -1409,6 +2309,11 @@
 			"share": 25.76,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2012/browsers?period=s-month",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2012/countries?period=s-month",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2012/versions?period=s-month"
 			}
 		},
 		{
@@ -1416,6 +2321,11 @@
 			"share": 25.76,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%202/browsers?period=s-month",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%202/countries?period=s-month",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%202/versions?period=s-month"
 			}
 		},
 		{
@@ -1423,6 +2333,11 @@
 			"share": 13.64,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2013/browsers?period=s-month",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2013/countries?period=s-month",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2013/versions?period=s-month"
 			}
 		},
 		{
@@ -1430,6 +2345,11 @@
 			"share": 13.64,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%203/browsers?period=s-month",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%203/countries?period=s-month",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%203/versions?period=s-month"
 			}
 		},
 		{
@@ -1437,6 +2357,11 @@
 			"share": 9.39,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%201/browsers?period=s-month",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%201/countries?period=s-month",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%201/versions?period=s-month"
 			}
 		},
 		{
@@ -1444,6 +2369,11 @@
 			"share": 9.39,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2011/browsers?period=s-month",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2011/countries?period=s-month",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2011/versions?period=s-month"
 			}
 		},
 		{
@@ -1451,6 +2381,11 @@
 			"share": 1.21,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%200/browsers?period=s-month",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%200/countries?period=s-month",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%200/versions?period=s-month"
 			}
 		},
 		{
@@ -1458,6 +2393,11 @@
 			"share": 1.21,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2010/browsers?period=s-month",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2010/countries?period=s-month",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2010/versions?period=s-month"
 			}
 		}
 	],
@@ -1467,6 +2407,11 @@
 			"share": 23.33,
 			"prev": {
 				"share": 0.58
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2012/browsers?period=s-year",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2012/countries?period=s-year",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2012/versions?period=s-year"
 			}
 		},
 		{
@@ -1474,6 +2419,11 @@
 			"share": 23.33,
 			"prev": {
 				"share": 0.58
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%202/browsers?period=s-year",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%202/countries?period=s-year",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%202/versions?period=s-year"
 			}
 		},
 		{
@@ -1481,6 +2431,11 @@
 			"share": 13.33,
 			"prev": {
 				"share": 0.23
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%201/browsers?period=s-year",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%201/countries?period=s-year",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%201/versions?period=s-year"
 			}
 		},
 		{
@@ -1488,6 +2443,11 @@
 			"share": 13.33,
 			"prev": {
 				"share": 0.23
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2011/browsers?period=s-year",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2011/countries?period=s-year",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2011/versions?period=s-year"
 			}
 		},
 		{
@@ -1495,6 +2455,11 @@
 			"share": 10,
 			"prev": {
 				"share": 1.42
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2013/browsers?period=s-year",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2013/countries?period=s-year",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2013/versions?period=s-year"
 			}
 		},
 		{
@@ -1502,6 +2467,11 @@
 			"share": 10,
 			"prev": {
 				"share": 1.42
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%203/browsers?period=s-year",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%203/countries?period=s-year",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%203/versions?period=s-year"
 			}
 		},
 		{
@@ -1509,6 +2479,11 @@
 			"share": 3.33,
 			"prev": {
 				"share": 0.04
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%200/browsers?period=s-year",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%200/countries?period=s-year",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%200/versions?period=s-year"
 			}
 		},
 		{
@@ -1516,6 +2491,11 @@
 			"share": 3.33,
 			"prev": {
 				"share": 0.04
+			},
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2010/browsers?period=s-year",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2010/countries?period=s-year",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2010/versions?period=s-year"
 			}
 		}
 	]

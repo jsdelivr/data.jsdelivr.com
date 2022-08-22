@@ -6,49 +6,79 @@
 	},
 	"/v1/stats/platforms/platform%2019/browsers?continent=EU&period=2020": [
 		{
-			"browser": "browser 19",
+			"name": "browser 19",
 			"share": 52.3,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/countries?period=2020&continent=EU",
+				"platforms": "http://localhost:4454/v1/stats/browsers/browser%2019/platforms?period=2020&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/browsers/browser%2019/versions?period=2020&continent=EU"
 			}
 		},
 		{
-			"browser": "browser 18",
+			"name": "browser 18",
 			"share": 47.7,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/countries?period=2020&continent=EU",
+				"platforms": "http://localhost:4454/v1/stats/browsers/browser%2018/platforms?period=2020&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/browsers/browser%2018/versions?period=2020&continent=EU"
 			}
 		}
 	],
 	"/v1/stats/platforms/platform%2019/browsers?continent=EU&period=2020-02": [
 		{
-			"browser": "browser 19",
+			"name": "browser 19",
 			"share": 52.34,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/countries?period=2020-02&continent=EU",
+				"platforms": "http://localhost:4454/v1/stats/browsers/browser%2019/platforms?period=2020-02&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/browsers/browser%2019/versions?period=2020-02&continent=EU"
 			}
 		},
 		{
-			"browser": "browser 18",
+			"name": "browser 18",
 			"share": 47.66,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/countries?period=2020-02&continent=EU",
+				"platforms": "http://localhost:4454/v1/stats/browsers/browser%2018/platforms?period=2020-02&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/browsers/browser%2018/versions?period=2020-02&continent=EU"
 			}
 		}
 	],
 	"/v1/stats/platforms/platform%2019/browsers?continent=EU&period=2020-04": [
 		{
-			"browser": "browser 19",
+			"name": "browser 19",
 			"share": 52.34,
 			"prev": {
 				"share": 51.19
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/countries?period=2020-04&continent=EU",
+				"platforms": "http://localhost:4454/v1/stats/browsers/browser%2019/platforms?period=2020-04&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/browsers/browser%2019/versions?period=2020-04&continent=EU"
 			}
 		},
 		{
-			"browser": "browser 18",
+			"name": "browser 18",
 			"share": 47.66,
 			"prev": {
 				"share": 48.81
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/countries?period=2020-04&continent=EU",
+				"platforms": "http://localhost:4454/v1/stats/browsers/browser%2018/platforms?period=2020-04&continent=EU",
+				"versions": "http://localhost:4454/v1/stats/browsers/browser%2018/versions?period=2020-04&continent=EU"
 			}
 		}
 	],
@@ -59,49 +89,73 @@
 	},
 	"/v1/stats/platforms/platform%2019/browsers?country=PL&period=2020": [
 		{
-			"browser": "browser 19",
+			"name": "browser 19",
 			"share": 52.3,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"platforms": "http://localhost:4454/v1/stats/browsers/browser%2019/platforms?period=2020&country=PL",
+				"versions": "http://localhost:4454/v1/stats/browsers/browser%2019/versions?period=2020&country=PL"
 			}
 		},
 		{
-			"browser": "browser 18",
+			"name": "browser 18",
 			"share": 47.7,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"platforms": "http://localhost:4454/v1/stats/browsers/browser%2018/platforms?period=2020&country=PL",
+				"versions": "http://localhost:4454/v1/stats/browsers/browser%2018/versions?period=2020&country=PL"
 			}
 		}
 	],
 	"/v1/stats/platforms/platform%2019/browsers?country=PL&period=2020-02": [
 		{
-			"browser": "browser 19",
+			"name": "browser 19",
 			"share": 52.34,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"platforms": "http://localhost:4454/v1/stats/browsers/browser%2019/platforms?period=2020-02&country=PL",
+				"versions": "http://localhost:4454/v1/stats/browsers/browser%2019/versions?period=2020-02&country=PL"
 			}
 		},
 		{
-			"browser": "browser 18",
+			"name": "browser 18",
 			"share": 47.66,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"platforms": "http://localhost:4454/v1/stats/browsers/browser%2018/platforms?period=2020-02&country=PL",
+				"versions": "http://localhost:4454/v1/stats/browsers/browser%2018/versions?period=2020-02&country=PL"
 			}
 		}
 	],
 	"/v1/stats/platforms/platform%2019/browsers?country=PL&period=2020-04": [
 		{
-			"browser": "browser 19",
+			"name": "browser 19",
 			"share": 52.34,
 			"prev": {
 				"share": 51.19
+			},
+			"links": {
+				"platforms": "http://localhost:4454/v1/stats/browsers/browser%2019/platforms?period=2020-04&country=PL",
+				"versions": "http://localhost:4454/v1/stats/browsers/browser%2019/versions?period=2020-04&country=PL"
 			}
 		},
 		{
-			"browser": "browser 18",
+			"name": "browser 18",
 			"share": 47.66,
 			"prev": {
 				"share": 48.81
+			},
+			"links": {
+				"platforms": "http://localhost:4454/v1/stats/browsers/browser%2018/platforms?period=2020-04&country=PL",
+				"versions": "http://localhost:4454/v1/stats/browsers/browser%2018/versions?period=2020-04&country=PL"
 			}
 		}
 	],
@@ -112,49 +166,79 @@
 	},
 	"/v1/stats/platforms/platform%2019/browsers?period=2020": [
 		{
-			"browser": "browser 19",
+			"name": "browser 19",
 			"share": 52.3,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/countries?period=2020",
+				"platforms": "http://localhost:4454/v1/stats/browsers/browser%2019/platforms?period=2020",
+				"versions": "http://localhost:4454/v1/stats/browsers/browser%2019/versions?period=2020"
 			}
 		},
 		{
-			"browser": "browser 18",
+			"name": "browser 18",
 			"share": 47.7,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/countries?period=2020",
+				"platforms": "http://localhost:4454/v1/stats/browsers/browser%2018/platforms?period=2020",
+				"versions": "http://localhost:4454/v1/stats/browsers/browser%2018/versions?period=2020"
 			}
 		}
 	],
 	"/v1/stats/platforms/platform%2019/browsers?period=2020-02": [
 		{
-			"browser": "browser 19",
+			"name": "browser 19",
 			"share": 52.34,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/countries?period=2020-02",
+				"platforms": "http://localhost:4454/v1/stats/browsers/browser%2019/platforms?period=2020-02",
+				"versions": "http://localhost:4454/v1/stats/browsers/browser%2019/versions?period=2020-02"
 			}
 		},
 		{
-			"browser": "browser 18",
+			"name": "browser 18",
 			"share": 47.66,
 			"prev": {
 				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/countries?period=2020-02",
+				"platforms": "http://localhost:4454/v1/stats/browsers/browser%2018/platforms?period=2020-02",
+				"versions": "http://localhost:4454/v1/stats/browsers/browser%2018/versions?period=2020-02"
 			}
 		}
 	],
 	"/v1/stats/platforms/platform%2019/browsers?period=2020-04": [
 		{
-			"browser": "browser 19",
+			"name": "browser 19",
 			"share": 52.34,
 			"prev": {
 				"share": 51.19
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/countries?period=2020-04",
+				"platforms": "http://localhost:4454/v1/stats/browsers/browser%2019/platforms?period=2020-04",
+				"versions": "http://localhost:4454/v1/stats/browsers/browser%2019/versions?period=2020-04"
 			}
 		},
 		{
-			"browser": "browser 18",
+			"name": "browser 18",
 			"share": 47.66,
 			"prev": {
 				"share": 48.81
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/countries?period=2020-04",
+				"platforms": "http://localhost:4454/v1/stats/browsers/browser%2018/platforms?period=2020-04",
+				"versions": "http://localhost:4454/v1/stats/browsers/browser%2018/versions?period=2020-04"
 			}
 		}
 	],

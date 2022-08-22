@@ -17,7 +17,6 @@ class BaseRequest {
 		this.query = ctx.state.query || {};
 		this.ctx = ctx;
 		this.pagination = this.params.all ? [ null ] : pagination(this.query.limit, this.query.page);
-		this.linkBuilder = new LinkBuilder(ctx);
 		ctx.type = 'json';
 
 		if (this.query.country) {
@@ -76,6 +75,12 @@ class BaseRequest {
 				dates: dateRange.fill(dailyStats.bandwidth, ...this.dateRange),
 			},
 		};
+	}
+
+	linkBuilder () {
+		return new LinkBuilder(this.ctx, {
+			omitQuery: [ 'limit', 'page' ],
+		});
 	}
 
 	setCacheHeader (delay = 0) {

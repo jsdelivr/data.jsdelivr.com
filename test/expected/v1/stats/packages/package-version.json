@@ -70,6 +70,9 @@
 				"2010-12-28": 0,
 				"2010-12-29": 0
 			}
+		},
+		"links": {
+			"files": "http://localhost:4454/v1/stats/packages/npm/package-0@1.1.0/files?period=month&by=hits"
 		}
 	},
 	"/v1/stats/packages/npm/package-0@1.1.5?period=all": {
@@ -81,6 +84,9 @@
 		"bandwidth": {
 			"total": 0,
 			"dates": {}
+		},
+		"links": {
+			"files": "http://localhost:4454/v1/stats/packages/npm/package-0@1.1.5/files?period=all&by=hits"
 		}
 	},
 	"/v1/stats/packages/npm/package-0@1.1.5?period=month": {
@@ -154,6 +160,9 @@
 				"2010-12-28": 0,
 				"2010-12-29": 0
 			}
+		},
+		"links": {
+			"files": "http://localhost:4454/v1/stats/packages/npm/package-0@1.1.5/files?period=month&by=hits"
 		}
 	},
 	"/v1/stats/packages/npm/package-2@1.1.0?period=all": {
@@ -305,6 +314,9 @@
 				"2010-12-28": 393868,
 				"2010-12-29": 393872
 			}
+		},
+		"links": {
+			"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.0/files?period=all&by=hits"
 		}
 	},
 	"/v1/stats/packages/npm/package-2@1.1.0?period=day": {
@@ -320,6 +332,9 @@
 			"dates": {
 				"2010-12-29": 393872
 			}
+		},
+		"links": {
+			"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.0/files?period=day&by=hits"
 		}
 	},
 	"/v1/stats/packages/npm/package-2@1.1.0?period=month": {
@@ -393,6 +408,9 @@
 				"2010-12-28": 393868,
 				"2010-12-29": 393872
 			}
+		},
+		"links": {
+			"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.0/files?by=hits"
 		}
 	},
 	"/v1/stats/packages/npm/package-2@1.1.0?period=week": {
@@ -420,6 +438,9 @@
 				"2010-12-28": 393868,
 				"2010-12-29": 393872
 			}
+		},
+		"links": {
+			"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.0/files?period=week&by=hits"
 		}
 	},
 	"/v1/stats/packages/npm/package-2@1.1.0?period=x": {
@@ -1168,6 +1189,9 @@
 				"2010-12-28": 393868,
 				"2010-12-29": 393872
 			}
+		},
+		"links": {
+			"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.0/files?period=year&by=hits"
 		}
 	},
 	"/v1/stats/packages/gh/user/package-59@1.1.2?period=all": {
@@ -1319,6 +1343,9 @@
 				"2010-12-28": 23550668,
 				"2010-12-29": 23550672
 			}
+		},
+		"links": {
+			"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.2/files?period=all&by=hits"
 		}
 	},
 	"/v1/stats/packages/gh/user/package-59@1.1.2?period=day": {
@@ -1334,6 +1361,9 @@
 			"dates": {
 				"2010-12-29": 23550672
 			}
+		},
+		"links": {
+			"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.2/files?period=day&by=hits"
 		}
 	},
 	"/v1/stats/packages/gh/user/package-59@1.1.2?period=month": {
@@ -1407,6 +1437,9 @@
 				"2010-12-28": 23550668,
 				"2010-12-29": 23550672
 			}
+		},
+		"links": {
+			"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.2/files?by=hits"
 		}
 	},
 	"/v1/stats/packages/gh/user/package-59@1.1.2?period=week": {
@@ -1434,6 +1467,9 @@
 				"2010-12-28": 23550668,
 				"2010-12-29": 23550672
 			}
+		},
+		"links": {
+			"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.2/files?period=week&by=hits"
 		}
 	},
 	"/v1/stats/packages/gh/user/package-59@1.1.2?period=year": {
@@ -2177,6 +2213,9 @@
 				"2010-12-28": 23550668,
 				"2010-12-29": 23550672
 			}
+		},
+		"links": {
+			"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.2/files?period=year&by=hits"
 		}
 	},
 	"/v1/stats/packages/gh/user/package-59@branch-1?period=all": {
@@ -2328,6 +2367,9 @@
 				"2010-12-28": 23681868,
 				"2010-12-29": 23681872
 			}
+		},
+		"links": {
+			"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-1/files?period=all&by=hits"
 		}
 	},
 	"/v1/stats/packages/gh/user/package-59@branch-1?period=day": {
@@ -2343,6 +2385,9 @@
 			"dates": {
 				"2010-12-29": 23681872
 			}
+		},
+		"links": {
+			"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-1/files?period=day&by=hits"
 		}
 	},
 	"/v1/stats/packages/gh/user/package-59@branch-1?period=month": {
@@ -2416,6 +2461,9 @@
 				"2010-12-28": 23681868,
 				"2010-12-29": 23681872
 			}
+		},
+		"links": {
+			"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-1/files?by=hits"
 		}
 	},
 	"/v1/stats/packages/gh/user/package-59@branch-1?period=week": {
@@ -2443,6 +2491,9 @@
 				"2010-12-28": 23681868,
 				"2010-12-29": 23681872
 			}
+		},
+		"links": {
+			"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-1/files?period=week&by=hits"
 		}
 	},
 	"/v1/stats/packages/gh/user/package-59@branch-1?period=x": {
@@ -3191,6 +3242,9 @@
 				"2010-12-28": 23681868,
 				"2010-12-29": 23681872
 			}
+		},
+		"links": {
+			"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-1/files?period=year&by=hits"
 		}
 	}
 }

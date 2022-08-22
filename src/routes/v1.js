@@ -192,7 +192,7 @@ koaElasticUtils.addRoutes(router, [
 		...schema.paginatedStats,
 	}),
 }), async (ctx) => {
-	return new PackageRequest(ctx).handleTopVersions();
+	return new StatsRequest(ctx).handleTopPackageVersions();
 });
 
 koaElasticUtils.addRoutes(router, [
@@ -205,7 +205,7 @@ koaElasticUtils.addRoutes(router, [
 		...schema.paginatedStats,
 	}),
 }), async (ctx) => {
-	return new PackageRequest(ctx).handleTopVersionFiles();
+	return new StatsRequest(ctx).handleTopPackageVersionFiles();
 });
 
 koaElasticUtils.addRoutes(router, [
@@ -241,7 +241,7 @@ koaElasticUtils.addRoutes(router, [
 		period: schema.period,
 	}),
 }), async (ctx) => {
-	return new StatsRequest(ctx).handleCountries();
+	return new StatsRequest(ctx).handleNetworkCountries();
 });
 
 koaElasticUtils.addRoutes(router, [
@@ -251,7 +251,7 @@ koaElasticUtils.addRoutes(router, [
 		period: schema.period,
 	}).concat(schema.location),
 }), async (ctx) => {
-	return new StatsRequest(ctx).handleProviders();
+	return new StatsRequest(ctx).handleNetworkProviders();
 });
 
 Object.entries(StatsRequest.platformBrowserStats).forEach(([ path, handler ]) => {
