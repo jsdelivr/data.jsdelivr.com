@@ -14,141 +14,9 @@ const Logs = require('../../models/Logs');
 const dateRange = require('../utils/dateRange');
 const sumDeep = require('../utils/sumDeep');
 const { splitPackageUserAndName } = require('../utils/link-builder-transforms');
+const { routes } = require('../v1');
 
 class StatsRequest extends BaseRequest {
-	static platformBrowserStats = {
-		'/platforms': async (r) => {
-			let resources = await Platform.getTopPlatforms(r.period, r.date, r.composedLocationFilter, ...r.pagination);
-
-			return r.linkBuilder()
-				.refs({
-					browsers: '/stats/platforms/:name/browsers',
-					...!r.query.country && { countries: '/stats/platforms/:name/countries' },
-					versions: '/stats/platforms/:name/versions',
-				})
-				.build(resources);
-		},
-		'/platforms/versions': async (r) => {
-			let resources = await Platform.getTopPlatformsVersions(r.period, r.date, r.composedLocationFilter, ...r.pagination);
-
-			return r.linkBuilder()
-				.refs({
-					...!r.query.country && { countries: '/stats/platforms/:name/versions/:version/countries' },
-				})
-				.build(resources);
-		},
-		'/platforms/:name/browsers': async (r) => {
-			let resources = await Platform.getTopPlatformBrowsers(r.params.name, r.period, r.date, r.composedLocationFilter, ...r.pagination);
-
-			return r.linkBuilder()
-				.refs({
-					...!r.query.country && { countries: '/stats/browsers/:name/countries' },
-					platforms: '/stats/browsers/:name/platforms',
-					versions: '/stats/browsers/:name/versions',
-				})
-				.build(resources);
-		},
-		'/platforms/:name/countries': async (r) => {
-			let resources = await Platform.getTopPlatformCountries(r.params.name, r.period, r.date, r.composedLocationFilter, ...r.pagination);
-
-			return r.linkBuilder()
-				.refs({
-					browsers: '/stats/browsers',
-					platforms: '/stats/platforms',
-				})
-				.includeQuery([ 'country' ])
-				.omitQuery([ 'continent' ])
-				.build(resources);
-		},
-		'/platforms/:name/versions': async (r) => {
-			let resources = await Platform.getTopPlatformVersions(r.params.name, r.period, r.date, r.composedLocationFilter, ...r.pagination);
-
-			return r.linkBuilder()
-				.refs({
-					...!r.query.country && { countries: '/stats/platforms/:name/versions/:version/countries' },
-				})
-				.withValues({ name: r.params.name })
-				.build(resources);
-		},
-		'/platforms/:name/versions/:version/countries': async (r) => {
-			let resources = await Platform.getTopPlatformVersionCountries(r.params.name, r.params.version, r.period, r.date, r.composedLocationFilter, ...r.pagination);
-
-			return r.linkBuilder()
-				.refs({
-					browsers: '/stats/browsers',
-					platforms: '/stats/platforms',
-				})
-				.includeQuery([ 'country' ])
-				.omitQuery([ 'continent' ])
-				.build(resources);
-		},
-		'/browsers': async (r) => {
-			let resources = await Browser.getTopBrowsers(r.period, r.date, r.composedLocationFilter, ...r.pagination);
-
-			return r.linkBuilder()
-				.refs({
-					...!r.query.country && { countries: '/stats/browsers/:name/countries' },
-					platforms: '/stats/browsers/:name/platforms',
-					versions: '/stats/browsers/:name/versions',
-				})
-				.build(resources);
-		},
-		'/browsers/versions': async (r) => {
-			let resources = await Browser.getTopBrowsersVersions(r.period, r.date, r.composedLocationFilter, ...r.pagination);
-
-			return r.linkBuilder()
-				.refs({
-					...!r.query.country && { countries: '/stats/browsers/:name/versions/:version/countries' },
-				})
-				.build(resources);
-		},
-		'/browsers/:name/countries': async (r) => {
-			let resources = await Browser.getTopBrowserCountries(r.params.name, r.period, r.date, r.composedLocationFilter, ...r.pagination);
-
-			return r.linkBuilder()
-				.refs({
-					browsers: '/stats/browsers',
-					platforms: '/stats/platforms',
-				})
-				.includeQuery([ 'country' ])
-				.omitQuery([ 'continent' ])
-				.build(resources);
-		},
-		'/browsers/:name/platforms': async (r) => {
-			let resources = await Browser.getTopBrowserPlatforms(r.params.name, r.period, r.date, r.composedLocationFilter, ...r.pagination);
-
-			return r.linkBuilder()
-				.refs({
-					browsers: '/stats/platforms/:name/browsers',
-					...!r.query.country && { countries: '/stats/platforms/:name/countries' },
-					versions: '/stats/platforms/:name/versions',
-				})
-				.build(resources);
-		},
-		'/browsers/:name/versions': async (r) => {
-			let resources = await Browser.getTopBrowserVersions(r.params.name, r.period, r.date, r.composedLocationFilter, ...r.pagination);
-
-			return r.linkBuilder()
-				.refs({
-					...!r.query.country && { countries: '/stats/browsers/:name/versions/:version/countries' },
-				})
-				.withValues({ name: r.params.name })
-				.build(resources);
-		},
-		'/browsers/:name/versions/:version/countries': async (r) => {
-			let resources = await Browser.getTopBrowserVersionCountries(r.params.name, r.params.version, r.period, r.date, r.composedLocationFilter, ...r.pagination);
-
-			return r.linkBuilder()
-				.refs({
-					browsers: '/stats/browsers',
-					platforms: '/stats/platforms',
-				})
-				.includeQuery([ 'country' ])
-				.omitQuery([ 'continent' ])
-				.build(resources);
-		},
-	};
-
 	async handleNetwork () {
 		let [
 			{ hits: fileHits, bandwidth: fileBandwidth },
@@ -285,8 +153,8 @@ class StatsRequest extends BaseRequest {
 
 		this.ctx.body = this.linkBuilder()
 			.refs({
-				self: resource => resource.type === 'npm' ? '/stats/packages/npm/:name' : '/stats/packages/gh/:user/:repo',
-				versions: resource => resource.type === 'npm' ? '/stats/packages/npm/:name/versions' : '/stats/packages/gh/:user/:repo/versions',
+				self: resource => routes['/stats/packages/:type/:name'].getName(resource),
+				versions: resource => routes['/stats/packages/:type/:name/versions'].getName(resource),
 			})
 			.transform(splitPackageUserAndName)
 			.withValues({ by: this.query.by })
@@ -303,7 +171,7 @@ class StatsRequest extends BaseRequest {
 
 		this.ctx.body = this.linkBuilder()
 			.refs({
-				versions: this.params.type === 'npm' ? '/stats/packages/npm/:name/versions' : '/stats/packages/gh/:user/:repo/versions',
+				versions: routes['/stats/packages/:type/:name/versions'].getName(this.params),
 			})
 			.transform(splitPackageUserAndName)
 			.withValues({ ...this.params, by: 'hits' })
@@ -317,7 +185,7 @@ class StatsRequest extends BaseRequest {
 
 		this.ctx.body = this.linkBuilder()
 			.refs({
-				files: this.params.type === 'npm' ? '/stats/packages/npm/:name@:version/files' : '/stats/packages/gh/:user/:repo@:version/files',
+				files: routes['/stats/packages/:type/:name@:version/files'].getName(this.params),
 			})
 			.transform(splitPackageUserAndName)
 			.withValues({ ...this.params, by: 'hits' })
@@ -340,8 +208,8 @@ class StatsRequest extends BaseRequest {
 
 		this.ctx.body = this.linkBuilder()
 			.refs({
-				self: this.params.type === 'npm' ? '/stats/packages/npm/:name@:version' : '/stats/packages/gh/:user/:repo@:version',
-				files: this.params.type === 'npm' ? '/stats/packages/npm/:name@:version/files' : '/stats/packages/gh/:user/:repo@:version/files',
+				self: routes['/stats/packages/:type/:name@:version'].getName(this.params),
+				files: routes['/stats/packages/:type/:name@:version/files'].getName(this.params),
 			})
 			.transform(splitPackageUserAndName)
 			.withValues({ ...this.params, by: this.query.by })
@@ -368,8 +236,8 @@ class StatsRequest extends BaseRequest {
 	async handlePeriods () {
 		this.ctx.body = this.linkBuilder()
 			.includeQuery([ 'period' ])
-			.buildRefs({ browsers: '/stats/browsers' }, await Browser.getPeriods())
-			.buildRefs({ platforms: '/stats/platforms' }, await Platform.getPeriods())
+			.buildRefs({ browsers: routes['/stats/browsers'].getName() }, await Browser.getPeriods())
+			.buildRefs({ platforms: routes['/stats/platforms'].getName() }, await Platform.getPeriods())
 			.mergeBy('period')
 			.sort((a, b) => {
 				return a.period > b.period ? -1 : a.period < b.period;
@@ -385,6 +253,172 @@ class StatsRequest extends BaseRequest {
 		this.setCacheHeader();
 	}
 
+	async handleTopPlatforms () {
+		let stats = await Platform.getTopPlatforms(this.period, this.date, this.composedLocationFilter, ...this.pagination);
+
+		this.ctx.body = this.linkBuilder()
+			.refs({
+				browsers: routes['/stats/platforms/:name/browsers'].getName(),
+				...!this.query.country && { countries: routes['/stats/platforms/:name/countries'].getName() },
+				versions: routes['/stats/platforms/:name/versions'].getName(),
+			})
+			.build(stats);
+
+		this.setCacheHeader();
+	}
+
+	async handleTopPlatformsVersions () {
+		let stats = await Platform.getTopPlatformsVersions(this.period, this.date, this.composedLocationFilter, ...this.pagination);
+
+		this.ctx.body = this.linkBuilder()
+			.refs({
+				...!this.query.country && { countries: routes['/stats/platforms/:name/versions/:version/countries'].getName() },
+			})
+			.build(stats);
+
+		this.setCacheHeader();
+	}
+
+	async handleTopPlatformBrowsers () {
+		let stats = await Platform.getTopPlatformBrowsers(this.params.name, this.period, this.date, this.composedLocationFilter, ...this.pagination);
+
+		this.ctx.body = this.linkBuilder()
+			.refs({
+				...!this.query.country && { countries: routes['/stats/browsers/:name/countries'].getName() },
+				platforms: routes['/stats/browsers/:name/platforms'].getName(),
+				versions: routes['/stats/browsers/:name/versions'].getName(),
+			})
+			.build(stats);
+
+		this.setCacheHeader();
+	}
+
+	async handleTopPlatformCountries () {
+		let stats = await Platform.getTopPlatformCountries(this.params.name, this.period, this.date, this.composedLocationFilter, ...this.pagination);
+
+		this.ctx.body = this.linkBuilder()
+			.refs({
+				browsers: routes['/stats/browsers'].getName(),
+				platforms: routes['/stats/platforms'].getName(),
+			})
+			.includeQuery([ 'country' ])
+			.omitQuery([ 'continent' ])
+			.build(stats);
+
+		this.setCacheHeader();
+	}
+
+	async handleTopPlatformVersions () {
+		let stats = await Platform.getTopPlatformVersions(this.params.name, this.period, this.date, this.composedLocationFilter, ...this.pagination);
+
+		this.ctx.body = this.linkBuilder()
+			.refs({
+				...!this.query.country && { countries: routes['/stats/platforms/:name/versions/:version/countries'].getName() },
+			})
+			.withValues({ name: this.params.name })
+			.build(stats);
+
+		this.setCacheHeader();
+	}
+
+	async handleTopPlatformVersionCountries () {
+		let stats = await Platform.getTopPlatformVersionCountries(this.params.name, this.params.version, this.period, this.date, this.composedLocationFilter, ...this.pagination);
+
+		this.ctx.body = this.linkBuilder()
+			.refs({
+				browsers: routes['/stats/browsers'].getName(),
+				platforms: routes['/stats/platforms'].getName(),
+			})
+			.includeQuery([ 'country' ])
+			.omitQuery([ 'continent' ])
+			.build(stats);
+
+		this.setCacheHeader();
+	}
+
+	async handleTopBrowsers () {
+		let stats = await Browser.getTopBrowsers(this.period, this.date, this.composedLocationFilter, ...this.pagination);
+
+		this.ctx.body = this.linkBuilder()
+			.refs({
+				...!this.query.country && { countries: routes['/stats/browsers/:name/countries'].getName() },
+				platforms: routes['/stats/browsers/:name/platforms'].getName(),
+				versions: routes['/stats/browsers/:name/versions'].getName(),
+			})
+			.build(stats);
+
+		this.setCacheHeader();
+	}
+
+	async handleTopBrowsersVersions () {
+		let stats = await Browser.getTopBrowsersVersions(this.period, this.date, this.composedLocationFilter, ...this.pagination);
+
+		this.ctx.body = this.linkBuilder()
+			.refs({
+				...!this.query.country && { countries: routes['/stats/browsers/:name/versions/:version/countries'].getName() },
+			})
+			.build(stats);
+
+		this.setCacheHeader();
+	}
+
+	async handleTopBrowserCountries () {
+		let stats = await Browser.getTopBrowserCountries(this.params.name, this.period, this.date, this.composedLocationFilter, ...this.pagination);
+
+		this.ctx.body = this.linkBuilder()
+			.refs({
+				browsers: routes['/stats/browsers'].getName(),
+				platforms: routes['/stats/platforms'].getName(),
+			})
+			.includeQuery([ 'country' ])
+			.omitQuery([ 'continent' ])
+			.build(stats);
+
+		this.setCacheHeader();
+	}
+
+	async handleTopBrowserPlatforms () {
+		let stats = await Browser.getTopBrowserPlatforms(this.params.name, this.period, this.date, this.composedLocationFilter, ...this.pagination);
+
+		this.ctx.body = this.linkBuilder()
+			.refs({
+				browsers: routes['/stats/platforms/:name/browsers'].getName(),
+				...!this.query.country && { countries: routes['/stats/platforms/:name/countries'].getName() },
+				versions: routes['/stats/platforms/:name/versions'].getName(),
+			})
+			.build(stats);
+
+		this.setCacheHeader();
+	}
+
+	async handleTopBrowserVersions () {
+		let stats = await Browser.getTopBrowserVersions(this.params.name, this.period, this.date, this.composedLocationFilter, ...this.pagination);
+
+		this.ctx.body = this.linkBuilder()
+			.refs({
+				...!this.query.country && { countries: routes['/stats/browsers/:name/versions/:version/countries'].getName() },
+			})
+			.withValues({ name: this.params.name })
+			.build(stats);
+
+		this.setCacheHeader();
+	}
+
+	async handleTopBrowserVersionCountries () {
+		let stats = await Browser.getTopBrowserVersionCountries(this.params.name, this.params.version, this.period, this.date, this.composedLocationFilter, ...this.pagination);
+
+		this.ctx.body = this.linkBuilder()
+			.refs({
+				browsers: routes['/stats/browsers'].getName(),
+				platforms: routes['/stats/platforms'].getName(),
+			})
+			.includeQuery([ 'country' ])
+			.omitQuery([ 'continent' ])
+			.build(stats);
+
+		this.setCacheHeader();
+	}
+
 	async handleProxyStats () {
 		let [ dailyStats, periodStats ] = await Promise.all([
 			ProxyModel.getDailyStatsByName(this.params.name, ...this.dateRange),
@@ -393,11 +427,6 @@ class StatsRequest extends BaseRequest {
 
 		this.ctx.body = this.formatCombinedStats(dailyStats, periodStats);
 
-		this.setCacheHeader();
-	}
-
-	async handleUsing (handler) {
-		this.ctx.body = await handler(this);
 		this.setCacheHeader();
 	}
 }

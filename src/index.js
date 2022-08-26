@@ -18,7 +18,7 @@ const statuses = require('statuses');
 
 const debugHandler = require('./routes/debug');
 const heartbeatHandler = require('./routes/heartbeat');
-const v1Handler = require('./routes/v1');
+const { router: v1Handler } = require('./routes/v1');
 
 const serverConfig = config.get('server');
 
