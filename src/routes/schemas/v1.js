@@ -48,6 +48,17 @@ const primitives = {
 			'*': '{{#label}} must be one of [day, week, month, year, s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM]',
 		}).default(() => dateRange.parseFloatingPeriod('month')),
 
+	periodFloating:
+		Joi.custom((value, helpers) => {
+			if (dateRange.isFloatingPeriod(value)) {
+				return dateRange.parseFloatingPeriod(value);
+			}
+
+			return helpers.error('any.invalid');
+		}).messages({
+			'*': '{{#label}} must be one of [day, week, month, year]',
+		}).default(() => dateRange.parseFloatingPeriod('month')),
+
 	periodStatic:
 		Joi.custom((value, helpers) => {
 			if (dateRange.isStaticPeriod(value)) {

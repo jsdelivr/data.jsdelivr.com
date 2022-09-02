@@ -350,7 +350,7 @@ class PackageRequest extends BaseRequest {
 		this.setCacheHeader();
 	}
 
-	async handleVersionFiles () {
+	async handleVersion () {
 		try {
 			this.ctx.body = this.linkBuilder()
 				.refs({

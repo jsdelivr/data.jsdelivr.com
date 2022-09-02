@@ -105,7 +105,7 @@ const routes = {
 		handlers: [
 			validate({
 				query: Joi.object({
-					period: schema.period,
+					period: schema.periodFloating,
 				}),
 			}),
 			async (ctx) => {
@@ -129,7 +129,7 @@ const routes = {
 		handlers: [
 			validate({
 				query: Joi.object({
-					period: schema.period,
+					period: schema.periodFloating,
 				}),
 			}),
 			async (ctx) => {
@@ -152,7 +152,7 @@ const routes = {
 		handlers: [
 			validate({
 				query: Joi.object({
-					period: schema.period,
+					period: schema.periodFloating,
 				}),
 			}),
 			async (ctx) => {
@@ -209,7 +209,7 @@ const routes = {
 		handlers: [
 			validate({
 				query: Joi.object({
-					period: schema.period,
+					period: schema.periodFloating,
 				}),
 			}),
 			async (ctx) => {
@@ -421,7 +421,7 @@ const routes = {
 		handlers: [
 			validate({
 				query: Joi.object({
-					period: schema.period,
+					period: schema.periodFloating,
 					type: schema.statsBadgeType,
 				}),
 			}),
