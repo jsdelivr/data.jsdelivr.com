@@ -68,11 +68,11 @@ class BaseRequest {
 			...dailyStats,
 			hits: {
 				...dailyStats.hits,
-				dates: dateRange.fill(dailyStats.hits, ...this.dateRange),
+				dates: dateRange.fill(dailyStats.hits.dates, ...this.dateRange),
 			},
 			bandwidth: {
 				...dailyStats.bandwidth,
-				dates: dateRange.fill(dailyStats.bandwidth, ...this.dateRange),
+				dates: dateRange.fill(dailyStats.bandwidth.dates, ...this.dateRange),
 			},
 		};
 	}
