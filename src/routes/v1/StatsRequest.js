@@ -149,16 +149,16 @@ class StatsRequest extends BaseRequest {
 	}
 
 	async handlePackages () {
-		let resources = await Package.getTopPackages(this.query.by, this.period, this.date, this.query.type, ...this.pagination);
-
-		this.ctx.body = this.linkBuilder()
-			.refs({
-				self: resource => routes['/stats/packages/:type/:name'].getName(resource),
-				versions: resource => routes['/stats/packages/:type/:name/versions'].getName(resource),
-			})
-			.transform(splitPackageUserAndName)
-			.withValues({ by: this.query.by })
-			.build(resources);
+		this.ctx.body = await Package.transform('links', (resources) => {
+			return this.linkBuilder()
+				.refs({
+					self: resource => routes['/stats/packages/:type/:name'].getName(resource),
+					versions: resource => routes['/stats/packages/:type/:name/versions'].getName(resource),
+				})
+				.transform(splitPackageUserAndName)
+				.withValues({ by: this.query.by })
+				.build(resources);
+		}).asRawArray().getTopPackages(this.query.by, this.period, this.date, this.query.type, ...this.pagination);
 
 		this.setCacheHeader();
 	}
