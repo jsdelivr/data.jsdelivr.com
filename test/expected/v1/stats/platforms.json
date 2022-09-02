@@ -764,9 +764,9 @@
 				"share": null
 			},
 			"links": {
-				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2012/browsers?period=s-month&continent=EU",
-				"countries": "http://localhost:4454/v1/stats/platforms/platform%2012/countries?period=s-month&continent=EU",
-				"versions": "http://localhost:4454/v1/stats/platforms/platform%2012/versions?period=s-month&continent=EU"
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2012/browsers?continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2012/countries?continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2012/versions?continent=EU"
 			}
 		},
 		{
@@ -776,9 +776,9 @@
 				"share": null
 			},
 			"links": {
-				"browsers": "http://localhost:4454/v1/stats/platforms/platform%202/browsers?period=s-month&continent=EU",
-				"countries": "http://localhost:4454/v1/stats/platforms/platform%202/countries?period=s-month&continent=EU",
-				"versions": "http://localhost:4454/v1/stats/platforms/platform%202/versions?period=s-month&continent=EU"
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%202/browsers?continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%202/countries?continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%202/versions?continent=EU"
 			}
 		},
 		{
@@ -788,9 +788,9 @@
 				"share": null
 			},
 			"links": {
-				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2013/browsers?period=s-month&continent=EU",
-				"countries": "http://localhost:4454/v1/stats/platforms/platform%2013/countries?period=s-month&continent=EU",
-				"versions": "http://localhost:4454/v1/stats/platforms/platform%2013/versions?period=s-month&continent=EU"
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2013/browsers?continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2013/countries?continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2013/versions?continent=EU"
 			}
 		},
 		{
@@ -800,9 +800,9 @@
 				"share": null
 			},
 			"links": {
-				"browsers": "http://localhost:4454/v1/stats/platforms/platform%203/browsers?period=s-month&continent=EU",
-				"countries": "http://localhost:4454/v1/stats/platforms/platform%203/countries?period=s-month&continent=EU",
-				"versions": "http://localhost:4454/v1/stats/platforms/platform%203/versions?period=s-month&continent=EU"
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%203/browsers?continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%203/countries?continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%203/versions?continent=EU"
 			}
 		},
 		{
@@ -812,9 +812,9 @@
 				"share": null
 			},
 			"links": {
-				"browsers": "http://localhost:4454/v1/stats/platforms/platform%201/browsers?period=s-month&continent=EU",
-				"countries": "http://localhost:4454/v1/stats/platforms/platform%201/countries?period=s-month&continent=EU",
-				"versions": "http://localhost:4454/v1/stats/platforms/platform%201/versions?period=s-month&continent=EU"
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%201/browsers?continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%201/countries?continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%201/versions?continent=EU"
 			}
 		},
 		{
@@ -824,9 +824,9 @@
 				"share": null
 			},
 			"links": {
-				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2011/browsers?period=s-month&continent=EU",
-				"countries": "http://localhost:4454/v1/stats/platforms/platform%2011/countries?period=s-month&continent=EU",
-				"versions": "http://localhost:4454/v1/stats/platforms/platform%2011/versions?period=s-month&continent=EU"
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2011/browsers?continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2011/countries?continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2011/versions?continent=EU"
 			}
 		},
 		{
@@ -836,9 +836,9 @@
 				"share": null
 			},
 			"links": {
-				"browsers": "http://localhost:4454/v1/stats/platforms/platform%200/browsers?period=s-month&continent=EU",
-				"countries": "http://localhost:4454/v1/stats/platforms/platform%200/countries?period=s-month&continent=EU",
-				"versions": "http://localhost:4454/v1/stats/platforms/platform%200/versions?period=s-month&continent=EU"
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%200/browsers?continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%200/countries?continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%200/versions?continent=EU"
 			}
 		},
 		{
@@ -848,9 +848,9 @@
 				"share": null
 			},
 			"links": {
-				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2010/browsers?period=s-month&continent=EU",
-				"countries": "http://localhost:4454/v1/stats/platforms/platform%2010/countries?period=s-month&continent=EU",
-				"versions": "http://localhost:4454/v1/stats/platforms/platform%2010/versions?period=s-month&continent=EU"
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2010/browsers?continent=EU",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2010/countries?continent=EU",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2010/versions?continent=EU"
 			}
 		}
 	],
@@ -965,8 +965,8 @@
 				"share": null
 			},
 			"links": {
-				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2012/browsers?period=s-month&country=AE",
-				"versions": "http://localhost:4454/v1/stats/platforms/platform%2012/versions?period=s-month&country=AE"
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2012/browsers?country=AE",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2012/versions?country=AE"
 			}
 		},
 		{
@@ -976,8 +976,8 @@
 				"share": null
 			},
 			"links": {
-				"browsers": "http://localhost:4454/v1/stats/platforms/platform%202/browsers?period=s-month&country=AE",
-				"versions": "http://localhost:4454/v1/stats/platforms/platform%202/versions?period=s-month&country=AE"
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%202/browsers?country=AE",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%202/versions?country=AE"
 			}
 		},
 		{
@@ -987,8 +987,8 @@
 				"share": null
 			},
 			"links": {
-				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2013/browsers?period=s-month&country=AE",
-				"versions": "http://localhost:4454/v1/stats/platforms/platform%2013/versions?period=s-month&country=AE"
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2013/browsers?country=AE",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2013/versions?country=AE"
 			}
 		},
 		{
@@ -998,8 +998,8 @@
 				"share": null
 			},
 			"links": {
-				"browsers": "http://localhost:4454/v1/stats/platforms/platform%203/browsers?period=s-month&country=AE",
-				"versions": "http://localhost:4454/v1/stats/platforms/platform%203/versions?period=s-month&country=AE"
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%203/browsers?country=AE",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%203/versions?country=AE"
 			}
 		},
 		{
@@ -1009,8 +1009,8 @@
 				"share": null
 			},
 			"links": {
-				"browsers": "http://localhost:4454/v1/stats/platforms/platform%201/browsers?period=s-month&country=AE",
-				"versions": "http://localhost:4454/v1/stats/platforms/platform%201/versions?period=s-month&country=AE"
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%201/browsers?country=AE",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%201/versions?country=AE"
 			}
 		},
 		{
@@ -1020,8 +1020,8 @@
 				"share": null
 			},
 			"links": {
-				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2011/browsers?period=s-month&country=AE",
-				"versions": "http://localhost:4454/v1/stats/platforms/platform%2011/versions?period=s-month&country=AE"
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2011/browsers?country=AE",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2011/versions?country=AE"
 			}
 		},
 		{
@@ -1031,8 +1031,8 @@
 				"share": null
 			},
 			"links": {
-				"browsers": "http://localhost:4454/v1/stats/platforms/platform%200/browsers?period=s-month&country=AE",
-				"versions": "http://localhost:4454/v1/stats/platforms/platform%200/versions?period=s-month&country=AE"
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%200/browsers?country=AE",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%200/versions?country=AE"
 			}
 		},
 		{
@@ -1042,8 +1042,8 @@
 				"share": null
 			},
 			"links": {
-				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2010/browsers?period=s-month&country=AE",
-				"versions": "http://localhost:4454/v1/stats/platforms/platform%2010/versions?period=s-month&country=AE"
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2010/browsers?country=AE",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2010/versions?country=AE"
 			}
 		}
 	],
@@ -2409,9 +2409,9 @@
 				"share": null
 			},
 			"links": {
-				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2012/browsers?period=s-month",
-				"countries": "http://localhost:4454/v1/stats/platforms/platform%2012/countries?period=s-month",
-				"versions": "http://localhost:4454/v1/stats/platforms/platform%2012/versions?period=s-month"
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2012/browsers",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2012/countries",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2012/versions"
 			}
 		},
 		{
@@ -2421,9 +2421,9 @@
 				"share": null
 			},
 			"links": {
-				"browsers": "http://localhost:4454/v1/stats/platforms/platform%202/browsers?period=s-month",
-				"countries": "http://localhost:4454/v1/stats/platforms/platform%202/countries?period=s-month",
-				"versions": "http://localhost:4454/v1/stats/platforms/platform%202/versions?period=s-month"
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%202/browsers",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%202/countries",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%202/versions"
 			}
 		},
 		{
@@ -2433,9 +2433,9 @@
 				"share": null
 			},
 			"links": {
-				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2013/browsers?period=s-month",
-				"countries": "http://localhost:4454/v1/stats/platforms/platform%2013/countries?period=s-month",
-				"versions": "http://localhost:4454/v1/stats/platforms/platform%2013/versions?period=s-month"
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2013/browsers",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2013/countries",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2013/versions"
 			}
 		},
 		{
@@ -2445,9 +2445,9 @@
 				"share": null
 			},
 			"links": {
-				"browsers": "http://localhost:4454/v1/stats/platforms/platform%203/browsers?period=s-month",
-				"countries": "http://localhost:4454/v1/stats/platforms/platform%203/countries?period=s-month",
-				"versions": "http://localhost:4454/v1/stats/platforms/platform%203/versions?period=s-month"
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%203/browsers",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%203/countries",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%203/versions"
 			}
 		},
 		{
@@ -2457,9 +2457,9 @@
 				"share": null
 			},
 			"links": {
-				"browsers": "http://localhost:4454/v1/stats/platforms/platform%201/browsers?period=s-month",
-				"countries": "http://localhost:4454/v1/stats/platforms/platform%201/countries?period=s-month",
-				"versions": "http://localhost:4454/v1/stats/platforms/platform%201/versions?period=s-month"
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%201/browsers",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%201/countries",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%201/versions"
 			}
 		},
 		{
@@ -2469,9 +2469,9 @@
 				"share": null
 			},
 			"links": {
-				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2011/browsers?period=s-month",
-				"countries": "http://localhost:4454/v1/stats/platforms/platform%2011/countries?period=s-month",
-				"versions": "http://localhost:4454/v1/stats/platforms/platform%2011/versions?period=s-month"
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2011/browsers",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2011/countries",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2011/versions"
 			}
 		},
 		{
@@ -2481,9 +2481,9 @@
 				"share": null
 			},
 			"links": {
-				"browsers": "http://localhost:4454/v1/stats/platforms/platform%200/browsers?period=s-month",
-				"countries": "http://localhost:4454/v1/stats/platforms/platform%200/countries?period=s-month",
-				"versions": "http://localhost:4454/v1/stats/platforms/platform%200/versions?period=s-month"
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%200/browsers",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%200/countries",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%200/versions"
 			}
 		},
 		{
@@ -2493,9 +2493,9 @@
 				"share": null
 			},
 			"links": {
-				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2010/browsers?period=s-month",
-				"countries": "http://localhost:4454/v1/stats/platforms/platform%2010/countries?period=s-month",
-				"versions": "http://localhost:4454/v1/stats/platforms/platform%2010/versions?period=s-month"
+				"browsers": "http://localhost:4454/v1/stats/platforms/platform%2010/browsers",
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2010/countries",
+				"versions": "http://localhost:4454/v1/stats/platforms/platform%2010/versions"
 			}
 		}
 	],

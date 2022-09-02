@@ -72,7 +72,7 @@
 			}
 		},
 		"links": {
-			"files": "http://localhost:4454/v1/stats/packages/npm/package-0@1.1.0/files?period=month"
+			"files": "http://localhost:4454/v1/stats/packages/npm/package-0@1.1.0/files"
 		}
 	},
 	"/v1/stats/packages/npm/package-0@1.1.5?period=all": {
@@ -162,7 +162,7 @@
 			}
 		},
 		"links": {
-			"files": "http://localhost:4454/v1/stats/packages/npm/package-0@1.1.5/files?period=month"
+			"files": "http://localhost:4454/v1/stats/packages/npm/package-0@1.1.5/files"
 		}
 	},
 	"/v1/stats/packages/npm/package-2@1.1.0": {
@@ -486,7 +486,7 @@
 			}
 		},
 		"links": {
-			"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.0/files?period=month"
+			"files": "http://localhost:4454/v1/stats/packages/npm/package-2@1.1.0/files"
 		}
 	},
 	"/v1/stats/packages/npm/package-2@1.1.0?period=week": {
@@ -1591,7 +1591,7 @@
 			}
 		},
 		"links": {
-			"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.2/files?period=month"
+			"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@1.1.2/files"
 		}
 	},
 	"/v1/stats/packages/gh/user/package-59@1.1.2?period=week": {
@@ -2691,7 +2691,7 @@
 			}
 		},
 		"links": {
-			"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-1/files?period=month"
+			"files": "http://localhost:4454/v1/stats/packages/gh/user/package-59@branch-1/files"
 		}
 	},
 	"/v1/stats/packages/gh/user/package-59@branch-1?period=week": {
@@ -3548,7 +3548,7 @@
 			}
 		},
 		"links": {
-			"files": "http://localhost:4454/v1/stats/packages/npm/@scope/package-1@1.1.0/files?period=month"
+			"files": "http://localhost:4454/v1/stats/packages/npm/@scope/package-1@1.1.0/files"
 		}
 	}
 }

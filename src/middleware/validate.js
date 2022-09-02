@@ -38,6 +38,11 @@ module.exports = ({ body, params, query }) => {
 			params: getRequiredSchemaKeys(params),
 			query: getRequiredSchemaKeys(query),
 		},
+		schemaDefaults: {
+			body: getSchemaKeysDefaults(body),
+			params: getSchemaKeysDefaults(params),
+			query: getSchemaKeysDefaults(query),
+		},
 	});
 };
 
@@ -89,4 +94,8 @@ function getSchemaKeys (schema) {
 
 function getRequiredSchemaKeys (schema) {
 	return schema ? Array.from(schema._ids._byKey.entries()).filter(([ , v ]) => v.schema._flags.presence === 'required').map(([ k ]) => k) : undefined;
+}
+
+function getSchemaKeysDefaults (schema) {
+	return schema ? Object.fromEntries(Array.from(schema._ids._byKey.entries()).map(([ k, v ]) => [ k, String(typeof v.schema._flags.default === 'function' ? v.schema._flags.default() : v.schema._flags.default) ])) : undefined;
 }

@@ -86,7 +86,7 @@
 			}
 		},
 		"links": {
-			"versions": "http://localhost:4454/v1/stats/packages/npm/package-0/versions?period=month"
+			"versions": "http://localhost:4454/v1/stats/packages/npm/package-0/versions"
 		}
 	},
 	"/v1/stats/packages/npm/package-2": {
@@ -466,7 +466,7 @@
 			}
 		},
 		"links": {
-			"versions": "http://localhost:4454/v1/stats/packages/npm/package-2/versions?period=month"
+			"versions": "http://localhost:4454/v1/stats/packages/npm/package-2/versions"
 		}
 	},
 	"/v1/stats/packages/npm/package-2?period=week": {
@@ -1393,7 +1393,7 @@
 			}
 		},
 		"links": {
-			"versions": "http://localhost:4454/v1/stats/packages/npm/package-x/versions?period=month"
+			"versions": "http://localhost:4454/v1/stats/packages/npm/package-x/versions"
 		}
 	},
 	"/v1/stats/packages/gh/user/package-59": {
@@ -1773,7 +1773,7 @@
 			}
 		},
 		"links": {
-			"versions": "http://localhost:4454/v1/stats/packages/gh/user/package-59/versions?period=month"
+			"versions": "http://localhost:4454/v1/stats/packages/gh/user/package-59/versions"
 		}
 	},
 	"/v1/stats/packages/gh/user/package-59?period=week": {
@@ -2672,7 +2672,7 @@
 			}
 		},
 		"links": {
-			"versions": "http://localhost:4454/v1/stats/packages/npm/@scope/package-1/versions?period=month"
+			"versions": "http://localhost:4454/v1/stats/packages/npm/@scope/package-1/versions"
 		}
 	}
 }

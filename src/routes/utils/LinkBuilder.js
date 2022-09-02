@@ -83,7 +83,7 @@ class LinkBuilder {
 		let validator = this.ctx.router.route(routeName).stack.at(-2);
 		let urlPath = this.ctx.router.url(routeName, mappedResource, {
 			query: Object.assign(
-				_.pick(_.omit(this.ctx.originalQuery, this._omitQuery), validator?.schemaKeys?.query),
+				_.pickBy(_.pick(_.omit(this.ctx.originalQuery, this._omitQuery), validator?.schemaKeys?.query), (v, k) => this.ctx.originalQuery[k] !== validator?.schemaDefaults?.query?.[k]),
 				_.pick(mappedResource, validator?.requiredSchemaKeys?.query),
 				_.pick(mappedResource, this._includeQuery)
 			),

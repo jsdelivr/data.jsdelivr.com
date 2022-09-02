@@ -107,8 +107,11 @@ module.exports.isStaticPeriod = (period) => {
 
 module.exports.parseFloatingPeriod = (period, date = new Date()) => {
 	return {
-		period,
 		date: relativeDayUtc(0, date),
+		period,
+		toString () {
+			return period;
+		},
 	};
 };
 
@@ -117,27 +120,25 @@ module.exports.parseStaticPeriod = (period, date = new Date()) => {
 	let match;
 
 	if (period === 's-month') {
-		return {
-			date: new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth() - 1, 1)),
-			period,
-		};
+		date = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth() - 1, 1));
 	} else if (period === 's-year') {
-		return {
-			date: new Date(Date.UTC(date.getUTCFullYear() - 1, 0, 1)),
-			period,
-		};
-	}
+		date = new Date(Date.UTC(date.getUTCFullYear() - 1, 0, 1));
+	} else if (match = staticPeriodPattern.exec(period)) {
+		date = new Date(period);
+		period = match[2] ? 's-month' : 's-year';
 
-	if (match = staticPeriodPattern.exec(period)) {
-		let date = new Date(period);
-
-		if (!isNaN(date.valueOf())) {
-			return {
-				date,
-				period: match[2] ? 's-month' : 's-year',
-			};
+		if (isNaN(date.valueOf())) {
+			return;
 		}
 	}
+
+	return {
+		date,
+		period,
+		toString () {
+			return period;
+		},
+	};
 };
 
 module.exports.periodToString = (period, date) => {
