@@ -7615,5 +7615,118 @@
 	},
 	"/package-without-versions": {
 		"name": "package-without-versions"
+	},
+	"/@martin-kolarik%2Fbatch-queue": {
+		"_id": "@martin-kolarik/batch-queue",
+		"_rev": "1-f40b23e3db3e1d64f25481832e47be96",
+		"name": "@martin-kolarik/batch-queue",
+		"dist-tags": {
+			"latest": "1.0.0"
+		},
+		"versions": {
+			"1.0.0": {
+				"name": "@martin-kolarik/batch-queue",
+				"description": "Batch queue",
+				"version": "1.0.0",
+				"github": "https://github.com/MartinKolarik/batch-queue/",
+				"main": "./src/index.js",
+				"license": "MIT",
+				"devDependencies": {
+					"@martin-kolarik/eslint-config": "^1.0.5",
+					"@types/chai": "^4.1.7",
+					"@types/delay": "^3.1.0",
+					"@types/eslint": "^4.16.6",
+					"@types/mocha": "^5.2.6",
+					"chai": "^4.2.0",
+					"delay": "^4.2.0",
+					"eslint": "^5.16.0",
+					"eslint-plugin-chai-expect": "^2.0.1",
+					"eslint-plugin-html": "^5.0.3",
+					"eslint-plugin-node": "^8.0.1",
+					"eslint-plugin-promise": "^4.1.1",
+					"mocha": "^6.1.4"
+				},
+				"author": {
+					"name": "Martin Kolárik",
+					"email": "martin@kolarik.sk",
+					"url": "https://kolarik.sk"
+				},
+				"repository": {
+					"type": "git",
+					"url": "git+https://github.com/MartinKolarik/batch-queue.git"
+				},
+				"scripts": {
+					"lint": "eslint src",
+					"mocha": "mocha",
+					"test": "npm run lint && npm run mocha"
+				},
+				"bugs": {
+					"url": "https://github.com/MartinKolarik/batch-queue/issues"
+				},
+				"gitHead": "2fd67445493d85574a719fd6e653d25c749b99ac",
+				"homepage": "https://github.com/MartinKolarik/batch-queue#readme",
+				"_id": "@martin-kolarik/batch-queue@1.0.0",
+				"_npmVersion": "6.4.1",
+				"_nodeVersion": "10.15.3",
+				"_npmUser": {
+					"name": "martin-kolarik",
+					"email": "martin@kolarik.sk"
+				},
+				"dist": {
+					"integrity": "sha512-uwRqWCIuwSxmaHaMhynV6kzPALchzZUL5w/+FKvK9SN6Q4um/usRVslnMgFO8PggVwxfkPcqHgr8cd/+mA1NMg==",
+					"shasum": "662d1d3328f63b9be250b4cc2b6c4356e675d3b5",
+					"tarball": "https://registry.npmjs.org/@martin-kolarik/batch-queue/-/batch-queue-1.0.0.tgz",
+					"fileCount": 8,
+					"unpackedSize": 5931,
+					"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcwgHmCRA9TVsSAnZWagAAIm8QAIpdQZtJH8Wr/z2Ede0g\nyuDmdotmtAxE7Y+b5GpXABq0nfEI/sJVgIz4/AyViag+UYJCAUOtI/WtxJFx\n44NLKcVhdPCU0UN9ZLoeseoUibAh06WfFZgGX/VQMuff2aHrA2hzmfLMt+pq\nbxtNBYYW+deSTjrpq2B6gWqz1IY8LxXi6wZz/c9lj+4XbIzchqeP2tZdB/my\nSQAbjNvjUoQ081SP4VcfJkreEFvOfl+5Kr9/70UIHv9QYpePwKB0nwE3Jp22\nfOPf9+sq/8ir0ct6x6g7Ir2jOK0lYf+K3Cor4cG/c3Ru+z0QosI0VR4oEaTV\niUjsTvDy9f+73zOccNP9wdJQ0i5/OLOxEsnug0GqYA0soZH36YJotCa34kvu\nH8lm0WU3SvewDmjrQTyl/ecQrsUlYAVWtIS3Z70GURZMhqfDvLgTZDixxi+B\nVo9LPYQtG3702sqx+IFZYt+8OUgNQppmBIfTaiRUOPx/Of/W3PcA+mjY2cx2\nGym4gJ/8ZEiqBcg6vDzUrMQr4f7+LIlzwP+AQn5rimnWEpcfunuRF9l6w+Qq\nJf7OXJ4C4zBBaBmjn+nzylhL27d3fWn1naLzRf1llOwAG14k04NdiYNCzdtZ\nJgncQ2+IU3W6OmT2dFWB0CUt6pl0wBXgM064Xs6chyR4xemn1d6Ab13pKqot\njim5\r\n=w5My\r\n-----END PGP SIGNATURE-----\r\n",
+					"signatures": [
+						{
+							"keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+							"sig": "MEUCIHGPS+eDVCsYFf4KQ4zaTCNZfy/9o4BqQdV9oIdFwuqCAiEArI4F4tqXBbgIVpsswL4Efg0tHyHyS3fvWq7LvIhdUh0="
+						}
+					]
+				},
+				"maintainers": [
+					{
+						"name": "martin-kolarik",
+						"email": "martin@kolarik.sk"
+					}
+				],
+				"directories": { },
+				"_npmOperationalInternal": {
+					"host": "s3://npm-registry-packages",
+					"tmp": "tmp/batch-queue_1.0.0_1556218342211_0.351310217020687"
+				},
+				"_hasShrinkwrap": false
+			}
+		},
+		"time": {
+			"created": "2019-04-25T18:52:22.032Z",
+			"1.0.0": "2019-04-25T18:52:22.319Z",
+			"modified": "2022-04-06T03:44:27.549Z"
+		},
+		"maintainers": [
+			{
+				"name": "martin-kolarik",
+				"email": "martin@kolarik.sk"
+			}
+		],
+		"description": "Batch queue",
+		"homepage": "https://github.com/MartinKolarik/batch-queue#readme",
+		"repository": {
+			"type": "git",
+			"url": "git+https://github.com/MartinKolarik/batch-queue.git"
+		},
+		"author": {
+			"name": "Martin Kolárik",
+			"email": "martin@kolarik.sk",
+			"url": "https://kolarik.sk"
+		},
+		"bugs": {
+			"url": "https://github.com/MartinKolarik/batch-queue/issues"
+		},
+		"license": "MIT",
+		"readme": "# batch-queue\n\n## Installation\n\n```\n$ npm install @martin-kolarik/batch-queue\n```\n\n## Usage\n\n```js\nconst BatchQueue = require('@martin-kolarik/batch-queue');\n\nconst batchQueue = new BatchQueue(async (items) => {\n    // TODO: process `items` here.\n}, /* list of options with their default values: */ {\n    batchSize: 100, // process 100 items at once\n    concurrency: 1, // run at most 1 instance of the processing function at a time\n    timeout: 1000, // process the items after 1000 ms even if items.length < batchSize\n});\n\nbatchQueue.push(...items);\n```\n\nRun `npm test` for examples.\n\n## License\nCopyright (c) 2019 Martin Kolárik. Released under the MIT license.\n",
+		"readmeFilename": "README.md"
 	}
 }

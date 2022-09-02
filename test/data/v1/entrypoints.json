@@ -78,6 +78,19 @@
 			}
 		}
 	},
+	"@scoped/entrypoint-simple@1.0.0": {
+		"expected": {
+			"js": {
+				"file": "/main.min.js",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"main": "/main.js"
+			}
+		}
+	},
 	"entrypoint-simple-with-style@1.0.0": {
 		"expected": {
 			"js": {

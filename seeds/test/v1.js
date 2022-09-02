@@ -28,7 +28,7 @@ exports.seed = async (db) => {
 	});
 
 	await db('package').insert(_.flatten(PACKAGE_TYPES.map((type) => {
-		return _.range(0, 60).map(i => ({ type, name: (type === 'npm' ? '' : 'user/') + `package-${i}` }));
+		return _.range(0, 60).map(i => ({ type, name: (type === 'npm' ? i % 2 ? '@scope/' : '' : 'user/') + `package-${i}` }));
 	})));
 
 	await db('package').insert(_.flatten(PACKAGE_TYPES.map((type) => {
@@ -224,7 +224,9 @@ exports.seed = async (db) => {
 		let date = new Date(STATS_START_TIMESTAMP + 40 * 24 * 60 * 60 * 1000);
 
 		for (let [ packageName, data ] of Object.entries(entrypointsTestData)) {
-			let [ name, version ] = packageName.split('@');
+			let parts = packageName.split('@');
+			let name = parts.slice(0, -1).join('@');
+			let version = parts.at(-1);
 
 			if (data.db.entrypoints) {
 				await db('package_entrypoints').insert({ type: 'npm', name, version, entrypoints: JSON.stringify(data.db.entrypoints) });

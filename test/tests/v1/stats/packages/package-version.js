@@ -19,10 +19,11 @@ function makePackageVersionStatsTests () {
 		period: periodOptions,
 	};
 
-	makeEndpointSnapshotTests('/v1/stats/packages/npm/{name}@{version}{?period}', defaults, [
+	makeEndpointSnapshotTests('/v1/stats/packages/npm/{+name}@{version}{?period}', defaults, [
 		{ name: 'package-0', version: '1.1.0', period: 'month' },
 		{ name: 'package-0', version: '1.1.5', period: 'month' },
 		{ name: 'package-0', version: '1.1.5', period: 'all' },
+		{ name: '@scope/package-1', version: '1.1.0', period: 'month' },
 		{ name: 'package-2', version: '1.1.0', ...commonValues },
 	]);
 

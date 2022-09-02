@@ -75,4 +75,17 @@ describe('/v1/stats/packages/badge', () => {
 				expect(response).to.matchSnapshot();
 			});
 	});
+
+	it(`GET /v1/stats/packages/npm/@scope/package-1/badge?type=type-rank`, () => {
+		return chai.request(server)
+			.get(`/v1/stats/packages/npm/@scope/package-1/badge?type=type-rank`)
+			.then((response) => {
+				expect(response).to.have.status(200);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'public, stale-while-revalidate=3600, stale-if-error=86400');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.matchSnapshot();
+			});
+	});
 });

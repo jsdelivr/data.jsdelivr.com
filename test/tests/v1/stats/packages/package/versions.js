@@ -20,8 +20,9 @@ function makePackageStatsTests () {
 		period: periodOptions,
 	};
 
-	makeEndpointSnapshotTests('/v1/stats/packages/npm/{name}/versions{?by,period}', defaults, [
+	makeEndpointSnapshotTests('/v1/stats/packages/npm/{+name}/versions{?by,period}', defaults, [
 		{ name: 'package-0', by: commonValues.by, period: 'month' },
+		{ name: '@scope/package-1', by: commonValues.by, period: 'month' },
 		{ name: 'package-x', by: commonValues.by, period: 'month' },
 		{ name: 'package-x', by: commonValues.by, period: 'all' },
 		{ name: 'package-2', ...commonValues },

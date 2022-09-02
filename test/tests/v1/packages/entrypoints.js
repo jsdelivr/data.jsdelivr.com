@@ -43,6 +43,20 @@ describe('/v1/packages/entrypoints', () => {
 			});
 	});
 
+	it(`GET /v1/packages/npm/@scoped/entrypoint-no-local-cache@1.0.0/entrypoints`, async () => {
+		return chai.request(server)
+			.get('/v1/packages/npm/@scoped/entrypoint-no-local-cache@1.0.0/entrypoints')
+			.then((response) => {
+				expect(response).to.have.status(200);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=604800, stale-while-revalidate=86400, stale-if-error=86400');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response.body.entrypoints).to.deep.equal({ js: { file: '/index.min.js', guessed: false } });
+			});
+	});
+
 	it(`GET /v1/packages/npm/entrypoint-no-local-cache-empty-remote@1.0.0/entrypoints`, async () => {
 		return chai.request(server)
 			.get('/v1/packages/npm/entrypoint-no-local-cache-empty-remote@1.0.0/entrypoints')

@@ -36,6 +36,20 @@ describe('/v1/packages', () => {
 			});
 	});
 
+	it('GET /v1/packages/npm/@martin-kolarik/batch-queue', () => {
+		return chai.request(server)
+			.get('/v1/packages/npm/@martin-kolarik/batch-queue')
+			.then((response) => {
+				expect(response).to.have.status(200);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=300, stale-while-revalidate=3600, stale-if-error=86400');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response).to.matchSnapshot();
+			});
+	});
+
 	it('GET /v1/packages/npm/jquery@3.2.1', () => {
 		return chai.request(server)
 			.get('/v1/packages/npm/jquery@3.2.1')
@@ -81,6 +95,20 @@ describe('/v1/packages', () => {
 	it('GET /v1/packages/npm/jquery@3.2.1?structure=flat - cache hit', () => {
 		return chai.request(server)
 			.get('/v1/packages/npm/jquery@3.2.1?structure=flat')
+			.then((response) => {
+				expect(response).to.have.status(200);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response).to.matchSnapshot();
+			});
+	});
+
+	it('GET /v1/packages/npm/@martin-kolarik/batch-queue@1.0.0', () => {
+		return chai.request(server)
+			.get('/v1/packages/npm/@martin-kolarik/batch-queue@1.0.0')
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');

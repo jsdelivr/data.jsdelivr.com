@@ -169,5 +169,16 @@
 		"date": "2010-12-31",
 		"status": 404,
 		"message": "Couldn't fetch versions for jquery/jqueryxxx."
+	},
+	"/v1/packages/npm/@martin-kolarik/batch-queue/resolved": {
+		"date": "2010-12-31",
+		"type": "npm",
+		"name": "@martin-kolarik/batch-queue",
+		"version": "1.0.0",
+		"links": {
+			"self": "http://localhost:4454/v1/packages/npm/@martin-kolarik/batch-queue@1.0.0",
+			"entrypoints": "http://localhost:4454/v1/packages/npm/@martin-kolarik/batch-queue@1.0.0/entrypoints",
+			"stats": "http://localhost:4454/v1/stats/packages/npm/@martin-kolarik/batch-queue@1.0.0"
+		}
 	}
 }

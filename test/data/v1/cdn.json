@@ -4555,5 +4555,59 @@
 	},
 	"/npm/foo@1/+private-json": "Failed to fetch version info for foo.",
 	"/npm/jquery@1/+private-json": "Couldn't find the requested release version 1.",
-	"/npm/emojione@3.1.1/+private-json": "Package size exceeded the configured limit of 50 MB."
+	"/npm/emojione@3.1.1/+private-json": "Package size exceeded the configured limit of 50 MB.",
+	"/npm/@martin-kolarik/batch-queue@1.0.0/+private-json": {
+		"version": "1.0.0",
+		"default": "/src/index.min.js",
+		"files": [
+			{
+				"name": "/.editorconfig",
+				"hash": "/5fx4Ph/0GZPYj4FLGDzQC//nB0d09tsOME1KP/edY0=",
+				"time": "1985-10-26T08:15:00.000Z",
+				"size": 145
+			},
+			{
+				"name": "/.eslintrc",
+				"hash": "w7EAnH5x/zEHcca1rBqQHuw0B9CTTQSXIszVbFg4mCQ=",
+				"time": "1985-10-26T08:15:00.000Z",
+				"size": 48
+			},
+			{
+				"name": "/LICENSE",
+				"hash": "ellDDeYcVYf4dUe//qkwoUUzK47/K1LKbqMUVoY/qZE=",
+				"time": "1985-10-26T08:15:00.000Z",
+				"size": 1082
+			},
+			{
+				"name": "/package.json",
+				"hash": "nieZuJ2w5ipnHDzDU0K1h3MaL5MHuo3MWAgk6Xeg2xU=",
+				"time": "1985-10-26T08:15:00.000Z",
+				"size": 1003
+			},
+			{
+				"name": "/README.md",
+				"hash": "iOub8cLUBGIUdfuSS/kSahuZUguKWZoyuAJfTP9zuk4=",
+				"time": "1985-10-26T08:15:00.000Z",
+				"size": 666
+			},
+			{
+				"name": "/src/BatchQueue.js",
+				"hash": "AVLDwGK7PbdxCLKYCn25wkpiGLseFKxi4XZTSfLwuXc=",
+				"time": "1985-10-26T08:15:00.000Z",
+				"size": 1127
+			},
+			{
+				"name": "/src/index.js",
+				"hash": "vQIeEnQdRMeiwVW++Mj6v1hIZErCUegOweAgLtBkcf0=",
+				"time": "1985-10-26T08:15:00.000Z",
+				"size": 73
+			},
+			{
+				"name": "/test/tests.js",
+				"hash": "wTiaw3wz14AwOzDxV0oQur8PsLx0ur78ds/kKGApt60=",
+				"time": "1985-10-26T08:15:00.000Z",
+				"size": 1787
+			}
+		]
+	}
 }

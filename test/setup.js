@@ -82,9 +82,17 @@ module.exports.mochaGlobalSetup = async () => {
 		.get('/package-without-versions')
 		.reply(200, upstreamNpmResponses['/package-without-versions']);
 
+	nock('https://registry.npmjs.org')
+		.get('/@martin-kolarik%2Fbatch-queue')
+		.reply(200, upstreamNpmResponses['/@martin-kolarik%2Fbatch-queue']);
+
 	nock('https://cdn.jsdelivr.net')
 		.get('/npm/emojione@3.1.1/+private-json')
 		.reply(403, upstreamCdnResponses['/npm/emojione@3.1.1/+private-json']);
+
+	nock('https://cdn.jsdelivr.net')
+		.get('/npm/@martin-kolarik/batch-queue@1.0.0/+private-json')
+		.reply(200, upstreamCdnResponses['/npm/@martin-kolarik/batch-queue@1.0.0/+private-json']);
 
 	nock('https://cdn.jsdelivr.net')
 		.get('/npm/foo@1/+private-json')
@@ -111,6 +119,11 @@ module.exports.mochaGlobalSetup = async () => {
 	// entrypoint tests
 	nock('https://cdn.jsdelivr.net')
 		.get('/npm/entrypoint-no-local-cache@1.0.0/+private-entrypoints')
+		.times(1)
+		.reply(200, { version: '1.0.0', entrypoints: { main: '/index.js' } });
+
+	nock('https://cdn.jsdelivr.net')
+		.get('/npm/@scoped/entrypoint-no-local-cache@1.0.0/+private-entrypoints')
 		.times(1)
 		.reply(200, { version: '1.0.0', entrypoints: { main: '/index.js' } });
 
@@ -175,6 +188,7 @@ async function hashDbSetupFiles () {
 		...await readdir(path.join(__dirname, '../migrations')),
 		...await readdir(path.join(__dirname, '../seeds')),
 		path.join(__dirname, '/data/schema.sql'),
+		path.join(__dirname, '/data/v1/entrypoints.json'),
 	]), file => fs.readFile(file), { concurrency: 32 });
 
 	return files.reduce((hash, file) => {

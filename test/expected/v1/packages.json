@@ -8179,5 +8179,99 @@
 		"links": {
 			"stats": "http://localhost:4454/v1/stats/packages/gh/jquery/jquery@821bf34353a6baf97f7944379a6459afb16badae"
 		}
+	},
+	"/v1/packages/npm/@martin-kolarik/batch-queue": {
+		"date": "2010-12-31",
+		"type": "npm",
+		"name": "@martin-kolarik/batch-queue",
+		"tags": {
+			"latest": "1.0.0"
+		},
+		"versions": [
+			{
+				"version": "1.0.0",
+				"links": {
+					"self": "http://localhost:4454/v1/packages/npm/@martin-kolarik/batch-queue@1.0.0",
+					"entrypoints": "http://localhost:4454/v1/packages/npm/@martin-kolarik/batch-queue@1.0.0/entrypoints",
+					"stats": "http://localhost:4454/v1/stats/packages/npm/@martin-kolarik/batch-queue@1.0.0"
+				}
+			}
+		],
+		"links": {
+			"stats": "http://localhost:4454/v1/stats/packages/npm/@martin-kolarik/batch-queue"
+		}
+	},
+	"/v1/packages/npm/@martin-kolarik/batch-queue@1.0.0": {
+		"date": "2010-12-31",
+		"type": "npm",
+		"name": "@martin-kolarik/batch-queue",
+		"version": "1.0.0",
+		"default": "/src/index.min.js",
+		"files": [
+			{
+				"type": "directory",
+				"name": "src",
+				"files": [
+					{
+						"type": "file",
+						"name": "BatchQueue.js",
+						"hash": "AVLDwGK7PbdxCLKYCn25wkpiGLseFKxi4XZTSfLwuXc=",
+						"size": 1127
+					},
+					{
+						"type": "file",
+						"name": "index.js",
+						"hash": "vQIeEnQdRMeiwVW++Mj6v1hIZErCUegOweAgLtBkcf0=",
+						"size": 73
+					}
+				]
+			},
+			{
+				"type": "directory",
+				"name": "test",
+				"files": [
+					{
+						"type": "file",
+						"name": "tests.js",
+						"hash": "wTiaw3wz14AwOzDxV0oQur8PsLx0ur78ds/kKGApt60=",
+						"size": 1787
+					}
+				]
+			},
+			{
+				"type": "file",
+				"name": ".editorconfig",
+				"hash": "/5fx4Ph/0GZPYj4FLGDzQC//nB0d09tsOME1KP/edY0=",
+				"size": 145
+			},
+			{
+				"type": "file",
+				"name": ".eslintrc",
+				"hash": "w7EAnH5x/zEHcca1rBqQHuw0B9CTTQSXIszVbFg4mCQ=",
+				"size": 48
+			},
+			{
+				"type": "file",
+				"name": "LICENSE",
+				"hash": "ellDDeYcVYf4dUe//qkwoUUzK47/K1LKbqMUVoY/qZE=",
+				"size": 1082
+			},
+			{
+				"type": "file",
+				"name": "package.json",
+				"hash": "nieZuJ2w5ipnHDzDU0K1h3MaL5MHuo3MWAgk6Xeg2xU=",
+				"size": 1003
+			},
+			{
+				"type": "file",
+				"name": "README.md",
+				"hash": "iOub8cLUBGIUdfuSS/kSahuZUguKWZoyuAJfTP9zuk4=",
+				"size": 666
+			}
+		],
+		"links": {
+			"stats": "http://localhost:4454/v1/stats/packages/npm/@martin-kolarik/batch-queue@1.0.0",
+			"entrypoints": "http://localhost:4454/v1/packages/npm/@martin-kolarik/batch-queue@1.0.0/entrypoints"
+		}
 	}
 }

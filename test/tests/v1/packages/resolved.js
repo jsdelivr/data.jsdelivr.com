@@ -127,6 +127,21 @@ describe('/v1/packages/resolved', () => {
 			});
 	});
 
+	it('GET /v1/packages/npm/@martin-kolarik/batch-queue/resolved', () => {
+		return chai.request(server)
+			.get('/v1/packages/npm/@martin-kolarik/batch-queue/resolved')
+			.then((response) => {
+				expect(response).to.have.status(200);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=300, stale-while-revalidate=3600, stale-if-error=86400');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response.body).to.include({ version: '1.0.0' });
+				expect(response).to.matchSnapshot();
+			});
+	});
+
 	it('GET /v1/packages/gh/jquery/jquery2/resolved?specifier=v3.2.1', () => {
 		return chai.request(server)
 			.get('/v1/packages/gh/jquery/jquery2/resolved?specifier=v3.2.1')

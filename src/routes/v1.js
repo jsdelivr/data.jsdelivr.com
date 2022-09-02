@@ -24,7 +24,7 @@ router.param('hash', validate.param(schema.hash));
 router.param('user', async (value, ctx, next) => {
 	if (value && !ctx.params.repo) {
 		ctx.params.repo = ctx.params.name;
-		ctx.params.name = `${value}/${ctx.params.name}`;
+		ctx.params.name = (ctx.params.type === 'npm' ? '@' : '') + `${value}/${ctx.params.name}`;
 	}
 
 	return next();
@@ -78,7 +78,7 @@ const routes = {
 		paths: [
 			{
 				name: '/package/npm/:name',
-				path: '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)',
+				path: '/package/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)',
 			},
 			{
 				name: '/package/gh/:user/:repo',
@@ -95,7 +95,7 @@ const routes = {
 		paths: [
 			{
 				name: '/package/npm/:name/badge',
-				path: '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/badge/:period(day|week|month|year|all)?',
+				path: '/package/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)/badge/:period(day|week|month|year|all)?',
 			},
 			{
 				name: '/package/gh/:user/:repo/badge',
@@ -119,7 +119,7 @@ const routes = {
 		paths: [
 			{
 				name: '/package/npm/:name/badge/rank',
-				path: '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/badge/:rankType(rank|type-rank)/:period(day|week|month|year|all)?',
+				path: '/package/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)/badge/:rankType(rank|type-rank)/:period(day|week|month|year|all)?',
 			},
 			{
 				name: '/package/gh/:user/:repo/badge/rank',
@@ -142,7 +142,7 @@ const routes = {
 		paths: [
 			{
 				name: '/package/npm/:name/stats',
-				path: '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/stats/:groupBy(version|date)?/:period(day|week|month|year|all)?',
+				path: '/package/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)/stats/:groupBy(version|date)?/:period(day|week|month|year|all)?',
 			},
 			{
 				name: '/package/gh/:user/:repo/stats',
@@ -164,7 +164,7 @@ const routes = {
 		paths: [
 			{
 				name: '/package/npm/:name@:version',
-				path: '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version/:structure(tree|flat)?',
+				path: '/package/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)@:version/:structure(tree|flat)?',
 			},
 			{
 				name: '/package/gh/:user/:repo@:version',
@@ -186,7 +186,7 @@ const routes = {
 		paths: [
 			{
 				name: '/package/npm/:name@:version/entrypoints',
-				path: '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version/entrypoints',
+				path: '/package/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)@:version/entrypoints',
 			},
 		],
 		handlers: [
@@ -199,7 +199,7 @@ const routes = {
 		paths: [
 			{
 				name: '/package/npm/:name@:version/stats',
-				path: '/package/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version/stats/:groupBy(file|date)?/:period(day|week|month|year|all)?',
+				path: '/package/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)@:version/stats/:groupBy(file|date)?/:period(day|week|month|year|all)?',
 			},
 			{
 				name: '/package/gh/:user/:repo@:version/stats',
@@ -221,11 +221,11 @@ const routes = {
 		paths: [
 			{
 				name: '/package/resolve/npm/:name@:version',
-				path: '/package/resolve/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version',
+				path: '/package/resolve/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)@:version',
 			},
 			{
 				name: '/package/resolve/npm/:name',
-				path: '/package/resolve/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)',
+				path: '/package/resolve/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)',
 			},
 			{
 				name: '/package/resolve/gh/:user/:repo@:version',
@@ -250,7 +250,7 @@ const routes = {
 		paths: [
 			{
 				name: '/packages/npm/:name',
-				path: '/packages/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)',
+				path: '/packages/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)',
 			},
 			{
 				name: '/packages/gh/:user/:repo',
@@ -267,7 +267,7 @@ const routes = {
 		paths: [
 			{
 				name: '/packages/npm/:name@:version',
-				path: '/packages/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version',
+				path: '/packages/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)@:version',
 			},
 			{
 				name: '/packages/gh/:user/:repo@:version',
@@ -289,7 +289,7 @@ const routes = {
 		paths: [
 			{
 				name: '/packages/npm/:name@:version/entrypoints',
-				path: '/packages/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version/entrypoints',
+				path: '/packages/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)@:version/entrypoints',
 			},
 		],
 		handlers: [
@@ -302,7 +302,7 @@ const routes = {
 		paths: [
 			{
 				name: '/packages/npm/:name/resolved',
-				path: '/packages/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/resolved',
+				path: '/packages/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)/resolved',
 			},
 			{
 				name: '/packages/gh/:user/:repo/resolved',
@@ -389,7 +389,7 @@ const routes = {
 		paths: [
 			{
 				name: '/stats/packages/npm/:name',
-				path: '/stats/packages/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)',
+				path: '/stats/packages/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)',
 			},
 			{
 				name: '/stats/packages/gh/:user/:repo',
@@ -411,7 +411,7 @@ const routes = {
 		paths: [
 			{
 				name: '/stats/packages/npm/:name/badge',
-				path: '/stats/packages/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/badge',
+				path: '/stats/packages/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)/badge',
 			},
 			{
 				name: '/stats/packages/gh/:user/:repo/badge',
@@ -434,7 +434,7 @@ const routes = {
 		paths: [
 			{
 				name: '/stats/packages/npm/:name/versions',
-				path: '/stats/packages/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/versions',
+				path: '/stats/packages/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)/versions',
 			},
 			{
 				name: '/stats/packages/gh/:user/:repo/versions',
@@ -458,7 +458,7 @@ const routes = {
 		paths: [
 			{
 				name: '/stats/packages/npm/:name@:version',
-				path: '/stats/packages/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version',
+				path: '/stats/packages/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)@:version',
 			},
 			{
 				name: '/stats/packages/gh/:user/:repo@:version',
@@ -480,7 +480,7 @@ const routes = {
 		paths: [
 			{
 				name: '/stats/packages/npm/:name@:version/files',
-				path: '/stats/packages/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version/files',
+				path: '/stats/packages/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)@:version/files',
 			},
 			{
 				name: '/stats/packages/gh/:user/:repo@:version/files',
