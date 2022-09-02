@@ -5,6 +5,6 @@ module.exports = {
 		}
 
 		let [ user, name ] = resource.name.split('/');
-		return { ...resource, user: user.replace(/^@/, ''), name };
+		return Object.assign({}, resource, { user: user.replace(/^@/, ''), name });
 	},
 };

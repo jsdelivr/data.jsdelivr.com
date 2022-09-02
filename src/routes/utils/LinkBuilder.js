@@ -61,47 +61,32 @@ class LinkBuilder {
 			return this._built;
 		}
 
-		return {
-			...resources,
-			links: _.mapValues(this._refs, href => this._buildPublicUrl(href, resources)),
-		};
+		return Object.assign({}, resources, {
+			links: _.mapValues(this._refs, href => this._buildPublicUrl(href, this._prepareResource(resources))),
+		});
 	}
 
 	buildRefs (refs, resources) {
 		this._built = this._built.concat(resources.map((resource) => {
-			return {
-				...resource,
-				links: _.mapValues(refs, href => this._buildPublicUrl(href, resource)),
-			};
+			let prepared = this._prepareResource(resource);
+
+			return Object.assign({}, resource, {
+				links: _.mapValues(refs, href => this._buildPublicUrl(href, prepared)),
+			});
 		}));
 
 		return this;
 	}
 
-	_buildPublicUrl (route, resource) {
-		// Apply mapKeys()
-		let mappedResource = this._mapping
-			? _.mapKeys(resource, (value, key) => Object.hasOwn(this._mapping, key) ? this._mapping[key] : key)
-			: resource;
-
-		// Apply withValues()
-		mappedResource = this._values
-			? { ...mappedResource, ...this._values }
-			: mappedResource;
-
-		// Apply transform()
-		mappedResource = this._transform
-			? this._transform(mappedResource)
-			: mappedResource;
-
-		let routeName = typeof route === 'function' ? route(resource) : route;
+	_buildPublicUrl (route, mappedResource) {
+		let routeName = typeof route === 'function' ? route(mappedResource) : route;
 		let validator = this.ctx.router.route(routeName).stack.at(-2);
 		let urlPath = this.ctx.router.url(routeName, mappedResource, {
-			query: {
-				..._.pick(_.omit(this.ctx.originalQuery, this._omitQuery), validator?.schemaKeys?.query),
-				..._.pick(mappedResource, validator?.requiredSchemaKeys?.query),
-				..._.pick(mappedResource, this._includeQuery),
-			},
+			query: Object.assign(
+				_.pick(_.omit(this.ctx.originalQuery, this._omitQuery), validator?.schemaKeys?.query),
+				_.pick(mappedResource, validator?.requiredSchemaKeys?.query),
+				_.pick(mappedResource, this._includeQuery)
+			),
 		});
 
 		return `${serverConfig.host}${urlPath}`;
@@ -124,6 +109,25 @@ class LinkBuilder {
 	omitQuery (query) {
 		this._omitQuery = [ ...this.options.omitQuery, ...query ];
 		return this;
+	}
+
+	_prepareResource (resource) {
+		// Apply mapKeys()
+		let mappedResource = this._mapping
+			? _.mapKeys(resource, (value, key) => Object.hasOwn(this._mapping, key) ? this._mapping[key] : key)
+			: resource;
+
+		// Apply withValues()
+		mappedResource = this._values
+			? Object.assign({}, mappedResource, this._values)
+			: mappedResource;
+
+		// Apply transform()
+		mappedResource = this._transform
+			? this._transform(mappedResource)
+			: mappedResource;
+
+		return mappedResource;
 	}
 
 	refs (refs) {
