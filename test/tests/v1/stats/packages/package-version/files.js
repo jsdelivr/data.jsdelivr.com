@@ -16,7 +16,7 @@ function makePackageStatsTests () {
 	};
 
 	let commonValues = {
-		by: [ 'hits', 'bandwidth' ],
+		by: [ 'hits', 'bandwidth', undefined ],
 		period: periodOptions,
 	};
 
@@ -29,7 +29,7 @@ function makePackageStatsTests () {
 
 	makeEndpointSnapshotTests('/v1/stats/packages/npm/{name}@{version}/files{?by,period}', defaults, [
 		{ name: 'package-2', version: '1.1.0', by: 'hits', period: 'x' },
-		{ name: 'package-2', version: '1.1.0', by: [ 'x', undefined ], period: 'month' },
+		{ name: 'package-2', version: '1.1.0', by: [ 'x' ], period: 'month' },
 	], { status: 400 });
 
 	makeEndpointSnapshotTests('/v1/stats/packages/gh/{user}/{repo}@{version}/files{?by,period}', defaults, [
@@ -38,7 +38,7 @@ function makePackageStatsTests () {
 
 	makeEndpointSnapshotTests('/v1/stats/packages/gh/{user}/{repo}@{version}/files{?by,period}', defaults, [
 		{ user: 'user', repo: 'package-59', version: '1.1.0', by: 'hits', period: 'x' },
-		{ user: 'user', repo: 'package-59', version: '1.1.0', by: [ 'x', undefined ], period: 'month' },
+		{ user: 'user', repo: 'package-59', version: '1.1.0', by: [ 'x' ], period: 'month' },
 	], { status: 400 });
 
 	makeEndpointPaginationTests('/v1/stats/packages/npm/package-59@1.1.0/files', { by: 'hits', period: 'month' });

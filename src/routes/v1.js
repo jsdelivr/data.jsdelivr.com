@@ -375,7 +375,7 @@ const routes = {
 		handlers: [
 			validate({
 				query: Joi.object({
-					by: schema.byOptional,
+					by: schema.by,
 					period: schema.period,
 					...schema.paginatedStats,
 				}),

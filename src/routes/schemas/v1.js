@@ -3,7 +3,7 @@ const { continents, countries } = require('countries-list');
 const dateRange = require('../utils/dateRange');
 
 const primitives = {
-	byOptional:
+	by:
 		Joi.valid('hits', 'bandwidth').default('hits'),
 
 	continent:
@@ -87,7 +87,6 @@ const primitives = {
 };
 
 const composedTypes = {
-	by: primitives.byOptional.required(),
 	paginatedStats: { limit: primitives.limit, page: primitives.page },
 };
 
