@@ -1,0 +1,173 @@
+{
+	"/v1/packages/npm/foo/resolved": {
+		"date": "2010-12-31",
+		"status": 404,
+		"message": "Couldn't fetch versions for foo."
+	},
+	"/v1/packages/npm/jquery/resolved": {
+		"date": "2010-12-31",
+		"type": "npm",
+		"name": "jquery",
+		"version": "3.2.1",
+		"links": {
+			"self": "http://localhost:4454/v1/packages/npm/jquery@3.2.1",
+			"entrypoints": "http://localhost:4454/v1/packages/npm/jquery@3.2.1/entrypoints",
+			"stats": "http://localhost:4454/v1/stats/packages/npm/jquery@3.2.1"
+		}
+	},
+	"/v1/packages/npm/jquery/resolved?specifier=%5E3.0.0-rc1%20%3C3.0.0": {
+		"date": "2010-12-31",
+		"type": "npm",
+		"name": "jquery",
+		"version": "3.0.0-rc1",
+		"links": {
+			"self": "http://localhost:4454/v1/packages/npm/jquery@3.0.0-rc1",
+			"entrypoints": "http://localhost:4454/v1/packages/npm/jquery@3.0.0-rc1/entrypoints",
+			"stats": "http://localhost:4454/v1/stats/packages/npm/jquery@3.0.0-rc1"
+		}
+	},
+	"/v1/packages/npm/jquery/resolved?specifier=3.0.0-rc1": {
+		"date": "2010-12-31",
+		"type": "npm",
+		"name": "jquery",
+		"version": "3.0.0-rc1",
+		"links": {
+			"self": "http://localhost:4454/v1/packages/npm/jquery@3.0.0-rc1",
+			"entrypoints": "http://localhost:4454/v1/packages/npm/jquery@3.0.0-rc1/entrypoints",
+			"stats": "http://localhost:4454/v1/stats/packages/npm/jquery@3.0.0-rc1"
+		}
+	},
+	"/v1/packages/npm/jquery/resolved?specifier=3.2": {
+		"date": "2010-12-31",
+		"type": "npm",
+		"name": "jquery",
+		"version": "3.2.1",
+		"links": {
+			"self": "http://localhost:4454/v1/packages/npm/jquery@3.2.1",
+			"entrypoints": "http://localhost:4454/v1/packages/npm/jquery@3.2.1/entrypoints",
+			"stats": "http://localhost:4454/v1/stats/packages/npm/jquery@3.2.1"
+		}
+	},
+	"/v1/packages/npm/jquery/resolved?specifier=3.2.1": {
+		"date": "2010-12-31",
+		"type": "npm",
+		"name": "jquery",
+		"version": "3.2.1",
+		"links": {
+			"self": "http://localhost:4454/v1/packages/npm/jquery@3.2.1",
+			"entrypoints": "http://localhost:4454/v1/packages/npm/jquery@3.2.1/entrypoints",
+			"stats": "http://localhost:4454/v1/stats/packages/npm/jquery@3.2.1"
+		}
+	},
+	"/v1/packages/npm/jquery/resolved?specifier=latest": {
+		"date": "2010-12-31",
+		"type": "npm",
+		"name": "jquery",
+		"version": "3.2.1",
+		"links": {
+			"self": "http://localhost:4454/v1/packages/npm/jquery@3.2.1",
+			"entrypoints": "http://localhost:4454/v1/packages/npm/jquery@3.2.1/entrypoints",
+			"stats": "http://localhost:4454/v1/stats/packages/npm/jquery@3.2.1"
+		}
+	},
+	"/v1/packages/npm/jquery/resolved?specifier=v3.2": {
+		"date": "2010-12-31",
+		"type": "npm",
+		"name": "jquery",
+		"version": "3.2.1",
+		"links": {
+			"self": "http://localhost:4454/v1/packages/npm/jquery@3.2.1",
+			"entrypoints": "http://localhost:4454/v1/packages/npm/jquery@3.2.1/entrypoints",
+			"stats": "http://localhost:4454/v1/stats/packages/npm/jquery@3.2.1"
+		}
+	},
+	"/v1/packages/npm/jquery/resolved?specifier=xxx": {
+		"date": "2010-12-31",
+		"type": "npm",
+		"name": "jquery",
+		"version": null,
+		"links": {}
+	},
+	"/v1/packages/gh/adobe/source-sans-pro/resolved?specifier=2.020R-ro%2F1.075R-it": {
+		"date": "2010-12-31",
+		"type": "gh",
+		"name": "adobe/source-sans-pro",
+		"version": "2.020R-ro/1.075R-it",
+		"links": {
+			"self": "http://localhost:4454/v1/packages/gh/adobe/source-sans-pro@2.020R-ro%2F1.075R-it",
+			"stats": "http://localhost:4454/v1/stats/packages/gh/adobe/source-sans-pro@2.020R-ro%2F1.075R-it"
+		}
+	},
+	"/v1/packages/gh/jquery/jquery/resolved?specifier=%5E3.0.0-rc1%20%3C3.0.0": {
+		"date": "2010-12-31",
+		"type": "gh",
+		"name": "jquery/jquery",
+		"version": "3.0.0-rc1",
+		"links": {
+			"self": "http://localhost:4454/v1/packages/gh/jquery/jquery@3.0.0-rc1",
+			"stats": "http://localhost:4454/v1/stats/packages/gh/jquery/jquery@3.0.0-rc1"
+		}
+	},
+	"/v1/packages/gh/jquery/jquery/resolved?specifier=3.0.0-rc1": {
+		"date": "2010-12-31",
+		"type": "gh",
+		"name": "jquery/jquery",
+		"version": "3.0.0-rc1",
+		"links": {
+			"self": "http://localhost:4454/v1/packages/gh/jquery/jquery@3.0.0-rc1",
+			"stats": "http://localhost:4454/v1/stats/packages/gh/jquery/jquery@3.0.0-rc1"
+		}
+	},
+	"/v1/packages/gh/jquery/jquery/resolved?specifier=3.2": {
+		"date": "2010-12-31",
+		"type": "gh",
+		"name": "jquery/jquery",
+		"version": "3.2.1",
+		"links": {
+			"self": "http://localhost:4454/v1/packages/gh/jquery/jquery@3.2.1",
+			"stats": "http://localhost:4454/v1/stats/packages/gh/jquery/jquery@3.2.1"
+		}
+	},
+	"/v1/packages/gh/jquery/jquery/resolved?specifier=3.2.1": {
+		"date": "2010-12-31",
+		"type": "gh",
+		"name": "jquery/jquery",
+		"version": "3.2.1",
+		"links": {
+			"self": "http://localhost:4454/v1/packages/gh/jquery/jquery@3.2.1",
+			"stats": "http://localhost:4454/v1/stats/packages/gh/jquery/jquery@3.2.1"
+		}
+	},
+	"/v1/packages/gh/jquery/jquery/resolved?specifier=latest": {
+		"date": "2010-12-31",
+		"type": "gh",
+		"name": "jquery/jquery",
+		"version": "3.2.1",
+		"links": {
+			"self": "http://localhost:4454/v1/packages/gh/jquery/jquery@3.2.1",
+			"stats": "http://localhost:4454/v1/stats/packages/gh/jquery/jquery@3.2.1"
+		}
+	},
+	"/v1/packages/gh/jquery/jquery/resolved?specifier=xxx": {
+		"date": "2010-12-31",
+		"type": "gh",
+		"name": "jquery/jquery",
+		"version": null,
+		"links": {}
+	},
+	"/v1/packages/gh/jquery/jquery2/resolved?specifier=v3.2.1": {
+		"date": "2010-12-31",
+		"type": "gh",
+		"name": "jquery/jquery2",
+		"version": "3.2.1",
+		"links": {
+			"self": "http://localhost:4454/v1/packages/gh/jquery/jquery2@3.2.1",
+			"stats": "http://localhost:4454/v1/stats/packages/gh/jquery/jquery2@3.2.1"
+		}
+	},
+	"/v1/packages/gh/jquery/jqueryxxx/resolved?specifier=xxx": {
+		"date": "2010-12-31",
+		"status": 404,
+		"message": "Couldn't fetch versions for jquery/jqueryxxx."
+	}
+}

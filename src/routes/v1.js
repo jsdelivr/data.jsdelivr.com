@@ -44,11 +44,19 @@ router.param('version', async (value, ctx, next) => {
 });
 
 /**
- * Migrate the previous period path param to query strings params.
+ * Migrate the previous path params to query strings params.
  */
 router.param('period', async (value, ctx, next) => {
 	if (value) {
 		ctx.query.period = value;
+	}
+
+	return next();
+});
+
+router.param('structure', async (value, ctx, next) => {
+	if (value) {
+		ctx.query.structure = value;
 	}
 
 	return next();
@@ -64,7 +72,7 @@ const routes = {
 	},
 
 	/**
-	 * Package
+	 * Package (deprecated)
 	 */
 	'/package/:type/:name': {
 		paths: [
@@ -79,7 +87,7 @@ const routes = {
 		],
 		handlers: [
 			async (ctx) => {
-				return new PackageRequest(ctx).handleVersions();
+				return new PackageRequest(ctx).handleVersionsDeprecated();
 			},
 		],
 	},
@@ -101,6 +109,7 @@ const routes = {
 				}),
 			}),
 			async (ctx) => {
+				ctx.state.query.type = 'hits';
 				return new PackageRequest(ctx).handlePackageBadge();
 			},
 		],
@@ -124,7 +133,8 @@ const routes = {
 				}),
 			}),
 			async (ctx) => {
-				return new PackageRequest(ctx).handlePackageBadgeRank();
+				ctx.state.query.type = ctx.params.rankType;
+				return new PackageRequest(ctx).handlePackageBadge();
 			},
 		],
 	},
@@ -162,8 +172,13 @@ const routes = {
 			},
 		],
 		handlers: [
+			validate({
+				query: Joi.object({
+					structure: schema.structure,
+				}),
+			}),
 			async (ctx) => {
-				return new PackageRequest(ctx).handleVersionFiles();
+				return new PackageRequest(ctx).handleVersionFilesDeprecated();
 			},
 		],
 	},
@@ -176,7 +191,7 @@ const routes = {
 		],
 		handlers: [
 			async (ctx) => {
-				return new PackageRequest(ctx).handlePackageEntrypoints();
+				return new PackageRequest(ctx).handlePackageEntrypoints(false);
 			},
 		],
 	},
@@ -223,7 +238,85 @@ const routes = {
 		],
 		handlers: [
 			async (ctx) => {
-				return new PackageRequest(ctx).handleResolveVersion();
+				return new PackageRequest(ctx).handleResolveVersionDeprecated();
+			},
+		],
+	},
+
+	/**
+	 * Packages
+	 */
+	'/packages/:type/:name': {
+		paths: [
+			{
+				name: '/packages/npm/:name',
+				path: '/packages/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)',
+			},
+			{
+				name: '/packages/gh/:user/:repo',
+				path: '/packages/:type(gh)/:user([^/@]+)/:name([^/@]+)',
+			},
+		],
+		handlers: [
+			async (ctx) => {
+				return new PackageRequest(ctx).handlePackage();
+			},
+		],
+	},
+	'/packages/:type/:name@:version': {
+		paths: [
+			{
+				name: '/packages/npm/:name@:version',
+				path: '/packages/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version',
+			},
+			{
+				name: '/packages/gh/:user/:repo@:version',
+				path: '/packages/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version',
+			},
+		],
+		handlers: [
+			validate({
+				query: Joi.object({
+					structure: schema.structure,
+				}),
+			}),
+			async (ctx) => {
+				return new PackageRequest(ctx).handleVersion();
+			},
+		],
+	},
+	'/packages/:type/:name@:version/entrypoints': {
+		paths: [
+			{
+				name: '/packages/npm/:name@:version/entrypoints',
+				path: '/packages/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)@:version/entrypoints',
+			},
+		],
+		handlers: [
+			async (ctx) => {
+				return new PackageRequest(ctx).handlePackageEntrypoints();
+			},
+		],
+	},
+	'/packages/:type/:name/resolved': {
+		paths: [
+			{
+				name: '/packages/npm/:name/resolved',
+				path: '/packages/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/resolved',
+			},
+			{
+				name: '/packages/gh/:user/:repo/resolved',
+				path: '/packages/:type(gh)/:user([^/@]+)/:name([^/@]+)/resolved',
+			},
+		],
+		handlers: [
+			validate({
+				query: Joi.object({
+					specifier: schema.specifier,
+				}),
+			}),
+			async (ctx) => {
+				return new PackageRequest(ctx).handleResolvedVersion();
 			},
 		],
 	},
@@ -311,6 +404,29 @@ const routes = {
 			}),
 			async (ctx) => {
 				return new StatsRequest(ctx).handlePackageStats();
+			},
+		],
+	},
+	'/stats/packages/:type/:name/badge': {
+		paths: [
+			{
+				name: '/stats/packages/npm/:name/badge',
+				path: '/stats/packages/:type(npm)/:user(@[^/@]+)?/:name([^/@]+)/badge',
+			},
+			{
+				name: '/stats/packages/gh/:user/:repo/badge',
+				path: '/stats/packages/:type(gh)/:user([^/@]+)/:name([^/@]+)/badge',
+			},
+		],
+		handlers: [
+			validate({
+				query: Joi.object({
+					period: schema.period,
+					type: schema.statsBadgeType,
+				}),
+			}),
+			async (ctx) => {
+				return new PackageRequest(ctx).handlePackageBadge();
 			},
 		],
 	},

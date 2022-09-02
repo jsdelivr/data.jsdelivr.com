@@ -17,11 +17,13 @@ const CdnJsPackage = require('../../models/CdnJsPackage');
 const dateRange = require('../utils/dateRange');
 const sumDeep = require('../utils/sumDeep');
 const entrypoint = require('../utils/packageEntrypoint');
+const { splitPackageUserAndName } = require('../utils/link-builder-transforms');
 
 const NpmRemoteService = require('../../remote-services/NpmRemoteService');
 const GitHubRemoteService = require('../../remote-services/GitHubRemoteService');
 const JsDelivrRemoteService = require('../../remote-services/JsDelivrRemoteService');
 const RedisRemoteResourceCache = require('../../remote-services/RedisRemoteResourceCache');
+const { routes } = require('../v1');
 
 const v1Config = config.get('v1');
 const npmRemoteService = new NpmRemoteService({ baseUrl: v1Config.npm.sourceUrl }, new RedisRemoteResourceCache('pr/npm'));
@@ -29,15 +31,6 @@ const gitHubRemoteService = new GitHubRemoteService({ auth: `token ${v1Config.gh
 const jsDelivrRemoteService = new JsDelivrRemoteService({ baseUrl: v1Config.cdn.sourceUrl }, new RedisRemoteResourceCache('pr/jsd'));
 
 class PackageRequest extends BaseRequest {
-	constructor (ctx) {
-		super(ctx);
-
-		this.keys = {
-			metadata: `c:package/${this.params.type}/${this.params.name}/metadata`,
-			rank: `package/${this.params.type}/${this.params.name}/rank/`,
-		};
-	}
-
 	async fetchFiles () {
 		let response = await jsDelivrRemoteService.usingContext(this.ctx).listFiles(this.params.type, this.params.name, this.params.version);
 
@@ -74,11 +67,18 @@ class PackageRequest extends BaseRequest {
 		throw new Error(`Unknown package type ${this.params.type}.`);
 	}
 
-	async getFiles () {
+	async getFiles (includeTime = false) {
 		let files = JSON.parse(await this.getFilesAsJson());
 
-		if (this.params.structure === 'flat' || !files.files) {
+		if (!files.files) {
 			return files;
+		} else if (this.query.structure === 'flat') {
+			return {
+				default: files.default,
+				files: files.files.map(({ name, hash, time, size }) => {
+					return { name, hash, ...includeTime && { time }, size };
+				}),
+			};
 		}
 
 		let tree = [];
@@ -106,7 +106,7 @@ class PackageRequest extends BaseRequest {
 				type: 'file',
 				name,
 				hash: entry.hash,
-				time: entry.time,
+				...includeTime && { time: entry.time },
 				size: entry.size,
 			});
 		};
@@ -150,19 +150,18 @@ class PackageRequest extends BaseRequest {
 		return this.fetchMetadata();
 	}
 
-	async getResolvedVersion () {
+	async getResolvedVersion (specifier = 'latest') {
 		return this.getMetadata().then((metadata) => {
-			let requestedVersion = this.params.version || 'latest';
 			let versions = metadata.versions.filter(v => semver.valid(v));
 
-			if (metadata.versions.includes(requestedVersion)) {
-				return requestedVersion;
-			} else if (Object.hasOwn(metadata.tags, requestedVersion)) {
-				return metadata.tags[requestedVersion];
+			if (metadata.versions.includes(specifier)) {
+				return specifier;
+			} else if (Object.hasOwn(metadata.tags, specifier)) {
+				return metadata.tags[specifier];
 			}
 
 			// "latest" is not actually a range, it's a tag - its equivalent (needed for GitHub sources) is an empty range
-			return semver.maxSatisfying(versions, requestedVersion === 'latest' ? '' : requestedVersion);
+			return semver.maxSatisfying(versions, specifier === 'latest' ? '' : specifier);
 		});
 	}
 
@@ -191,9 +190,9 @@ class PackageRequest extends BaseRequest {
 		return Package.getStatsForPeriod(this.params.type, this.params.name, this.period, this.date);
 	}
 
-	async handleResolveVersion () {
+	async handleResolveVersionDeprecated () {
 		try {
-			this.ctx.body = { version: await this.getResolvedVersion() };
+			this.ctx.body = { version: await this.getResolvedVersion(this.params.version) };
 			this.ctx.maxAge = v1Config.maxAgeShort;
 			this.ctx.maxStale = v1Config.maxStaleShort;
 			this.ctx.maxStaleError = v1Config.maxStaleError;
@@ -208,7 +207,38 @@ class PackageRequest extends BaseRequest {
 		}
 	}
 
-	async handleVersions () {
+	async handleResolvedVersion () {
+		try {
+			let version = await this.getResolvedVersion(this.query.specifier);
+
+			this.ctx.body = this.linkBuilder()
+				.refs(version && {
+					self: routes['/packages/:type/:name@:version'].getName(this.params),
+					...this.params.type === 'npm' && { entrypoints: routes['/packages/:type/:name@:version/entrypoints'].getName(this.params) },
+					stats: routes['/stats/packages/:type/:name@:version'].getName(this.params),
+				})
+				.transform(splitPackageUserAndName)
+				.build({
+					type: this.params.type,
+					name: this.params.name,
+					version,
+				});
+
+			this.ctx.maxAge = v1Config.maxAgeShort;
+			this.ctx.maxStale = v1Config.maxStaleShort;
+			this.ctx.maxStaleError = v1Config.maxStaleError;
+
+			if (this.ctx.body.version && isSemverStatic(this.query.specifier)) {
+				this.ctx.maxAge = 24 * 60 * 60;
+				this.ctx.maxStale = v1Config.maxStaleStatic;
+				this.ctx.maxStaleError = v1Config.maxStaleStatic;
+			}
+		} catch (e) {
+			return this.responseFromRemoteError(e);
+		}
+	}
+
+	async handleVersionsDeprecated () {
 		try {
 			this.ctx.body = await this.getMetadata();
 			this.ctx.maxAge = v1Config.maxAgeShort;
@@ -219,9 +249,42 @@ class PackageRequest extends BaseRequest {
 		}
 	}
 
-	async handlePackageEntrypoints () {
+	async handlePackage () {
 		try {
-			this.ctx.body = await this.getResolvedEntrypoints();
+			let pkg = await this.getMetadata();
+
+			this.ctx.body = this.linkBuilder()
+				.refs({
+					stats: routes['/stats/packages/:type/:name'].getName(this.params),
+				})
+				.transform(splitPackageUserAndName)
+				.build({
+					type: this.params.type,
+					name: this.params.name,
+					tags: pkg.tags,
+					versions: this.linkBuilder()
+						.refs({
+							self: routes['/packages/:type/:name@:version'].getName(this.params),
+							...this.params.type === 'npm' && { entrypoints: routes['/packages/:type/:name@:version/entrypoints'].getName(this.params) },
+							stats: routes['/stats/packages/:type/:name@:version'].getName(this.params),
+						})
+						.withValues(this.params)
+						.transform(splitPackageUserAndName)
+						.build(pkg.versions.map(version => ({ version }))),
+				});
+
+			this.ctx.maxAge = v1Config.maxAgeShort;
+			this.ctx.maxStale = v1Config.maxStaleShort;
+			this.ctx.maxStaleError = v1Config.maxStaleError;
+		} catch (e) {
+			return this.responseFromRemoteError(e);
+		}
+	}
+
+	async handlePackageEntrypoints (wrapEntries = true) {
+		try {
+			let entrypoints = await this.getResolvedEntrypoints();
+			this.ctx.body = wrapEntries ? { entrypoints } : entrypoints;
 			this.ctx.maxAge = v1Config.maxAgeOneWeek;
 			this.ctx.maxStale = v1Config.maxStaleOneWeek;
 		} catch (remoteResourceOrError) {
@@ -238,33 +301,20 @@ class PackageRequest extends BaseRequest {
 
 	async handlePackageBadge () {
 		let stats = await this.getStatsForPeriod();
-
-		this.ctx.type = 'image/svg+xml; charset=utf-8';
-
-		this.ctx.body = makeBadge({
-			label: 'jsDelivr',
-			message: `${number.abbreviate(stats.hits.total)} hits${this.period === 'all' ? '' : `/${this.period}`}`,
-			color: '#ff5627',
-			style: this.query.style === 'rounded' ? 'flat' : 'flat-square',
-		});
-
-		this.setCacheHeaderDelayed();
-	}
-
-	async handlePackageBadgeRank () {
-		let ranks = await this.getStatsForPeriod();
-		let rType = _.camelCase(this.params.rankType);
-		let texts = { rank: 'jsDelivr rank', typeRank: `jsDelivr ${this.params.type} rank` };
+		let bType = _.camelCase(this.query.type);
+		let texts = { hits: 'jsDelivr', rank: 'jsDelivr rank', typeRank: `jsDelivr ${this.params.type} rank` };
 		let value = 'error';
 
-		if (ranks.hits[rType] !== null) {
-			value = `#${ranks.hits[rType]}`;
+		if (bType === 'hits') {
+			value = `${number.abbreviate(stats.hits.total)} hits${this.period === 'all' ? '' : `/${this.period}`}`;
+		} else if ([ 'rank', 'typeRank' ].includes(bType) && stats.hits[bType] !== null) {
+			value = `#${stats.hits[bType]}`;
 		}
 
 		this.ctx.type = 'image/svg+xml; charset=utf-8';
 
 		this.ctx.body = makeBadge({
-			label: texts[rType],
+			label: texts[bType],
 			message: value,
 			color: '#ff5627',
 			style: this.query.style === 'rounded' ? 'flat' : 'flat-square',
@@ -302,27 +352,33 @@ class PackageRequest extends BaseRequest {
 
 	async handleVersionFiles () {
 		try {
-			this.ctx.body = await this.getFiles(); // Can't use AsJson() version here because we need to set correct status code on cached errors.
+			this.ctx.body = this.linkBuilder()
+				.refs({
+					stats: routes['/stats/packages/:type/:name@:version'].getName(this.params),
+					...this.params.type === 'npm' && { entrypoints: routes['/packages/:type/:name@:version/entrypoints'].getName() },
+				})
+				.transform(splitPackageUserAndName)
+				.build({
+					type: this.params.type,
+					name: this.params.name,
+					version: this.params.version,
+					...await this.getFiles(),
+				});
+
 			this.ctx.maxAge = v1Config.maxAgeStatic;
 			this.ctx.maxStale = v1Config.maxStaleStatic;
 		} catch (remoteResourceOrError) {
-			if (remoteResourceOrError instanceof BadVersionError || remoteResourceOrError.statusCode === 404) {
-				return this.ctx.body = {
-					status: 404,
-					message: `Couldn't find version ${this.params.version} for ${this.params.name}. Make sure you use a specific version number, and not a version range or an npm tag.`,
-				};
-			}
+			return this.responseFromVersionError(remoteResourceOrError);
+		}
+	}
 
-			if (remoteResourceOrError.error instanceof got.RequestError || remoteResourceOrError.error instanceof got.TimeoutError) {
-				return this.ctx.status = remoteResourceOrError.error.code === 'ETIMEDOUT' ? 504 : 502;
-			} else if (remoteResourceOrError.statusCode) {
-				return this.ctx.body = {
-					status: remoteResourceOrError.statusCode || 502,
-					message: remoteResourceOrError.data,
-				};
-			}
-
-			throw remoteResourceOrError;
+	async handleVersionFilesDeprecated () {
+		try {
+			this.ctx.body = await this.getFiles(true); // Can't use AsJson() version here because we need to set correct status code on cached errors.
+			this.ctx.maxAge = v1Config.maxAgeStatic;
+			this.ctx.maxStale = v1Config.maxStaleStatic;
+		} catch (remoteResourceOrError) {
+			return this.responseFromVersionError(remoteResourceOrError);
 		}
 	}
 
@@ -346,7 +402,7 @@ class PackageRequest extends BaseRequest {
 		this.setCacheHeader();
 	}
 
-	async responseFromRemoteError (remoteResource) {
+	responseFromRemoteError (remoteResource) {
 		this.ctx.body = {
 			status: remoteResource.statusCode === 404
 				? 404
@@ -355,6 +411,26 @@ class PackageRequest extends BaseRequest {
 					: 502,
 			message: this.params.version ? `Couldn't find ${this.params.name}@${this.params.version}.` : `Couldn't fetch versions for ${this.params.name}.`,
 		};
+	}
+
+	responseFromVersionError (remoteResourceOrError) {
+		if (remoteResourceOrError instanceof BadVersionError || remoteResourceOrError.statusCode === 404) {
+			return this.ctx.body = {
+				status: 404,
+				message: `Couldn't find version ${this.params.version} for ${this.params.name}. Make sure you use a specific version number, and not a version range or an npm tag.`,
+			};
+		}
+
+		if (remoteResourceOrError.error instanceof got.RequestError || remoteResourceOrError.error instanceof got.TimeoutError) {
+			return this.ctx.status = remoteResourceOrError.error.code === 'ETIMEDOUT' ? 504 : 502;
+		} else if (remoteResourceOrError.statusCode) {
+			return this.ctx.body = {
+				status: remoteResourceOrError.statusCode || 502,
+				message: remoteResourceOrError.data,
+			};
+		}
+
+		throw remoteResourceOrError;
 	}
 }
 

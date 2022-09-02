@@ -46,7 +46,7 @@ class LinkBuilder {
 	constructor (ctx, options) {
 		this.ctx = ctx;
 		this.options = { omitQuery: [], ...options };
-		this._refs = undefined;
+		this._refs = {};
 		this._transform = undefined;
 		this._omitQuery = [ ...this.options.omitQuery ];
 		this._includeQuery = undefined;
@@ -127,7 +127,7 @@ class LinkBuilder {
 	}
 
 	refs (refs) {
-		this._refs = refs;
+		Object.assign(this._refs, refs);
 		return this;
 	}
 

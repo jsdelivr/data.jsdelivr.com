@@ -64,6 +64,15 @@ const primitives = {
 		}).messages({
 			'*': '{{#label}} must be one of [s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM]',
 		}).default(() => dateRange.parseStaticPeriod('s-month')),
+
+	specifier:
+		Joi.string(),
+
+	statsBadgeType:
+		Joi.valid('hits', 'rank', 'type-rank').default('hits'),
+
+	structure:
+		Joi.valid('flat', 'tree').default('tree'),
 };
 
 const composedTypes = {

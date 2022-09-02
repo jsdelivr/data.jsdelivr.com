@@ -27,6 +27,9 @@ describe('v1', function () {
 	require('./v1/package/entrypoints');
 	require('./v1/package/resolve');
 	require('./v1/package/stats');
+	require('./v1/packages');
+	require('./v1/packages/entrypoints');
+	require('./v1/packages/resolved');
 	require('./v1/stats/browsers');
 	require('./v1/stats/browsers/countries');
 	require('./v1/stats/browsers/platforms');
@@ -37,6 +40,7 @@ describe('v1', function () {
 	require('./v1/stats/network/providers');
 	require('./v1/stats/packages');
 	require('./v1/stats/packages/package');
+	require('./v1/stats/packages/package/badge');
 	require('./v1/stats/packages/package/versions');
 	require('./v1/stats/packages/package-version');
 	require('./v1/stats/packages/package-version/files');
