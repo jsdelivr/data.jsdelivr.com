@@ -68,7 +68,7 @@ class LinkBuilder {
 	}
 
 	buildRefs (refs, resources) {
-		this._built.push(...resources.map((resource) => {
+		this._built = this._built.concat(resources.map((resource) => {
 			return {
 				...resource,
 				links: _.mapValues(refs, href => this._buildPublicUrl(href, resource)),
