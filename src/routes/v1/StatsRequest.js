@@ -149,7 +149,7 @@ class StatsRequest extends BaseRequest {
 	}
 
 	async handlePackages () {
-		let resources = await Package.getTopPackages(this.query.by, this.period, this.date, undefined, ...this.pagination);
+		let resources = await Package.getTopPackages(this.query.by, this.period, this.date, this.query.type, ...this.pagination);
 
 		this.ctx.body = this.linkBuilder()
 			.refs({

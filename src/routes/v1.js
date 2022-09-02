@@ -114,7 +114,6 @@ const routes = {
 			},
 		],
 	},
-	// TODO: move this to /stats too?
 	'/package/:type/:name/badge/rank': {
 		paths: [
 			{
@@ -376,6 +375,7 @@ const routes = {
 			validate({
 				query: Joi.object({
 					by: schema.by,
+					type: schema.type,
 					period: schema.period,
 					...schema.paginatedStats,
 				}),

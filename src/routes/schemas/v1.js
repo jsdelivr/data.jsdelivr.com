@@ -84,6 +84,9 @@ const primitives = {
 
 	structure:
 		Joi.valid('flat', 'tree').default('tree'),
+
+	type:
+		Joi.valid('gh', 'npm'),
 };
 
 const composedTypes = {
