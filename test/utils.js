@@ -47,7 +47,7 @@ function makeEndpointAssertion (uriTemplate, defaults, { params, assert }, { lim
 				}
 
 				// Append ?all=true to the URI if we fetched multiple pages to avoid snapshotting collisions.
-				response.req.path = getUriWithValues(uriTemplate, { ...params, all: response.body.length > apiLimit ? true : undefined }); // Add defaults here if canonical URLs are implemented.
+				response.req.path = getUriWithValues(uriTemplate, { ...params, all: response.body.length > apiLimit ? true : undefined }, defaults); // Add defaults here if canonical URLs are implemented.
 				assert(response, response.req.path);
 
 				expect(response).to.have.status(status);
