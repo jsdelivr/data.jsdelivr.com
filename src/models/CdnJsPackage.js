@@ -40,6 +40,11 @@ class CdnJsPackage extends BaseModel {
 		return new Proxy(this, BaseModel.ProxyHandler);
 	}
 
+	/**
+	 * @param {string} name
+	 * @param {string} version
+	 * @returns {Promise<{ filename: string }[]>}
+	 */
 	static async getPackageEntrypoints (name, version) {
 		return db(this.table)
 			.select(`${this.table}.filename`)
