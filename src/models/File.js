@@ -44,6 +44,10 @@ class File extends BaseModel {
 		return new Proxy(this, BaseModel.ProxyHandler);
 	}
 
+	/**
+	 * @param {Buffer} sha256
+	 * @returns {Promise<?{ type: string, name: string, version: string, filename: string }>}
+	 */
 	static async getBySha256 (sha256) {
 		return db(this.table)
 			.where(`${this.table}.sha256`, sha256)
