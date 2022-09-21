@@ -67,8 +67,8 @@ class CountryCdnHits extends BaseModel {
 
 		return _.mapValues(_.groupBy(stats, 'countryIso'), (countryStats) => {
 			return {
-				hits: _.fromPairs(_.map(countryStats, record => [ record.cdn, record.hits ])),
-				bandwidth: _.fromPairs(_.map(countryStats, record => [ record.cdn, record.bandwidth ])),
+				hits: _.fromPairs(_.map(countryStats, record => [ record.cdn, { total: record.hits }])),
+				bandwidth: _.fromPairs(_.map(countryStats, record => [ record.cdn, { total: record.bandwidth }])),
 			};
 		});
 	}
@@ -94,8 +94,8 @@ class CountryCdnHits extends BaseModel {
 
 		return _.mapValues(_.groupBy(stats, 'cdn'), (cdnStats) => {
 			return {
-				hits: _.fromPairs(_.map(cdnStats, record => [ toIsoDate(record.date), record.hits ])),
-				bandwidth: _.fromPairs(_.map(cdnStats, record => [ toIsoDate(record.date), record.bandwidth ])),
+				hits: _.fromPairs(_.map(cdnStats, record => [ toIsoDate(record.date), { total: record.hits }])),
+				bandwidth: _.fromPairs(_.map(cdnStats, record => [ toIsoDate(record.date), { total: record.bandwidth }])),
 			};
 		});
 	}

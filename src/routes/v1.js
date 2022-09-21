@@ -323,10 +323,19 @@ const routes = {
 	/**
 	 * Stats
 	 */
-	'/stats/network': {
-		paths: [
-			{ name: '/stats/network', path: '/stats/network/:period(day|week|month|year|all)?' },
+	'/stats/network/providers': {
+		handlers: [
+			validate({
+				query: Joi.object({
+					period: schema.period,
+				}).concat(schema.location),
+			}),
+			async (ctx) => {
+				return new StatsRequest(ctx).handleNetwork();
+			},
 		],
+	},
+	'/stats/network': {
 		handlers: [
 			validate({
 				query: Joi.object({
@@ -334,7 +343,7 @@ const routes = {
 				}),
 			}),
 			async (ctx) => {
-				return new StatsRequest(ctx).handleNetwork();
+				return new StatsRequest(ctx).handleNetworkContent();
 			},
 		],
 	},
@@ -347,18 +356,6 @@ const routes = {
 			}),
 			async (ctx) => {
 				return new StatsRequest(ctx).handleNetworkCountries();
-			},
-		],
-	},
-	'/stats/network/providers': {
-		handlers: [
-			validate({
-				query: Joi.object({
-					period: schema.period,
-				}).concat(schema.location),
-			}),
-			async (ctx) => {
-				return new StatsRequest(ctx).handleNetworkProviders();
 			},
 		],
 	},

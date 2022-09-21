@@ -18,6 +18,36 @@ const { routes } = require('../v1');
 
 class StatsRequest extends BaseRequest {
 	async handleNetwork () {
+		let [ dailyStatsGroups, periodStats ] = await Promise.all([
+			CountryCdnHits.getDailyProvidersStatsForLocation(this.simpleLocationFilter, ...this.dateRange),
+			CountryCdnHits.getProvidersStatsForPeriodAndLocation(this.period, this.date, this.composedLocationFilter),
+		]);
+
+		let combined = _.mapValues(dailyStatsGroups, (dailyStats, provider) => {
+			// No null checks here because the results should have the same set of providers.
+			// If they don't, throwing an error is the best possible action.
+			let providerPeriodStats = periodStats[provider];
+
+			return {
+				hits: {
+					...providerPeriodStats.hits,
+					dates: dateRange.fill(dailyStats.hits, ...this.dateRange, { total: 0, IPv: { 4: 123123, 6: 456456 }, HTTPv: { '1.0': 456789, '1.1': 345678, '2.0': 234567, '3.0': 123456 } }),
+					prev: providerPeriodStats.prev.hits,
+				},
+				bandwidth: {
+					...providerPeriodStats.bandwidth,
+					dates: dateRange.fill(dailyStats.bandwidth, ...this.dateRange, { total: 0, IPv: { 4: 123123, 6: 456456 }, HTTPv: { '1.0': 456789, '1.1': 345678, '2.0': 234567, '3.0': 123456 } }),
+					prev: providerPeriodStats.prev.bandwidth,
+				},
+			};
+		});
+
+		this.ctx.body = this.formatCombinedStatsExtended(combined, 'providers');
+
+		this.setCacheHeader();
+	}
+
+	async handleNetworkContent () {
 		let [
 			{ hits: fileHits, bandwidth: fileBandwidth },
 			{ hits: proxyHits, bandwidth: proxyBandwidth },
@@ -48,22 +78,26 @@ class StatsRequest extends BaseRequest {
 		let sumPrevProxyBandwidth = sumDeep(prevProxyBandwidth);
 		let sumPrevOtherBandwidth = sumDeep(prevOtherBandwidth);
 
+		let toDates = (values) => {
+			return dateRange.fill(_.mapValues(values, total => ({ total })), ...this.dateRange, { total: 0 });
+		};
+
 		this.ctx.body = {
 			hits: {
 				total: sumFileHits + sumProxyHits + sumOtherHits,
 				packages: {
 					total: sumFileHits,
-					dates: dateRange.fill(fileHits, ...this.dateRange),
+					dates: toDates(fileHits),
 					prev: { total: sumPrevFileHits },
 				},
 				proxies: {
 					total: sumProxyHits,
-					dates: dateRange.fill(proxyHits, ...this.dateRange),
+					dates: toDates(proxyHits),
 					prev: { total: sumPrevProxyHits },
 				},
 				other: {
 					total: sumOtherHits,
-					dates: dateRange.fill(otherHits, ...this.dateRange),
+					dates: toDates(otherHits),
 					prev: { total: sumPrevOtherHits },
 				},
 				prev: { total: sumPrevFileHits + sumPrevProxyHits + sumPrevOtherHits },
@@ -72,17 +106,17 @@ class StatsRequest extends BaseRequest {
 				total: sumFileBandwidth + sumProxyBandwidth + sumOtherBandwidth,
 				packages: {
 					total: sumFileBandwidth,
-					dates: dateRange.fill(fileBandwidth, ...this.dateRange),
+					dates: toDates(fileBandwidth),
 					prev: { total: sumPrevFileBandwidth },
 				},
 				proxies: {
 					total: sumProxyBandwidth,
-					dates: dateRange.fill(proxyBandwidth, ...this.dateRange),
+					dates: toDates(proxyBandwidth),
 					prev: { total: sumPrevProxyBandwidth },
 				},
 				other: {
 					total: sumOtherBandwidth,
-					dates: dateRange.fill(otherBandwidth, ...this.dateRange),
+					dates: toDates(otherBandwidth),
 					prev: { total: sumPrevOtherBandwidth },
 				},
 				prev: { total: sumPrevFileBandwidth + sumPrevProxyBandwidth + sumPrevOtherBandwidth },
@@ -107,43 +141,26 @@ class StatsRequest extends BaseRequest {
 			CountryCdnHits.getCountryStatsForPeriod(this.period, this.date),
 		]);
 
-		this.ctx.body = {
-			countries: _.mapValues(dailyStats, (providerStats, country) => {
-				// No null checks here because the results should have the same set of providers.
-				// If they don't, throwing an error is the best possible action.
-				let countryPeriodStats = periodStats[country];
+		let combined = _.mapValues(dailyStats, (providerStats, country) => {
+			// No null checks here because the results should have the same set of countries.
+			// If they don't, throwing an error is the best possible action.
+			let countryPeriodStats = periodStats[country];
 
-				return {
-					hits: {
-						total: countryPeriodStats.hits.total,
-						providers: providerStats.hits,
-						prev: countryPeriodStats.prev.hits,
-					},
-					bandwidth: {
-						total: countryPeriodStats.bandwidth.total,
-						providers: providerStats.bandwidth,
-						prev: countryPeriodStats.prev.bandwidth,
-					},
-				};
-			}),
-		};
+			return {
+				hits: {
+					...countryPeriodStats.hits,
+					providers: providerStats.hits,
+					prev: countryPeriodStats.prev.hits,
+				},
+				bandwidth: {
+					...countryPeriodStats.bandwidth,
+					providers: providerStats.bandwidth,
+					prev: countryPeriodStats.prev.hits,
+				},
+			};
+		});
 
-		this.setCacheHeader();
-	}
-
-	async handleNetworkProviders () {
-		let [ dailyStats, periodStats ] = await Promise.all([
-			CountryCdnHits.getDailyProvidersStatsForLocation(this.simpleLocationFilter, ...this.dateRange),
-			CountryCdnHits.getProvidersStatsForPeriodAndLocation(this.period, this.date, this.composedLocationFilter),
-		]);
-
-		this.ctx.body = {
-			providers: _.mapValues(dailyStats, (providerStats, provider) => {
-				// No null checks here because the results should have the same set of providers.
-				// If they don't, throwing an error is the best possible action.
-				return this.formatCombinedStats(providerStats, periodStats[provider]);
-			}),
-		};
+		this.ctx.body = this.formatCombinedStatsExtended(combined, 'countries');
 
 		this.setCacheHeader();
 	}

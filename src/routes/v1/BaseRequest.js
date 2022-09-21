@@ -63,6 +63,25 @@ class BaseRequest {
 		};
 	}
 
+	formatCombinedStatsExtended (combined, key) {
+		return {
+			hits: {
+				total: _.reduce(combined, (a, v) => a + v.hits.total, 0),
+				[key]: _.mapValues(combined, v => v.hits),
+				prev: {
+					total: _.reduce(combined, (a, v) => a + v.hits.prev.total, 0),
+				},
+			},
+			bandwidth: {
+				total: _.reduce(combined, (a, v) => a + v.bandwidth.total, 0),
+				[key]: _.mapValues(combined, v => v.bandwidth),
+				prev: {
+					total: _.reduce(combined, (a, v) => a + v.bandwidth.prev.total, 0),
+				},
+			},
+		};
+	}
+
 	formatDailyStats (dailyStats) {
 		return {
 			...dailyStats,
