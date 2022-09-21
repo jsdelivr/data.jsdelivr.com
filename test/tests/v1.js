@@ -36,8 +36,8 @@ describe('v1', function () {
 	require('./v1/stats/browsers/versions');
 	require('./v1/stats/browsers/versions/countries');
 	require('./v1/stats/network');
+	require('./v1/stats/network/content');
 	require('./v1/stats/network/countries');
-	require('./v1/stats/network/providers');
 	require('./v1/stats/packages');
 	require('./v1/stats/packages/package');
 	require('./v1/stats/packages/package/badge');

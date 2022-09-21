@@ -323,7 +323,7 @@ const routes = {
 	/**
 	 * Stats
 	 */
-	'/stats/network/providers': {
+	'/stats/network': {
 		handlers: [
 			validate({
 				query: Joi.object({
@@ -335,7 +335,7 @@ const routes = {
 			},
 		],
 	},
-	'/stats/network': {
+	'/stats/network/content': {
 		handlers: [
 			validate({
 				query: Joi.object({

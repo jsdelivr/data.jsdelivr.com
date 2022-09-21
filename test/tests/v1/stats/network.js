@@ -7,15 +7,32 @@ describe('/v1/stats/network', () => {
 		setupSnapshots(__filename);
 	});
 
-	makeStatsNetworkTests();
+	makeStatsNetworkProvidersTests();
 });
 
-function makeStatsNetworkTests () {
-	makeEndpointSnapshotTests('/v1/stats/network{?period}', {
+function makeStatsNetworkProvidersTests () {
+	makeEndpointSnapshotTests('/v1/stats/network{?continent,country,period}', {
 		period: 'month',
 	}, [
 		{
 			period: periodOptions,
 		},
+		{
+			continent: 'EU',
+			period: periodOptions,
+		},
+		{
+			country: 'PL',
+			period: periodOptions,
+		},
 	]);
+
+	makeEndpointSnapshotTests('/v1/stats/network{?continent,country,period}', {
+		period: 'month',
+	}, [
+		{ continent: 'X' },
+		{ country: 'X' },
+		{ continent: 'EU', country: 'PL' },
+		{ period: 'X' },
+	], { status: 400 });
 }
