@@ -176,7 +176,7 @@ function validateResponseForPeriod (object, period) {
 	let keys = Object.keys(object);
 
 	if (keys.length > 1 && keys.every(key => datePattern.test(key))) {
-		let expectedLength = dateRange.getDuration(period);
+		let expectedLength = dateRange.parse(period).duration;
 
 		if (expectedLength) {
 			expect(keys).to.have.lengthOf(expectedLength);

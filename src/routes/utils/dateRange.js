@@ -77,26 +77,6 @@ module.exports.fill = (data, from, to, defaultValue = 0) => {
 	return result;
 };
 
-module.exports.getDuration = (period) => {
-	if (module.exports.isFloatingPeriod(period)) {
-		return floatingPeriodDurations[period];
-	}
-
-	if (module.exports.isStaticPeriod(period)) {
-		let result = module.exports.parseStaticPeriod(period);
-
-		if (result) {
-			if (result.period === 's-month') {
-				return new Date(Date.UTC(result.date.getUTCFullYear(), result.date.getUTCMonth() + 1, 0)).getUTCDate();
-			} else if (result.period === 's-year') {
-				return new Date(Date.UTC(result.date.getUTCFullYear(), 1, 29)).getUTCDate() === 29 ? 366 : 365;
-			}
-		}
-
-		return result;
-	}
-};
-
 module.exports.isFloatingPeriod = (period) => {
 	return floatingPeriods.includes(period);
 };
@@ -105,10 +85,21 @@ module.exports.isStaticPeriod = (period) => {
 	return staticPeriods.includes(period) || staticPeriodPattern.test(period);
 };
 
+module.exports.parse = (period) => {
+	if (module.exports.isFloatingPeriod(period)) {
+		return module.exports.parseFloatingPeriod(period);
+	}
+
+	if (module.exports.isStaticPeriod(period)) {
+		return module.exports.parseStaticPeriod(period);
+	}
+};
+
 module.exports.parseFloatingPeriod = (period, date = new Date()) => {
 	return {
 		date: relativeDayUtc(0, date),
 		period,
+		duration: floatingPeriodDurations[period],
 		toString () {
 			return period;
 		},
@@ -117,7 +108,7 @@ module.exports.parseFloatingPeriod = (period, date = new Date()) => {
 
 module.exports.parseStaticPeriod = (period, date = new Date()) => {
 	date = relativeDayUtc(-4, date);
-	let match;
+	let duration, match;
 
 	if (period === 's-month') {
 		date = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth() - 1, 1));
@@ -132,9 +123,16 @@ module.exports.parseStaticPeriod = (period, date = new Date()) => {
 		}
 	}
 
+	if (period === 's-month') {
+		duration = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth() + 1, 0)).getUTCDate();
+	} else if (period === 's-year') {
+		duration = new Date(Date.UTC(date.getUTCFullYear(), 1, 29)).getUTCDate() === 29 ? 366 : 365;
+	}
+
 	return {
 		date,
 		period,
+		duration,
 		toString () {
 			return period;
 		},

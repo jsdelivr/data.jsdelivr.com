@@ -33,7 +33,7 @@ class BaseRequest {
 		if (typeof this.query.period === 'object') {
 			this.date = this.query.period.date;
 			this.period = this.query.period.period;
-			this.dateRange = dateRange(this.period, this.date);
+			this.dateRange = this.query.period.range;
 			this.prevDateRange = dateRange(this.period, relativeDayUtc(1, this.dateRange[0]));
 		}
 

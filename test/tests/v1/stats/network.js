@@ -2,7 +2,7 @@ const { makeEndpointSnapshotTests, setupSnapshots } = require('../../../utils');
 
 const periodOptions = [
 	'day', 'week', 'month', 'year', 'all', undefined,
-	's-month', 's-year', '2022-04', '2022',
+	's-month', 's-year', '2022-04', '2018',
 ];
 
 describe('/v1/stats/network', () => {
@@ -36,6 +36,6 @@ function makeStatsNetworkProvidersTests () {
 		{ continent: 'X' },
 		{ country: 'X' },
 		{ continent: 'EU', country: 'PL' },
-		{ period: 'X' },
+		{ period: [ 'X', '2022' ] },
 	], { status: 400 });
 }

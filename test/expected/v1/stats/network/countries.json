@@ -1,5 +1,5 @@
 {
-	"/v1/stats/network/countries?period=2022": {
+	"/v1/stats/network/countries?period=2018": {
 		"date": "2010-12-31",
 		"hits": {
 			"total": 0,
@@ -15,6 +15,11 @@
 				"total": 0
 			}
 		}
+	},
+	"/v1/stats/network/countries?period=2022": {
+		"date": "2010-12-31",
+		"status": 400,
+		"message": "Invalid parameter value: `period` cannot end in the future."
 	},
 	"/v1/stats/network/countries?period=2022-04": {
 		"date": "2010-12-31",

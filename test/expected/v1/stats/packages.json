@@ -1,5 +1,5 @@
 {
-	"/v1/stats/packages?by=bandwidth&period=2022": [],
+	"/v1/stats/packages?by=bandwidth&period=2018": [],
 	"/v1/stats/packages?by=bandwidth&period=2022-04": [
 		{
 			"type": "gh",
@@ -4207,7 +4207,7 @@
 		}
 	],
 	"/v1/stats/packages?by=bandwidth&period=s-year": [],
-	"/v1/stats/packages?by=bandwidth&type=gh&period=2022": [],
+	"/v1/stats/packages?by=bandwidth&type=gh&period=2018": [],
 	"/v1/stats/packages?by=bandwidth&type=gh&period=2022-04": [
 		{
 			"type": "gh",
@@ -6735,7 +6735,7 @@
 		}
 	],
 	"/v1/stats/packages?by=bandwidth&type=gh&period=s-year": [],
-	"/v1/stats/packages?by=bandwidth&type=npm&period=2022": [],
+	"/v1/stats/packages?by=bandwidth&type=npm&period=2018": [],
 	"/v1/stats/packages?by=bandwidth&type=npm&period=2022-04": [
 		{
 			"type": "npm",
@@ -9263,7 +9263,7 @@
 		}
 	],
 	"/v1/stats/packages?by=bandwidth&type=npm&period=s-year": [],
-	"/v1/stats/packages?by=hits&period=2022": [],
+	"/v1/stats/packages?by=hits&period=2018": [],
 	"/v1/stats/packages?by=hits&period=2022-04": [
 		{
 			"type": "gh",
@@ -13471,7 +13471,7 @@
 		}
 	],
 	"/v1/stats/packages?by=hits&period=s-year": [],
-	"/v1/stats/packages?by=hits&type=gh&period=2022": [],
+	"/v1/stats/packages?by=hits&type=gh&period=2018": [],
 	"/v1/stats/packages?by=hits&type=gh&period=2022-04": [
 		{
 			"type": "gh",
@@ -15999,7 +15999,7 @@
 		}
 	],
 	"/v1/stats/packages?by=hits&type=gh&period=s-year": [],
-	"/v1/stats/packages?by=hits&type=npm&period=2022": [],
+	"/v1/stats/packages?by=hits&type=npm&period=2018": [],
 	"/v1/stats/packages?by=hits&type=npm&period=2022-04": [
 		{
 			"type": "npm",
@@ -18527,7 +18527,7 @@
 		}
 	],
 	"/v1/stats/packages?by=hits&type=npm&period=s-year": [],
-	"/v1/stats/packages?period=2022": [],
+	"/v1/stats/packages?period=2018": [],
 	"/v1/stats/packages?period=2022-04": [
 		{
 			"type": "gh",
@@ -22735,7 +22735,7 @@
 		}
 	],
 	"/v1/stats/packages?period=s-year": [],
-	"/v1/stats/packages?type=gh&period=2022": [],
+	"/v1/stats/packages?type=gh&period=2018": [],
 	"/v1/stats/packages?type=gh&period=2022-04": [
 		{
 			"type": "gh",
@@ -25263,7 +25263,7 @@
 		}
 	],
 	"/v1/stats/packages?type=gh&period=s-year": [],
-	"/v1/stats/packages?type=npm&period=2022": [],
+	"/v1/stats/packages?type=npm&period=2018": [],
 	"/v1/stats/packages?type=npm&period=2022-04": [
 		{
 			"type": "npm",

@@ -29,52 +29,73 @@ const primitives = {
 
 	period:
 		Joi.custom((value, helpers) => {
-			if (dateRange.isFloatingPeriod(value)) {
-				return dateRange.parseFloatingPeriod(value);
+			let result = dateRange.parse(value);
+
+			if (!result) {
+				return helpers.error('any.invalid');
 			}
 
-			if (dateRange.isStaticPeriod(value)) {
-				let result = dateRange.parseStaticPeriod(value);
+			let range = dateRange(result.period, result.date);
 
-				if (!result) {
-					return helpers.error('any.invalid');
-				}
-
-				return result;
+			if (range[1] > Date.now()) {
+				return helpers.error('period.future');
 			}
 
-			return helpers.error('any.invalid');
+			return { ...result, range };
 		}).messages({
 			'*': '{{#label}} must be one of [day, week, month, year, s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM]',
-		}).default(() => dateRange.parseFloatingPeriod('month')),
+			'period.future': '{{#label}} cannot end in the future',
+		}).default(() => {
+			let result = dateRange.parseFloatingPeriod('month');
+			let range = dateRange(result.period, result.date);
+			return { ...result, range };
+		}),
 
 	periodFloating:
 		Joi.custom((value, helpers) => {
-			if (dateRange.isFloatingPeriod(value)) {
-				return dateRange.parseFloatingPeriod(value);
+			if (!dateRange.isFloatingPeriod(value)) {
+				return helpers.error('any.invalid');
 			}
 
-			return helpers.error('any.invalid');
+			let result = dateRange.parseFloatingPeriod(value);
+			let range = dateRange(result.period, result.date);
+
+			return { ...result, range };
 		}).messages({
 			'*': '{{#label}} must be one of [day, week, month, year]',
-		}).default(() => dateRange.parseFloatingPeriod('month')),
+		}).default(() => {
+			let result = dateRange.parseFloatingPeriod('month');
+			let range = dateRange(result.period, result.date);
+			return { ...result, range };
+		}),
 
 	periodStatic:
 		Joi.custom((value, helpers) => {
-			if (dateRange.isStaticPeriod(value)) {
-				let result = dateRange.parseStaticPeriod(value);
-
-				if (!result) {
-					return helpers.error('any.invalid');
-				}
-
-				return result;
+			if (!dateRange.isStaticPeriod(value)) {
+				return helpers.error('any.invalid');
 			}
 
-			return helpers.error('any.invalid');
+			let result = dateRange.parseStaticPeriod(value);
+
+			if (!result) {
+				return helpers.error('any.invalid');
+			}
+
+			let range = dateRange(result.period, result.date);
+
+			if (range[1] > Date.now()) {
+				return helpers.error('period.future');
+			}
+
+			return { ...result, range };
 		}).messages({
 			'*': '{{#label}} must be one of [s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM]',
-		}).default(() => dateRange.parseStaticPeriod('s-month')),
+			'period.future': '{{#label}} cannot end in the future',
+		}).default(() => {
+			let result = dateRange.parseStaticPeriod('s-month');
+			let range = dateRange(result.period, result.date);
+			return { ...result, range };
+		}),
 
 	specifier:
 		Joi.string(),
