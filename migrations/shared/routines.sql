@@ -86,6 +86,22 @@ begin
 			set @prevDateFrom = date_sub(@dateFrom, interval 1 month);
 			set @prevDateTo = date_sub(@dateFrom, interval 1 day);
 
+			if not exists(select * from view_top_packages where `date` = @latestStart and period = 's-month') then
+				call updateViewTopPackagesForPeriod('s-month', @dateFrom, @dateFrom, @dateTo, @prevDateFrom, @prevDateTo, false);
+			end if;
+
+			if not exists(select * from view_top_proxies where `date` = @latestStart and period = 's-month') then
+				call updateViewTopProxiesForPeriod('s-month', @dateFrom, @dateFrom, @dateTo, @prevDateFrom, @prevDateTo, false);
+			end if;
+
+			if not exists(select * from view_network_countries where `date` = @latestStart and period = 's-month') then
+				call updateViewNetworkCountriesForPeriod('s-month', @dateFrom, @dateFrom, @dateTo, @prevDateFrom, @prevDateTo, false);
+			end if;
+
+			if not exists(select * from view_network_cdns where `date` = @latestStart and period = 's-month') then
+				call updateViewNetworkCdnsForPeriod('s-month', @dateFrom, @dateFrom, @dateTo, @prevDateFrom, @prevDateTo, false);
+			end if;
+
 			if not exists(select * from view_top_platforms where `date` = @latestStart and period = 's-month') then
 				call updateViewTopPlatforms('s-month', @dateFrom, @dateTo, @prevDateFrom, @prevDateTo);
 			end if;
@@ -142,6 +158,22 @@ begin
 			set @dateTo = date_sub(date_add(@dateFrom, interval 1 year), interval 1 day);
 			set @prevDateFrom = date_sub(@dateFrom, interval 1 year);
 			set @prevDateTo = date_sub(@dateFrom, interval 1 day);
+
+			if not exists(select * from view_top_packages where `date` = @latestStart and period = 's-year') then
+				call updateViewTopPackagesForPeriod('s-year', @dateFrom, @dateFrom, @dateTo, @prevDateFrom, @prevDateTo, false);
+			end if;
+
+			if not exists(select * from view_top_proxies where `date` = @latestStart and period = 's-year') then
+				call updateViewTopProxiesForPeriod('s-year', @dateFrom, @dateFrom, @dateTo, @prevDateFrom, @prevDateTo, false);
+			end if;
+
+			if not exists(select * from view_network_countries where `date` = @latestStart and period = 's-year') then
+				call updateViewNetworkCountriesForPeriod('s-year', @dateFrom, @dateFrom, @dateTo, @prevDateFrom, @prevDateTo, false);
+			end if;
+
+			if not exists(select * from view_network_cdns where `date` = @latestStart and period = 's-year') then
+				call updateViewNetworkCdnsForPeriod('s-year', @dateFrom, @dateFrom, @dateTo, @prevDateFrom, @prevDateTo, false);
+			end if;
 
 			if not exists(select * from view_top_platforms where `date` = @latestStart and period = 's-year') then
 				call updateViewTopPlatforms('s-year', @dateFrom, @dateTo, @prevDateFrom, @prevDateTo);

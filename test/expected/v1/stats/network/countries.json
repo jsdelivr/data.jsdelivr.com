@@ -28561,6 +28561,8542 @@
 			}
 		}
 	},
+	"/v1/stats/network/countries?period=s-month": {
+		"date": "2010-12-31",
+		"hits": {
+			"total": 69471000,
+			"countries": {
+				"AD": {
+					"total": 0,
+					"providers": {
+						"CF": {
+							"total": 0
+						},
+						"FY": {
+							"total": 0
+						},
+						"QT": {
+							"total": 0
+						}
+					},
+					"prev": {
+						"total": 0
+					}
+				},
+				"AE": {
+					"total": 2232,
+					"providers": {
+						"CF": {
+							"total": 744
+						},
+						"FY": {
+							"total": 744
+						},
+						"QT": {
+							"total": 744
+						}
+					},
+					"prev": {
+						"total": 108
+					}
+				},
+				"AF": {
+					"total": 4464,
+					"providers": {
+						"CF": {
+							"total": 1488
+						},
+						"FY": {
+							"total": 1488
+						},
+						"QT": {
+							"total": 1488
+						}
+					},
+					"prev": {
+						"total": 216
+					}
+				},
+				"AG": {
+					"total": 6696,
+					"providers": {
+						"CF": {
+							"total": 2232
+						},
+						"FY": {
+							"total": 2232
+						},
+						"QT": {
+							"total": 2232
+						}
+					},
+					"prev": {
+						"total": 324
+					}
+				},
+				"AI": {
+					"total": 8928,
+					"providers": {
+						"CF": {
+							"total": 2976
+						},
+						"FY": {
+							"total": 2976
+						},
+						"QT": {
+							"total": 2976
+						}
+					},
+					"prev": {
+						"total": 432
+					}
+				},
+				"AL": {
+					"total": 11160,
+					"providers": {
+						"CF": {
+							"total": 3720
+						},
+						"FY": {
+							"total": 3720
+						},
+						"QT": {
+							"total": 3720
+						}
+					},
+					"prev": {
+						"total": 540
+					}
+				},
+				"AM": {
+					"total": 13392,
+					"providers": {
+						"CF": {
+							"total": 4464
+						},
+						"FY": {
+							"total": 4464
+						},
+						"QT": {
+							"total": 4464
+						}
+					},
+					"prev": {
+						"total": 648
+					}
+				},
+				"AO": {
+					"total": 15624,
+					"providers": {
+						"CF": {
+							"total": 5208
+						},
+						"FY": {
+							"total": 5208
+						},
+						"QT": {
+							"total": 5208
+						}
+					},
+					"prev": {
+						"total": 756
+					}
+				},
+				"AQ": {
+					"total": 17856,
+					"providers": {
+						"CF": {
+							"total": 5952
+						},
+						"FY": {
+							"total": 5952
+						},
+						"QT": {
+							"total": 5952
+						}
+					},
+					"prev": {
+						"total": 864
+					}
+				},
+				"AR": {
+					"total": 20088,
+					"providers": {
+						"CF": {
+							"total": 6696
+						},
+						"FY": {
+							"total": 6696
+						},
+						"QT": {
+							"total": 6696
+						}
+					},
+					"prev": {
+						"total": 972
+					}
+				},
+				"AS": {
+					"total": 22320,
+					"providers": {
+						"CF": {
+							"total": 7440
+						},
+						"FY": {
+							"total": 7440
+						},
+						"QT": {
+							"total": 7440
+						}
+					},
+					"prev": {
+						"total": 1080
+					}
+				},
+				"AT": {
+					"total": 24552,
+					"providers": {
+						"CF": {
+							"total": 8184
+						},
+						"FY": {
+							"total": 8184
+						},
+						"QT": {
+							"total": 8184
+						}
+					},
+					"prev": {
+						"total": 1188
+					}
+				},
+				"AU": {
+					"total": 26784,
+					"providers": {
+						"CF": {
+							"total": 8928
+						},
+						"FY": {
+							"total": 8928
+						},
+						"QT": {
+							"total": 8928
+						}
+					},
+					"prev": {
+						"total": 1296
+					}
+				},
+				"AW": {
+					"total": 29016,
+					"providers": {
+						"CF": {
+							"total": 9672
+						},
+						"FY": {
+							"total": 9672
+						},
+						"QT": {
+							"total": 9672
+						}
+					},
+					"prev": {
+						"total": 1404
+					}
+				},
+				"AX": {
+					"total": 31248,
+					"providers": {
+						"CF": {
+							"total": 10416
+						},
+						"FY": {
+							"total": 10416
+						},
+						"QT": {
+							"total": 10416
+						}
+					},
+					"prev": {
+						"total": 1512
+					}
+				},
+				"AZ": {
+					"total": 33480,
+					"providers": {
+						"CF": {
+							"total": 11160
+						},
+						"FY": {
+							"total": 11160
+						},
+						"QT": {
+							"total": 11160
+						}
+					},
+					"prev": {
+						"total": 1620
+					}
+				},
+				"BA": {
+					"total": 35712,
+					"providers": {
+						"CF": {
+							"total": 11904
+						},
+						"FY": {
+							"total": 11904
+						},
+						"QT": {
+							"total": 11904
+						}
+					},
+					"prev": {
+						"total": 1728
+					}
+				},
+				"BB": {
+					"total": 37944,
+					"providers": {
+						"CF": {
+							"total": 12648
+						},
+						"FY": {
+							"total": 12648
+						},
+						"QT": {
+							"total": 12648
+						}
+					},
+					"prev": {
+						"total": 1836
+					}
+				},
+				"BD": {
+					"total": 40176,
+					"providers": {
+						"CF": {
+							"total": 13392
+						},
+						"FY": {
+							"total": 13392
+						},
+						"QT": {
+							"total": 13392
+						}
+					},
+					"prev": {
+						"total": 1944
+					}
+				},
+				"BE": {
+					"total": 42408,
+					"providers": {
+						"CF": {
+							"total": 14136
+						},
+						"FY": {
+							"total": 14136
+						},
+						"QT": {
+							"total": 14136
+						}
+					},
+					"prev": {
+						"total": 2052
+					}
+				},
+				"BF": {
+					"total": 44640,
+					"providers": {
+						"CF": {
+							"total": 14880
+						},
+						"FY": {
+							"total": 14880
+						},
+						"QT": {
+							"total": 14880
+						}
+					},
+					"prev": {
+						"total": 2160
+					}
+				},
+				"BG": {
+					"total": 46872,
+					"providers": {
+						"CF": {
+							"total": 15624
+						},
+						"FY": {
+							"total": 15624
+						},
+						"QT": {
+							"total": 15624
+						}
+					},
+					"prev": {
+						"total": 2268
+					}
+				},
+				"BH": {
+					"total": 49104,
+					"providers": {
+						"CF": {
+							"total": 16368
+						},
+						"FY": {
+							"total": 16368
+						},
+						"QT": {
+							"total": 16368
+						}
+					},
+					"prev": {
+						"total": 2376
+					}
+				},
+				"BI": {
+					"total": 51336,
+					"providers": {
+						"CF": {
+							"total": 17112
+						},
+						"FY": {
+							"total": 17112
+						},
+						"QT": {
+							"total": 17112
+						}
+					},
+					"prev": {
+						"total": 2484
+					}
+				},
+				"BJ": {
+					"total": 53568,
+					"providers": {
+						"CF": {
+							"total": 17856
+						},
+						"FY": {
+							"total": 17856
+						},
+						"QT": {
+							"total": 17856
+						}
+					},
+					"prev": {
+						"total": 2592
+					}
+				},
+				"BL": {
+					"total": 55800,
+					"providers": {
+						"CF": {
+							"total": 18600
+						},
+						"FY": {
+							"total": 18600
+						},
+						"QT": {
+							"total": 18600
+						}
+					},
+					"prev": {
+						"total": 2700
+					}
+				},
+				"BM": {
+					"total": 58032,
+					"providers": {
+						"CF": {
+							"total": 19344
+						},
+						"FY": {
+							"total": 19344
+						},
+						"QT": {
+							"total": 19344
+						}
+					},
+					"prev": {
+						"total": 2808
+					}
+				},
+				"BN": {
+					"total": 60264,
+					"providers": {
+						"CF": {
+							"total": 20088
+						},
+						"FY": {
+							"total": 20088
+						},
+						"QT": {
+							"total": 20088
+						}
+					},
+					"prev": {
+						"total": 2916
+					}
+				},
+				"BO": {
+					"total": 62496,
+					"providers": {
+						"CF": {
+							"total": 20832
+						},
+						"FY": {
+							"total": 20832
+						},
+						"QT": {
+							"total": 20832
+						}
+					},
+					"prev": {
+						"total": 3024
+					}
+				},
+				"BQ": {
+					"total": 64728,
+					"providers": {
+						"CF": {
+							"total": 21576
+						},
+						"FY": {
+							"total": 21576
+						},
+						"QT": {
+							"total": 21576
+						}
+					},
+					"prev": {
+						"total": 3132
+					}
+				},
+				"BR": {
+					"total": 66960,
+					"providers": {
+						"CF": {
+							"total": 22320
+						},
+						"FY": {
+							"total": 22320
+						},
+						"QT": {
+							"total": 22320
+						}
+					},
+					"prev": {
+						"total": 3240
+					}
+				},
+				"BS": {
+					"total": 69192,
+					"providers": {
+						"CF": {
+							"total": 23064
+						},
+						"FY": {
+							"total": 23064
+						},
+						"QT": {
+							"total": 23064
+						}
+					},
+					"prev": {
+						"total": 3348
+					}
+				},
+				"BT": {
+					"total": 71424,
+					"providers": {
+						"CF": {
+							"total": 23808
+						},
+						"FY": {
+							"total": 23808
+						},
+						"QT": {
+							"total": 23808
+						}
+					},
+					"prev": {
+						"total": 3456
+					}
+				},
+				"BV": {
+					"total": 73656,
+					"providers": {
+						"CF": {
+							"total": 24552
+						},
+						"FY": {
+							"total": 24552
+						},
+						"QT": {
+							"total": 24552
+						}
+					},
+					"prev": {
+						"total": 3564
+					}
+				},
+				"BW": {
+					"total": 75888,
+					"providers": {
+						"CF": {
+							"total": 25296
+						},
+						"FY": {
+							"total": 25296
+						},
+						"QT": {
+							"total": 25296
+						}
+					},
+					"prev": {
+						"total": 3672
+					}
+				},
+				"BY": {
+					"total": 78120,
+					"providers": {
+						"CF": {
+							"total": 26040
+						},
+						"FY": {
+							"total": 26040
+						},
+						"QT": {
+							"total": 26040
+						}
+					},
+					"prev": {
+						"total": 3780
+					}
+				},
+				"BZ": {
+					"total": 80352,
+					"providers": {
+						"CF": {
+							"total": 26784
+						},
+						"FY": {
+							"total": 26784
+						},
+						"QT": {
+							"total": 26784
+						}
+					},
+					"prev": {
+						"total": 3888
+					}
+				},
+				"CA": {
+					"total": 82584,
+					"providers": {
+						"CF": {
+							"total": 27528
+						},
+						"FY": {
+							"total": 27528
+						},
+						"QT": {
+							"total": 27528
+						}
+					},
+					"prev": {
+						"total": 3996
+					}
+				},
+				"CC": {
+					"total": 84816,
+					"providers": {
+						"CF": {
+							"total": 28272
+						},
+						"FY": {
+							"total": 28272
+						},
+						"QT": {
+							"total": 28272
+						}
+					},
+					"prev": {
+						"total": 4104
+					}
+				},
+				"CD": {
+					"total": 87048,
+					"providers": {
+						"CF": {
+							"total": 29016
+						},
+						"FY": {
+							"total": 29016
+						},
+						"QT": {
+							"total": 29016
+						}
+					},
+					"prev": {
+						"total": 4212
+					}
+				},
+				"CF": {
+					"total": 89280,
+					"providers": {
+						"CF": {
+							"total": 29760
+						},
+						"FY": {
+							"total": 29760
+						},
+						"QT": {
+							"total": 29760
+						}
+					},
+					"prev": {
+						"total": 4320
+					}
+				},
+				"CG": {
+					"total": 91512,
+					"providers": {
+						"CF": {
+							"total": 30504
+						},
+						"FY": {
+							"total": 30504
+						},
+						"QT": {
+							"total": 30504
+						}
+					},
+					"prev": {
+						"total": 4428
+					}
+				},
+				"CH": {
+					"total": 93744,
+					"providers": {
+						"CF": {
+							"total": 31248
+						},
+						"FY": {
+							"total": 31248
+						},
+						"QT": {
+							"total": 31248
+						}
+					},
+					"prev": {
+						"total": 4536
+					}
+				},
+				"CI": {
+					"total": 95976,
+					"providers": {
+						"CF": {
+							"total": 31992
+						},
+						"FY": {
+							"total": 31992
+						},
+						"QT": {
+							"total": 31992
+						}
+					},
+					"prev": {
+						"total": 4644
+					}
+				},
+				"CK": {
+					"total": 98208,
+					"providers": {
+						"CF": {
+							"total": 32736
+						},
+						"FY": {
+							"total": 32736
+						},
+						"QT": {
+							"total": 32736
+						}
+					},
+					"prev": {
+						"total": 4752
+					}
+				},
+				"CL": {
+					"total": 100440,
+					"providers": {
+						"CF": {
+							"total": 33480
+						},
+						"FY": {
+							"total": 33480
+						},
+						"QT": {
+							"total": 33480
+						}
+					},
+					"prev": {
+						"total": 4860
+					}
+				},
+				"CM": {
+					"total": 102672,
+					"providers": {
+						"CF": {
+							"total": 34224
+						},
+						"FY": {
+							"total": 34224
+						},
+						"QT": {
+							"total": 34224
+						}
+					},
+					"prev": {
+						"total": 4968
+					}
+				},
+				"CN": {
+					"total": 104904,
+					"providers": {
+						"CF": {
+							"total": 34968
+						},
+						"FY": {
+							"total": 34968
+						},
+						"QT": {
+							"total": 34968
+						}
+					},
+					"prev": {
+						"total": 5076
+					}
+				},
+				"CO": {
+					"total": 107136,
+					"providers": {
+						"CF": {
+							"total": 35712
+						},
+						"FY": {
+							"total": 35712
+						},
+						"QT": {
+							"total": 35712
+						}
+					},
+					"prev": {
+						"total": 5184
+					}
+				},
+				"CR": {
+					"total": 109368,
+					"providers": {
+						"CF": {
+							"total": 36456
+						},
+						"FY": {
+							"total": 36456
+						},
+						"QT": {
+							"total": 36456
+						}
+					},
+					"prev": {
+						"total": 5292
+					}
+				},
+				"CU": {
+					"total": 111600,
+					"providers": {
+						"CF": {
+							"total": 37200
+						},
+						"FY": {
+							"total": 37200
+						},
+						"QT": {
+							"total": 37200
+						}
+					},
+					"prev": {
+						"total": 5400
+					}
+				},
+				"CV": {
+					"total": 113832,
+					"providers": {
+						"CF": {
+							"total": 37944
+						},
+						"FY": {
+							"total": 37944
+						},
+						"QT": {
+							"total": 37944
+						}
+					},
+					"prev": {
+						"total": 5508
+					}
+				},
+				"CW": {
+					"total": 116064,
+					"providers": {
+						"CF": {
+							"total": 38688
+						},
+						"FY": {
+							"total": 38688
+						},
+						"QT": {
+							"total": 38688
+						}
+					},
+					"prev": {
+						"total": 5616
+					}
+				},
+				"CX": {
+					"total": 118296,
+					"providers": {
+						"CF": {
+							"total": 39432
+						},
+						"FY": {
+							"total": 39432
+						},
+						"QT": {
+							"total": 39432
+						}
+					},
+					"prev": {
+						"total": 5724
+					}
+				},
+				"CY": {
+					"total": 120528,
+					"providers": {
+						"CF": {
+							"total": 40176
+						},
+						"FY": {
+							"total": 40176
+						},
+						"QT": {
+							"total": 40176
+						}
+					},
+					"prev": {
+						"total": 5832
+					}
+				},
+				"CZ": {
+					"total": 122760,
+					"providers": {
+						"CF": {
+							"total": 40920
+						},
+						"FY": {
+							"total": 40920
+						},
+						"QT": {
+							"total": 40920
+						}
+					},
+					"prev": {
+						"total": 5940
+					}
+				},
+				"DE": {
+					"total": 124992,
+					"providers": {
+						"CF": {
+							"total": 41664
+						},
+						"FY": {
+							"total": 41664
+						},
+						"QT": {
+							"total": 41664
+						}
+					},
+					"prev": {
+						"total": 6048
+					}
+				},
+				"DJ": {
+					"total": 127224,
+					"providers": {
+						"CF": {
+							"total": 42408
+						},
+						"FY": {
+							"total": 42408
+						},
+						"QT": {
+							"total": 42408
+						}
+					},
+					"prev": {
+						"total": 6156
+					}
+				},
+				"DK": {
+					"total": 129456,
+					"providers": {
+						"CF": {
+							"total": 43152
+						},
+						"FY": {
+							"total": 43152
+						},
+						"QT": {
+							"total": 43152
+						}
+					},
+					"prev": {
+						"total": 6264
+					}
+				},
+				"DM": {
+					"total": 131688,
+					"providers": {
+						"CF": {
+							"total": 43896
+						},
+						"FY": {
+							"total": 43896
+						},
+						"QT": {
+							"total": 43896
+						}
+					},
+					"prev": {
+						"total": 6372
+					}
+				},
+				"DO": {
+					"total": 133920,
+					"providers": {
+						"CF": {
+							"total": 44640
+						},
+						"FY": {
+							"total": 44640
+						},
+						"QT": {
+							"total": 44640
+						}
+					},
+					"prev": {
+						"total": 6480
+					}
+				},
+				"DZ": {
+					"total": 136152,
+					"providers": {
+						"CF": {
+							"total": 45384
+						},
+						"FY": {
+							"total": 45384
+						},
+						"QT": {
+							"total": 45384
+						}
+					},
+					"prev": {
+						"total": 6588
+					}
+				},
+				"EC": {
+					"total": 138384,
+					"providers": {
+						"CF": {
+							"total": 46128
+						},
+						"FY": {
+							"total": 46128
+						},
+						"QT": {
+							"total": 46128
+						}
+					},
+					"prev": {
+						"total": 6696
+					}
+				},
+				"EE": {
+					"total": 140616,
+					"providers": {
+						"CF": {
+							"total": 46872
+						},
+						"FY": {
+							"total": 46872
+						},
+						"QT": {
+							"total": 46872
+						}
+					},
+					"prev": {
+						"total": 6804
+					}
+				},
+				"EG": {
+					"total": 142848,
+					"providers": {
+						"CF": {
+							"total": 47616
+						},
+						"FY": {
+							"total": 47616
+						},
+						"QT": {
+							"total": 47616
+						}
+					},
+					"prev": {
+						"total": 6912
+					}
+				},
+				"EH": {
+					"total": 145080,
+					"providers": {
+						"CF": {
+							"total": 48360
+						},
+						"FY": {
+							"total": 48360
+						},
+						"QT": {
+							"total": 48360
+						}
+					},
+					"prev": {
+						"total": 7020
+					}
+				},
+				"ER": {
+					"total": 147312,
+					"providers": {
+						"CF": {
+							"total": 49104
+						},
+						"FY": {
+							"total": 49104
+						},
+						"QT": {
+							"total": 49104
+						}
+					},
+					"prev": {
+						"total": 7128
+					}
+				},
+				"ES": {
+					"total": 149544,
+					"providers": {
+						"CF": {
+							"total": 49848
+						},
+						"FY": {
+							"total": 49848
+						},
+						"QT": {
+							"total": 49848
+						}
+					},
+					"prev": {
+						"total": 7236
+					}
+				},
+				"ET": {
+					"total": 151776,
+					"providers": {
+						"CF": {
+							"total": 50592
+						},
+						"FY": {
+							"total": 50592
+						},
+						"QT": {
+							"total": 50592
+						}
+					},
+					"prev": {
+						"total": 7344
+					}
+				},
+				"FI": {
+					"total": 154008,
+					"providers": {
+						"CF": {
+							"total": 51336
+						},
+						"FY": {
+							"total": 51336
+						},
+						"QT": {
+							"total": 51336
+						}
+					},
+					"prev": {
+						"total": 7452
+					}
+				},
+				"FJ": {
+					"total": 156240,
+					"providers": {
+						"CF": {
+							"total": 52080
+						},
+						"FY": {
+							"total": 52080
+						},
+						"QT": {
+							"total": 52080
+						}
+					},
+					"prev": {
+						"total": 7560
+					}
+				},
+				"FK": {
+					"total": 158472,
+					"providers": {
+						"CF": {
+							"total": 52824
+						},
+						"FY": {
+							"total": 52824
+						},
+						"QT": {
+							"total": 52824
+						}
+					},
+					"prev": {
+						"total": 7668
+					}
+				},
+				"FM": {
+					"total": 160704,
+					"providers": {
+						"CF": {
+							"total": 53568
+						},
+						"FY": {
+							"total": 53568
+						},
+						"QT": {
+							"total": 53568
+						}
+					},
+					"prev": {
+						"total": 7776
+					}
+				},
+				"FO": {
+					"total": 162936,
+					"providers": {
+						"CF": {
+							"total": 54312
+						},
+						"FY": {
+							"total": 54312
+						},
+						"QT": {
+							"total": 54312
+						}
+					},
+					"prev": {
+						"total": 7884
+					}
+				},
+				"FR": {
+					"total": 165168,
+					"providers": {
+						"CF": {
+							"total": 55056
+						},
+						"FY": {
+							"total": 55056
+						},
+						"QT": {
+							"total": 55056
+						}
+					},
+					"prev": {
+						"total": 7992
+					}
+				},
+				"GA": {
+					"total": 167400,
+					"providers": {
+						"CF": {
+							"total": 55800
+						},
+						"FY": {
+							"total": 55800
+						},
+						"QT": {
+							"total": 55800
+						}
+					},
+					"prev": {
+						"total": 8100
+					}
+				},
+				"GB": {
+					"total": 169632,
+					"providers": {
+						"CF": {
+							"total": 56544
+						},
+						"FY": {
+							"total": 56544
+						},
+						"QT": {
+							"total": 56544
+						}
+					},
+					"prev": {
+						"total": 8208
+					}
+				},
+				"GD": {
+					"total": 171864,
+					"providers": {
+						"CF": {
+							"total": 57288
+						},
+						"FY": {
+							"total": 57288
+						},
+						"QT": {
+							"total": 57288
+						}
+					},
+					"prev": {
+						"total": 8316
+					}
+				},
+				"GE": {
+					"total": 174096,
+					"providers": {
+						"CF": {
+							"total": 58032
+						},
+						"FY": {
+							"total": 58032
+						},
+						"QT": {
+							"total": 58032
+						}
+					},
+					"prev": {
+						"total": 8424
+					}
+				},
+				"GF": {
+					"total": 176328,
+					"providers": {
+						"CF": {
+							"total": 58776
+						},
+						"FY": {
+							"total": 58776
+						},
+						"QT": {
+							"total": 58776
+						}
+					},
+					"prev": {
+						"total": 8532
+					}
+				},
+				"GG": {
+					"total": 178560,
+					"providers": {
+						"CF": {
+							"total": 59520
+						},
+						"FY": {
+							"total": 59520
+						},
+						"QT": {
+							"total": 59520
+						}
+					},
+					"prev": {
+						"total": 8640
+					}
+				},
+				"GH": {
+					"total": 180792,
+					"providers": {
+						"CF": {
+							"total": 60264
+						},
+						"FY": {
+							"total": 60264
+						},
+						"QT": {
+							"total": 60264
+						}
+					},
+					"prev": {
+						"total": 8748
+					}
+				},
+				"GI": {
+					"total": 183024,
+					"providers": {
+						"CF": {
+							"total": 61008
+						},
+						"FY": {
+							"total": 61008
+						},
+						"QT": {
+							"total": 61008
+						}
+					},
+					"prev": {
+						"total": 8856
+					}
+				},
+				"GL": {
+					"total": 185256,
+					"providers": {
+						"CF": {
+							"total": 61752
+						},
+						"FY": {
+							"total": 61752
+						},
+						"QT": {
+							"total": 61752
+						}
+					},
+					"prev": {
+						"total": 8964
+					}
+				},
+				"GM": {
+					"total": 187488,
+					"providers": {
+						"CF": {
+							"total": 62496
+						},
+						"FY": {
+							"total": 62496
+						},
+						"QT": {
+							"total": 62496
+						}
+					},
+					"prev": {
+						"total": 9072
+					}
+				},
+				"GN": {
+					"total": 189720,
+					"providers": {
+						"CF": {
+							"total": 63240
+						},
+						"FY": {
+							"total": 63240
+						},
+						"QT": {
+							"total": 63240
+						}
+					},
+					"prev": {
+						"total": 9180
+					}
+				},
+				"GP": {
+					"total": 191952,
+					"providers": {
+						"CF": {
+							"total": 63984
+						},
+						"FY": {
+							"total": 63984
+						},
+						"QT": {
+							"total": 63984
+						}
+					},
+					"prev": {
+						"total": 9288
+					}
+				},
+				"GQ": {
+					"total": 194184,
+					"providers": {
+						"CF": {
+							"total": 64728
+						},
+						"FY": {
+							"total": 64728
+						},
+						"QT": {
+							"total": 64728
+						}
+					},
+					"prev": {
+						"total": 9396
+					}
+				},
+				"GR": {
+					"total": 196416,
+					"providers": {
+						"CF": {
+							"total": 65472
+						},
+						"FY": {
+							"total": 65472
+						},
+						"QT": {
+							"total": 65472
+						}
+					},
+					"prev": {
+						"total": 9504
+					}
+				},
+				"GS": {
+					"total": 198648,
+					"providers": {
+						"CF": {
+							"total": 66216
+						},
+						"FY": {
+							"total": 66216
+						},
+						"QT": {
+							"total": 66216
+						}
+					},
+					"prev": {
+						"total": 9612
+					}
+				},
+				"GT": {
+					"total": 200880,
+					"providers": {
+						"CF": {
+							"total": 66960
+						},
+						"FY": {
+							"total": 66960
+						},
+						"QT": {
+							"total": 66960
+						}
+					},
+					"prev": {
+						"total": 9720
+					}
+				},
+				"GU": {
+					"total": 203112,
+					"providers": {
+						"CF": {
+							"total": 67704
+						},
+						"FY": {
+							"total": 67704
+						},
+						"QT": {
+							"total": 67704
+						}
+					},
+					"prev": {
+						"total": 9828
+					}
+				},
+				"GW": {
+					"total": 205344,
+					"providers": {
+						"CF": {
+							"total": 68448
+						},
+						"FY": {
+							"total": 68448
+						},
+						"QT": {
+							"total": 68448
+						}
+					},
+					"prev": {
+						"total": 9936
+					}
+				},
+				"GY": {
+					"total": 207576,
+					"providers": {
+						"CF": {
+							"total": 69192
+						},
+						"FY": {
+							"total": 69192
+						},
+						"QT": {
+							"total": 69192
+						}
+					},
+					"prev": {
+						"total": 10044
+					}
+				},
+				"HK": {
+					"total": 209808,
+					"providers": {
+						"CF": {
+							"total": 69936
+						},
+						"FY": {
+							"total": 69936
+						},
+						"QT": {
+							"total": 69936
+						}
+					},
+					"prev": {
+						"total": 10152
+					}
+				},
+				"HM": {
+					"total": 212040,
+					"providers": {
+						"CF": {
+							"total": 70680
+						},
+						"FY": {
+							"total": 70680
+						},
+						"QT": {
+							"total": 70680
+						}
+					},
+					"prev": {
+						"total": 10260
+					}
+				},
+				"HN": {
+					"total": 214272,
+					"providers": {
+						"CF": {
+							"total": 71424
+						},
+						"FY": {
+							"total": 71424
+						},
+						"QT": {
+							"total": 71424
+						}
+					},
+					"prev": {
+						"total": 10368
+					}
+				},
+				"HR": {
+					"total": 216504,
+					"providers": {
+						"CF": {
+							"total": 72168
+						},
+						"FY": {
+							"total": 72168
+						},
+						"QT": {
+							"total": 72168
+						}
+					},
+					"prev": {
+						"total": 10476
+					}
+				},
+				"HT": {
+					"total": 218736,
+					"providers": {
+						"CF": {
+							"total": 72912
+						},
+						"FY": {
+							"total": 72912
+						},
+						"QT": {
+							"total": 72912
+						}
+					},
+					"prev": {
+						"total": 10584
+					}
+				},
+				"HU": {
+					"total": 220968,
+					"providers": {
+						"CF": {
+							"total": 73656
+						},
+						"FY": {
+							"total": 73656
+						},
+						"QT": {
+							"total": 73656
+						}
+					},
+					"prev": {
+						"total": 10692
+					}
+				},
+				"ID": {
+					"total": 223200,
+					"providers": {
+						"CF": {
+							"total": 74400
+						},
+						"FY": {
+							"total": 74400
+						},
+						"QT": {
+							"total": 74400
+						}
+					},
+					"prev": {
+						"total": 10800
+					}
+				},
+				"IE": {
+					"total": 225432,
+					"providers": {
+						"CF": {
+							"total": 75144
+						},
+						"FY": {
+							"total": 75144
+						},
+						"QT": {
+							"total": 75144
+						}
+					},
+					"prev": {
+						"total": 10908
+					}
+				},
+				"IL": {
+					"total": 227664,
+					"providers": {
+						"CF": {
+							"total": 75888
+						},
+						"FY": {
+							"total": 75888
+						},
+						"QT": {
+							"total": 75888
+						}
+					},
+					"prev": {
+						"total": 11016
+					}
+				},
+				"IM": {
+					"total": 229896,
+					"providers": {
+						"CF": {
+							"total": 76632
+						},
+						"FY": {
+							"total": 76632
+						},
+						"QT": {
+							"total": 76632
+						}
+					},
+					"prev": {
+						"total": 11124
+					}
+				},
+				"IN": {
+					"total": 232128,
+					"providers": {
+						"CF": {
+							"total": 77376
+						},
+						"FY": {
+							"total": 77376
+						},
+						"QT": {
+							"total": 77376
+						}
+					},
+					"prev": {
+						"total": 11232
+					}
+				},
+				"IO": {
+					"total": 234360,
+					"providers": {
+						"CF": {
+							"total": 78120
+						},
+						"FY": {
+							"total": 78120
+						},
+						"QT": {
+							"total": 78120
+						}
+					},
+					"prev": {
+						"total": 11340
+					}
+				},
+				"IQ": {
+					"total": 236592,
+					"providers": {
+						"CF": {
+							"total": 78864
+						},
+						"FY": {
+							"total": 78864
+						},
+						"QT": {
+							"total": 78864
+						}
+					},
+					"prev": {
+						"total": 11448
+					}
+				},
+				"IR": {
+					"total": 238824,
+					"providers": {
+						"CF": {
+							"total": 79608
+						},
+						"FY": {
+							"total": 79608
+						},
+						"QT": {
+							"total": 79608
+						}
+					},
+					"prev": {
+						"total": 11556
+					}
+				},
+				"IS": {
+					"total": 241056,
+					"providers": {
+						"CF": {
+							"total": 80352
+						},
+						"FY": {
+							"total": 80352
+						},
+						"QT": {
+							"total": 80352
+						}
+					},
+					"prev": {
+						"total": 11664
+					}
+				},
+				"IT": {
+					"total": 243288,
+					"providers": {
+						"CF": {
+							"total": 81096
+						},
+						"FY": {
+							"total": 81096
+						},
+						"QT": {
+							"total": 81096
+						}
+					},
+					"prev": {
+						"total": 11772
+					}
+				},
+				"JE": {
+					"total": 245520,
+					"providers": {
+						"CF": {
+							"total": 81840
+						},
+						"FY": {
+							"total": 81840
+						},
+						"QT": {
+							"total": 81840
+						}
+					},
+					"prev": {
+						"total": 11880
+					}
+				},
+				"JM": {
+					"total": 247752,
+					"providers": {
+						"CF": {
+							"total": 82584
+						},
+						"FY": {
+							"total": 82584
+						},
+						"QT": {
+							"total": 82584
+						}
+					},
+					"prev": {
+						"total": 11988
+					}
+				},
+				"JO": {
+					"total": 249984,
+					"providers": {
+						"CF": {
+							"total": 83328
+						},
+						"FY": {
+							"total": 83328
+						},
+						"QT": {
+							"total": 83328
+						}
+					},
+					"prev": {
+						"total": 12096
+					}
+				},
+				"JP": {
+					"total": 252216,
+					"providers": {
+						"CF": {
+							"total": 84072
+						},
+						"FY": {
+							"total": 84072
+						},
+						"QT": {
+							"total": 84072
+						}
+					},
+					"prev": {
+						"total": 12204
+					}
+				},
+				"KE": {
+					"total": 254448,
+					"providers": {
+						"CF": {
+							"total": 84816
+						},
+						"FY": {
+							"total": 84816
+						},
+						"QT": {
+							"total": 84816
+						}
+					},
+					"prev": {
+						"total": 12312
+					}
+				},
+				"KG": {
+					"total": 256680,
+					"providers": {
+						"CF": {
+							"total": 85560
+						},
+						"FY": {
+							"total": 85560
+						},
+						"QT": {
+							"total": 85560
+						}
+					},
+					"prev": {
+						"total": 12420
+					}
+				},
+				"KH": {
+					"total": 258912,
+					"providers": {
+						"CF": {
+							"total": 86304
+						},
+						"FY": {
+							"total": 86304
+						},
+						"QT": {
+							"total": 86304
+						}
+					},
+					"prev": {
+						"total": 12528
+					}
+				},
+				"KI": {
+					"total": 261144,
+					"providers": {
+						"CF": {
+							"total": 87048
+						},
+						"FY": {
+							"total": 87048
+						},
+						"QT": {
+							"total": 87048
+						}
+					},
+					"prev": {
+						"total": 12636
+					}
+				},
+				"KM": {
+					"total": 263376,
+					"providers": {
+						"CF": {
+							"total": 87792
+						},
+						"FY": {
+							"total": 87792
+						},
+						"QT": {
+							"total": 87792
+						}
+					},
+					"prev": {
+						"total": 12744
+					}
+				},
+				"KN": {
+					"total": 265608,
+					"providers": {
+						"CF": {
+							"total": 88536
+						},
+						"FY": {
+							"total": 88536
+						},
+						"QT": {
+							"total": 88536
+						}
+					},
+					"prev": {
+						"total": 12852
+					}
+				},
+				"KP": {
+					"total": 267840,
+					"providers": {
+						"CF": {
+							"total": 89280
+						},
+						"FY": {
+							"total": 89280
+						},
+						"QT": {
+							"total": 89280
+						}
+					},
+					"prev": {
+						"total": 12960
+					}
+				},
+				"KR": {
+					"total": 270072,
+					"providers": {
+						"CF": {
+							"total": 90024
+						},
+						"FY": {
+							"total": 90024
+						},
+						"QT": {
+							"total": 90024
+						}
+					},
+					"prev": {
+						"total": 13068
+					}
+				},
+				"KW": {
+					"total": 272304,
+					"providers": {
+						"CF": {
+							"total": 90768
+						},
+						"FY": {
+							"total": 90768
+						},
+						"QT": {
+							"total": 90768
+						}
+					},
+					"prev": {
+						"total": 13176
+					}
+				},
+				"KY": {
+					"total": 274536,
+					"providers": {
+						"CF": {
+							"total": 91512
+						},
+						"FY": {
+							"total": 91512
+						},
+						"QT": {
+							"total": 91512
+						}
+					},
+					"prev": {
+						"total": 13284
+					}
+				},
+				"KZ": {
+					"total": 276768,
+					"providers": {
+						"CF": {
+							"total": 92256
+						},
+						"FY": {
+							"total": 92256
+						},
+						"QT": {
+							"total": 92256
+						}
+					},
+					"prev": {
+						"total": 13392
+					}
+				},
+				"LA": {
+					"total": 279000,
+					"providers": {
+						"CF": {
+							"total": 93000
+						},
+						"FY": {
+							"total": 93000
+						},
+						"QT": {
+							"total": 93000
+						}
+					},
+					"prev": {
+						"total": 13500
+					}
+				},
+				"LB": {
+					"total": 281232,
+					"providers": {
+						"CF": {
+							"total": 93744
+						},
+						"FY": {
+							"total": 93744
+						},
+						"QT": {
+							"total": 93744
+						}
+					},
+					"prev": {
+						"total": 13608
+					}
+				},
+				"LC": {
+					"total": 283464,
+					"providers": {
+						"CF": {
+							"total": 94488
+						},
+						"FY": {
+							"total": 94488
+						},
+						"QT": {
+							"total": 94488
+						}
+					},
+					"prev": {
+						"total": 13716
+					}
+				},
+				"LI": {
+					"total": 285696,
+					"providers": {
+						"CF": {
+							"total": 95232
+						},
+						"FY": {
+							"total": 95232
+						},
+						"QT": {
+							"total": 95232
+						}
+					},
+					"prev": {
+						"total": 13824
+					}
+				},
+				"LK": {
+					"total": 287928,
+					"providers": {
+						"CF": {
+							"total": 95976
+						},
+						"FY": {
+							"total": 95976
+						},
+						"QT": {
+							"total": 95976
+						}
+					},
+					"prev": {
+						"total": 13932
+					}
+				},
+				"LR": {
+					"total": 290160,
+					"providers": {
+						"CF": {
+							"total": 96720
+						},
+						"FY": {
+							"total": 96720
+						},
+						"QT": {
+							"total": 96720
+						}
+					},
+					"prev": {
+						"total": 14040
+					}
+				},
+				"LS": {
+					"total": 292392,
+					"providers": {
+						"CF": {
+							"total": 97464
+						},
+						"FY": {
+							"total": 97464
+						},
+						"QT": {
+							"total": 97464
+						}
+					},
+					"prev": {
+						"total": 14148
+					}
+				},
+				"LT": {
+					"total": 294624,
+					"providers": {
+						"CF": {
+							"total": 98208
+						},
+						"FY": {
+							"total": 98208
+						},
+						"QT": {
+							"total": 98208
+						}
+					},
+					"prev": {
+						"total": 14256
+					}
+				},
+				"LU": {
+					"total": 296856,
+					"providers": {
+						"CF": {
+							"total": 98952
+						},
+						"FY": {
+							"total": 98952
+						},
+						"QT": {
+							"total": 98952
+						}
+					},
+					"prev": {
+						"total": 14364
+					}
+				},
+				"LV": {
+					"total": 299088,
+					"providers": {
+						"CF": {
+							"total": 99696
+						},
+						"FY": {
+							"total": 99696
+						},
+						"QT": {
+							"total": 99696
+						}
+					},
+					"prev": {
+						"total": 14472
+					}
+				},
+				"LY": {
+					"total": 301320,
+					"providers": {
+						"CF": {
+							"total": 100440
+						},
+						"FY": {
+							"total": 100440
+						},
+						"QT": {
+							"total": 100440
+						}
+					},
+					"prev": {
+						"total": 14580
+					}
+				},
+				"MA": {
+					"total": 303552,
+					"providers": {
+						"CF": {
+							"total": 101184
+						},
+						"FY": {
+							"total": 101184
+						},
+						"QT": {
+							"total": 101184
+						}
+					},
+					"prev": {
+						"total": 14688
+					}
+				},
+				"MC": {
+					"total": 305784,
+					"providers": {
+						"CF": {
+							"total": 101928
+						},
+						"FY": {
+							"total": 101928
+						},
+						"QT": {
+							"total": 101928
+						}
+					},
+					"prev": {
+						"total": 14796
+					}
+				},
+				"MD": {
+					"total": 308016,
+					"providers": {
+						"CF": {
+							"total": 102672
+						},
+						"FY": {
+							"total": 102672
+						},
+						"QT": {
+							"total": 102672
+						}
+					},
+					"prev": {
+						"total": 14904
+					}
+				},
+				"ME": {
+					"total": 310248,
+					"providers": {
+						"CF": {
+							"total": 103416
+						},
+						"FY": {
+							"total": 103416
+						},
+						"QT": {
+							"total": 103416
+						}
+					},
+					"prev": {
+						"total": 15012
+					}
+				},
+				"MF": {
+					"total": 312480,
+					"providers": {
+						"CF": {
+							"total": 104160
+						},
+						"FY": {
+							"total": 104160
+						},
+						"QT": {
+							"total": 104160
+						}
+					},
+					"prev": {
+						"total": 15120
+					}
+				},
+				"MG": {
+					"total": 314712,
+					"providers": {
+						"CF": {
+							"total": 104904
+						},
+						"FY": {
+							"total": 104904
+						},
+						"QT": {
+							"total": 104904
+						}
+					},
+					"prev": {
+						"total": 15228
+					}
+				},
+				"MH": {
+					"total": 316944,
+					"providers": {
+						"CF": {
+							"total": 105648
+						},
+						"FY": {
+							"total": 105648
+						},
+						"QT": {
+							"total": 105648
+						}
+					},
+					"prev": {
+						"total": 15336
+					}
+				},
+				"MK": {
+					"total": 319176,
+					"providers": {
+						"CF": {
+							"total": 106392
+						},
+						"FY": {
+							"total": 106392
+						},
+						"QT": {
+							"total": 106392
+						}
+					},
+					"prev": {
+						"total": 15444
+					}
+				},
+				"ML": {
+					"total": 321408,
+					"providers": {
+						"CF": {
+							"total": 107136
+						},
+						"FY": {
+							"total": 107136
+						},
+						"QT": {
+							"total": 107136
+						}
+					},
+					"prev": {
+						"total": 15552
+					}
+				},
+				"MM": {
+					"total": 323640,
+					"providers": {
+						"CF": {
+							"total": 107880
+						},
+						"FY": {
+							"total": 107880
+						},
+						"QT": {
+							"total": 107880
+						}
+					},
+					"prev": {
+						"total": 15660
+					}
+				},
+				"MN": {
+					"total": 325872,
+					"providers": {
+						"CF": {
+							"total": 108624
+						},
+						"FY": {
+							"total": 108624
+						},
+						"QT": {
+							"total": 108624
+						}
+					},
+					"prev": {
+						"total": 15768
+					}
+				},
+				"MO": {
+					"total": 328104,
+					"providers": {
+						"CF": {
+							"total": 109368
+						},
+						"FY": {
+							"total": 109368
+						},
+						"QT": {
+							"total": 109368
+						}
+					},
+					"prev": {
+						"total": 15876
+					}
+				},
+				"MP": {
+					"total": 330336,
+					"providers": {
+						"CF": {
+							"total": 110112
+						},
+						"FY": {
+							"total": 110112
+						},
+						"QT": {
+							"total": 110112
+						}
+					},
+					"prev": {
+						"total": 15984
+					}
+				},
+				"MQ": {
+					"total": 332568,
+					"providers": {
+						"CF": {
+							"total": 110856
+						},
+						"FY": {
+							"total": 110856
+						},
+						"QT": {
+							"total": 110856
+						}
+					},
+					"prev": {
+						"total": 16092
+					}
+				},
+				"MR": {
+					"total": 334800,
+					"providers": {
+						"CF": {
+							"total": 111600
+						},
+						"FY": {
+							"total": 111600
+						},
+						"QT": {
+							"total": 111600
+						}
+					},
+					"prev": {
+						"total": 16200
+					}
+				},
+				"MS": {
+					"total": 337032,
+					"providers": {
+						"CF": {
+							"total": 112344
+						},
+						"FY": {
+							"total": 112344
+						},
+						"QT": {
+							"total": 112344
+						}
+					},
+					"prev": {
+						"total": 16308
+					}
+				},
+				"MT": {
+					"total": 339264,
+					"providers": {
+						"CF": {
+							"total": 113088
+						},
+						"FY": {
+							"total": 113088
+						},
+						"QT": {
+							"total": 113088
+						}
+					},
+					"prev": {
+						"total": 16416
+					}
+				},
+				"MU": {
+					"total": 341496,
+					"providers": {
+						"CF": {
+							"total": 113832
+						},
+						"FY": {
+							"total": 113832
+						},
+						"QT": {
+							"total": 113832
+						}
+					},
+					"prev": {
+						"total": 16524
+					}
+				},
+				"MV": {
+					"total": 343728,
+					"providers": {
+						"CF": {
+							"total": 114576
+						},
+						"FY": {
+							"total": 114576
+						},
+						"QT": {
+							"total": 114576
+						}
+					},
+					"prev": {
+						"total": 16632
+					}
+				},
+				"MW": {
+					"total": 345960,
+					"providers": {
+						"CF": {
+							"total": 115320
+						},
+						"FY": {
+							"total": 115320
+						},
+						"QT": {
+							"total": 115320
+						}
+					},
+					"prev": {
+						"total": 16740
+					}
+				},
+				"MX": {
+					"total": 348192,
+					"providers": {
+						"CF": {
+							"total": 116064
+						},
+						"FY": {
+							"total": 116064
+						},
+						"QT": {
+							"total": 116064
+						}
+					},
+					"prev": {
+						"total": 16848
+					}
+				},
+				"MY": {
+					"total": 350424,
+					"providers": {
+						"CF": {
+							"total": 116808
+						},
+						"FY": {
+							"total": 116808
+						},
+						"QT": {
+							"total": 116808
+						}
+					},
+					"prev": {
+						"total": 16956
+					}
+				},
+				"MZ": {
+					"total": 352656,
+					"providers": {
+						"CF": {
+							"total": 117552
+						},
+						"FY": {
+							"total": 117552
+						},
+						"QT": {
+							"total": 117552
+						}
+					},
+					"prev": {
+						"total": 17064
+					}
+				},
+				"NA": {
+					"total": 354888,
+					"providers": {
+						"CF": {
+							"total": 118296
+						},
+						"FY": {
+							"total": 118296
+						},
+						"QT": {
+							"total": 118296
+						}
+					},
+					"prev": {
+						"total": 17172
+					}
+				},
+				"NC": {
+					"total": 357120,
+					"providers": {
+						"CF": {
+							"total": 119040
+						},
+						"FY": {
+							"total": 119040
+						},
+						"QT": {
+							"total": 119040
+						}
+					},
+					"prev": {
+						"total": 17280
+					}
+				},
+				"NE": {
+					"total": 359352,
+					"providers": {
+						"CF": {
+							"total": 119784
+						},
+						"FY": {
+							"total": 119784
+						},
+						"QT": {
+							"total": 119784
+						}
+					},
+					"prev": {
+						"total": 17388
+					}
+				},
+				"NF": {
+					"total": 361584,
+					"providers": {
+						"CF": {
+							"total": 120528
+						},
+						"FY": {
+							"total": 120528
+						},
+						"QT": {
+							"total": 120528
+						}
+					},
+					"prev": {
+						"total": 17496
+					}
+				},
+				"NG": {
+					"total": 363816,
+					"providers": {
+						"CF": {
+							"total": 121272
+						},
+						"FY": {
+							"total": 121272
+						},
+						"QT": {
+							"total": 121272
+						}
+					},
+					"prev": {
+						"total": 17604
+					}
+				},
+				"NI": {
+					"total": 366048,
+					"providers": {
+						"CF": {
+							"total": 122016
+						},
+						"FY": {
+							"total": 122016
+						},
+						"QT": {
+							"total": 122016
+						}
+					},
+					"prev": {
+						"total": 17712
+					}
+				},
+				"NL": {
+					"total": 368280,
+					"providers": {
+						"CF": {
+							"total": 122760
+						},
+						"FY": {
+							"total": 122760
+						},
+						"QT": {
+							"total": 122760
+						}
+					},
+					"prev": {
+						"total": 17820
+					}
+				},
+				"NO": {
+					"total": 370512,
+					"providers": {
+						"CF": {
+							"total": 123504
+						},
+						"FY": {
+							"total": 123504
+						},
+						"QT": {
+							"total": 123504
+						}
+					},
+					"prev": {
+						"total": 17928
+					}
+				},
+				"NP": {
+					"total": 372744,
+					"providers": {
+						"CF": {
+							"total": 124248
+						},
+						"FY": {
+							"total": 124248
+						},
+						"QT": {
+							"total": 124248
+						}
+					},
+					"prev": {
+						"total": 18036
+					}
+				},
+				"NR": {
+					"total": 374976,
+					"providers": {
+						"CF": {
+							"total": 124992
+						},
+						"FY": {
+							"total": 124992
+						},
+						"QT": {
+							"total": 124992
+						}
+					},
+					"prev": {
+						"total": 18144
+					}
+				},
+				"NU": {
+					"total": 377208,
+					"providers": {
+						"CF": {
+							"total": 125736
+						},
+						"FY": {
+							"total": 125736
+						},
+						"QT": {
+							"total": 125736
+						}
+					},
+					"prev": {
+						"total": 18252
+					}
+				},
+				"NZ": {
+					"total": 379440,
+					"providers": {
+						"CF": {
+							"total": 126480
+						},
+						"FY": {
+							"total": 126480
+						},
+						"QT": {
+							"total": 126480
+						}
+					},
+					"prev": {
+						"total": 18360
+					}
+				},
+				"OM": {
+					"total": 381672,
+					"providers": {
+						"CF": {
+							"total": 127224
+						},
+						"FY": {
+							"total": 127224
+						},
+						"QT": {
+							"total": 127224
+						}
+					},
+					"prev": {
+						"total": 18468
+					}
+				},
+				"PA": {
+					"total": 383904,
+					"providers": {
+						"CF": {
+							"total": 127968
+						},
+						"FY": {
+							"total": 127968
+						},
+						"QT": {
+							"total": 127968
+						}
+					},
+					"prev": {
+						"total": 18576
+					}
+				},
+				"PE": {
+					"total": 386136,
+					"providers": {
+						"CF": {
+							"total": 128712
+						},
+						"FY": {
+							"total": 128712
+						},
+						"QT": {
+							"total": 128712
+						}
+					},
+					"prev": {
+						"total": 18684
+					}
+				},
+				"PF": {
+					"total": 388368,
+					"providers": {
+						"CF": {
+							"total": 129456
+						},
+						"FY": {
+							"total": 129456
+						},
+						"QT": {
+							"total": 129456
+						}
+					},
+					"prev": {
+						"total": 18792
+					}
+				},
+				"PG": {
+					"total": 390600,
+					"providers": {
+						"CF": {
+							"total": 130200
+						},
+						"FY": {
+							"total": 130200
+						},
+						"QT": {
+							"total": 130200
+						}
+					},
+					"prev": {
+						"total": 18900
+					}
+				},
+				"PH": {
+					"total": 392832,
+					"providers": {
+						"CF": {
+							"total": 130944
+						},
+						"FY": {
+							"total": 130944
+						},
+						"QT": {
+							"total": 130944
+						}
+					},
+					"prev": {
+						"total": 19008
+					}
+				},
+				"PK": {
+					"total": 395064,
+					"providers": {
+						"CF": {
+							"total": 131688
+						},
+						"FY": {
+							"total": 131688
+						},
+						"QT": {
+							"total": 131688
+						}
+					},
+					"prev": {
+						"total": 19116
+					}
+				},
+				"PL": {
+					"total": 397296,
+					"providers": {
+						"CF": {
+							"total": 132432
+						},
+						"FY": {
+							"total": 132432
+						},
+						"QT": {
+							"total": 132432
+						}
+					},
+					"prev": {
+						"total": 19224
+					}
+				},
+				"PM": {
+					"total": 399528,
+					"providers": {
+						"CF": {
+							"total": 133176
+						},
+						"FY": {
+							"total": 133176
+						},
+						"QT": {
+							"total": 133176
+						}
+					},
+					"prev": {
+						"total": 19332
+					}
+				},
+				"PN": {
+					"total": 401760,
+					"providers": {
+						"CF": {
+							"total": 133920
+						},
+						"FY": {
+							"total": 133920
+						},
+						"QT": {
+							"total": 133920
+						}
+					},
+					"prev": {
+						"total": 19440
+					}
+				},
+				"PR": {
+					"total": 403992,
+					"providers": {
+						"CF": {
+							"total": 134664
+						},
+						"FY": {
+							"total": 134664
+						},
+						"QT": {
+							"total": 134664
+						}
+					},
+					"prev": {
+						"total": 19548
+					}
+				},
+				"PS": {
+					"total": 406224,
+					"providers": {
+						"CF": {
+							"total": 135408
+						},
+						"FY": {
+							"total": 135408
+						},
+						"QT": {
+							"total": 135408
+						}
+					},
+					"prev": {
+						"total": 19656
+					}
+				},
+				"PT": {
+					"total": 408456,
+					"providers": {
+						"CF": {
+							"total": 136152
+						},
+						"FY": {
+							"total": 136152
+						},
+						"QT": {
+							"total": 136152
+						}
+					},
+					"prev": {
+						"total": 19764
+					}
+				},
+				"PW": {
+					"total": 410688,
+					"providers": {
+						"CF": {
+							"total": 136896
+						},
+						"FY": {
+							"total": 136896
+						},
+						"QT": {
+							"total": 136896
+						}
+					},
+					"prev": {
+						"total": 19872
+					}
+				},
+				"PY": {
+					"total": 412920,
+					"providers": {
+						"CF": {
+							"total": 137640
+						},
+						"FY": {
+							"total": 137640
+						},
+						"QT": {
+							"total": 137640
+						}
+					},
+					"prev": {
+						"total": 19980
+					}
+				},
+				"QA": {
+					"total": 415152,
+					"providers": {
+						"CF": {
+							"total": 138384
+						},
+						"FY": {
+							"total": 138384
+						},
+						"QT": {
+							"total": 138384
+						}
+					},
+					"prev": {
+						"total": 20088
+					}
+				},
+				"RE": {
+					"total": 417384,
+					"providers": {
+						"CF": {
+							"total": 139128
+						},
+						"FY": {
+							"total": 139128
+						},
+						"QT": {
+							"total": 139128
+						}
+					},
+					"prev": {
+						"total": 20196
+					}
+				},
+				"RO": {
+					"total": 419616,
+					"providers": {
+						"CF": {
+							"total": 139872
+						},
+						"FY": {
+							"total": 139872
+						},
+						"QT": {
+							"total": 139872
+						}
+					},
+					"prev": {
+						"total": 20304
+					}
+				},
+				"RS": {
+					"total": 421848,
+					"providers": {
+						"CF": {
+							"total": 140616
+						},
+						"FY": {
+							"total": 140616
+						},
+						"QT": {
+							"total": 140616
+						}
+					},
+					"prev": {
+						"total": 20412
+					}
+				},
+				"RU": {
+					"total": 424080,
+					"providers": {
+						"CF": {
+							"total": 141360
+						},
+						"FY": {
+							"total": 141360
+						},
+						"QT": {
+							"total": 141360
+						}
+					},
+					"prev": {
+						"total": 20520
+					}
+				},
+				"RW": {
+					"total": 426312,
+					"providers": {
+						"CF": {
+							"total": 142104
+						},
+						"FY": {
+							"total": 142104
+						},
+						"QT": {
+							"total": 142104
+						}
+					},
+					"prev": {
+						"total": 20628
+					}
+				},
+				"SA": {
+					"total": 428544,
+					"providers": {
+						"CF": {
+							"total": 142848
+						},
+						"FY": {
+							"total": 142848
+						},
+						"QT": {
+							"total": 142848
+						}
+					},
+					"prev": {
+						"total": 20736
+					}
+				},
+				"SB": {
+					"total": 430776,
+					"providers": {
+						"CF": {
+							"total": 143592
+						},
+						"FY": {
+							"total": 143592
+						},
+						"QT": {
+							"total": 143592
+						}
+					},
+					"prev": {
+						"total": 20844
+					}
+				},
+				"SC": {
+					"total": 433008,
+					"providers": {
+						"CF": {
+							"total": 144336
+						},
+						"FY": {
+							"total": 144336
+						},
+						"QT": {
+							"total": 144336
+						}
+					},
+					"prev": {
+						"total": 20952
+					}
+				},
+				"SD": {
+					"total": 435240,
+					"providers": {
+						"CF": {
+							"total": 145080
+						},
+						"FY": {
+							"total": 145080
+						},
+						"QT": {
+							"total": 145080
+						}
+					},
+					"prev": {
+						"total": 21060
+					}
+				},
+				"SE": {
+					"total": 437472,
+					"providers": {
+						"CF": {
+							"total": 145824
+						},
+						"FY": {
+							"total": 145824
+						},
+						"QT": {
+							"total": 145824
+						}
+					},
+					"prev": {
+						"total": 21168
+					}
+				},
+				"SG": {
+					"total": 439704,
+					"providers": {
+						"CF": {
+							"total": 146568
+						},
+						"FY": {
+							"total": 146568
+						},
+						"QT": {
+							"total": 146568
+						}
+					},
+					"prev": {
+						"total": 21276
+					}
+				},
+				"SH": {
+					"total": 441936,
+					"providers": {
+						"CF": {
+							"total": 147312
+						},
+						"FY": {
+							"total": 147312
+						},
+						"QT": {
+							"total": 147312
+						}
+					},
+					"prev": {
+						"total": 21384
+					}
+				},
+				"SI": {
+					"total": 444168,
+					"providers": {
+						"CF": {
+							"total": 148056
+						},
+						"FY": {
+							"total": 148056
+						},
+						"QT": {
+							"total": 148056
+						}
+					},
+					"prev": {
+						"total": 21492
+					}
+				},
+				"SJ": {
+					"total": 446400,
+					"providers": {
+						"CF": {
+							"total": 148800
+						},
+						"FY": {
+							"total": 148800
+						},
+						"QT": {
+							"total": 148800
+						}
+					},
+					"prev": {
+						"total": 21600
+					}
+				},
+				"SK": {
+					"total": 448632,
+					"providers": {
+						"CF": {
+							"total": 149544
+						},
+						"FY": {
+							"total": 149544
+						},
+						"QT": {
+							"total": 149544
+						}
+					},
+					"prev": {
+						"total": 21708
+					}
+				},
+				"SL": {
+					"total": 450864,
+					"providers": {
+						"CF": {
+							"total": 150288
+						},
+						"FY": {
+							"total": 150288
+						},
+						"QT": {
+							"total": 150288
+						}
+					},
+					"prev": {
+						"total": 21816
+					}
+				},
+				"SM": {
+					"total": 453096,
+					"providers": {
+						"CF": {
+							"total": 151032
+						},
+						"FY": {
+							"total": 151032
+						},
+						"QT": {
+							"total": 151032
+						}
+					},
+					"prev": {
+						"total": 21924
+					}
+				},
+				"SN": {
+					"total": 455328,
+					"providers": {
+						"CF": {
+							"total": 151776
+						},
+						"FY": {
+							"total": 151776
+						},
+						"QT": {
+							"total": 151776
+						}
+					},
+					"prev": {
+						"total": 22032
+					}
+				},
+				"SO": {
+					"total": 457560,
+					"providers": {
+						"CF": {
+							"total": 152520
+						},
+						"FY": {
+							"total": 152520
+						},
+						"QT": {
+							"total": 152520
+						}
+					},
+					"prev": {
+						"total": 22140
+					}
+				},
+				"SR": {
+					"total": 459792,
+					"providers": {
+						"CF": {
+							"total": 153264
+						},
+						"FY": {
+							"total": 153264
+						},
+						"QT": {
+							"total": 153264
+						}
+					},
+					"prev": {
+						"total": 22248
+					}
+				},
+				"SS": {
+					"total": 462024,
+					"providers": {
+						"CF": {
+							"total": 154008
+						},
+						"FY": {
+							"total": 154008
+						},
+						"QT": {
+							"total": 154008
+						}
+					},
+					"prev": {
+						"total": 22356
+					}
+				},
+				"ST": {
+					"total": 464256,
+					"providers": {
+						"CF": {
+							"total": 154752
+						},
+						"FY": {
+							"total": 154752
+						},
+						"QT": {
+							"total": 154752
+						}
+					},
+					"prev": {
+						"total": 22464
+					}
+				},
+				"SV": {
+					"total": 466488,
+					"providers": {
+						"CF": {
+							"total": 155496
+						},
+						"FY": {
+							"total": 155496
+						},
+						"QT": {
+							"total": 155496
+						}
+					},
+					"prev": {
+						"total": 22572
+					}
+				},
+				"SX": {
+					"total": 468720,
+					"providers": {
+						"CF": {
+							"total": 156240
+						},
+						"FY": {
+							"total": 156240
+						},
+						"QT": {
+							"total": 156240
+						}
+					},
+					"prev": {
+						"total": 22680
+					}
+				},
+				"SY": {
+					"total": 470952,
+					"providers": {
+						"CF": {
+							"total": 156984
+						},
+						"FY": {
+							"total": 156984
+						},
+						"QT": {
+							"total": 156984
+						}
+					},
+					"prev": {
+						"total": 22788
+					}
+				},
+				"SZ": {
+					"total": 473184,
+					"providers": {
+						"CF": {
+							"total": 157728
+						},
+						"FY": {
+							"total": 157728
+						},
+						"QT": {
+							"total": 157728
+						}
+					},
+					"prev": {
+						"total": 22896
+					}
+				},
+				"TC": {
+					"total": 475416,
+					"providers": {
+						"CF": {
+							"total": 158472
+						},
+						"FY": {
+							"total": 158472
+						},
+						"QT": {
+							"total": 158472
+						}
+					},
+					"prev": {
+						"total": 23004
+					}
+				},
+				"TD": {
+					"total": 477648,
+					"providers": {
+						"CF": {
+							"total": 159216
+						},
+						"FY": {
+							"total": 159216
+						},
+						"QT": {
+							"total": 159216
+						}
+					},
+					"prev": {
+						"total": 23112
+					}
+				},
+				"TF": {
+					"total": 479880,
+					"providers": {
+						"CF": {
+							"total": 159960
+						},
+						"FY": {
+							"total": 159960
+						},
+						"QT": {
+							"total": 159960
+						}
+					},
+					"prev": {
+						"total": 23220
+					}
+				},
+				"TG": {
+					"total": 482112,
+					"providers": {
+						"CF": {
+							"total": 160704
+						},
+						"FY": {
+							"total": 160704
+						},
+						"QT": {
+							"total": 160704
+						}
+					},
+					"prev": {
+						"total": 23328
+					}
+				},
+				"TH": {
+					"total": 484344,
+					"providers": {
+						"CF": {
+							"total": 161448
+						},
+						"FY": {
+							"total": 161448
+						},
+						"QT": {
+							"total": 161448
+						}
+					},
+					"prev": {
+						"total": 23436
+					}
+				},
+				"TJ": {
+					"total": 486576,
+					"providers": {
+						"CF": {
+							"total": 162192
+						},
+						"FY": {
+							"total": 162192
+						},
+						"QT": {
+							"total": 162192
+						}
+					},
+					"prev": {
+						"total": 23544
+					}
+				},
+				"TK": {
+					"total": 488808,
+					"providers": {
+						"CF": {
+							"total": 162936
+						},
+						"FY": {
+							"total": 162936
+						},
+						"QT": {
+							"total": 162936
+						}
+					},
+					"prev": {
+						"total": 23652
+					}
+				},
+				"TL": {
+					"total": 491040,
+					"providers": {
+						"CF": {
+							"total": 163680
+						},
+						"FY": {
+							"total": 163680
+						},
+						"QT": {
+							"total": 163680
+						}
+					},
+					"prev": {
+						"total": 23760
+					}
+				},
+				"TM": {
+					"total": 493272,
+					"providers": {
+						"CF": {
+							"total": 164424
+						},
+						"FY": {
+							"total": 164424
+						},
+						"QT": {
+							"total": 164424
+						}
+					},
+					"prev": {
+						"total": 23868
+					}
+				},
+				"TN": {
+					"total": 495504,
+					"providers": {
+						"CF": {
+							"total": 165168
+						},
+						"FY": {
+							"total": 165168
+						},
+						"QT": {
+							"total": 165168
+						}
+					},
+					"prev": {
+						"total": 23976
+					}
+				},
+				"TO": {
+					"total": 497736,
+					"providers": {
+						"CF": {
+							"total": 165912
+						},
+						"FY": {
+							"total": 165912
+						},
+						"QT": {
+							"total": 165912
+						}
+					},
+					"prev": {
+						"total": 24084
+					}
+				},
+				"TR": {
+					"total": 499968,
+					"providers": {
+						"CF": {
+							"total": 166656
+						},
+						"FY": {
+							"total": 166656
+						},
+						"QT": {
+							"total": 166656
+						}
+					},
+					"prev": {
+						"total": 24192
+					}
+				},
+				"TT": {
+					"total": 502200,
+					"providers": {
+						"CF": {
+							"total": 167400
+						},
+						"FY": {
+							"total": 167400
+						},
+						"QT": {
+							"total": 167400
+						}
+					},
+					"prev": {
+						"total": 24300
+					}
+				},
+				"TV": {
+					"total": 504432,
+					"providers": {
+						"CF": {
+							"total": 168144
+						},
+						"FY": {
+							"total": 168144
+						},
+						"QT": {
+							"total": 168144
+						}
+					},
+					"prev": {
+						"total": 24408
+					}
+				},
+				"TW": {
+					"total": 506664,
+					"providers": {
+						"CF": {
+							"total": 168888
+						},
+						"FY": {
+							"total": 168888
+						},
+						"QT": {
+							"total": 168888
+						}
+					},
+					"prev": {
+						"total": 24516
+					}
+				},
+				"TZ": {
+					"total": 508896,
+					"providers": {
+						"CF": {
+							"total": 169632
+						},
+						"FY": {
+							"total": 169632
+						},
+						"QT": {
+							"total": 169632
+						}
+					},
+					"prev": {
+						"total": 24624
+					}
+				},
+				"UA": {
+					"total": 511128,
+					"providers": {
+						"CF": {
+							"total": 170376
+						},
+						"FY": {
+							"total": 170376
+						},
+						"QT": {
+							"total": 170376
+						}
+					},
+					"prev": {
+						"total": 24732
+					}
+				},
+				"UG": {
+					"total": 513360,
+					"providers": {
+						"CF": {
+							"total": 171120
+						},
+						"FY": {
+							"total": 171120
+						},
+						"QT": {
+							"total": 171120
+						}
+					},
+					"prev": {
+						"total": 24840
+					}
+				},
+				"UM": {
+					"total": 515592,
+					"providers": {
+						"CF": {
+							"total": 171864
+						},
+						"FY": {
+							"total": 171864
+						},
+						"QT": {
+							"total": 171864
+						}
+					},
+					"prev": {
+						"total": 24948
+					}
+				},
+				"US": {
+					"total": 517824,
+					"providers": {
+						"CF": {
+							"total": 172608
+						},
+						"FY": {
+							"total": 172608
+						},
+						"QT": {
+							"total": 172608
+						}
+					},
+					"prev": {
+						"total": 25056
+					}
+				},
+				"UY": {
+					"total": 520056,
+					"providers": {
+						"CF": {
+							"total": 173352
+						},
+						"FY": {
+							"total": 173352
+						},
+						"QT": {
+							"total": 173352
+						}
+					},
+					"prev": {
+						"total": 25164
+					}
+				},
+				"UZ": {
+					"total": 522288,
+					"providers": {
+						"CF": {
+							"total": 174096
+						},
+						"FY": {
+							"total": 174096
+						},
+						"QT": {
+							"total": 174096
+						}
+					},
+					"prev": {
+						"total": 25272
+					}
+				},
+				"VA": {
+					"total": 524520,
+					"providers": {
+						"CF": {
+							"total": 174840
+						},
+						"FY": {
+							"total": 174840
+						},
+						"QT": {
+							"total": 174840
+						}
+					},
+					"prev": {
+						"total": 25380
+					}
+				},
+				"VC": {
+					"total": 526752,
+					"providers": {
+						"CF": {
+							"total": 175584
+						},
+						"FY": {
+							"total": 175584
+						},
+						"QT": {
+							"total": 175584
+						}
+					},
+					"prev": {
+						"total": 25488
+					}
+				},
+				"VE": {
+					"total": 528984,
+					"providers": {
+						"CF": {
+							"total": 176328
+						},
+						"FY": {
+							"total": 176328
+						},
+						"QT": {
+							"total": 176328
+						}
+					},
+					"prev": {
+						"total": 25596
+					}
+				},
+				"VG": {
+					"total": 531216,
+					"providers": {
+						"CF": {
+							"total": 177072
+						},
+						"FY": {
+							"total": 177072
+						},
+						"QT": {
+							"total": 177072
+						}
+					},
+					"prev": {
+						"total": 25704
+					}
+				},
+				"VI": {
+					"total": 533448,
+					"providers": {
+						"CF": {
+							"total": 177816
+						},
+						"FY": {
+							"total": 177816
+						},
+						"QT": {
+							"total": 177816
+						}
+					},
+					"prev": {
+						"total": 25812
+					}
+				},
+				"VN": {
+					"total": 535680,
+					"providers": {
+						"CF": {
+							"total": 178560
+						},
+						"FY": {
+							"total": 178560
+						},
+						"QT": {
+							"total": 178560
+						}
+					},
+					"prev": {
+						"total": 25920
+					}
+				},
+				"VU": {
+					"total": 537912,
+					"providers": {
+						"CF": {
+							"total": 179304
+						},
+						"FY": {
+							"total": 179304
+						},
+						"QT": {
+							"total": 179304
+						}
+					},
+					"prev": {
+						"total": 26028
+					}
+				},
+				"WF": {
+					"total": 540144,
+					"providers": {
+						"CF": {
+							"total": 180048
+						},
+						"FY": {
+							"total": 180048
+						},
+						"QT": {
+							"total": 180048
+						}
+					},
+					"prev": {
+						"total": 26136
+					}
+				},
+				"WS": {
+					"total": 542376,
+					"providers": {
+						"CF": {
+							"total": 180792
+						},
+						"FY": {
+							"total": 180792
+						},
+						"QT": {
+							"total": 180792
+						}
+					},
+					"prev": {
+						"total": 26244
+					}
+				},
+				"XK": {
+					"total": 544608,
+					"providers": {
+						"CF": {
+							"total": 181536
+						},
+						"FY": {
+							"total": 181536
+						},
+						"QT": {
+							"total": 181536
+						}
+					},
+					"prev": {
+						"total": 26352
+					}
+				},
+				"YE": {
+					"total": 546840,
+					"providers": {
+						"CF": {
+							"total": 182280
+						},
+						"FY": {
+							"total": 182280
+						},
+						"QT": {
+							"total": 182280
+						}
+					},
+					"prev": {
+						"total": 26460
+					}
+				},
+				"YT": {
+					"total": 549072,
+					"providers": {
+						"CF": {
+							"total": 183024
+						},
+						"FY": {
+							"total": 183024
+						},
+						"QT": {
+							"total": 183024
+						}
+					},
+					"prev": {
+						"total": 26568
+					}
+				},
+				"ZA": {
+					"total": 551304,
+					"providers": {
+						"CF": {
+							"total": 183768
+						},
+						"FY": {
+							"total": 183768
+						},
+						"QT": {
+							"total": 183768
+						}
+					},
+					"prev": {
+						"total": 26676
+					}
+				},
+				"ZM": {
+					"total": 553536,
+					"providers": {
+						"CF": {
+							"total": 184512
+						},
+						"FY": {
+							"total": 184512
+						},
+						"QT": {
+							"total": 184512
+						}
+					},
+					"prev": {
+						"total": 26784
+					}
+				},
+				"ZW": {
+					"total": 555768,
+					"providers": {
+						"CF": {
+							"total": 185256
+						},
+						"FY": {
+							"total": 185256
+						},
+						"QT": {
+							"total": 185256
+						}
+					},
+					"prev": {
+						"total": 26892
+					}
+				}
+			},
+			"prev": {
+				"total": 3361500
+			}
+		},
+		"bandwidth": {
+			"total": 1139324400000,
+			"countries": {
+				"AD": {
+					"total": 0,
+					"providers": {
+						"CF": {
+							"total": 0
+						},
+						"FY": {
+							"total": 0
+						},
+						"QT": {
+							"total": 0
+						}
+					},
+					"prev": {
+						"total": 0
+					}
+				},
+				"AE": {
+					"total": 36604800,
+					"providers": {
+						"CF": {
+							"total": 12201600
+						},
+						"FY": {
+							"total": 12201600
+						},
+						"QT": {
+							"total": 12201600
+						}
+					},
+					"prev": {
+						"total": 108
+					}
+				},
+				"AF": {
+					"total": 73209600,
+					"providers": {
+						"CF": {
+							"total": 24403200
+						},
+						"FY": {
+							"total": 24403200
+						},
+						"QT": {
+							"total": 24403200
+						}
+					},
+					"prev": {
+						"total": 216
+					}
+				},
+				"AG": {
+					"total": 109814400,
+					"providers": {
+						"CF": {
+							"total": 36604800
+						},
+						"FY": {
+							"total": 36604800
+						},
+						"QT": {
+							"total": 36604800
+						}
+					},
+					"prev": {
+						"total": 324
+					}
+				},
+				"AI": {
+					"total": 146419200,
+					"providers": {
+						"CF": {
+							"total": 48806400
+						},
+						"FY": {
+							"total": 48806400
+						},
+						"QT": {
+							"total": 48806400
+						}
+					},
+					"prev": {
+						"total": 432
+					}
+				},
+				"AL": {
+					"total": 183024000,
+					"providers": {
+						"CF": {
+							"total": 61008000
+						},
+						"FY": {
+							"total": 61008000
+						},
+						"QT": {
+							"total": 61008000
+						}
+					},
+					"prev": {
+						"total": 540
+					}
+				},
+				"AM": {
+					"total": 219628800,
+					"providers": {
+						"CF": {
+							"total": 73209600
+						},
+						"FY": {
+							"total": 73209600
+						},
+						"QT": {
+							"total": 73209600
+						}
+					},
+					"prev": {
+						"total": 648
+					}
+				},
+				"AO": {
+					"total": 256233600,
+					"providers": {
+						"CF": {
+							"total": 85411200
+						},
+						"FY": {
+							"total": 85411200
+						},
+						"QT": {
+							"total": 85411200
+						}
+					},
+					"prev": {
+						"total": 756
+					}
+				},
+				"AQ": {
+					"total": 292838400,
+					"providers": {
+						"CF": {
+							"total": 97612800
+						},
+						"FY": {
+							"total": 97612800
+						},
+						"QT": {
+							"total": 97612800
+						}
+					},
+					"prev": {
+						"total": 864
+					}
+				},
+				"AR": {
+					"total": 329443200,
+					"providers": {
+						"CF": {
+							"total": 109814400
+						},
+						"FY": {
+							"total": 109814400
+						},
+						"QT": {
+							"total": 109814400
+						}
+					},
+					"prev": {
+						"total": 972
+					}
+				},
+				"AS": {
+					"total": 366048000,
+					"providers": {
+						"CF": {
+							"total": 122016000
+						},
+						"FY": {
+							"total": 122016000
+						},
+						"QT": {
+							"total": 122016000
+						}
+					},
+					"prev": {
+						"total": 1080
+					}
+				},
+				"AT": {
+					"total": 402652800,
+					"providers": {
+						"CF": {
+							"total": 134217600
+						},
+						"FY": {
+							"total": 134217600
+						},
+						"QT": {
+							"total": 134217600
+						}
+					},
+					"prev": {
+						"total": 1188
+					}
+				},
+				"AU": {
+					"total": 439257600,
+					"providers": {
+						"CF": {
+							"total": 146419200
+						},
+						"FY": {
+							"total": 146419200
+						},
+						"QT": {
+							"total": 146419200
+						}
+					},
+					"prev": {
+						"total": 1296
+					}
+				},
+				"AW": {
+					"total": 475862400,
+					"providers": {
+						"CF": {
+							"total": 158620800
+						},
+						"FY": {
+							"total": 158620800
+						},
+						"QT": {
+							"total": 158620800
+						}
+					},
+					"prev": {
+						"total": 1404
+					}
+				},
+				"AX": {
+					"total": 512467200,
+					"providers": {
+						"CF": {
+							"total": 170822400
+						},
+						"FY": {
+							"total": 170822400
+						},
+						"QT": {
+							"total": 170822400
+						}
+					},
+					"prev": {
+						"total": 1512
+					}
+				},
+				"AZ": {
+					"total": 549072000,
+					"providers": {
+						"CF": {
+							"total": 183024000
+						},
+						"FY": {
+							"total": 183024000
+						},
+						"QT": {
+							"total": 183024000
+						}
+					},
+					"prev": {
+						"total": 1620
+					}
+				},
+				"BA": {
+					"total": 585676800,
+					"providers": {
+						"CF": {
+							"total": 195225600
+						},
+						"FY": {
+							"total": 195225600
+						},
+						"QT": {
+							"total": 195225600
+						}
+					},
+					"prev": {
+						"total": 1728
+					}
+				},
+				"BB": {
+					"total": 622281600,
+					"providers": {
+						"CF": {
+							"total": 207427200
+						},
+						"FY": {
+							"total": 207427200
+						},
+						"QT": {
+							"total": 207427200
+						}
+					},
+					"prev": {
+						"total": 1836
+					}
+				},
+				"BD": {
+					"total": 658886400,
+					"providers": {
+						"CF": {
+							"total": 219628800
+						},
+						"FY": {
+							"total": 219628800
+						},
+						"QT": {
+							"total": 219628800
+						}
+					},
+					"prev": {
+						"total": 1944
+					}
+				},
+				"BE": {
+					"total": 695491200,
+					"providers": {
+						"CF": {
+							"total": 231830400
+						},
+						"FY": {
+							"total": 231830400
+						},
+						"QT": {
+							"total": 231830400
+						}
+					},
+					"prev": {
+						"total": 2052
+					}
+				},
+				"BF": {
+					"total": 732096000,
+					"providers": {
+						"CF": {
+							"total": 244032000
+						},
+						"FY": {
+							"total": 244032000
+						},
+						"QT": {
+							"total": 244032000
+						}
+					},
+					"prev": {
+						"total": 2160
+					}
+				},
+				"BG": {
+					"total": 768700800,
+					"providers": {
+						"CF": {
+							"total": 256233600
+						},
+						"FY": {
+							"total": 256233600
+						},
+						"QT": {
+							"total": 256233600
+						}
+					},
+					"prev": {
+						"total": 2268
+					}
+				},
+				"BH": {
+					"total": 805305600,
+					"providers": {
+						"CF": {
+							"total": 268435200
+						},
+						"FY": {
+							"total": 268435200
+						},
+						"QT": {
+							"total": 268435200
+						}
+					},
+					"prev": {
+						"total": 2376
+					}
+				},
+				"BI": {
+					"total": 841910400,
+					"providers": {
+						"CF": {
+							"total": 280636800
+						},
+						"FY": {
+							"total": 280636800
+						},
+						"QT": {
+							"total": 280636800
+						}
+					},
+					"prev": {
+						"total": 2484
+					}
+				},
+				"BJ": {
+					"total": 878515200,
+					"providers": {
+						"CF": {
+							"total": 292838400
+						},
+						"FY": {
+							"total": 292838400
+						},
+						"QT": {
+							"total": 292838400
+						}
+					},
+					"prev": {
+						"total": 2592
+					}
+				},
+				"BL": {
+					"total": 915120000,
+					"providers": {
+						"CF": {
+							"total": 305040000
+						},
+						"FY": {
+							"total": 305040000
+						},
+						"QT": {
+							"total": 305040000
+						}
+					},
+					"prev": {
+						"total": 2700
+					}
+				},
+				"BM": {
+					"total": 951724800,
+					"providers": {
+						"CF": {
+							"total": 317241600
+						},
+						"FY": {
+							"total": 317241600
+						},
+						"QT": {
+							"total": 317241600
+						}
+					},
+					"prev": {
+						"total": 2808
+					}
+				},
+				"BN": {
+					"total": 988329600,
+					"providers": {
+						"CF": {
+							"total": 329443200
+						},
+						"FY": {
+							"total": 329443200
+						},
+						"QT": {
+							"total": 329443200
+						}
+					},
+					"prev": {
+						"total": 2916
+					}
+				},
+				"BO": {
+					"total": 1024934400,
+					"providers": {
+						"CF": {
+							"total": 341644800
+						},
+						"FY": {
+							"total": 341644800
+						},
+						"QT": {
+							"total": 341644800
+						}
+					},
+					"prev": {
+						"total": 3024
+					}
+				},
+				"BQ": {
+					"total": 1061539200,
+					"providers": {
+						"CF": {
+							"total": 353846400
+						},
+						"FY": {
+							"total": 353846400
+						},
+						"QT": {
+							"total": 353846400
+						}
+					},
+					"prev": {
+						"total": 3132
+					}
+				},
+				"BR": {
+					"total": 1098144000,
+					"providers": {
+						"CF": {
+							"total": 366048000
+						},
+						"FY": {
+							"total": 366048000
+						},
+						"QT": {
+							"total": 366048000
+						}
+					},
+					"prev": {
+						"total": 3240
+					}
+				},
+				"BS": {
+					"total": 1134748800,
+					"providers": {
+						"CF": {
+							"total": 378249600
+						},
+						"FY": {
+							"total": 378249600
+						},
+						"QT": {
+							"total": 378249600
+						}
+					},
+					"prev": {
+						"total": 3348
+					}
+				},
+				"BT": {
+					"total": 1171353600,
+					"providers": {
+						"CF": {
+							"total": 390451200
+						},
+						"FY": {
+							"total": 390451200
+						},
+						"QT": {
+							"total": 390451200
+						}
+					},
+					"prev": {
+						"total": 3456
+					}
+				},
+				"BV": {
+					"total": 1207958400,
+					"providers": {
+						"CF": {
+							"total": 402652800
+						},
+						"FY": {
+							"total": 402652800
+						},
+						"QT": {
+							"total": 402652800
+						}
+					},
+					"prev": {
+						"total": 3564
+					}
+				},
+				"BW": {
+					"total": 1244563200,
+					"providers": {
+						"CF": {
+							"total": 414854400
+						},
+						"FY": {
+							"total": 414854400
+						},
+						"QT": {
+							"total": 414854400
+						}
+					},
+					"prev": {
+						"total": 3672
+					}
+				},
+				"BY": {
+					"total": 1281168000,
+					"providers": {
+						"CF": {
+							"total": 427056000
+						},
+						"FY": {
+							"total": 427056000
+						},
+						"QT": {
+							"total": 427056000
+						}
+					},
+					"prev": {
+						"total": 3780
+					}
+				},
+				"BZ": {
+					"total": 1317772800,
+					"providers": {
+						"CF": {
+							"total": 439257600
+						},
+						"FY": {
+							"total": 439257600
+						},
+						"QT": {
+							"total": 439257600
+						}
+					},
+					"prev": {
+						"total": 3888
+					}
+				},
+				"CA": {
+					"total": 1354377600,
+					"providers": {
+						"CF": {
+							"total": 451459200
+						},
+						"FY": {
+							"total": 451459200
+						},
+						"QT": {
+							"total": 451459200
+						}
+					},
+					"prev": {
+						"total": 3996
+					}
+				},
+				"CC": {
+					"total": 1390982400,
+					"providers": {
+						"CF": {
+							"total": 463660800
+						},
+						"FY": {
+							"total": 463660800
+						},
+						"QT": {
+							"total": 463660800
+						}
+					},
+					"prev": {
+						"total": 4104
+					}
+				},
+				"CD": {
+					"total": 1427587200,
+					"providers": {
+						"CF": {
+							"total": 475862400
+						},
+						"FY": {
+							"total": 475862400
+						},
+						"QT": {
+							"total": 475862400
+						}
+					},
+					"prev": {
+						"total": 4212
+					}
+				},
+				"CF": {
+					"total": 1464192000,
+					"providers": {
+						"CF": {
+							"total": 488064000
+						},
+						"FY": {
+							"total": 488064000
+						},
+						"QT": {
+							"total": 488064000
+						}
+					},
+					"prev": {
+						"total": 4320
+					}
+				},
+				"CG": {
+					"total": 1500796800,
+					"providers": {
+						"CF": {
+							"total": 500265600
+						},
+						"FY": {
+							"total": 500265600
+						},
+						"QT": {
+							"total": 500265600
+						}
+					},
+					"prev": {
+						"total": 4428
+					}
+				},
+				"CH": {
+					"total": 1537401600,
+					"providers": {
+						"CF": {
+							"total": 512467200
+						},
+						"FY": {
+							"total": 512467200
+						},
+						"QT": {
+							"total": 512467200
+						}
+					},
+					"prev": {
+						"total": 4536
+					}
+				},
+				"CI": {
+					"total": 1574006400,
+					"providers": {
+						"CF": {
+							"total": 524668800
+						},
+						"FY": {
+							"total": 524668800
+						},
+						"QT": {
+							"total": 524668800
+						}
+					},
+					"prev": {
+						"total": 4644
+					}
+				},
+				"CK": {
+					"total": 1610611200,
+					"providers": {
+						"CF": {
+							"total": 536870400
+						},
+						"FY": {
+							"total": 536870400
+						},
+						"QT": {
+							"total": 536870400
+						}
+					},
+					"prev": {
+						"total": 4752
+					}
+				},
+				"CL": {
+					"total": 1647216000,
+					"providers": {
+						"CF": {
+							"total": 549072000
+						},
+						"FY": {
+							"total": 549072000
+						},
+						"QT": {
+							"total": 549072000
+						}
+					},
+					"prev": {
+						"total": 4860
+					}
+				},
+				"CM": {
+					"total": 1683820800,
+					"providers": {
+						"CF": {
+							"total": 561273600
+						},
+						"FY": {
+							"total": 561273600
+						},
+						"QT": {
+							"total": 561273600
+						}
+					},
+					"prev": {
+						"total": 4968
+					}
+				},
+				"CN": {
+					"total": 1720425600,
+					"providers": {
+						"CF": {
+							"total": 573475200
+						},
+						"FY": {
+							"total": 573475200
+						},
+						"QT": {
+							"total": 573475200
+						}
+					},
+					"prev": {
+						"total": 5076
+					}
+				},
+				"CO": {
+					"total": 1757030400,
+					"providers": {
+						"CF": {
+							"total": 585676800
+						},
+						"FY": {
+							"total": 585676800
+						},
+						"QT": {
+							"total": 585676800
+						}
+					},
+					"prev": {
+						"total": 5184
+					}
+				},
+				"CR": {
+					"total": 1793635200,
+					"providers": {
+						"CF": {
+							"total": 597878400
+						},
+						"FY": {
+							"total": 597878400
+						},
+						"QT": {
+							"total": 597878400
+						}
+					},
+					"prev": {
+						"total": 5292
+					}
+				},
+				"CU": {
+					"total": 1830240000,
+					"providers": {
+						"CF": {
+							"total": 610080000
+						},
+						"FY": {
+							"total": 610080000
+						},
+						"QT": {
+							"total": 610080000
+						}
+					},
+					"prev": {
+						"total": 5400
+					}
+				},
+				"CV": {
+					"total": 1866844800,
+					"providers": {
+						"CF": {
+							"total": 622281600
+						},
+						"FY": {
+							"total": 622281600
+						},
+						"QT": {
+							"total": 622281600
+						}
+					},
+					"prev": {
+						"total": 5508
+					}
+				},
+				"CW": {
+					"total": 1903449600,
+					"providers": {
+						"CF": {
+							"total": 634483200
+						},
+						"FY": {
+							"total": 634483200
+						},
+						"QT": {
+							"total": 634483200
+						}
+					},
+					"prev": {
+						"total": 5616
+					}
+				},
+				"CX": {
+					"total": 1940054400,
+					"providers": {
+						"CF": {
+							"total": 646684800
+						},
+						"FY": {
+							"total": 646684800
+						},
+						"QT": {
+							"total": 646684800
+						}
+					},
+					"prev": {
+						"total": 5724
+					}
+				},
+				"CY": {
+					"total": 1976659200,
+					"providers": {
+						"CF": {
+							"total": 658886400
+						},
+						"FY": {
+							"total": 658886400
+						},
+						"QT": {
+							"total": 658886400
+						}
+					},
+					"prev": {
+						"total": 5832
+					}
+				},
+				"CZ": {
+					"total": 2013264000,
+					"providers": {
+						"CF": {
+							"total": 671088000
+						},
+						"FY": {
+							"total": 671088000
+						},
+						"QT": {
+							"total": 671088000
+						}
+					},
+					"prev": {
+						"total": 5940
+					}
+				},
+				"DE": {
+					"total": 2049868800,
+					"providers": {
+						"CF": {
+							"total": 683289600
+						},
+						"FY": {
+							"total": 683289600
+						},
+						"QT": {
+							"total": 683289600
+						}
+					},
+					"prev": {
+						"total": 6048
+					}
+				},
+				"DJ": {
+					"total": 2086473600,
+					"providers": {
+						"CF": {
+							"total": 695491200
+						},
+						"FY": {
+							"total": 695491200
+						},
+						"QT": {
+							"total": 695491200
+						}
+					},
+					"prev": {
+						"total": 6156
+					}
+				},
+				"DK": {
+					"total": 2123078400,
+					"providers": {
+						"CF": {
+							"total": 707692800
+						},
+						"FY": {
+							"total": 707692800
+						},
+						"QT": {
+							"total": 707692800
+						}
+					},
+					"prev": {
+						"total": 6264
+					}
+				},
+				"DM": {
+					"total": 2159683200,
+					"providers": {
+						"CF": {
+							"total": 719894400
+						},
+						"FY": {
+							"total": 719894400
+						},
+						"QT": {
+							"total": 719894400
+						}
+					},
+					"prev": {
+						"total": 6372
+					}
+				},
+				"DO": {
+					"total": 2196288000,
+					"providers": {
+						"CF": {
+							"total": 732096000
+						},
+						"FY": {
+							"total": 732096000
+						},
+						"QT": {
+							"total": 732096000
+						}
+					},
+					"prev": {
+						"total": 6480
+					}
+				},
+				"DZ": {
+					"total": 2232892800,
+					"providers": {
+						"CF": {
+							"total": 744297600
+						},
+						"FY": {
+							"total": 744297600
+						},
+						"QT": {
+							"total": 744297600
+						}
+					},
+					"prev": {
+						"total": 6588
+					}
+				},
+				"EC": {
+					"total": 2269497600,
+					"providers": {
+						"CF": {
+							"total": 756499200
+						},
+						"FY": {
+							"total": 756499200
+						},
+						"QT": {
+							"total": 756499200
+						}
+					},
+					"prev": {
+						"total": 6696
+					}
+				},
+				"EE": {
+					"total": 2306102400,
+					"providers": {
+						"CF": {
+							"total": 768700800
+						},
+						"FY": {
+							"total": 768700800
+						},
+						"QT": {
+							"total": 768700800
+						}
+					},
+					"prev": {
+						"total": 6804
+					}
+				},
+				"EG": {
+					"total": 2342707200,
+					"providers": {
+						"CF": {
+							"total": 780902400
+						},
+						"FY": {
+							"total": 780902400
+						},
+						"QT": {
+							"total": 780902400
+						}
+					},
+					"prev": {
+						"total": 6912
+					}
+				},
+				"EH": {
+					"total": 2379312000,
+					"providers": {
+						"CF": {
+							"total": 793104000
+						},
+						"FY": {
+							"total": 793104000
+						},
+						"QT": {
+							"total": 793104000
+						}
+					},
+					"prev": {
+						"total": 7020
+					}
+				},
+				"ER": {
+					"total": 2415916800,
+					"providers": {
+						"CF": {
+							"total": 805305600
+						},
+						"FY": {
+							"total": 805305600
+						},
+						"QT": {
+							"total": 805305600
+						}
+					},
+					"prev": {
+						"total": 7128
+					}
+				},
+				"ES": {
+					"total": 2452521600,
+					"providers": {
+						"CF": {
+							"total": 817507200
+						},
+						"FY": {
+							"total": 817507200
+						},
+						"QT": {
+							"total": 817507200
+						}
+					},
+					"prev": {
+						"total": 7236
+					}
+				},
+				"ET": {
+					"total": 2489126400,
+					"providers": {
+						"CF": {
+							"total": 829708800
+						},
+						"FY": {
+							"total": 829708800
+						},
+						"QT": {
+							"total": 829708800
+						}
+					},
+					"prev": {
+						"total": 7344
+					}
+				},
+				"FI": {
+					"total": 2525731200,
+					"providers": {
+						"CF": {
+							"total": 841910400
+						},
+						"FY": {
+							"total": 841910400
+						},
+						"QT": {
+							"total": 841910400
+						}
+					},
+					"prev": {
+						"total": 7452
+					}
+				},
+				"FJ": {
+					"total": 2562336000,
+					"providers": {
+						"CF": {
+							"total": 854112000
+						},
+						"FY": {
+							"total": 854112000
+						},
+						"QT": {
+							"total": 854112000
+						}
+					},
+					"prev": {
+						"total": 7560
+					}
+				},
+				"FK": {
+					"total": 2598940800,
+					"providers": {
+						"CF": {
+							"total": 866313600
+						},
+						"FY": {
+							"total": 866313600
+						},
+						"QT": {
+							"total": 866313600
+						}
+					},
+					"prev": {
+						"total": 7668
+					}
+				},
+				"FM": {
+					"total": 2635545600,
+					"providers": {
+						"CF": {
+							"total": 878515200
+						},
+						"FY": {
+							"total": 878515200
+						},
+						"QT": {
+							"total": 878515200
+						}
+					},
+					"prev": {
+						"total": 7776
+					}
+				},
+				"FO": {
+					"total": 2672150400,
+					"providers": {
+						"CF": {
+							"total": 890716800
+						},
+						"FY": {
+							"total": 890716800
+						},
+						"QT": {
+							"total": 890716800
+						}
+					},
+					"prev": {
+						"total": 7884
+					}
+				},
+				"FR": {
+					"total": 2708755200,
+					"providers": {
+						"CF": {
+							"total": 902918400
+						},
+						"FY": {
+							"total": 902918400
+						},
+						"QT": {
+							"total": 902918400
+						}
+					},
+					"prev": {
+						"total": 7992
+					}
+				},
+				"GA": {
+					"total": 2745360000,
+					"providers": {
+						"CF": {
+							"total": 915120000
+						},
+						"FY": {
+							"total": 915120000
+						},
+						"QT": {
+							"total": 915120000
+						}
+					},
+					"prev": {
+						"total": 8100
+					}
+				},
+				"GB": {
+					"total": 2781964800,
+					"providers": {
+						"CF": {
+							"total": 927321600
+						},
+						"FY": {
+							"total": 927321600
+						},
+						"QT": {
+							"total": 927321600
+						}
+					},
+					"prev": {
+						"total": 8208
+					}
+				},
+				"GD": {
+					"total": 2818569600,
+					"providers": {
+						"CF": {
+							"total": 939523200
+						},
+						"FY": {
+							"total": 939523200
+						},
+						"QT": {
+							"total": 939523200
+						}
+					},
+					"prev": {
+						"total": 8316
+					}
+				},
+				"GE": {
+					"total": 2855174400,
+					"providers": {
+						"CF": {
+							"total": 951724800
+						},
+						"FY": {
+							"total": 951724800
+						},
+						"QT": {
+							"total": 951724800
+						}
+					},
+					"prev": {
+						"total": 8424
+					}
+				},
+				"GF": {
+					"total": 2891779200,
+					"providers": {
+						"CF": {
+							"total": 963926400
+						},
+						"FY": {
+							"total": 963926400
+						},
+						"QT": {
+							"total": 963926400
+						}
+					},
+					"prev": {
+						"total": 8532
+					}
+				},
+				"GG": {
+					"total": 2928384000,
+					"providers": {
+						"CF": {
+							"total": 976128000
+						},
+						"FY": {
+							"total": 976128000
+						},
+						"QT": {
+							"total": 976128000
+						}
+					},
+					"prev": {
+						"total": 8640
+					}
+				},
+				"GH": {
+					"total": 2964988800,
+					"providers": {
+						"CF": {
+							"total": 988329600
+						},
+						"FY": {
+							"total": 988329600
+						},
+						"QT": {
+							"total": 988329600
+						}
+					},
+					"prev": {
+						"total": 8748
+					}
+				},
+				"GI": {
+					"total": 3001593600,
+					"providers": {
+						"CF": {
+							"total": 1000531200
+						},
+						"FY": {
+							"total": 1000531200
+						},
+						"QT": {
+							"total": 1000531200
+						}
+					},
+					"prev": {
+						"total": 8856
+					}
+				},
+				"GL": {
+					"total": 3038198400,
+					"providers": {
+						"CF": {
+							"total": 1012732800
+						},
+						"FY": {
+							"total": 1012732800
+						},
+						"QT": {
+							"total": 1012732800
+						}
+					},
+					"prev": {
+						"total": 8964
+					}
+				},
+				"GM": {
+					"total": 3074803200,
+					"providers": {
+						"CF": {
+							"total": 1024934400
+						},
+						"FY": {
+							"total": 1024934400
+						},
+						"QT": {
+							"total": 1024934400
+						}
+					},
+					"prev": {
+						"total": 9072
+					}
+				},
+				"GN": {
+					"total": 3111408000,
+					"providers": {
+						"CF": {
+							"total": 1037136000
+						},
+						"FY": {
+							"total": 1037136000
+						},
+						"QT": {
+							"total": 1037136000
+						}
+					},
+					"prev": {
+						"total": 9180
+					}
+				},
+				"GP": {
+					"total": 3148012800,
+					"providers": {
+						"CF": {
+							"total": 1049337600
+						},
+						"FY": {
+							"total": 1049337600
+						},
+						"QT": {
+							"total": 1049337600
+						}
+					},
+					"prev": {
+						"total": 9288
+					}
+				},
+				"GQ": {
+					"total": 3184617600,
+					"providers": {
+						"CF": {
+							"total": 1061539200
+						},
+						"FY": {
+							"total": 1061539200
+						},
+						"QT": {
+							"total": 1061539200
+						}
+					},
+					"prev": {
+						"total": 9396
+					}
+				},
+				"GR": {
+					"total": 3221222400,
+					"providers": {
+						"CF": {
+							"total": 1073740800
+						},
+						"FY": {
+							"total": 1073740800
+						},
+						"QT": {
+							"total": 1073740800
+						}
+					},
+					"prev": {
+						"total": 9504
+					}
+				},
+				"GS": {
+					"total": 3257827200,
+					"providers": {
+						"CF": {
+							"total": 1085942400
+						},
+						"FY": {
+							"total": 1085942400
+						},
+						"QT": {
+							"total": 1085942400
+						}
+					},
+					"prev": {
+						"total": 9612
+					}
+				},
+				"GT": {
+					"total": 3294432000,
+					"providers": {
+						"CF": {
+							"total": 1098144000
+						},
+						"FY": {
+							"total": 1098144000
+						},
+						"QT": {
+							"total": 1098144000
+						}
+					},
+					"prev": {
+						"total": 9720
+					}
+				},
+				"GU": {
+					"total": 3331036800,
+					"providers": {
+						"CF": {
+							"total": 1110345600
+						},
+						"FY": {
+							"total": 1110345600
+						},
+						"QT": {
+							"total": 1110345600
+						}
+					},
+					"prev": {
+						"total": 9828
+					}
+				},
+				"GW": {
+					"total": 3367641600,
+					"providers": {
+						"CF": {
+							"total": 1122547200
+						},
+						"FY": {
+							"total": 1122547200
+						},
+						"QT": {
+							"total": 1122547200
+						}
+					},
+					"prev": {
+						"total": 9936
+					}
+				},
+				"GY": {
+					"total": 3404246400,
+					"providers": {
+						"CF": {
+							"total": 1134748800
+						},
+						"FY": {
+							"total": 1134748800
+						},
+						"QT": {
+							"total": 1134748800
+						}
+					},
+					"prev": {
+						"total": 10044
+					}
+				},
+				"HK": {
+					"total": 3440851200,
+					"providers": {
+						"CF": {
+							"total": 1146950400
+						},
+						"FY": {
+							"total": 1146950400
+						},
+						"QT": {
+							"total": 1146950400
+						}
+					},
+					"prev": {
+						"total": 10152
+					}
+				},
+				"HM": {
+					"total": 3477456000,
+					"providers": {
+						"CF": {
+							"total": 1159152000
+						},
+						"FY": {
+							"total": 1159152000
+						},
+						"QT": {
+							"total": 1159152000
+						}
+					},
+					"prev": {
+						"total": 10260
+					}
+				},
+				"HN": {
+					"total": 3514060800,
+					"providers": {
+						"CF": {
+							"total": 1171353600
+						},
+						"FY": {
+							"total": 1171353600
+						},
+						"QT": {
+							"total": 1171353600
+						}
+					},
+					"prev": {
+						"total": 10368
+					}
+				},
+				"HR": {
+					"total": 3550665600,
+					"providers": {
+						"CF": {
+							"total": 1183555200
+						},
+						"FY": {
+							"total": 1183555200
+						},
+						"QT": {
+							"total": 1183555200
+						}
+					},
+					"prev": {
+						"total": 10476
+					}
+				},
+				"HT": {
+					"total": 3587270400,
+					"providers": {
+						"CF": {
+							"total": 1195756800
+						},
+						"FY": {
+							"total": 1195756800
+						},
+						"QT": {
+							"total": 1195756800
+						}
+					},
+					"prev": {
+						"total": 10584
+					}
+				},
+				"HU": {
+					"total": 3623875200,
+					"providers": {
+						"CF": {
+							"total": 1207958400
+						},
+						"FY": {
+							"total": 1207958400
+						},
+						"QT": {
+							"total": 1207958400
+						}
+					},
+					"prev": {
+						"total": 10692
+					}
+				},
+				"ID": {
+					"total": 3660480000,
+					"providers": {
+						"CF": {
+							"total": 1220160000
+						},
+						"FY": {
+							"total": 1220160000
+						},
+						"QT": {
+							"total": 1220160000
+						}
+					},
+					"prev": {
+						"total": 10800
+					}
+				},
+				"IE": {
+					"total": 3697084800,
+					"providers": {
+						"CF": {
+							"total": 1232361600
+						},
+						"FY": {
+							"total": 1232361600
+						},
+						"QT": {
+							"total": 1232361600
+						}
+					},
+					"prev": {
+						"total": 10908
+					}
+				},
+				"IL": {
+					"total": 3733689600,
+					"providers": {
+						"CF": {
+							"total": 1244563200
+						},
+						"FY": {
+							"total": 1244563200
+						},
+						"QT": {
+							"total": 1244563200
+						}
+					},
+					"prev": {
+						"total": 11016
+					}
+				},
+				"IM": {
+					"total": 3770294400,
+					"providers": {
+						"CF": {
+							"total": 1256764800
+						},
+						"FY": {
+							"total": 1256764800
+						},
+						"QT": {
+							"total": 1256764800
+						}
+					},
+					"prev": {
+						"total": 11124
+					}
+				},
+				"IN": {
+					"total": 3806899200,
+					"providers": {
+						"CF": {
+							"total": 1268966400
+						},
+						"FY": {
+							"total": 1268966400
+						},
+						"QT": {
+							"total": 1268966400
+						}
+					},
+					"prev": {
+						"total": 11232
+					}
+				},
+				"IO": {
+					"total": 3843504000,
+					"providers": {
+						"CF": {
+							"total": 1281168000
+						},
+						"FY": {
+							"total": 1281168000
+						},
+						"QT": {
+							"total": 1281168000
+						}
+					},
+					"prev": {
+						"total": 11340
+					}
+				},
+				"IQ": {
+					"total": 3880108800,
+					"providers": {
+						"CF": {
+							"total": 1293369600
+						},
+						"FY": {
+							"total": 1293369600
+						},
+						"QT": {
+							"total": 1293369600
+						}
+					},
+					"prev": {
+						"total": 11448
+					}
+				},
+				"IR": {
+					"total": 3916713600,
+					"providers": {
+						"CF": {
+							"total": 1305571200
+						},
+						"FY": {
+							"total": 1305571200
+						},
+						"QT": {
+							"total": 1305571200
+						}
+					},
+					"prev": {
+						"total": 11556
+					}
+				},
+				"IS": {
+					"total": 3953318400,
+					"providers": {
+						"CF": {
+							"total": 1317772800
+						},
+						"FY": {
+							"total": 1317772800
+						},
+						"QT": {
+							"total": 1317772800
+						}
+					},
+					"prev": {
+						"total": 11664
+					}
+				},
+				"IT": {
+					"total": 3989923200,
+					"providers": {
+						"CF": {
+							"total": 1329974400
+						},
+						"FY": {
+							"total": 1329974400
+						},
+						"QT": {
+							"total": 1329974400
+						}
+					},
+					"prev": {
+						"total": 11772
+					}
+				},
+				"JE": {
+					"total": 4026528000,
+					"providers": {
+						"CF": {
+							"total": 1342176000
+						},
+						"FY": {
+							"total": 1342176000
+						},
+						"QT": {
+							"total": 1342176000
+						}
+					},
+					"prev": {
+						"total": 11880
+					}
+				},
+				"JM": {
+					"total": 4063132800,
+					"providers": {
+						"CF": {
+							"total": 1354377600
+						},
+						"FY": {
+							"total": 1354377600
+						},
+						"QT": {
+							"total": 1354377600
+						}
+					},
+					"prev": {
+						"total": 11988
+					}
+				},
+				"JO": {
+					"total": 4099737600,
+					"providers": {
+						"CF": {
+							"total": 1366579200
+						},
+						"FY": {
+							"total": 1366579200
+						},
+						"QT": {
+							"total": 1366579200
+						}
+					},
+					"prev": {
+						"total": 12096
+					}
+				},
+				"JP": {
+					"total": 4136342400,
+					"providers": {
+						"CF": {
+							"total": 1378780800
+						},
+						"FY": {
+							"total": 1378780800
+						},
+						"QT": {
+							"total": 1378780800
+						}
+					},
+					"prev": {
+						"total": 12204
+					}
+				},
+				"KE": {
+					"total": 4172947200,
+					"providers": {
+						"CF": {
+							"total": 1390982400
+						},
+						"FY": {
+							"total": 1390982400
+						},
+						"QT": {
+							"total": 1390982400
+						}
+					},
+					"prev": {
+						"total": 12312
+					}
+				},
+				"KG": {
+					"total": 4209552000,
+					"providers": {
+						"CF": {
+							"total": 1403184000
+						},
+						"FY": {
+							"total": 1403184000
+						},
+						"QT": {
+							"total": 1403184000
+						}
+					},
+					"prev": {
+						"total": 12420
+					}
+				},
+				"KH": {
+					"total": 4246156800,
+					"providers": {
+						"CF": {
+							"total": 1415385600
+						},
+						"FY": {
+							"total": 1415385600
+						},
+						"QT": {
+							"total": 1415385600
+						}
+					},
+					"prev": {
+						"total": 12528
+					}
+				},
+				"KI": {
+					"total": 4282761600,
+					"providers": {
+						"CF": {
+							"total": 1427587200
+						},
+						"FY": {
+							"total": 1427587200
+						},
+						"QT": {
+							"total": 1427587200
+						}
+					},
+					"prev": {
+						"total": 12636
+					}
+				},
+				"KM": {
+					"total": 4319366400,
+					"providers": {
+						"CF": {
+							"total": 1439788800
+						},
+						"FY": {
+							"total": 1439788800
+						},
+						"QT": {
+							"total": 1439788800
+						}
+					},
+					"prev": {
+						"total": 12744
+					}
+				},
+				"KN": {
+					"total": 4355971200,
+					"providers": {
+						"CF": {
+							"total": 1451990400
+						},
+						"FY": {
+							"total": 1451990400
+						},
+						"QT": {
+							"total": 1451990400
+						}
+					},
+					"prev": {
+						"total": 12852
+					}
+				},
+				"KP": {
+					"total": 4392576000,
+					"providers": {
+						"CF": {
+							"total": 1464192000
+						},
+						"FY": {
+							"total": 1464192000
+						},
+						"QT": {
+							"total": 1464192000
+						}
+					},
+					"prev": {
+						"total": 12960
+					}
+				},
+				"KR": {
+					"total": 4429180800,
+					"providers": {
+						"CF": {
+							"total": 1476393600
+						},
+						"FY": {
+							"total": 1476393600
+						},
+						"QT": {
+							"total": 1476393600
+						}
+					},
+					"prev": {
+						"total": 13068
+					}
+				},
+				"KW": {
+					"total": 4465785600,
+					"providers": {
+						"CF": {
+							"total": 1488595200
+						},
+						"FY": {
+							"total": 1488595200
+						},
+						"QT": {
+							"total": 1488595200
+						}
+					},
+					"prev": {
+						"total": 13176
+					}
+				},
+				"KY": {
+					"total": 4502390400,
+					"providers": {
+						"CF": {
+							"total": 1500796800
+						},
+						"FY": {
+							"total": 1500796800
+						},
+						"QT": {
+							"total": 1500796800
+						}
+					},
+					"prev": {
+						"total": 13284
+					}
+				},
+				"KZ": {
+					"total": 4538995200,
+					"providers": {
+						"CF": {
+							"total": 1512998400
+						},
+						"FY": {
+							"total": 1512998400
+						},
+						"QT": {
+							"total": 1512998400
+						}
+					},
+					"prev": {
+						"total": 13392
+					}
+				},
+				"LA": {
+					"total": 4575600000,
+					"providers": {
+						"CF": {
+							"total": 1525200000
+						},
+						"FY": {
+							"total": 1525200000
+						},
+						"QT": {
+							"total": 1525200000
+						}
+					},
+					"prev": {
+						"total": 13500
+					}
+				},
+				"LB": {
+					"total": 4612204800,
+					"providers": {
+						"CF": {
+							"total": 1537401600
+						},
+						"FY": {
+							"total": 1537401600
+						},
+						"QT": {
+							"total": 1537401600
+						}
+					},
+					"prev": {
+						"total": 13608
+					}
+				},
+				"LC": {
+					"total": 4648809600,
+					"providers": {
+						"CF": {
+							"total": 1549603200
+						},
+						"FY": {
+							"total": 1549603200
+						},
+						"QT": {
+							"total": 1549603200
+						}
+					},
+					"prev": {
+						"total": 13716
+					}
+				},
+				"LI": {
+					"total": 4685414400,
+					"providers": {
+						"CF": {
+							"total": 1561804800
+						},
+						"FY": {
+							"total": 1561804800
+						},
+						"QT": {
+							"total": 1561804800
+						}
+					},
+					"prev": {
+						"total": 13824
+					}
+				},
+				"LK": {
+					"total": 4722019200,
+					"providers": {
+						"CF": {
+							"total": 1574006400
+						},
+						"FY": {
+							"total": 1574006400
+						},
+						"QT": {
+							"total": 1574006400
+						}
+					},
+					"prev": {
+						"total": 13932
+					}
+				},
+				"LR": {
+					"total": 4758624000,
+					"providers": {
+						"CF": {
+							"total": 1586208000
+						},
+						"FY": {
+							"total": 1586208000
+						},
+						"QT": {
+							"total": 1586208000
+						}
+					},
+					"prev": {
+						"total": 14040
+					}
+				},
+				"LS": {
+					"total": 4795228800,
+					"providers": {
+						"CF": {
+							"total": 1598409600
+						},
+						"FY": {
+							"total": 1598409600
+						},
+						"QT": {
+							"total": 1598409600
+						}
+					},
+					"prev": {
+						"total": 14148
+					}
+				},
+				"LT": {
+					"total": 4831833600,
+					"providers": {
+						"CF": {
+							"total": 1610611200
+						},
+						"FY": {
+							"total": 1610611200
+						},
+						"QT": {
+							"total": 1610611200
+						}
+					},
+					"prev": {
+						"total": 14256
+					}
+				},
+				"LU": {
+					"total": 4868438400,
+					"providers": {
+						"CF": {
+							"total": 1622812800
+						},
+						"FY": {
+							"total": 1622812800
+						},
+						"QT": {
+							"total": 1622812800
+						}
+					},
+					"prev": {
+						"total": 14364
+					}
+				},
+				"LV": {
+					"total": 4905043200,
+					"providers": {
+						"CF": {
+							"total": 1635014400
+						},
+						"FY": {
+							"total": 1635014400
+						},
+						"QT": {
+							"total": 1635014400
+						}
+					},
+					"prev": {
+						"total": 14472
+					}
+				},
+				"LY": {
+					"total": 4941648000,
+					"providers": {
+						"CF": {
+							"total": 1647216000
+						},
+						"FY": {
+							"total": 1647216000
+						},
+						"QT": {
+							"total": 1647216000
+						}
+					},
+					"prev": {
+						"total": 14580
+					}
+				},
+				"MA": {
+					"total": 4978252800,
+					"providers": {
+						"CF": {
+							"total": 1659417600
+						},
+						"FY": {
+							"total": 1659417600
+						},
+						"QT": {
+							"total": 1659417600
+						}
+					},
+					"prev": {
+						"total": 14688
+					}
+				},
+				"MC": {
+					"total": 5014857600,
+					"providers": {
+						"CF": {
+							"total": 1671619200
+						},
+						"FY": {
+							"total": 1671619200
+						},
+						"QT": {
+							"total": 1671619200
+						}
+					},
+					"prev": {
+						"total": 14796
+					}
+				},
+				"MD": {
+					"total": 5051462400,
+					"providers": {
+						"CF": {
+							"total": 1683820800
+						},
+						"FY": {
+							"total": 1683820800
+						},
+						"QT": {
+							"total": 1683820800
+						}
+					},
+					"prev": {
+						"total": 14904
+					}
+				},
+				"ME": {
+					"total": 5088067200,
+					"providers": {
+						"CF": {
+							"total": 1696022400
+						},
+						"FY": {
+							"total": 1696022400
+						},
+						"QT": {
+							"total": 1696022400
+						}
+					},
+					"prev": {
+						"total": 15012
+					}
+				},
+				"MF": {
+					"total": 5124672000,
+					"providers": {
+						"CF": {
+							"total": 1708224000
+						},
+						"FY": {
+							"total": 1708224000
+						},
+						"QT": {
+							"total": 1708224000
+						}
+					},
+					"prev": {
+						"total": 15120
+					}
+				},
+				"MG": {
+					"total": 5161276800,
+					"providers": {
+						"CF": {
+							"total": 1720425600
+						},
+						"FY": {
+							"total": 1720425600
+						},
+						"QT": {
+							"total": 1720425600
+						}
+					},
+					"prev": {
+						"total": 15228
+					}
+				},
+				"MH": {
+					"total": 5197881600,
+					"providers": {
+						"CF": {
+							"total": 1732627200
+						},
+						"FY": {
+							"total": 1732627200
+						},
+						"QT": {
+							"total": 1732627200
+						}
+					},
+					"prev": {
+						"total": 15336
+					}
+				},
+				"MK": {
+					"total": 5234486400,
+					"providers": {
+						"CF": {
+							"total": 1744828800
+						},
+						"FY": {
+							"total": 1744828800
+						},
+						"QT": {
+							"total": 1744828800
+						}
+					},
+					"prev": {
+						"total": 15444
+					}
+				},
+				"ML": {
+					"total": 5271091200,
+					"providers": {
+						"CF": {
+							"total": 1757030400
+						},
+						"FY": {
+							"total": 1757030400
+						},
+						"QT": {
+							"total": 1757030400
+						}
+					},
+					"prev": {
+						"total": 15552
+					}
+				},
+				"MM": {
+					"total": 5307696000,
+					"providers": {
+						"CF": {
+							"total": 1769232000
+						},
+						"FY": {
+							"total": 1769232000
+						},
+						"QT": {
+							"total": 1769232000
+						}
+					},
+					"prev": {
+						"total": 15660
+					}
+				},
+				"MN": {
+					"total": 5344300800,
+					"providers": {
+						"CF": {
+							"total": 1781433600
+						},
+						"FY": {
+							"total": 1781433600
+						},
+						"QT": {
+							"total": 1781433600
+						}
+					},
+					"prev": {
+						"total": 15768
+					}
+				},
+				"MO": {
+					"total": 5380905600,
+					"providers": {
+						"CF": {
+							"total": 1793635200
+						},
+						"FY": {
+							"total": 1793635200
+						},
+						"QT": {
+							"total": 1793635200
+						}
+					},
+					"prev": {
+						"total": 15876
+					}
+				},
+				"MP": {
+					"total": 5417510400,
+					"providers": {
+						"CF": {
+							"total": 1805836800
+						},
+						"FY": {
+							"total": 1805836800
+						},
+						"QT": {
+							"total": 1805836800
+						}
+					},
+					"prev": {
+						"total": 15984
+					}
+				},
+				"MQ": {
+					"total": 5454115200,
+					"providers": {
+						"CF": {
+							"total": 1818038400
+						},
+						"FY": {
+							"total": 1818038400
+						},
+						"QT": {
+							"total": 1818038400
+						}
+					},
+					"prev": {
+						"total": 16092
+					}
+				},
+				"MR": {
+					"total": 5490720000,
+					"providers": {
+						"CF": {
+							"total": 1830240000
+						},
+						"FY": {
+							"total": 1830240000
+						},
+						"QT": {
+							"total": 1830240000
+						}
+					},
+					"prev": {
+						"total": 16200
+					}
+				},
+				"MS": {
+					"total": 5527324800,
+					"providers": {
+						"CF": {
+							"total": 1842441600
+						},
+						"FY": {
+							"total": 1842441600
+						},
+						"QT": {
+							"total": 1842441600
+						}
+					},
+					"prev": {
+						"total": 16308
+					}
+				},
+				"MT": {
+					"total": 5563929600,
+					"providers": {
+						"CF": {
+							"total": 1854643200
+						},
+						"FY": {
+							"total": 1854643200
+						},
+						"QT": {
+							"total": 1854643200
+						}
+					},
+					"prev": {
+						"total": 16416
+					}
+				},
+				"MU": {
+					"total": 5600534400,
+					"providers": {
+						"CF": {
+							"total": 1866844800
+						},
+						"FY": {
+							"total": 1866844800
+						},
+						"QT": {
+							"total": 1866844800
+						}
+					},
+					"prev": {
+						"total": 16524
+					}
+				},
+				"MV": {
+					"total": 5637139200,
+					"providers": {
+						"CF": {
+							"total": 1879046400
+						},
+						"FY": {
+							"total": 1879046400
+						},
+						"QT": {
+							"total": 1879046400
+						}
+					},
+					"prev": {
+						"total": 16632
+					}
+				},
+				"MW": {
+					"total": 5673744000,
+					"providers": {
+						"CF": {
+							"total": 1891248000
+						},
+						"FY": {
+							"total": 1891248000
+						},
+						"QT": {
+							"total": 1891248000
+						}
+					},
+					"prev": {
+						"total": 16740
+					}
+				},
+				"MX": {
+					"total": 5710348800,
+					"providers": {
+						"CF": {
+							"total": 1903449600
+						},
+						"FY": {
+							"total": 1903449600
+						},
+						"QT": {
+							"total": 1903449600
+						}
+					},
+					"prev": {
+						"total": 16848
+					}
+				},
+				"MY": {
+					"total": 5746953600,
+					"providers": {
+						"CF": {
+							"total": 1915651200
+						},
+						"FY": {
+							"total": 1915651200
+						},
+						"QT": {
+							"total": 1915651200
+						}
+					},
+					"prev": {
+						"total": 16956
+					}
+				},
+				"MZ": {
+					"total": 5783558400,
+					"providers": {
+						"CF": {
+							"total": 1927852800
+						},
+						"FY": {
+							"total": 1927852800
+						},
+						"QT": {
+							"total": 1927852800
+						}
+					},
+					"prev": {
+						"total": 17064
+					}
+				},
+				"NA": {
+					"total": 5820163200,
+					"providers": {
+						"CF": {
+							"total": 1940054400
+						},
+						"FY": {
+							"total": 1940054400
+						},
+						"QT": {
+							"total": 1940054400
+						}
+					},
+					"prev": {
+						"total": 17172
+					}
+				},
+				"NC": {
+					"total": 5856768000,
+					"providers": {
+						"CF": {
+							"total": 1952256000
+						},
+						"FY": {
+							"total": 1952256000
+						},
+						"QT": {
+							"total": 1952256000
+						}
+					},
+					"prev": {
+						"total": 17280
+					}
+				},
+				"NE": {
+					"total": 5893372800,
+					"providers": {
+						"CF": {
+							"total": 1964457600
+						},
+						"FY": {
+							"total": 1964457600
+						},
+						"QT": {
+							"total": 1964457600
+						}
+					},
+					"prev": {
+						"total": 17388
+					}
+				},
+				"NF": {
+					"total": 5929977600,
+					"providers": {
+						"CF": {
+							"total": 1976659200
+						},
+						"FY": {
+							"total": 1976659200
+						},
+						"QT": {
+							"total": 1976659200
+						}
+					},
+					"prev": {
+						"total": 17496
+					}
+				},
+				"NG": {
+					"total": 5966582400,
+					"providers": {
+						"CF": {
+							"total": 1988860800
+						},
+						"FY": {
+							"total": 1988860800
+						},
+						"QT": {
+							"total": 1988860800
+						}
+					},
+					"prev": {
+						"total": 17604
+					}
+				},
+				"NI": {
+					"total": 6003187200,
+					"providers": {
+						"CF": {
+							"total": 2001062400
+						},
+						"FY": {
+							"total": 2001062400
+						},
+						"QT": {
+							"total": 2001062400
+						}
+					},
+					"prev": {
+						"total": 17712
+					}
+				},
+				"NL": {
+					"total": 6039792000,
+					"providers": {
+						"CF": {
+							"total": 2013264000
+						},
+						"FY": {
+							"total": 2013264000
+						},
+						"QT": {
+							"total": 2013264000
+						}
+					},
+					"prev": {
+						"total": 17820
+					}
+				},
+				"NO": {
+					"total": 6076396800,
+					"providers": {
+						"CF": {
+							"total": 2025465600
+						},
+						"FY": {
+							"total": 2025465600
+						},
+						"QT": {
+							"total": 2025465600
+						}
+					},
+					"prev": {
+						"total": 17928
+					}
+				},
+				"NP": {
+					"total": 6113001600,
+					"providers": {
+						"CF": {
+							"total": 2037667200
+						},
+						"FY": {
+							"total": 2037667200
+						},
+						"QT": {
+							"total": 2037667200
+						}
+					},
+					"prev": {
+						"total": 18036
+					}
+				},
+				"NR": {
+					"total": 6149606400,
+					"providers": {
+						"CF": {
+							"total": 2049868800
+						},
+						"FY": {
+							"total": 2049868800
+						},
+						"QT": {
+							"total": 2049868800
+						}
+					},
+					"prev": {
+						"total": 18144
+					}
+				},
+				"NU": {
+					"total": 6186211200,
+					"providers": {
+						"CF": {
+							"total": 2062070400
+						},
+						"FY": {
+							"total": 2062070400
+						},
+						"QT": {
+							"total": 2062070400
+						}
+					},
+					"prev": {
+						"total": 18252
+					}
+				},
+				"NZ": {
+					"total": 6222816000,
+					"providers": {
+						"CF": {
+							"total": 2074272000
+						},
+						"FY": {
+							"total": 2074272000
+						},
+						"QT": {
+							"total": 2074272000
+						}
+					},
+					"prev": {
+						"total": 18360
+					}
+				},
+				"OM": {
+					"total": 6259420800,
+					"providers": {
+						"CF": {
+							"total": 2086473600
+						},
+						"FY": {
+							"total": 2086473600
+						},
+						"QT": {
+							"total": 2086473600
+						}
+					},
+					"prev": {
+						"total": 18468
+					}
+				},
+				"PA": {
+					"total": 6296025600,
+					"providers": {
+						"CF": {
+							"total": 2098675200
+						},
+						"FY": {
+							"total": 2098675200
+						},
+						"QT": {
+							"total": 2098675200
+						}
+					},
+					"prev": {
+						"total": 18576
+					}
+				},
+				"PE": {
+					"total": 6332630400,
+					"providers": {
+						"CF": {
+							"total": 2110876800
+						},
+						"FY": {
+							"total": 2110876800
+						},
+						"QT": {
+							"total": 2110876800
+						}
+					},
+					"prev": {
+						"total": 18684
+					}
+				},
+				"PF": {
+					"total": 6369235200,
+					"providers": {
+						"CF": {
+							"total": 2123078400
+						},
+						"FY": {
+							"total": 2123078400
+						},
+						"QT": {
+							"total": 2123078400
+						}
+					},
+					"prev": {
+						"total": 18792
+					}
+				},
+				"PG": {
+					"total": 6405840000,
+					"providers": {
+						"CF": {
+							"total": 2135280000
+						},
+						"FY": {
+							"total": 2135280000
+						},
+						"QT": {
+							"total": 2135280000
+						}
+					},
+					"prev": {
+						"total": 18900
+					}
+				},
+				"PH": {
+					"total": 6442444800,
+					"providers": {
+						"CF": {
+							"total": 2147481600
+						},
+						"FY": {
+							"total": 2147481600
+						},
+						"QT": {
+							"total": 2147481600
+						}
+					},
+					"prev": {
+						"total": 19008
+					}
+				},
+				"PK": {
+					"total": 6479049600,
+					"providers": {
+						"CF": {
+							"total": 2159683200
+						},
+						"FY": {
+							"total": 2159683200
+						},
+						"QT": {
+							"total": 2159683200
+						}
+					},
+					"prev": {
+						"total": 19116
+					}
+				},
+				"PL": {
+					"total": 6515654400,
+					"providers": {
+						"CF": {
+							"total": 2171884800
+						},
+						"FY": {
+							"total": 2171884800
+						},
+						"QT": {
+							"total": 2171884800
+						}
+					},
+					"prev": {
+						"total": 19224
+					}
+				},
+				"PM": {
+					"total": 6552259200,
+					"providers": {
+						"CF": {
+							"total": 2184086400
+						},
+						"FY": {
+							"total": 2184086400
+						},
+						"QT": {
+							"total": 2184086400
+						}
+					},
+					"prev": {
+						"total": 19332
+					}
+				},
+				"PN": {
+					"total": 6588864000,
+					"providers": {
+						"CF": {
+							"total": 2196288000
+						},
+						"FY": {
+							"total": 2196288000
+						},
+						"QT": {
+							"total": 2196288000
+						}
+					},
+					"prev": {
+						"total": 19440
+					}
+				},
+				"PR": {
+					"total": 6625468800,
+					"providers": {
+						"CF": {
+							"total": 2208489600
+						},
+						"FY": {
+							"total": 2208489600
+						},
+						"QT": {
+							"total": 2208489600
+						}
+					},
+					"prev": {
+						"total": 19548
+					}
+				},
+				"PS": {
+					"total": 6662073600,
+					"providers": {
+						"CF": {
+							"total": 2220691200
+						},
+						"FY": {
+							"total": 2220691200
+						},
+						"QT": {
+							"total": 2220691200
+						}
+					},
+					"prev": {
+						"total": 19656
+					}
+				},
+				"PT": {
+					"total": 6698678400,
+					"providers": {
+						"CF": {
+							"total": 2232892800
+						},
+						"FY": {
+							"total": 2232892800
+						},
+						"QT": {
+							"total": 2232892800
+						}
+					},
+					"prev": {
+						"total": 19764
+					}
+				},
+				"PW": {
+					"total": 6735283200,
+					"providers": {
+						"CF": {
+							"total": 2245094400
+						},
+						"FY": {
+							"total": 2245094400
+						},
+						"QT": {
+							"total": 2245094400
+						}
+					},
+					"prev": {
+						"total": 19872
+					}
+				},
+				"PY": {
+					"total": 6771888000,
+					"providers": {
+						"CF": {
+							"total": 2257296000
+						},
+						"FY": {
+							"total": 2257296000
+						},
+						"QT": {
+							"total": 2257296000
+						}
+					},
+					"prev": {
+						"total": 19980
+					}
+				},
+				"QA": {
+					"total": 6808492800,
+					"providers": {
+						"CF": {
+							"total": 2269497600
+						},
+						"FY": {
+							"total": 2269497600
+						},
+						"QT": {
+							"total": 2269497600
+						}
+					},
+					"prev": {
+						"total": 20088
+					}
+				},
+				"RE": {
+					"total": 6845097600,
+					"providers": {
+						"CF": {
+							"total": 2281699200
+						},
+						"FY": {
+							"total": 2281699200
+						},
+						"QT": {
+							"total": 2281699200
+						}
+					},
+					"prev": {
+						"total": 20196
+					}
+				},
+				"RO": {
+					"total": 6881702400,
+					"providers": {
+						"CF": {
+							"total": 2293900800
+						},
+						"FY": {
+							"total": 2293900800
+						},
+						"QT": {
+							"total": 2293900800
+						}
+					},
+					"prev": {
+						"total": 20304
+					}
+				},
+				"RS": {
+					"total": 6918307200,
+					"providers": {
+						"CF": {
+							"total": 2306102400
+						},
+						"FY": {
+							"total": 2306102400
+						},
+						"QT": {
+							"total": 2306102400
+						}
+					},
+					"prev": {
+						"total": 20412
+					}
+				},
+				"RU": {
+					"total": 6954912000,
+					"providers": {
+						"CF": {
+							"total": 2318304000
+						},
+						"FY": {
+							"total": 2318304000
+						},
+						"QT": {
+							"total": 2318304000
+						}
+					},
+					"prev": {
+						"total": 20520
+					}
+				},
+				"RW": {
+					"total": 6991516800,
+					"providers": {
+						"CF": {
+							"total": 2330505600
+						},
+						"FY": {
+							"total": 2330505600
+						},
+						"QT": {
+							"total": 2330505600
+						}
+					},
+					"prev": {
+						"total": 20628
+					}
+				},
+				"SA": {
+					"total": 7028121600,
+					"providers": {
+						"CF": {
+							"total": 2342707200
+						},
+						"FY": {
+							"total": 2342707200
+						},
+						"QT": {
+							"total": 2342707200
+						}
+					},
+					"prev": {
+						"total": 20736
+					}
+				},
+				"SB": {
+					"total": 7064726400,
+					"providers": {
+						"CF": {
+							"total": 2354908800
+						},
+						"FY": {
+							"total": 2354908800
+						},
+						"QT": {
+							"total": 2354908800
+						}
+					},
+					"prev": {
+						"total": 20844
+					}
+				},
+				"SC": {
+					"total": 7101331200,
+					"providers": {
+						"CF": {
+							"total": 2367110400
+						},
+						"FY": {
+							"total": 2367110400
+						},
+						"QT": {
+							"total": 2367110400
+						}
+					},
+					"prev": {
+						"total": 20952
+					}
+				},
+				"SD": {
+					"total": 7137936000,
+					"providers": {
+						"CF": {
+							"total": 2379312000
+						},
+						"FY": {
+							"total": 2379312000
+						},
+						"QT": {
+							"total": 2379312000
+						}
+					},
+					"prev": {
+						"total": 21060
+					}
+				},
+				"SE": {
+					"total": 7174540800,
+					"providers": {
+						"CF": {
+							"total": 2391513600
+						},
+						"FY": {
+							"total": 2391513600
+						},
+						"QT": {
+							"total": 2391513600
+						}
+					},
+					"prev": {
+						"total": 21168
+					}
+				},
+				"SG": {
+					"total": 7211145600,
+					"providers": {
+						"CF": {
+							"total": 2403715200
+						},
+						"FY": {
+							"total": 2403715200
+						},
+						"QT": {
+							"total": 2403715200
+						}
+					},
+					"prev": {
+						"total": 21276
+					}
+				},
+				"SH": {
+					"total": 7247750400,
+					"providers": {
+						"CF": {
+							"total": 2415916800
+						},
+						"FY": {
+							"total": 2415916800
+						},
+						"QT": {
+							"total": 2415916800
+						}
+					},
+					"prev": {
+						"total": 21384
+					}
+				},
+				"SI": {
+					"total": 7284355200,
+					"providers": {
+						"CF": {
+							"total": 2428118400
+						},
+						"FY": {
+							"total": 2428118400
+						},
+						"QT": {
+							"total": 2428118400
+						}
+					},
+					"prev": {
+						"total": 21492
+					}
+				},
+				"SJ": {
+					"total": 7320960000,
+					"providers": {
+						"CF": {
+							"total": 2440320000
+						},
+						"FY": {
+							"total": 2440320000
+						},
+						"QT": {
+							"total": 2440320000
+						}
+					},
+					"prev": {
+						"total": 21600
+					}
+				},
+				"SK": {
+					"total": 7357564800,
+					"providers": {
+						"CF": {
+							"total": 2452521600
+						},
+						"FY": {
+							"total": 2452521600
+						},
+						"QT": {
+							"total": 2452521600
+						}
+					},
+					"prev": {
+						"total": 21708
+					}
+				},
+				"SL": {
+					"total": 7394169600,
+					"providers": {
+						"CF": {
+							"total": 2464723200
+						},
+						"FY": {
+							"total": 2464723200
+						},
+						"QT": {
+							"total": 2464723200
+						}
+					},
+					"prev": {
+						"total": 21816
+					}
+				},
+				"SM": {
+					"total": 7430774400,
+					"providers": {
+						"CF": {
+							"total": 2476924800
+						},
+						"FY": {
+							"total": 2476924800
+						},
+						"QT": {
+							"total": 2476924800
+						}
+					},
+					"prev": {
+						"total": 21924
+					}
+				},
+				"SN": {
+					"total": 7467379200,
+					"providers": {
+						"CF": {
+							"total": 2489126400
+						},
+						"FY": {
+							"total": 2489126400
+						},
+						"QT": {
+							"total": 2489126400
+						}
+					},
+					"prev": {
+						"total": 22032
+					}
+				},
+				"SO": {
+					"total": 7503984000,
+					"providers": {
+						"CF": {
+							"total": 2501328000
+						},
+						"FY": {
+							"total": 2501328000
+						},
+						"QT": {
+							"total": 2501328000
+						}
+					},
+					"prev": {
+						"total": 22140
+					}
+				},
+				"SR": {
+					"total": 7540588800,
+					"providers": {
+						"CF": {
+							"total": 2513529600
+						},
+						"FY": {
+							"total": 2513529600
+						},
+						"QT": {
+							"total": 2513529600
+						}
+					},
+					"prev": {
+						"total": 22248
+					}
+				},
+				"SS": {
+					"total": 7577193600,
+					"providers": {
+						"CF": {
+							"total": 2525731200
+						},
+						"FY": {
+							"total": 2525731200
+						},
+						"QT": {
+							"total": 2525731200
+						}
+					},
+					"prev": {
+						"total": 22356
+					}
+				},
+				"ST": {
+					"total": 7613798400,
+					"providers": {
+						"CF": {
+							"total": 2537932800
+						},
+						"FY": {
+							"total": 2537932800
+						},
+						"QT": {
+							"total": 2537932800
+						}
+					},
+					"prev": {
+						"total": 22464
+					}
+				},
+				"SV": {
+					"total": 7650403200,
+					"providers": {
+						"CF": {
+							"total": 2550134400
+						},
+						"FY": {
+							"total": 2550134400
+						},
+						"QT": {
+							"total": 2550134400
+						}
+					},
+					"prev": {
+						"total": 22572
+					}
+				},
+				"SX": {
+					"total": 7687008000,
+					"providers": {
+						"CF": {
+							"total": 2562336000
+						},
+						"FY": {
+							"total": 2562336000
+						},
+						"QT": {
+							"total": 2562336000
+						}
+					},
+					"prev": {
+						"total": 22680
+					}
+				},
+				"SY": {
+					"total": 7723612800,
+					"providers": {
+						"CF": {
+							"total": 2574537600
+						},
+						"FY": {
+							"total": 2574537600
+						},
+						"QT": {
+							"total": 2574537600
+						}
+					},
+					"prev": {
+						"total": 22788
+					}
+				},
+				"SZ": {
+					"total": 7760217600,
+					"providers": {
+						"CF": {
+							"total": 2586739200
+						},
+						"FY": {
+							"total": 2586739200
+						},
+						"QT": {
+							"total": 2586739200
+						}
+					},
+					"prev": {
+						"total": 22896
+					}
+				},
+				"TC": {
+					"total": 7796822400,
+					"providers": {
+						"CF": {
+							"total": 2598940800
+						},
+						"FY": {
+							"total": 2598940800
+						},
+						"QT": {
+							"total": 2598940800
+						}
+					},
+					"prev": {
+						"total": 23004
+					}
+				},
+				"TD": {
+					"total": 7833427200,
+					"providers": {
+						"CF": {
+							"total": 2611142400
+						},
+						"FY": {
+							"total": 2611142400
+						},
+						"QT": {
+							"total": 2611142400
+						}
+					},
+					"prev": {
+						"total": 23112
+					}
+				},
+				"TF": {
+					"total": 7870032000,
+					"providers": {
+						"CF": {
+							"total": 2623344000
+						},
+						"FY": {
+							"total": 2623344000
+						},
+						"QT": {
+							"total": 2623344000
+						}
+					},
+					"prev": {
+						"total": 23220
+					}
+				},
+				"TG": {
+					"total": 7906636800,
+					"providers": {
+						"CF": {
+							"total": 2635545600
+						},
+						"FY": {
+							"total": 2635545600
+						},
+						"QT": {
+							"total": 2635545600
+						}
+					},
+					"prev": {
+						"total": 23328
+					}
+				},
+				"TH": {
+					"total": 7943241600,
+					"providers": {
+						"CF": {
+							"total": 2647747200
+						},
+						"FY": {
+							"total": 2647747200
+						},
+						"QT": {
+							"total": 2647747200
+						}
+					},
+					"prev": {
+						"total": 23436
+					}
+				},
+				"TJ": {
+					"total": 7979846400,
+					"providers": {
+						"CF": {
+							"total": 2659948800
+						},
+						"FY": {
+							"total": 2659948800
+						},
+						"QT": {
+							"total": 2659948800
+						}
+					},
+					"prev": {
+						"total": 23544
+					}
+				},
+				"TK": {
+					"total": 8016451200,
+					"providers": {
+						"CF": {
+							"total": 2672150400
+						},
+						"FY": {
+							"total": 2672150400
+						},
+						"QT": {
+							"total": 2672150400
+						}
+					},
+					"prev": {
+						"total": 23652
+					}
+				},
+				"TL": {
+					"total": 8053056000,
+					"providers": {
+						"CF": {
+							"total": 2684352000
+						},
+						"FY": {
+							"total": 2684352000
+						},
+						"QT": {
+							"total": 2684352000
+						}
+					},
+					"prev": {
+						"total": 23760
+					}
+				},
+				"TM": {
+					"total": 8089660800,
+					"providers": {
+						"CF": {
+							"total": 2696553600
+						},
+						"FY": {
+							"total": 2696553600
+						},
+						"QT": {
+							"total": 2696553600
+						}
+					},
+					"prev": {
+						"total": 23868
+					}
+				},
+				"TN": {
+					"total": 8126265600,
+					"providers": {
+						"CF": {
+							"total": 2708755200
+						},
+						"FY": {
+							"total": 2708755200
+						},
+						"QT": {
+							"total": 2708755200
+						}
+					},
+					"prev": {
+						"total": 23976
+					}
+				},
+				"TO": {
+					"total": 8162870400,
+					"providers": {
+						"CF": {
+							"total": 2720956800
+						},
+						"FY": {
+							"total": 2720956800
+						},
+						"QT": {
+							"total": 2720956800
+						}
+					},
+					"prev": {
+						"total": 24084
+					}
+				},
+				"TR": {
+					"total": 8199475200,
+					"providers": {
+						"CF": {
+							"total": 2733158400
+						},
+						"FY": {
+							"total": 2733158400
+						},
+						"QT": {
+							"total": 2733158400
+						}
+					},
+					"prev": {
+						"total": 24192
+					}
+				},
+				"TT": {
+					"total": 8236080000,
+					"providers": {
+						"CF": {
+							"total": 2745360000
+						},
+						"FY": {
+							"total": 2745360000
+						},
+						"QT": {
+							"total": 2745360000
+						}
+					},
+					"prev": {
+						"total": 24300
+					}
+				},
+				"TV": {
+					"total": 8272684800,
+					"providers": {
+						"CF": {
+							"total": 2757561600
+						},
+						"FY": {
+							"total": 2757561600
+						},
+						"QT": {
+							"total": 2757561600
+						}
+					},
+					"prev": {
+						"total": 24408
+					}
+				},
+				"TW": {
+					"total": 8309289600,
+					"providers": {
+						"CF": {
+							"total": 2769763200
+						},
+						"FY": {
+							"total": 2769763200
+						},
+						"QT": {
+							"total": 2769763200
+						}
+					},
+					"prev": {
+						"total": 24516
+					}
+				},
+				"TZ": {
+					"total": 8345894400,
+					"providers": {
+						"CF": {
+							"total": 2781964800
+						},
+						"FY": {
+							"total": 2781964800
+						},
+						"QT": {
+							"total": 2781964800
+						}
+					},
+					"prev": {
+						"total": 24624
+					}
+				},
+				"UA": {
+					"total": 8382499200,
+					"providers": {
+						"CF": {
+							"total": 2794166400
+						},
+						"FY": {
+							"total": 2794166400
+						},
+						"QT": {
+							"total": 2794166400
+						}
+					},
+					"prev": {
+						"total": 24732
+					}
+				},
+				"UG": {
+					"total": 8419104000,
+					"providers": {
+						"CF": {
+							"total": 2806368000
+						},
+						"FY": {
+							"total": 2806368000
+						},
+						"QT": {
+							"total": 2806368000
+						}
+					},
+					"prev": {
+						"total": 24840
+					}
+				},
+				"UM": {
+					"total": 8455708800,
+					"providers": {
+						"CF": {
+							"total": 2818569600
+						},
+						"FY": {
+							"total": 2818569600
+						},
+						"QT": {
+							"total": 2818569600
+						}
+					},
+					"prev": {
+						"total": 24948
+					}
+				},
+				"US": {
+					"total": 8492313600,
+					"providers": {
+						"CF": {
+							"total": 2830771200
+						},
+						"FY": {
+							"total": 2830771200
+						},
+						"QT": {
+							"total": 2830771200
+						}
+					},
+					"prev": {
+						"total": 25056
+					}
+				},
+				"UY": {
+					"total": 8528918400,
+					"providers": {
+						"CF": {
+							"total": 2842972800
+						},
+						"FY": {
+							"total": 2842972800
+						},
+						"QT": {
+							"total": 2842972800
+						}
+					},
+					"prev": {
+						"total": 25164
+					}
+				},
+				"UZ": {
+					"total": 8565523200,
+					"providers": {
+						"CF": {
+							"total": 2855174400
+						},
+						"FY": {
+							"total": 2855174400
+						},
+						"QT": {
+							"total": 2855174400
+						}
+					},
+					"prev": {
+						"total": 25272
+					}
+				},
+				"VA": {
+					"total": 8602128000,
+					"providers": {
+						"CF": {
+							"total": 2867376000
+						},
+						"FY": {
+							"total": 2867376000
+						},
+						"QT": {
+							"total": 2867376000
+						}
+					},
+					"prev": {
+						"total": 25380
+					}
+				},
+				"VC": {
+					"total": 8638732800,
+					"providers": {
+						"CF": {
+							"total": 2879577600
+						},
+						"FY": {
+							"total": 2879577600
+						},
+						"QT": {
+							"total": 2879577600
+						}
+					},
+					"prev": {
+						"total": 25488
+					}
+				},
+				"VE": {
+					"total": 8675337600,
+					"providers": {
+						"CF": {
+							"total": 2891779200
+						},
+						"FY": {
+							"total": 2891779200
+						},
+						"QT": {
+							"total": 2891779200
+						}
+					},
+					"prev": {
+						"total": 25596
+					}
+				},
+				"VG": {
+					"total": 8711942400,
+					"providers": {
+						"CF": {
+							"total": 2903980800
+						},
+						"FY": {
+							"total": 2903980800
+						},
+						"QT": {
+							"total": 2903980800
+						}
+					},
+					"prev": {
+						"total": 25704
+					}
+				},
+				"VI": {
+					"total": 8748547200,
+					"providers": {
+						"CF": {
+							"total": 2916182400
+						},
+						"FY": {
+							"total": 2916182400
+						},
+						"QT": {
+							"total": 2916182400
+						}
+					},
+					"prev": {
+						"total": 25812
+					}
+				},
+				"VN": {
+					"total": 8785152000,
+					"providers": {
+						"CF": {
+							"total": 2928384000
+						},
+						"FY": {
+							"total": 2928384000
+						},
+						"QT": {
+							"total": 2928384000
+						}
+					},
+					"prev": {
+						"total": 25920
+					}
+				},
+				"VU": {
+					"total": 8821756800,
+					"providers": {
+						"CF": {
+							"total": 2940585600
+						},
+						"FY": {
+							"total": 2940585600
+						},
+						"QT": {
+							"total": 2940585600
+						}
+					},
+					"prev": {
+						"total": 26028
+					}
+				},
+				"WF": {
+					"total": 8858361600,
+					"providers": {
+						"CF": {
+							"total": 2952787200
+						},
+						"FY": {
+							"total": 2952787200
+						},
+						"QT": {
+							"total": 2952787200
+						}
+					},
+					"prev": {
+						"total": 26136
+					}
+				},
+				"WS": {
+					"total": 8894966400,
+					"providers": {
+						"CF": {
+							"total": 2964988800
+						},
+						"FY": {
+							"total": 2964988800
+						},
+						"QT": {
+							"total": 2964988800
+						}
+					},
+					"prev": {
+						"total": 26244
+					}
+				},
+				"XK": {
+					"total": 8931571200,
+					"providers": {
+						"CF": {
+							"total": 2977190400
+						},
+						"FY": {
+							"total": 2977190400
+						},
+						"QT": {
+							"total": 2977190400
+						}
+					},
+					"prev": {
+						"total": 26352
+					}
+				},
+				"YE": {
+					"total": 8968176000,
+					"providers": {
+						"CF": {
+							"total": 2989392000
+						},
+						"FY": {
+							"total": 2989392000
+						},
+						"QT": {
+							"total": 2989392000
+						}
+					},
+					"prev": {
+						"total": 26460
+					}
+				},
+				"YT": {
+					"total": 9004780800,
+					"providers": {
+						"CF": {
+							"total": 3001593600
+						},
+						"FY": {
+							"total": 3001593600
+						},
+						"QT": {
+							"total": 3001593600
+						}
+					},
+					"prev": {
+						"total": 26568
+					}
+				},
+				"ZA": {
+					"total": 9041385600,
+					"providers": {
+						"CF": {
+							"total": 3013795200
+						},
+						"FY": {
+							"total": 3013795200
+						},
+						"QT": {
+							"total": 3013795200
+						}
+					},
+					"prev": {
+						"total": 26676
+					}
+				},
+				"ZM": {
+					"total": 9077990400,
+					"providers": {
+						"CF": {
+							"total": 3025996800
+						},
+						"FY": {
+							"total": 3025996800
+						},
+						"QT": {
+							"total": 3025996800
+						}
+					},
+					"prev": {
+						"total": 26784
+					}
+				},
+				"ZW": {
+					"total": 9114595200,
+					"providers": {
+						"CF": {
+							"total": 3038198400
+						},
+						"FY": {
+							"total": 3038198400
+						},
+						"QT": {
+							"total": 3038198400
+						}
+					},
+					"prev": {
+						"total": 26892
+					}
+				}
+			},
+			"prev": {
+				"total": 3361500
+			}
+		}
+	},
+	"/v1/stats/network/countries?period=s-year": {
+		"date": "2010-12-31",
+		"hits": {
+			"total": 0,
+			"countries": {},
+			"prev": {
+				"total": 0
+			}
+		},
+		"bandwidth": {
+			"total": 0,
+			"countries": {},
+			"prev": {
+				"total": 0
+			}
+		}
+	},
 	"/v1/stats/network/countries?period=week": {
 		"date": "2010-12-31",
 		"hits": {
