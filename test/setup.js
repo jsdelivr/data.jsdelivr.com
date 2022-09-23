@@ -4,22 +4,16 @@ require('@sinonjs/fake-timers').install({ now: new Date('2022-07-01T00:00:00Z'),
 console.log(`Starting with fake time set to ${new Date().toISOString()}`);
 
 require('../src/lib/startup');
-const fs = require('fs-extra');
 const http = require('http');
 const nock = require('nock');
-const path = require('path');
-const crypto = require('crypto');
 const config = require('config');
-const readdir = require('recursive-readdir');
 
 const serverCallback = require('../src');
-const { listTables, listViews } = require('../src/lib/db/utils');
-const { toIsoDate } = require('../src/lib/date');
+const setupDb = require('./setup-db');
 
 const upstreamNpmResponses = require('./data/v1/npm.json');
 const upstreamCdnResponses = require('./data/v1/cdn.json');
 const upstreamGitHubResponses = require('./data/v1/github.json');
-const dbConfig = config.get('db');
 
 module.exports.mochaGlobalSetup = async () => {
 	nock.disableNetConnect();
@@ -150,51 +144,5 @@ module.exports.mochaGlobalSetup = async () => {
 		.times(1)
 		.reply(200, { version: '2.0.0' });
 
-	if (!dbConfig.connection.database.endsWith('-test')) {
-		throw new Error(`Database name for test env needs to end with "-test". Got "${dbConfig.connection.database}".`);
-	}
-
-	let [ dbEntry, currentHash ] = await Promise.all([
-		getCurrentDbHash(),
-		hashDbSetupFiles(),
-	]);
-
-	if (dbEntry?.value === currentHash) {
-		log.debug(`Database setup didn't change since last run. Skipping.`);
-	} else {
-		log.debug('Dropping existing tables.');
-		await db.raw('SET @@foreign_key_checks = 0;');
-		await Bluebird.each(listTables(db), table => db.schema.raw(`drop table \`${table}\``));
-		await Bluebird.each(listViews(db), table => db.schema.raw(`drop view \`${table}\``));
-		await db.raw('SET @@foreign_key_checks = 1;');
-
-		log.debug('Setting up the database.');
-		await db.migrate.latest();
-
-		log.debug('Inserting test data.');
-		await db.seed.run();
-
-		log.debug('Generating materialized views.');
-		await db.schema.raw(fs.readFileSync(__dirname + '/data/schema.sql', 'utf8'));
-		await db('_test').insert({ key: 'hash', value: currentHash });
-
-		log.debug('Test setup done.');
-	}
+	await setupDb({ databaseDate: '2022-07-01' });
 };
-
-async function getCurrentDbHash () {
-	return db('_test').where({ key: 'hash' }).first().catch(() => null);
-}
-
-async function hashDbSetupFiles () {
-	let files = await Bluebird.map(_.sortBy([
-		...await readdir(path.join(__dirname, '../migrations')),
-		...await readdir(path.join(__dirname, '../seeds')),
-		path.join(__dirname, '/data/schema.sql'),
-		path.join(__dirname, '/data/v1/entrypoints.json'),
-	]), file => fs.readFile(file), { concurrency: 32 });
-
-	return files.reduce((hash, file) => {
-		return hash.update(file);
-	}, crypto.createHash('sha256')).update(toIsoDate(new Date())).digest('hex');
-}
