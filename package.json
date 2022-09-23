@@ -53,6 +53,7 @@
 	},
 	"devDependencies": {
 		"@martin-kolarik/eslint-config": "^7.0.0",
+		"@sinonjs/fake-timers": "^9.1.2",
 		"@types/blocked": "^1.3.1",
 		"@types/bluebird": "^3.5.36",
 		"@types/chai": "^4.2.22",

@@ -1,6 +1,9 @@
 process.env.NODE_ENV = 'test';
-require('../src/lib/startup');
 
+require('@sinonjs/fake-timers').install({ now: new Date('2022-07-01T00:00:00Z'), shouldAdvanceTime: true });
+console.log(`Starting with fake time set to ${new Date().toISOString()}`);
+
+require('../src/lib/startup');
 const fs = require('fs-extra');
 const http = require('http');
 const nock = require('nock');

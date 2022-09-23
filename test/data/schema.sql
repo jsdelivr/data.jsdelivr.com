@@ -21,7 +21,7 @@ from package
 	     join file_hits on file.id = file_hits.fileId
 group by packageVersionId, date;
 
-set @date = utc_date();
+set @date = date('2022-07-01');
 call analyzeAllTables();
 call updateViewNetworkCountries(@date);
 call updateViewNetworkCdns(@date);
