@@ -52,12 +52,12 @@ class BaseRequest {
 		return {
 			hits: {
 				...periodStats.hits,
-				dates: dateRange.fill(dailyStats.hits, ...this.dateRange),
+				dates: dateRange.fill(periodStats.hits.total ? dailyStats.hits : {}, ...this.dateRange),
 				prev: periodStats.prev.hits,
 			},
 			bandwidth: {
 				...periodStats.bandwidth,
-				dates: dateRange.fill(dailyStats.bandwidth, ...this.dateRange),
+				dates: dateRange.fill(periodStats.bandwidth.total ? dailyStats.bandwidth : {}, ...this.dateRange),
 				prev: periodStats.prev.bandwidth,
 			},
 		};
@@ -69,14 +69,14 @@ class BaseRequest {
 				total: _.reduce(combined, (a, v) => a + v.hits.total, 0),
 				[key]: _.mapValues(combined, v => v.hits),
 				prev: {
-					total: _.reduce(combined, (a, v) => a + v.hits.prev.total, 0),
+					total: _.reduce(combined, (a, v) => a + v.hits.prev?.total, 0),
 				},
 			},
 			bandwidth: {
 				total: _.reduce(combined, (a, v) => a + v.bandwidth.total, 0),
 				[key]: _.mapValues(combined, v => v.bandwidth),
 				prev: {
-					total: _.reduce(combined, (a, v) => a + v.bandwidth.prev.total, 0),
+					total: _.reduce(combined, (a, v) => a + v.bandwidth.prev?.total, 0),
 				},
 			},
 		};

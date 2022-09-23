@@ -23,10 +23,12 @@ class StatsRequest extends BaseRequest {
 			CountryCdnHits.getProvidersStatsForPeriodAndLocation(this.period, this.date, this.composedLocationFilter),
 		]);
 
-		let combined = _.mapValues(dailyStatsGroups, (dailyStats, provider) => {
-			// No null checks here because the results should have the same set of providers.
-			// If they don't, throwing an error is the best possible action.
+		let combined = _.pickBy(_.mapValues(dailyStatsGroups, (dailyStats, provider) => {
 			let providerPeriodStats = periodStats[provider];
+
+			if (!providerPeriodStats) {
+				return;
+			}
 
 			return {
 				hits: {
@@ -40,7 +42,7 @@ class StatsRequest extends BaseRequest {
 					prev: providerPeriodStats.prev.bandwidth,
 				},
 			};
-		});
+		}));
 
 		this.ctx.body = this.formatCombinedStatsExtended(combined, 'providers');
 
@@ -141,10 +143,12 @@ class StatsRequest extends BaseRequest {
 			CountryCdnHits.getCountryStatsForPeriod(this.period, this.date),
 		]);
 
-		let combined = _.mapValues(dailyStats, (providerStats, country) => {
-			// No null checks here because the results should have the same set of countries.
-			// If they don't, throwing an error is the best possible action.
+		let combined = _.pickBy(_.mapValues(dailyStats, (providerStats, country) => {
 			let countryPeriodStats = periodStats[country];
+
+			if (!countryPeriodStats) {
+				return;
+			}
 
 			return {
 				hits: {
@@ -158,7 +162,7 @@ class StatsRequest extends BaseRequest {
 					prev: countryPeriodStats.prev.hits,
 				},
 			};
-		});
+		}));
 
 		this.ctx.body = this.formatCombinedStatsExtended(combined, 'countries');
 

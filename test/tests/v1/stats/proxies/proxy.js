@@ -2,7 +2,7 @@ const { makeEndpointSnapshotTests, setupSnapshots } = require('../../../../utils
 
 const periodOptions = [
 	'day', 'week', 'month', 'year', 'all', undefined,
-	's-month', 's-year',
+	's-month', 's-year', '2022-04', '2022',
 ];
 
 describe('/v1/stats/proxies/proxy', () => {
