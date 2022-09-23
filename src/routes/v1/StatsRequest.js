@@ -31,12 +31,12 @@ class StatsRequest extends BaseRequest {
 			return {
 				hits: {
 					...providerPeriodStats.hits,
-					dates: dateRange.fill(dailyStats.hits, ...this.dateRange, { total: 0, IPv: { 4: 123123, 6: 456456 }, HTTPv: { '1.0': 456789, '1.1': 345678, '2.0': 234567, '3.0': 123456 } }),
+					dates: dateRange.fill(dailyStats.hits, ...this.dateRange, { total: 0 }),
 					prev: providerPeriodStats.prev.hits,
 				},
 				bandwidth: {
 					...providerPeriodStats.bandwidth,
-					dates: dateRange.fill(dailyStats.bandwidth, ...this.dateRange, { total: 0, IPv: { 4: 123123, 6: 456456 }, HTTPv: { '1.0': 456789, '1.1': 345678, '2.0': 234567, '3.0': 123456 } }),
+					dates: dateRange.fill(dailyStats.bandwidth, ...this.dateRange, { total: 0 }),
 					prev: providerPeriodStats.prev.bandwidth,
 				},
 			};
