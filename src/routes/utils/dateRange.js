@@ -87,9 +87,9 @@ module.exports.getDuration = (period) => {
 
 		if (result) {
 			if (result.period === 's-month') {
-				return new Date(period.date.getFullYear(), period.date.getMonth(), 0);
+				return new Date(Date.UTC(result.date.getUTCFullYear(), result.date.getUTCMonth() + 1, 0)).getUTCDate();
 			} else if (result.period === 's-year') {
-				return new Date(period.date.getFullYear(), 1, 29).getDate() === 29 ? 366 : 365;
+				return new Date(Date.UTC(result.date.getUTCFullYear(), 1, 29)).getUTCDate() === 29 ? 366 : 365;
 			}
 		}
 
