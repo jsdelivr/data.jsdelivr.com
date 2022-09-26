@@ -87,7 +87,7 @@ class LinkBuilder {
 				_.pick(mappedResource, validator?.requiredSchemaKeys?.query),
 				_.pick(mappedResource, this._includeQuery)
 			),
-		});
+		}).replace(/!(\w+)!/g, '{$1}');
 
 		return `${serverConfig.host}${urlPath}`;
 	}
@@ -122,6 +122,11 @@ class LinkBuilder {
 			? Object.assign({}, mappedResource, this._values)
 			: mappedResource;
 
+		// Apply withVariables()
+		mappedResource = this._variables
+			? Object.assign({}, mappedResource, Object.fromEntries(this._variables.map(key => [ key, `!${key}!` ])))
+			: mappedResource;
+
 		// Apply transform()
 		mappedResource = this._transform
 			? this._transform(mappedResource)
@@ -142,6 +147,11 @@ class LinkBuilder {
 
 	withValues (values) {
 		this._values = values;
+		return this;
+	}
+
+	withVariables (keys) {
+		this._variables = keys;
 		return this;
 	}
 }

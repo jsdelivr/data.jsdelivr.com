@@ -48,6 +48,10 @@ class CountryCdnHits extends BaseModel {
 		return new Proxy(this, BaseModel.ProxyHandler);
 	}
 
+	static async getPeriods () {
+		return this._getPeriods(NetworkCdn.table);
+	}
+
 	static async getProviderCountryStats (from, to) {
 		let sql = db(this.table);
 

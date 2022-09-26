@@ -39,6 +39,10 @@ class ProxyModel extends BaseModel {
 		return new Proxy(this, BaseModel.ProxyHandler);
 	}
 
+	static async getPeriods () {
+		return this._getPeriods(TopProxy.table);
+	}
+
 	static async getDailyStatsByName (name, from, to) {
 		let sql = db(this.table)
 			.where({ name })

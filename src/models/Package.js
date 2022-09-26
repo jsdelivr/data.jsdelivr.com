@@ -41,6 +41,10 @@ class Package extends BaseCacheModel {
 		return new Proxy(this, BaseCacheModel.ProxyHandler);
 	}
 
+	static async getPeriods () {
+		return this._getPeriods(TopPackage.table);
+	}
+
 	static async getDailyStatsByName (type, name, from, to) {
 		let sql = db(this.table)
 			.where({ type, name })

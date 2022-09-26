@@ -360,6 +360,21 @@ const routes = {
 		],
 	},
 	'/stats/packages': {
+		handlers: [
+			validate({
+				query: Joi.object({
+					by: schema.by,
+					type: schema.type,
+					period: schema.period,
+					...schema.paginatedStats,
+				}),
+			}),
+			async (ctx) => {
+				return new StatsRequest(ctx).handlePackages();
+			},
+		],
+	},
+	'/deprecated/stats/packages': {
 		paths: [
 			// TODO: removed the "type" param here to avoid overlap with new package stats endpoints,
 			// TODO: which is a breaking change but it was undocumented and only used by Algolia. Send them a PR with a fix.
@@ -372,7 +387,6 @@ const routes = {
 			validate({
 				query: Joi.object({
 					by: schema.by,
-					type: schema.type,
 					period: schema.period,
 					...schema.paginatedStats,
 				}),
@@ -679,7 +693,7 @@ module.exports.router = router;
 
 Object.entries(routes).forEach(([ routeName, definition ]) => {
 	_.defaults(definition, {
-		getName (resource) {
+		getName (resource = {}) {
 			if (this.paths.length === 1) {
 				return this.paths[0].name;
 			}

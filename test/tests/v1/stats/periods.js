@@ -14,12 +14,12 @@ function makeStatsPeriodsTests () {
 		{
 			params: {},
 			assert: (response) => {
-				expect(_.every(response.body, item => item.links.browsers)).to.be.true;
-				expect(_.every(response.body, item => item.links.platforms)).to.be.true;
-				expect(response.body).to.have.lengthOf(7);
-
-				// Delete the floating periods which would mess up snapshots.
-				response.body.splice(0, 1);
+				expect(response.body.filter(item => item.links.browsers)).to.have.lengthOf(7);
+				expect(response.body.filter(item => item.links.network)).to.have.lengthOf(2);
+				expect(response.body.filter(item => item.links.packages)).to.have.lengthOf(2);
+				expect(response.body.filter(item => item.links.platforms)).to.have.lengthOf(7);
+				expect(response.body.filter(item => item.links.proxies)).to.have.lengthOf(2);
+				expect(response.body).to.have.lengthOf(8);
 				expect(response).to.matchSnapshot();
 			},
 		},

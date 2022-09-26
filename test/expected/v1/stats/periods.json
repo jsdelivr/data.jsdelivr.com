@@ -1,6 +1,26 @@
 {
 	"/v1/stats/periods": [
 		{
+			"period": "2022-05",
+			"periodType": "s-month",
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/browsers?period=2022-05",
+				"network": "http://localhost:4454/v1/stats/network?period=2022-05",
+				"packages": "http://localhost:4454/v1/stats/packages?period=2022-05",
+				"platforms": "http://localhost:4454/v1/stats/platforms?period=2022-05",
+				"proxies": "http://localhost:4454/v1/stats/proxies/{name}?period=2022-05"
+			}
+		},
+		{
+			"period": "2022-04",
+			"periodType": "s-month",
+			"links": {
+				"network": "http://localhost:4454/v1/stats/network?period=2022-04",
+				"packages": "http://localhost:4454/v1/stats/packages?period=2022-04",
+				"proxies": "http://localhost:4454/v1/stats/proxies/{name}?period=2022-04"
+			}
+		},
+		{
 			"period": "2021",
 			"periodType": "s-year",
 			"links": {
