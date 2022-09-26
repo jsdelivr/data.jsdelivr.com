@@ -51,6 +51,9 @@ async function hashDbSetupFiles () {
 		...await readdir(path.join(__dirname, '../seeds')),
 		path.join(__dirname, '/data/schema.sql'),
 		path.join(__dirname, '/data/v1/entrypoints.json'),
+		path.join(__dirname, '/setup.js'),
+		path.join(__dirname, '/setup-db.js'),
+		path.join(__dirname, '/setup-dev.js'),
 	]), file => fs.readFile(file), { concurrency: 32 });
 
 	return files.reduce((hash, file) => {

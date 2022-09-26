@@ -891,7 +891,7 @@
 			"prev": {
 				"rank": 117,
 				"typeRank": 57,
-				"total": 1188
+				"total": 1228
 			}
 		},
 		"bandwidth": {
@@ -934,7 +934,7 @@
 			"prev": {
 				"rank": 117,
 				"typeRank": 57,
-				"total": 12398832
+				"total": 12812126
 			}
 		},
 		"links": {
@@ -1273,7 +1273,7 @@
 			"prev": {
 				"rank": 117,
 				"typeRank": 57,
-				"total": 1188
+				"total": 1228
 			}
 		},
 		"bandwidth": {
@@ -1316,7 +1316,7 @@
 			"prev": {
 				"rank": 117,
 				"typeRank": 57,
-				"total": 12398832
+				"total": 12812126
 			}
 		},
 		"links": {
@@ -3812,7 +3812,7 @@
 			"prev": {
 				"rank": 0,
 				"typeRank": 0,
-				"total": 65340
+				"total": 67518
 			}
 		},
 		"bandwidth": {
@@ -3855,7 +3855,7 @@
 			"prev": {
 				"rank": 0,
 				"typeRank": 0,
-				"total": 1059768720
+				"total": 1095094344
 			}
 		},
 		"links": {
@@ -4194,7 +4194,7 @@
 			"prev": {
 				"rank": 0,
 				"typeRank": 0,
-				"total": 65340
+				"total": 67518
 			}
 		},
 		"bandwidth": {
@@ -4237,7 +4237,7 @@
 			"prev": {
 				"rank": 0,
 				"typeRank": 0,
-				"total": 1059768720
+				"total": 1095094344
 			}
 		},
 		"links": {

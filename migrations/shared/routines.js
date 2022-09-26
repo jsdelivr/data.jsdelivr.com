@@ -31,6 +31,8 @@ ${periods.map(period => topPackagesForPeriod(period)).join('\n')}
 				delete from view_top_packages where \`period\` = aPeriod and \`date\` < aDateTo;
 			end if;
 
+			set @prevScaleFactor = (datediff(aDateTo, aDateFrom) + 1) / (datediff(aPrevDateTo, aPrevDateFrom) + 1);
+
 			insert into view_top_packages
 				(period, date, type, name,
 				 hitsRank, hitsTypeRank, hits, bandwidthRank, bandwidthTypeRank, bandwidth,
@@ -53,11 +55,11 @@ ${periods.map(period => topPackagesForPeriod(period)).join('\n')}
 					sum(hits) as hits,
 					sum(bandwidth) as bandwidth,
 					# These nested queries perform SIGNIFICANTLY better than a join (on MariaDB 10.5).
-					(select sum(hits)
+					(select round(sum(hits) * @prevScaleFactor)
 					 from package_hits
 					 where packageId = package.id and date >= aPrevDateFrom and date <= aPrevDateTo
 					 group by packageId) as prevHits,
-					(select sum(bandwidth)
+					(select round(sum(bandwidth) * @prevScaleFactor)
 					 from package_hits
 					 where packageId = package.id and date >= aPrevDateFrom and date <= aPrevDateTo
 					 group by packageId) as prevBandwidth
@@ -101,6 +103,8 @@ ${periods.map(period => topProxiesForPeriod(period)).join('\n')}
 				delete from view_top_proxies where \`period\` = aPeriod and \`date\` < aDateTo;
 			end if;
 
+			set @prevScaleFactor = (datediff(aDateTo, aDateFrom) + 1) / (datediff(aPrevDateTo, aPrevDateFrom) + 1);
+
 			insert into view_top_proxies
 				(period, date, name, hits, bandwidth, prevHits, prevBandwidth)
 			select aPeriod, aDate, name,
@@ -110,8 +114,8 @@ ${periods.map(period => topProxiesForPeriod(period)).join('\n')}
 				select name,
 					sum(hits) as hits,
 					sum(bandwidth) as bandwidth,
-					(select sum(hits) from proxy_hits where proxyId = proxy.id and date >= aPrevDateFrom and date <= aPrevDateTo) as prevHits,
-					(select sum(bandwidth) from proxy_hits where proxyId = proxy.id and date >= aPrevDateFrom and date <= aPrevDateTo) as prevBandwidth
+					(select round(sum(hits) * @prevScaleFactor) from proxy_hits where proxyId = proxy.id and date >= aPrevDateFrom and date <= aPrevDateTo) as prevHits,
+					(select round(sum(bandwidth) * @prevScaleFactor) from proxy_hits where proxyId = proxy.id and date >= aPrevDateFrom and date <= aPrevDateTo) as prevBandwidth
 				from proxy
 					     join proxy_hits on proxy.id = proxy_hits.proxyId
 				where date >= aDateFrom and date <= aDateTo
@@ -152,6 +156,8 @@ ${periods.map(period => countriesForPeriod(period)).join('\n')}
 				delete from view_network_countries where \`period\` = aPeriod and \`date\` < aDateTo;
 			end if;
 
+			set @prevScaleFactor = (datediff(aDateTo, aDateFrom) + 1) / (datediff(aPrevDateTo, aPrevDateFrom) + 1);
+
 			insert into view_network_countries
 				(period, date, countryIso, hits, bandwidth, prevHits, prevBandwidth)
 			select aPeriod, aDate, countryIso,
@@ -161,8 +167,8 @@ ${periods.map(period => countriesForPeriod(period)).join('\n')}
 				select countryIso,
 					sum(hits) as hits,
 					sum(bandwidth) as bandwidth,
-					(select sum(hits) from country_cdn_hits where cch.countryIso = country_cdn_hits.countryIso and date >= aPrevDateFrom and date <= aPrevDateTo) as prevHits,
-					(select sum(bandwidth) from country_cdn_hits where cch.countryIso = country_cdn_hits.countryIso and date >= aPrevDateFrom and date <= aPrevDateTo) as prevBandwidth
+					(select round(sum(hits) * @prevScaleFactor) from country_cdn_hits where cch.countryIso = country_cdn_hits.countryIso and date >= aPrevDateFrom and date <= aPrevDateTo) as prevHits,
+					(select round(sum(bandwidth) * @prevScaleFactor) from country_cdn_hits where cch.countryIso = country_cdn_hits.countryIso and date >= aPrevDateFrom and date <= aPrevDateTo) as prevBandwidth
 				from country_cdn_hits cch
 				where date >= aDateFrom and date <= aDateTo
 				group by countryIso
@@ -202,6 +208,8 @@ ${periods.map(period => cdnsForPeriod(period)).join('\n')}
 				delete from view_network_cdns where \`period\` = aPeriod and \`date\` < aDateTo;
 			end if;
 
+			set @prevScaleFactor = (datediff(aDateTo, aDateFrom) + 1) / (datediff(aPrevDateTo, aPrevDateFrom) + 1);
+
 			insert into view_network_cdns
 				(period, locationType, locationId, date, cdn, hits, bandwidth, prevHits, prevBandwidth)
 			select aPeriod, 'global', '', aDate, cdn,
@@ -211,8 +219,8 @@ ${periods.map(period => cdnsForPeriod(period)).join('\n')}
 				select cdn,
 					sum(hits) as hits,
 					sum(bandwidth) as bandwidth,
-					(select sum(hits) from country_cdn_hits where cch.cdn = country_cdn_hits.cdn and date >= aPrevDateFrom and date <= aPrevDateTo) as prevHits,
-					(select sum(bandwidth) from country_cdn_hits where cch.cdn = country_cdn_hits.cdn and date >= aPrevDateFrom and date <= aPrevDateTo) as prevBandwidth
+					(select round(sum(hits) * @prevScaleFactor) from country_cdn_hits where cch.cdn = country_cdn_hits.cdn and date >= aPrevDateFrom and date <= aPrevDateTo) as prevHits,
+					(select round(sum(bandwidth) * @prevScaleFactor) from country_cdn_hits where cch.cdn = country_cdn_hits.cdn and date >= aPrevDateFrom and date <= aPrevDateTo) as prevBandwidth
 				from country_cdn_hits cch
 				where date >= aDateFrom and date <= aDateTo
 				group by cdn
@@ -229,12 +237,12 @@ ${periods.map(period => cdnsForPeriod(period)).join('\n')}
 					continentCode,
 					sum(hits) as hits,
 					sum(bandwidth) as bandwidth,
-					(select sum(hits)
+					(select round(sum(hits) * @prevScaleFactor)
 						from country_cdn_hits cchi
 						join country ci on cchi.countryIso = ci.iso
 						where cch.cdn = cchi.cdn and c.continentCode = ci.continentCode and date >= aPrevDateFrom and date <= aPrevDateTo
 					) as prevHits,
-					(select sum(bandwidth)
+					(select round(sum(bandwidth) * @prevScaleFactor)
 						from country_cdn_hits cchi
 						join country ci on cchi.countryIso = ci.iso
 						where cch.cdn = cchi.cdn and c.continentCode = ci.continentCode and date >= aPrevDateFrom and date <= aPrevDateTo
@@ -256,11 +264,11 @@ ${periods.map(period => cdnsForPeriod(period)).join('\n')}
 					countryIso,
 					sum(hits) as hits,
 					sum(bandwidth) as bandwidth,
-					(select sum(hits)
+					(select round(sum(hits) * @prevScaleFactor)
 						from country_cdn_hits cchi
 						where cch.cdn = cchi.cdn and cch.countryIso = cchi.countryIso and date >= aPrevDateFrom and date <= aPrevDateTo
 					) as prevHits,
-					(select sum(bandwidth)
+					(select round(sum(bandwidth) * @prevScaleFactor)
 						from country_cdn_hits cchi
 						where cch.cdn = cchi.cdn and cch.countryIso = cchi.countryIso and date >= aPrevDateFrom and date <= aPrevDateTo
 					) as prevBandwidth
