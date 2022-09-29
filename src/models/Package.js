@@ -175,16 +175,24 @@ class Package extends BaseCacheModel {
 			return {
 				type: versionStats[0].type,
 				version: versionStats[0].version,
+				hits: _.sumBy(versionStats, 'hits'),
+				bandwidth: _.sumBy(versionStats, 'bandwidth'),
+				records: versionStats,
+			};
+		}).sort((a, b) => b[by] - a[by]).slice(start, start + limit).map((versionStats) => {
+			return {
+				type: versionStats.type,
+				version: versionStats.version,
 				hits: {
-					total: _.sumBy(versionStats, 'hits'),
-					dates: _.fromPairs(_.map(versionStats, record => [ toIsoDate(record.date), record.hits ])),
+					total: versionStats.hits,
+					dates: _.fromPairs(_.map(versionStats.records, record => [ toIsoDate(record.date), record.hits ])),
 				},
 				bandwidth: {
-					total: _.sumBy(versionStats, 'bandwidth'),
-					dates: _.fromPairs(_.map(versionStats, record => [ toIsoDate(record.date), record.bandwidth ])),
+					total: versionStats.bandwidth,
+					dates: _.fromPairs(_.map(versionStats.records, record => [ toIsoDate(record.date), record.bandwidth ])),
 				},
 			};
-		}).sort((a, b) => b[by].total - a[by].total).slice(start, start + limit);
+		});
 	}
 
 	toSqlFunctionCall () {

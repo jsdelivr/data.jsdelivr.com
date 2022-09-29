@@ -145,16 +145,23 @@ class PackageVersion extends BaseModel {
 		return _.map(_.groupBy(stats, 'filename'), (fileStats) => {
 			return {
 				name: fileStats[0].filename,
+				hits: _.sumBy(fileStats, 'hits'),
+				bandwidth: _.sumBy(fileStats, 'bandwidth'),
+				records: fileStats,
+			};
+		}).sort((a, b) => b[by] - a[by]).slice(start, start + limit).map((fileStats) => {
+			return {
+				name: fileStats.name,
 				hits: {
-					total: _.sumBy(fileStats, 'hits'),
-					dates: _.fromPairs(_.map(fileStats, record => [ toIsoDate(record.date), record.hits ])),
+					total: fileStats.hits,
+					dates: _.fromPairs(_.map(fileStats.records, record => [ toIsoDate(record.date), record.hits ])),
 				},
 				bandwidth: {
-					total: _.sumBy(fileStats, 'bandwidth'),
-					dates: _.fromPairs(_.map(fileStats, record => [ toIsoDate(record.date), record.bandwidth ])),
+					total: fileStats.bandwidth,
+					dates: _.fromPairs(_.map(fileStats.records, record => [ toIsoDate(record.date), record.bandwidth ])),
 				},
 			};
-		}).sort((a, b) => b[by].total - a[by].total).slice(start, start + limit);
+		});
 	}
 
 	toSqlFunctionCall () {
