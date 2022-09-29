@@ -85,16 +85,37 @@ class PackageVersion extends BaseModel {
 		return sql.select([ `${FileHits.table}.date`, `${FileHits.table}.${statType} as stat`, `${File.table}.filename` ]);
 	}
 
+	static async getStatsByNameAndVersion (type, name, version, from, to) {
+		let sql = db(this.table)
+			.where(`${Package.table}.type`, type)
+			.andWhere(`${Package.table}.name`, name)
+			.andWhere(`${this.table}.version`, version)
+			.join(Package.table, `${this.table}.packageId`, '=', `${Package.table}.id`)
+			.join(File.table, `${this.table}.id`, '=', `${File.table}.packageVersionId`)
+			.join(FileHits.table, `${File.table}.id`, '=', `${FileHits.table}.fileId`);
+
+		if (from instanceof Date) {
+			sql.where(`${FileHits.table}.date`, '>=', from);
+		}
+
+		if (to instanceof Date) {
+			sql.where(`${FileHits.table}.date`, '<=', to);
+		}
+
+		return sql.select([
+			`${File.table}.filename`,
+			`${FileHits.table}.date`,
+			`${FileHits.table}.hits as hits`,
+			`${FileHits.table}.bandwidth as bandwidth`,
+		]);
+	}
+
 	static async getMostUsedFiles (name, version) {
 		[ , version ] = /^(0\.\d+|\d+)/.exec(version);
 
 		return db('view_top_package_files')
 			.select([ 'filename' ])
 			.where({ name, version });
-	}
-
-	static async getSumDateBandwidthPerFileByName (type, name, version, from, to) {
-		return this.getSumDateStatPerFileByName(await this.getStatByNameAndVersion(type, name, version, from, to, 'bandwidth'));
 	}
 
 	static async getSumDateHitsPerFileByName (type, name, version, from, to) {
@@ -105,10 +126,6 @@ class PackageVersion extends BaseModel {
 		return _.mapValues(_.groupBy(stats, record => toIsoDate(record.date)), (versionHits) => {
 			return _.fromPairs(_.map(versionHits, record => [ record.filename, record.stat ]));
 		});
-	}
-
-	static async getSumFileBandwidthPerDateByName (type, name, version, from, to) {
-		return this.getSumFileStatPerDateByName(await this.getStatByNameAndVersion(type, name, version, from, to, 'bandwidth'));
 	}
 
 	static async getSumFileHitsPerDateByName (type, name, version, from, to) {
@@ -122,16 +139,22 @@ class PackageVersion extends BaseModel {
 	}
 
 	static async getTopFiles (type, name, version, by, from, to, limit = 100, page = 1) {
-		let stats = await this.getStatByNameAndVersion(type, name, version, from, to, by);
+		let stats = await this.getStatsByNameAndVersion(type, name, version, from, to);
 		let start = (page - 1) * limit;
 
 		return _.map(_.groupBy(stats, 'filename'), (fileStats) => {
 			return {
 				name: fileStats[0].filename,
-				total: _.sumBy(fileStats, 'stat'),
-				dates: _.fromPairs(_.map(fileStats, record => [ toIsoDate(record.date), record.stat ])),
+				hits: {
+					total: _.sumBy(fileStats, 'hits'),
+					dates: _.fromPairs(_.map(fileStats, record => [ toIsoDate(record.date), record.hits ])),
+				},
+				bandwidth: {
+					total: _.sumBy(fileStats, 'bandwidth'),
+					dates: _.fromPairs(_.map(fileStats, record => [ toIsoDate(record.date), record.bandwidth ])),
+				},
 			};
-		}).sort((a, b) => b.total - a.total).slice(start, start + limit);
+		}).sort((a, b) => b[by].total - a[by].total).slice(start, start + limit);
 	}
 
 	toSqlFunctionCall () {

@@ -245,10 +245,7 @@ class StatsRequest extends BaseRequest {
 		let stats = await PackageVersion.getTopFiles(this.params.type, this.params.name, this.params.version, this.query.by, ...this.dateRange, ...this.pagination);
 
 		this.ctx.body = stats.map((record) => {
-			return {
-				...record,
-				dates: dateRange.fill(record.dates, ...this.dateRange),
-			};
+			return this.formatDailyStats(record);
 		});
 
 		this.setCacheHeader();
