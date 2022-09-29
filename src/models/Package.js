@@ -184,7 +184,7 @@ class Package extends BaseCacheModel {
 					dates: _.fromPairs(_.map(versionStats, record => [ toIsoDate(record.date), record.bandwidth ])),
 				},
 			};
-		}).sort((a, b) => b.total - a.total).slice(start, start + limit);
+		}).sort((a, b) => b[by].total - a[by].total).slice(start, start + limit);
 	}
 
 	toSqlFunctionCall () {
