@@ -45,6 +45,7 @@ function makePackageStatsTests () {
 		{ user: 'user', repo: 'package-59', version: '1.1.0', by: [ 'x' ], period: 'month' },
 	], { status: 400 });
 
-	makeEndpointPaginationTests('/v1/stats/packages/npm/package-59@1.1.0/files', { by: 'hits', period: 'month' });
+	makeEndpointPaginationTests('/v1/stats/packages/npm/package-2@1.1.0/files', { by: 'hits', period: 'month' });
 	makeEndpointPaginationTests('/v1/stats/packages/gh/user/package-59@1.1.0/files', { by: 'hits', period: 'month' });
+	makeEndpointPaginationTests('/v1/stats/packages/gh/user/package-xx@1.1.0/files', { by: 'hits', period: 'month' });
 }
