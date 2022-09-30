@@ -42,7 +42,7 @@ class ProxyTarget {
 		this.callback = callback;
 		this.expiration = expiration;
 		this.deserialize = deserialize;
-		this.options = { asArray: 0, raw: 0, withLock: 0 };
+		this.options = { asArray: 0, raw: 0, withLock: 0, withMeta: 0 };
 	}
 
 	static hash (...values) {
@@ -70,9 +70,22 @@ class ProxyTarget {
 		return this;
 	}
 
+	asRawArrayWithMeta () {
+		this.options.withMeta = 1;
+		return this.asRawArray();
+	}
+
 	async parse (string) {
 		if (this.options.raw) {
-			return string;
+			if (!this.options.withMeta) {
+				return string;
+			}
+
+			let i = string.indexOf('\n');
+			let meta = JSON.parse(string.substring(0, i));
+			let data = string.substring(i + 1);
+
+			return { meta, data };
 		} else if (!this.options.asArray) {
 			return JSON.parse(string);
 		}
@@ -83,9 +96,13 @@ class ProxyTarget {
 	async serialize (value) {
 		if (!this.options.asArray) {
 			return JSON.stringify(value, null, '\t');
+		} else if (!this.options.withMeta) {
+			return arrayStream.stringify(value, { singleArrayOutput: this.options.raw });
 		}
 
-		return arrayStream.stringify(value, { singleArrayOutput: this.options.raw });
+		return JSON.stringify(value.meta)
+			+ '\n'
+			+ await arrayStream.stringify(value.data, { singleArrayOutput: this.options.raw });
 	}
 
 	raw () {
@@ -108,7 +125,7 @@ module.exports.ProxyTargetHandler = _.defaults({
 			return target[property];
 		} else if (typeof target.model[property] === 'function') {
 			return async (...args) => {
-				let key = `${target.model.name}:${property}:${target.options.asArray}:${target.options.raw}:${args.length ? ProxyTarget.hash(...args) : ''}:${target.transformKey}`, value;
+				let key = `${target.model.name}:${property}:${target.options.asArray}:${target.options.raw}:${target.options.withMeta}:${args.length ? ProxyTarget.hash(...args) : ''}:${target.transformKey}`, value;
 
 				if (value = await redis.getCompressedAsync(key).catch(() => {})) {
 					return target.deserialize(await target.parse(value));
@@ -123,7 +140,9 @@ module.exports.ProxyTargetHandler = _.defaults({
 						redis.setCompressedAsync(key, serialized, 'EX', expiration).catch(() => {});
 
 						if (target.options.raw) {
-							return serialized;
+							return target.options.withMeta
+								? { meta: value.meta, data: serialized.substring(serialized.indexOf('\n') + 1) }
+								: serialized;
 						}
 					}
 

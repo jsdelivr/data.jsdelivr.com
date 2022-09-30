@@ -143,6 +143,12 @@ class LinkBuilder {
 		return this;
 	}
 
+	toLink (resources) {
+		return this.build(resources).map((resource) => {
+			return `<${resource.links.uri}>; rel="${resource.rel}"`;
+		}).join(', ');
+	}
+
 	transform (transform) {
 		this._transform = transform;
 		return this;

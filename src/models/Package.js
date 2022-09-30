@@ -155,11 +155,7 @@ class Package extends BaseCacheModel {
 			sql.where({ type });
 		}
 
-		if (limit) {
-			sql.limit(limit).offset((page - 1) * limit);
-		}
-
-		return _.map(await sql.select([ `type`, `name`, `hits`, `bandwidth`, `prevHits`, `prevBandwidth` ]), ({ type, name, hits, bandwidth, ...prev }) => {
+		return this.paginate(sql, limit, page, [ `type`, `name`, `hits`, `bandwidth`, `prevHits`, `prevBandwidth` ], ({ type, name, hits, bandwidth, ...prev }) => {
 			return {
 				type, name, hits, bandwidth,
 				prev: { hits: prev.prevHits, bandwidth: prev.prevBandwidth },
@@ -171,7 +167,7 @@ class Package extends BaseCacheModel {
 		let stats = await this.getStatsByName(type, name, from, to);
 		let start = (page - 1) * limit;
 
-		return _.map(_.groupBy(stats, record => `${record.type}:${record.version}`), (versionStats) => {
+		let sorted = _.map(_.groupBy(stats, record => `${record.type}:${record.version}`), (versionStats) => {
 			return {
 				type: versionStats[0].type,
 				version: versionStats[0].version,
@@ -179,7 +175,9 @@ class Package extends BaseCacheModel {
 				bandwidth: _.sumBy(versionStats, 'bandwidth'),
 				records: versionStats,
 			};
-		}).sort((a, b) => b[by] - a[by]).slice(start, start + limit).map((versionStats) => {
+		}).sort((a, b) => b[by] - a[by]);
+
+		let records = sorted.slice(start, start + limit).map((versionStats) => {
 			return {
 				type: versionStats.type,
 				version: versionStats.version,
@@ -193,6 +191,13 @@ class Package extends BaseCacheModel {
 				},
 			};
 		});
+
+		return {
+			page,
+			limit,
+			pages: Math.ceil(sorted.length / limit),
+			records,
+		};
 	}
 
 	toSqlFunctionCall () {

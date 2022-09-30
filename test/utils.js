@@ -3,6 +3,7 @@ const expect = chai.expect;
 
 const path = require('path');
 const urlTemplate = require('url-template');
+const HttpLinkHeader = require('http-link-header');
 const dateRange = require('../src/routes/utils/dateRange');
 require('./plugins/wrap-it');
 
@@ -117,8 +118,21 @@ function makeEndpointPaginationTests (uri, query = {}) {
 		});
 
 		it(`returns at most 10 results`, async () => {
+			let link = new HttpLinkHeader(first10.headers.link);
+
 			expect(first10).to.have.status(200);
 			expect(first10.body).to.have.length.lessThanOrEqual(10);
+
+			expect(link.rel('first')).to.have.lengthOf(1);
+			expect(link.rel('self')).to.have.lengthOf(1);
+			expect(link.rel('first')[0].uri).to.equal(link.rel('self')[0].uri);
+
+			// If there's more than one page, there should be a "next" link.
+			if (link.rel('last')[0].uri.includes('page=')) {
+				expect(link.rel('next')).to.have.lengthOf(1);
+			}
+
+			expect(link.rel('last')).to.have.lengthOf(1);
 		});
 
 		_.range(1, 11).forEach((index) => {

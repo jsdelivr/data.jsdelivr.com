@@ -22,10 +22,10 @@ const primitives = {
 			.prefs({ abortEarly: true }),
 
 	limit:
-		Joi.number().integer().positive().max(100),
+		Joi.number().integer().positive().max(100).default(100),
 
 	page:
-		Joi.number().integer().positive(),
+		Joi.number().integer().positive().default(1),
 
 	period:
 		Joi.custom((value, helpers) => {

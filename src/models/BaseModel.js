@@ -142,6 +142,30 @@ class BaseModel {
 		return true;
 	}
 
+	static async paginate (sql, limit, page, select, mapper) {
+		let s = sql.clone();
+
+		if (limit) {
+			sql.limit(limit).offset((page - 1) * limit);
+		}
+
+		let [{ count }, records ] = await Promise.all([
+			s.count('* as count').first(),
+			sql.select(select),
+		]);
+
+		if (mapper) {
+			records = records.map(mapper);
+		}
+
+		return {
+			page,
+			limit,
+			pages: Math.ceil(count / limit),
+			records,
+		};
+	}
+
 	/**
 	 * @returns {Promise<number>}
 	 */

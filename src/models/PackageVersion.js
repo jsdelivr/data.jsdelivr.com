@@ -142,14 +142,16 @@ class PackageVersion extends BaseModel {
 		let stats = await this.getStatsByNameAndVersion(type, name, version, from, to);
 		let start = (page - 1) * limit;
 
-		return _.map(_.groupBy(stats, 'filename'), (fileStats) => {
+		let sorted = _.map(_.groupBy(stats, 'filename'), (fileStats) => {
 			return {
 				name: fileStats[0].filename,
 				hits: _.sumBy(fileStats, 'hits'),
 				bandwidth: _.sumBy(fileStats, 'bandwidth'),
 				records: fileStats,
 			};
-		}).sort((a, b) => b[by] - a[by]).slice(start, start + limit).map((fileStats) => {
+		}).sort((a, b) => b[by] - a[by]);
+
+		let records = sorted.slice(start, start + limit).map((fileStats) => {
 			return {
 				name: fileStats.name,
 				hits: {
@@ -162,6 +164,13 @@ class PackageVersion extends BaseModel {
 				},
 			};
 		});
+
+		return {
+			page,
+			limit,
+			pages: Math.ceil(sorted.length / limit),
+			records,
+		};
 	}
 
 	toSqlFunctionCall () {

@@ -170,17 +170,22 @@ class StatsRequest extends BaseRequest {
 	}
 
 	async handlePackages () {
-		this.ctx.body = await Package.transform('links', (resources) => {
-			return this.linkBuilder()
+		let { meta, data } = await Package.transform('links', ({ page, pages, records }) => {
+			let data = this.linkBuilder()
 				.refs({
 					self: resource => routes['/stats/packages/:type/:name'].getName(resource),
 					versions: resource => routes['/stats/packages/:type/:name/versions'].getName(resource),
 				})
 				.transform(splitPackageUserAndName)
 				.withValues({ by: this.query.by })
-				.build(resources);
-		}).asRawArray().getTopPackages(this.query.by, this.period, this.date, this.query.type, ...this.pagination);
+				.build(records);
 
+			return { meta: { page, pages }, data };
+		}).asRawArrayWithMeta().getTopPackages(this.query.by, this.period, this.date, this.query.type, ...this.pagination);
+
+		this.ctx.body = data;
+
+		this.paginated(meta);
 		this.setCacheHeader();
 	}
 
@@ -231,7 +236,7 @@ class StatsRequest extends BaseRequest {
 				files: routes['/stats/packages/:type/:name@:version/files'].getName(this.params),
 			})
 			.withValues({ ...this.params, by: this.query.by })
-			.build(stats.map((record) => {
+			.build(this.paginated(stats).map((record) => {
 				return this.formatDailyStats(record);
 			}));
 
@@ -241,7 +246,7 @@ class StatsRequest extends BaseRequest {
 	async handleTopPackageVersionFiles () {
 		let stats = await PackageVersion.getTopFiles(this.params.type, this.params.name, this.params.version, this.query.by, ...this.dateRange, ...this.pagination);
 
-		this.ctx.body = stats.map((record) => {
+		this.ctx.body = this.paginated(stats).map((record) => {
 			return this.formatDailyStats(record);
 		});
 
@@ -282,7 +287,7 @@ class StatsRequest extends BaseRequest {
 				...!this.query.country && { countries: routes['/stats/platforms/:name/countries'].getName() },
 				versions: routes['/stats/platforms/:name/versions'].getName(),
 			})
-			.build(stats);
+			.build(this.paginated(stats));
 
 		this.setCacheHeader();
 	}
@@ -294,7 +299,7 @@ class StatsRequest extends BaseRequest {
 			.refs({
 				...!this.query.country && { countries: routes['/stats/platforms/:name/versions/:version/countries'].getName() },
 			})
-			.build(stats);
+			.build(this.paginated(stats));
 
 		this.setCacheHeader();
 	}
@@ -308,7 +313,7 @@ class StatsRequest extends BaseRequest {
 				platforms: routes['/stats/browsers/:name/platforms'].getName(),
 				versions: routes['/stats/browsers/:name/versions'].getName(),
 			})
-			.build(stats);
+			.build(this.paginated(stats));
 
 		this.setCacheHeader();
 	}
@@ -323,7 +328,7 @@ class StatsRequest extends BaseRequest {
 			})
 			.includeQuery([ 'country' ])
 			.omitQuery([ 'continent' ])
-			.build(stats);
+			.build(this.paginated(stats));
 
 		this.setCacheHeader();
 	}
@@ -336,7 +341,7 @@ class StatsRequest extends BaseRequest {
 				...!this.query.country && { countries: routes['/stats/platforms/:name/versions/:version/countries'].getName() },
 			})
 			.withValues({ name: this.params.name })
-			.build(stats);
+			.build(this.paginated(stats));
 
 		this.setCacheHeader();
 	}
@@ -351,7 +356,7 @@ class StatsRequest extends BaseRequest {
 			})
 			.includeQuery([ 'country' ])
 			.omitQuery([ 'continent' ])
-			.build(stats);
+			.build(this.paginated(stats));
 
 		this.setCacheHeader();
 	}
@@ -365,7 +370,7 @@ class StatsRequest extends BaseRequest {
 				platforms: routes['/stats/browsers/:name/platforms'].getName(),
 				versions: routes['/stats/browsers/:name/versions'].getName(),
 			})
-			.build(stats);
+			.build(this.paginated(stats));
 
 		this.setCacheHeader();
 	}
@@ -377,7 +382,7 @@ class StatsRequest extends BaseRequest {
 			.refs({
 				...!this.query.country && { countries: routes['/stats/browsers/:name/versions/:version/countries'].getName() },
 			})
-			.build(stats);
+			.build(this.paginated(stats));
 
 		this.setCacheHeader();
 	}
@@ -392,7 +397,7 @@ class StatsRequest extends BaseRequest {
 			})
 			.includeQuery([ 'country' ])
 			.omitQuery([ 'continent' ])
-			.build(stats);
+			.build(this.paginated(stats));
 
 		this.setCacheHeader();
 	}
@@ -406,7 +411,7 @@ class StatsRequest extends BaseRequest {
 				...!this.query.country && { countries: routes['/stats/platforms/:name/countries'].getName() },
 				versions: routes['/stats/platforms/:name/versions'].getName(),
 			})
-			.build(stats);
+			.build(this.paginated(stats));
 
 		this.setCacheHeader();
 	}
@@ -419,7 +424,7 @@ class StatsRequest extends BaseRequest {
 				...!this.query.country && { countries: routes['/stats/browsers/:name/versions/:version/countries'].getName() },
 			})
 			.withValues({ name: this.params.name })
-			.build(stats);
+			.build(this.paginated(stats));
 
 		this.setCacheHeader();
 	}
@@ -434,7 +439,7 @@ class StatsRequest extends BaseRequest {
 			})
 			.includeQuery([ 'country' ])
 			.omitQuery([ 'continent' ])
-			.build(stats);
+			.build(this.paginated(stats));
 
 		this.setCacheHeader();
 	}

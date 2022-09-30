@@ -102,6 +102,26 @@ class BaseRequest {
 		});
 	}
 
+	paginated ({ page, pages, records }) {
+		let link = new LinkBuilder(this.ctx)
+			.includeQuery([ 'limit', 'page' ])
+			.withValues(this.params)
+			.refs({
+				uri: this.ctx._matchedRouteName,
+			})
+			.toLink([
+				{ rel: 'first', page: 1 },
+				...page - 1 > 0 ? [{ rel: 'prev', page: page - 1 }] : [],
+				{ rel: 'self' },
+				...page + 1 <= pages ? [{ rel: 'next', page: page + 1 }] : [],
+				{ rel: 'last', page: Math.max(1, pages) },
+			]);
+
+		this.ctx.append('Link', link);
+
+		return records;
+	}
+
 	setCacheHeader (delay = 0) {
 		this.ctx.expires = new Date(relativeDayUtc(1).valueOf() + delay).toUTCString();
 		this.ctx.maxStale = v1Config.maxStaleShort;

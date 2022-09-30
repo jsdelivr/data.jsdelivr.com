@@ -47,11 +47,7 @@ class Platform extends BaseCacheModel {
 			.where(composedLocationFilter)
 			.orderBy([{ column: 'share', order: 'desc' }, { column: 'name' }]);
 
-		if (limit) {
-			sql.limit(limit).offset((page - 1) * limit);
-		}
-
-		return (await sql.select([ 'name', 'share', 'prevShare' ])).map((row) => {
+		return this.paginate(sql, limit, page, [ 'name', 'share', 'prevShare' ], (row) => {
 			return {
 				name: row.name,
 				share: row.share,
@@ -68,11 +64,7 @@ class Platform extends BaseCacheModel {
 			.where(composedLocationFilter)
 			.orderBy([{ column: 'share', order: 'desc' }, { column: 'browser' }]);
 
-		if (limit) {
-			sql.limit(limit).offset((page - 1) * limit);
-		}
-
-		return (await sql.select([ 'browser', 'share', 'prevShare' ])).map((row) => {
+		return this.paginate(sql, limit, page, [ 'browser', 'share', 'prevShare' ], (row) => {
 			return {
 				name: row.browser,
 				share: row.share,
@@ -89,11 +81,7 @@ class Platform extends BaseCacheModel {
 			.where(composedLocationFilter)
 			.orderBy([{ column: 'share', order: 'desc' }, { column: 'countryIso' }]);
 
-		if (limit) {
-			sql.limit(limit).offset((page - 1) * limit);
-		}
-
-		return (await sql.select([ 'countryIso', 'share', 'prevShare' ])).map((row) => {
+		return this.paginate(sql, limit, page, [ 'countryIso', 'share', 'prevShare' ], (row) => {
 			return {
 				country: row.countryIso,
 				share: row.share,
@@ -110,11 +98,7 @@ class Platform extends BaseCacheModel {
 			.where(composedLocationFilter)
 			.orderBy([{ column: 'share', order: 'desc' }, { column: 'countryIso' }]);
 
-		if (limit) {
-			sql.limit(limit).offset((page - 1) * limit);
-		}
-
-		return (await sql.select([ 'countryIso', 'share', 'prevShare' ])).map((row) => {
+		return this.paginate(sql, limit, page, [ 'countryIso', 'share', 'prevShare' ], (row) => {
 			return {
 				country: row.countryIso,
 				share: row.share,
@@ -131,11 +115,7 @@ class Platform extends BaseCacheModel {
 			.where(composedLocationFilter)
 			.orderBy([{ column: 'share', order: 'desc' }, { column: 'version' }]);
 
-		if (limit) {
-			sql.limit(limit).offset((page - 1) * limit);
-		}
-
-		return (await sql.select([ 'version', 'versionName', 'share', 'prevShare' ])).map((row) => {
+		return this.paginate(sql, limit, page, [ 'version', 'versionName', 'share', 'prevShare' ], (row) => {
 			return {
 				version: row.version,
 				versionName: row.versionName,
@@ -153,11 +133,7 @@ class Platform extends BaseCacheModel {
 			.where(composedLocationFilter)
 			.orderBy([{ column: 'share', order: 'desc' }, { column: 'name' }, { column: 'version' }]);
 
-		if (limit) {
-			sql.limit(limit).offset((page - 1) * limit);
-		}
-
-		return (await sql.select([ 'name', 'version', 'versionName', 'share', 'prevShare' ])).map((row) => {
+		return this.paginate(sql, limit, page, [ 'name', 'version', 'versionName', 'share', 'prevShare' ], (row) => {
 			return {
 				name: row.name,
 				version: row.version,
