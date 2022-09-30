@@ -81,12 +81,15 @@ class LinkBuilder {
 	_buildPublicUrl (route, mappedResource) {
 		let routeName = typeof route === 'function' ? route(mappedResource) : route;
 		let validator = this.ctx.router.route(routeName).stack.at(-2);
+
+		let query = _.pickBy(Object.assign(
+			_.pick(_.omit(this.ctx.originalQuery, this._omitQuery), validator?.schemaKeys?.query), // Keys from the current request if they are in the target schema as well.
+			_.pick(mappedResource, validator?.requiredSchemaKeys?.query), // Keys required in the target schema.
+			_.pick(mappedResource, this._includeQuery) // Explicitly added keys.
+		), (v, k) => String(v) !== validator?.schemaDefaults?.query?.[k]); // Filter out default values.
+
 		let urlPath = this.ctx.router.url(routeName, mappedResource, {
-			query: Object.assign(
-				_.pickBy(_.pick(_.omit(this.ctx.originalQuery, this._omitQuery), validator?.schemaKeys?.query), (v, k) => this.ctx.originalQuery[k] !== validator?.schemaDefaults?.query?.[k]),
-				_.pick(mappedResource, validator?.requiredSchemaKeys?.query),
-				_.pick(mappedResource, this._includeQuery)
-			),
+			query,
 		}).replace(/!(\w+)!/g, '{$1}');
 
 		return `${serverConfig.host}${urlPath}`;
