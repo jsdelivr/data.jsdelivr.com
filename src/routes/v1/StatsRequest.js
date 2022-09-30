@@ -194,7 +194,6 @@ class StatsRequest extends BaseRequest {
 			.refs({
 				versions: routes['/stats/packages/:type/:name/versions'].getName(this.params),
 			})
-			.transform(splitPackageUserAndName)
 			.withValues({ ...this.params, by: 'hits' })
 			.build(this.formatCombinedStats(dailyStats, periodStats));
 
@@ -208,7 +207,6 @@ class StatsRequest extends BaseRequest {
 			.refs({
 				files: routes['/stats/packages/:type/:name@:version/files'].getName(this.params),
 			})
-			.transform(splitPackageUserAndName)
 			.withValues({ ...this.params, by: 'hits' })
 			.build({
 				hits: {
@@ -232,7 +230,6 @@ class StatsRequest extends BaseRequest {
 				self: routes['/stats/packages/:type/:name@:version'].getName(this.params),
 				files: routes['/stats/packages/:type/:name@:version/files'].getName(this.params),
 			})
-			.transform(splitPackageUserAndName)
 			.withValues({ ...this.params, by: this.query.by })
 			.build(stats.map((record) => {
 				return this.formatDailyStats(record);

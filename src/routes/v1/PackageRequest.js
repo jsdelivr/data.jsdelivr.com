@@ -17,7 +17,6 @@ const CdnJsPackage = require('../../models/CdnJsPackage');
 const dateRange = require('../utils/dateRange');
 const sumDeep = require('../utils/sumDeep');
 const entrypoint = require('../utils/packageEntrypoint');
-const { splitPackageUserAndName } = require('../utils/link-builder-transforms');
 
 const NpmRemoteService = require('../../remote-services/NpmRemoteService');
 const GitHubRemoteService = require('../../remote-services/GitHubRemoteService');
@@ -217,7 +216,7 @@ class PackageRequest extends BaseRequest {
 					...this.params.type === 'npm' && { entrypoints: routes['/packages/:type/:name@:version/entrypoints'].getName(this.params) },
 					stats: routes['/stats/packages/:type/:name@:version'].getName(this.params),
 				})
-				.transform(splitPackageUserAndName)
+				.withValues(this.params)
 				.build({
 					type: this.params.type,
 					name: this.params.name,
@@ -257,7 +256,7 @@ class PackageRequest extends BaseRequest {
 				.refs({
 					stats: routes['/stats/packages/:type/:name'].getName(this.params),
 				})
-				.transform(splitPackageUserAndName)
+				.withValues(this.params)
 				.build({
 					type: this.params.type,
 					name: this.params.name,
@@ -269,7 +268,6 @@ class PackageRequest extends BaseRequest {
 							stats: routes['/stats/packages/:type/:name@:version'].getName(this.params),
 						})
 						.withValues(this.params)
-						.transform(splitPackageUserAndName)
 						.build(pkg.versions.map(version => ({ version }))),
 				});
 
@@ -357,7 +355,7 @@ class PackageRequest extends BaseRequest {
 					stats: routes['/stats/packages/:type/:name@:version'].getName(this.params),
 					...this.params.type === 'npm' && { entrypoints: routes['/packages/:type/:name@:version/entrypoints'].getName() },
 				})
-				.transform(splitPackageUserAndName)
+				.withValues(this.params)
 				.build({
 					type: this.params.type,
 					name: this.params.name,

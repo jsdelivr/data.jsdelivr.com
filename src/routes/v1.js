@@ -22,9 +22,12 @@ router.param('hash', validate.param(schema.hash));
  * name = @scope/name for npm, user/repo for GitHub
  */
 router.param('user', async (value, ctx, next) => {
-	if (value && !ctx.params.repo) {
-		ctx.params.repo = ctx.params.name;
-		ctx.params.name = (ctx.params.type === 'npm' ? '@' : '') + `${value}/${ctx.params.name}`;
+	if (!ctx.params.name) {
+		if (!value) {
+			ctx.params.name = ctx.params.type === 'npm' ? ctx.params.package : ctx.params.repo;
+		} else {
+			ctx.params.name = ctx.params.type === 'npm' ? `@${value}/${ctx.params.package}` : `${value}/${ctx.params.repo}`;
+		}
 	}
 
 	return next();
@@ -78,11 +81,11 @@ const routes = {
 		paths: [
 			{
 				name: '/package/npm/:name',
-				path: '/package/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)',
+				path: '/package/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)',
 			},
 			{
 				name: '/package/gh/:user/:repo',
-				path: '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)',
+				path: '/package/:type(gh)/:user([^/@]+)/:repo([^/@]+)',
 			},
 		],
 		handlers: [
@@ -95,11 +98,11 @@ const routes = {
 		paths: [
 			{
 				name: '/package/npm/:name/badge',
-				path: '/package/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)/badge/:period(day|week|month|year|all)?',
+				path: '/package/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)/badge/:period(day|week|month|year|all)?',
 			},
 			{
 				name: '/package/gh/:user/:repo/badge',
-				path: '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/badge/:period(day|week|month|year|all)?',
+				path: '/package/:type(gh)/:user([^/@]+)/:repo([^/@]+)/badge/:period(day|week|month|year|all)?',
 			},
 		],
 		handlers: [
@@ -118,11 +121,11 @@ const routes = {
 		paths: [
 			{
 				name: '/package/npm/:name/badge/rank',
-				path: '/package/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)/badge/:rankType(rank|type-rank)/:period(day|week|month|year|all)?',
+				path: '/package/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)/badge/:rankType(rank|type-rank)/:period(day|week|month|year|all)?',
 			},
 			{
 				name: '/package/gh/:user/:repo/badge/rank',
-				path: '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/badge/:rankType(rank|type-rank)/:period(day|week|month|year|all)?',
+				path: '/package/:type(gh)/:user([^/@]+)/:repo([^/@]+)/badge/:rankType(rank|type-rank)/:period(day|week|month|year|all)?',
 			},
 		],
 		handlers: [
@@ -141,11 +144,11 @@ const routes = {
 		paths: [
 			{
 				name: '/package/npm/:name/stats',
-				path: '/package/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)/stats/:groupBy(version|date)?/:period(day|week|month|year|all)?',
+				path: '/package/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)/stats/:groupBy(version|date)?/:period(day|week|month|year|all)?',
 			},
 			{
 				name: '/package/gh/:user/:repo/stats',
-				path: '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)/stats/:groupBy(version|date)?/:period(day|week|month|year|all)?',
+				path: '/package/:type(gh)/:user([^/@]+)/:repo([^/@]+)/stats/:groupBy(version|date)?/:period(day|week|month|year|all)?',
 			},
 		],
 		handlers: [
@@ -163,11 +166,11 @@ const routes = {
 		paths: [
 			{
 				name: '/package/npm/:name@:version',
-				path: '/package/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)@:version/:structure(tree|flat)?',
+				path: '/package/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)@:version/:structure(tree|flat)?',
 			},
 			{
 				name: '/package/gh/:user/:repo@:version',
-				path: '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version/:structure(tree|flat)?',
+				path: '/package/:type(gh)/:user([^/@]+)/:repo([^/@]+)@:version/:structure(tree|flat)?',
 			},
 		],
 		handlers: [
@@ -185,7 +188,7 @@ const routes = {
 		paths: [
 			{
 				name: '/package/npm/:name@:version/entrypoints',
-				path: '/package/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)@:version/entrypoints',
+				path: '/package/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)@:version/entrypoints',
 			},
 		],
 		handlers: [
@@ -198,11 +201,11 @@ const routes = {
 		paths: [
 			{
 				name: '/package/npm/:name@:version/stats',
-				path: '/package/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)@:version/stats/:groupBy(file|date)?/:period(day|week|month|year|all)?',
+				path: '/package/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)@:version/stats/:groupBy(file|date)?/:period(day|week|month|year|all)?',
 			},
 			{
 				name: '/package/gh/:user/:repo@:version/stats',
-				path: '/package/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version/stats/:groupBy(file|date)?/:period(day|week|month|year|all)?',
+				path: '/package/:type(gh)/:user([^/@]+)/:repo([^/@]+)@:version/stats/:groupBy(file|date)?/:period(day|week|month|year|all)?',
 			},
 		],
 		handlers: [
@@ -220,19 +223,19 @@ const routes = {
 		paths: [
 			{
 				name: '/package/resolve/npm/:name@:version',
-				path: '/package/resolve/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)@:version',
+				path: '/package/resolve/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)@:version',
 			},
 			{
 				name: '/package/resolve/npm/:name',
-				path: '/package/resolve/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)',
+				path: '/package/resolve/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)',
 			},
 			{
 				name: '/package/resolve/gh/:user/:repo@:version',
-				path: '/package/resolve/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version',
+				path: '/package/resolve/:type(gh)/:user([^/@]+)/:repo([^/@]+)@:version',
 			},
 			{
 				name: '/package/resolve/gh/:user/:repo',
-				path: '/package/resolve/:type(gh)/:user([^/@]+)/:name([^/@]+)',
+				path: '/package/resolve/:type(gh)/:user([^/@]+)/:repo([^/@]+)',
 			},
 		],
 		handlers: [
@@ -249,11 +252,11 @@ const routes = {
 		paths: [
 			{
 				name: '/packages/npm/:name',
-				path: '/packages/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)',
+				path: '/packages/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)',
 			},
 			{
 				name: '/packages/gh/:user/:repo',
-				path: '/packages/:type(gh)/:user([^/@]+)/:name([^/@]+)',
+				path: '/packages/:type(gh)/:user([^/@]+)/:repo([^/@]+)',
 			},
 		],
 		handlers: [
@@ -266,11 +269,11 @@ const routes = {
 		paths: [
 			{
 				name: '/packages/npm/:name@:version',
-				path: '/packages/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)@:version',
+				path: '/packages/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)@:version',
 			},
 			{
 				name: '/packages/gh/:user/:repo@:version',
-				path: '/packages/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version',
+				path: '/packages/:type(gh)/:user([^/@]+)/:repo([^/@]+)@:version',
 			},
 		],
 		handlers: [
@@ -288,7 +291,7 @@ const routes = {
 		paths: [
 			{
 				name: '/packages/npm/:name@:version/entrypoints',
-				path: '/packages/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)@:version/entrypoints',
+				path: '/packages/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)@:version/entrypoints',
 			},
 		],
 		handlers: [
@@ -301,11 +304,11 @@ const routes = {
 		paths: [
 			{
 				name: '/packages/npm/:name/resolved',
-				path: '/packages/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)/resolved',
+				path: '/packages/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)/resolved',
 			},
 			{
 				name: '/packages/gh/:user/:repo/resolved',
-				path: '/packages/:type(gh)/:user([^/@]+)/:name([^/@]+)/resolved',
+				path: '/packages/:type(gh)/:user([^/@]+)/:repo([^/@]+)/resolved',
 			},
 		],
 		handlers: [
@@ -400,11 +403,11 @@ const routes = {
 		paths: [
 			{
 				name: '/stats/packages/npm/:name',
-				path: '/stats/packages/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)',
+				path: '/stats/packages/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)',
 			},
 			{
 				name: '/stats/packages/gh/:user/:repo',
-				path: '/stats/packages/:type(gh)/:user([^/@]+)/:name([^/@]+)',
+				path: '/stats/packages/:type(gh)/:user([^/@]+)/:repo([^/@]+)',
 			},
 		],
 		handlers: [
@@ -422,11 +425,11 @@ const routes = {
 		paths: [
 			{
 				name: '/stats/packages/npm/:name/badge',
-				path: '/stats/packages/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)/badge',
+				path: '/stats/packages/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)/badge',
 			},
 			{
 				name: '/stats/packages/gh/:user/:repo/badge',
-				path: '/stats/packages/:type(gh)/:user([^/@]+)/:name([^/@]+)/badge',
+				path: '/stats/packages/:type(gh)/:user([^/@]+)/:repo([^/@]+)/badge',
 			},
 		],
 		handlers: [
@@ -445,11 +448,11 @@ const routes = {
 		paths: [
 			{
 				name: '/stats/packages/npm/:name/versions',
-				path: '/stats/packages/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)/versions',
+				path: '/stats/packages/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)/versions',
 			},
 			{
 				name: '/stats/packages/gh/:user/:repo/versions',
-				path: '/stats/packages/:type(gh)/:user([^/@]+)/:name([^/@]+)/versions',
+				path: '/stats/packages/:type(gh)/:user([^/@]+)/:repo([^/@]+)/versions',
 			},
 		],
 		handlers: [
@@ -469,11 +472,11 @@ const routes = {
 		paths: [
 			{
 				name: '/stats/packages/npm/:name@:version',
-				path: '/stats/packages/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)@:version',
+				path: '/stats/packages/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)@:version',
 			},
 			{
 				name: '/stats/packages/gh/:user/:repo@:version',
-				path: '/stats/packages/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version',
+				path: '/stats/packages/:type(gh)/:user([^/@]+)/:repo([^/@]+)@:version',
 			},
 		],
 		handlers: [
@@ -491,11 +494,11 @@ const routes = {
 		paths: [
 			{
 				name: '/stats/packages/npm/:name@:version/files',
-				path: '/stats/packages/:type(npm){/@:user([^/@]+)}?/:name([^/@]+)@:version/files',
+				path: '/stats/packages/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)@:version/files',
 			},
 			{
 				name: '/stats/packages/gh/:user/:repo@:version/files',
-				path: '/stats/packages/:type(gh)/:user([^/@]+)/:name([^/@]+)@:version/files',
+				path: '/stats/packages/:type(gh)/:user([^/@]+)/:repo([^/@]+)@:version/files',
 			},
 		],
 		handlers: [
@@ -705,7 +708,6 @@ Object.entries(routes).forEach(([ routeName, definition ]) => {
 
 	koaElasticUtils.addRoutes(router, definition.paths.map(p => [ p.name, p.path ]), ...definition.handlers);
 });
-
 
 const LookupRequest = require('./v1/LookupRequest');
 const PackageRequest = require('./v1/PackageRequest');
