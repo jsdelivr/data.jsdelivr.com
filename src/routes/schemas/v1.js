@@ -25,7 +25,7 @@ const primitives = {
 		Joi.number().integer().positive().max(100).default(100),
 
 	page:
-		Joi.number().integer().positive().default(1),
+		Joi.number().integer().positive().max(100).default(1),
 
 	period:
 		Joi.custom((value, helpers) => {

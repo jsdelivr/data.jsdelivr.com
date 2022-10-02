@@ -103,6 +103,8 @@ class BaseRequest {
 	}
 
 	paginated ({ page, pages, records }) {
+		pages = Math.min(pages, 100);
+
 		let link = new LinkBuilder(this.ctx)
 			.includeQuery([ 'limit', 'page' ])
 			.withValues(this.params)
