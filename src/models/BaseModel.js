@@ -70,7 +70,8 @@ class BaseModel {
 	static async _getPeriods (table) {
 		let sql = db(table)
 			.whereIn('period', [ 's-day', 's-week', 's-month', 's-year' ])
-			.orderBy([{ column: 'period', order: 'desc' }, { column: 'date', order: 'desc' }]);
+			.orderBy('period', 'desc')
+			.orderBy('date', 'desc');
 
 		return (await sql.distinct([ 'period', 'date' ])).map((row) => {
 			return {

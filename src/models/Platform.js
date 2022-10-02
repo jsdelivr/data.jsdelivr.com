@@ -45,7 +45,8 @@ class Platform extends BaseCacheModel {
 		let sql = db(TopPlatform.table)
 			.where({ period, date })
 			.where(composedLocationFilter)
-			.orderBy([{ column: 'share', order: 'desc' }, { column: 'name' }]);
+			.orderBy('share', 'desc')
+			.orderBy('name', 'desc');
 
 		return this.paginate(sql, limit, page, [ 'name', 'share', 'prevShare' ], (row) => {
 			return {
@@ -62,7 +63,8 @@ class Platform extends BaseCacheModel {
 		let sql = db(TopPlatformBrowser.table)
 			.where({ name, period, date })
 			.where(composedLocationFilter)
-			.orderBy([{ column: 'share', order: 'desc' }, { column: 'browser' }]);
+			.orderBy('share', 'desc')
+			.orderBy('browser', 'desc');
 
 		return this.paginate(sql, limit, page, [ 'browser', 'share', 'prevShare' ], (row) => {
 			return {
@@ -79,7 +81,8 @@ class Platform extends BaseCacheModel {
 		let sql = db(TopPlatformCountry.table)
 			.where({ name, period, date })
 			.where(composedLocationFilter)
-			.orderBy([{ column: 'share', order: 'desc' }, { column: 'countryIso' }]);
+			.orderBy('share', 'desc')
+			.orderBy('countryIso', 'desc');
 
 		return this.paginate(sql, limit, page, [ 'countryIso', 'share', 'prevShare' ], (row) => {
 			return {
@@ -96,7 +99,8 @@ class Platform extends BaseCacheModel {
 		let sql = db(TopPlatformVersionCountry.table)
 			.where({ name, version, period, date })
 			.where(composedLocationFilter)
-			.orderBy([{ column: 'share', order: 'desc' }, { column: 'countryIso' }]);
+			.orderBy('share', 'desc')
+			.orderBy('countryIso', 'desc');
 
 		return this.paginate(sql, limit, page, [ 'countryIso', 'share', 'prevShare' ], (row) => {
 			return {
@@ -113,7 +117,8 @@ class Platform extends BaseCacheModel {
 		let sql = db(TopPlatformVersion.table)
 			.where({ name, period, date })
 			.where(composedLocationFilter)
-			.orderBy([{ column: 'share', order: 'desc' }, { column: 'version' }]);
+			.orderBy('share', 'desc')
+			.orderBy('version', 'desc');
 
 		return this.paginate(sql, limit, page, [ 'version', 'versionName', 'share', 'prevShare' ], (row) => {
 			return {
@@ -131,7 +136,9 @@ class Platform extends BaseCacheModel {
 		let sql = db(TopPlatformVersion.table)
 			.where({ period, date })
 			.where(composedLocationFilter)
-			.orderBy([{ column: 'share', order: 'desc' }, { column: 'name' }, { column: 'version' }]);
+			.orderBy('share', 'desc')
+			.orderBy('name', 'desc')
+			.orderBy('version', 'desc');
 
 		return this.paginate(sql, limit, page, [ 'name', 'version', 'versionName', 'share', 'prevShare' ], (row) => {
 			return {

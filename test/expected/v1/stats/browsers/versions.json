@@ -7,17 +7,6 @@
 	"/v1/stats/browsers/versions?continent=EU&period=2020": [
 		{
 			"name": "browser 19",
-			"version": "1",
-			"share": 4.88,
-			"prev": {
-				"share": null
-			},
-			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/versions/1/countries?period=2020&continent=EU"
-			}
-		},
-		{
-			"name": "browser 19",
 			"version": "2",
 			"share": 4.88,
 			"prev": {
@@ -28,14 +17,14 @@
 			}
 		},
 		{
-			"name": "browser 18",
-			"version": "2",
-			"share": 4.56,
+			"name": "browser 19",
+			"version": "1",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/versions/2/countries?period=2020&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/versions/1/countries?period=2020&continent=EU"
 			}
 		},
 		{
@@ -51,13 +40,13 @@
 		},
 		{
 			"name": "browser 18",
-			"version": "0",
-			"share": 4.25,
+			"version": "2",
+			"share": 4.56,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/versions/0/countries?period=2020&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/versions/2/countries?period=2020&continent=EU"
 			}
 		},
 		{
@@ -69,6 +58,28 @@
 			},
 			"links": {
 				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/versions/1/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "browser 18",
+			"version": "0",
+			"share": 4.25,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/versions/0/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "browser 17",
+			"version": "2",
+			"share": 3.95,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2017/versions/2/countries?period=2020&continent=EU"
 			}
 		},
 		{
@@ -84,13 +95,13 @@
 		},
 		{
 			"name": "browser 17",
-			"version": "2",
-			"share": 3.95,
+			"version": "0",
+			"share": 3.67,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2017/versions/2/countries?period=2020&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2017/versions/0/countries?period=2020&continent=EU"
 			}
 		},
 		{
@@ -105,14 +116,14 @@
 			}
 		},
 		{
-			"name": "browser 17",
-			"version": "0",
-			"share": 3.67,
+			"name": "browser 16",
+			"version": "1",
+			"share": 3.39,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2017/versions/0/countries?period=2020&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2016/versions/1/countries?period=2020&continent=EU"
 			}
 		},
 		{
@@ -127,14 +138,14 @@
 			}
 		},
 		{
-			"name": "browser 16",
-			"version": "1",
-			"share": 3.39,
+			"name": "browser 15",
+			"version": "2",
+			"share": 3.12,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2016/versions/1/countries?period=2020&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2015/versions/2/countries?period=2020&continent=EU"
 			}
 		},
 		{
@@ -150,13 +161,13 @@
 		},
 		{
 			"name": "browser 15",
-			"version": "2",
-			"share": 3.12,
+			"version": "0",
+			"share": 2.87,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2015/versions/2/countries?period=2020&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2015/versions/0/countries?period=2020&continent=EU"
 			}
 		},
 		{
@@ -171,14 +182,14 @@
 			}
 		},
 		{
-			"name": "browser 15",
-			"version": "0",
-			"share": 2.87,
+			"name": "browser 14",
+			"version": "1",
+			"share": 2.62,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2015/versions/0/countries?period=2020&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2014/versions/1/countries?period=2020&continent=EU"
 			}
 		},
 		{
@@ -193,14 +204,14 @@
 			}
 		},
 		{
-			"name": "browser 14",
-			"version": "1",
-			"share": 2.62,
+			"name": "browser 13",
+			"version": "2",
+			"share": 2.39,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2014/versions/1/countries?period=2020&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2013/versions/2/countries?period=2020&continent=EU"
 			}
 		},
 		{
@@ -216,13 +227,13 @@
 		},
 		{
 			"name": "browser 13",
-			"version": "2",
-			"share": 2.39,
+			"version": "0",
+			"share": 2.17,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2013/versions/2/countries?period=2020&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2013/versions/0/countries?period=2020&continent=EU"
 			}
 		},
 		{
@@ -237,14 +248,14 @@
 			}
 		},
 		{
-			"name": "browser 13",
-			"version": "0",
-			"share": 2.17,
+			"name": "browser 12",
+			"version": "1",
+			"share": 1.96,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2013/versions/0/countries?period=2020&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2012/versions/1/countries?period=2020&continent=EU"
 			}
 		},
 		{
@@ -259,14 +270,14 @@
 			}
 		},
 		{
-			"name": "browser 12",
-			"version": "1",
-			"share": 1.96,
+			"name": "browser 11",
+			"version": "2",
+			"share": 1.75,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2012/versions/1/countries?period=2020&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2011/versions/2/countries?period=2020&continent=EU"
 			}
 		},
 		{
@@ -282,13 +293,13 @@
 		},
 		{
 			"name": "browser 11",
-			"version": "2",
-			"share": 1.75,
+			"version": "0",
+			"share": 1.56,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2011/versions/2/countries?period=2020&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2011/versions/0/countries?period=2020&continent=EU"
 			}
 		},
 		{
@@ -303,14 +314,14 @@
 			}
 		},
 		{
-			"name": "browser 11",
-			"version": "0",
-			"share": 1.56,
+			"name": "browser 10",
+			"version": "1",
+			"share": 1.39,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2011/versions/0/countries?period=2020&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2010/versions/1/countries?period=2020&continent=EU"
 			}
 		},
 		{
@@ -325,14 +336,14 @@
 			}
 		},
 		{
-			"name": "browser 10",
-			"version": "1",
-			"share": 1.39,
+			"name": "browser 9",
+			"version": "2",
+			"share": 1.22,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2010/versions/1/countries?period=2020&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%209/versions/2/countries?period=2020&continent=EU"
 			}
 		},
 		{
@@ -348,13 +359,13 @@
 		},
 		{
 			"name": "browser 9",
-			"version": "2",
-			"share": 1.22,
+			"version": "0",
+			"share": 1.06,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%209/versions/2/countries?period=2020&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%209/versions/0/countries?period=2020&continent=EU"
 			}
 		},
 		{
@@ -369,14 +380,14 @@
 			}
 		},
 		{
-			"name": "browser 9",
-			"version": "0",
-			"share": 1.06,
+			"name": "browser 8",
+			"version": "1",
+			"share": 0.91,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%209/versions/0/countries?period=2020&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%208/versions/1/countries?period=2020&continent=EU"
 			}
 		},
 		{
@@ -391,14 +402,14 @@
 			}
 		},
 		{
-			"name": "browser 8",
-			"version": "1",
-			"share": 0.91,
+			"name": "browser 7",
+			"version": "2",
+			"share": 0.78,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%208/versions/1/countries?period=2020&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%207/versions/2/countries?period=2020&continent=EU"
 			}
 		},
 		{
@@ -414,13 +425,13 @@
 		},
 		{
 			"name": "browser 7",
-			"version": "2",
-			"share": 0.78,
+			"version": "0",
+			"share": 0.35,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%207/versions/2/countries?period=2020&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%207/versions/0/countries?period=2020&continent=EU"
 			}
 		},
 		{
@@ -435,14 +446,14 @@
 			}
 		},
 		{
-			"name": "browser 7",
-			"version": "0",
-			"share": 0.35,
+			"name": "browser 6",
+			"version": "1",
+			"share": 0.29,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%207/versions/0/countries?period=2020&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%206/versions/1/countries?period=2020&continent=EU"
 			}
 		},
 		{
@@ -457,14 +468,14 @@
 			}
 		},
 		{
-			"name": "browser 6",
-			"version": "1",
-			"share": 0.29,
+			"name": "browser 5",
+			"version": "2",
+			"share": 0.24,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%206/versions/1/countries?period=2020&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%205/versions/2/countries?period=2020&continent=EU"
 			}
 		},
 		{
@@ -480,13 +491,13 @@
 		},
 		{
 			"name": "browser 5",
-			"version": "2",
-			"share": 0.24,
+			"version": "0",
+			"share": 0.19,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%205/versions/2/countries?period=2020&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%205/versions/0/countries?period=2020&continent=EU"
 			}
 		},
 		{
@@ -501,14 +512,14 @@
 			}
 		},
 		{
-			"name": "browser 5",
-			"version": "0",
-			"share": 0.19,
+			"name": "browser 4",
+			"version": "1",
+			"share": 0.15,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%205/versions/0/countries?period=2020&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%204/versions/1/countries?period=2020&continent=EU"
 			}
 		},
 		{
@@ -523,14 +534,14 @@
 			}
 		},
 		{
-			"name": "browser 4",
-			"version": "1",
-			"share": 0.15,
+			"name": "browser 3",
+			"version": "2",
+			"share": 0.11,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%204/versions/1/countries?period=2020&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%203/versions/2/countries?period=2020&continent=EU"
 			}
 		},
 		{
@@ -546,13 +557,13 @@
 		},
 		{
 			"name": "browser 3",
-			"version": "2",
-			"share": 0.11,
+			"version": "0",
+			"share": 0.08,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%203/versions/2/countries?period=2020&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%203/versions/0/countries?period=2020&continent=EU"
 			}
 		},
 		{
@@ -567,14 +578,14 @@
 			}
 		},
 		{
-			"name": "browser 3",
-			"version": "0",
-			"share": 0.08,
+			"name": "browser 2",
+			"version": "1",
+			"share": 0.05,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%203/versions/0/countries?period=2020&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%202/versions/1/countries?period=2020&continent=EU"
 			}
 		},
 		{
@@ -589,14 +600,14 @@
 			}
 		},
 		{
-			"name": "browser 2",
-			"version": "1",
-			"share": 0.05,
+			"name": "browser 1",
+			"version": "2",
+			"share": 0.03,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%202/versions/1/countries?period=2020&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%201/versions/2/countries?period=2020&continent=EU"
 			}
 		},
 		{
@@ -612,13 +623,13 @@
 		},
 		{
 			"name": "browser 1",
-			"version": "2",
-			"share": 0.03,
+			"version": "0",
+			"share": 0.01,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%201/versions/2/countries?period=2020&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%201/versions/0/countries?period=2020&continent=EU"
 			}
 		},
 		{
@@ -631,31 +642,9 @@
 			"links": {
 				"countries": "http://localhost:4454/v1/stats/browsers/browser%200/versions/2/countries?period=2020&continent=EU"
 			}
-		},
-		{
-			"name": "browser 1",
-			"version": "0",
-			"share": 0.01,
-			"prev": {
-				"share": null
-			},
-			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%201/versions/0/countries?period=2020&continent=EU"
-			}
 		}
 	],
 	"/v1/stats/browsers/versions?continent=EU&period=2020-02": [
-		{
-			"name": "browser 19",
-			"version": "1",
-			"share": 4.84,
-			"prev": {
-				"share": null
-			},
-			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/versions/1/countries?period=2020-02&continent=EU"
-			}
-		},
 		{
 			"name": "browser 19",
 			"version": "2",
@@ -668,14 +657,14 @@
 			}
 		},
 		{
-			"name": "browser 18",
-			"version": "2",
-			"share": 4.52,
+			"name": "browser 19",
+			"version": "1",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/versions/2/countries?period=2020-02&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/versions/1/countries?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -691,13 +680,13 @@
 		},
 		{
 			"name": "browser 18",
-			"version": "0",
-			"share": 4.2,
+			"version": "2",
+			"share": 4.52,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/versions/0/countries?period=2020-02&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/versions/2/countries?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -709,6 +698,28 @@
 			},
 			"links": {
 				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/versions/1/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "browser 18",
+			"version": "0",
+			"share": 4.2,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/versions/0/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "browser 17",
+			"version": "2",
+			"share": 3.9,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2017/versions/2/countries?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -724,13 +735,13 @@
 		},
 		{
 			"name": "browser 17",
-			"version": "2",
-			"share": 3.9,
+			"version": "0",
+			"share": 3.62,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2017/versions/2/countries?period=2020-02&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2017/versions/0/countries?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -745,14 +756,14 @@
 			}
 		},
 		{
-			"name": "browser 17",
-			"version": "0",
-			"share": 3.62,
+			"name": "browser 16",
+			"version": "1",
+			"share": 3.34,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2017/versions/0/countries?period=2020-02&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2016/versions/1/countries?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -767,14 +778,14 @@
 			}
 		},
 		{
-			"name": "browser 16",
-			"version": "1",
-			"share": 3.34,
+			"name": "browser 15",
+			"version": "2",
+			"share": 3.07,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2016/versions/1/countries?period=2020-02&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2015/versions/2/countries?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -790,13 +801,13 @@
 		},
 		{
 			"name": "browser 15",
-			"version": "2",
-			"share": 3.07,
+			"version": "0",
+			"share": 2.81,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2015/versions/2/countries?period=2020-02&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2015/versions/0/countries?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -811,14 +822,14 @@
 			}
 		},
 		{
-			"name": "browser 15",
-			"version": "0",
-			"share": 2.81,
+			"name": "browser 14",
+			"version": "1",
+			"share": 2.57,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2015/versions/0/countries?period=2020-02&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2014/versions/1/countries?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -833,14 +844,14 @@
 			}
 		},
 		{
-			"name": "browser 14",
-			"version": "1",
-			"share": 2.57,
+			"name": "browser 13",
+			"version": "2",
+			"share": 2.34,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2014/versions/1/countries?period=2020-02&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2013/versions/2/countries?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -856,13 +867,13 @@
 		},
 		{
 			"name": "browser 13",
-			"version": "2",
-			"share": 2.34,
+			"version": "0",
+			"share": 2.11,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2013/versions/2/countries?period=2020-02&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2013/versions/0/countries?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -877,14 +888,14 @@
 			}
 		},
 		{
-			"name": "browser 13",
-			"version": "0",
-			"share": 2.11,
+			"name": "browser 12",
+			"version": "1",
+			"share": 1.9,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2013/versions/0/countries?period=2020-02&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2012/versions/1/countries?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -899,14 +910,14 @@
 			}
 		},
 		{
-			"name": "browser 12",
-			"version": "1",
-			"share": 1.9,
+			"name": "browser 11",
+			"version": "2",
+			"share": 1.7,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2012/versions/1/countries?period=2020-02&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2011/versions/2/countries?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -922,13 +933,13 @@
 		},
 		{
 			"name": "browser 11",
-			"version": "2",
-			"share": 1.7,
+			"version": "0",
+			"share": 1.51,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2011/versions/2/countries?period=2020-02&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2011/versions/0/countries?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -943,14 +954,14 @@
 			}
 		},
 		{
-			"name": "browser 11",
-			"version": "0",
-			"share": 1.51,
+			"name": "browser 10",
+			"version": "1",
+			"share": 1.33,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2011/versions/0/countries?period=2020-02&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2010/versions/1/countries?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -965,14 +976,14 @@
 			}
 		},
 		{
-			"name": "browser 10",
-			"version": "1",
-			"share": 1.33,
+			"name": "browser 9",
+			"version": "2",
+			"share": 1.17,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2010/versions/1/countries?period=2020-02&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%209/versions/2/countries?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -988,13 +999,13 @@
 		},
 		{
 			"name": "browser 9",
-			"version": "2",
-			"share": 1.17,
+			"version": "0",
+			"share": 1.01,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%209/versions/2/countries?period=2020-02&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%209/versions/0/countries?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -1009,14 +1020,14 @@
 			}
 		},
 		{
-			"name": "browser 9",
-			"version": "0",
-			"share": 1.01,
+			"name": "browser 8",
+			"version": "1",
+			"share": 0.87,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%209/versions/0/countries?period=2020-02&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%208/versions/1/countries?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -1031,14 +1042,14 @@
 			}
 		},
 		{
-			"name": "browser 8",
-			"version": "1",
-			"share": 0.87,
+			"name": "browser 7",
+			"version": "2",
+			"share": 0.73,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%208/versions/1/countries?period=2020-02&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%207/versions/2/countries?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -1054,13 +1065,13 @@
 		},
 		{
 			"name": "browser 7",
-			"version": "2",
-			"share": 0.73,
+			"version": "0",
+			"share": 0.61,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%207/versions/2/countries?period=2020-02&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%207/versions/0/countries?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -1075,14 +1086,14 @@
 			}
 		},
 		{
-			"name": "browser 7",
-			"version": "0",
-			"share": 0.61,
+			"name": "browser 6",
+			"version": "1",
+			"share": 0.5,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%207/versions/0/countries?period=2020-02&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%206/versions/1/countries?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -1097,14 +1108,14 @@
 			}
 		},
 		{
-			"name": "browser 6",
-			"version": "1",
-			"share": 0.5,
+			"name": "browser 5",
+			"version": "2",
+			"share": 0.4,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%206/versions/1/countries?period=2020-02&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%205/versions/2/countries?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -1120,13 +1131,13 @@
 		},
 		{
 			"name": "browser 5",
-			"version": "2",
-			"share": 0.4,
+			"version": "0",
+			"share": 0.31,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%205/versions/2/countries?period=2020-02&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%205/versions/0/countries?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -1141,14 +1152,14 @@
 			}
 		},
 		{
-			"name": "browser 5",
-			"version": "0",
-			"share": 0.31,
+			"name": "browser 4",
+			"version": "1",
+			"share": 0.23,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%205/versions/0/countries?period=2020-02&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%204/versions/1/countries?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -1163,14 +1174,14 @@
 			}
 		},
 		{
-			"name": "browser 4",
-			"version": "1",
-			"share": 0.23,
+			"name": "browser 3",
+			"version": "2",
+			"share": 0.17,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%204/versions/1/countries?period=2020-02&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%203/versions/2/countries?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -1186,13 +1197,13 @@
 		},
 		{
 			"name": "browser 3",
-			"version": "2",
-			"share": 0.17,
+			"version": "0",
+			"share": 0.11,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%203/versions/2/countries?period=2020-02&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%203/versions/0/countries?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -1207,14 +1218,14 @@
 			}
 		},
 		{
-			"name": "browser 3",
-			"version": "0",
-			"share": 0.11,
+			"name": "browser 2",
+			"version": "1",
+			"share": 0.07,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%203/versions/0/countries?period=2020-02&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%202/versions/1/countries?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -1229,14 +1240,14 @@
 			}
 		},
 		{
-			"name": "browser 2",
-			"version": "1",
-			"share": 0.07,
+			"name": "browser 1",
+			"version": "2",
+			"share": 0.03,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%202/versions/1/countries?period=2020-02&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%201/versions/2/countries?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -1252,13 +1263,13 @@
 		},
 		{
 			"name": "browser 1",
-			"version": "2",
-			"share": 0.03,
+			"version": "0",
+			"share": 0.01,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%201/versions/2/countries?period=2020-02&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%201/versions/0/countries?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -1271,31 +1282,9 @@
 			"links": {
 				"countries": "http://localhost:4454/v1/stats/browsers/browser%200/versions/2/countries?period=2020-02&continent=EU"
 			}
-		},
-		{
-			"name": "browser 1",
-			"version": "0",
-			"share": 0.01,
-			"prev": {
-				"share": null
-			},
-			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%201/versions/0/countries?period=2020-02&continent=EU"
-			}
 		}
 	],
 	"/v1/stats/browsers/versions?continent=EU&period=2020-04": [
-		{
-			"name": "browser 19",
-			"version": "1",
-			"share": 5.09,
-			"prev": {
-				"share": 3.33
-			},
-			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/versions/1/countries?period=2020-04&continent=EU"
-			}
-		},
 		{
 			"name": "browser 19",
 			"version": "2",
@@ -1308,14 +1297,14 @@
 			}
 		},
 		{
-			"name": "browser 18",
-			"version": "2",
-			"share": 4.75,
+			"name": "browser 19",
+			"version": "1",
+			"share": 5.09,
 			"prev": {
-				"share": 3.22
+				"share": 3.33
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/versions/2/countries?period=2020-04&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/versions/1/countries?period=2020-04&continent=EU"
 			}
 		},
 		{
@@ -1331,13 +1320,13 @@
 		},
 		{
 			"name": "browser 18",
-			"version": "0",
-			"share": 4.42,
+			"version": "2",
+			"share": 4.75,
 			"prev": {
-				"share": 3.1
+				"share": 3.22
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/versions/0/countries?period=2020-04&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/versions/2/countries?period=2020-04&continent=EU"
 			}
 		},
 		{
@@ -1349,6 +1338,28 @@
 			},
 			"links": {
 				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/versions/1/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "browser 18",
+			"version": "0",
+			"share": 4.42,
+			"prev": {
+				"share": 3.1
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/versions/0/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "browser 17",
+			"version": "2",
+			"share": 4.11,
+			"prev": {
+				"share": 2.99
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2017/versions/2/countries?period=2020-04&continent=EU"
 			}
 		},
 		{
@@ -1364,13 +1375,13 @@
 		},
 		{
 			"name": "browser 17",
-			"version": "2",
-			"share": 4.11,
+			"version": "0",
+			"share": 3.8,
 			"prev": {
-				"share": 2.99
+				"share": 2.87
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2017/versions/2/countries?period=2020-04&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2017/versions/0/countries?period=2020-04&continent=EU"
 			}
 		},
 		{
@@ -1385,14 +1396,14 @@
 			}
 		},
 		{
-			"name": "browser 17",
-			"version": "0",
-			"share": 3.8,
+			"name": "browser 16",
+			"version": "1",
+			"share": 3.51,
 			"prev": {
-				"share": 2.87
+				"share": 2.76
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2017/versions/0/countries?period=2020-04&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2016/versions/1/countries?period=2020-04&continent=EU"
 			}
 		},
 		{
@@ -1407,14 +1418,14 @@
 			}
 		},
 		{
-			"name": "browser 16",
-			"version": "1",
-			"share": 3.51,
+			"name": "browser 15",
+			"version": "2",
+			"share": 3.23,
 			"prev": {
-				"share": 2.76
+				"share": 2.64
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2016/versions/1/countries?period=2020-04&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2015/versions/2/countries?period=2020-04&continent=EU"
 			}
 		},
 		{
@@ -1430,13 +1441,13 @@
 		},
 		{
 			"name": "browser 15",
-			"version": "2",
-			"share": 3.23,
+			"version": "0",
+			"share": 2.96,
 			"prev": {
-				"share": 2.64
+				"share": 2.53
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2015/versions/2/countries?period=2020-04&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2015/versions/0/countries?period=2020-04&continent=EU"
 			}
 		},
 		{
@@ -1451,14 +1462,14 @@
 			}
 		},
 		{
-			"name": "browser 15",
-			"version": "0",
-			"share": 2.96,
+			"name": "browser 14",
+			"version": "1",
+			"share": 2.7,
 			"prev": {
-				"share": 2.53
+				"share": 2.41
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2015/versions/0/countries?period=2020-04&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2014/versions/1/countries?period=2020-04&continent=EU"
 			}
 		},
 		{
@@ -1473,14 +1484,14 @@
 			}
 		},
 		{
-			"name": "browser 14",
-			"version": "1",
-			"share": 2.7,
+			"name": "browser 13",
+			"version": "2",
+			"share": 2.46,
 			"prev": {
-				"share": 2.41
+				"share": 2.3
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2014/versions/1/countries?period=2020-04&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2013/versions/2/countries?period=2020-04&continent=EU"
 			}
 		},
 		{
@@ -1496,13 +1507,13 @@
 		},
 		{
 			"name": "browser 13",
-			"version": "2",
-			"share": 2.46,
+			"version": "0",
+			"share": 2.22,
 			"prev": {
-				"share": 2.3
+				"share": 2.18
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2013/versions/2/countries?period=2020-04&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2013/versions/0/countries?period=2020-04&continent=EU"
 			}
 		},
 		{
@@ -1517,14 +1528,14 @@
 			}
 		},
 		{
-			"name": "browser 13",
-			"version": "0",
-			"share": 2.22,
+			"name": "browser 12",
+			"version": "1",
+			"share": 2,
 			"prev": {
-				"share": 2.18
+				"share": 2.07
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2013/versions/0/countries?period=2020-04&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2012/versions/1/countries?period=2020-04&continent=EU"
 			}
 		},
 		{
@@ -1539,14 +1550,14 @@
 			}
 		},
 		{
-			"name": "browser 12",
-			"version": "1",
-			"share": 2,
+			"name": "browser 11",
+			"version": "2",
+			"share": 1.79,
 			"prev": {
-				"share": 2.07
+				"share": 1.95
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2012/versions/1/countries?period=2020-04&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2011/versions/2/countries?period=2020-04&continent=EU"
 			}
 		},
 		{
@@ -1562,13 +1573,13 @@
 		},
 		{
 			"name": "browser 11",
-			"version": "2",
-			"share": 1.79,
+			"version": "0",
+			"share": 1.59,
 			"prev": {
-				"share": 1.95
+				"share": 1.84
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2011/versions/2/countries?period=2020-04&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2011/versions/0/countries?period=2020-04&continent=EU"
 			}
 		},
 		{
@@ -1583,14 +1594,14 @@
 			}
 		},
 		{
-			"name": "browser 11",
-			"version": "0",
-			"share": 1.59,
+			"name": "browser 10",
+			"version": "1",
+			"share": 1.4,
 			"prev": {
-				"share": 1.84
+				"share": 1.72
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2011/versions/0/countries?period=2020-04&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2010/versions/1/countries?period=2020-04&continent=EU"
 			}
 		},
 		{
@@ -1605,14 +1616,14 @@
 			}
 		},
 		{
-			"name": "browser 10",
-			"version": "1",
-			"share": 1.4,
+			"name": "browser 9",
+			"version": "2",
+			"share": 1.23,
 			"prev": {
-				"share": 1.72
+				"share": 1.61
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2010/versions/1/countries?period=2020-04&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%209/versions/2/countries?period=2020-04&continent=EU"
 			}
 		},
 		{
@@ -1628,13 +1639,13 @@
 		},
 		{
 			"name": "browser 9",
-			"version": "2",
-			"share": 1.23,
+			"version": "0",
+			"share": 1.06,
 			"prev": {
-				"share": 1.61
+				"share": 1.49
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%209/versions/2/countries?period=2020-04&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%209/versions/0/countries?period=2020-04&continent=EU"
 			}
 		},
 		{
@@ -1649,14 +1660,14 @@
 			}
 		},
 		{
-			"name": "browser 9",
-			"version": "0",
-			"share": 1.06,
+			"name": "browser 8",
+			"version": "1",
+			"share": 0.91,
 			"prev": {
-				"share": 1.49
+				"share": 1.38
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%209/versions/0/countries?period=2020-04&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%208/versions/1/countries?period=2020-04&continent=EU"
 			}
 		},
 		{
@@ -1671,14 +1682,14 @@
 			}
 		},
 		{
-			"name": "browser 8",
-			"version": "1",
-			"share": 0.91,
+			"name": "browser 7",
+			"version": "2",
+			"share": 0.77,
 			"prev": {
-				"share": 1.38
+				"share": 1.26
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%208/versions/1/countries?period=2020-04&continent=EU"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%207/versions/2/countries?period=2020-04&continent=EU"
 			}
 		},
 		{
@@ -1691,17 +1702,6 @@
 			"links": {
 				"countries": "http://localhost:4454/v1/stats/browsers/browser%207/versions/1/countries?period=2020-04&continent=EU"
 			}
-		},
-		{
-			"name": "browser 7",
-			"version": "2",
-			"share": 0.77,
-			"prev": {
-				"share": 1.26
-			},
-			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%207/versions/2/countries?period=2020-04&continent=EU"
-			}
 		}
 	],
 	"/v1/stats/browsers/versions?continent=X": {
@@ -1712,7 +1712,7 @@
 	"/v1/stats/browsers/versions?country=PL&period=2020": [
 		{
 			"name": "browser 19",
-			"version": "1",
+			"version": "2",
 			"share": 4.88,
 			"prev": {
 				"share": null
@@ -1721,17 +1721,8 @@
 		},
 		{
 			"name": "browser 19",
-			"version": "2",
+			"version": "1",
 			"share": 4.88,
-			"prev": {
-				"share": null
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 18",
-			"version": "2",
-			"share": 4.56,
 			"prev": {
 				"share": null
 			},
@@ -1748,8 +1739,8 @@
 		},
 		{
 			"name": "browser 18",
-			"version": "0",
-			"share": 4.25,
+			"version": "2",
+			"share": 4.56,
 			"prev": {
 				"share": null
 			},
@@ -1765,27 +1756,27 @@
 			"links": {}
 		},
 		{
+			"name": "browser 18",
+			"version": "0",
+			"share": 4.25,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 17",
+			"version": "2",
+			"share": 3.95,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
 			"name": "browser 17",
 			"version": "1",
 			"share": 3.95,
-			"prev": {
-				"share": null
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 17",
-			"version": "2",
-			"share": 3.95,
-			"prev": {
-				"share": null
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 16",
-			"version": "2",
-			"share": 3.67,
 			"prev": {
 				"share": null
 			},
@@ -1802,8 +1793,8 @@
 		},
 		{
 			"name": "browser 16",
-			"version": "0",
-			"share": 3.39,
+			"version": "2",
+			"share": 3.67,
 			"prev": {
 				"share": null
 			},
@@ -1813,6 +1804,24 @@
 			"name": "browser 16",
 			"version": "1",
 			"share": 3.39,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 16",
+			"version": "0",
+			"share": 3.39,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 15",
+			"version": "2",
+			"share": 3.12,
 			"prev": {
 				"share": null
 			},
@@ -1829,24 +1838,6 @@
 		},
 		{
 			"name": "browser 15",
-			"version": "2",
-			"share": 3.12,
-			"prev": {
-				"share": null
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 14",
-			"version": "2",
-			"share": 2.87,
-			"prev": {
-				"share": null
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 15",
 			"version": "0",
 			"share": 2.87,
 			"prev": {
@@ -1856,8 +1847,8 @@
 		},
 		{
 			"name": "browser 14",
-			"version": "0",
-			"share": 2.62,
+			"version": "2",
+			"share": 2.87,
 			"prev": {
 				"share": null
 			},
@@ -1867,6 +1858,24 @@
 			"name": "browser 14",
 			"version": "1",
 			"share": 2.62,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 14",
+			"version": "0",
+			"share": 2.62,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 13",
+			"version": "2",
+			"share": 2.39,
 			"prev": {
 				"share": null
 			},
@@ -1883,24 +1892,6 @@
 		},
 		{
 			"name": "browser 13",
-			"version": "2",
-			"share": 2.39,
-			"prev": {
-				"share": null
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 12",
-			"version": "2",
-			"share": 2.17,
-			"prev": {
-				"share": null
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 13",
 			"version": "0",
 			"share": 2.17,
 			"prev": {
@@ -1910,8 +1901,8 @@
 		},
 		{
 			"name": "browser 12",
-			"version": "0",
-			"share": 1.96,
+			"version": "2",
+			"share": 2.17,
 			"prev": {
 				"share": null
 			},
@@ -1921,6 +1912,24 @@
 			"name": "browser 12",
 			"version": "1",
 			"share": 1.96,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 12",
+			"version": "0",
+			"share": 1.96,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 11",
+			"version": "2",
+			"share": 1.75,
 			"prev": {
 				"share": null
 			},
@@ -1937,24 +1946,6 @@
 		},
 		{
 			"name": "browser 11",
-			"version": "2",
-			"share": 1.75,
-			"prev": {
-				"share": null
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 10",
-			"version": "2",
-			"share": 1.56,
-			"prev": {
-				"share": null
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 11",
 			"version": "0",
 			"share": 1.56,
 			"prev": {
@@ -1964,8 +1955,8 @@
 		},
 		{
 			"name": "browser 10",
-			"version": "0",
-			"share": 1.39,
+			"version": "2",
+			"share": 1.56,
 			"prev": {
 				"share": null
 			},
@@ -1975,6 +1966,24 @@
 			"name": "browser 10",
 			"version": "1",
 			"share": 1.39,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 10",
+			"version": "0",
+			"share": 1.39,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 9",
+			"version": "2",
+			"share": 1.22,
 			"prev": {
 				"share": null
 			},
@@ -1991,24 +2000,6 @@
 		},
 		{
 			"name": "browser 9",
-			"version": "2",
-			"share": 1.22,
-			"prev": {
-				"share": null
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 8",
-			"version": "2",
-			"share": 1.06,
-			"prev": {
-				"share": null
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 9",
 			"version": "0",
 			"share": 1.06,
 			"prev": {
@@ -2018,8 +2009,8 @@
 		},
 		{
 			"name": "browser 8",
-			"version": "0",
-			"share": 0.91,
+			"version": "2",
+			"share": 1.06,
 			"prev": {
 				"share": null
 			},
@@ -2029,6 +2020,24 @@
 			"name": "browser 8",
 			"version": "1",
 			"share": 0.91,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 8",
+			"version": "0",
+			"share": 0.91,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 7",
+			"version": "2",
+			"share": 0.78,
 			"prev": {
 				"share": null
 			},
@@ -2045,24 +2054,6 @@
 		},
 		{
 			"name": "browser 7",
-			"version": "2",
-			"share": 0.78,
-			"prev": {
-				"share": null
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 6",
-			"version": "2",
-			"share": 0.35,
-			"prev": {
-				"share": null
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 7",
 			"version": "0",
 			"share": 0.35,
 			"prev": {
@@ -2072,8 +2063,8 @@
 		},
 		{
 			"name": "browser 6",
-			"version": "0",
-			"share": 0.29,
+			"version": "2",
+			"share": 0.35,
 			"prev": {
 				"share": null
 			},
@@ -2083,6 +2074,24 @@
 			"name": "browser 6",
 			"version": "1",
 			"share": 0.29,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 6",
+			"version": "0",
+			"share": 0.29,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 5",
+			"version": "2",
+			"share": 0.24,
 			"prev": {
 				"share": null
 			},
@@ -2099,24 +2108,6 @@
 		},
 		{
 			"name": "browser 5",
-			"version": "2",
-			"share": 0.24,
-			"prev": {
-				"share": null
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 4",
-			"version": "2",
-			"share": 0.19,
-			"prev": {
-				"share": null
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 5",
 			"version": "0",
 			"share": 0.19,
 			"prev": {
@@ -2126,8 +2117,8 @@
 		},
 		{
 			"name": "browser 4",
-			"version": "0",
-			"share": 0.15,
+			"version": "2",
+			"share": 0.19,
 			"prev": {
 				"share": null
 			},
@@ -2137,6 +2128,24 @@
 			"name": "browser 4",
 			"version": "1",
 			"share": 0.15,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 4",
+			"version": "0",
+			"share": 0.15,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 3",
+			"version": "2",
+			"share": 0.11,
 			"prev": {
 				"share": null
 			},
@@ -2153,24 +2162,6 @@
 		},
 		{
 			"name": "browser 3",
-			"version": "2",
-			"share": 0.11,
-			"prev": {
-				"share": null
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 2",
-			"version": "2",
-			"share": 0.08,
-			"prev": {
-				"share": null
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 3",
 			"version": "0",
 			"share": 0.08,
 			"prev": {
@@ -2180,8 +2171,8 @@
 		},
 		{
 			"name": "browser 2",
-			"version": "0",
-			"share": 0.05,
+			"version": "2",
+			"share": 0.08,
 			"prev": {
 				"share": null
 			},
@@ -2191,6 +2182,24 @@
 			"name": "browser 2",
 			"version": "1",
 			"share": 0.05,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 2",
+			"version": "0",
+			"share": 0.05,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 1",
+			"version": "2",
+			"share": 0.03,
 			"prev": {
 				"share": null
 			},
@@ -2207,8 +2216,8 @@
 		},
 		{
 			"name": "browser 1",
-			"version": "2",
-			"share": 0.03,
+			"version": "0",
+			"share": 0.01,
 			"prev": {
 				"share": null
 			},
@@ -2217,15 +2226,6 @@
 		{
 			"name": "browser 0",
 			"version": "2",
-			"share": 0.01,
-			"prev": {
-				"share": null
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 1",
-			"version": "0",
 			"share": 0.01,
 			"prev": {
 				"share": null
@@ -2236,7 +2236,7 @@
 	"/v1/stats/browsers/versions?country=PL&period=2020-02": [
 		{
 			"name": "browser 19",
-			"version": "1",
+			"version": "2",
 			"share": 4.84,
 			"prev": {
 				"share": null
@@ -2245,17 +2245,8 @@
 		},
 		{
 			"name": "browser 19",
-			"version": "2",
+			"version": "1",
 			"share": 4.84,
-			"prev": {
-				"share": null
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 18",
-			"version": "2",
-			"share": 4.52,
 			"prev": {
 				"share": null
 			},
@@ -2272,8 +2263,8 @@
 		},
 		{
 			"name": "browser 18",
-			"version": "0",
-			"share": 4.2,
+			"version": "2",
+			"share": 4.52,
 			"prev": {
 				"share": null
 			},
@@ -2289,27 +2280,27 @@
 			"links": {}
 		},
 		{
+			"name": "browser 18",
+			"version": "0",
+			"share": 4.2,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 17",
+			"version": "2",
+			"share": 3.9,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
 			"name": "browser 17",
 			"version": "1",
 			"share": 3.9,
-			"prev": {
-				"share": null
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 17",
-			"version": "2",
-			"share": 3.9,
-			"prev": {
-				"share": null
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 16",
-			"version": "2",
-			"share": 3.62,
 			"prev": {
 				"share": null
 			},
@@ -2326,8 +2317,8 @@
 		},
 		{
 			"name": "browser 16",
-			"version": "0",
-			"share": 3.34,
+			"version": "2",
+			"share": 3.62,
 			"prev": {
 				"share": null
 			},
@@ -2337,6 +2328,24 @@
 			"name": "browser 16",
 			"version": "1",
 			"share": 3.34,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 16",
+			"version": "0",
+			"share": 3.34,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 15",
+			"version": "2",
+			"share": 3.07,
 			"prev": {
 				"share": null
 			},
@@ -2353,24 +2362,6 @@
 		},
 		{
 			"name": "browser 15",
-			"version": "2",
-			"share": 3.07,
-			"prev": {
-				"share": null
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 14",
-			"version": "2",
-			"share": 2.81,
-			"prev": {
-				"share": null
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 15",
 			"version": "0",
 			"share": 2.81,
 			"prev": {
@@ -2380,8 +2371,8 @@
 		},
 		{
 			"name": "browser 14",
-			"version": "0",
-			"share": 2.57,
+			"version": "2",
+			"share": 2.81,
 			"prev": {
 				"share": null
 			},
@@ -2391,6 +2382,24 @@
 			"name": "browser 14",
 			"version": "1",
 			"share": 2.57,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 14",
+			"version": "0",
+			"share": 2.57,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 13",
+			"version": "2",
+			"share": 2.34,
 			"prev": {
 				"share": null
 			},
@@ -2407,24 +2416,6 @@
 		},
 		{
 			"name": "browser 13",
-			"version": "2",
-			"share": 2.34,
-			"prev": {
-				"share": null
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 12",
-			"version": "2",
-			"share": 2.11,
-			"prev": {
-				"share": null
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 13",
 			"version": "0",
 			"share": 2.11,
 			"prev": {
@@ -2434,8 +2425,8 @@
 		},
 		{
 			"name": "browser 12",
-			"version": "0",
-			"share": 1.9,
+			"version": "2",
+			"share": 2.11,
 			"prev": {
 				"share": null
 			},
@@ -2445,6 +2436,24 @@
 			"name": "browser 12",
 			"version": "1",
 			"share": 1.9,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 12",
+			"version": "0",
+			"share": 1.9,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 11",
+			"version": "2",
+			"share": 1.7,
 			"prev": {
 				"share": null
 			},
@@ -2461,24 +2470,6 @@
 		},
 		{
 			"name": "browser 11",
-			"version": "2",
-			"share": 1.7,
-			"prev": {
-				"share": null
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 10",
-			"version": "2",
-			"share": 1.51,
-			"prev": {
-				"share": null
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 11",
 			"version": "0",
 			"share": 1.51,
 			"prev": {
@@ -2488,8 +2479,8 @@
 		},
 		{
 			"name": "browser 10",
-			"version": "0",
-			"share": 1.33,
+			"version": "2",
+			"share": 1.51,
 			"prev": {
 				"share": null
 			},
@@ -2499,6 +2490,24 @@
 			"name": "browser 10",
 			"version": "1",
 			"share": 1.33,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 10",
+			"version": "0",
+			"share": 1.33,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 9",
+			"version": "2",
+			"share": 1.17,
 			"prev": {
 				"share": null
 			},
@@ -2515,24 +2524,6 @@
 		},
 		{
 			"name": "browser 9",
-			"version": "2",
-			"share": 1.17,
-			"prev": {
-				"share": null
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 8",
-			"version": "2",
-			"share": 1.01,
-			"prev": {
-				"share": null
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 9",
 			"version": "0",
 			"share": 1.01,
 			"prev": {
@@ -2542,8 +2533,8 @@
 		},
 		{
 			"name": "browser 8",
-			"version": "0",
-			"share": 0.87,
+			"version": "2",
+			"share": 1.01,
 			"prev": {
 				"share": null
 			},
@@ -2553,6 +2544,24 @@
 			"name": "browser 8",
 			"version": "1",
 			"share": 0.87,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 8",
+			"version": "0",
+			"share": 0.87,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 7",
+			"version": "2",
+			"share": 0.73,
 			"prev": {
 				"share": null
 			},
@@ -2569,24 +2578,6 @@
 		},
 		{
 			"name": "browser 7",
-			"version": "2",
-			"share": 0.73,
-			"prev": {
-				"share": null
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 6",
-			"version": "2",
-			"share": 0.61,
-			"prev": {
-				"share": null
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 7",
 			"version": "0",
 			"share": 0.61,
 			"prev": {
@@ -2596,8 +2587,8 @@
 		},
 		{
 			"name": "browser 6",
-			"version": "0",
-			"share": 0.5,
+			"version": "2",
+			"share": 0.61,
 			"prev": {
 				"share": null
 			},
@@ -2607,6 +2598,24 @@
 			"name": "browser 6",
 			"version": "1",
 			"share": 0.5,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 6",
+			"version": "0",
+			"share": 0.5,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 5",
+			"version": "2",
+			"share": 0.4,
 			"prev": {
 				"share": null
 			},
@@ -2623,24 +2632,6 @@
 		},
 		{
 			"name": "browser 5",
-			"version": "2",
-			"share": 0.4,
-			"prev": {
-				"share": null
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 4",
-			"version": "2",
-			"share": 0.31,
-			"prev": {
-				"share": null
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 5",
 			"version": "0",
 			"share": 0.31,
 			"prev": {
@@ -2650,8 +2641,8 @@
 		},
 		{
 			"name": "browser 4",
-			"version": "0",
-			"share": 0.23,
+			"version": "2",
+			"share": 0.31,
 			"prev": {
 				"share": null
 			},
@@ -2661,6 +2652,24 @@
 			"name": "browser 4",
 			"version": "1",
 			"share": 0.23,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 4",
+			"version": "0",
+			"share": 0.23,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 3",
+			"version": "2",
+			"share": 0.17,
 			"prev": {
 				"share": null
 			},
@@ -2677,24 +2686,6 @@
 		},
 		{
 			"name": "browser 3",
-			"version": "2",
-			"share": 0.17,
-			"prev": {
-				"share": null
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 2",
-			"version": "2",
-			"share": 0.11,
-			"prev": {
-				"share": null
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 3",
 			"version": "0",
 			"share": 0.11,
 			"prev": {
@@ -2704,8 +2695,8 @@
 		},
 		{
 			"name": "browser 2",
-			"version": "0",
-			"share": 0.07,
+			"version": "2",
+			"share": 0.11,
 			"prev": {
 				"share": null
 			},
@@ -2715,6 +2706,24 @@
 			"name": "browser 2",
 			"version": "1",
 			"share": 0.07,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 2",
+			"version": "0",
+			"share": 0.07,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 1",
+			"version": "2",
+			"share": 0.03,
 			"prev": {
 				"share": null
 			},
@@ -2731,8 +2740,8 @@
 		},
 		{
 			"name": "browser 1",
-			"version": "2",
-			"share": 0.03,
+			"version": "0",
+			"share": 0.01,
 			"prev": {
 				"share": null
 			},
@@ -2746,21 +2755,12 @@
 				"share": null
 			},
 			"links": {}
-		},
-		{
-			"name": "browser 1",
-			"version": "0",
-			"share": 0.01,
-			"prev": {
-				"share": null
-			},
-			"links": {}
 		}
 	],
 	"/v1/stats/browsers/versions?country=PL&period=2020-04": [
 		{
 			"name": "browser 19",
-			"version": "1",
+			"version": "2",
 			"share": 5.09,
 			"prev": {
 				"share": 3.33
@@ -2769,19 +2769,10 @@
 		},
 		{
 			"name": "browser 19",
-			"version": "2",
+			"version": "1",
 			"share": 5.09,
 			"prev": {
 				"share": 3.33
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 18",
-			"version": "2",
-			"share": 4.75,
-			"prev": {
-				"share": 3.22
 			},
 			"links": {}
 		},
@@ -2796,10 +2787,10 @@
 		},
 		{
 			"name": "browser 18",
-			"version": "0",
-			"share": 4.42,
+			"version": "2",
+			"share": 4.75,
 			"prev": {
-				"share": 3.1
+				"share": 3.22
 			},
 			"links": {}
 		},
@@ -2813,29 +2804,29 @@
 			"links": {}
 		},
 		{
+			"name": "browser 18",
+			"version": "0",
+			"share": 4.42,
+			"prev": {
+				"share": 3.1
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 17",
+			"version": "2",
+			"share": 4.11,
+			"prev": {
+				"share": 2.99
+			},
+			"links": {}
+		},
+		{
 			"name": "browser 17",
 			"version": "1",
 			"share": 4.11,
 			"prev": {
 				"share": 2.99
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 17",
-			"version": "2",
-			"share": 4.11,
-			"prev": {
-				"share": 2.99
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 16",
-			"version": "2",
-			"share": 3.8,
-			"prev": {
-				"share": 2.87
 			},
 			"links": {}
 		},
@@ -2850,10 +2841,10 @@
 		},
 		{
 			"name": "browser 16",
-			"version": "0",
-			"share": 3.51,
+			"version": "2",
+			"share": 3.8,
 			"prev": {
-				"share": 2.76
+				"share": 2.87
 			},
 			"links": {}
 		},
@@ -2863,6 +2854,24 @@
 			"share": 3.51,
 			"prev": {
 				"share": 2.76
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 16",
+			"version": "0",
+			"share": 3.51,
+			"prev": {
+				"share": 2.76
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 15",
+			"version": "2",
+			"share": 3.23,
+			"prev": {
+				"share": 2.64
 			},
 			"links": {}
 		},
@@ -2877,24 +2886,6 @@
 		},
 		{
 			"name": "browser 15",
-			"version": "2",
-			"share": 3.23,
-			"prev": {
-				"share": 2.64
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 14",
-			"version": "2",
-			"share": 2.96,
-			"prev": {
-				"share": 2.53
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 15",
 			"version": "0",
 			"share": 2.96,
 			"prev": {
@@ -2904,10 +2895,10 @@
 		},
 		{
 			"name": "browser 14",
-			"version": "0",
-			"share": 2.7,
+			"version": "2",
+			"share": 2.96,
 			"prev": {
-				"share": 2.41
+				"share": 2.53
 			},
 			"links": {}
 		},
@@ -2917,6 +2908,24 @@
 			"share": 2.7,
 			"prev": {
 				"share": 2.41
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 14",
+			"version": "0",
+			"share": 2.7,
+			"prev": {
+				"share": 2.41
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 13",
+			"version": "2",
+			"share": 2.46,
+			"prev": {
+				"share": 2.3
 			},
 			"links": {}
 		},
@@ -2931,24 +2940,6 @@
 		},
 		{
 			"name": "browser 13",
-			"version": "2",
-			"share": 2.46,
-			"prev": {
-				"share": 2.3
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 12",
-			"version": "2",
-			"share": 2.22,
-			"prev": {
-				"share": 2.18
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 13",
 			"version": "0",
 			"share": 2.22,
 			"prev": {
@@ -2958,10 +2949,10 @@
 		},
 		{
 			"name": "browser 12",
-			"version": "0",
-			"share": 2,
+			"version": "2",
+			"share": 2.22,
 			"prev": {
-				"share": 2.07
+				"share": 2.18
 			},
 			"links": {}
 		},
@@ -2971,6 +2962,24 @@
 			"share": 2,
 			"prev": {
 				"share": 2.07
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 12",
+			"version": "0",
+			"share": 2,
+			"prev": {
+				"share": 2.07
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 11",
+			"version": "2",
+			"share": 1.79,
+			"prev": {
+				"share": 1.95
 			},
 			"links": {}
 		},
@@ -2985,24 +2994,6 @@
 		},
 		{
 			"name": "browser 11",
-			"version": "2",
-			"share": 1.79,
-			"prev": {
-				"share": 1.95
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 10",
-			"version": "2",
-			"share": 1.59,
-			"prev": {
-				"share": 1.84
-			},
-			"links": {}
-		},
-		{
-			"name": "browser 11",
 			"version": "0",
 			"share": 1.59,
 			"prev": {
@@ -3012,10 +3003,10 @@
 		},
 		{
 			"name": "browser 10",
-			"version": "0",
-			"share": 1.4,
+			"version": "2",
+			"share": 1.59,
 			"prev": {
-				"share": 1.72
+				"share": 1.84
 			},
 			"links": {}
 		},
@@ -3025,6 +3016,24 @@
 			"share": 1.4,
 			"prev": {
 				"share": 1.72
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 10",
+			"version": "0",
+			"share": 1.4,
+			"prev": {
+				"share": 1.72
+			},
+			"links": {}
+		},
+		{
+			"name": "browser 9",
+			"version": "2",
+			"share": 1.23,
+			"prev": {
+				"share": 1.61
 			},
 			"links": {}
 		},
@@ -3039,10 +3048,10 @@
 		},
 		{
 			"name": "browser 9",
-			"version": "2",
-			"share": 1.23,
+			"version": "0",
+			"share": 1.06,
 			"prev": {
-				"share": 1.61
+				"share": 1.49
 			},
 			"links": {}
 		},
@@ -3056,17 +3065,8 @@
 			"links": {}
 		},
 		{
-			"name": "browser 9",
-			"version": "0",
-			"share": 1.06,
-			"prev": {
-				"share": 1.49
-			},
-			"links": {}
-		},
-		{
 			"name": "browser 8",
-			"version": "0",
+			"version": "1",
 			"share": 0.91,
 			"prev": {
 				"share": 1.38
@@ -3075,7 +3075,7 @@
 		},
 		{
 			"name": "browser 8",
-			"version": "1",
+			"version": "0",
 			"share": 0.91,
 			"prev": {
 				"share": 1.38
@@ -3084,7 +3084,7 @@
 		},
 		{
 			"name": "browser 7",
-			"version": "1",
+			"version": "2",
 			"share": 0.77,
 			"prev": {
 				"share": 1.26
@@ -3093,7 +3093,7 @@
 		},
 		{
 			"name": "browser 7",
-			"version": "2",
+			"version": "1",
 			"share": 0.77,
 			"prev": {
 				"share": 1.26
@@ -3109,17 +3109,6 @@
 	"/v1/stats/browsers/versions?period=2020": [
 		{
 			"name": "browser 19",
-			"version": "1",
-			"share": 4.88,
-			"prev": {
-				"share": null
-			},
-			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/versions/1/countries?period=2020"
-			}
-		},
-		{
-			"name": "browser 19",
 			"version": "2",
 			"share": 4.88,
 			"prev": {
@@ -3130,14 +3119,14 @@
 			}
 		},
 		{
-			"name": "browser 18",
-			"version": "2",
-			"share": 4.56,
+			"name": "browser 19",
+			"version": "1",
+			"share": 4.88,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/versions/2/countries?period=2020"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/versions/1/countries?period=2020"
 			}
 		},
 		{
@@ -3153,13 +3142,13 @@
 		},
 		{
 			"name": "browser 18",
-			"version": "0",
-			"share": 4.25,
+			"version": "2",
+			"share": 4.56,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/versions/0/countries?period=2020"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/versions/2/countries?period=2020"
 			}
 		},
 		{
@@ -3171,6 +3160,28 @@
 			},
 			"links": {
 				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/versions/1/countries?period=2020"
+			}
+		},
+		{
+			"name": "browser 18",
+			"version": "0",
+			"share": 4.25,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/versions/0/countries?period=2020"
+			}
+		},
+		{
+			"name": "browser 17",
+			"version": "2",
+			"share": 3.95,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2017/versions/2/countries?period=2020"
 			}
 		},
 		{
@@ -3186,13 +3197,13 @@
 		},
 		{
 			"name": "browser 17",
-			"version": "2",
-			"share": 3.95,
+			"version": "0",
+			"share": 3.67,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2017/versions/2/countries?period=2020"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2017/versions/0/countries?period=2020"
 			}
 		},
 		{
@@ -3207,14 +3218,14 @@
 			}
 		},
 		{
-			"name": "browser 17",
-			"version": "0",
-			"share": 3.67,
+			"name": "browser 16",
+			"version": "1",
+			"share": 3.39,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2017/versions/0/countries?period=2020"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2016/versions/1/countries?period=2020"
 			}
 		},
 		{
@@ -3229,14 +3240,14 @@
 			}
 		},
 		{
-			"name": "browser 16",
-			"version": "1",
-			"share": 3.39,
+			"name": "browser 15",
+			"version": "2",
+			"share": 3.12,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2016/versions/1/countries?period=2020"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2015/versions/2/countries?period=2020"
 			}
 		},
 		{
@@ -3252,13 +3263,13 @@
 		},
 		{
 			"name": "browser 15",
-			"version": "2",
-			"share": 3.12,
+			"version": "0",
+			"share": 2.87,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2015/versions/2/countries?period=2020"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2015/versions/0/countries?period=2020"
 			}
 		},
 		{
@@ -3273,14 +3284,14 @@
 			}
 		},
 		{
-			"name": "browser 15",
-			"version": "0",
-			"share": 2.87,
+			"name": "browser 14",
+			"version": "1",
+			"share": 2.62,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2015/versions/0/countries?period=2020"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2014/versions/1/countries?period=2020"
 			}
 		},
 		{
@@ -3295,14 +3306,14 @@
 			}
 		},
 		{
-			"name": "browser 14",
-			"version": "1",
-			"share": 2.62,
+			"name": "browser 13",
+			"version": "2",
+			"share": 2.39,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2014/versions/1/countries?period=2020"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2013/versions/2/countries?period=2020"
 			}
 		},
 		{
@@ -3318,13 +3329,13 @@
 		},
 		{
 			"name": "browser 13",
-			"version": "2",
-			"share": 2.39,
+			"version": "0",
+			"share": 2.17,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2013/versions/2/countries?period=2020"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2013/versions/0/countries?period=2020"
 			}
 		},
 		{
@@ -3339,14 +3350,14 @@
 			}
 		},
 		{
-			"name": "browser 13",
-			"version": "0",
-			"share": 2.17,
+			"name": "browser 12",
+			"version": "1",
+			"share": 1.96,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2013/versions/0/countries?period=2020"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2012/versions/1/countries?period=2020"
 			}
 		},
 		{
@@ -3361,14 +3372,14 @@
 			}
 		},
 		{
-			"name": "browser 12",
-			"version": "1",
-			"share": 1.96,
+			"name": "browser 11",
+			"version": "2",
+			"share": 1.75,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2012/versions/1/countries?period=2020"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2011/versions/2/countries?period=2020"
 			}
 		},
 		{
@@ -3384,13 +3395,13 @@
 		},
 		{
 			"name": "browser 11",
-			"version": "2",
-			"share": 1.75,
+			"version": "0",
+			"share": 1.56,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2011/versions/2/countries?period=2020"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2011/versions/0/countries?period=2020"
 			}
 		},
 		{
@@ -3405,14 +3416,14 @@
 			}
 		},
 		{
-			"name": "browser 11",
-			"version": "0",
-			"share": 1.56,
+			"name": "browser 10",
+			"version": "1",
+			"share": 1.39,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2011/versions/0/countries?period=2020"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2010/versions/1/countries?period=2020"
 			}
 		},
 		{
@@ -3427,14 +3438,14 @@
 			}
 		},
 		{
-			"name": "browser 10",
-			"version": "1",
-			"share": 1.39,
+			"name": "browser 9",
+			"version": "2",
+			"share": 1.22,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2010/versions/1/countries?period=2020"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%209/versions/2/countries?period=2020"
 			}
 		},
 		{
@@ -3450,13 +3461,13 @@
 		},
 		{
 			"name": "browser 9",
-			"version": "2",
-			"share": 1.22,
+			"version": "0",
+			"share": 1.06,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%209/versions/2/countries?period=2020"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%209/versions/0/countries?period=2020"
 			}
 		},
 		{
@@ -3471,14 +3482,14 @@
 			}
 		},
 		{
-			"name": "browser 9",
-			"version": "0",
-			"share": 1.06,
+			"name": "browser 8",
+			"version": "1",
+			"share": 0.91,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%209/versions/0/countries?period=2020"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%208/versions/1/countries?period=2020"
 			}
 		},
 		{
@@ -3493,14 +3504,14 @@
 			}
 		},
 		{
-			"name": "browser 8",
-			"version": "1",
-			"share": 0.91,
+			"name": "browser 7",
+			"version": "2",
+			"share": 0.78,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%208/versions/1/countries?period=2020"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%207/versions/2/countries?period=2020"
 			}
 		},
 		{
@@ -3516,13 +3527,13 @@
 		},
 		{
 			"name": "browser 7",
-			"version": "2",
-			"share": 0.78,
+			"version": "0",
+			"share": 0.35,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%207/versions/2/countries?period=2020"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%207/versions/0/countries?period=2020"
 			}
 		},
 		{
@@ -3537,14 +3548,14 @@
 			}
 		},
 		{
-			"name": "browser 7",
-			"version": "0",
-			"share": 0.35,
+			"name": "browser 6",
+			"version": "1",
+			"share": 0.29,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%207/versions/0/countries?period=2020"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%206/versions/1/countries?period=2020"
 			}
 		},
 		{
@@ -3559,14 +3570,14 @@
 			}
 		},
 		{
-			"name": "browser 6",
-			"version": "1",
-			"share": 0.29,
+			"name": "browser 5",
+			"version": "2",
+			"share": 0.24,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%206/versions/1/countries?period=2020"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%205/versions/2/countries?period=2020"
 			}
 		},
 		{
@@ -3582,13 +3593,13 @@
 		},
 		{
 			"name": "browser 5",
-			"version": "2",
-			"share": 0.24,
+			"version": "0",
+			"share": 0.19,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%205/versions/2/countries?period=2020"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%205/versions/0/countries?period=2020"
 			}
 		},
 		{
@@ -3603,14 +3614,14 @@
 			}
 		},
 		{
-			"name": "browser 5",
-			"version": "0",
-			"share": 0.19,
+			"name": "browser 4",
+			"version": "1",
+			"share": 0.15,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%205/versions/0/countries?period=2020"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%204/versions/1/countries?period=2020"
 			}
 		},
 		{
@@ -3625,14 +3636,14 @@
 			}
 		},
 		{
-			"name": "browser 4",
-			"version": "1",
-			"share": 0.15,
+			"name": "browser 3",
+			"version": "2",
+			"share": 0.11,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%204/versions/1/countries?period=2020"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%203/versions/2/countries?period=2020"
 			}
 		},
 		{
@@ -3648,13 +3659,13 @@
 		},
 		{
 			"name": "browser 3",
-			"version": "2",
-			"share": 0.11,
+			"version": "0",
+			"share": 0.08,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%203/versions/2/countries?period=2020"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%203/versions/0/countries?period=2020"
 			}
 		},
 		{
@@ -3669,14 +3680,14 @@
 			}
 		},
 		{
-			"name": "browser 3",
-			"version": "0",
-			"share": 0.08,
+			"name": "browser 2",
+			"version": "1",
+			"share": 0.05,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%203/versions/0/countries?period=2020"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%202/versions/1/countries?period=2020"
 			}
 		},
 		{
@@ -3691,14 +3702,14 @@
 			}
 		},
 		{
-			"name": "browser 2",
-			"version": "1",
-			"share": 0.05,
+			"name": "browser 1",
+			"version": "2",
+			"share": 0.03,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%202/versions/1/countries?period=2020"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%201/versions/2/countries?period=2020"
 			}
 		},
 		{
@@ -3714,13 +3725,13 @@
 		},
 		{
 			"name": "browser 1",
-			"version": "2",
-			"share": 0.03,
+			"version": "0",
+			"share": 0.01,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%201/versions/2/countries?period=2020"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%201/versions/0/countries?period=2020"
 			}
 		},
 		{
@@ -3733,31 +3744,9 @@
 			"links": {
 				"countries": "http://localhost:4454/v1/stats/browsers/browser%200/versions/2/countries?period=2020"
 			}
-		},
-		{
-			"name": "browser 1",
-			"version": "0",
-			"share": 0.01,
-			"prev": {
-				"share": null
-			},
-			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%201/versions/0/countries?period=2020"
-			}
 		}
 	],
 	"/v1/stats/browsers/versions?period=2020-02": [
-		{
-			"name": "browser 19",
-			"version": "1",
-			"share": 4.84,
-			"prev": {
-				"share": null
-			},
-			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/versions/1/countries?period=2020-02"
-			}
-		},
 		{
 			"name": "browser 19",
 			"version": "2",
@@ -3770,14 +3759,14 @@
 			}
 		},
 		{
-			"name": "browser 18",
-			"version": "2",
-			"share": 4.52,
+			"name": "browser 19",
+			"version": "1",
+			"share": 4.84,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/versions/2/countries?period=2020-02"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/versions/1/countries?period=2020-02"
 			}
 		},
 		{
@@ -3793,13 +3782,13 @@
 		},
 		{
 			"name": "browser 18",
-			"version": "0",
-			"share": 4.2,
+			"version": "2",
+			"share": 4.52,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/versions/0/countries?period=2020-02"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/versions/2/countries?period=2020-02"
 			}
 		},
 		{
@@ -3811,6 +3800,28 @@
 			},
 			"links": {
 				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/versions/1/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "browser 18",
+			"version": "0",
+			"share": 4.2,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/versions/0/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "browser 17",
+			"version": "2",
+			"share": 3.9,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2017/versions/2/countries?period=2020-02"
 			}
 		},
 		{
@@ -3826,13 +3837,13 @@
 		},
 		{
 			"name": "browser 17",
-			"version": "2",
-			"share": 3.9,
+			"version": "0",
+			"share": 3.62,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2017/versions/2/countries?period=2020-02"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2017/versions/0/countries?period=2020-02"
 			}
 		},
 		{
@@ -3847,14 +3858,14 @@
 			}
 		},
 		{
-			"name": "browser 17",
-			"version": "0",
-			"share": 3.62,
+			"name": "browser 16",
+			"version": "1",
+			"share": 3.34,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2017/versions/0/countries?period=2020-02"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2016/versions/1/countries?period=2020-02"
 			}
 		},
 		{
@@ -3869,14 +3880,14 @@
 			}
 		},
 		{
-			"name": "browser 16",
-			"version": "1",
-			"share": 3.34,
+			"name": "browser 15",
+			"version": "2",
+			"share": 3.07,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2016/versions/1/countries?period=2020-02"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2015/versions/2/countries?period=2020-02"
 			}
 		},
 		{
@@ -3892,13 +3903,13 @@
 		},
 		{
 			"name": "browser 15",
-			"version": "2",
-			"share": 3.07,
+			"version": "0",
+			"share": 2.81,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2015/versions/2/countries?period=2020-02"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2015/versions/0/countries?period=2020-02"
 			}
 		},
 		{
@@ -3913,14 +3924,14 @@
 			}
 		},
 		{
-			"name": "browser 15",
-			"version": "0",
-			"share": 2.81,
+			"name": "browser 14",
+			"version": "1",
+			"share": 2.57,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2015/versions/0/countries?period=2020-02"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2014/versions/1/countries?period=2020-02"
 			}
 		},
 		{
@@ -3935,14 +3946,14 @@
 			}
 		},
 		{
-			"name": "browser 14",
-			"version": "1",
-			"share": 2.57,
+			"name": "browser 13",
+			"version": "2",
+			"share": 2.34,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2014/versions/1/countries?period=2020-02"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2013/versions/2/countries?period=2020-02"
 			}
 		},
 		{
@@ -3958,13 +3969,13 @@
 		},
 		{
 			"name": "browser 13",
-			"version": "2",
-			"share": 2.34,
+			"version": "0",
+			"share": 2.11,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2013/versions/2/countries?period=2020-02"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2013/versions/0/countries?period=2020-02"
 			}
 		},
 		{
@@ -3979,14 +3990,14 @@
 			}
 		},
 		{
-			"name": "browser 13",
-			"version": "0",
-			"share": 2.11,
+			"name": "browser 12",
+			"version": "1",
+			"share": 1.9,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2013/versions/0/countries?period=2020-02"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2012/versions/1/countries?period=2020-02"
 			}
 		},
 		{
@@ -4001,14 +4012,14 @@
 			}
 		},
 		{
-			"name": "browser 12",
-			"version": "1",
-			"share": 1.9,
+			"name": "browser 11",
+			"version": "2",
+			"share": 1.7,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2012/versions/1/countries?period=2020-02"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2011/versions/2/countries?period=2020-02"
 			}
 		},
 		{
@@ -4024,13 +4035,13 @@
 		},
 		{
 			"name": "browser 11",
-			"version": "2",
-			"share": 1.7,
+			"version": "0",
+			"share": 1.51,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2011/versions/2/countries?period=2020-02"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2011/versions/0/countries?period=2020-02"
 			}
 		},
 		{
@@ -4045,14 +4056,14 @@
 			}
 		},
 		{
-			"name": "browser 11",
-			"version": "0",
-			"share": 1.51,
+			"name": "browser 10",
+			"version": "1",
+			"share": 1.33,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2011/versions/0/countries?period=2020-02"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2010/versions/1/countries?period=2020-02"
 			}
 		},
 		{
@@ -4067,14 +4078,14 @@
 			}
 		},
 		{
-			"name": "browser 10",
-			"version": "1",
-			"share": 1.33,
+			"name": "browser 9",
+			"version": "2",
+			"share": 1.17,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2010/versions/1/countries?period=2020-02"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%209/versions/2/countries?period=2020-02"
 			}
 		},
 		{
@@ -4090,13 +4101,13 @@
 		},
 		{
 			"name": "browser 9",
-			"version": "2",
-			"share": 1.17,
+			"version": "0",
+			"share": 1.01,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%209/versions/2/countries?period=2020-02"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%209/versions/0/countries?period=2020-02"
 			}
 		},
 		{
@@ -4111,14 +4122,14 @@
 			}
 		},
 		{
-			"name": "browser 9",
-			"version": "0",
-			"share": 1.01,
+			"name": "browser 8",
+			"version": "1",
+			"share": 0.87,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%209/versions/0/countries?period=2020-02"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%208/versions/1/countries?period=2020-02"
 			}
 		},
 		{
@@ -4133,14 +4144,14 @@
 			}
 		},
 		{
-			"name": "browser 8",
-			"version": "1",
-			"share": 0.87,
+			"name": "browser 7",
+			"version": "2",
+			"share": 0.73,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%208/versions/1/countries?period=2020-02"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%207/versions/2/countries?period=2020-02"
 			}
 		},
 		{
@@ -4156,13 +4167,13 @@
 		},
 		{
 			"name": "browser 7",
-			"version": "2",
-			"share": 0.73,
+			"version": "0",
+			"share": 0.61,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%207/versions/2/countries?period=2020-02"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%207/versions/0/countries?period=2020-02"
 			}
 		},
 		{
@@ -4177,14 +4188,14 @@
 			}
 		},
 		{
-			"name": "browser 7",
-			"version": "0",
-			"share": 0.61,
+			"name": "browser 6",
+			"version": "1",
+			"share": 0.5,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%207/versions/0/countries?period=2020-02"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%206/versions/1/countries?period=2020-02"
 			}
 		},
 		{
@@ -4199,14 +4210,14 @@
 			}
 		},
 		{
-			"name": "browser 6",
-			"version": "1",
-			"share": 0.5,
+			"name": "browser 5",
+			"version": "2",
+			"share": 0.4,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%206/versions/1/countries?period=2020-02"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%205/versions/2/countries?period=2020-02"
 			}
 		},
 		{
@@ -4222,13 +4233,13 @@
 		},
 		{
 			"name": "browser 5",
-			"version": "2",
-			"share": 0.4,
+			"version": "0",
+			"share": 0.31,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%205/versions/2/countries?period=2020-02"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%205/versions/0/countries?period=2020-02"
 			}
 		},
 		{
@@ -4243,14 +4254,14 @@
 			}
 		},
 		{
-			"name": "browser 5",
-			"version": "0",
-			"share": 0.31,
+			"name": "browser 4",
+			"version": "1",
+			"share": 0.23,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%205/versions/0/countries?period=2020-02"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%204/versions/1/countries?period=2020-02"
 			}
 		},
 		{
@@ -4265,14 +4276,14 @@
 			}
 		},
 		{
-			"name": "browser 4",
-			"version": "1",
-			"share": 0.23,
+			"name": "browser 3",
+			"version": "2",
+			"share": 0.17,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%204/versions/1/countries?period=2020-02"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%203/versions/2/countries?period=2020-02"
 			}
 		},
 		{
@@ -4288,13 +4299,13 @@
 		},
 		{
 			"name": "browser 3",
-			"version": "2",
-			"share": 0.17,
+			"version": "0",
+			"share": 0.11,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%203/versions/2/countries?period=2020-02"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%203/versions/0/countries?period=2020-02"
 			}
 		},
 		{
@@ -4309,14 +4320,14 @@
 			}
 		},
 		{
-			"name": "browser 3",
-			"version": "0",
-			"share": 0.11,
+			"name": "browser 2",
+			"version": "1",
+			"share": 0.07,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%203/versions/0/countries?period=2020-02"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%202/versions/1/countries?period=2020-02"
 			}
 		},
 		{
@@ -4331,14 +4342,14 @@
 			}
 		},
 		{
-			"name": "browser 2",
-			"version": "1",
-			"share": 0.07,
+			"name": "browser 1",
+			"version": "2",
+			"share": 0.03,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%202/versions/1/countries?period=2020-02"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%201/versions/2/countries?period=2020-02"
 			}
 		},
 		{
@@ -4354,13 +4365,13 @@
 		},
 		{
 			"name": "browser 1",
-			"version": "2",
-			"share": 0.03,
+			"version": "0",
+			"share": 0.01,
 			"prev": {
 				"share": null
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%201/versions/2/countries?period=2020-02"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%201/versions/0/countries?period=2020-02"
 			}
 		},
 		{
@@ -4373,31 +4384,9 @@
 			"links": {
 				"countries": "http://localhost:4454/v1/stats/browsers/browser%200/versions/2/countries?period=2020-02"
 			}
-		},
-		{
-			"name": "browser 1",
-			"version": "0",
-			"share": 0.01,
-			"prev": {
-				"share": null
-			},
-			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%201/versions/0/countries?period=2020-02"
-			}
 		}
 	],
 	"/v1/stats/browsers/versions?period=2020-04": [
-		{
-			"name": "browser 19",
-			"version": "1",
-			"share": 5.09,
-			"prev": {
-				"share": 3.33
-			},
-			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/versions/1/countries?period=2020-04"
-			}
-		},
 		{
 			"name": "browser 19",
 			"version": "2",
@@ -4410,14 +4399,14 @@
 			}
 		},
 		{
-			"name": "browser 18",
-			"version": "2",
-			"share": 4.75,
+			"name": "browser 19",
+			"version": "1",
+			"share": 5.09,
 			"prev": {
-				"share": 3.22
+				"share": 3.33
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/versions/2/countries?period=2020-04"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/versions/1/countries?period=2020-04"
 			}
 		},
 		{
@@ -4433,13 +4422,13 @@
 		},
 		{
 			"name": "browser 18",
-			"version": "0",
-			"share": 4.42,
+			"version": "2",
+			"share": 4.75,
 			"prev": {
-				"share": 3.1
+				"share": 3.22
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/versions/0/countries?period=2020-04"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/versions/2/countries?period=2020-04"
 			}
 		},
 		{
@@ -4451,6 +4440,28 @@
 			},
 			"links": {
 				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/versions/1/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "browser 18",
+			"version": "0",
+			"share": 4.42,
+			"prev": {
+				"share": 3.1
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2018/versions/0/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "browser 17",
+			"version": "2",
+			"share": 4.11,
+			"prev": {
+				"share": 2.99
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2017/versions/2/countries?period=2020-04"
 			}
 		},
 		{
@@ -4466,13 +4477,13 @@
 		},
 		{
 			"name": "browser 17",
-			"version": "2",
-			"share": 4.11,
+			"version": "0",
+			"share": 3.8,
 			"prev": {
-				"share": 2.99
+				"share": 2.87
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2017/versions/2/countries?period=2020-04"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2017/versions/0/countries?period=2020-04"
 			}
 		},
 		{
@@ -4487,14 +4498,14 @@
 			}
 		},
 		{
-			"name": "browser 17",
-			"version": "0",
-			"share": 3.8,
+			"name": "browser 16",
+			"version": "1",
+			"share": 3.51,
 			"prev": {
-				"share": 2.87
+				"share": 2.76
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2017/versions/0/countries?period=2020-04"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2016/versions/1/countries?period=2020-04"
 			}
 		},
 		{
@@ -4509,14 +4520,14 @@
 			}
 		},
 		{
-			"name": "browser 16",
-			"version": "1",
-			"share": 3.51,
+			"name": "browser 15",
+			"version": "2",
+			"share": 3.23,
 			"prev": {
-				"share": 2.76
+				"share": 2.64
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2016/versions/1/countries?period=2020-04"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2015/versions/2/countries?period=2020-04"
 			}
 		},
 		{
@@ -4532,13 +4543,13 @@
 		},
 		{
 			"name": "browser 15",
-			"version": "2",
-			"share": 3.23,
+			"version": "0",
+			"share": 2.96,
 			"prev": {
-				"share": 2.64
+				"share": 2.53
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2015/versions/2/countries?period=2020-04"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2015/versions/0/countries?period=2020-04"
 			}
 		},
 		{
@@ -4553,14 +4564,14 @@
 			}
 		},
 		{
-			"name": "browser 15",
-			"version": "0",
-			"share": 2.96,
+			"name": "browser 14",
+			"version": "1",
+			"share": 2.7,
 			"prev": {
-				"share": 2.53
+				"share": 2.41
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2015/versions/0/countries?period=2020-04"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2014/versions/1/countries?period=2020-04"
 			}
 		},
 		{
@@ -4575,14 +4586,14 @@
 			}
 		},
 		{
-			"name": "browser 14",
-			"version": "1",
-			"share": 2.7,
+			"name": "browser 13",
+			"version": "2",
+			"share": 2.46,
 			"prev": {
-				"share": 2.41
+				"share": 2.3
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2014/versions/1/countries?period=2020-04"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2013/versions/2/countries?period=2020-04"
 			}
 		},
 		{
@@ -4598,13 +4609,13 @@
 		},
 		{
 			"name": "browser 13",
-			"version": "2",
-			"share": 2.46,
+			"version": "0",
+			"share": 2.22,
 			"prev": {
-				"share": 2.3
+				"share": 2.18
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2013/versions/2/countries?period=2020-04"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2013/versions/0/countries?period=2020-04"
 			}
 		},
 		{
@@ -4619,14 +4630,14 @@
 			}
 		},
 		{
-			"name": "browser 13",
-			"version": "0",
-			"share": 2.22,
+			"name": "browser 12",
+			"version": "1",
+			"share": 2,
 			"prev": {
-				"share": 2.18
+				"share": 2.07
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2013/versions/0/countries?period=2020-04"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2012/versions/1/countries?period=2020-04"
 			}
 		},
 		{
@@ -4641,14 +4652,14 @@
 			}
 		},
 		{
-			"name": "browser 12",
-			"version": "1",
-			"share": 2,
+			"name": "browser 11",
+			"version": "2",
+			"share": 1.79,
 			"prev": {
-				"share": 2.07
+				"share": 1.95
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2012/versions/1/countries?period=2020-04"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2011/versions/2/countries?period=2020-04"
 			}
 		},
 		{
@@ -4664,13 +4675,13 @@
 		},
 		{
 			"name": "browser 11",
-			"version": "2",
-			"share": 1.79,
+			"version": "0",
+			"share": 1.59,
 			"prev": {
-				"share": 1.95
+				"share": 1.84
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2011/versions/2/countries?period=2020-04"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2011/versions/0/countries?period=2020-04"
 			}
 		},
 		{
@@ -4685,14 +4696,14 @@
 			}
 		},
 		{
-			"name": "browser 11",
-			"version": "0",
-			"share": 1.59,
+			"name": "browser 10",
+			"version": "1",
+			"share": 1.4,
 			"prev": {
-				"share": 1.84
+				"share": 1.72
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2011/versions/0/countries?period=2020-04"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2010/versions/1/countries?period=2020-04"
 			}
 		},
 		{
@@ -4707,14 +4718,14 @@
 			}
 		},
 		{
-			"name": "browser 10",
-			"version": "1",
-			"share": 1.4,
+			"name": "browser 9",
+			"version": "2",
+			"share": 1.23,
 			"prev": {
-				"share": 1.72
+				"share": 1.61
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2010/versions/1/countries?period=2020-04"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%209/versions/2/countries?period=2020-04"
 			}
 		},
 		{
@@ -4730,13 +4741,13 @@
 		},
 		{
 			"name": "browser 9",
-			"version": "2",
-			"share": 1.23,
+			"version": "0",
+			"share": 1.06,
 			"prev": {
-				"share": 1.61
+				"share": 1.49
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%209/versions/2/countries?period=2020-04"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%209/versions/0/countries?period=2020-04"
 			}
 		},
 		{
@@ -4751,14 +4762,14 @@
 			}
 		},
 		{
-			"name": "browser 9",
-			"version": "0",
-			"share": 1.06,
+			"name": "browser 8",
+			"version": "1",
+			"share": 0.91,
 			"prev": {
-				"share": 1.49
+				"share": 1.38
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%209/versions/0/countries?period=2020-04"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%208/versions/1/countries?period=2020-04"
 			}
 		},
 		{
@@ -4773,14 +4784,14 @@
 			}
 		},
 		{
-			"name": "browser 8",
-			"version": "1",
-			"share": 0.91,
+			"name": "browser 7",
+			"version": "2",
+			"share": 0.77,
 			"prev": {
-				"share": 1.38
+				"share": 1.26
 			},
 			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%208/versions/1/countries?period=2020-04"
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%207/versions/2/countries?period=2020-04"
 			}
 		},
 		{
@@ -4792,17 +4803,6 @@
 			},
 			"links": {
 				"countries": "http://localhost:4454/v1/stats/browsers/browser%207/versions/1/countries?period=2020-04"
-			}
-		},
-		{
-			"name": "browser 7",
-			"version": "2",
-			"share": 0.77,
-			"prev": {
-				"share": 1.26
-			},
-			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%207/versions/2/countries?period=2020-04"
 			}
 		}
 	],
@@ -4818,16 +4818,6 @@
 	},
 	"/v1/stats/browsers/browser%2019/versions?continent=EU&period=2020": [
 		{
-			"version": "1",
-			"share": 4.88,
-			"prev": {
-				"share": null
-			},
-			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/versions/1/countries?period=2020&continent=EU"
-			}
-		},
-		{
 			"version": "2",
 			"share": 4.88,
 			"prev": {
@@ -4835,6 +4825,16 @@
 			},
 			"links": {
 				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/versions/2/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"version": "1",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/versions/1/countries?period=2020&continent=EU"
 			}
 		},
 		{
@@ -4850,16 +4850,6 @@
 	],
 	"/v1/stats/browsers/browser%2019/versions?continent=EU&period=2020-02": [
 		{
-			"version": "1",
-			"share": 4.84,
-			"prev": {
-				"share": null
-			},
-			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/versions/1/countries?period=2020-02&continent=EU"
-			}
-		},
-		{
 			"version": "2",
 			"share": 4.84,
 			"prev": {
@@ -4867,6 +4857,16 @@
 			},
 			"links": {
 				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/versions/2/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"version": "1",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/versions/1/countries?period=2020-02&continent=EU"
 			}
 		},
 		{
@@ -4882,16 +4882,6 @@
 	],
 	"/v1/stats/browsers/browser%2019/versions?continent=EU&period=2020-04": [
 		{
-			"version": "1",
-			"share": 5.09,
-			"prev": {
-				"share": 3.33
-			},
-			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/versions/1/countries?period=2020-04&continent=EU"
-			}
-		},
-		{
 			"version": "2",
 			"share": 5.09,
 			"prev": {
@@ -4899,6 +4889,16 @@
 			},
 			"links": {
 				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/versions/2/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"version": "1",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/versions/1/countries?period=2020-04&continent=EU"
 			}
 		},
 		{
@@ -4919,7 +4919,7 @@
 	},
 	"/v1/stats/browsers/browser%2019/versions?country=PL&period=2020": [
 		{
-			"version": "1",
+			"version": "2",
 			"share": 4.88,
 			"prev": {
 				"share": null
@@ -4927,7 +4927,7 @@
 			"links": {}
 		},
 		{
-			"version": "2",
+			"version": "1",
 			"share": 4.88,
 			"prev": {
 				"share": null
@@ -4945,7 +4945,7 @@
 	],
 	"/v1/stats/browsers/browser%2019/versions?country=PL&period=2020-02": [
 		{
-			"version": "1",
+			"version": "2",
 			"share": 4.84,
 			"prev": {
 				"share": null
@@ -4953,7 +4953,7 @@
 			"links": {}
 		},
 		{
-			"version": "2",
+			"version": "1",
 			"share": 4.84,
 			"prev": {
 				"share": null
@@ -4971,7 +4971,7 @@
 	],
 	"/v1/stats/browsers/browser%2019/versions?country=PL&period=2020-04": [
 		{
-			"version": "1",
+			"version": "2",
 			"share": 5.09,
 			"prev": {
 				"share": 3.33
@@ -4979,7 +4979,7 @@
 			"links": {}
 		},
 		{
-			"version": "2",
+			"version": "1",
 			"share": 5.09,
 			"prev": {
 				"share": 3.33
@@ -5002,16 +5002,6 @@
 	},
 	"/v1/stats/browsers/browser%2019/versions?period=2020": [
 		{
-			"version": "1",
-			"share": 4.88,
-			"prev": {
-				"share": null
-			},
-			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/versions/1/countries?period=2020"
-			}
-		},
-		{
 			"version": "2",
 			"share": 4.88,
 			"prev": {
@@ -5019,6 +5009,16 @@
 			},
 			"links": {
 				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/versions/2/countries?period=2020"
+			}
+		},
+		{
+			"version": "1",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/versions/1/countries?period=2020"
 			}
 		},
 		{
@@ -5034,16 +5034,6 @@
 	],
 	"/v1/stats/browsers/browser%2019/versions?period=2020-02": [
 		{
-			"version": "1",
-			"share": 4.84,
-			"prev": {
-				"share": null
-			},
-			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/versions/1/countries?period=2020-02"
-			}
-		},
-		{
 			"version": "2",
 			"share": 4.84,
 			"prev": {
@@ -5051,6 +5041,16 @@
 			},
 			"links": {
 				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/versions/2/countries?period=2020-02"
+			}
+		},
+		{
+			"version": "1",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/versions/1/countries?period=2020-02"
 			}
 		},
 		{
@@ -5066,16 +5066,6 @@
 	],
 	"/v1/stats/browsers/browser%2019/versions?period=2020-04": [
 		{
-			"version": "1",
-			"share": 5.09,
-			"prev": {
-				"share": 3.33
-			},
-			"links": {
-				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/versions/1/countries?period=2020-04"
-			}
-		},
-		{
 			"version": "2",
 			"share": 5.09,
 			"prev": {
@@ -5083,6 +5073,16 @@
 			},
 			"links": {
 				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/versions/2/countries?period=2020-04"
+			}
+		},
+		{
+			"version": "1",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/browsers/browser%2019/versions/1/countries?period=2020-04"
 			}
 		},
 		{
