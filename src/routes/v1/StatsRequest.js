@@ -260,9 +260,7 @@ class StatsRequest extends BaseRequest {
 			.buildRefs({ network: routes['/stats/network'].getName() }, await CountryCdnHits.getPeriods())
 			.buildRefs({ packages: routes['/stats/packages'].getName() }, await Package.getPeriods())
 			.buildRefs({ platforms: routes['/stats/platforms'].getName() }, await Platform.getPeriods())
-			.withVariables([ 'name' ])
 			.buildRefs({ proxies: routes['/stats/proxies/:name'].getName() }, await ProxyModel.getPeriods())
-			.withVariables(undefined)
 			.mergeBy('period')
 			.sort((a, b) => {
 				return a.period > b.period ? -1 : a.period < b.period;
