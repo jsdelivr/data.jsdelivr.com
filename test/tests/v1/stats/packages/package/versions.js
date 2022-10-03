@@ -15,6 +15,7 @@ describe('/v1/stats/packages/versions', () => {
 
 function makePackageStatsTests () {
 	let defaults = {
+		by: 'hits',
 		period: 'month',
 	};
 

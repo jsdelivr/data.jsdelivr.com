@@ -12,6 +12,7 @@ describe('/v1/stats/packages', () => {
 
 function makeStatsPackagesTests () {
 	makeEndpointSnapshotTests('/v1/stats/packages{?by,type,period}', {
+		by: 'hits',
 		period: 'month',
 	}, [
 		{
