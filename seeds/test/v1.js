@@ -85,15 +85,27 @@ exports.seed = async (db) => {
 		};
 	})));
 
-	await db('proxy_hits').insert(_.flatten(_.range(1, 16).map((proxyId) => {
-		return _.range(0, 70).map((i) => {
+	await db('proxy_file').insert(_.flatten(_.range(1, 16).map((proxyId) => {
+		return _.range(1, 111).map((i) => {
 			return {
+				id: (proxyId - 1) * 110 + i,
 				proxyId,
-				date: new Date(STATS_START_TIMESTAMP + (i * 86400000)),
-				hits: proxyId * i,
-				bandwidth: proxyId * i * 16 * 1025,
+				filename: `/file-${(proxyId - 1) * 110 + i}`,
 			};
 		});
+	})));
+
+	await db('proxy_file_hits').insert(_.flatten(_.range(1, 16).map((proxyId) => {
+		return _.flatten(_.range(1, 111).map((fi) => {
+			return _.range(0, 70).map((i) => {
+				return {
+					proxyFileId: (proxyId - 1) * 110 + fi,
+					date: new Date(STATS_START_TIMESTAMP + (i * 86400000)),
+					hits: proxyId * Math.floor(fi / 2) * i,
+					bandwidth: proxyId * Math.floor(fi / 2) * i * 16 * 1025,
+				};
+			});
+		}));
 	})));
 
 	await db('country_cdn_hits').insert(_.flatten(countries.map((countryIso, index) => {

@@ -246,6 +246,48 @@ begin
 end;
 
 
+create or replace function updateOrInsertProxyFile(aProxyId int, aFilename varchar(255)) returns int
+begin
+	update `proxy_file`
+	set `id` = last_insert_id(`id`)
+	where `proxyId` = aProxyId and `filename` = aFilename;
+
+	if row_count() = 0 then
+		insert into `proxy_file` (proxyId, filename)
+		values (aProxyId, aFilename)
+		on duplicate key update `id` = last_insert_id(`id`);
+	end if;
+
+	return last_insert_id();
+end;
+
+
+create or replace function updateOrInsertProxyFileHits(aProxyId int, aProxyFileId int, aDate date, aHits int, aBandwidth bigint) returns int
+begin
+	update `proxy_file_hits`
+	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
+	where `proxyFileId` = aProxyFileId and `date` = aDate;
+
+	if row_count() = 0 then
+		insert into `proxy_file_hits` (proxyFileId, date, hits, bandwidth)
+		values (aProxyFileId, aDate, aHits, aBandwidth)
+		on duplicate key update `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth;
+	end if;
+
+	update `proxy_hits`
+	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
+	where `proxyId` = aProxyId and `date` = aDate;
+
+	if row_count() = 0 then
+		insert into `proxy_hits` (proxyId, date, hits, bandwidth)
+		values (aProxyId, aDate, aHits, aBandwidth)
+		on duplicate key update `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth;
+	end if;
+
+	return 0;
+end;
+
+
 create or replace function updateOrInsertProxyHits(aProxyId int, aDate date, aHits int, aBandwidth bigint) returns int
 begin
 	update `proxy_hits`

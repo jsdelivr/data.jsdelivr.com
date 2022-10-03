@@ -21,6 +21,13 @@ from package
 	     join file_hits on file.id = file_hits.fileId
 group by packageVersionId, date;
 
+insert into proxy_hits
+select proxyId, date, sum(hits) as hits, sum(bandwidth) as bandwidth
+from proxy
+	     join proxy_file pf on proxy.id = pf.proxyId
+	     join proxy_file_hits pfh on pf.id = pfh.proxyFileId
+group by proxyId, date;
+
 set @date = date('<<DATE>>');
 call analyzeAllTables();
 call updateViewNetworkCountries(@date);
