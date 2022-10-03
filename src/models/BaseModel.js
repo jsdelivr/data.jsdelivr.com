@@ -150,7 +150,7 @@ class BaseModel {
 			sql.limit(limit).offset((page - 1) * limit);
 		}
 
-		let [{ count }, records ] = await Promise.all([
+		let [ { count = 0 } = {}, records ] = await Promise.all([
 			s.count('* as count').first(),
 			sql.select(select),
 		]);
