@@ -448,7 +448,19 @@ class StatsRequest extends BaseRequest {
 			ProxyModel.getStatsForPeriod(this.params.name, this.period, this.date),
 		]);
 
-		this.ctx.body = this.formatCombinedStats(dailyStats, periodStats);
+		this.ctx.body = this.linkBuilder()
+			.refs({
+				// files: routes['/stats/proxies/:name/files'].getName(),
+			})
+			.build(this.formatCombinedStats(dailyStats, periodStats));
+
+		this.setCacheHeader();
+	}
+
+	async handleProxyFiles () {
+		let stats = await ProxyModel.getTopFiles(this.params.name, this.query.by, ...this.dateRange, ...this.pagination);
+
+		this.ctx.body = this.paginated(stats);
 
 		this.setCacheHeader();
 	}

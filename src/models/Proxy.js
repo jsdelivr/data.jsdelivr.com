@@ -3,6 +3,8 @@ const BaseModel = require('./BaseModel');
 const ProxyHits = require('./ProxyHits');
 const TopProxy = require('./views/TopProxy');
 const { toIsoDate } = require('../lib/date');
+const ProxyFile = require('./ProxyFile');
+const ProxyFileHits = require('./ProxyFileHits');
 
 const schema = Joi.object({
 	id: Joi.number().integer().min(1).required().allow(null),
@@ -86,6 +88,34 @@ class ProxyModel extends BaseModel {
 				},
 			},
 		};
+	}
+
+	static async getTopFiles (name, by, from, to, limit = 100, page = 1) {
+		let sql = db(this.table)
+			.sum(`${ProxyFileHits.table}.hits as hits`)
+			.sum(`${ProxyFileHits.table}.bandwidth as bandwidth`)
+			.where(`${this.table}.name`, name)
+			.join(ProxyFile.table, `${this.table}.id`, '=', `${ProxyFile.table}.proxyId`)
+			.join(ProxyFileHits.table, `${ProxyFile.table}.id`, '=', `${ProxyFileHits.table}.proxyFileId`)
+			.groupBy([ `${this.table}.id`, `${ProxyFile.table}.filename` ])
+			.orderBy(by, 'desc')
+			.orderBy('filename', 'desc');
+
+		if (from instanceof Date) {
+			sql.where(`${ProxyFileHits.table}.date`, '>=', from);
+		}
+
+		if (to instanceof Date) {
+			sql.where(`${ProxyFileHits.table}.date`, '<=', to);
+		}
+
+		return this.paginate(sql, limit, page, [ `${ProxyFile.table}.filename as name` ], (row) => {
+			return {
+				name: row.name,
+				hits: { total: row.hits },
+				bandwidth: { total: row.bandwidth },
+			};
+		});
 	}
 }
 

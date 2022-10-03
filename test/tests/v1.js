@@ -51,6 +51,7 @@ describe('v1', function () {
 	require('./v1/stats/platforms/versions');
 	require('./v1/stats/platforms/versions/countries');
 	require('./v1/stats/proxies/proxy');
+	require('./v1/stats/proxies/proxy/files');
 
 	describe('/v1/lookup', () => {
 		it('GET /v1/lookup/hash/xx', () => {

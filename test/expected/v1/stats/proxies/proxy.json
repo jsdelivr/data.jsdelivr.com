@@ -747,9 +747,7 @@
 				"total": 0
 			}
 		},
-		"links": {
-			"files": "http://localhost:4454/v1/stats/proxies/{name}/files?period=2018"
-		}
+		"links": {}
 	},
 	"/v1/stats/proxies/wp-plugins?period=2022-05": {
 		"date": "2010-12-31",
@@ -831,9 +829,7 @@
 				"total": 1845491999
 			}
 		},
-		"links": {
-			"files": "http://localhost:4454/v1/stats/proxies/{name}/files?period=2022-05"
-		}
+		"links": {}
 	},
 	"/v1/stats/proxies/wp-plugins?period=all": {
 		"date": "2010-12-31",
@@ -991,9 +987,7 @@
 				"total": 0
 			}
 		},
-		"links": {
-			"files": "http://localhost:4454/v1/stats/proxies/{name}/files?period=all"
-		}
+		"links": {}
 	},
 	"/v1/stats/proxies/wp-plugins?period=day": {
 		"date": "2010-12-31",
@@ -1015,9 +1009,7 @@
 				"total": 3323870000
 			}
 		},
-		"links": {
-			"files": "http://localhost:4454/v1/stats/proxies/{name}/files?period=day"
-		}
+		"links": {}
 	},
 	"/v1/stats/proxies/wp-plugins?period=month": {
 		"date": "2010-12-31",
@@ -1097,9 +1089,7 @@
 				"total": 34975050000
 			}
 		},
-		"links": {
-			"files": "http://localhost:4454/v1/stats/proxies/{name}/files"
-		}
+		"links": {}
 	},
 	"/v1/stats/proxies/wp-plugins?period=s-month": {
 		"date": "2010-12-31",
@@ -1181,9 +1171,7 @@
 				"total": 1845491999
 			}
 		},
-		"links": {
-			"files": "http://localhost:4454/v1/stats/proxies/{name}/files?period=s-month"
-		}
+		"links": {}
 	},
 	"/v1/stats/proxies/wp-plugins?period=s-year": {
 		"date": "2010-12-31",
@@ -1933,9 +1921,7 @@
 				"total": 0
 			}
 		},
-		"links": {
-			"files": "http://localhost:4454/v1/stats/proxies/{name}/files?period=s-year"
-		}
+		"links": {}
 	},
 	"/v1/stats/proxies/wp-plugins?period=week": {
 		"date": "2010-12-31",
@@ -1969,9 +1955,7 @@
 				"total": 20141660000
 			}
 		},
-		"links": {
-			"files": "http://localhost:4454/v1/stats/proxies/{name}/files?period=week"
-		}
+		"links": {}
 	},
 	"/v1/stats/proxies/wp-plugins?period=year": {
 		"date": "2010-12-31",
@@ -2721,8 +2705,6 @@
 				"total": 0
 			}
 		},
-		"links": {
-			"files": "http://localhost:4454/v1/stats/proxies/{name}/files?period=year"
-		}
+		"links": {}
 	}
 }

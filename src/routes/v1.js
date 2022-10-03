@@ -689,6 +689,20 @@ const routes = {
 			},
 		],
 	},
+	'/stats/proxies/:name/files': {
+		handlers: [
+			validate({
+				query: Joi.object({
+					by: schema.by,
+					period: schema.period,
+					...schema.paginatedStats,
+				}),
+			}),
+			async (ctx) => {
+				return new StatsRequest(ctx).handleProxyFiles();
+			},
+		],
+	},
 };
 
 module.exports.routes = routes;
