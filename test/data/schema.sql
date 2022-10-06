@@ -36,6 +36,7 @@ call updateViewNetworkPackages(@date);
 call updateViewTopPackageFiles(@date);
 call updateViewTopPackages(@date);
 call updateViewTopProxies(@date);
+call updateViewTopProxyFiles(@date);
 call updateMonthlyViews(@date);
 call updateYearlyViews(@date);
 call analyzeAllTables();

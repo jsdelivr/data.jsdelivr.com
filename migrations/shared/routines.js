@@ -129,6 +129,59 @@ ${periods.map(period => topProxiesForPeriod(period)).join('\n')}
 
 	// language=MariaDB
 	await db.schema.raw(dedent`
+		create or replace procedure updateViewTopProxyFiles(aDate date)
+		begin
+			declare exit handler for sqlexception
+				begin
+					rollback;
+					resignal;
+				end;
+
+			${periods.map(period => topProxyFilesForPeriod(period)).join('\n')}
+		end;
+
+		create or replace procedure updateViewTopProxyFilesForPeriod(aPeriod varchar(255), aDate date, aDateFrom date, aDateTo date, aPrevDateFrom date, aPrevDateTo date, deleteOlder bool)
+		begin
+			declare exit handler for sqlexception
+				begin
+					rollback;
+					resignal;
+				end;
+
+			start transaction;
+
+			delete from view_top_proxy_files where \`period\` = aPeriod and \`date\` = aDate;
+
+			if deleteOlder then
+				delete from view_top_proxy_files where \`period\` = aPeriod and \`date\` < aDateTo;
+			end if;
+
+			set @prevScaleFactor = (datediff(aDateTo, aDateFrom) + 1) / (datediff(aPrevDateTo, aPrevDateFrom) + 1);
+
+			insert into view_top_proxy_files
+			(period, date, name, filename,
+			 hits, bandwidth)
+			select aPeriod, aDate, name, filename,
+				hits,
+				bandwidth
+			from (
+				select name, filename,
+					sum(hits) as hits,
+					sum(bandwidth) as bandwidth
+				from proxy
+						 join proxy_file on proxy.id = proxy_file.proxyId
+						 join proxy_file_hits on proxy_file.id = proxy_file_hits.proxyFileId
+				where date >= aDateFrom and date <= aDateTo
+				group by proxyId, filename
+				order by hits desc
+			) t;
+
+			commit;
+		end;
+	`);
+
+	// language=MariaDB
+	await db.schema.raw(dedent`
 		create or replace procedure updateViewNetworkCountries(aDate date)
 		begin
 			declare exit handler for sqlexception
@@ -307,6 +360,14 @@ function topProxiesForPeriod ([ days, period ]) {
 	return `
 ${dateVarsForPeriod(days, period)}
 		call updateViewTopProxiesForPeriod(@period, aDate, @dateFrom, @dateTo, @prevDateFrom, @prevDateTo, true);
+	`;
+}
+
+function topProxyFilesForPeriod ([ days, period ]) {
+	// language=MariaDB
+	return `
+${dateVarsForPeriod(days, period)}
+		call updateViewTopProxyFilesForPeriod(@period, aDate, @dateFrom, @dateTo, @prevDateFrom, @prevDateTo, true);
 	`;
 }
 

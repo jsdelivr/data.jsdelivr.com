@@ -59,6 +59,16 @@ create or replace event update_daily_data
 				end if;
 			end if;
 
+			if not exists(select * from view_top_proxy_files where `date` = utc_date()) then
+				call updateViewTopProxyFiles(utc_date());
+			end if;
+
+			if utc_time() >= '22:00:00' then
+				if not exists(select * from view_top_proxy_files where `date` = date_add(utc_date(), interval 1 day)) then
+					call updateViewTopProxyFiles(date_add(utc_date(), interval 1 day));
+				end if;
+			end if;
+
 			call updateMonthlyViews(utc_date());
 			call updateYearlyViews(utc_date());
 

@@ -458,7 +458,7 @@ class StatsRequest extends BaseRequest {
 	}
 
 	async handleProxyFiles () {
-		let stats = await ProxyModel.getTopFiles(this.params.name, this.query.by, ...this.dateRange, ...this.pagination);
+		let stats = await ProxyModel.getTopFiles(this.params.name, this.query.by, this.period, this.date, ...this.pagination);
 
 		this.ctx.body = this.paginated(stats);
 

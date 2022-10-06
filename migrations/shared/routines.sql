@@ -94,6 +94,10 @@ begin
 				call updateViewTopProxiesForPeriod('s-month', @dateFrom, @dateFrom, @dateTo, @prevDateFrom, @prevDateTo, false);
 			end if;
 
+			if not exists(select * from view_top_proxy_files where `date` = @latestStart and period = 's-month') then
+				call updateViewTopProxyFilesForPeriod('s-month', @dateFrom, @dateFrom, @dateTo, @prevDateFrom, @prevDateTo, false);
+			end if;
+
 			if not exists(select * from view_network_countries where `date` = @latestStart and period = 's-month') then
 				call updateViewNetworkCountriesForPeriod('s-month', @dateFrom, @dateFrom, @dateTo, @prevDateFrom, @prevDateTo, false);
 			end if;
@@ -165,6 +169,10 @@ begin
 
 			if not exists(select * from view_top_proxies where `date` = @latestStart and period = 's-year') then
 				call updateViewTopProxiesForPeriod('s-year', @dateFrom, @dateFrom, @dateTo, @prevDateFrom, @prevDateTo, false);
+			end if;
+
+			if not exists(select * from view_top_proxy_files where `date` = @latestStart and period = 's-year') then
+				call updateViewTopProxyFilesForPeriod('s-year', @dateFrom, @dateFrom, @dateTo, @prevDateFrom, @prevDateTo, false);
 			end if;
 
 			if not exists(select * from view_network_countries where `date` = @latestStart and period = 's-year') then
