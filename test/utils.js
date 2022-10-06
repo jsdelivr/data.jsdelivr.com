@@ -109,31 +109,54 @@ function makeEndpointSnapshotTests (uriTemplate, defaults, testTemplates, option
 
 function makeEndpointPaginationTests (uri, query = {}) {
 	describe(`GET ${uri} - pagination`, () => {
-		let first10;
+		let first10, first11, first98, first99;
 
 		before(async () => {
 			first10 = await chai.request(server)
 				.get(uri)
 				.query({ ...query, limit: 10 });
+
+			first11 = await chai.request(server)
+				.get(uri)
+				.query({ ...query, limit: 11 });
+
+			first98 = await chai.request(server)
+				.get(uri)
+				.query({ ...query, limit: 98 });
+
+			first99 = await chai.request(server)
+				.get(uri)
+				.query({ ...query, limit: 99 });
 		});
 
-		it(`returns at most 10 results`, async () => {
-			let link = new HttpLinkHeader(first10.headers.link);
+		let atMostTest = (n, getResponses) => {
+			it(`returns at most ${n} results`, async () => {
+				let [ r1, r2 ] = getResponses();
+				let link = new HttpLinkHeader(r1.headers.link);
 
-			expect(first10).to.have.status(200);
-			expect(first10.body).to.have.length.lessThanOrEqual(10);
+				expect(r1).to.have.status(200);
+				expect(r1.body).to.have.length.lessThanOrEqual(n);
 
-			expect(link.rel('first')).to.have.lengthOf(1);
-			expect(link.rel('self')).to.have.lengthOf(1);
-			expect(link.rel('first')[0].uri).to.equal(link.rel('self')[0].uri);
+				expect(link.rel('first')).to.have.lengthOf(1);
+				expect(link.rel('self')).to.have.lengthOf(1);
+				expect(link.rel('first')[0].uri).to.equal(link.rel('self')[0].uri);
 
-			// If there's more than one page, there should be a "next" link.
-			if (link.rel('last')[0].uri.includes('page=')) {
-				expect(link.rel('next')).to.have.lengthOf(1);
-			}
+				// If there's more than one page, there should be a "next" link.
+				if (r1.body.length === r2.body.length) {
+					expect(link.rel('last')).to.have.lengthOf(1);
+					expect(link.rel('last')[0].uri).to.equal(link.rel('self')[0].uri);
+				} else {
+					expect(link.rel('next')).to.have.lengthOf(1);
+					expect(link.rel('next')[0].uri).to.include('page=');
 
-			expect(link.rel('last')).to.have.lengthOf(1);
-		});
+					expect(link.rel('last')).to.have.lengthOf(1);
+					expect(link.rel('last')[0].uri).to.include('page=');
+				}
+			});
+		};
+
+		atMostTest(10, () => [ first10, first11 ]);
+		atMostTest(98, () => [ first98, first99 ]);
 
 		_.range(1, 11).forEach((index) => {
 			it(`works with limit=1&page=${index}`, () => {
