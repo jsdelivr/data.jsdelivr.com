@@ -151,7 +151,7 @@ class BaseModel {
 		}
 
 		let [ { count = 0 } = {}, records ] = await Promise.all([
-			s.count('* as count').first(),
+			s.select(db.raw('count(*) over () as count')).first(),
 			sql.select(select),
 		]);
 
