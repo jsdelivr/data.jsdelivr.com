@@ -1,6 +1,6 @@
 create or replace event update_daily_data
 	on schedule
-		every 5 minute
+		every 10 minute
 			starts utc_date()
 	do
 	begin
@@ -22,16 +22,6 @@ create or replace event update_daily_data
 			if utc_time() >= '22:00:00' then
 				if not exists(select * from view_network_cdns where `date` = date_add(utc_date(), interval 1 day)) then
 					call updateViewNetworkCdns(date_add(utc_date(), interval 1 day));
-				end if;
-			end if;
-
-			if not exists(select * from view_network_packages where `date` = date_sub(utc_date(), interval 2 day)) then
-				call updateViewNetworkPackages(utc_date());
-			end if;
-
-			if utc_time() >= '22:00:00' then
-				if not exists(select * from view_network_packages where `date` = date_sub(utc_date(), interval 1 day)) then
-					call updateViewNetworkPackages(date_add(utc_date(), interval 1 day));
 				end if;
 			end if;
 
@@ -74,4 +64,14 @@ create or replace event update_daily_data
 
 			select release_lock('update_daily_data');
 		end if;
+	end;
+
+
+create or replace event update_daily_data_once
+	on schedule
+		every 1 day
+			starts utc_date() + interval 22 hour
+	do
+	begin
+		call updateViewNetworkPackages(date_add(utc_date(), interval 1 day));
 	end;
