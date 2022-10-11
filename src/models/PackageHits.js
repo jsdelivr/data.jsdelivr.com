@@ -63,6 +63,10 @@ class PackageHits extends BaseCacheModel {
 			})),
 		};
 	}
+
+	toSqlFunctionCall () {
+		return db.raw(`select updateOrInsertPackageHits(@lastIdPackage, ?, ?, ?);`, [ this.date, this.hits, this.bandwidth ]);
+	}
 }
 
 module.exports = PackageHits;

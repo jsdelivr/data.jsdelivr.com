@@ -39,6 +39,10 @@ class PackageVersionHits extends BaseCacheModel {
 		Object.assign(this, properties);
 		return new Proxy(this, BaseCacheModel.ProxyHandler);
 	}
+
+	toSqlFunctionCall () {
+		return db.raw(`select updateOrInsertPackageVersionHits(@lastIdPackageVersion, ?, ?, ?);`, [ this.date, this.hits, this.bandwidth ]);
+	}
 }
 
 module.exports = PackageVersionHits;

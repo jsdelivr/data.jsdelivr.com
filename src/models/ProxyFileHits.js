@@ -40,8 +40,8 @@ class ProxyFileHits extends BaseCacheModel {
 		return new Proxy(this, BaseCacheModel.ProxyHandler);
 	}
 
-	toSqlFunctionCall (proxyId) {
-		return db.raw(`select updateOrInsertProxyFileHits(?, @lastIdProxyFile, ?, ?, ?);`, [ proxyId, this.date, this.hits, this.bandwidth ]);
+	toSqlFunctionCall () {
+		return db.raw(`select updateOrInsertProxyFileHits(@lastIdProxyFile, ?, ?, ?);`, [ this.date, this.hits, this.bandwidth ]);
 	}
 }
 

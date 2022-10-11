@@ -114,7 +114,7 @@ begin
 end;
 
 
-create or replace function updateOrInsertFileHits(aPackageId int, aPackageVersionId int, aFileId int, aDate date, aHits int, aBandwidth bigint) returns int
+create or replace function updateOrInsertFileHits(aFileId int, aDate date, aHits int, aBandwidth bigint) returns int
 begin
 	update `file_hits`
 	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
@@ -123,26 +123,6 @@ begin
 	if row_count() = 0 then
 		insert into `file_hits` (fileId, date, hits, bandwidth)
 		values (aFileId, aDate, aHits, aBandwidth)
-		on duplicate key update `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth;
-	end if;
-
-	update `package_version_hits`
-	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
-	where `packageVersionId` = aPackageVersionId and `date` = aDate;
-
-	if row_count() = 0 then
-		insert into `package_version_hits` (packageVersionId, date, hits, bandwidth)
-		values (aPackageVersionId, aDate, aHits, aBandwidth)
-		on duplicate key update `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth;
-	end if;
-
-	update `package_hits`
-	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
-	where `packageId` = aPackageId and `date` = aDate;
-
-	if row_count() = 0 then
-		insert into `package_hits` (packageId, date, hits, bandwidth)
-		values (aPackageId, aDate, aHits, aBandwidth)
 		on duplicate key update `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth;
 	end if;
 
@@ -198,6 +178,22 @@ begin
 end;
 
 
+create or replace function updateOrInsertPackageHits(aPackageId int, aDate date, aHits int, aBandwidth bigint) returns int
+begin
+	update `package_hits`
+	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
+	where `packageId` = aPackageId and `date` = aDate;
+
+	if row_count() = 0 then
+		insert into `package_hits` (packageId, date, hits, bandwidth)
+		values (aPackageId, aDate, aHits, aBandwidth)
+		on duplicate key update `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth;
+	end if;
+
+	return 0;
+end;
+
+
 create or replace function updateOrInsertPackageVersion(aPackageId int, aVersion varchar(255), aType varchar(16)) returns int
 begin
 	update `package_version`
@@ -211,6 +207,22 @@ begin
 	end if;
 
 	return last_insert_id();
+end;
+
+
+create or replace function updateOrInsertPackageVersionHits(aPackageVersionId int, aDate date, aHits int, aBandwidth bigint) returns int
+begin
+	update `package_version_hits`
+	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
+	where `packageVersionId` = aPackageVersionId and `date` = aDate;
+
+	if row_count() = 0 then
+		insert into `package_version_hits` (packageVersionId, date, hits, bandwidth)
+		values (aPackageVersionId, aDate, aHits, aBandwidth)
+		on duplicate key update `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth;
+	end if;
+
+	return 0;
 end;
 
 
@@ -262,7 +274,7 @@ begin
 end;
 
 
-create or replace function updateOrInsertProxyFileHits(aProxyId int, aProxyFileId int, aDate date, aHits int, aBandwidth bigint) returns int
+create or replace function updateOrInsertProxyFileHits(aProxyFileId int, aDate date, aHits int, aBandwidth bigint) returns int
 begin
 	update `proxy_file_hits`
 	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
@@ -271,16 +283,6 @@ begin
 	if row_count() = 0 then
 		insert into `proxy_file_hits` (proxyFileId, date, hits, bandwidth)
 		values (aProxyFileId, aDate, aHits, aBandwidth)
-		on duplicate key update `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth;
-	end if;
-
-	update `proxy_hits`
-	set `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth
-	where `proxyId` = aProxyId and `date` = aDate;
-
-	if row_count() = 0 then
-		insert into `proxy_hits` (proxyId, date, hits, bandwidth)
-		values (aProxyId, aDate, aHits, aBandwidth)
 		on duplicate key update `hits` = `hits` + aHits, `bandwidth` = `bandwidth` + aBandwidth;
 	end if;
 
