@@ -53,6 +53,7 @@ function makeEndpointAssertion (uriTemplate, defaults, { params, assert }, { lim
 
 				expect(response).to.have.status(status);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Access-Control-Expose-Headers', '*');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;

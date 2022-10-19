@@ -8,6 +8,7 @@ module.exports = {
 		userAgent: `data.jsdelivr.com/${version} (https://github.com/jsdelivr/data.jsdelivr.com)`,
 		headers: {
 			'Access-Control-Allow-Origin': '*',
+			'Access-Control-Expose-Headers': '*',
 			'Cache-Control': 'no-cache, no-store, must-revalidate',
 			'Cross-Origin-Resource-Policy': 'cross-origin',
 			'Timing-Allow-Origin': '*',
