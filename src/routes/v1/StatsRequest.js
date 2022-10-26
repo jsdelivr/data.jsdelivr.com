@@ -454,6 +454,7 @@ class StatsRequest extends BaseRequest {
 			.refs({
 				files: routes['/stats/proxies/:name/files'].getName(),
 			})
+			.withValues(this.params)
 			.build(this.formatCombinedStats(dailyStats, periodStats));
 
 		this.setCacheHeader();

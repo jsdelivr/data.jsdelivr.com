@@ -748,7 +748,7 @@
 			}
 		},
 		"links": {
-			"files": "http://localhost:4454/v1/stats/proxies/{name}/files?period=2018"
+			"files": "http://localhost:4454/v1/stats/proxies/wp-plugins/files?period=2018"
 		}
 	},
 	"/v1/stats/proxies/wp-plugins?period=2022-05": {
@@ -832,7 +832,7 @@
 			}
 		},
 		"links": {
-			"files": "http://localhost:4454/v1/stats/proxies/{name}/files?period=2022-05"
+			"files": "http://localhost:4454/v1/stats/proxies/wp-plugins/files?period=2022-05"
 		}
 	},
 	"/v1/stats/proxies/wp-plugins?period=all": {
@@ -992,7 +992,7 @@
 			}
 		},
 		"links": {
-			"files": "http://localhost:4454/v1/stats/proxies/{name}/files?period=all"
+			"files": "http://localhost:4454/v1/stats/proxies/wp-plugins/files?period=all"
 		}
 	},
 	"/v1/stats/proxies/wp-plugins?period=day": {
@@ -1016,7 +1016,7 @@
 			}
 		},
 		"links": {
-			"files": "http://localhost:4454/v1/stats/proxies/{name}/files?period=day"
+			"files": "http://localhost:4454/v1/stats/proxies/wp-plugins/files?period=day"
 		}
 	},
 	"/v1/stats/proxies/wp-plugins?period=month": {
@@ -1098,7 +1098,7 @@
 			}
 		},
 		"links": {
-			"files": "http://localhost:4454/v1/stats/proxies/{name}/files"
+			"files": "http://localhost:4454/v1/stats/proxies/wp-plugins/files"
 		}
 	},
 	"/v1/stats/proxies/wp-plugins?period=s-month": {
@@ -1182,7 +1182,7 @@
 			}
 		},
 		"links": {
-			"files": "http://localhost:4454/v1/stats/proxies/{name}/files?period=s-month"
+			"files": "http://localhost:4454/v1/stats/proxies/wp-plugins/files?period=s-month"
 		}
 	},
 	"/v1/stats/proxies/wp-plugins?period=s-year": {
@@ -1934,7 +1934,7 @@
 			}
 		},
 		"links": {
-			"files": "http://localhost:4454/v1/stats/proxies/{name}/files?period=s-year"
+			"files": "http://localhost:4454/v1/stats/proxies/wp-plugins/files?period=s-year"
 		}
 	},
 	"/v1/stats/proxies/wp-plugins?period=week": {
@@ -1970,7 +1970,7 @@
 			}
 		},
 		"links": {
-			"files": "http://localhost:4454/v1/stats/proxies/{name}/files?period=week"
+			"files": "http://localhost:4454/v1/stats/proxies/wp-plugins/files?period=week"
 		}
 	},
 	"/v1/stats/proxies/wp-plugins?period=year": {
@@ -2722,7 +2722,7 @@
 			}
 		},
 		"links": {
-			"files": "http://localhost:4454/v1/stats/proxies/{name}/files?period=year"
+			"files": "http://localhost:4454/v1/stats/proxies/wp-plugins/files?period=year"
 		}
 	}
 }
