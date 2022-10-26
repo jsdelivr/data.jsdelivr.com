@@ -197,6 +197,7 @@ class StatsRequest extends BaseRequest {
 
 		this.ctx.body = this.linkBuilder()
 			.refs({
+				self: routes['/stats/packages/:type/:name'].getName(this.params),
 				versions: routes['/stats/packages/:type/:name/versions'].getName(this.params),
 			})
 			.withValues({ ...this.params, by: 'hits' })
@@ -210,6 +211,7 @@ class StatsRequest extends BaseRequest {
 
 		this.ctx.body = this.linkBuilder()
 			.refs({
+				self: routes['/stats/packages/:type/:name@:version'].getName(this.params),
 				files: routes['/stats/packages/:type/:name@:version/files'].getName(this.params),
 			})
 			.withValues({ ...this.params, by: 'hits' })
@@ -450,7 +452,7 @@ class StatsRequest extends BaseRequest {
 
 		this.ctx.body = this.linkBuilder()
 			.refs({
-				// files: routes['/stats/proxies/:name/files'].getName(),
+				files: routes['/stats/proxies/:name/files'].getName(),
 			})
 			.build(this.formatCombinedStats(dailyStats, periodStats));
 
