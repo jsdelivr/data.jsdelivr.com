@@ -6,6 +6,7 @@ require('./lib/startup');
 const config = require('config');
 const signalExit = require('signal-exit');
 const Koa = require('koa');
+const koaStatic = require('koa-static');
 const koaFavicon = require('koa-favicon');
 const koaResponseTime = require('koa-response-time');
 const koaConditionalGet = require('koa-conditional-get');
@@ -193,6 +194,17 @@ router.get('/heartbeat', heartbeatHandler);
  * Routing.
  */
 server.use(router.routes()).use(router.allowedMethods());
+
+/**
+ * Static files
+ */
+server.use(koaStatic(__dirname + '/public', {
+	setHeaders (res) {
+		if (server.env === 'production') {
+			res.setHeader('Cache-Control', 'public, max-age=600');
+		}
+	},
+}));
 
 /**
  * Koa error handling.
