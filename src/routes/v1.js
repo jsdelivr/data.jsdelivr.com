@@ -390,6 +390,7 @@ const routes = {
 			validate({
 				query: Joi.object({
 					by: schema.by,
+					type: schema.type,
 					period: schema.period,
 					...schema.paginatedStats,
 				}),
