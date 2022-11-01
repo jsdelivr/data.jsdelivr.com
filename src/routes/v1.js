@@ -522,6 +522,11 @@ const routes = {
 	},
 	'/stats/periods': {
 		handlers: [
+			validate({
+				query: Joi.object({
+					...schema.paginatedStats,
+				}),
+			}),
 			async (ctx) => {
 				return new StatsRequest(ctx).handlePeriods();
 			},

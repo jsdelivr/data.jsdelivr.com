@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const { makeEndpointAssertions, setupSnapshots } = require('../../../utils');
+const { makeEndpointAssertions, makeEndpointPaginationTests, setupSnapshots } = require('../../../utils');
 
 describe('/v1/stats/periods', () => {
 	before(() => {
@@ -24,4 +24,6 @@ function makeStatsPeriodsTests () {
 			},
 		},
 	]);
+
+	makeEndpointPaginationTests('/v1/stats/periods');
 }

@@ -1,5 +1,6 @@
 const BaseRequest = require('./BaseRequest');
 
+const BaseModel = require('../../models/BaseModel');
 const Package = require('../../models/Package');
 const CountryCdnHits = require('../../models/CountryCdnHits');
 const PackageHits = require('../../models/PackageHits');
@@ -256,7 +257,7 @@ class StatsRequest extends BaseRequest {
 	}
 
 	async handlePeriods () {
-		this.ctx.body = this.linkBuilder()
+		let periods = this.linkBuilder()
 			.includeQuery([ 'period' ])
 			.buildRefs({ browsers: routes['/stats/browsers'].getName() }, await Browser.getPeriods())
 			.buildRefs({ network: routes['/stats/network'].getName() }, await CountryCdnHits.getPeriods())
@@ -274,6 +275,8 @@ class StatsRequest extends BaseRequest {
 
 				return a.period.length - b.period.length;
 			});
+
+		this.ctx.body = this.paginated(BaseModel.paginateArray(periods, ...this.pagination));
 
 		this.setCacheHeader();
 	}
