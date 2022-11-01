@@ -157,6 +157,10 @@ class Package extends BaseCacheModel {
 			sql.where({ type });
 		}
 
+		if (!limit) {
+			sql.where('hits', '>=', 100);
+		}
+
 		return this.paginate(sql, limit, page, [ `type`, `name`, `hits`, `bandwidth`, `prevHits`, `prevBandwidth` ], ({ type, name, hits, bandwidth, ...prev }) => {
 			return {
 				type, name, hits, bandwidth,
