@@ -144,14 +144,15 @@ class BaseModel {
 	}
 
 	static async paginate (sql, limit, page, select, mapper) {
-		let s = sql.clone();
+		let countPromise;
 
 		if (limit) {
+			countPromise = sql.clone().clear('order').select(db.raw('count(*) over () as count')).first();
 			sql.limit(limit).offset((page - 1) * limit);
 		}
 
 		let [ { count = 0 } = {}, records ] = await Promise.all([
-			s.clear('order').select(db.raw('count(*) over () as count')).first(),
+			countPromise,
 			sql.select(select),
 		]);
 
@@ -162,7 +163,7 @@ class BaseModel {
 		return {
 			page,
 			limit,
-			pages: Math.ceil(count / limit),
+			pages: limit ? Math.ceil(count / limit) : 1,
 			records,
 		};
 	}
