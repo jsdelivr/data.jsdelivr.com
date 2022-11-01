@@ -171,7 +171,6 @@ class Package extends BaseCacheModel {
 
 	static async getTopVersions (type, name, by, from, to, limit = 100, page = 1) {
 		let stats = await this.getStatsByName(type, name, from, to);
-		let start = (page - 1) * limit;
 
 		let sorted = _.map(_.groupBy(stats, record => `${record.type}:${record.version}`), (versionStats) => {
 			return {
@@ -183,7 +182,7 @@ class Package extends BaseCacheModel {
 			};
 		}).sort((a, b) => b[by] - a[by]);
 
-		let records = sorted.slice(start, start + limit).map((versionStats) => {
+		return this.paginateArray(sorted, limit, page, (versionStats) => {
 			return {
 				type: versionStats.type,
 				version: versionStats.version,
@@ -197,13 +196,6 @@ class Package extends BaseCacheModel {
 				},
 			};
 		});
-
-		return {
-			page,
-			limit,
-			pages: Math.ceil(sorted.length / limit),
-			records,
-		};
 	}
 
 	toSqlFunctionCall () {

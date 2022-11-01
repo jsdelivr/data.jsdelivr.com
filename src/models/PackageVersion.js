@@ -140,7 +140,6 @@ class PackageVersion extends BaseModel {
 
 	static async getTopFiles (type, name, version, by, from, to, limit = 100, page = 1) {
 		let stats = await this.getStatsByNameAndVersion(type, name, version, from, to);
-		let start = (page - 1) * limit;
 
 		let sorted = _.map(_.groupBy(stats, 'filename'), (fileStats) => {
 			return {
@@ -151,7 +150,7 @@ class PackageVersion extends BaseModel {
 			};
 		}).sort((a, b) => b[by] - a[by]);
 
-		let records = sorted.slice(start, start + limit).map((fileStats) => {
+		return this.paginateArray(sorted, limit, page, (fileStats) => {
 			return {
 				name: fileStats.name,
 				hits: {
@@ -164,13 +163,6 @@ class PackageVersion extends BaseModel {
 				},
 			};
 		});
-
-		return {
-			page,
-			limit,
-			pages: Math.ceil(sorted.length / limit),
-			records,
-		};
 	}
 
 	toSqlFunctionCall () {

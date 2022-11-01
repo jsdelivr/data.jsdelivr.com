@@ -168,6 +168,22 @@ class BaseModel {
 		};
 	}
 
+	static paginateArray (allRecords, limit, page, mapper) {
+		let start = (page - 1) * limit;
+		let records = allRecords.slice(start, start + limit);
+
+		if (mapper) {
+			records = records.map(mapper);
+		}
+
+		return {
+			page,
+			limit,
+			pages: Math.ceil(allRecords.length / limit),
+			records,
+		};
+	}
+
 	/**
 	 * @returns {Promise<number>}
 	 */
