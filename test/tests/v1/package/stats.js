@@ -1,6 +1,6 @@
 const { makeEndpointSnapshotTests, setupSnapshots } = require('../../../utils');
 
-const periodOptions = [ 'day', 'week', 'month', 'year', 'all', undefined ];
+const periodOptions = [ 'day', 'week', 'month', 'year', undefined ];
 
 describe('/v1/package/stats', () => {
 	before(() => {
@@ -26,7 +26,6 @@ function makePackageStatsTests () {
 	makeEndpointSnapshotTests('/v1/package/npm/{name}/stats{/groupBy}{/period}', defaults, [
 		{ name: 'package-0', groupBy: 'date', period: 'month' },
 		{ name: 'package-x', groupBy: 'date', period: 'month' },
-		{ name: 'package-x', groupBy: 'date', period: 'all' },
 		{ name: 'package-2', ...commonLegacyValues },
 	]);
 
@@ -35,7 +34,7 @@ function makePackageStatsTests () {
 	]);
 
 	makeEndpointSnapshotTests('/v1/package/npm/{name}/stats{/groupBy}/day{?period}', defaults, [
-		{ name: 'package-0', groupBy: 'date', period: 'all' },
+		{ name: 'package-0', groupBy: 'date', period: 'month' },
 	], { note: 'path period takes precedence over query string' });
 }
 
@@ -54,7 +53,6 @@ function makePackageVersionStatsTests () {
 	makeEndpointSnapshotTests('/v1/package/npm/{name}@{version}/stats{/groupBy}{/period}', defaults, [
 		{ name: 'package-0', version: '1.1.0', groupBy: 'date', period: 'month' },
 		{ name: 'package-0', version: '1.1.5', groupBy: 'date', period: 'month' },
-		{ name: 'package-0', version: '1.1.5', groupBy: 'date', period: 'all' },
 		{ name: 'package-2', version: '1.1.0', ...commonLegacyValues },
 	]);
 

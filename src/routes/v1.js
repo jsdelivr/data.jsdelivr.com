@@ -98,11 +98,11 @@ const routes = {
 		paths: [
 			{
 				name: '/package/npm/:name/badge',
-				path: '/package/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)/badge/:period(day|week|month|year|all)?',
+				path: '/package/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)/badge/:period(day|week|month|year)?',
 			},
 			{
 				name: '/package/gh/:user/:repo/badge',
-				path: '/package/:type(gh)/:user([^/@]+)/:repo([^/@]+)/badge/:period(day|week|month|year|all)?',
+				path: '/package/:type(gh)/:user([^/@]+)/:repo([^/@]+)/badge/:period(day|week|month|year)?',
 			},
 		],
 		handlers: [
@@ -121,11 +121,11 @@ const routes = {
 		paths: [
 			{
 				name: '/package/npm/:name/badge/rank',
-				path: '/package/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)/badge/:rankType(rank|type-rank)/:period(day|week|month|year|all)?',
+				path: '/package/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)/badge/:rankType(rank|type-rank)/:period(day|week|month|year)?',
 			},
 			{
 				name: '/package/gh/:user/:repo/badge/rank',
-				path: '/package/:type(gh)/:user([^/@]+)/:repo([^/@]+)/badge/:rankType(rank|type-rank)/:period(day|week|month|year|all)?',
+				path: '/package/:type(gh)/:user([^/@]+)/:repo([^/@]+)/badge/:rankType(rank|type-rank)/:period(day|week|month|year)?',
 			},
 		],
 		handlers: [
@@ -144,11 +144,11 @@ const routes = {
 		paths: [
 			{
 				name: '/package/npm/:name/stats',
-				path: '/package/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)/stats/:groupBy(version|date)?/:period(day|week|month|year|all)?',
+				path: '/package/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)/stats/:groupBy(version|date)?/:period(day|week|month|year)?',
 			},
 			{
 				name: '/package/gh/:user/:repo/stats',
-				path: '/package/:type(gh)/:user([^/@]+)/:repo([^/@]+)/stats/:groupBy(version|date)?/:period(day|week|month|year|all)?',
+				path: '/package/:type(gh)/:user([^/@]+)/:repo([^/@]+)/stats/:groupBy(version|date)?/:period(day|week|month|year)?',
 			},
 		],
 		handlers: [
@@ -201,11 +201,11 @@ const routes = {
 		paths: [
 			{
 				name: '/package/npm/:name@:version/stats',
-				path: '/package/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)@:version/stats/:groupBy(file|date)?/:period(day|week|month|year|all)?',
+				path: '/package/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)@:version/stats/:groupBy(file|date)?/:period(day|week|month|year)?',
 			},
 			{
 				name: '/package/gh/:user/:repo@:version/stats',
-				path: '/package/:type(gh)/:user([^/@]+)/:repo([^/@]+)@:version/stats/:groupBy(file|date)?/:period(day|week|month|year|all)?',
+				path: '/package/:type(gh)/:user([^/@]+)/:repo([^/@]+)@:version/stats/:groupBy(file|date)?/:period(day|week|month|year)?',
 			},
 		],
 		handlers: [
@@ -383,7 +383,7 @@ const routes = {
 			// TODO: which is a breaking change but it was undocumented and only used by Algolia. Send them a PR with a fix.
 			{
 				name: '/stats/packages',
-				path: '/stats/packages/:period(day|week|month|year|all)?/:all(all)?',
+				path: '/stats/packages/:period(day|week|month|year)?/:all(all)?',
 			},
 		],
 		handlers: [
