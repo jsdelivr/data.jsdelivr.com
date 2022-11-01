@@ -2934,6 +2934,9 @@ components:
               $ref: '#/components/examples/npmVersionEntrypointsScoped'
     periods200:
       description: Success
+      headers:
+        Link:
+          $ref: '#/components/headers/Link'
       content:
         application/json:
           schema:
@@ -3554,6 +3557,9 @@ paths:
       description: |
         Returns a list of all periods for which some stats are available in descending order.
         The `links` property of each period indicates which stats are available.
+      parameters:
+        - $ref: '#/components/parameters/period'
+        - $ref: '#/components/parameters/limit'
       responses:
         200:
           $ref: '#/components/responses/periods200'
