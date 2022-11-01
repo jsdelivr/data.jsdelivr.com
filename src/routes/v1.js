@@ -363,6 +363,12 @@ const routes = {
 		],
 	},
 	'/stats/packages': {
+		paths: [
+			{
+				name: '/stats/packages',
+				path: '/stats/packages/:all(all)?',
+			},
+		],
 		handlers: [
 			validate({
 				query: Joi.object({
@@ -390,7 +396,6 @@ const routes = {
 			validate({
 				query: Joi.object({
 					by: schema.by,
-					type: schema.type,
 					period: schema.period,
 					...schema.paginatedStats,
 				}),
