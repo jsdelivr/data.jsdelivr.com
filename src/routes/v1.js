@@ -825,6 +825,12 @@ Object.entries(routes).forEach(([ routeName, definition ]) => {
 	koaElasticUtils.addRoutes(router, definition.paths.map(p => [ p.name, p.path ]), ...definition.handlers);
 });
 
+router.stack.forEach((route) => {
+	route.getDocsPath = method => route.name
+		? `${method.toLowerCase()}-/v1${route.name.replace(/:(\w+)/g, '-$1-')}`
+		: '';
+});
+
 const LookupRequest = require('./v1/LookupRequest');
 const PackageRequest = require('./v1/PackageRequest');
 const StatsRequest = require('./v1/StatsRequest');

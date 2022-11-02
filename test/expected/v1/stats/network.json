@@ -2,7 +2,10 @@
 	"/v1/stats/network?continent=EU&country=PL&period=month": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: object contains a conflict between optional exclusive peers [continent, country]."
+		"message": "Invalid parameter value: object contains a conflict between optional exclusive peers [continent, country].",
+		"links": {
+			"documentation": "https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com#get-/v1/stats/network"
+		}
 	},
 	"/v1/stats/network?continent=EU&period=2018": {
 		"date": "2010-12-31",
@@ -12552,7 +12555,10 @@
 	"/v1/stats/network?continent=X&period=month": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: `continent` must be a valid continent code in uppercase."
+		"message": "Invalid parameter value: `continent` must be a valid continent code in uppercase.",
+		"links": {
+			"documentation": "https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com#get-/v1/stats/network"
+		}
 	},
 	"/v1/stats/network?country=PL&period=2018": {
 		"date": "2010-12-31",
@@ -25102,7 +25108,10 @@
 	"/v1/stats/network?country=X&period=month": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: `country` must be a valid ISO 3166-1 alpha-2 country code in uppercase."
+		"message": "Invalid parameter value: `country` must be a valid ISO 3166-1 alpha-2 country code in uppercase.",
+		"links": {
+			"documentation": "https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com#get-/v1/stats/network"
+		}
 	},
 	"/v1/stats/network?period=2018": {
 		"date": "2010-12-31",
@@ -25124,7 +25133,10 @@
 	"/v1/stats/network?period=2022": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: `period` cannot end in the future."
+		"message": "Invalid parameter value: `period` cannot end in the future.",
+		"links": {
+			"documentation": "https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com#get-/v1/stats/network"
+		}
 	},
 	"/v1/stats/network?period=2022-05": {
 		"date": "2010-12-31",
@@ -25754,7 +25766,10 @@
 	"/v1/stats/network?period=X": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: `period` must be one of [day, week, month, year, s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM]."
+		"message": "Invalid parameter value: `period` must be one of [day, week, month, year, s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM].",
+		"links": {
+			"documentation": "https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com#get-/v1/stats/network"
+		}
 	},
 	"/v1/stats/network?period=all": {
 		"date": "2010-12-31",

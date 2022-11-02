@@ -2,7 +2,10 @@
 	"/v1/stats/platforms/versions?continent=EU&country=PL": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: object contains a conflict between optional exclusive peers [continent, country]."
+		"message": "Invalid parameter value: object contains a conflict between optional exclusive peers [continent, country].",
+		"links": {
+			"documentation": "https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com#get-/v1/stats/platforms/versions"
+		}
 	},
 	"/v1/stats/platforms/versions?continent=EU&period=2020": [
 		{
@@ -1861,7 +1864,10 @@
 	"/v1/stats/platforms/versions?continent=X": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: `continent` must be a valid continent code in uppercase."
+		"message": "Invalid parameter value: `continent` must be a valid continent code in uppercase.",
+		"links": {
+			"documentation": "https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com#get-/v1/stats/platforms/versions"
+		}
 	},
 	"/v1/stats/platforms/versions?country=PL&period=2020": [
 		{
@@ -3412,7 +3418,10 @@
 	"/v1/stats/platforms/versions?country=X": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: `country` must be a valid ISO 3166-1 alpha-2 country code in uppercase."
+		"message": "Invalid parameter value: `country` must be a valid ISO 3166-1 alpha-2 country code in uppercase.",
+		"links": {
+			"documentation": "https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com#get-/v1/stats/platforms/versions"
+		}
 	},
 	"/v1/stats/platforms/versions?period=2020": [
 		{
@@ -5271,12 +5280,18 @@
 	"/v1/stats/platforms/versions?period=month": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: `period` must be one of [s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM]."
+		"message": "Invalid parameter value: `period` must be one of [s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM].",
+		"links": {
+			"documentation": "https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com#get-/v1/stats/platforms/versions"
+		}
 	},
 	"/v1/stats/platforms/platform%2019/versions?continent=EU&country=PL": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: object contains a conflict between optional exclusive peers [continent, country]."
+		"message": "Invalid parameter value: object contains a conflict between optional exclusive peers [continent, country].",
+		"links": {
+			"documentation": "https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com#get-/v1/stats/platforms/-name-/versions"
+		}
 	},
 	"/v1/stats/platforms/platform%2019/versions?continent=EU&period=2020": [
 		{
@@ -5386,7 +5401,10 @@
 	"/v1/stats/platforms/platform%2019/versions?continent=X": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: `continent` must be a valid continent code in uppercase."
+		"message": "Invalid parameter value: `continent` must be a valid continent code in uppercase.",
+		"links": {
+			"documentation": "https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com#get-/v1/stats/platforms/-name-/versions"
+		}
 	},
 	"/v1/stats/platforms/platform%2019/versions?country=PL&period=2020": [
 		{
@@ -5478,7 +5496,10 @@
 	"/v1/stats/platforms/platform%2019/versions?country=X": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: `country` must be a valid ISO 3166-1 alpha-2 country code in uppercase."
+		"message": "Invalid parameter value: `country` must be a valid ISO 3166-1 alpha-2 country code in uppercase.",
+		"links": {
+			"documentation": "https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com#get-/v1/stats/platforms/-name-/versions"
+		}
 	},
 	"/v1/stats/platforms/platform%2019/versions?period=2020": [
 		{
@@ -5588,6 +5609,9 @@
 	"/v1/stats/platforms/platform%2019/versions?period=month": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: `period` must be one of [s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM]."
+		"message": "Invalid parameter value: `period` must be one of [s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM].",
+		"links": {
+			"documentation": "https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com#get-/v1/stats/platforms/-name-/versions"
+		}
 	}
 }

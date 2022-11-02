@@ -80,6 +80,9 @@ function validateSingle (schema, value, ctx) {
 		ctx.body = {
 			status: 400,
 			message: `Invalid parameter value: ${_.sortBy(result.error.details, 'path').map(detail => detail.message).join(', ')}.`,
+			links: {
+				documentation: ctx.getDocsLink(),
+			},
 		};
 
 		return false;

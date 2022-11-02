@@ -126,6 +126,17 @@ server.use(async (ctx, next) => {
 });
 
 /**
+ * Add a helper for generating docs links.
+ */
+server.use((ctx, next) => {
+	ctx.getDocsLink = (routeName = ctx._matchedRouteName, method = ctx.method === 'HEAD' ? 'GET' : ctx.method) => {
+		return `${serverConfig.docsHost}/docs/data.jsdelivr.com${(routeName && `#${ctx.router.route(routeName).getDocsPath(method)}`) || ''}`;
+	};
+
+	return next();
+});
+
+/**
  * Always respond with a JSON.
  */
 server.use(async (ctx, next) => {
@@ -134,12 +145,11 @@ server.use(async (ctx, next) => {
 	if (!ctx.body) {
 		ctx.body = {
 			status: ctx.status,
-			message: statuses.message[ctx.status],
+			message: `${statuses.message[ctx.status]}.`,
+			links: {
+				documentation: ctx.getDocsLink(),
+			},
 		};
-
-		if (ctx.status === 400) {
-			ctx.body.message += `. Visit https://github.com/jsdelivr/data.jsdelivr.com for documentation.`;
-		}
 	} else if (!ctx.body.status) {
 		ctx.status = 200;
 	}

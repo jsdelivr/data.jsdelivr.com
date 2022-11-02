@@ -6920,7 +6920,10 @@
 	"/v1/stats/packages/npm/package-2@1.1.0/files?by=hits&period=x": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: `period` must be one of [day, week, month, year, s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM]."
+		"message": "Invalid parameter value: `period` must be one of [day, week, month, year, s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM].",
+		"links": {
+			"documentation": "https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com#get-/v1/stats/packages/npm/-package-@-version-/files"
+		}
 	},
 	"/v1/stats/packages/npm/package-2@1.1.0/files?by=hits&period=year": [
 		{
@@ -9899,7 +9902,10 @@
 	"/v1/stats/packages/npm/package-2@1.1.0/files?by=x&period=month": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: `by` must be one of [hits, bandwidth]."
+		"message": "Invalid parameter value: `by` must be one of [hits, bandwidth].",
+		"links": {
+			"documentation": "https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com#get-/v1/stats/packages/npm/-package-@-version-/files"
+		}
 	},
 	"/v1/stats/packages/npm/package-x@1.1.0/files?by=bandwidth&period=all": [],
 	"/v1/stats/packages/npm/package-x@1.1.0/files?by=bandwidth&period=month": [],
@@ -16238,7 +16244,10 @@
 	"/v1/stats/packages/gh/user/package-59@1.1.0/files?by=hits&period=x": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: `period` must be one of [day, week, month, year, s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM]."
+		"message": "Invalid parameter value: `period` must be one of [day, week, month, year, s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM].",
+		"links": {
+			"documentation": "https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com#get-/v1/stats/packages/gh/-user-/-repo-@-version-/files"
+		}
 	},
 	"/v1/stats/packages/gh/user/package-59@1.1.0/files?by=hits&period=year": [
 		{
@@ -19217,7 +19226,10 @@
 	"/v1/stats/packages/gh/user/package-59@1.1.0/files?by=x&period=month": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: `by` must be one of [hits, bandwidth]."
+		"message": "Invalid parameter value: `by` must be one of [hits, bandwidth].",
+		"links": {
+			"documentation": "https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com#get-/v1/stats/packages/gh/-user-/-repo-@-version-/files"
+		}
 	},
 	"/v1/stats/packages/npm/@scope/package-1@1.1.0/files?by=bandwidth&period=month": [
 		{
