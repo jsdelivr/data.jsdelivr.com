@@ -353,7 +353,7 @@ class PackageRequest extends BaseRequest {
 			this.ctx.body = this.linkBuilder()
 				.refs({
 					stats: routes['/stats/packages/:type/:name@:version'].getName(this.params),
-					...this.params.type === 'npm' && { entrypoints: routes['/packages/:type/:name@:version/entrypoints'].getName() },
+					...this.params.type === 'npm' && { entrypoints: routes['/packages/:type/:name@:version/entrypoints'].getName(this.params) },
 				})
 				.withValues(this.params)
 				.build({

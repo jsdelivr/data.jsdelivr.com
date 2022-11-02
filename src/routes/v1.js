@@ -33,6 +33,14 @@ router.param('user', async (value, ctx, next) => {
 	return next();
 });
 
+router.param('package', async (value, ctx, next) => {
+	if (!ctx.params.name) {
+		ctx.params.name = value;
+	}
+
+	return next();
+});
+
 /**
  * Normalize version names.
  */
@@ -80,8 +88,12 @@ const routes = {
 	'/package/:type/:name': {
 		paths: [
 			{
-				name: '/package/npm/:name',
-				path: '/package/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)',
+				name: '/package/npm/:package',
+				path: '/package/:type(npm)/:package([^/@]+)',
+			},
+			{
+				name: '/package/npm/@:scope/:package',
+				path: '/package/:type(npm)/@:user([^/@]+)/:package([^/@]+)',
 			},
 			{
 				name: '/package/gh/:user/:repo',
@@ -97,8 +109,12 @@ const routes = {
 	'/package/:type/:name/badge': {
 		paths: [
 			{
-				name: '/package/npm/:name/badge',
-				path: '/package/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)/badge/:period(day|week|month|year)?',
+				name: '/package/npm/:package/badge',
+				path: '/package/:type(npm)/:package([^/@]+)/badge/:period(day|week|month|year)?',
+			},
+			{
+				name: '/package/npm/@:scope/:package/badge',
+				path: '/package/:type(npm)/@:user([^/@]+)/:package([^/@]+)/badge/:period(day|week|month|year)?',
 			},
 			{
 				name: '/package/gh/:user/:repo/badge',
@@ -120,8 +136,12 @@ const routes = {
 	'/package/:type/:name/badge/rank': {
 		paths: [
 			{
-				name: '/package/npm/:name/badge/rank',
-				path: '/package/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)/badge/:rankType(rank|type-rank)/:period(day|week|month|year)?',
+				name: '/package/npm/:package/badge/rank',
+				path: '/package/:type(npm)/:package([^/@]+)/badge/:rankType(rank|type-rank)/:period(day|week|month|year)?',
+			},
+			{
+				name: '/package/npm/@:scope/:package/badge/rank',
+				path: '/package/:type(npm)/@:user([^/@]+)/:package([^/@]+)/badge/:rankType(rank|type-rank)/:period(day|week|month|year)?',
 			},
 			{
 				name: '/package/gh/:user/:repo/badge/rank',
@@ -143,8 +163,12 @@ const routes = {
 	'/package/:type/:name/stats': {
 		paths: [
 			{
-				name: '/package/npm/:name/stats',
-				path: '/package/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)/stats/:groupBy(version|date)?/:period(day|week|month|year)?',
+				name: '/package/npm/:package/stats',
+				path: '/package/:type(npm)/:package([^/@]+)/stats/:groupBy(version|date)?/:period(day|week|month|year)?',
+			},
+			{
+				name: '/package/npm/@:scope/:package/stats',
+				path: '/package/:type(npm)/@:user([^/@]+)/:package([^/@]+)/stats/:groupBy(version|date)?/:period(day|week|month|year)?',
 			},
 			{
 				name: '/package/gh/:user/:repo/stats',
@@ -165,8 +189,12 @@ const routes = {
 	'/package/:type/:name@:version': {
 		paths: [
 			{
-				name: '/package/npm/:name@:version',
-				path: '/package/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)@:version/:structure(tree|flat)?',
+				name: '/package/npm/:package@:version',
+				path: '/package/:type(npm)/:package([^/@]+)@:version/:structure(tree|flat)?',
+			},
+			{
+				name: '/package/npm/@:scope/:package@:version',
+				path: '/package/:type(npm)/@:user([^/@]+)/:package([^/@]+)@:version/:structure(tree|flat)?',
 			},
 			{
 				name: '/package/gh/:user/:repo@:version',
@@ -187,8 +215,12 @@ const routes = {
 	'/package/:type/:name@:version/entrypoints': {
 		paths: [
 			{
-				name: '/package/npm/:name@:version/entrypoints',
-				path: '/package/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)@:version/entrypoints',
+				name: '/package/npm/:package@:version/entrypoints',
+				path: '/package/:type(npm)/:package([^/@]+)@:version/entrypoints',
+			},
+			{
+				name: '/package/npm/@:scope/:package@:version/entrypoints',
+				path: '/package/:type(npm)/@:user([^/@]+)/:package([^/@]+)@:version/entrypoints',
 			},
 		],
 		handlers: [
@@ -200,8 +232,12 @@ const routes = {
 	'/package/:type/:name@:version/stats': {
 		paths: [
 			{
-				name: '/package/npm/:name@:version/stats',
-				path: '/package/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)@:version/stats/:groupBy(file|date)?/:period(day|week|month|year)?',
+				name: '/package/npm/:package@:version/stats',
+				path: '/package/:type(npm)/:package([^/@]+)@:version/stats/:groupBy(file|date)?/:period(day|week|month|year)?',
+			},
+			{
+				name: '/package/npm/@:scope/:package@:version/stats',
+				path: '/package/:type(npm)/@:user([^/@]+)/:package([^/@]+)@:version/stats/:groupBy(file|date)?/:period(day|week|month|year)?',
 			},
 			{
 				name: '/package/gh/:user/:repo@:version/stats',
@@ -219,23 +255,40 @@ const routes = {
 			},
 		],
 	},
-	'/package/resolve/:type/:name@:version': {
+	'/package/resolve/:type/:name': {
 		paths: [
 			{
-				name: '/package/resolve/npm/:name@:version',
-				path: '/package/resolve/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)@:version',
+				name: '/package/resolve/npm/:package',
+				path: '/package/resolve/:type(npm)/:package([^/@]+)',
 			},
 			{
-				name: '/package/resolve/npm/:name',
-				path: '/package/resolve/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)',
-			},
-			{
-				name: '/package/resolve/gh/:user/:repo@:version',
-				path: '/package/resolve/:type(gh)/:user([^/@]+)/:repo([^/@]+)@:version',
+				name: '/package/resolve/npm/@:scope/:package',
+				path: '/package/resolve/:type(npm)/@:user([^/@]+)/:package([^/@]+)',
 			},
 			{
 				name: '/package/resolve/gh/:user/:repo',
 				path: '/package/resolve/:type(gh)/:user([^/@]+)/:repo([^/@]+)',
+			},
+		],
+		handlers: [
+			async (ctx) => {
+				return new PackageRequest(ctx).handleResolveVersionDeprecated();
+			},
+		],
+	},
+	'/package/resolve/:type/:name@:version': {
+		paths: [
+			{
+				name: '/package/resolve/npm/:package@:version',
+				path: '/package/resolve/:type(npm)/:package([^/@]+)@:version',
+			},
+			{
+				name: '/package/resolve/npm/@:scope/:package@:version',
+				path: '/package/resolve/:type(npm)/@:user([^/@]+)/:package([^/@]+)@:version',
+			},
+			{
+				name: '/package/resolve/gh/:user/:repo@:version',
+				path: '/package/resolve/:type(gh)/:user([^/@]+)/:repo([^/@]+)@:version',
 			},
 		],
 		handlers: [
@@ -251,8 +304,12 @@ const routes = {
 	'/packages/:type/:name': {
 		paths: [
 			{
-				name: '/packages/npm/:name',
-				path: '/packages/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)',
+				name: '/packages/npm/:package',
+				path: '/packages/:type(npm)/:package([^/@]+)',
+			},
+			{
+				name: '/packages/npm/@:scope/:package',
+				path: '/packages/:type(npm)/@:user([^/@]+)/:package([^/@]+)',
 			},
 			{
 				name: '/packages/gh/:user/:repo',
@@ -268,8 +325,12 @@ const routes = {
 	'/packages/:type/:name@:version': {
 		paths: [
 			{
-				name: '/packages/npm/:name@:version',
-				path: '/packages/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)@:version',
+				name: '/packages/npm/:package@:version',
+				path: '/packages/:type(npm)/:package([^/@]+)@:version',
+			},
+			{
+				name: '/packages/npm/@:scope/:package@:version',
+				path: '/packages/:type(npm)/@:user([^/@]+)/:package([^/@]+)@:version',
 			},
 			{
 				name: '/packages/gh/:user/:repo@:version',
@@ -290,8 +351,12 @@ const routes = {
 	'/packages/:type/:name@:version/entrypoints': {
 		paths: [
 			{
-				name: '/packages/npm/:name@:version/entrypoints',
-				path: '/packages/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)@:version/entrypoints',
+				name: '/packages/npm/:package@:version/entrypoints',
+				path: '/packages/:type(npm)/:package([^/@]+)@:version/entrypoints',
+			},
+			{
+				name: '/packages/npm/@:scope/:package@:version/entrypoints',
+				path: '/packages/:type(npm)/@:user([^/@]+)/:package([^/@]+)@:version/entrypoints',
 			},
 		],
 		handlers: [
@@ -303,8 +368,12 @@ const routes = {
 	'/packages/:type/:name/resolved': {
 		paths: [
 			{
-				name: '/packages/npm/:name/resolved',
-				path: '/packages/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)/resolved',
+				name: '/packages/npm/:package/resolved',
+				path: '/packages/:type(npm)/:package([^/@]+)/resolved',
+			},
+			{
+				name: '/packages/npm/@:scope/:package/resolved',
+				path: '/packages/:type(npm)/@:user([^/@]+)/:package([^/@]+)/resolved',
 			},
 			{
 				name: '/packages/gh/:user/:repo/resolved',
@@ -406,8 +475,12 @@ const routes = {
 	'/stats/packages/:type/:name': {
 		paths: [
 			{
-				name: '/stats/packages/npm/:name',
-				path: '/stats/packages/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)',
+				name: '/stats/packages/npm/:package',
+				path: '/stats/packages/:type(npm)/:package([^/@]+)',
+			},
+			{
+				name: '/stats/packages/npm/@:scope/:package',
+				path: '/stats/packages/:type(npm)/@:user([^/@]+)/:package([^/@]+)',
 			},
 			{
 				name: '/stats/packages/gh/:user/:repo',
@@ -428,8 +501,12 @@ const routes = {
 	'/stats/packages/:type/:name/badge': {
 		paths: [
 			{
-				name: '/stats/packages/npm/:name/badge',
-				path: '/stats/packages/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)/badge',
+				name: '/stats/packages/npm/:package/badge',
+				path: '/stats/packages/:type(npm)/:package([^/@]+)/badge',
+			},
+			{
+				name: '/stats/packages/npm/@:scope/:package/badge',
+				path: '/stats/packages/:type(npm)/@:user([^/@]+)/:package([^/@]+)/badge',
 			},
 			{
 				name: '/stats/packages/gh/:user/:repo/badge',
@@ -451,8 +528,12 @@ const routes = {
 	'/stats/packages/:type/:name/versions': {
 		paths: [
 			{
-				name: '/stats/packages/npm/:name/versions',
-				path: '/stats/packages/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)/versions',
+				name: '/stats/packages/npm/:package/versions',
+				path: '/stats/packages/:type(npm)/:package([^/@]+)/versions',
+			},
+			{
+				name: '/stats/packages/npm/@:scope/:package/versions',
+				path: '/stats/packages/:type(npm)/@:user([^/@]+)/:package([^/@]+)/versions',
 			},
 			{
 				name: '/stats/packages/gh/:user/:repo/versions',
@@ -475,8 +556,12 @@ const routes = {
 	'/stats/packages/:type/:name@:version': {
 		paths: [
 			{
-				name: '/stats/packages/npm/:name@:version',
-				path: '/stats/packages/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)@:version',
+				name: '/stats/packages/npm/:package@:version',
+				path: '/stats/packages/:type(npm)/:package([^/@]+)@:version',
+			},
+			{
+				name: '/stats/packages/npm/@:scope/:package@:version',
+				path: '/stats/packages/:type(npm)/@:user([^/@]+)/:package([^/@]+)@:version',
 			},
 			{
 				name: '/stats/packages/gh/:user/:repo@:version',
@@ -497,8 +582,12 @@ const routes = {
 	'/stats/packages/:type/:name@:version/files': {
 		paths: [
 			{
-				name: '/stats/packages/npm/:name@:version/files',
-				path: '/stats/packages/:type(npm){/@:user([^/@]+)}?/:package([^/@]+)@:version/files',
+				name: '/stats/packages/npm/:package@:version/files',
+				path: '/stats/packages/:type(npm)/:package([^/@]+)@:version/files',
+			},
+			{
+				name: '/stats/packages/npm/@:scope/:package@:version/files',
+				path: '/stats/packages/:type(npm)/@:user([^/@]+)/:package([^/@]+)@:version/files',
 			},
 			{
 				name: '/stats/packages/gh/:user/:repo@:version/files',
@@ -724,7 +813,11 @@ Object.entries(routes).forEach(([ routeName, definition ]) => {
 				return this.paths[0].name;
 			}
 
-			return resource.type === 'npm' ? this.paths[0].name : this.paths[1].name;
+			return resource.type === 'npm'
+				? resource.user
+					? this.paths[1].name
+					: this.paths[0].name
+				: this.paths[2].name;
 		},
 		paths: [{ name: routeName, path: routeName }],
 	});
