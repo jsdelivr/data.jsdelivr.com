@@ -385,8 +385,6 @@ const routes = {
 	},
 	'/deprecated/stats/packages': {
 		paths: [
-			// TODO: removed the "type" param here to avoid overlap with new package stats endpoints,
-			// TODO: which is a breaking change but it was undocumented and only used by Algolia. Send them a PR with a fix.
 			{
 				name: '/stats/packages',
 				path: '/stats/packages/:period(day|week|month|year)?/:all(all)?',
