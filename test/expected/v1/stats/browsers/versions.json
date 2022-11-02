@@ -4,7 +4,7 @@
 		"status": 400,
 		"message": "Invalid parameter value: object contains a conflict between optional exclusive peers [continent, country].",
 		"links": {
-			"documentation": "https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com#get-/v1/stats/browsers/versions"
+			"documentation": "http://localhost:4400/docs/data.jsdelivr.com#get-/v1/stats/browsers/versions"
 		}
 	},
 	"/v1/stats/browsers/versions?continent=EU&period=2020": [
@@ -1712,7 +1712,7 @@
 		"status": 400,
 		"message": "Invalid parameter value: `continent` must be a valid continent code in uppercase.",
 		"links": {
-			"documentation": "https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com#get-/v1/stats/browsers/versions"
+			"documentation": "http://localhost:4400/docs/data.jsdelivr.com#get-/v1/stats/browsers/versions"
 		}
 	},
 	"/v1/stats/browsers/versions?country=PL&period=2020": [
@@ -3112,7 +3112,7 @@
 		"status": 400,
 		"message": "Invalid parameter value: `country` must be a valid ISO 3166-1 alpha-2 country code in uppercase.",
 		"links": {
-			"documentation": "https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com#get-/v1/stats/browsers/versions"
+			"documentation": "http://localhost:4400/docs/data.jsdelivr.com#get-/v1/stats/browsers/versions"
 		}
 	},
 	"/v1/stats/browsers/versions?period=2020": [
@@ -4820,7 +4820,7 @@
 		"status": 400,
 		"message": "Invalid parameter value: `period` must be one of [s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM].",
 		"links": {
-			"documentation": "https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com#get-/v1/stats/browsers/versions"
+			"documentation": "http://localhost:4400/docs/data.jsdelivr.com#get-/v1/stats/browsers/versions"
 		}
 	},
 	"/v1/stats/browsers/browser%2019/versions?continent=EU&country=PL": {
@@ -4828,7 +4828,7 @@
 		"status": 400,
 		"message": "Invalid parameter value: object contains a conflict between optional exclusive peers [continent, country].",
 		"links": {
-			"documentation": "https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com#get-/v1/stats/browsers/-name-/versions"
+			"documentation": "http://localhost:4400/docs/data.jsdelivr.com#get-/v1/stats/browsers/-name-/versions"
 		}
 	},
 	"/v1/stats/browsers/browser%2019/versions?continent=EU&period=2020": [
@@ -4932,7 +4932,7 @@
 		"status": 400,
 		"message": "Invalid parameter value: `continent` must be a valid continent code in uppercase.",
 		"links": {
-			"documentation": "https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com#get-/v1/stats/browsers/-name-/versions"
+			"documentation": "http://localhost:4400/docs/data.jsdelivr.com#get-/v1/stats/browsers/-name-/versions"
 		}
 	},
 	"/v1/stats/browsers/browser%2019/versions?country=PL&period=2020": [
@@ -5018,7 +5018,7 @@
 		"status": 400,
 		"message": "Invalid parameter value: `country` must be a valid ISO 3166-1 alpha-2 country code in uppercase.",
 		"links": {
-			"documentation": "https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com#get-/v1/stats/browsers/-name-/versions"
+			"documentation": "http://localhost:4400/docs/data.jsdelivr.com#get-/v1/stats/browsers/-name-/versions"
 		}
 	},
 	"/v1/stats/browsers/browser%2019/versions?period=2020": [
@@ -5122,7 +5122,7 @@
 		"status": 400,
 		"message": "Invalid parameter value: `period` must be one of [s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM].",
 		"links": {
-			"documentation": "https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com#get-/v1/stats/browsers/-name-/versions"
+			"documentation": "http://localhost:4400/docs/data.jsdelivr.com#get-/v1/stats/browsers/-name-/versions"
 		}
 	}
 }

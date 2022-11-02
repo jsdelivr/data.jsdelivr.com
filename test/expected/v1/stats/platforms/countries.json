@@ -1726,7 +1726,7 @@
 		"status": 400,
 		"message": "Invalid parameter value: `continent` must be a valid continent code in uppercase.",
 		"links": {
-			"documentation": "https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com#get-/v1/stats/platforms/-name-/countries"
+			"documentation": "http://localhost:4400/docs/data.jsdelivr.com#get-/v1/stats/platforms/-name-/countries"
 		}
 	},
 	"/v1/stats/platforms/platform%2019/countries?period=2020&all=true": [
@@ -9957,7 +9957,7 @@
 		"status": 400,
 		"message": "Invalid parameter value: `period` must be one of [s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM].",
 		"links": {
-			"documentation": "https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com#get-/v1/stats/platforms/-name-/countries"
+			"documentation": "http://localhost:4400/docs/data.jsdelivr.com#get-/v1/stats/platforms/-name-/countries"
 		}
 	}
 }

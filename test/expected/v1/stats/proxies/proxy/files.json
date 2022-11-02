@@ -11734,7 +11734,7 @@
 		"status": 400,
 		"message": "Invalid parameter value: `period` must be one of [day, week, month, year, s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM].",
 		"links": {
-			"documentation": "https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com#get-/v1/stats/proxies/-name-/files"
+			"documentation": "http://localhost:4400/docs/data.jsdelivr.com#get-/v1/stats/proxies/-name-/files"
 		}
 	},
 	"/v1/stats/proxies/wp-plugins/files?by=hits&period=year": [
@@ -12644,7 +12644,7 @@
 		"status": 400,
 		"message": "Invalid parameter value: `by` must be one of [hits, bandwidth].",
 		"links": {
-			"documentation": "https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com#get-/v1/stats/proxies/-name-/files"
+			"documentation": "http://localhost:4400/docs/data.jsdelivr.com#get-/v1/stats/proxies/-name-/files"
 		}
 	}
 }

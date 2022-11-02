@@ -21,7 +21,7 @@
 		"status": 400,
 		"message": "Invalid parameter value: `period` cannot end in the future.",
 		"links": {
-			"documentation": "https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com#get-/v1/stats/network/countries"
+			"documentation": "http://localhost:4400/docs/data.jsdelivr.com#get-/v1/stats/network/countries"
 		}
 	},
 	"/v1/stats/network/countries?period=2022-05": {
@@ -8548,7 +8548,7 @@
 		"status": 400,
 		"message": "Invalid parameter value: `period` must be one of [day, week, month, year, s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM].",
 		"links": {
-			"documentation": "https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com#get-/v1/stats/network/countries"
+			"documentation": "http://localhost:4400/docs/data.jsdelivr.com#get-/v1/stats/network/countries"
 		}
 	},
 	"/v1/stats/network/countries?period=all": {
