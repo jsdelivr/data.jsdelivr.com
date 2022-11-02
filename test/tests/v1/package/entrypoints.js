@@ -14,6 +14,14 @@ describe('/v1/package/entrypoints', () => {
 					expect(response).to.have.header('Cache-Control', 'public, max-age=604800, stale-while-revalidate=86400, stale-if-error=86400');
 					expect(response).to.have.header('Timing-Allow-Origin', '*');
 					expect(response).to.have.header('Vary', 'Accept-Encoding');
+					expect(response).to.have.header('Deprecation');
+
+					if (packageName.startsWith('@')) {
+						expect(response).to.have.header('Link', `<http://localhost:4400/docs/data.jsdelivr.com#get-/v1/packages/npm/@-scope-/-package-@-version-/entrypoints>; rel="deprecation", <http://localhost:4454/v1/packages/npm/${packageName}/entrypoints>; rel="successor-version"`);
+					} else {
+						expect(response).to.have.header('Link', `<http://localhost:4400/docs/data.jsdelivr.com#get-/v1/packages/npm/-package-@-version-/entrypoints>; rel="deprecation", <http://localhost:4454/v1/packages/npm/${packageName}/entrypoints>; rel="successor-version"`);
+					}
+
 					expect(response).to.be.json;
 					expect(response.body).to.deep.equal(data.expected);
 				});

@@ -102,7 +102,9 @@ const routes = {
 		],
 		handlers: [
 			async (ctx) => {
-				return new PackageRequest(ctx).handleVersionsDeprecated();
+				return new PackageRequest(ctx)
+					.deprecate(new Date('2023-01-01Z'), routes['/packages/:type/:name'])
+					.handleVersionsDeprecated();
 			},
 		],
 	},
@@ -129,7 +131,10 @@ const routes = {
 			}),
 			async (ctx) => {
 				ctx.state.query.type = 'hits';
-				return new PackageRequest(ctx).handlePackageBadge();
+
+				return new PackageRequest(ctx)
+					.deprecate(new Date('2023-01-01Z'), routes['/stats/packages/:type/:name/badge'])
+					.handlePackageBadge();
 			},
 		],
 	},
@@ -156,7 +161,10 @@ const routes = {
 			}),
 			async (ctx) => {
 				ctx.state.query.type = ctx.params.rankType;
-				return new PackageRequest(ctx).handlePackageBadge();
+
+				return new PackageRequest(ctx)
+					.deprecate(new Date('2023-01-01Z'), routes['/stats/packages/:type/:name/badge'], { type: ctx.params.rankType })
+					.handlePackageBadge();
 			},
 		],
 	},
@@ -182,7 +190,9 @@ const routes = {
 				}),
 			}),
 			async (ctx) => {
-				return new PackageRequest(ctx).handlePackageStatsDeprecated();
+				return new PackageRequest(ctx)
+					.deprecate(new Date('2023-01-01Z'), routes['/stats/packages/:type/:name'])
+					.handlePackageStatsDeprecated();
 			},
 		],
 	},
@@ -208,7 +218,9 @@ const routes = {
 				}),
 			}),
 			async (ctx) => {
-				return new PackageRequest(ctx).handleVersionFilesDeprecated();
+				return new PackageRequest(ctx)
+					.deprecate(new Date('2023-01-01Z'), routes['/packages/:type/:name@:version'])
+					.handleVersionFilesDeprecated();
 			},
 		],
 	},
@@ -225,7 +237,9 @@ const routes = {
 		],
 		handlers: [
 			async (ctx) => {
-				return new PackageRequest(ctx).handlePackageEntrypoints(false);
+				return new PackageRequest(ctx)
+					.deprecate(new Date('2023-01-01Z'), routes['/packages/:type/:name@:version/entrypoints'])
+					.handlePackageEntrypoints(false);
 			},
 		],
 	},
@@ -251,7 +265,9 @@ const routes = {
 				}),
 			}),
 			async (ctx) => {
-				return new PackageRequest(ctx).handleVersionStatsDeprecated();
+				return new PackageRequest(ctx)
+					.deprecate(new Date('2023-01-01Z'), routes['/stats/packages/:type/:name@:version'])
+					.handleVersionStatsDeprecated();
 			},
 		],
 	},
@@ -272,7 +288,9 @@ const routes = {
 		],
 		handlers: [
 			async (ctx) => {
-				return new PackageRequest(ctx).handleResolveVersionDeprecated();
+				return new PackageRequest(ctx)
+					.deprecate(new Date('2023-01-01Z'), routes['/packages/:type/:name/resolved'])
+					.handleResolveVersionDeprecated();
 			},
 		],
 	},
@@ -293,7 +311,9 @@ const routes = {
 		],
 		handlers: [
 			async (ctx) => {
-				return new PackageRequest(ctx).handleResolveVersionDeprecated();
+				return new PackageRequest(ctx)
+					.deprecate(new Date('2023-01-01Z'), routes['/packages/:type/:name/resolved'], { specifier: ctx.params.version })
+					.handleResolveVersionDeprecated();
 			},
 		],
 	},

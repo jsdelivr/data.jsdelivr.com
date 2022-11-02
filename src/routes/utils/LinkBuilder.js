@@ -51,6 +51,7 @@ class LinkBuilder {
 		this._omitQuery = [ ...this.options.omitQuery ];
 		this._includeQuery = undefined;
 		this._values = undefined;
+		this._queryValues = undefined;
 		this._mapping = undefined;
 		this._built = [];
 	}
@@ -86,7 +87,8 @@ class LinkBuilder {
 		let query = _.pickBy(Object.assign(
 			_.pick(_.omit(this.ctx.originalQuery, this._omitQuery), validator?.schemaKeys?.query), // Keys from the current request if they are in the target schema as well.
 			_.pick(mappedResource, validator?.requiredSchemaKeys?.query), // Keys required in the target schema.
-			_.pick(mappedResource, this._includeQuery) // Explicitly added keys.
+			_.pick(mappedResource, this._includeQuery), // Explicitly added keys.
+			this._queryValues // Explicitly added values that are not in mappedResource.
 		), (v, k) => String(v) !== validator?.schemaDefaults?.query?.[k]); // Filter out default values.
 
 		let requiredParamsDefaults = paramNames
@@ -160,6 +162,11 @@ class LinkBuilder {
 
 	withValues (values) {
 		this._values = values;
+		return this;
+	}
+
+	withQueryValues (values) {
+		this._queryValues = values;
 		return this;
 	}
 }

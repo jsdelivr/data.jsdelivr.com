@@ -4,6 +4,7 @@ const relativeDayUtc = require('relative-day-utc');
 const dateRange = require('../utils/dateRange');
 const pagination = require('../utils/pagination');
 const LinkBuilder = require('../utils/LinkBuilder');
+const { splitPackageUserAndName } = require('../utils/link-builder-transforms');
 
 const v1Config = config.get('v1');
 
@@ -42,9 +43,17 @@ class BaseRequest {
 		ctx.query = {};
 	}
 
-	deprecate (date, link) {
+	deprecate (date, newRoute, newQuery = {}) {
+		let newVersionLink = new LinkBuilder(this.ctx)
+			.refs({ uri: newRoute.getName(this.params) })
+			.transform(splitPackageUserAndName)
+			.withValues(this.params)
+			.withQueryValues(newQuery)
+			.toLink([{ rel: 'successor-version' }]);
+
 		this.ctx.set('Deprecation', date.toUTCString());
-		this.ctx.append('Link', `<${link}>; rel="successor-version"`);
+		this.ctx.append('Link', `<${this.ctx.getDocsLink(newRoute.getName(this.params))}>; rel="deprecation", ${newVersionLink}`);
+
 		return this;
 	}
 

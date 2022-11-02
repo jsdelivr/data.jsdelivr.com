@@ -20,6 +20,8 @@ describe('/v1/package/badge', () => {
 				expect(response).to.have.header('Cache-Control', 'public, stale-while-revalidate=3600, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.have.header('Deprecation');
+				expect(response).to.have.header('Link', '<http://localhost:4400/docs/data.jsdelivr.com#get-/v1/stats/packages/npm/-package-/badge>; rel="deprecation", <http://localhost:4454/v1/stats/packages/npm/package-2/badge>; rel="successor-version"');
 				expect(response).to.matchSnapshot();
 			});
 	});
@@ -33,6 +35,8 @@ describe('/v1/package/badge', () => {
 				expect(response).to.have.header('Cache-Control', 'public, stale-while-revalidate=3600, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.have.header('Deprecation');
+				expect(response).to.have.header('Link', '<http://localhost:4400/docs/data.jsdelivr.com#get-/v1/stats/packages/npm/-package-/badge>; rel="deprecation", <http://localhost:4454/v1/stats/packages/npm/package-2/badge?type=rank>; rel="successor-version"');
 				expect(response).to.matchSnapshot();
 			});
 	});
@@ -46,6 +50,8 @@ describe('/v1/package/badge', () => {
 				expect(response).to.have.header('Cache-Control', 'public, stale-while-revalidate=3600, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.have.header('Deprecation');
+				expect(response).to.have.header('Link', '<http://localhost:4400/docs/data.jsdelivr.com#get-/v1/stats/packages/npm/-package-/badge>; rel="deprecation", <http://localhost:4454/v1/stats/packages/npm/package-2/badge?type=type-rank>; rel="successor-version"');
 				expect(response).to.matchSnapshot();
 			});
 	});

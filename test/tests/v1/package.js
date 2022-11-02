@@ -17,6 +17,8 @@ describe('/v1/package', () => {
 				expect(response).to.have.header('Cache-Control', 'public, max-age=300, stale-while-revalidate=3600, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.have.header('Deprecation');
+				expect(response).to.have.header('Link', '<http://localhost:4400/docs/data.jsdelivr.com#get-/v1/packages/npm/-package->; rel="deprecation", <http://localhost:4454/v1/packages/npm/jquery>; rel="successor-version"');
 				expect(response).to.be.json;
 				expect(response).to.matchSnapshot();
 			});
@@ -45,6 +47,8 @@ describe('/v1/package', () => {
 				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.have.header('Deprecation');
+				expect(response).to.have.header('Link', '<http://localhost:4400/docs/data.jsdelivr.com#get-/v1/packages/npm/-package-@-version->; rel="deprecation", <http://localhost:4454/v1/packages/npm/jquery@3.2.1>; rel="successor-version"');
 				expect(response).to.be.json;
 				expect(response).to.matchSnapshot();
 			});
@@ -73,6 +77,8 @@ describe('/v1/package', () => {
 				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.have.header('Deprecation');
+				expect(response).to.have.header('Link', '<http://localhost:4400/docs/data.jsdelivr.com#get-/v1/packages/npm/-package-@-version->; rel="deprecation", <http://localhost:4454/v1/packages/npm/jquery@3.2.1?structure=flat>; rel="successor-version"');
 				expect(response).to.be.json;
 				expect(response).to.matchSnapshot();
 			});
@@ -101,6 +107,8 @@ describe('/v1/package', () => {
 				expect(response).to.have.header('Cache-Control', 'public, max-age=300, stale-while-revalidate=3600, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.have.header('Deprecation');
+				expect(response).to.have.header('Link', '<http://localhost:4400/docs/data.jsdelivr.com#get-/v1/packages/gh/-user-/-repo->; rel="deprecation", <http://localhost:4454/v1/packages/gh/jquery/jquery>; rel="successor-version"');
 				expect(response).to.be.json;
 				expect(response).to.matchSnapshot();
 			});
@@ -143,6 +151,8 @@ describe('/v1/package', () => {
 				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.have.header('Deprecation');
+				expect(response).to.have.header('Link', '<http://localhost:4400/docs/data.jsdelivr.com#get-/v1/packages/gh/-user-/-repo-@-version->; rel="deprecation", <http://localhost:4454/v1/packages/gh/jquery/jquery@3.2.1>; rel="successor-version"');
 				expect(response).to.be.json;
 				expect(response).to.matchSnapshot();
 			});
@@ -200,6 +210,8 @@ describe('/v1/package', () => {
 				expect(response).to.have.header('Cache-Control', 'public, max-age=31536000, stale-while-revalidate=86400, stale-if-error=86400');
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.have.header('Deprecation');
+				expect(response).to.have.header('Link', '<http://localhost:4400/docs/data.jsdelivr.com#get-/v1/packages/gh/-user-/-repo-@-version->; rel="deprecation", <http://localhost:4454/v1/packages/gh/jquery/jquery@3.2.1?structure=flat>; rel="successor-version"');
 				expect(response).to.be.json;
 				expect(response).to.matchSnapshot();
 			});
