@@ -366,6 +366,7 @@ components:
               properties:
                 stats:
                   type: string
+                  description: A link to stats for this package version.
               required:
                 - stats
           required:
@@ -387,6 +388,7 @@ components:
                 const: directory
               name:
                 type: string
+                description: The directory name.
               files:
                 $ref: '#/components/schemas/PackageVersionMetadataTreeFiles'
             required:
@@ -401,10 +403,13 @@ components:
                 const: file
               name:
                 type: string
+                description: The filename.
               hash:
                 type: string
+                description: A base64-encoded sha256 of file contents.
               size:
                 type: integer
+                description: The file size in bytes.
             required:
               - type
               - name
@@ -418,10 +423,13 @@ components:
         properties:
           name:
             type: string
+            description: An absolute file path within the package.
           hash:
             type: string
+            description: A base64-encoded sha256 of file contents.
           size:
             type: integer
+            description: The file size in bytes.
         required:
           - name
           - hash
@@ -760,6 +768,7 @@ components:
         properties:
           name:
             type: string
+            description: An absolute file path within the package.
           hits:
             $ref: '#/components/schemas/TotalDateHitsStats'
           bandwidth:
@@ -1375,18 +1384,19 @@ components:
         properties:
           name:
             type: string
+            description: An absolute file path within the proxy.
           hits:
             type: object
             properties:
               total:
-                type: integer
+                $ref: '#/components/schemas/HitsTotal'
             required:
               - total
           bandwidth:
             type: object
             properties:
               total:
-                type: integer
+                $ref: '#/components/schemas/BandwidthTotal'
             required:
               - total
         required:
@@ -3571,6 +3581,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/period'
         - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/page'
       responses:
         200:
           $ref: '#/components/responses/periods200'
