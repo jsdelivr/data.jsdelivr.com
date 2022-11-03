@@ -3324,9 +3324,20 @@ components:
                 type: integer
               message:
                 type: string
+              links:
+                type: object
+                properties:
+                  documentation:
+                    type: string
+                    description: A link to documentation for this endpoint.
+            required:
+             - status
+             - message
           example:
             status: 400
             message: Invalid parameter value...
+            links:
+              documentation: https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com
     403:
       description: Forbidden
       content:
