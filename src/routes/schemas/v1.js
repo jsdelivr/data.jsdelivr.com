@@ -43,7 +43,7 @@ const primitives = {
 
 			return { ...result, range };
 		}).messages({
-			'*': '{{#label}} must be one of [day, week, month, year, s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM]',
+			'*': '{{#label}} must be one of [day, week, month, quarter, year, s-month, s-quarter, s-year] or a valid date in one of the following ISO formats [YYYY-MM, YYYY-Qq, YYYY]',
 			'period.future': '{{#label}} cannot end in the future',
 		}).default(() => {
 			let result = dateRange.parseFloatingPeriod('month');
@@ -89,7 +89,7 @@ const primitives = {
 
 			return { ...result, range };
 		}).messages({
-			'*': '{{#label}} must be one of [s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM]',
+			'*': '{{#label}} must be one of [s-month, s-quarter, s-year] or a valid date in one of the following ISO formats [YYYY-MM, YYYY-Qq, YYYY]',
 			'period.future': '{{#label}} cannot end in the future',
 		}).default(() => {
 			let result = dateRange.parseStaticPeriod('s-month');

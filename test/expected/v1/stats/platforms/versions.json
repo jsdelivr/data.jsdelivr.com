@@ -5280,7 +5280,7 @@
 	"/v1/stats/platforms/versions?period=month": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: `period` must be one of [s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM].",
+		"message": "Invalid parameter value: `period` must be one of [s-month, s-quarter, s-year] or a valid date in one of the following ISO formats [YYYY-MM, YYYY-Qq, YYYY].",
 		"links": {
 			"documentation": "http://localhost:4400/docs/data.jsdelivr.com#get-/v1/stats/platforms/versions"
 		}
@@ -5609,7 +5609,7 @@
 	"/v1/stats/platforms/platform%2019/versions?period=month": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: `period` must be one of [s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM].",
+		"message": "Invalid parameter value: `period` must be one of [s-month, s-quarter, s-year] or a valid date in one of the following ISO formats [YYYY-MM, YYYY-Qq, YYYY].",
 		"links": {
 			"documentation": "http://localhost:4400/docs/data.jsdelivr.com#get-/v1/stats/platforms/-name-/versions"
 		}

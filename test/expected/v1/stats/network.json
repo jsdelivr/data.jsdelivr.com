@@ -25766,7 +25766,7 @@
 	"/v1/stats/network?period=X": {
 		"date": "2010-12-31",
 		"status": 400,
-		"message": "Invalid parameter value: `period` must be one of [day, week, month, year, s-month, s-year] or a valid date in one of the following ISO formats [YYYY, YYYY-MM].",
+		"message": "Invalid parameter value: `period` must be one of [day, week, month, quarter, year, s-month, s-quarter, s-year] or a valid date in one of the following ISO formats [YYYY-MM, YYYY-Qq, YYYY].",
 		"links": {
 			"documentation": "http://localhost:4400/docs/data.jsdelivr.com#get-/v1/stats/network"
 		}
