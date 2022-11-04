@@ -3575,7 +3575,6 @@ paths:
         Returns a list of all periods for which some stats are available in descending order.
         The `links` property of each period indicates which stats are available.
       parameters:
-        - $ref: '#/components/parameters/period'
         - $ref: '#/components/parameters/limit'
         - $ref: '#/components/parameters/page'
       responses:
