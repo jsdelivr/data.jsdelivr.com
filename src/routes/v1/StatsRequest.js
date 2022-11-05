@@ -171,7 +171,7 @@ class StatsRequest extends BaseRequest {
 	}
 
 	async handlePackages () {
-		let { meta, data } = await Package.transform('links', ({ page, pages, records }) => {
+		let { meta, data } = await Package.transform(`links:${this.ctx.originalQuery.period}`, ({ page, pages, records }) => {
 			let data = this.linkBuilder()
 				.refs({
 					self: resource => routes['/stats/packages/:type/:name'].getName(resource),
