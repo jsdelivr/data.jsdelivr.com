@@ -1,5 +1,5 @@
 const dedent = require('dedent-js');
-const periods = [ [ 1, 'day' ], [ 7, 'week' ], [ 30, 'month' ], [ 365, 'year' ], [ '2017-08-17', 'all' ] ];
+const periods = [ [ 1, 'day' ], [ 7, 'week' ], [ 30, 'month' ], [ 90, 'quarter' ], [ 365, 'year' ], [ '2017-08-17', 'all' ] ];
 
 module.exports = async (db) => {
 	// language=MariaDB

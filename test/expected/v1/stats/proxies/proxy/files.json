@@ -902,6 +902,908 @@
 			}
 		}
 	],
+	"/v1/stats/proxies/wp-plugins/files?by=bandwidth&period=2022-Q2": [
+		{
+			"name": "/file-110",
+			"hits": {
+				"total": 117975
+			},
+			"bandwidth": {
+				"total": 1934790000
+			}
+		},
+		{
+			"name": "/file-109",
+			"hits": {
+				"total": 115830
+			},
+			"bandwidth": {
+				"total": 1899612000
+			}
+		},
+		{
+			"name": "/file-108",
+			"hits": {
+				"total": 115830
+			},
+			"bandwidth": {
+				"total": 1899612000
+			}
+		},
+		{
+			"name": "/file-107",
+			"hits": {
+				"total": 113685
+			},
+			"bandwidth": {
+				"total": 1864434000
+			}
+		},
+		{
+			"name": "/file-106",
+			"hits": {
+				"total": 113685
+			},
+			"bandwidth": {
+				"total": 1864434000
+			}
+		},
+		{
+			"name": "/file-105",
+			"hits": {
+				"total": 111540
+			},
+			"bandwidth": {
+				"total": 1829256000
+			}
+		},
+		{
+			"name": "/file-104",
+			"hits": {
+				"total": 111540
+			},
+			"bandwidth": {
+				"total": 1829256000
+			}
+		},
+		{
+			"name": "/file-103",
+			"hits": {
+				"total": 109395
+			},
+			"bandwidth": {
+				"total": 1794078000
+			}
+		},
+		{
+			"name": "/file-102",
+			"hits": {
+				"total": 109395
+			},
+			"bandwidth": {
+				"total": 1794078000
+			}
+		},
+		{
+			"name": "/file-101",
+			"hits": {
+				"total": 107250
+			},
+			"bandwidth": {
+				"total": 1758900000
+			}
+		},
+		{
+			"name": "/file-100",
+			"hits": {
+				"total": 107250
+			},
+			"bandwidth": {
+				"total": 1758900000
+			}
+		},
+		{
+			"name": "/file-99",
+			"hits": {
+				"total": 105105
+			},
+			"bandwidth": {
+				"total": 1723722000
+			}
+		},
+		{
+			"name": "/file-98",
+			"hits": {
+				"total": 105105
+			},
+			"bandwidth": {
+				"total": 1723722000
+			}
+		},
+		{
+			"name": "/file-97",
+			"hits": {
+				"total": 102960
+			},
+			"bandwidth": {
+				"total": 1688544000
+			}
+		},
+		{
+			"name": "/file-96",
+			"hits": {
+				"total": 102960
+			},
+			"bandwidth": {
+				"total": 1688544000
+			}
+		},
+		{
+			"name": "/file-95",
+			"hits": {
+				"total": 100815
+			},
+			"bandwidth": {
+				"total": 1653366000
+			}
+		},
+		{
+			"name": "/file-94",
+			"hits": {
+				"total": 100815
+			},
+			"bandwidth": {
+				"total": 1653366000
+			}
+		},
+		{
+			"name": "/file-93",
+			"hits": {
+				"total": 98670
+			},
+			"bandwidth": {
+				"total": 1618188000
+			}
+		},
+		{
+			"name": "/file-92",
+			"hits": {
+				"total": 98670
+			},
+			"bandwidth": {
+				"total": 1618188000
+			}
+		},
+		{
+			"name": "/file-91",
+			"hits": {
+				"total": 96525
+			},
+			"bandwidth": {
+				"total": 1583010000
+			}
+		},
+		{
+			"name": "/file-90",
+			"hits": {
+				"total": 96525
+			},
+			"bandwidth": {
+				"total": 1583010000
+			}
+		},
+		{
+			"name": "/file-89",
+			"hits": {
+				"total": 94380
+			},
+			"bandwidth": {
+				"total": 1547832000
+			}
+		},
+		{
+			"name": "/file-88",
+			"hits": {
+				"total": 94380
+			},
+			"bandwidth": {
+				"total": 1547832000
+			}
+		},
+		{
+			"name": "/file-87",
+			"hits": {
+				"total": 92235
+			},
+			"bandwidth": {
+				"total": 1512654000
+			}
+		},
+		{
+			"name": "/file-86",
+			"hits": {
+				"total": 92235
+			},
+			"bandwidth": {
+				"total": 1512654000
+			}
+		},
+		{
+			"name": "/file-85",
+			"hits": {
+				"total": 90090
+			},
+			"bandwidth": {
+				"total": 1477476000
+			}
+		},
+		{
+			"name": "/file-84",
+			"hits": {
+				"total": 90090
+			},
+			"bandwidth": {
+				"total": 1477476000
+			}
+		},
+		{
+			"name": "/file-83",
+			"hits": {
+				"total": 87945
+			},
+			"bandwidth": {
+				"total": 1442298000
+			}
+		},
+		{
+			"name": "/file-82",
+			"hits": {
+				"total": 87945
+			},
+			"bandwidth": {
+				"total": 1442298000
+			}
+		},
+		{
+			"name": "/file-81",
+			"hits": {
+				"total": 85800
+			},
+			"bandwidth": {
+				"total": 1407120000
+			}
+		},
+		{
+			"name": "/file-80",
+			"hits": {
+				"total": 85800
+			},
+			"bandwidth": {
+				"total": 1407120000
+			}
+		},
+		{
+			"name": "/file-79",
+			"hits": {
+				"total": 83655
+			},
+			"bandwidth": {
+				"total": 1371942000
+			}
+		},
+		{
+			"name": "/file-78",
+			"hits": {
+				"total": 83655
+			},
+			"bandwidth": {
+				"total": 1371942000
+			}
+		},
+		{
+			"name": "/file-77",
+			"hits": {
+				"total": 81510
+			},
+			"bandwidth": {
+				"total": 1336764000
+			}
+		},
+		{
+			"name": "/file-76",
+			"hits": {
+				"total": 81510
+			},
+			"bandwidth": {
+				"total": 1336764000
+			}
+		},
+		{
+			"name": "/file-75",
+			"hits": {
+				"total": 79365
+			},
+			"bandwidth": {
+				"total": 1301586000
+			}
+		},
+		{
+			"name": "/file-74",
+			"hits": {
+				"total": 79365
+			},
+			"bandwidth": {
+				"total": 1301586000
+			}
+		},
+		{
+			"name": "/file-73",
+			"hits": {
+				"total": 77220
+			},
+			"bandwidth": {
+				"total": 1266408000
+			}
+		},
+		{
+			"name": "/file-72",
+			"hits": {
+				"total": 77220
+			},
+			"bandwidth": {
+				"total": 1266408000
+			}
+		},
+		{
+			"name": "/file-71",
+			"hits": {
+				"total": 75075
+			},
+			"bandwidth": {
+				"total": 1231230000
+			}
+		},
+		{
+			"name": "/file-70",
+			"hits": {
+				"total": 75075
+			},
+			"bandwidth": {
+				"total": 1231230000
+			}
+		},
+		{
+			"name": "/file-69",
+			"hits": {
+				"total": 72930
+			},
+			"bandwidth": {
+				"total": 1196052000
+			}
+		},
+		{
+			"name": "/file-68",
+			"hits": {
+				"total": 72930
+			},
+			"bandwidth": {
+				"total": 1196052000
+			}
+		},
+		{
+			"name": "/file-67",
+			"hits": {
+				"total": 70785
+			},
+			"bandwidth": {
+				"total": 1160874000
+			}
+		},
+		{
+			"name": "/file-66",
+			"hits": {
+				"total": 70785
+			},
+			"bandwidth": {
+				"total": 1160874000
+			}
+		},
+		{
+			"name": "/file-65",
+			"hits": {
+				"total": 68640
+			},
+			"bandwidth": {
+				"total": 1125696000
+			}
+		},
+		{
+			"name": "/file-64",
+			"hits": {
+				"total": 68640
+			},
+			"bandwidth": {
+				"total": 1125696000
+			}
+		},
+		{
+			"name": "/file-63",
+			"hits": {
+				"total": 66495
+			},
+			"bandwidth": {
+				"total": 1090518000
+			}
+		},
+		{
+			"name": "/file-62",
+			"hits": {
+				"total": 66495
+			},
+			"bandwidth": {
+				"total": 1090518000
+			}
+		},
+		{
+			"name": "/file-61",
+			"hits": {
+				"total": 64350
+			},
+			"bandwidth": {
+				"total": 1055340000
+			}
+		},
+		{
+			"name": "/file-60",
+			"hits": {
+				"total": 64350
+			},
+			"bandwidth": {
+				"total": 1055340000
+			}
+		},
+		{
+			"name": "/file-59",
+			"hits": {
+				"total": 62205
+			},
+			"bandwidth": {
+				"total": 1020162000
+			}
+		},
+		{
+			"name": "/file-58",
+			"hits": {
+				"total": 62205
+			},
+			"bandwidth": {
+				"total": 1020162000
+			}
+		},
+		{
+			"name": "/file-57",
+			"hits": {
+				"total": 60060
+			},
+			"bandwidth": {
+				"total": 984984000
+			}
+		},
+		{
+			"name": "/file-56",
+			"hits": {
+				"total": 60060
+			},
+			"bandwidth": {
+				"total": 984984000
+			}
+		},
+		{
+			"name": "/file-55",
+			"hits": {
+				"total": 57915
+			},
+			"bandwidth": {
+				"total": 949806000
+			}
+		},
+		{
+			"name": "/file-54",
+			"hits": {
+				"total": 57915
+			},
+			"bandwidth": {
+				"total": 949806000
+			}
+		},
+		{
+			"name": "/file-53",
+			"hits": {
+				"total": 55770
+			},
+			"bandwidth": {
+				"total": 914628000
+			}
+		},
+		{
+			"name": "/file-52",
+			"hits": {
+				"total": 55770
+			},
+			"bandwidth": {
+				"total": 914628000
+			}
+		},
+		{
+			"name": "/file-51",
+			"hits": {
+				"total": 53625
+			},
+			"bandwidth": {
+				"total": 879450000
+			}
+		},
+		{
+			"name": "/file-50",
+			"hits": {
+				"total": 53625
+			},
+			"bandwidth": {
+				"total": 879450000
+			}
+		},
+		{
+			"name": "/file-49",
+			"hits": {
+				"total": 51480
+			},
+			"bandwidth": {
+				"total": 844272000
+			}
+		},
+		{
+			"name": "/file-48",
+			"hits": {
+				"total": 51480
+			},
+			"bandwidth": {
+				"total": 844272000
+			}
+		},
+		{
+			"name": "/file-47",
+			"hits": {
+				"total": 49335
+			},
+			"bandwidth": {
+				"total": 809094000
+			}
+		},
+		{
+			"name": "/file-46",
+			"hits": {
+				"total": 49335
+			},
+			"bandwidth": {
+				"total": 809094000
+			}
+		},
+		{
+			"name": "/file-45",
+			"hits": {
+				"total": 47190
+			},
+			"bandwidth": {
+				"total": 773916000
+			}
+		},
+		{
+			"name": "/file-44",
+			"hits": {
+				"total": 47190
+			},
+			"bandwidth": {
+				"total": 773916000
+			}
+		},
+		{
+			"name": "/file-43",
+			"hits": {
+				"total": 45045
+			},
+			"bandwidth": {
+				"total": 738738000
+			}
+		},
+		{
+			"name": "/file-42",
+			"hits": {
+				"total": 45045
+			},
+			"bandwidth": {
+				"total": 738738000
+			}
+		},
+		{
+			"name": "/file-41",
+			"hits": {
+				"total": 42900
+			},
+			"bandwidth": {
+				"total": 703560000
+			}
+		},
+		{
+			"name": "/file-40",
+			"hits": {
+				"total": 42900
+			},
+			"bandwidth": {
+				"total": 703560000
+			}
+		},
+		{
+			"name": "/file-39",
+			"hits": {
+				"total": 40755
+			},
+			"bandwidth": {
+				"total": 668382000
+			}
+		},
+		{
+			"name": "/file-38",
+			"hits": {
+				"total": 40755
+			},
+			"bandwidth": {
+				"total": 668382000
+			}
+		},
+		{
+			"name": "/file-37",
+			"hits": {
+				"total": 38610
+			},
+			"bandwidth": {
+				"total": 633204000
+			}
+		},
+		{
+			"name": "/file-36",
+			"hits": {
+				"total": 38610
+			},
+			"bandwidth": {
+				"total": 633204000
+			}
+		},
+		{
+			"name": "/file-35",
+			"hits": {
+				"total": 36465
+			},
+			"bandwidth": {
+				"total": 598026000
+			}
+		},
+		{
+			"name": "/file-34",
+			"hits": {
+				"total": 36465
+			},
+			"bandwidth": {
+				"total": 598026000
+			}
+		},
+		{
+			"name": "/file-33",
+			"hits": {
+				"total": 34320
+			},
+			"bandwidth": {
+				"total": 562848000
+			}
+		},
+		{
+			"name": "/file-32",
+			"hits": {
+				"total": 34320
+			},
+			"bandwidth": {
+				"total": 562848000
+			}
+		},
+		{
+			"name": "/file-31",
+			"hits": {
+				"total": 32175
+			},
+			"bandwidth": {
+				"total": 527670000
+			}
+		},
+		{
+			"name": "/file-30",
+			"hits": {
+				"total": 32175
+			},
+			"bandwidth": {
+				"total": 527670000
+			}
+		},
+		{
+			"name": "/file-29",
+			"hits": {
+				"total": 30030
+			},
+			"bandwidth": {
+				"total": 492492000
+			}
+		},
+		{
+			"name": "/file-28",
+			"hits": {
+				"total": 30030
+			},
+			"bandwidth": {
+				"total": 492492000
+			}
+		},
+		{
+			"name": "/file-27",
+			"hits": {
+				"total": 27885
+			},
+			"bandwidth": {
+				"total": 457314000
+			}
+		},
+		{
+			"name": "/file-26",
+			"hits": {
+				"total": 27885
+			},
+			"bandwidth": {
+				"total": 457314000
+			}
+		},
+		{
+			"name": "/file-25",
+			"hits": {
+				"total": 25740
+			},
+			"bandwidth": {
+				"total": 422136000
+			}
+		},
+		{
+			"name": "/file-24",
+			"hits": {
+				"total": 25740
+			},
+			"bandwidth": {
+				"total": 422136000
+			}
+		},
+		{
+			"name": "/file-23",
+			"hits": {
+				"total": 23595
+			},
+			"bandwidth": {
+				"total": 386958000
+			}
+		},
+		{
+			"name": "/file-22",
+			"hits": {
+				"total": 23595
+			},
+			"bandwidth": {
+				"total": 386958000
+			}
+		},
+		{
+			"name": "/file-21",
+			"hits": {
+				"total": 21450
+			},
+			"bandwidth": {
+				"total": 351780000
+			}
+		},
+		{
+			"name": "/file-20",
+			"hits": {
+				"total": 21450
+			},
+			"bandwidth": {
+				"total": 351780000
+			}
+		},
+		{
+			"name": "/file-19",
+			"hits": {
+				"total": 19305
+			},
+			"bandwidth": {
+				"total": 316602000
+			}
+		},
+		{
+			"name": "/file-18",
+			"hits": {
+				"total": 19305
+			},
+			"bandwidth": {
+				"total": 316602000
+			}
+		},
+		{
+			"name": "/file-17",
+			"hits": {
+				"total": 17160
+			},
+			"bandwidth": {
+				"total": 281424000
+			}
+		},
+		{
+			"name": "/file-16",
+			"hits": {
+				"total": 17160
+			},
+			"bandwidth": {
+				"total": 281424000
+			}
+		},
+		{
+			"name": "/file-15",
+			"hits": {
+				"total": 15015
+			},
+			"bandwidth": {
+				"total": 246246000
+			}
+		},
+		{
+			"name": "/file-14",
+			"hits": {
+				"total": 15015
+			},
+			"bandwidth": {
+				"total": 246246000
+			}
+		},
+		{
+			"name": "/file-13",
+			"hits": {
+				"total": 12870
+			},
+			"bandwidth": {
+				"total": 211068000
+			}
+		},
+		{
+			"name": "/file-12",
+			"hits": {
+				"total": 12870
+			},
+			"bandwidth": {
+				"total": 211068000
+			}
+		},
+		{
+			"name": "/file-11",
+			"hits": {
+				"total": 10725
+			},
+			"bandwidth": {
+				"total": 175890000
+			}
+		}
+	],
 	"/v1/stats/proxies/wp-plugins/files?by=bandwidth&period=all": [
 		{
 			"name": "/file-110",
@@ -3608,6 +4510,908 @@
 			}
 		}
 	],
+	"/v1/stats/proxies/wp-plugins/files?by=bandwidth&period=quarter": [
+		{
+			"name": "/file-110",
+			"hits": {
+				"total": 129030
+			},
+			"bandwidth": {
+				"total": 2116092000
+			}
+		},
+		{
+			"name": "/file-109",
+			"hits": {
+				"total": 126684
+			},
+			"bandwidth": {
+				"total": 2077617600
+			}
+		},
+		{
+			"name": "/file-108",
+			"hits": {
+				"total": 126684
+			},
+			"bandwidth": {
+				"total": 2077617600
+			}
+		},
+		{
+			"name": "/file-107",
+			"hits": {
+				"total": 124338
+			},
+			"bandwidth": {
+				"total": 2039143200
+			}
+		},
+		{
+			"name": "/file-106",
+			"hits": {
+				"total": 124338
+			},
+			"bandwidth": {
+				"total": 2039143200
+			}
+		},
+		{
+			"name": "/file-105",
+			"hits": {
+				"total": 121992
+			},
+			"bandwidth": {
+				"total": 2000668800
+			}
+		},
+		{
+			"name": "/file-104",
+			"hits": {
+				"total": 121992
+			},
+			"bandwidth": {
+				"total": 2000668800
+			}
+		},
+		{
+			"name": "/file-103",
+			"hits": {
+				"total": 119646
+			},
+			"bandwidth": {
+				"total": 1962194400
+			}
+		},
+		{
+			"name": "/file-102",
+			"hits": {
+				"total": 119646
+			},
+			"bandwidth": {
+				"total": 1962194400
+			}
+		},
+		{
+			"name": "/file-101",
+			"hits": {
+				"total": 117300
+			},
+			"bandwidth": {
+				"total": 1923720000
+			}
+		},
+		{
+			"name": "/file-100",
+			"hits": {
+				"total": 117300
+			},
+			"bandwidth": {
+				"total": 1923720000
+			}
+		},
+		{
+			"name": "/file-99",
+			"hits": {
+				"total": 114954
+			},
+			"bandwidth": {
+				"total": 1885245600
+			}
+		},
+		{
+			"name": "/file-98",
+			"hits": {
+				"total": 114954
+			},
+			"bandwidth": {
+				"total": 1885245600
+			}
+		},
+		{
+			"name": "/file-97",
+			"hits": {
+				"total": 112608
+			},
+			"bandwidth": {
+				"total": 1846771200
+			}
+		},
+		{
+			"name": "/file-96",
+			"hits": {
+				"total": 112608
+			},
+			"bandwidth": {
+				"total": 1846771200
+			}
+		},
+		{
+			"name": "/file-95",
+			"hits": {
+				"total": 110262
+			},
+			"bandwidth": {
+				"total": 1808296800
+			}
+		},
+		{
+			"name": "/file-94",
+			"hits": {
+				"total": 110262
+			},
+			"bandwidth": {
+				"total": 1808296800
+			}
+		},
+		{
+			"name": "/file-93",
+			"hits": {
+				"total": 107916
+			},
+			"bandwidth": {
+				"total": 1769822400
+			}
+		},
+		{
+			"name": "/file-92",
+			"hits": {
+				"total": 107916
+			},
+			"bandwidth": {
+				"total": 1769822400
+			}
+		},
+		{
+			"name": "/file-91",
+			"hits": {
+				"total": 105570
+			},
+			"bandwidth": {
+				"total": 1731348000
+			}
+		},
+		{
+			"name": "/file-90",
+			"hits": {
+				"total": 105570
+			},
+			"bandwidth": {
+				"total": 1731348000
+			}
+		},
+		{
+			"name": "/file-89",
+			"hits": {
+				"total": 103224
+			},
+			"bandwidth": {
+				"total": 1692873600
+			}
+		},
+		{
+			"name": "/file-88",
+			"hits": {
+				"total": 103224
+			},
+			"bandwidth": {
+				"total": 1692873600
+			}
+		},
+		{
+			"name": "/file-87",
+			"hits": {
+				"total": 100878
+			},
+			"bandwidth": {
+				"total": 1654399200
+			}
+		},
+		{
+			"name": "/file-86",
+			"hits": {
+				"total": 100878
+			},
+			"bandwidth": {
+				"total": 1654399200
+			}
+		},
+		{
+			"name": "/file-85",
+			"hits": {
+				"total": 98532
+			},
+			"bandwidth": {
+				"total": 1615924800
+			}
+		},
+		{
+			"name": "/file-84",
+			"hits": {
+				"total": 98532
+			},
+			"bandwidth": {
+				"total": 1615924800
+			}
+		},
+		{
+			"name": "/file-83",
+			"hits": {
+				"total": 96186
+			},
+			"bandwidth": {
+				"total": 1577450400
+			}
+		},
+		{
+			"name": "/file-82",
+			"hits": {
+				"total": 96186
+			},
+			"bandwidth": {
+				"total": 1577450400
+			}
+		},
+		{
+			"name": "/file-81",
+			"hits": {
+				"total": 93840
+			},
+			"bandwidth": {
+				"total": 1538976000
+			}
+		},
+		{
+			"name": "/file-80",
+			"hits": {
+				"total": 93840
+			},
+			"bandwidth": {
+				"total": 1538976000
+			}
+		},
+		{
+			"name": "/file-79",
+			"hits": {
+				"total": 91494
+			},
+			"bandwidth": {
+				"total": 1500501600
+			}
+		},
+		{
+			"name": "/file-78",
+			"hits": {
+				"total": 91494
+			},
+			"bandwidth": {
+				"total": 1500501600
+			}
+		},
+		{
+			"name": "/file-77",
+			"hits": {
+				"total": 89148
+			},
+			"bandwidth": {
+				"total": 1462027200
+			}
+		},
+		{
+			"name": "/file-76",
+			"hits": {
+				"total": 89148
+			},
+			"bandwidth": {
+				"total": 1462027200
+			}
+		},
+		{
+			"name": "/file-75",
+			"hits": {
+				"total": 86802
+			},
+			"bandwidth": {
+				"total": 1423552800
+			}
+		},
+		{
+			"name": "/file-74",
+			"hits": {
+				"total": 86802
+			},
+			"bandwidth": {
+				"total": 1423552800
+			}
+		},
+		{
+			"name": "/file-73",
+			"hits": {
+				"total": 84456
+			},
+			"bandwidth": {
+				"total": 1385078400
+			}
+		},
+		{
+			"name": "/file-72",
+			"hits": {
+				"total": 84456
+			},
+			"bandwidth": {
+				"total": 1385078400
+			}
+		},
+		{
+			"name": "/file-71",
+			"hits": {
+				"total": 82110
+			},
+			"bandwidth": {
+				"total": 1346604000
+			}
+		},
+		{
+			"name": "/file-70",
+			"hits": {
+				"total": 82110
+			},
+			"bandwidth": {
+				"total": 1346604000
+			}
+		},
+		{
+			"name": "/file-69",
+			"hits": {
+				"total": 79764
+			},
+			"bandwidth": {
+				"total": 1308129600
+			}
+		},
+		{
+			"name": "/file-68",
+			"hits": {
+				"total": 79764
+			},
+			"bandwidth": {
+				"total": 1308129600
+			}
+		},
+		{
+			"name": "/file-67",
+			"hits": {
+				"total": 77418
+			},
+			"bandwidth": {
+				"total": 1269655200
+			}
+		},
+		{
+			"name": "/file-66",
+			"hits": {
+				"total": 77418
+			},
+			"bandwidth": {
+				"total": 1269655200
+			}
+		},
+		{
+			"name": "/file-65",
+			"hits": {
+				"total": 75072
+			},
+			"bandwidth": {
+				"total": 1231180800
+			}
+		},
+		{
+			"name": "/file-64",
+			"hits": {
+				"total": 75072
+			},
+			"bandwidth": {
+				"total": 1231180800
+			}
+		},
+		{
+			"name": "/file-63",
+			"hits": {
+				"total": 72726
+			},
+			"bandwidth": {
+				"total": 1192706400
+			}
+		},
+		{
+			"name": "/file-62",
+			"hits": {
+				"total": 72726
+			},
+			"bandwidth": {
+				"total": 1192706400
+			}
+		},
+		{
+			"name": "/file-61",
+			"hits": {
+				"total": 70380
+			},
+			"bandwidth": {
+				"total": 1154232000
+			}
+		},
+		{
+			"name": "/file-60",
+			"hits": {
+				"total": 70380
+			},
+			"bandwidth": {
+				"total": 1154232000
+			}
+		},
+		{
+			"name": "/file-59",
+			"hits": {
+				"total": 68034
+			},
+			"bandwidth": {
+				"total": 1115757600
+			}
+		},
+		{
+			"name": "/file-58",
+			"hits": {
+				"total": 68034
+			},
+			"bandwidth": {
+				"total": 1115757600
+			}
+		},
+		{
+			"name": "/file-57",
+			"hits": {
+				"total": 65688
+			},
+			"bandwidth": {
+				"total": 1077283200
+			}
+		},
+		{
+			"name": "/file-56",
+			"hits": {
+				"total": 65688
+			},
+			"bandwidth": {
+				"total": 1077283200
+			}
+		},
+		{
+			"name": "/file-55",
+			"hits": {
+				"total": 63342
+			},
+			"bandwidth": {
+				"total": 1038808800
+			}
+		},
+		{
+			"name": "/file-54",
+			"hits": {
+				"total": 63342
+			},
+			"bandwidth": {
+				"total": 1038808800
+			}
+		},
+		{
+			"name": "/file-53",
+			"hits": {
+				"total": 60996
+			},
+			"bandwidth": {
+				"total": 1000334400
+			}
+		},
+		{
+			"name": "/file-52",
+			"hits": {
+				"total": 60996
+			},
+			"bandwidth": {
+				"total": 1000334400
+			}
+		},
+		{
+			"name": "/file-51",
+			"hits": {
+				"total": 58650
+			},
+			"bandwidth": {
+				"total": 961860000
+			}
+		},
+		{
+			"name": "/file-50",
+			"hits": {
+				"total": 58650
+			},
+			"bandwidth": {
+				"total": 961860000
+			}
+		},
+		{
+			"name": "/file-49",
+			"hits": {
+				"total": 56304
+			},
+			"bandwidth": {
+				"total": 923385600
+			}
+		},
+		{
+			"name": "/file-48",
+			"hits": {
+				"total": 56304
+			},
+			"bandwidth": {
+				"total": 923385600
+			}
+		},
+		{
+			"name": "/file-47",
+			"hits": {
+				"total": 53958
+			},
+			"bandwidth": {
+				"total": 884911200
+			}
+		},
+		{
+			"name": "/file-46",
+			"hits": {
+				"total": 53958
+			},
+			"bandwidth": {
+				"total": 884911200
+			}
+		},
+		{
+			"name": "/file-45",
+			"hits": {
+				"total": 51612
+			},
+			"bandwidth": {
+				"total": 846436800
+			}
+		},
+		{
+			"name": "/file-44",
+			"hits": {
+				"total": 51612
+			},
+			"bandwidth": {
+				"total": 846436800
+			}
+		},
+		{
+			"name": "/file-43",
+			"hits": {
+				"total": 49266
+			},
+			"bandwidth": {
+				"total": 807962400
+			}
+		},
+		{
+			"name": "/file-42",
+			"hits": {
+				"total": 49266
+			},
+			"bandwidth": {
+				"total": 807962400
+			}
+		},
+		{
+			"name": "/file-41",
+			"hits": {
+				"total": 46920
+			},
+			"bandwidth": {
+				"total": 769488000
+			}
+		},
+		{
+			"name": "/file-40",
+			"hits": {
+				"total": 46920
+			},
+			"bandwidth": {
+				"total": 769488000
+			}
+		},
+		{
+			"name": "/file-39",
+			"hits": {
+				"total": 44574
+			},
+			"bandwidth": {
+				"total": 731013600
+			}
+		},
+		{
+			"name": "/file-38",
+			"hits": {
+				"total": 44574
+			},
+			"bandwidth": {
+				"total": 731013600
+			}
+		},
+		{
+			"name": "/file-37",
+			"hits": {
+				"total": 42228
+			},
+			"bandwidth": {
+				"total": 692539200
+			}
+		},
+		{
+			"name": "/file-36",
+			"hits": {
+				"total": 42228
+			},
+			"bandwidth": {
+				"total": 692539200
+			}
+		},
+		{
+			"name": "/file-35",
+			"hits": {
+				"total": 39882
+			},
+			"bandwidth": {
+				"total": 654064800
+			}
+		},
+		{
+			"name": "/file-34",
+			"hits": {
+				"total": 39882
+			},
+			"bandwidth": {
+				"total": 654064800
+			}
+		},
+		{
+			"name": "/file-33",
+			"hits": {
+				"total": 37536
+			},
+			"bandwidth": {
+				"total": 615590400
+			}
+		},
+		{
+			"name": "/file-32",
+			"hits": {
+				"total": 37536
+			},
+			"bandwidth": {
+				"total": 615590400
+			}
+		},
+		{
+			"name": "/file-31",
+			"hits": {
+				"total": 35190
+			},
+			"bandwidth": {
+				"total": 577116000
+			}
+		},
+		{
+			"name": "/file-30",
+			"hits": {
+				"total": 35190
+			},
+			"bandwidth": {
+				"total": 577116000
+			}
+		},
+		{
+			"name": "/file-29",
+			"hits": {
+				"total": 32844
+			},
+			"bandwidth": {
+				"total": 538641600
+			}
+		},
+		{
+			"name": "/file-28",
+			"hits": {
+				"total": 32844
+			},
+			"bandwidth": {
+				"total": 538641600
+			}
+		},
+		{
+			"name": "/file-27",
+			"hits": {
+				"total": 30498
+			},
+			"bandwidth": {
+				"total": 500167200
+			}
+		},
+		{
+			"name": "/file-26",
+			"hits": {
+				"total": 30498
+			},
+			"bandwidth": {
+				"total": 500167200
+			}
+		},
+		{
+			"name": "/file-25",
+			"hits": {
+				"total": 28152
+			},
+			"bandwidth": {
+				"total": 461692800
+			}
+		},
+		{
+			"name": "/file-24",
+			"hits": {
+				"total": 28152
+			},
+			"bandwidth": {
+				"total": 461692800
+			}
+		},
+		{
+			"name": "/file-23",
+			"hits": {
+				"total": 25806
+			},
+			"bandwidth": {
+				"total": 423218400
+			}
+		},
+		{
+			"name": "/file-22",
+			"hits": {
+				"total": 25806
+			},
+			"bandwidth": {
+				"total": 423218400
+			}
+		},
+		{
+			"name": "/file-21",
+			"hits": {
+				"total": 23460
+			},
+			"bandwidth": {
+				"total": 384744000
+			}
+		},
+		{
+			"name": "/file-20",
+			"hits": {
+				"total": 23460
+			},
+			"bandwidth": {
+				"total": 384744000
+			}
+		},
+		{
+			"name": "/file-19",
+			"hits": {
+				"total": 21114
+			},
+			"bandwidth": {
+				"total": 346269600
+			}
+		},
+		{
+			"name": "/file-18",
+			"hits": {
+				"total": 21114
+			},
+			"bandwidth": {
+				"total": 346269600
+			}
+		},
+		{
+			"name": "/file-17",
+			"hits": {
+				"total": 18768
+			},
+			"bandwidth": {
+				"total": 307795200
+			}
+		},
+		{
+			"name": "/file-16",
+			"hits": {
+				"total": 18768
+			},
+			"bandwidth": {
+				"total": 307795200
+			}
+		},
+		{
+			"name": "/file-15",
+			"hits": {
+				"total": 16422
+			},
+			"bandwidth": {
+				"total": 269320800
+			}
+		},
+		{
+			"name": "/file-14",
+			"hits": {
+				"total": 16422
+			},
+			"bandwidth": {
+				"total": 269320800
+			}
+		},
+		{
+			"name": "/file-13",
+			"hits": {
+				"total": 14076
+			},
+			"bandwidth": {
+				"total": 230846400
+			}
+		},
+		{
+			"name": "/file-12",
+			"hits": {
+				"total": 14076
+			},
+			"bandwidth": {
+				"total": 230846400
+			}
+		},
+		{
+			"name": "/file-11",
+			"hits": {
+				"total": 11730
+			},
+			"bandwidth": {
+				"total": 192372000
+			}
+		}
+	],
 	"/v1/stats/proxies/wp-plugins/files?by=bandwidth&period=s-month": [
 		{
 			"name": "/file-110",
@@ -4507,6 +6311,908 @@
 			},
 			"bandwidth": {
 				"total": 124230000
+			}
+		}
+	],
+	"/v1/stats/proxies/wp-plugins/files?by=bandwidth&period=s-quarter": [
+		{
+			"name": "/file-110",
+			"hits": {
+				"total": 117975
+			},
+			"bandwidth": {
+				"total": 1934790000
+			}
+		},
+		{
+			"name": "/file-109",
+			"hits": {
+				"total": 115830
+			},
+			"bandwidth": {
+				"total": 1899612000
+			}
+		},
+		{
+			"name": "/file-108",
+			"hits": {
+				"total": 115830
+			},
+			"bandwidth": {
+				"total": 1899612000
+			}
+		},
+		{
+			"name": "/file-107",
+			"hits": {
+				"total": 113685
+			},
+			"bandwidth": {
+				"total": 1864434000
+			}
+		},
+		{
+			"name": "/file-106",
+			"hits": {
+				"total": 113685
+			},
+			"bandwidth": {
+				"total": 1864434000
+			}
+		},
+		{
+			"name": "/file-105",
+			"hits": {
+				"total": 111540
+			},
+			"bandwidth": {
+				"total": 1829256000
+			}
+		},
+		{
+			"name": "/file-104",
+			"hits": {
+				"total": 111540
+			},
+			"bandwidth": {
+				"total": 1829256000
+			}
+		},
+		{
+			"name": "/file-103",
+			"hits": {
+				"total": 109395
+			},
+			"bandwidth": {
+				"total": 1794078000
+			}
+		},
+		{
+			"name": "/file-102",
+			"hits": {
+				"total": 109395
+			},
+			"bandwidth": {
+				"total": 1794078000
+			}
+		},
+		{
+			"name": "/file-101",
+			"hits": {
+				"total": 107250
+			},
+			"bandwidth": {
+				"total": 1758900000
+			}
+		},
+		{
+			"name": "/file-100",
+			"hits": {
+				"total": 107250
+			},
+			"bandwidth": {
+				"total": 1758900000
+			}
+		},
+		{
+			"name": "/file-99",
+			"hits": {
+				"total": 105105
+			},
+			"bandwidth": {
+				"total": 1723722000
+			}
+		},
+		{
+			"name": "/file-98",
+			"hits": {
+				"total": 105105
+			},
+			"bandwidth": {
+				"total": 1723722000
+			}
+		},
+		{
+			"name": "/file-97",
+			"hits": {
+				"total": 102960
+			},
+			"bandwidth": {
+				"total": 1688544000
+			}
+		},
+		{
+			"name": "/file-96",
+			"hits": {
+				"total": 102960
+			},
+			"bandwidth": {
+				"total": 1688544000
+			}
+		},
+		{
+			"name": "/file-95",
+			"hits": {
+				"total": 100815
+			},
+			"bandwidth": {
+				"total": 1653366000
+			}
+		},
+		{
+			"name": "/file-94",
+			"hits": {
+				"total": 100815
+			},
+			"bandwidth": {
+				"total": 1653366000
+			}
+		},
+		{
+			"name": "/file-93",
+			"hits": {
+				"total": 98670
+			},
+			"bandwidth": {
+				"total": 1618188000
+			}
+		},
+		{
+			"name": "/file-92",
+			"hits": {
+				"total": 98670
+			},
+			"bandwidth": {
+				"total": 1618188000
+			}
+		},
+		{
+			"name": "/file-91",
+			"hits": {
+				"total": 96525
+			},
+			"bandwidth": {
+				"total": 1583010000
+			}
+		},
+		{
+			"name": "/file-90",
+			"hits": {
+				"total": 96525
+			},
+			"bandwidth": {
+				"total": 1583010000
+			}
+		},
+		{
+			"name": "/file-89",
+			"hits": {
+				"total": 94380
+			},
+			"bandwidth": {
+				"total": 1547832000
+			}
+		},
+		{
+			"name": "/file-88",
+			"hits": {
+				"total": 94380
+			},
+			"bandwidth": {
+				"total": 1547832000
+			}
+		},
+		{
+			"name": "/file-87",
+			"hits": {
+				"total": 92235
+			},
+			"bandwidth": {
+				"total": 1512654000
+			}
+		},
+		{
+			"name": "/file-86",
+			"hits": {
+				"total": 92235
+			},
+			"bandwidth": {
+				"total": 1512654000
+			}
+		},
+		{
+			"name": "/file-85",
+			"hits": {
+				"total": 90090
+			},
+			"bandwidth": {
+				"total": 1477476000
+			}
+		},
+		{
+			"name": "/file-84",
+			"hits": {
+				"total": 90090
+			},
+			"bandwidth": {
+				"total": 1477476000
+			}
+		},
+		{
+			"name": "/file-83",
+			"hits": {
+				"total": 87945
+			},
+			"bandwidth": {
+				"total": 1442298000
+			}
+		},
+		{
+			"name": "/file-82",
+			"hits": {
+				"total": 87945
+			},
+			"bandwidth": {
+				"total": 1442298000
+			}
+		},
+		{
+			"name": "/file-81",
+			"hits": {
+				"total": 85800
+			},
+			"bandwidth": {
+				"total": 1407120000
+			}
+		},
+		{
+			"name": "/file-80",
+			"hits": {
+				"total": 85800
+			},
+			"bandwidth": {
+				"total": 1407120000
+			}
+		},
+		{
+			"name": "/file-79",
+			"hits": {
+				"total": 83655
+			},
+			"bandwidth": {
+				"total": 1371942000
+			}
+		},
+		{
+			"name": "/file-78",
+			"hits": {
+				"total": 83655
+			},
+			"bandwidth": {
+				"total": 1371942000
+			}
+		},
+		{
+			"name": "/file-77",
+			"hits": {
+				"total": 81510
+			},
+			"bandwidth": {
+				"total": 1336764000
+			}
+		},
+		{
+			"name": "/file-76",
+			"hits": {
+				"total": 81510
+			},
+			"bandwidth": {
+				"total": 1336764000
+			}
+		},
+		{
+			"name": "/file-75",
+			"hits": {
+				"total": 79365
+			},
+			"bandwidth": {
+				"total": 1301586000
+			}
+		},
+		{
+			"name": "/file-74",
+			"hits": {
+				"total": 79365
+			},
+			"bandwidth": {
+				"total": 1301586000
+			}
+		},
+		{
+			"name": "/file-73",
+			"hits": {
+				"total": 77220
+			},
+			"bandwidth": {
+				"total": 1266408000
+			}
+		},
+		{
+			"name": "/file-72",
+			"hits": {
+				"total": 77220
+			},
+			"bandwidth": {
+				"total": 1266408000
+			}
+		},
+		{
+			"name": "/file-71",
+			"hits": {
+				"total": 75075
+			},
+			"bandwidth": {
+				"total": 1231230000
+			}
+		},
+		{
+			"name": "/file-70",
+			"hits": {
+				"total": 75075
+			},
+			"bandwidth": {
+				"total": 1231230000
+			}
+		},
+		{
+			"name": "/file-69",
+			"hits": {
+				"total": 72930
+			},
+			"bandwidth": {
+				"total": 1196052000
+			}
+		},
+		{
+			"name": "/file-68",
+			"hits": {
+				"total": 72930
+			},
+			"bandwidth": {
+				"total": 1196052000
+			}
+		},
+		{
+			"name": "/file-67",
+			"hits": {
+				"total": 70785
+			},
+			"bandwidth": {
+				"total": 1160874000
+			}
+		},
+		{
+			"name": "/file-66",
+			"hits": {
+				"total": 70785
+			},
+			"bandwidth": {
+				"total": 1160874000
+			}
+		},
+		{
+			"name": "/file-65",
+			"hits": {
+				"total": 68640
+			},
+			"bandwidth": {
+				"total": 1125696000
+			}
+		},
+		{
+			"name": "/file-64",
+			"hits": {
+				"total": 68640
+			},
+			"bandwidth": {
+				"total": 1125696000
+			}
+		},
+		{
+			"name": "/file-63",
+			"hits": {
+				"total": 66495
+			},
+			"bandwidth": {
+				"total": 1090518000
+			}
+		},
+		{
+			"name": "/file-62",
+			"hits": {
+				"total": 66495
+			},
+			"bandwidth": {
+				"total": 1090518000
+			}
+		},
+		{
+			"name": "/file-61",
+			"hits": {
+				"total": 64350
+			},
+			"bandwidth": {
+				"total": 1055340000
+			}
+		},
+		{
+			"name": "/file-60",
+			"hits": {
+				"total": 64350
+			},
+			"bandwidth": {
+				"total": 1055340000
+			}
+		},
+		{
+			"name": "/file-59",
+			"hits": {
+				"total": 62205
+			},
+			"bandwidth": {
+				"total": 1020162000
+			}
+		},
+		{
+			"name": "/file-58",
+			"hits": {
+				"total": 62205
+			},
+			"bandwidth": {
+				"total": 1020162000
+			}
+		},
+		{
+			"name": "/file-57",
+			"hits": {
+				"total": 60060
+			},
+			"bandwidth": {
+				"total": 984984000
+			}
+		},
+		{
+			"name": "/file-56",
+			"hits": {
+				"total": 60060
+			},
+			"bandwidth": {
+				"total": 984984000
+			}
+		},
+		{
+			"name": "/file-55",
+			"hits": {
+				"total": 57915
+			},
+			"bandwidth": {
+				"total": 949806000
+			}
+		},
+		{
+			"name": "/file-54",
+			"hits": {
+				"total": 57915
+			},
+			"bandwidth": {
+				"total": 949806000
+			}
+		},
+		{
+			"name": "/file-53",
+			"hits": {
+				"total": 55770
+			},
+			"bandwidth": {
+				"total": 914628000
+			}
+		},
+		{
+			"name": "/file-52",
+			"hits": {
+				"total": 55770
+			},
+			"bandwidth": {
+				"total": 914628000
+			}
+		},
+		{
+			"name": "/file-51",
+			"hits": {
+				"total": 53625
+			},
+			"bandwidth": {
+				"total": 879450000
+			}
+		},
+		{
+			"name": "/file-50",
+			"hits": {
+				"total": 53625
+			},
+			"bandwidth": {
+				"total": 879450000
+			}
+		},
+		{
+			"name": "/file-49",
+			"hits": {
+				"total": 51480
+			},
+			"bandwidth": {
+				"total": 844272000
+			}
+		},
+		{
+			"name": "/file-48",
+			"hits": {
+				"total": 51480
+			},
+			"bandwidth": {
+				"total": 844272000
+			}
+		},
+		{
+			"name": "/file-47",
+			"hits": {
+				"total": 49335
+			},
+			"bandwidth": {
+				"total": 809094000
+			}
+		},
+		{
+			"name": "/file-46",
+			"hits": {
+				"total": 49335
+			},
+			"bandwidth": {
+				"total": 809094000
+			}
+		},
+		{
+			"name": "/file-45",
+			"hits": {
+				"total": 47190
+			},
+			"bandwidth": {
+				"total": 773916000
+			}
+		},
+		{
+			"name": "/file-44",
+			"hits": {
+				"total": 47190
+			},
+			"bandwidth": {
+				"total": 773916000
+			}
+		},
+		{
+			"name": "/file-43",
+			"hits": {
+				"total": 45045
+			},
+			"bandwidth": {
+				"total": 738738000
+			}
+		},
+		{
+			"name": "/file-42",
+			"hits": {
+				"total": 45045
+			},
+			"bandwidth": {
+				"total": 738738000
+			}
+		},
+		{
+			"name": "/file-41",
+			"hits": {
+				"total": 42900
+			},
+			"bandwidth": {
+				"total": 703560000
+			}
+		},
+		{
+			"name": "/file-40",
+			"hits": {
+				"total": 42900
+			},
+			"bandwidth": {
+				"total": 703560000
+			}
+		},
+		{
+			"name": "/file-39",
+			"hits": {
+				"total": 40755
+			},
+			"bandwidth": {
+				"total": 668382000
+			}
+		},
+		{
+			"name": "/file-38",
+			"hits": {
+				"total": 40755
+			},
+			"bandwidth": {
+				"total": 668382000
+			}
+		},
+		{
+			"name": "/file-37",
+			"hits": {
+				"total": 38610
+			},
+			"bandwidth": {
+				"total": 633204000
+			}
+		},
+		{
+			"name": "/file-36",
+			"hits": {
+				"total": 38610
+			},
+			"bandwidth": {
+				"total": 633204000
+			}
+		},
+		{
+			"name": "/file-35",
+			"hits": {
+				"total": 36465
+			},
+			"bandwidth": {
+				"total": 598026000
+			}
+		},
+		{
+			"name": "/file-34",
+			"hits": {
+				"total": 36465
+			},
+			"bandwidth": {
+				"total": 598026000
+			}
+		},
+		{
+			"name": "/file-33",
+			"hits": {
+				"total": 34320
+			},
+			"bandwidth": {
+				"total": 562848000
+			}
+		},
+		{
+			"name": "/file-32",
+			"hits": {
+				"total": 34320
+			},
+			"bandwidth": {
+				"total": 562848000
+			}
+		},
+		{
+			"name": "/file-31",
+			"hits": {
+				"total": 32175
+			},
+			"bandwidth": {
+				"total": 527670000
+			}
+		},
+		{
+			"name": "/file-30",
+			"hits": {
+				"total": 32175
+			},
+			"bandwidth": {
+				"total": 527670000
+			}
+		},
+		{
+			"name": "/file-29",
+			"hits": {
+				"total": 30030
+			},
+			"bandwidth": {
+				"total": 492492000
+			}
+		},
+		{
+			"name": "/file-28",
+			"hits": {
+				"total": 30030
+			},
+			"bandwidth": {
+				"total": 492492000
+			}
+		},
+		{
+			"name": "/file-27",
+			"hits": {
+				"total": 27885
+			},
+			"bandwidth": {
+				"total": 457314000
+			}
+		},
+		{
+			"name": "/file-26",
+			"hits": {
+				"total": 27885
+			},
+			"bandwidth": {
+				"total": 457314000
+			}
+		},
+		{
+			"name": "/file-25",
+			"hits": {
+				"total": 25740
+			},
+			"bandwidth": {
+				"total": 422136000
+			}
+		},
+		{
+			"name": "/file-24",
+			"hits": {
+				"total": 25740
+			},
+			"bandwidth": {
+				"total": 422136000
+			}
+		},
+		{
+			"name": "/file-23",
+			"hits": {
+				"total": 23595
+			},
+			"bandwidth": {
+				"total": 386958000
+			}
+		},
+		{
+			"name": "/file-22",
+			"hits": {
+				"total": 23595
+			},
+			"bandwidth": {
+				"total": 386958000
+			}
+		},
+		{
+			"name": "/file-21",
+			"hits": {
+				"total": 21450
+			},
+			"bandwidth": {
+				"total": 351780000
+			}
+		},
+		{
+			"name": "/file-20",
+			"hits": {
+				"total": 21450
+			},
+			"bandwidth": {
+				"total": 351780000
+			}
+		},
+		{
+			"name": "/file-19",
+			"hits": {
+				"total": 19305
+			},
+			"bandwidth": {
+				"total": 316602000
+			}
+		},
+		{
+			"name": "/file-18",
+			"hits": {
+				"total": 19305
+			},
+			"bandwidth": {
+				"total": 316602000
+			}
+		},
+		{
+			"name": "/file-17",
+			"hits": {
+				"total": 17160
+			},
+			"bandwidth": {
+				"total": 281424000
+			}
+		},
+		{
+			"name": "/file-16",
+			"hits": {
+				"total": 17160
+			},
+			"bandwidth": {
+				"total": 281424000
+			}
+		},
+		{
+			"name": "/file-15",
+			"hits": {
+				"total": 15015
+			},
+			"bandwidth": {
+				"total": 246246000
+			}
+		},
+		{
+			"name": "/file-14",
+			"hits": {
+				"total": 15015
+			},
+			"bandwidth": {
+				"total": 246246000
+			}
+		},
+		{
+			"name": "/file-13",
+			"hits": {
+				"total": 12870
+			},
+			"bandwidth": {
+				"total": 211068000
+			}
+		},
+		{
+			"name": "/file-12",
+			"hits": {
+				"total": 12870
+			},
+			"bandwidth": {
+				"total": 211068000
+			}
+		},
+		{
+			"name": "/file-11",
+			"hits": {
+				"total": 10725
+			},
+			"bandwidth": {
+				"total": 175890000
 			}
 		}
 	],
@@ -7218,6 +9924,908 @@
 			}
 		}
 	],
+	"/v1/stats/proxies/wp-plugins/files?by=hits&period=2022-Q2": [
+		{
+			"name": "/file-110",
+			"hits": {
+				"total": 117975
+			},
+			"bandwidth": {
+				"total": 1934790000
+			}
+		},
+		{
+			"name": "/file-109",
+			"hits": {
+				"total": 115830
+			},
+			"bandwidth": {
+				"total": 1899612000
+			}
+		},
+		{
+			"name": "/file-108",
+			"hits": {
+				"total": 115830
+			},
+			"bandwidth": {
+				"total": 1899612000
+			}
+		},
+		{
+			"name": "/file-107",
+			"hits": {
+				"total": 113685
+			},
+			"bandwidth": {
+				"total": 1864434000
+			}
+		},
+		{
+			"name": "/file-106",
+			"hits": {
+				"total": 113685
+			},
+			"bandwidth": {
+				"total": 1864434000
+			}
+		},
+		{
+			"name": "/file-105",
+			"hits": {
+				"total": 111540
+			},
+			"bandwidth": {
+				"total": 1829256000
+			}
+		},
+		{
+			"name": "/file-104",
+			"hits": {
+				"total": 111540
+			},
+			"bandwidth": {
+				"total": 1829256000
+			}
+		},
+		{
+			"name": "/file-103",
+			"hits": {
+				"total": 109395
+			},
+			"bandwidth": {
+				"total": 1794078000
+			}
+		},
+		{
+			"name": "/file-102",
+			"hits": {
+				"total": 109395
+			},
+			"bandwidth": {
+				"total": 1794078000
+			}
+		},
+		{
+			"name": "/file-101",
+			"hits": {
+				"total": 107250
+			},
+			"bandwidth": {
+				"total": 1758900000
+			}
+		},
+		{
+			"name": "/file-100",
+			"hits": {
+				"total": 107250
+			},
+			"bandwidth": {
+				"total": 1758900000
+			}
+		},
+		{
+			"name": "/file-99",
+			"hits": {
+				"total": 105105
+			},
+			"bandwidth": {
+				"total": 1723722000
+			}
+		},
+		{
+			"name": "/file-98",
+			"hits": {
+				"total": 105105
+			},
+			"bandwidth": {
+				"total": 1723722000
+			}
+		},
+		{
+			"name": "/file-97",
+			"hits": {
+				"total": 102960
+			},
+			"bandwidth": {
+				"total": 1688544000
+			}
+		},
+		{
+			"name": "/file-96",
+			"hits": {
+				"total": 102960
+			},
+			"bandwidth": {
+				"total": 1688544000
+			}
+		},
+		{
+			"name": "/file-95",
+			"hits": {
+				"total": 100815
+			},
+			"bandwidth": {
+				"total": 1653366000
+			}
+		},
+		{
+			"name": "/file-94",
+			"hits": {
+				"total": 100815
+			},
+			"bandwidth": {
+				"total": 1653366000
+			}
+		},
+		{
+			"name": "/file-93",
+			"hits": {
+				"total": 98670
+			},
+			"bandwidth": {
+				"total": 1618188000
+			}
+		},
+		{
+			"name": "/file-92",
+			"hits": {
+				"total": 98670
+			},
+			"bandwidth": {
+				"total": 1618188000
+			}
+		},
+		{
+			"name": "/file-91",
+			"hits": {
+				"total": 96525
+			},
+			"bandwidth": {
+				"total": 1583010000
+			}
+		},
+		{
+			"name": "/file-90",
+			"hits": {
+				"total": 96525
+			},
+			"bandwidth": {
+				"total": 1583010000
+			}
+		},
+		{
+			"name": "/file-89",
+			"hits": {
+				"total": 94380
+			},
+			"bandwidth": {
+				"total": 1547832000
+			}
+		},
+		{
+			"name": "/file-88",
+			"hits": {
+				"total": 94380
+			},
+			"bandwidth": {
+				"total": 1547832000
+			}
+		},
+		{
+			"name": "/file-87",
+			"hits": {
+				"total": 92235
+			},
+			"bandwidth": {
+				"total": 1512654000
+			}
+		},
+		{
+			"name": "/file-86",
+			"hits": {
+				"total": 92235
+			},
+			"bandwidth": {
+				"total": 1512654000
+			}
+		},
+		{
+			"name": "/file-85",
+			"hits": {
+				"total": 90090
+			},
+			"bandwidth": {
+				"total": 1477476000
+			}
+		},
+		{
+			"name": "/file-84",
+			"hits": {
+				"total": 90090
+			},
+			"bandwidth": {
+				"total": 1477476000
+			}
+		},
+		{
+			"name": "/file-83",
+			"hits": {
+				"total": 87945
+			},
+			"bandwidth": {
+				"total": 1442298000
+			}
+		},
+		{
+			"name": "/file-82",
+			"hits": {
+				"total": 87945
+			},
+			"bandwidth": {
+				"total": 1442298000
+			}
+		},
+		{
+			"name": "/file-81",
+			"hits": {
+				"total": 85800
+			},
+			"bandwidth": {
+				"total": 1407120000
+			}
+		},
+		{
+			"name": "/file-80",
+			"hits": {
+				"total": 85800
+			},
+			"bandwidth": {
+				"total": 1407120000
+			}
+		},
+		{
+			"name": "/file-79",
+			"hits": {
+				"total": 83655
+			},
+			"bandwidth": {
+				"total": 1371942000
+			}
+		},
+		{
+			"name": "/file-78",
+			"hits": {
+				"total": 83655
+			},
+			"bandwidth": {
+				"total": 1371942000
+			}
+		},
+		{
+			"name": "/file-77",
+			"hits": {
+				"total": 81510
+			},
+			"bandwidth": {
+				"total": 1336764000
+			}
+		},
+		{
+			"name": "/file-76",
+			"hits": {
+				"total": 81510
+			},
+			"bandwidth": {
+				"total": 1336764000
+			}
+		},
+		{
+			"name": "/file-75",
+			"hits": {
+				"total": 79365
+			},
+			"bandwidth": {
+				"total": 1301586000
+			}
+		},
+		{
+			"name": "/file-74",
+			"hits": {
+				"total": 79365
+			},
+			"bandwidth": {
+				"total": 1301586000
+			}
+		},
+		{
+			"name": "/file-73",
+			"hits": {
+				"total": 77220
+			},
+			"bandwidth": {
+				"total": 1266408000
+			}
+		},
+		{
+			"name": "/file-72",
+			"hits": {
+				"total": 77220
+			},
+			"bandwidth": {
+				"total": 1266408000
+			}
+		},
+		{
+			"name": "/file-71",
+			"hits": {
+				"total": 75075
+			},
+			"bandwidth": {
+				"total": 1231230000
+			}
+		},
+		{
+			"name": "/file-70",
+			"hits": {
+				"total": 75075
+			},
+			"bandwidth": {
+				"total": 1231230000
+			}
+		},
+		{
+			"name": "/file-69",
+			"hits": {
+				"total": 72930
+			},
+			"bandwidth": {
+				"total": 1196052000
+			}
+		},
+		{
+			"name": "/file-68",
+			"hits": {
+				"total": 72930
+			},
+			"bandwidth": {
+				"total": 1196052000
+			}
+		},
+		{
+			"name": "/file-67",
+			"hits": {
+				"total": 70785
+			},
+			"bandwidth": {
+				"total": 1160874000
+			}
+		},
+		{
+			"name": "/file-66",
+			"hits": {
+				"total": 70785
+			},
+			"bandwidth": {
+				"total": 1160874000
+			}
+		},
+		{
+			"name": "/file-65",
+			"hits": {
+				"total": 68640
+			},
+			"bandwidth": {
+				"total": 1125696000
+			}
+		},
+		{
+			"name": "/file-64",
+			"hits": {
+				"total": 68640
+			},
+			"bandwidth": {
+				"total": 1125696000
+			}
+		},
+		{
+			"name": "/file-63",
+			"hits": {
+				"total": 66495
+			},
+			"bandwidth": {
+				"total": 1090518000
+			}
+		},
+		{
+			"name": "/file-62",
+			"hits": {
+				"total": 66495
+			},
+			"bandwidth": {
+				"total": 1090518000
+			}
+		},
+		{
+			"name": "/file-61",
+			"hits": {
+				"total": 64350
+			},
+			"bandwidth": {
+				"total": 1055340000
+			}
+		},
+		{
+			"name": "/file-60",
+			"hits": {
+				"total": 64350
+			},
+			"bandwidth": {
+				"total": 1055340000
+			}
+		},
+		{
+			"name": "/file-59",
+			"hits": {
+				"total": 62205
+			},
+			"bandwidth": {
+				"total": 1020162000
+			}
+		},
+		{
+			"name": "/file-58",
+			"hits": {
+				"total": 62205
+			},
+			"bandwidth": {
+				"total": 1020162000
+			}
+		},
+		{
+			"name": "/file-57",
+			"hits": {
+				"total": 60060
+			},
+			"bandwidth": {
+				"total": 984984000
+			}
+		},
+		{
+			"name": "/file-56",
+			"hits": {
+				"total": 60060
+			},
+			"bandwidth": {
+				"total": 984984000
+			}
+		},
+		{
+			"name": "/file-55",
+			"hits": {
+				"total": 57915
+			},
+			"bandwidth": {
+				"total": 949806000
+			}
+		},
+		{
+			"name": "/file-54",
+			"hits": {
+				"total": 57915
+			},
+			"bandwidth": {
+				"total": 949806000
+			}
+		},
+		{
+			"name": "/file-53",
+			"hits": {
+				"total": 55770
+			},
+			"bandwidth": {
+				"total": 914628000
+			}
+		},
+		{
+			"name": "/file-52",
+			"hits": {
+				"total": 55770
+			},
+			"bandwidth": {
+				"total": 914628000
+			}
+		},
+		{
+			"name": "/file-51",
+			"hits": {
+				"total": 53625
+			},
+			"bandwidth": {
+				"total": 879450000
+			}
+		},
+		{
+			"name": "/file-50",
+			"hits": {
+				"total": 53625
+			},
+			"bandwidth": {
+				"total": 879450000
+			}
+		},
+		{
+			"name": "/file-49",
+			"hits": {
+				"total": 51480
+			},
+			"bandwidth": {
+				"total": 844272000
+			}
+		},
+		{
+			"name": "/file-48",
+			"hits": {
+				"total": 51480
+			},
+			"bandwidth": {
+				"total": 844272000
+			}
+		},
+		{
+			"name": "/file-47",
+			"hits": {
+				"total": 49335
+			},
+			"bandwidth": {
+				"total": 809094000
+			}
+		},
+		{
+			"name": "/file-46",
+			"hits": {
+				"total": 49335
+			},
+			"bandwidth": {
+				"total": 809094000
+			}
+		},
+		{
+			"name": "/file-45",
+			"hits": {
+				"total": 47190
+			},
+			"bandwidth": {
+				"total": 773916000
+			}
+		},
+		{
+			"name": "/file-44",
+			"hits": {
+				"total": 47190
+			},
+			"bandwidth": {
+				"total": 773916000
+			}
+		},
+		{
+			"name": "/file-43",
+			"hits": {
+				"total": 45045
+			},
+			"bandwidth": {
+				"total": 738738000
+			}
+		},
+		{
+			"name": "/file-42",
+			"hits": {
+				"total": 45045
+			},
+			"bandwidth": {
+				"total": 738738000
+			}
+		},
+		{
+			"name": "/file-41",
+			"hits": {
+				"total": 42900
+			},
+			"bandwidth": {
+				"total": 703560000
+			}
+		},
+		{
+			"name": "/file-40",
+			"hits": {
+				"total": 42900
+			},
+			"bandwidth": {
+				"total": 703560000
+			}
+		},
+		{
+			"name": "/file-39",
+			"hits": {
+				"total": 40755
+			},
+			"bandwidth": {
+				"total": 668382000
+			}
+		},
+		{
+			"name": "/file-38",
+			"hits": {
+				"total": 40755
+			},
+			"bandwidth": {
+				"total": 668382000
+			}
+		},
+		{
+			"name": "/file-37",
+			"hits": {
+				"total": 38610
+			},
+			"bandwidth": {
+				"total": 633204000
+			}
+		},
+		{
+			"name": "/file-36",
+			"hits": {
+				"total": 38610
+			},
+			"bandwidth": {
+				"total": 633204000
+			}
+		},
+		{
+			"name": "/file-35",
+			"hits": {
+				"total": 36465
+			},
+			"bandwidth": {
+				"total": 598026000
+			}
+		},
+		{
+			"name": "/file-34",
+			"hits": {
+				"total": 36465
+			},
+			"bandwidth": {
+				"total": 598026000
+			}
+		},
+		{
+			"name": "/file-33",
+			"hits": {
+				"total": 34320
+			},
+			"bandwidth": {
+				"total": 562848000
+			}
+		},
+		{
+			"name": "/file-32",
+			"hits": {
+				"total": 34320
+			},
+			"bandwidth": {
+				"total": 562848000
+			}
+		},
+		{
+			"name": "/file-31",
+			"hits": {
+				"total": 32175
+			},
+			"bandwidth": {
+				"total": 527670000
+			}
+		},
+		{
+			"name": "/file-30",
+			"hits": {
+				"total": 32175
+			},
+			"bandwidth": {
+				"total": 527670000
+			}
+		},
+		{
+			"name": "/file-29",
+			"hits": {
+				"total": 30030
+			},
+			"bandwidth": {
+				"total": 492492000
+			}
+		},
+		{
+			"name": "/file-28",
+			"hits": {
+				"total": 30030
+			},
+			"bandwidth": {
+				"total": 492492000
+			}
+		},
+		{
+			"name": "/file-27",
+			"hits": {
+				"total": 27885
+			},
+			"bandwidth": {
+				"total": 457314000
+			}
+		},
+		{
+			"name": "/file-26",
+			"hits": {
+				"total": 27885
+			},
+			"bandwidth": {
+				"total": 457314000
+			}
+		},
+		{
+			"name": "/file-25",
+			"hits": {
+				"total": 25740
+			},
+			"bandwidth": {
+				"total": 422136000
+			}
+		},
+		{
+			"name": "/file-24",
+			"hits": {
+				"total": 25740
+			},
+			"bandwidth": {
+				"total": 422136000
+			}
+		},
+		{
+			"name": "/file-23",
+			"hits": {
+				"total": 23595
+			},
+			"bandwidth": {
+				"total": 386958000
+			}
+		},
+		{
+			"name": "/file-22",
+			"hits": {
+				"total": 23595
+			},
+			"bandwidth": {
+				"total": 386958000
+			}
+		},
+		{
+			"name": "/file-21",
+			"hits": {
+				"total": 21450
+			},
+			"bandwidth": {
+				"total": 351780000
+			}
+		},
+		{
+			"name": "/file-20",
+			"hits": {
+				"total": 21450
+			},
+			"bandwidth": {
+				"total": 351780000
+			}
+		},
+		{
+			"name": "/file-19",
+			"hits": {
+				"total": 19305
+			},
+			"bandwidth": {
+				"total": 316602000
+			}
+		},
+		{
+			"name": "/file-18",
+			"hits": {
+				"total": 19305
+			},
+			"bandwidth": {
+				"total": 316602000
+			}
+		},
+		{
+			"name": "/file-17",
+			"hits": {
+				"total": 17160
+			},
+			"bandwidth": {
+				"total": 281424000
+			}
+		},
+		{
+			"name": "/file-16",
+			"hits": {
+				"total": 17160
+			},
+			"bandwidth": {
+				"total": 281424000
+			}
+		},
+		{
+			"name": "/file-15",
+			"hits": {
+				"total": 15015
+			},
+			"bandwidth": {
+				"total": 246246000
+			}
+		},
+		{
+			"name": "/file-14",
+			"hits": {
+				"total": 15015
+			},
+			"bandwidth": {
+				"total": 246246000
+			}
+		},
+		{
+			"name": "/file-13",
+			"hits": {
+				"total": 12870
+			},
+			"bandwidth": {
+				"total": 211068000
+			}
+		},
+		{
+			"name": "/file-12",
+			"hits": {
+				"total": 12870
+			},
+			"bandwidth": {
+				"total": 211068000
+			}
+		},
+		{
+			"name": "/file-11",
+			"hits": {
+				"total": 10725
+			},
+			"bandwidth": {
+				"total": 175890000
+			}
+		}
+	],
 	"/v1/stats/proxies/wp-plugins/files?by=hits&period=all": [
 		{
 			"name": "/file-110",
@@ -9924,6 +13532,908 @@
 			}
 		}
 	],
+	"/v1/stats/proxies/wp-plugins/files?by=hits&period=quarter": [
+		{
+			"name": "/file-110",
+			"hits": {
+				"total": 129030
+			},
+			"bandwidth": {
+				"total": 2116092000
+			}
+		},
+		{
+			"name": "/file-109",
+			"hits": {
+				"total": 126684
+			},
+			"bandwidth": {
+				"total": 2077617600
+			}
+		},
+		{
+			"name": "/file-108",
+			"hits": {
+				"total": 126684
+			},
+			"bandwidth": {
+				"total": 2077617600
+			}
+		},
+		{
+			"name": "/file-107",
+			"hits": {
+				"total": 124338
+			},
+			"bandwidth": {
+				"total": 2039143200
+			}
+		},
+		{
+			"name": "/file-106",
+			"hits": {
+				"total": 124338
+			},
+			"bandwidth": {
+				"total": 2039143200
+			}
+		},
+		{
+			"name": "/file-105",
+			"hits": {
+				"total": 121992
+			},
+			"bandwidth": {
+				"total": 2000668800
+			}
+		},
+		{
+			"name": "/file-104",
+			"hits": {
+				"total": 121992
+			},
+			"bandwidth": {
+				"total": 2000668800
+			}
+		},
+		{
+			"name": "/file-103",
+			"hits": {
+				"total": 119646
+			},
+			"bandwidth": {
+				"total": 1962194400
+			}
+		},
+		{
+			"name": "/file-102",
+			"hits": {
+				"total": 119646
+			},
+			"bandwidth": {
+				"total": 1962194400
+			}
+		},
+		{
+			"name": "/file-101",
+			"hits": {
+				"total": 117300
+			},
+			"bandwidth": {
+				"total": 1923720000
+			}
+		},
+		{
+			"name": "/file-100",
+			"hits": {
+				"total": 117300
+			},
+			"bandwidth": {
+				"total": 1923720000
+			}
+		},
+		{
+			"name": "/file-99",
+			"hits": {
+				"total": 114954
+			},
+			"bandwidth": {
+				"total": 1885245600
+			}
+		},
+		{
+			"name": "/file-98",
+			"hits": {
+				"total": 114954
+			},
+			"bandwidth": {
+				"total": 1885245600
+			}
+		},
+		{
+			"name": "/file-97",
+			"hits": {
+				"total": 112608
+			},
+			"bandwidth": {
+				"total": 1846771200
+			}
+		},
+		{
+			"name": "/file-96",
+			"hits": {
+				"total": 112608
+			},
+			"bandwidth": {
+				"total": 1846771200
+			}
+		},
+		{
+			"name": "/file-95",
+			"hits": {
+				"total": 110262
+			},
+			"bandwidth": {
+				"total": 1808296800
+			}
+		},
+		{
+			"name": "/file-94",
+			"hits": {
+				"total": 110262
+			},
+			"bandwidth": {
+				"total": 1808296800
+			}
+		},
+		{
+			"name": "/file-93",
+			"hits": {
+				"total": 107916
+			},
+			"bandwidth": {
+				"total": 1769822400
+			}
+		},
+		{
+			"name": "/file-92",
+			"hits": {
+				"total": 107916
+			},
+			"bandwidth": {
+				"total": 1769822400
+			}
+		},
+		{
+			"name": "/file-91",
+			"hits": {
+				"total": 105570
+			},
+			"bandwidth": {
+				"total": 1731348000
+			}
+		},
+		{
+			"name": "/file-90",
+			"hits": {
+				"total": 105570
+			},
+			"bandwidth": {
+				"total": 1731348000
+			}
+		},
+		{
+			"name": "/file-89",
+			"hits": {
+				"total": 103224
+			},
+			"bandwidth": {
+				"total": 1692873600
+			}
+		},
+		{
+			"name": "/file-88",
+			"hits": {
+				"total": 103224
+			},
+			"bandwidth": {
+				"total": 1692873600
+			}
+		},
+		{
+			"name": "/file-87",
+			"hits": {
+				"total": 100878
+			},
+			"bandwidth": {
+				"total": 1654399200
+			}
+		},
+		{
+			"name": "/file-86",
+			"hits": {
+				"total": 100878
+			},
+			"bandwidth": {
+				"total": 1654399200
+			}
+		},
+		{
+			"name": "/file-85",
+			"hits": {
+				"total": 98532
+			},
+			"bandwidth": {
+				"total": 1615924800
+			}
+		},
+		{
+			"name": "/file-84",
+			"hits": {
+				"total": 98532
+			},
+			"bandwidth": {
+				"total": 1615924800
+			}
+		},
+		{
+			"name": "/file-83",
+			"hits": {
+				"total": 96186
+			},
+			"bandwidth": {
+				"total": 1577450400
+			}
+		},
+		{
+			"name": "/file-82",
+			"hits": {
+				"total": 96186
+			},
+			"bandwidth": {
+				"total": 1577450400
+			}
+		},
+		{
+			"name": "/file-81",
+			"hits": {
+				"total": 93840
+			},
+			"bandwidth": {
+				"total": 1538976000
+			}
+		},
+		{
+			"name": "/file-80",
+			"hits": {
+				"total": 93840
+			},
+			"bandwidth": {
+				"total": 1538976000
+			}
+		},
+		{
+			"name": "/file-79",
+			"hits": {
+				"total": 91494
+			},
+			"bandwidth": {
+				"total": 1500501600
+			}
+		},
+		{
+			"name": "/file-78",
+			"hits": {
+				"total": 91494
+			},
+			"bandwidth": {
+				"total": 1500501600
+			}
+		},
+		{
+			"name": "/file-77",
+			"hits": {
+				"total": 89148
+			},
+			"bandwidth": {
+				"total": 1462027200
+			}
+		},
+		{
+			"name": "/file-76",
+			"hits": {
+				"total": 89148
+			},
+			"bandwidth": {
+				"total": 1462027200
+			}
+		},
+		{
+			"name": "/file-75",
+			"hits": {
+				"total": 86802
+			},
+			"bandwidth": {
+				"total": 1423552800
+			}
+		},
+		{
+			"name": "/file-74",
+			"hits": {
+				"total": 86802
+			},
+			"bandwidth": {
+				"total": 1423552800
+			}
+		},
+		{
+			"name": "/file-73",
+			"hits": {
+				"total": 84456
+			},
+			"bandwidth": {
+				"total": 1385078400
+			}
+		},
+		{
+			"name": "/file-72",
+			"hits": {
+				"total": 84456
+			},
+			"bandwidth": {
+				"total": 1385078400
+			}
+		},
+		{
+			"name": "/file-71",
+			"hits": {
+				"total": 82110
+			},
+			"bandwidth": {
+				"total": 1346604000
+			}
+		},
+		{
+			"name": "/file-70",
+			"hits": {
+				"total": 82110
+			},
+			"bandwidth": {
+				"total": 1346604000
+			}
+		},
+		{
+			"name": "/file-69",
+			"hits": {
+				"total": 79764
+			},
+			"bandwidth": {
+				"total": 1308129600
+			}
+		},
+		{
+			"name": "/file-68",
+			"hits": {
+				"total": 79764
+			},
+			"bandwidth": {
+				"total": 1308129600
+			}
+		},
+		{
+			"name": "/file-67",
+			"hits": {
+				"total": 77418
+			},
+			"bandwidth": {
+				"total": 1269655200
+			}
+		},
+		{
+			"name": "/file-66",
+			"hits": {
+				"total": 77418
+			},
+			"bandwidth": {
+				"total": 1269655200
+			}
+		},
+		{
+			"name": "/file-65",
+			"hits": {
+				"total": 75072
+			},
+			"bandwidth": {
+				"total": 1231180800
+			}
+		},
+		{
+			"name": "/file-64",
+			"hits": {
+				"total": 75072
+			},
+			"bandwidth": {
+				"total": 1231180800
+			}
+		},
+		{
+			"name": "/file-63",
+			"hits": {
+				"total": 72726
+			},
+			"bandwidth": {
+				"total": 1192706400
+			}
+		},
+		{
+			"name": "/file-62",
+			"hits": {
+				"total": 72726
+			},
+			"bandwidth": {
+				"total": 1192706400
+			}
+		},
+		{
+			"name": "/file-61",
+			"hits": {
+				"total": 70380
+			},
+			"bandwidth": {
+				"total": 1154232000
+			}
+		},
+		{
+			"name": "/file-60",
+			"hits": {
+				"total": 70380
+			},
+			"bandwidth": {
+				"total": 1154232000
+			}
+		},
+		{
+			"name": "/file-59",
+			"hits": {
+				"total": 68034
+			},
+			"bandwidth": {
+				"total": 1115757600
+			}
+		},
+		{
+			"name": "/file-58",
+			"hits": {
+				"total": 68034
+			},
+			"bandwidth": {
+				"total": 1115757600
+			}
+		},
+		{
+			"name": "/file-57",
+			"hits": {
+				"total": 65688
+			},
+			"bandwidth": {
+				"total": 1077283200
+			}
+		},
+		{
+			"name": "/file-56",
+			"hits": {
+				"total": 65688
+			},
+			"bandwidth": {
+				"total": 1077283200
+			}
+		},
+		{
+			"name": "/file-55",
+			"hits": {
+				"total": 63342
+			},
+			"bandwidth": {
+				"total": 1038808800
+			}
+		},
+		{
+			"name": "/file-54",
+			"hits": {
+				"total": 63342
+			},
+			"bandwidth": {
+				"total": 1038808800
+			}
+		},
+		{
+			"name": "/file-53",
+			"hits": {
+				"total": 60996
+			},
+			"bandwidth": {
+				"total": 1000334400
+			}
+		},
+		{
+			"name": "/file-52",
+			"hits": {
+				"total": 60996
+			},
+			"bandwidth": {
+				"total": 1000334400
+			}
+		},
+		{
+			"name": "/file-51",
+			"hits": {
+				"total": 58650
+			},
+			"bandwidth": {
+				"total": 961860000
+			}
+		},
+		{
+			"name": "/file-50",
+			"hits": {
+				"total": 58650
+			},
+			"bandwidth": {
+				"total": 961860000
+			}
+		},
+		{
+			"name": "/file-49",
+			"hits": {
+				"total": 56304
+			},
+			"bandwidth": {
+				"total": 923385600
+			}
+		},
+		{
+			"name": "/file-48",
+			"hits": {
+				"total": 56304
+			},
+			"bandwidth": {
+				"total": 923385600
+			}
+		},
+		{
+			"name": "/file-47",
+			"hits": {
+				"total": 53958
+			},
+			"bandwidth": {
+				"total": 884911200
+			}
+		},
+		{
+			"name": "/file-46",
+			"hits": {
+				"total": 53958
+			},
+			"bandwidth": {
+				"total": 884911200
+			}
+		},
+		{
+			"name": "/file-45",
+			"hits": {
+				"total": 51612
+			},
+			"bandwidth": {
+				"total": 846436800
+			}
+		},
+		{
+			"name": "/file-44",
+			"hits": {
+				"total": 51612
+			},
+			"bandwidth": {
+				"total": 846436800
+			}
+		},
+		{
+			"name": "/file-43",
+			"hits": {
+				"total": 49266
+			},
+			"bandwidth": {
+				"total": 807962400
+			}
+		},
+		{
+			"name": "/file-42",
+			"hits": {
+				"total": 49266
+			},
+			"bandwidth": {
+				"total": 807962400
+			}
+		},
+		{
+			"name": "/file-41",
+			"hits": {
+				"total": 46920
+			},
+			"bandwidth": {
+				"total": 769488000
+			}
+		},
+		{
+			"name": "/file-40",
+			"hits": {
+				"total": 46920
+			},
+			"bandwidth": {
+				"total": 769488000
+			}
+		},
+		{
+			"name": "/file-39",
+			"hits": {
+				"total": 44574
+			},
+			"bandwidth": {
+				"total": 731013600
+			}
+		},
+		{
+			"name": "/file-38",
+			"hits": {
+				"total": 44574
+			},
+			"bandwidth": {
+				"total": 731013600
+			}
+		},
+		{
+			"name": "/file-37",
+			"hits": {
+				"total": 42228
+			},
+			"bandwidth": {
+				"total": 692539200
+			}
+		},
+		{
+			"name": "/file-36",
+			"hits": {
+				"total": 42228
+			},
+			"bandwidth": {
+				"total": 692539200
+			}
+		},
+		{
+			"name": "/file-35",
+			"hits": {
+				"total": 39882
+			},
+			"bandwidth": {
+				"total": 654064800
+			}
+		},
+		{
+			"name": "/file-34",
+			"hits": {
+				"total": 39882
+			},
+			"bandwidth": {
+				"total": 654064800
+			}
+		},
+		{
+			"name": "/file-33",
+			"hits": {
+				"total": 37536
+			},
+			"bandwidth": {
+				"total": 615590400
+			}
+		},
+		{
+			"name": "/file-32",
+			"hits": {
+				"total": 37536
+			},
+			"bandwidth": {
+				"total": 615590400
+			}
+		},
+		{
+			"name": "/file-31",
+			"hits": {
+				"total": 35190
+			},
+			"bandwidth": {
+				"total": 577116000
+			}
+		},
+		{
+			"name": "/file-30",
+			"hits": {
+				"total": 35190
+			},
+			"bandwidth": {
+				"total": 577116000
+			}
+		},
+		{
+			"name": "/file-29",
+			"hits": {
+				"total": 32844
+			},
+			"bandwidth": {
+				"total": 538641600
+			}
+		},
+		{
+			"name": "/file-28",
+			"hits": {
+				"total": 32844
+			},
+			"bandwidth": {
+				"total": 538641600
+			}
+		},
+		{
+			"name": "/file-27",
+			"hits": {
+				"total": 30498
+			},
+			"bandwidth": {
+				"total": 500167200
+			}
+		},
+		{
+			"name": "/file-26",
+			"hits": {
+				"total": 30498
+			},
+			"bandwidth": {
+				"total": 500167200
+			}
+		},
+		{
+			"name": "/file-25",
+			"hits": {
+				"total": 28152
+			},
+			"bandwidth": {
+				"total": 461692800
+			}
+		},
+		{
+			"name": "/file-24",
+			"hits": {
+				"total": 28152
+			},
+			"bandwidth": {
+				"total": 461692800
+			}
+		},
+		{
+			"name": "/file-23",
+			"hits": {
+				"total": 25806
+			},
+			"bandwidth": {
+				"total": 423218400
+			}
+		},
+		{
+			"name": "/file-22",
+			"hits": {
+				"total": 25806
+			},
+			"bandwidth": {
+				"total": 423218400
+			}
+		},
+		{
+			"name": "/file-21",
+			"hits": {
+				"total": 23460
+			},
+			"bandwidth": {
+				"total": 384744000
+			}
+		},
+		{
+			"name": "/file-20",
+			"hits": {
+				"total": 23460
+			},
+			"bandwidth": {
+				"total": 384744000
+			}
+		},
+		{
+			"name": "/file-19",
+			"hits": {
+				"total": 21114
+			},
+			"bandwidth": {
+				"total": 346269600
+			}
+		},
+		{
+			"name": "/file-18",
+			"hits": {
+				"total": 21114
+			},
+			"bandwidth": {
+				"total": 346269600
+			}
+		},
+		{
+			"name": "/file-17",
+			"hits": {
+				"total": 18768
+			},
+			"bandwidth": {
+				"total": 307795200
+			}
+		},
+		{
+			"name": "/file-16",
+			"hits": {
+				"total": 18768
+			},
+			"bandwidth": {
+				"total": 307795200
+			}
+		},
+		{
+			"name": "/file-15",
+			"hits": {
+				"total": 16422
+			},
+			"bandwidth": {
+				"total": 269320800
+			}
+		},
+		{
+			"name": "/file-14",
+			"hits": {
+				"total": 16422
+			},
+			"bandwidth": {
+				"total": 269320800
+			}
+		},
+		{
+			"name": "/file-13",
+			"hits": {
+				"total": 14076
+			},
+			"bandwidth": {
+				"total": 230846400
+			}
+		},
+		{
+			"name": "/file-12",
+			"hits": {
+				"total": 14076
+			},
+			"bandwidth": {
+				"total": 230846400
+			}
+		},
+		{
+			"name": "/file-11",
+			"hits": {
+				"total": 11730
+			},
+			"bandwidth": {
+				"total": 192372000
+			}
+		}
+	],
 	"/v1/stats/proxies/wp-plugins/files?by=hits&period=s-month": [
 		{
 			"name": "/file-110",
@@ -10823,6 +15333,908 @@
 			},
 			"bandwidth": {
 				"total": 124230000
+			}
+		}
+	],
+	"/v1/stats/proxies/wp-plugins/files?by=hits&period=s-quarter": [
+		{
+			"name": "/file-110",
+			"hits": {
+				"total": 117975
+			},
+			"bandwidth": {
+				"total": 1934790000
+			}
+		},
+		{
+			"name": "/file-109",
+			"hits": {
+				"total": 115830
+			},
+			"bandwidth": {
+				"total": 1899612000
+			}
+		},
+		{
+			"name": "/file-108",
+			"hits": {
+				"total": 115830
+			},
+			"bandwidth": {
+				"total": 1899612000
+			}
+		},
+		{
+			"name": "/file-107",
+			"hits": {
+				"total": 113685
+			},
+			"bandwidth": {
+				"total": 1864434000
+			}
+		},
+		{
+			"name": "/file-106",
+			"hits": {
+				"total": 113685
+			},
+			"bandwidth": {
+				"total": 1864434000
+			}
+		},
+		{
+			"name": "/file-105",
+			"hits": {
+				"total": 111540
+			},
+			"bandwidth": {
+				"total": 1829256000
+			}
+		},
+		{
+			"name": "/file-104",
+			"hits": {
+				"total": 111540
+			},
+			"bandwidth": {
+				"total": 1829256000
+			}
+		},
+		{
+			"name": "/file-103",
+			"hits": {
+				"total": 109395
+			},
+			"bandwidth": {
+				"total": 1794078000
+			}
+		},
+		{
+			"name": "/file-102",
+			"hits": {
+				"total": 109395
+			},
+			"bandwidth": {
+				"total": 1794078000
+			}
+		},
+		{
+			"name": "/file-101",
+			"hits": {
+				"total": 107250
+			},
+			"bandwidth": {
+				"total": 1758900000
+			}
+		},
+		{
+			"name": "/file-100",
+			"hits": {
+				"total": 107250
+			},
+			"bandwidth": {
+				"total": 1758900000
+			}
+		},
+		{
+			"name": "/file-99",
+			"hits": {
+				"total": 105105
+			},
+			"bandwidth": {
+				"total": 1723722000
+			}
+		},
+		{
+			"name": "/file-98",
+			"hits": {
+				"total": 105105
+			},
+			"bandwidth": {
+				"total": 1723722000
+			}
+		},
+		{
+			"name": "/file-97",
+			"hits": {
+				"total": 102960
+			},
+			"bandwidth": {
+				"total": 1688544000
+			}
+		},
+		{
+			"name": "/file-96",
+			"hits": {
+				"total": 102960
+			},
+			"bandwidth": {
+				"total": 1688544000
+			}
+		},
+		{
+			"name": "/file-95",
+			"hits": {
+				"total": 100815
+			},
+			"bandwidth": {
+				"total": 1653366000
+			}
+		},
+		{
+			"name": "/file-94",
+			"hits": {
+				"total": 100815
+			},
+			"bandwidth": {
+				"total": 1653366000
+			}
+		},
+		{
+			"name": "/file-93",
+			"hits": {
+				"total": 98670
+			},
+			"bandwidth": {
+				"total": 1618188000
+			}
+		},
+		{
+			"name": "/file-92",
+			"hits": {
+				"total": 98670
+			},
+			"bandwidth": {
+				"total": 1618188000
+			}
+		},
+		{
+			"name": "/file-91",
+			"hits": {
+				"total": 96525
+			},
+			"bandwidth": {
+				"total": 1583010000
+			}
+		},
+		{
+			"name": "/file-90",
+			"hits": {
+				"total": 96525
+			},
+			"bandwidth": {
+				"total": 1583010000
+			}
+		},
+		{
+			"name": "/file-89",
+			"hits": {
+				"total": 94380
+			},
+			"bandwidth": {
+				"total": 1547832000
+			}
+		},
+		{
+			"name": "/file-88",
+			"hits": {
+				"total": 94380
+			},
+			"bandwidth": {
+				"total": 1547832000
+			}
+		},
+		{
+			"name": "/file-87",
+			"hits": {
+				"total": 92235
+			},
+			"bandwidth": {
+				"total": 1512654000
+			}
+		},
+		{
+			"name": "/file-86",
+			"hits": {
+				"total": 92235
+			},
+			"bandwidth": {
+				"total": 1512654000
+			}
+		},
+		{
+			"name": "/file-85",
+			"hits": {
+				"total": 90090
+			},
+			"bandwidth": {
+				"total": 1477476000
+			}
+		},
+		{
+			"name": "/file-84",
+			"hits": {
+				"total": 90090
+			},
+			"bandwidth": {
+				"total": 1477476000
+			}
+		},
+		{
+			"name": "/file-83",
+			"hits": {
+				"total": 87945
+			},
+			"bandwidth": {
+				"total": 1442298000
+			}
+		},
+		{
+			"name": "/file-82",
+			"hits": {
+				"total": 87945
+			},
+			"bandwidth": {
+				"total": 1442298000
+			}
+		},
+		{
+			"name": "/file-81",
+			"hits": {
+				"total": 85800
+			},
+			"bandwidth": {
+				"total": 1407120000
+			}
+		},
+		{
+			"name": "/file-80",
+			"hits": {
+				"total": 85800
+			},
+			"bandwidth": {
+				"total": 1407120000
+			}
+		},
+		{
+			"name": "/file-79",
+			"hits": {
+				"total": 83655
+			},
+			"bandwidth": {
+				"total": 1371942000
+			}
+		},
+		{
+			"name": "/file-78",
+			"hits": {
+				"total": 83655
+			},
+			"bandwidth": {
+				"total": 1371942000
+			}
+		},
+		{
+			"name": "/file-77",
+			"hits": {
+				"total": 81510
+			},
+			"bandwidth": {
+				"total": 1336764000
+			}
+		},
+		{
+			"name": "/file-76",
+			"hits": {
+				"total": 81510
+			},
+			"bandwidth": {
+				"total": 1336764000
+			}
+		},
+		{
+			"name": "/file-75",
+			"hits": {
+				"total": 79365
+			},
+			"bandwidth": {
+				"total": 1301586000
+			}
+		},
+		{
+			"name": "/file-74",
+			"hits": {
+				"total": 79365
+			},
+			"bandwidth": {
+				"total": 1301586000
+			}
+		},
+		{
+			"name": "/file-73",
+			"hits": {
+				"total": 77220
+			},
+			"bandwidth": {
+				"total": 1266408000
+			}
+		},
+		{
+			"name": "/file-72",
+			"hits": {
+				"total": 77220
+			},
+			"bandwidth": {
+				"total": 1266408000
+			}
+		},
+		{
+			"name": "/file-71",
+			"hits": {
+				"total": 75075
+			},
+			"bandwidth": {
+				"total": 1231230000
+			}
+		},
+		{
+			"name": "/file-70",
+			"hits": {
+				"total": 75075
+			},
+			"bandwidth": {
+				"total": 1231230000
+			}
+		},
+		{
+			"name": "/file-69",
+			"hits": {
+				"total": 72930
+			},
+			"bandwidth": {
+				"total": 1196052000
+			}
+		},
+		{
+			"name": "/file-68",
+			"hits": {
+				"total": 72930
+			},
+			"bandwidth": {
+				"total": 1196052000
+			}
+		},
+		{
+			"name": "/file-67",
+			"hits": {
+				"total": 70785
+			},
+			"bandwidth": {
+				"total": 1160874000
+			}
+		},
+		{
+			"name": "/file-66",
+			"hits": {
+				"total": 70785
+			},
+			"bandwidth": {
+				"total": 1160874000
+			}
+		},
+		{
+			"name": "/file-65",
+			"hits": {
+				"total": 68640
+			},
+			"bandwidth": {
+				"total": 1125696000
+			}
+		},
+		{
+			"name": "/file-64",
+			"hits": {
+				"total": 68640
+			},
+			"bandwidth": {
+				"total": 1125696000
+			}
+		},
+		{
+			"name": "/file-63",
+			"hits": {
+				"total": 66495
+			},
+			"bandwidth": {
+				"total": 1090518000
+			}
+		},
+		{
+			"name": "/file-62",
+			"hits": {
+				"total": 66495
+			},
+			"bandwidth": {
+				"total": 1090518000
+			}
+		},
+		{
+			"name": "/file-61",
+			"hits": {
+				"total": 64350
+			},
+			"bandwidth": {
+				"total": 1055340000
+			}
+		},
+		{
+			"name": "/file-60",
+			"hits": {
+				"total": 64350
+			},
+			"bandwidth": {
+				"total": 1055340000
+			}
+		},
+		{
+			"name": "/file-59",
+			"hits": {
+				"total": 62205
+			},
+			"bandwidth": {
+				"total": 1020162000
+			}
+		},
+		{
+			"name": "/file-58",
+			"hits": {
+				"total": 62205
+			},
+			"bandwidth": {
+				"total": 1020162000
+			}
+		},
+		{
+			"name": "/file-57",
+			"hits": {
+				"total": 60060
+			},
+			"bandwidth": {
+				"total": 984984000
+			}
+		},
+		{
+			"name": "/file-56",
+			"hits": {
+				"total": 60060
+			},
+			"bandwidth": {
+				"total": 984984000
+			}
+		},
+		{
+			"name": "/file-55",
+			"hits": {
+				"total": 57915
+			},
+			"bandwidth": {
+				"total": 949806000
+			}
+		},
+		{
+			"name": "/file-54",
+			"hits": {
+				"total": 57915
+			},
+			"bandwidth": {
+				"total": 949806000
+			}
+		},
+		{
+			"name": "/file-53",
+			"hits": {
+				"total": 55770
+			},
+			"bandwidth": {
+				"total": 914628000
+			}
+		},
+		{
+			"name": "/file-52",
+			"hits": {
+				"total": 55770
+			},
+			"bandwidth": {
+				"total": 914628000
+			}
+		},
+		{
+			"name": "/file-51",
+			"hits": {
+				"total": 53625
+			},
+			"bandwidth": {
+				"total": 879450000
+			}
+		},
+		{
+			"name": "/file-50",
+			"hits": {
+				"total": 53625
+			},
+			"bandwidth": {
+				"total": 879450000
+			}
+		},
+		{
+			"name": "/file-49",
+			"hits": {
+				"total": 51480
+			},
+			"bandwidth": {
+				"total": 844272000
+			}
+		},
+		{
+			"name": "/file-48",
+			"hits": {
+				"total": 51480
+			},
+			"bandwidth": {
+				"total": 844272000
+			}
+		},
+		{
+			"name": "/file-47",
+			"hits": {
+				"total": 49335
+			},
+			"bandwidth": {
+				"total": 809094000
+			}
+		},
+		{
+			"name": "/file-46",
+			"hits": {
+				"total": 49335
+			},
+			"bandwidth": {
+				"total": 809094000
+			}
+		},
+		{
+			"name": "/file-45",
+			"hits": {
+				"total": 47190
+			},
+			"bandwidth": {
+				"total": 773916000
+			}
+		},
+		{
+			"name": "/file-44",
+			"hits": {
+				"total": 47190
+			},
+			"bandwidth": {
+				"total": 773916000
+			}
+		},
+		{
+			"name": "/file-43",
+			"hits": {
+				"total": 45045
+			},
+			"bandwidth": {
+				"total": 738738000
+			}
+		},
+		{
+			"name": "/file-42",
+			"hits": {
+				"total": 45045
+			},
+			"bandwidth": {
+				"total": 738738000
+			}
+		},
+		{
+			"name": "/file-41",
+			"hits": {
+				"total": 42900
+			},
+			"bandwidth": {
+				"total": 703560000
+			}
+		},
+		{
+			"name": "/file-40",
+			"hits": {
+				"total": 42900
+			},
+			"bandwidth": {
+				"total": 703560000
+			}
+		},
+		{
+			"name": "/file-39",
+			"hits": {
+				"total": 40755
+			},
+			"bandwidth": {
+				"total": 668382000
+			}
+		},
+		{
+			"name": "/file-38",
+			"hits": {
+				"total": 40755
+			},
+			"bandwidth": {
+				"total": 668382000
+			}
+		},
+		{
+			"name": "/file-37",
+			"hits": {
+				"total": 38610
+			},
+			"bandwidth": {
+				"total": 633204000
+			}
+		},
+		{
+			"name": "/file-36",
+			"hits": {
+				"total": 38610
+			},
+			"bandwidth": {
+				"total": 633204000
+			}
+		},
+		{
+			"name": "/file-35",
+			"hits": {
+				"total": 36465
+			},
+			"bandwidth": {
+				"total": 598026000
+			}
+		},
+		{
+			"name": "/file-34",
+			"hits": {
+				"total": 36465
+			},
+			"bandwidth": {
+				"total": 598026000
+			}
+		},
+		{
+			"name": "/file-33",
+			"hits": {
+				"total": 34320
+			},
+			"bandwidth": {
+				"total": 562848000
+			}
+		},
+		{
+			"name": "/file-32",
+			"hits": {
+				"total": 34320
+			},
+			"bandwidth": {
+				"total": 562848000
+			}
+		},
+		{
+			"name": "/file-31",
+			"hits": {
+				"total": 32175
+			},
+			"bandwidth": {
+				"total": 527670000
+			}
+		},
+		{
+			"name": "/file-30",
+			"hits": {
+				"total": 32175
+			},
+			"bandwidth": {
+				"total": 527670000
+			}
+		},
+		{
+			"name": "/file-29",
+			"hits": {
+				"total": 30030
+			},
+			"bandwidth": {
+				"total": 492492000
+			}
+		},
+		{
+			"name": "/file-28",
+			"hits": {
+				"total": 30030
+			},
+			"bandwidth": {
+				"total": 492492000
+			}
+		},
+		{
+			"name": "/file-27",
+			"hits": {
+				"total": 27885
+			},
+			"bandwidth": {
+				"total": 457314000
+			}
+		},
+		{
+			"name": "/file-26",
+			"hits": {
+				"total": 27885
+			},
+			"bandwidth": {
+				"total": 457314000
+			}
+		},
+		{
+			"name": "/file-25",
+			"hits": {
+				"total": 25740
+			},
+			"bandwidth": {
+				"total": 422136000
+			}
+		},
+		{
+			"name": "/file-24",
+			"hits": {
+				"total": 25740
+			},
+			"bandwidth": {
+				"total": 422136000
+			}
+		},
+		{
+			"name": "/file-23",
+			"hits": {
+				"total": 23595
+			},
+			"bandwidth": {
+				"total": 386958000
+			}
+		},
+		{
+			"name": "/file-22",
+			"hits": {
+				"total": 23595
+			},
+			"bandwidth": {
+				"total": 386958000
+			}
+		},
+		{
+			"name": "/file-21",
+			"hits": {
+				"total": 21450
+			},
+			"bandwidth": {
+				"total": 351780000
+			}
+		},
+		{
+			"name": "/file-20",
+			"hits": {
+				"total": 21450
+			},
+			"bandwidth": {
+				"total": 351780000
+			}
+		},
+		{
+			"name": "/file-19",
+			"hits": {
+				"total": 19305
+			},
+			"bandwidth": {
+				"total": 316602000
+			}
+		},
+		{
+			"name": "/file-18",
+			"hits": {
+				"total": 19305
+			},
+			"bandwidth": {
+				"total": 316602000
+			}
+		},
+		{
+			"name": "/file-17",
+			"hits": {
+				"total": 17160
+			},
+			"bandwidth": {
+				"total": 281424000
+			}
+		},
+		{
+			"name": "/file-16",
+			"hits": {
+				"total": 17160
+			},
+			"bandwidth": {
+				"total": 281424000
+			}
+		},
+		{
+			"name": "/file-15",
+			"hits": {
+				"total": 15015
+			},
+			"bandwidth": {
+				"total": 246246000
+			}
+		},
+		{
+			"name": "/file-14",
+			"hits": {
+				"total": 15015
+			},
+			"bandwidth": {
+				"total": 246246000
+			}
+		},
+		{
+			"name": "/file-13",
+			"hits": {
+				"total": 12870
+			},
+			"bandwidth": {
+				"total": 211068000
+			}
+		},
+		{
+			"name": "/file-12",
+			"hits": {
+				"total": 12870
+			},
+			"bandwidth": {
+				"total": 211068000
+			}
+		},
+		{
+			"name": "/file-11",
+			"hits": {
+				"total": 10725
+			},
+			"bandwidth": {
+				"total": 175890000
 			}
 		}
 	],

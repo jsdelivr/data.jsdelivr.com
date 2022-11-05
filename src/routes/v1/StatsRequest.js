@@ -274,6 +274,19 @@ class StatsRequest extends BaseRequest {
 				}
 
 				return a.period.length - b.period.length;
+			}).sort((a, b) => {
+				if (a.period.length !== b.period.length) {
+					return 0;
+				}
+
+				let ap = a.period.replace(/Q(\d)/, ($0, $1) => `0${$1 * 3}`.slice(-2));
+				let bp = b.period.replace(/Q(\d)/, ($0, $1) => `0${$1 * 3}`.slice(-2));
+
+				if (ap === bp) {
+					return a.periodType > b.periodType ? -1 : a.periodType < b.periodType;
+				}
+
+				return ap > bp ? -1 : ap < bp;
 			});
 
 		this.ctx.body = this.paginated(BaseModel.paginateArray(periods, ...this.pagination));

@@ -14,12 +14,12 @@ function makeStatsPeriodsTests () {
 		{
 			params: {},
 			assert: (response) => {
-				expect(response.body.filter(item => item.links.browsers)).to.have.lengthOf(7);
-				expect(response.body.filter(item => item.links.network)).to.have.lengthOf(2);
-				expect(response.body.filter(item => item.links.packages)).to.have.lengthOf(2);
-				expect(response.body.filter(item => item.links.platforms)).to.have.lengthOf(7);
-				expect(response.body.filter(item => item.links.proxies)).to.have.lengthOf(2);
-				expect(response.body).to.have.lengthOf(8);
+				expect(response.body.filter(item => item.links.browsers)).to.have.lengthOf(11);
+				expect(response.body.filter(item => item.links.network)).to.have.lengthOf(4);
+				expect(response.body.filter(item => item.links.packages)).to.have.lengthOf(4);
+				expect(response.body.filter(item => item.links.platforms)).to.have.lengthOf(11);
+				expect(response.body.filter(item => item.links.proxies)).to.have.lengthOf(4);
+				expect(response.body).to.have.lengthOf(13);
 				expect(response).to.matchSnapshot();
 			},
 		},

@@ -149,6 +149,84 @@ begin
 end;
 
 
+create or replace procedure updateQuarterlyViews(aDate date)
+begin
+	set aDate = date_sub(aDate, interval 3 day);
+	set @firstStart = date('2020-01-01');
+	set @latestStart = date_sub(aDate, interval dayofmonth(aDate) - 1 day);
+	set @latestStart = date_sub(@latestStart, interval month(@latestStart) - floor((month(@latestStart) - 1) / 3) * 3 - 1 month);
+
+	while date_sub(@latestStart, interval 3 month) >= @firstStart
+		do
+			set @latestStart = date_sub(@latestStart, interval 3 month);
+			set @dateFrom = @latestStart;
+			set @dateTo = date_sub(date_add(@dateFrom, interval 3 month), interval 1 day);
+			set @prevDateFrom = date_sub(@dateFrom, interval 3 month);
+			set @prevDateTo = date_sub(@dateFrom, interval 1 day);
+
+			if not exists(select * from view_top_packages where `date` = @latestStart and period = 's-quarter') then
+				call updateViewTopPackagesForPeriod('s-quarter', @dateFrom, @dateFrom, @dateTo, @prevDateFrom, @prevDateTo, false);
+			end if;
+
+			if not exists(select * from view_top_proxies where `date` = @latestStart and period = 's-quarter') then
+				call updateViewTopProxiesForPeriod('s-quarter', @dateFrom, @dateFrom, @dateTo, @prevDateFrom, @prevDateTo, false);
+			end if;
+
+			if not exists(select * from view_top_proxy_files where `date` = @latestStart and period = 's-quarter') then
+				call updateViewTopProxyFilesForPeriod('s-quarter', @dateFrom, @dateFrom, @dateTo, @prevDateFrom, @prevDateTo, false);
+			end if;
+
+			if not exists(select * from view_network_countries where `date` = @latestStart and period = 's-quarter') then
+				call updateViewNetworkCountriesForPeriod('s-quarter', @dateFrom, @dateFrom, @dateTo, @prevDateFrom, @prevDateTo, false);
+			end if;
+
+			if not exists(select * from view_network_cdns where `date` = @latestStart and period = 's-quarter') then
+				call updateViewNetworkCdnsForPeriod('s-quarter', @dateFrom, @dateFrom, @dateTo, @prevDateFrom, @prevDateTo, false);
+			end if;
+
+			if not exists(select * from view_top_platforms where `date` = @latestStart and period = 's-quarter') then
+				call updateViewTopPlatforms('s-quarter', @dateFrom, @dateTo, @prevDateFrom, @prevDateTo);
+			end if;
+
+			if not exists(select * from view_top_platform_versions where `date` = @latestStart and period = 's-quarter') then
+				call updateViewTopPlatformVersions('s-quarter', @dateFrom, @dateTo, @prevDateFrom, @prevDateTo);
+			end if;
+
+			if not exists(select * from view_top_platform_browsers where `date` = @latestStart and period = 's-quarter') then
+				call updateViewTopPlatformBrowsers('s-quarter', @dateFrom, @dateTo, @prevDateFrom, @prevDateTo);
+			end if;
+
+			if not exists(select * from view_top_platform_countries where `date` = @latestStart and period = 's-quarter') then
+				call updateViewTopPlatformCountries('s-quarter', @dateFrom, @dateTo, @prevDateFrom, @prevDateTo);
+			end if;
+
+			if not exists(select * from view_top_platform_version_countries where `date` = @latestStart and period = 's-quarter') then
+				call updateViewTopPlatformVersionCountries('s-quarter', @dateFrom, @dateTo, @prevDateFrom, @prevDateTo);
+			end if;
+
+			if not exists(select * from view_top_browsers where `date` = @latestStart and period = 's-quarter') then
+				call updateViewTopBrowsers('s-quarter', @dateFrom, @dateTo, @prevDateFrom, @prevDateTo);
+			end if;
+
+			if not exists(select * from view_top_browser_versions where `date` = @latestStart and period = 's-quarter') then
+				call updateViewTopBrowserVersions('s-quarter', @dateFrom, @dateTo, @prevDateFrom, @prevDateTo);
+			end if;
+
+			if not exists(select * from view_top_browser_platforms where `date` = @latestStart and period = 's-quarter') then
+				call updateViewTopBrowserPlatforms('s-quarter', @dateFrom, @dateTo, @prevDateFrom, @prevDateTo);
+			end if;
+
+			if not exists(select * from view_top_browser_countries where `date` = @latestStart and period = 's-quarter') then
+				call updateViewTopBrowserCountries('s-quarter', @dateFrom, @dateTo, @prevDateFrom, @prevDateTo);
+			end if;
+
+			if not exists(select * from view_top_browser_version_countries where `date` = @latestStart and period = 's-quarter') then
+				call updateViewTopBrowserVersionCountries('s-quarter', @dateFrom, @dateTo, @prevDateFrom, @prevDateTo);
+			end if;
+		end while;
+end;
+
+
 create or replace procedure updateYearlyViews(aDate date)
 begin
 	set aDate = date_sub(aDate, interval 3 day);

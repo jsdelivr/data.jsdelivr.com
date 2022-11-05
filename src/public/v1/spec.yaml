@@ -178,21 +178,25 @@ components:
              - `day` the past 1 day,
              - `week` the past 7 days,
              - `month` the past 30 days,
+             - `quarter` the past 90 days,
              - `year` the past 365 days.
           2. A static period, which represents:
              - `s-month` the last calendar month,
+             - `s-quarter` the last calendar quarter,
              - `s-year` the last calendar year.
           3. A valid date in:
-             - `YYYY` format for a specific year,
-             - `YYYY-MM` format for a specific month.
+             - `YYYY-MM` format for a specific month,
+             - `YYYY-Qq` format for a specific quarter,
+             - `YYYY` format for a specific year.
       schema:
         type: string
         default: month
         examples:
           - week
           - s-month
-          - 2022
           - 2022-08
+          - 2022-Q1
+          - 2022
     periodStatic:
       in: query
       name: period
@@ -202,15 +206,17 @@ components:
              - `s-month` the last calendar month,
              - `s-year` the last calendar year.
           2. A valid date in:
-             - `YYYY` format for a specific year,
-             - `YYYY-MM` format for a specific month.
+             - `YYYY-MM` format for a specific month,
+             - `YYYY-Qq` format for a specific quarter,
+             - `YYYY` format for a specific year.
       schema:
         type: string
         default: s-month
         examples:
           - s-month
-          - 2022
           - 2022-08
+          - 2022-Q1
+          - 2022
     specifier:
       in: query
       name: specifier

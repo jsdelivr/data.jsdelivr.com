@@ -18,7 +18,7 @@ function makeStatsPackagesTests () {
 		{
 			by: [ 'hits', 'bandwidth', undefined ],
 			type: [ 'gh', 'npm', undefined ],
-			period: [ ...periodOptions, 'all', 's-month', 's-year', '2022-05', '2018' ],
+			period: [ ...periodOptions, 'all', 'quarter', 's-month', 's-quarter', 's-year', '2022-05', '2022-Q2', '2018' ],
 		},
 	]);
 

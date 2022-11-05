@@ -1,13 +1,33 @@
 {
 	"/v1/stats/periods": [
 		{
+			"period": "2022-Q2",
+			"periodType": "s-quarter",
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/browsers?period=2022-Q2",
+				"network": "http://localhost:4454/v1/stats/network?period=2022-Q2",
+				"packages": "http://localhost:4454/v1/stats/packages?period=2022-Q2",
+				"platforms": "http://localhost:4454/v1/stats/platforms?period=2022-Q2",
+				"proxies": "http://localhost:4454/v1/stats/proxies/{name}?period=2022-Q2"
+			}
+		},
+		{
+			"period": "2022-06",
+			"periodType": "s-month",
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/browsers?period=2022-06",
+				"network": "http://localhost:4454/v1/stats/network?period=2022-06",
+				"packages": "http://localhost:4454/v1/stats/packages?period=2022-06",
+				"platforms": "http://localhost:4454/v1/stats/platforms?period=2022-06",
+				"proxies": "http://localhost:4454/v1/stats/proxies/{name}?period=2022-06"
+			}
+		},
+		{
 			"period": "2022-05",
 			"periodType": "s-month",
 			"links": {
-				"browsers": "http://localhost:4454/v1/stats/browsers?period=2022-05",
 				"network": "http://localhost:4454/v1/stats/network?period=2022-05",
 				"packages": "http://localhost:4454/v1/stats/packages?period=2022-05",
-				"platforms": "http://localhost:4454/v1/stats/platforms?period=2022-05",
 				"proxies": "http://localhost:4454/v1/stats/proxies/{name}?period=2022-05"
 			}
 		},
@@ -29,6 +49,14 @@
 			}
 		},
 		{
+			"period": "2021-Q1",
+			"periodType": "s-quarter",
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/browsers?period=2021-Q1",
+				"platforms": "http://localhost:4454/v1/stats/platforms?period=2021-Q1"
+			}
+		},
+		{
 			"period": "2021-01",
 			"periodType": "s-month",
 			"links": {
@@ -45,11 +73,27 @@
 			}
 		},
 		{
+			"period": "2020-Q2",
+			"periodType": "s-quarter",
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/browsers?period=2020-Q2",
+				"platforms": "http://localhost:4454/v1/stats/platforms?period=2020-Q2"
+			}
+		},
+		{
 			"period": "2020-04",
 			"periodType": "s-month",
 			"links": {
 				"browsers": "http://localhost:4454/v1/stats/browsers?period=2020-04",
 				"platforms": "http://localhost:4454/v1/stats/platforms?period=2020-04"
+			}
+		},
+		{
+			"period": "2020-Q1",
+			"periodType": "s-quarter",
+			"links": {
+				"browsers": "http://localhost:4454/v1/stats/browsers?period=2020-Q1",
+				"platforms": "http://localhost:4454/v1/stats/platforms?period=2020-Q1"
 			}
 		},
 		{

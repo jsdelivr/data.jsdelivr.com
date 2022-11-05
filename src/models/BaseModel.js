@@ -69,7 +69,7 @@ class BaseModel {
 
 	static async _getPeriods (table) {
 		let sql = db(table)
-			.whereIn('period', [ 's-day', 's-week', 's-month', 's-year' ])
+			.whereIn('period', [ 's-day', 's-week', 's-month', 's-quarter', 's-year' ])
 			.orderBy('period', 'desc')
 			.orderBy('date', 'desc');
 
