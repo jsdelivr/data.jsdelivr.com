@@ -1,6 +1,6 @@
 process.env.NODE_ENV = 'test';
 
-require('@sinonjs/fake-timers').install({ now: new Date('2022-07-01T00:00:00Z'), shouldAdvanceTime: true });
+require('@sinonjs/fake-timers').install({ now: new Date('2022-07-05T00:00:00Z'), shouldAdvanceTime: true });
 console.log(`Starting with fake time set to ${new Date().toISOString()}`);
 
 require('../src/lib/startup');
@@ -144,5 +144,5 @@ module.exports.mochaGlobalSetup = async () => {
 		.times(1)
 		.reply(200, { version: '2.0.0' });
 
-	await setupDb({ databaseDate: '2022-07-01' });
+	await setupDb({ databaseDate: '2022-07-05' });
 };
