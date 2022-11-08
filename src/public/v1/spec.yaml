@@ -12,6 +12,25 @@ info:
     url: https://github.com/jsdelivr/data.jsdelivr.com/blob/master/LICENSE
 servers:
   - url: https://data-jsdelivr-com-preview.onrender.com/
+tags:
+  - name: 'Package metadata: GitHub'
+  - name: 'Package metadata: npm'
+  - name: 'Stats'
+  - name: 'Stats: packages'
+  - name: 'Stats: GitHub packages'
+  - name: 'Stats: npm packages'
+  - name: 'Stats: network'
+    x-labels:
+      - new
+  - name: 'Stats: browsers'
+    x-labels:
+      - new
+  - name: 'Stats: platforms'
+    x-labels:
+      - new
+  - name: 'Stats: proxies'
+    x-labels:
+      - new
 components:
   headers:
     Link:
@@ -3588,6 +3607,8 @@ paths:
           $ref: '#/components/responses/periods200'
       tags:
         - Stats
+      x-labels:
+        - new
   /v1/stats/packages:
     get:
       summary: List top packages
@@ -3646,6 +3667,8 @@ paths:
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: GitHub packages'
+      x-labels:
+        - new
   /v1/stats/packages/gh/{user}/{repo}@{version}:
     parameters:
       - $ref: '#/components/parameters/ghUser'
@@ -3686,6 +3709,8 @@ paths:
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: GitHub packages'
+      x-labels:
+        - new
   /v1/stats/packages/gh/{user}/{repo}/badge:
     parameters:
       - $ref: '#/components/parameters/ghUser'
@@ -3759,6 +3784,8 @@ paths:
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: npm packages'
+      x-labels:
+        - new
   /v1/stats/packages/npm/@{scope}/{package}/versions:
     parameters:
       - $ref: '#/components/parameters/packageScope'
@@ -3780,6 +3807,8 @@ paths:
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: npm packages'
+      x-labels:
+        - new
   /v1/stats/packages/npm/{package}@{version}:
     parameters:
       - $ref: '#/components/parameters/package'
@@ -3837,6 +3866,8 @@ paths:
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: npm packages'
+      x-labels:
+        - new
   /v1/stats/packages/npm/@{scope}/{package}@{version}/files:
     parameters:
       - $ref: '#/components/parameters/packageScope'
@@ -3858,6 +3889,8 @@ paths:
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: npm packages'
+      x-labels:
+        - new
   /v1/stats/packages/npm/{package}/badge:
     parameters:
       - $ref: '#/components/parameters/package'
@@ -4104,7 +4137,7 @@ paths:
     parameters:
       - $ref: '#/components/parameters/platformName'
     get:
-      summary: List platform browsers
+      summary: List top platform browsers
       description: |
         Returns browsers ordered by their percentage share on all requests on the specified platform.
       parameters:
