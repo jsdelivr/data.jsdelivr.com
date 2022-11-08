@@ -4216,6 +4216,7 @@ paths:
     get:
       summary: Get proxy stats
       description: |
+        Returns daily usage stats for the proxy.
       parameters:
         - $ref: '#/components/parameters/period'
       responses:
@@ -4231,6 +4232,9 @@ paths:
     get:
       summary: List top proxy files
       description: |
+        EXPERIMENTAL: This feature may change or be removed in the future.
+
+        Returns stats for the most popular proxy files.
       parameters:
         - $ref: '#/components/parameters/by'
         - $ref: '#/components/parameters/period'
@@ -4243,6 +4247,9 @@ paths:
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: proxies'
+      x-badges:
+        - color: red
+          label: Experimental
   /v1/lookup/hash/{hash}:
     parameters:
       - $ref: '#/components/parameters/hash'
