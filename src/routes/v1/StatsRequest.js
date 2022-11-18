@@ -171,7 +171,7 @@ class StatsRequest extends BaseRequest {
 	}
 
 	async handlePackages () {
-		let { meta, data } = await Package.transform(`links:${this.ctx.originalQuery.period}`, ({ page, pages, records }) => {
+		let { meta, data } = await Package.transform(`links:${this.ctx.originalQuery.period}`, ({ page, pages, count, records }) => {
 			let data = this.linkBuilder()
 				.refs({
 					self: resource => routes['/stats/packages/:type/:name'].getName(resource),
@@ -181,7 +181,7 @@ class StatsRequest extends BaseRequest {
 				.withValues({ by: this.query.by })
 				.build(records);
 
-			return { meta: { page, pages }, data };
+			return { meta: { page, pages, count }, data };
 		}).asRawArrayWithMeta().getTopPackages(this.query.by, this.period, this.date, this.query.type, ...this.pagination);
 
 		this.ctx.body = data;

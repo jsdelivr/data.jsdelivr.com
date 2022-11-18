@@ -163,6 +163,7 @@ class BaseModel {
 		return {
 			page,
 			limit,
+			count,
 			pages: limit ? Math.ceil(count / limit) : 1,
 			records,
 		};
@@ -179,6 +180,7 @@ class BaseModel {
 		return {
 			page,
 			limit,
+			count: allRecords.length,
 			pages: Math.ceil(allRecords.length / limit),
 			records,
 		};

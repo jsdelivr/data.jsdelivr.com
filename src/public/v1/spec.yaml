@@ -39,6 +39,16 @@ components:
         Possible `rel` values are `first`, `prev`, `self`, `next`, and `last`.
       schema:
         type: string
+    X-Total-Count:
+      description: |
+        The number of resources in the collection.
+      schema:
+        type: integer
+    X-Total-Pages:
+      description: |
+        The number of available pages.
+      schema:
+        type: integer
   parameters:
     browserName:
       in: path
@@ -2968,6 +2978,10 @@ components:
       headers:
         Link:
           $ref: '#/components/headers/Link'
+        X-Total-Count:
+          $ref: '#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: '#/components/headers/X-Total-Pages'
       content:
         application/json:
           schema:
@@ -2980,6 +2994,10 @@ components:
       headers:
         Link:
           $ref: '#/components/headers/Link'
+        X-Total-Count:
+          $ref: '#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: '#/components/headers/X-Total-Pages'
       content:
         application/json:
           schema:
@@ -3001,6 +3019,10 @@ components:
       headers:
         Link:
           $ref: '#/components/headers/Link'
+        X-Total-Count:
+          $ref: '#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: '#/components/headers/X-Total-Pages'
       content:
         application/json:
           schema:
@@ -3022,6 +3044,10 @@ components:
       headers:
         Link:
           $ref: '#/components/headers/Link'
+        X-Total-Count:
+          $ref: '#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: '#/components/headers/X-Total-Pages'
       content:
         application/json:
           schema:
@@ -3062,6 +3088,10 @@ components:
       headers:
         Link:
           $ref: '#/components/headers/Link'
+        X-Total-Count:
+          $ref: '#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: '#/components/headers/X-Total-Pages'
       content:
         application/json:
           schema:
@@ -3074,6 +3104,10 @@ components:
       headers:
         Link:
           $ref: '#/components/headers/Link'
+        X-Total-Count:
+          $ref: '#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: '#/components/headers/X-Total-Pages'
       content:
         application/json:
           schema:
@@ -3104,6 +3138,10 @@ components:
       headers:
         Link:
           $ref: '#/components/headers/Link'
+        X-Total-Count:
+          $ref: '#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: '#/components/headers/X-Total-Pages'
       content:
         application/json:
           schema:
@@ -3116,6 +3154,10 @@ components:
       headers:
         Link:
           $ref: '#/components/headers/Link'
+        X-Total-Count:
+          $ref: '#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: '#/components/headers/X-Total-Pages'
       content:
         application/json:
           schema:
@@ -3175,6 +3217,10 @@ components:
       headers:
         Link:
           $ref: '#/components/headers/Link'
+        X-Total-Count:
+          $ref: '#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: '#/components/headers/X-Total-Pages'
       content:
         application/json:
           schema:
@@ -3187,6 +3233,10 @@ components:
       headers:
         Link:
           $ref: '#/components/headers/Link'
+        X-Total-Count:
+          $ref: '#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: '#/components/headers/X-Total-Pages'
       content:
         application/json:
           schema:
@@ -3199,6 +3249,10 @@ components:
       headers:
         Link:
           $ref: '#/components/headers/Link'
+        X-Total-Count:
+          $ref: '#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: '#/components/headers/X-Total-Pages'
       content:
         application/json:
           schema:
@@ -3211,6 +3265,10 @@ components:
       headers:
         Link:
           $ref: '#/components/headers/Link'
+        X-Total-Count:
+          $ref: '#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: '#/components/headers/X-Total-Pages'
       content:
         application/json:
           schema:
@@ -3223,6 +3281,10 @@ components:
       headers:
         Link:
           $ref: '#/components/headers/Link'
+        X-Total-Count:
+          $ref: '#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: '#/components/headers/X-Total-Pages'
       content:
         application/json:
           schema:
@@ -3235,6 +3297,10 @@ components:
       headers:
         Link:
           $ref: '#/components/headers/Link'
+        X-Total-Count:
+          $ref: '#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: '#/components/headers/X-Total-Pages'
       content:
         application/json:
           schema:
@@ -3247,6 +3313,10 @@ components:
       headers:
         Link:
           $ref: '#/components/headers/Link'
+        X-Total-Count:
+          $ref: '#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: '#/components/headers/X-Total-Pages'
       content:
         application/json:
           schema:
@@ -3259,6 +3329,10 @@ components:
       headers:
         Link:
           $ref: '#/components/headers/Link'
+        X-Total-Count:
+          $ref: '#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: '#/components/headers/X-Total-Pages'
       content:
         application/json:
           schema:
@@ -3271,6 +3345,10 @@ components:
       headers:
         Link:
           $ref: '#/components/headers/Link'
+        X-Total-Count:
+          $ref: '#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: '#/components/headers/X-Total-Pages'
       content:
         application/json:
           schema:
@@ -3283,6 +3361,10 @@ components:
       headers:
         Link:
           $ref: '#/components/headers/Link'
+        X-Total-Count:
+          $ref: '#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: '#/components/headers/X-Total-Pages'
       content:
         application/json:
           schema:
@@ -3295,6 +3377,10 @@ components:
       headers:
         Link:
           $ref: '#/components/headers/Link'
+        X-Total-Count:
+          $ref: '#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: '#/components/headers/X-Total-Pages'
       content:
         application/json:
           schema:
@@ -3307,6 +3393,10 @@ components:
       headers:
         Link:
           $ref: '#/components/headers/Link'
+        X-Total-Count:
+          $ref: '#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: '#/components/headers/X-Total-Pages'
       content:
         application/json:
           schema:
@@ -3328,6 +3418,10 @@ components:
       headers:
         Link:
           $ref: '#/components/headers/Link'
+        X-Total-Count:
+          $ref: '#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: '#/components/headers/X-Total-Pages'
       content:
         application/json:
           schema:

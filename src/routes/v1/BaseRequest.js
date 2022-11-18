@@ -111,8 +111,8 @@ class BaseRequest {
 		});
 	}
 
-	paginated ({ page, pages, records }) {
-		pages = Math.min(pages, 100);
+	paginated ({ page, pages, count, records }) {
+		pages = Math.max(1, Math.min(pages, 100));
 
 		let link = new LinkBuilder(this.ctx)
 			.includeQuery([ 'limit', 'page' ])
@@ -125,10 +125,12 @@ class BaseRequest {
 				...page - 1 > 0 ? [{ rel: 'prev', page: page - 1 }] : [],
 				{ rel: 'self' },
 				...page + 1 <= pages ? [{ rel: 'next', page: page + 1 }] : [],
-				{ rel: 'last', page: Math.max(1, pages) },
+				{ rel: 'last', page: pages },
 			]);
 
 		this.ctx.append('Link', link);
+		this.ctx.append('X-Total-Count', count);
+		this.ctx.append('X-Total-Pages', pages);
 
 		return records;
 	}

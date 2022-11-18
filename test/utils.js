@@ -146,12 +146,18 @@ function makeEndpointPaginationTests (uri, query = {}) {
 				if (r1.body.length === r2.body.length) {
 					expect(link.rel('last')).to.have.lengthOf(1);
 					expect(link.rel('last')[0].uri).to.equal(link.rel('self')[0].uri);
+
+					expect(Number(r1.headers['x-total-count'])).to.be.lessThanOrEqual(n);
+					expect(Number(r1.headers['x-total-pages'])).to.equal(1);
 				} else {
 					expect(link.rel('next')).to.have.lengthOf(1);
 					expect(link.rel('next')[0].uri).to.include('page=');
 
 					expect(link.rel('last')).to.have.lengthOf(1);
 					expect(link.rel('last')[0].uri).to.include('page=');
+
+					expect(Number(r1.headers['x-total-count'])).to.be.greaterThan(n);
+					expect(Number(r1.headers['x-total-count'])).to.be.greaterThan(1);
 				}
 			});
 		};
