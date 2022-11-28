@@ -287,18 +287,18 @@ components:
       example: Microsoft Edge
     BrowserVersion:
       type: string
-      description: Browser version.
+      description: Browser version. `Unknown` if the version couldn't be determined.
       example: 101
     Country:
       type: string
       description: An ISO 3166-1 alpha-2 country code.
     PlatformName:
       type: string
-      description: Platform name.
+      description: Platform name. `Other` if the platform couldn't be determined.
       example: Windows
     PlatformVersion:
       type: string
-      description: Platform version.
+      description: Platform version. `Unknown` if the version couldn't be determined.
       example: 101
     PlatformVersionName:
       type: string
