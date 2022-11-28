@@ -4,7 +4,7 @@ const BaseModel = require('./BaseModel');
 const schema = Joi.object({
 	id: Joi.number().integer().min(0).required().allow(null),
 	platformId: Joi.number().integer().min(0).required().allow(null),
-	version: Joi.string().max(255).required().allow(''),
+	version: Joi.string().max(255).required(),
 	versionName: Joi.string().max(255).required().allow(''),
 });
 
