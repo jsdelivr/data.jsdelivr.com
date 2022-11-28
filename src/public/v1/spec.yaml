@@ -1329,7 +1329,7 @@ components:
           version:
             $ref: '#/components/schemas/PlatformVersion'
           versionName:
-            $ref: '#/components/schemas/PlatformVersion'
+            $ref: '#/components/schemas/PlatformVersionName'
           share:
             type: number
             description: Market share of the platform version.
