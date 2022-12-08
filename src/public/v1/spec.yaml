@@ -3553,7 +3553,7 @@ paths:
     get:
       summary: Get package metadata
       description: |
-        Returns a list of versions for the package and links to related resources.
+        Returns a list of tags and versions for the package and links to related resources.
         The versions are sorted in descending order using [`semver`](https://www.npmjs.com/package/semver).
       responses:
         200:
@@ -3569,7 +3569,7 @@ paths:
     get:
       summary: Get package metadata (scoped)
       description: |
-        Returns a list of versions for the package and links to related resources.
+        Returns a list of tags and versions for the package and links to related resources.
         The versions are sorted in descending order using [`semver`](https://www.npmjs.com/package/semver).
       responses:
         200:
