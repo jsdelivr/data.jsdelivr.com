@@ -3512,6 +3512,9 @@ components:
                 type: integer
               message:
                 type: string
+            required:
+              - status
+              - message
           examples:
             json:
               value:
@@ -3528,6 +3531,9 @@ components:
                 type: integer
               message:
                 type: string
+            required:
+              - status
+              - message
           examples:
             json:
               value:
