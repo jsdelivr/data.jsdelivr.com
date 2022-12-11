@@ -542,6 +542,7 @@ components:
             description: The period type.
             enum:
               - s-month
+              - s-quarter
               - s-year
           links:
             type: object
