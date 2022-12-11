@@ -56,12 +56,18 @@ components:
       required: true
       schema:
         $ref: '#/components/schemas/BrowserName'
+      examples:
+        browser:
+          value: Microsoft Edge
     browserVersion:
       in: path
       name: version
       required: true
       schema:
         $ref: '#/components/schemas/BrowserVersion'
+      examples:
+        version:
+          value: 101
     ghRepo:
       in: path
       name: repo
@@ -69,7 +75,9 @@ components:
       description: A GitHub repository name.
       schema:
         type: string
-        example: bootstrap
+      examples:
+        repo:
+          value: bootstrap
     ghUser:
       in: path
       name: user
@@ -77,7 +85,9 @@ components:
       description: A GitHub username.
       schema:
         type: string
-        example: twbs
+      examples:
+        user:
+          value: twbs
     hash:
       in: path
       name: hash
@@ -85,7 +95,9 @@ components:
       description: A hex-encoded sha256 of file contents.
       schema:
         type: string
-        example: 87083882cc6015984eb0411a99d3981817f5dc5c90ba24f0940420c5548d82de
+      examples:
+        hash:
+          value: 87083882cc6015984eb0411a99d3981817f5dc5c90ba24f0940420c5548d82de
     package:
       in: path
       name: package
@@ -93,7 +105,9 @@ components:
       description: npm package name.
       schema:
         type: string
-        example: jquery
+      examples:
+        package:
+          value: jquery
     packageScope:
       in: path
       name: scope
@@ -101,7 +115,9 @@ components:
       description: npm scope (username, organization).
       schema:
         type: string
-        example: popperjs
+      examples:
+        scope:
+          value: popperjs
     packageScoped:
       in: path
       name: package
@@ -109,19 +125,26 @@ components:
       description: npm package name.
       schema:
         type: string
-        example: core
+      examples:
+        package:
+          value: core
     platformName:
       in: path
       name: name
       required: true
       schema:
         $ref: '#/components/schemas/PlatformName'
+      examples:
+        platform:
+          value: Windows
     platformVersion:
       in: path
       name: version
       required: true
       schema:
         $ref: '#/components/schemas/PlatformVersion'
+      examples:
+        version: 101
     proxyName:
       in: path
       name: name
@@ -129,7 +152,9 @@ components:
       description: The name of the proxy endpoint.
       schema:
         type: string
-        example: cocoa
+      examples:
+        proxy:
+          value: cocoa
     version:
       in: path
       name: version
@@ -137,7 +162,9 @@ components:
       description: An exact package version (not a version range or a tag)
       schema:
         type: string
-        example: 2.2.1
+      examples:
+        version:
+          value: 2.2.1
     badgeType:
       in: query
       name: type
@@ -262,7 +289,11 @@ components:
       schema:
         type: string
         default: latest
-        example: 2.2
+      examples:
+        range:
+          value: 2.2
+        tag:
+          value: next
     structure:
       in: query
       name: structure
@@ -293,22 +324,18 @@ components:
     BrowserName:
       type: string
       description: Browser name.
-      example: Microsoft Edge
     BrowserVersion:
       type: string
       description: Browser version. `Unknown` if the version couldn't be determined.
-      example: 101
     Country:
       type: string
       description: An ISO 3166-1 alpha-2 country code.
     PlatformName:
       type: string
       description: Platform name. `Other` if the platform couldn't be determined.
-      example: Windows
     PlatformVersion:
       type: string
       description: Platform version. `Unknown` if the version couldn't be determined.
-      example: 101
     PlatformVersionName:
       type: string
       description: Platform version name. Empty for platforms that do not have named versions.
@@ -3467,11 +3494,13 @@ components:
             required:
              - status
              - message
-          example:
-            status: 400
-            message: Invalid parameter value...
-            links:
-              documentation: https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com
+          examples:
+            json:
+              value:
+                status: 400
+                message: Invalid parameter value...
+                links:
+                  documentation: https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com
     403:
       description: Forbidden
       content:
@@ -3483,9 +3512,11 @@ components:
                 type: integer
               message:
                 type: string
-          example:
-            status: 403
-            message: Package size exceeded the configured limit of 100 MB.
+          examples:
+            json:
+              value:
+                status: 403
+                message: Package size exceeded the configured limit of 100 MB.
     404:
       description: Not Found
       content:
@@ -3497,9 +3528,11 @@ components:
                 type: integer
               message:
                 type: string
-          example:
-            status: 404
-            message: Couldn't find the requested item...
+          examples:
+            json:
+              value:
+                status: 404
+                message: Couldn't find the requested item...
 paths:
   /v1/packages/gh/{user}/{repo}:
     parameters:
