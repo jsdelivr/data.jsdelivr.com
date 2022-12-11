@@ -220,12 +220,17 @@ components:
       schema:
         type: string
         default: month
-        examples:
-          - week
-          - s-month
-          - 2022-08
-          - 2022-Q1
-          - 2022
+      examples:
+        floating:
+          value: week
+        static:
+          value: s-month
+        dateMonth:
+          value: 2022-08
+        dateQuarter:
+          value: 2022-Q1
+        dateYear:
+          value: 2022
     periodStatic:
       in: query
       name: period
@@ -241,11 +246,15 @@ components:
       schema:
         type: string
         default: s-month
-        examples:
-          - s-month
-          - 2022-08
-          - 2022-Q1
-          - 2022
+      examples:
+        static:
+          value: s-month
+        dateMonth:
+          value: 2022-08
+        dateQuarter:
+          value: 2022-Q1
+        dateYear:
+          value: 2022
     specifier:
       in: query
       name: specifier
