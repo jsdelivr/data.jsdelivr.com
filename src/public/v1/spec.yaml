@@ -3752,6 +3752,18 @@ paths:
         - Stats
       x-labels:
         - new
+      x-code-samples:
+        - lang: js
+          label: JS - List all months for which browser stats are available
+          source: |
+            fetch('https://data-jsdelivr-com-preview.onrender.com/v1/stats/periods')
+              .then((resp) => resp.json())
+              .then((data) => {
+                return data.filter((period) => {
+                  return period.periodType === 's-month' && period.links.browsers;
+                });
+              })
+              .then(console.log);
   /v1/stats/packages:
     get:
       summary: List top packages
