@@ -4088,9 +4088,11 @@ paths:
         Returns network-wide hits and bandwidth stats, with breakdowns by provider and date.
         The list of providers may change over time. Only providers that served some traffic in the selected period are returned.
         The provider codes are:
+         - `BN` Bunny
          - `CF` Cloudflare
          - `FY` Fastly
          - `GC` Gcore
+         - `MX` StackPath
          - `QT` Quantil
       parameters:
         - $ref: '#/components/parameters/continent'
