@@ -98,6 +98,16 @@ module.exports.mochaGlobalSetup = async () => {
 		.query({ per_page: 100 })
 		.reply(404);
 
+	nock('https://api.github.com')
+		.get('/repos/jquery/dmca-blocked-451/tags')
+		.query({ per_page: 100 })
+		.reply(451, upstreamGitHubResponses['/repos/jquery/dmca-blocked-451/tags']);
+
+	nock('https://api.github.com')
+		.get('/repos/jquery/tos-blocked-403/tags')
+		.query({ per_page: 100 })
+		.reply(403, upstreamGitHubResponses['/repos/jquery/tos-blocked-403/tags']);
+
 	nock('https://registry.npmjs.org')
 		.get(/.*/)
 		.times(Infinity)

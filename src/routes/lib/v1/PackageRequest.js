@@ -360,7 +360,7 @@ class PackageRequest extends BaseRequest {
 
 	async responseFromRemoteError (remoteResource) {
 		this.ctx.body = {
-			status: remoteResource.statusCode === 404
+			status: remoteResource.ttlInternalStore // Cast all known / cacheable errors to 404, unknown ones to 5xx.
 				? 404
 				: remoteResource.error instanceof got.TimeoutError || remoteResource.code === 'ETIMEDOUT'
 					? 504

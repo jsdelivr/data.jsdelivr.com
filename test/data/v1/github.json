@@ -464,5 +464,19 @@
 				"url": "https://api.github.com/repos/jquery/jquery/commits/f71eeda0fac4ec1442e631e90ff0703a0fb4ac96"
 			}
 		}
-	]
+	],
+	"/repos/jquery/dmca-blocked-451/tags": {
+		"message": "Repository access blocked",
+		"block": {
+			"reason": "dmca",
+			"created_at": "2020-07-16T12:16:28Z"
+		}
+	},
+	"/repos/jquery/tos-blocked-403/tags": {
+		"message": "Repository access blocked",
+		"block": {
+			"reason": "tos",
+			"created_at": "2020-07-16T12:16:28Z"
+		}
+	}
 }
