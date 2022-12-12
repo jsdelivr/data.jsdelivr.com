@@ -320,4 +320,34 @@ describe('/v1/package', () => {
 				expect(response.body).to.have.property('message');
 			});
 	});
+
+	it('GET /v1/package/gh/jquery/dmca-blocked-451', () => {
+		return chai.request(server)
+			.get('/v1/package/gh/jquery/dmca-blocked-451')
+			.then((response) => {
+				expect(response).to.have.status(404);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response.body).to.have.property('status', 404);
+				expect(response.body).to.have.property('message');
+			});
+	});
+
+	it('GET /v1/package/gh/jquery/tos-blocked-403', () => {
+		return chai.request(server)
+			.get('/v1/package/gh/jquery/tos-blocked-403')
+			.then((response) => {
+				expect(response).to.have.status(404);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response.body).to.have.property('status', 404);
+				expect(response.body).to.have.property('message');
+			});
+	});
 });
