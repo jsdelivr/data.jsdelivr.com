@@ -24,26 +24,27 @@ class StatsRequest extends BaseRequest {
 			CountryCdnHits.getProvidersStatsForPeriodAndLocation(this.period, this.date, this.composedLocationFilter),
 		]);
 
-		let combined = _.pickBy(_.mapValues(dailyStatsGroups, (dailyStats, provider) => {
-			let providerPeriodStats = periodStats[provider];
 
-			if (!providerPeriodStats) {
-				return;
-			}
+		let combined = periodStats.map((providerPeriodStats) => {
+			let dailyStats = dailyStatsGroups[providerPeriodStats.code];
 
 			return {
 				hits: {
+					code: providerPeriodStats.code,
+					name: providerPeriodStats.name,
 					...providerPeriodStats.hits,
 					dates: dateRange.fill(dailyStats.hits, ...this.dateRange, { total: 0 }),
 					prev: providerPeriodStats.prev.hits,
 				},
 				bandwidth: {
+					code: providerPeriodStats.code,
+					name: providerPeriodStats.name,
 					...providerPeriodStats.bandwidth,
 					dates: dateRange.fill(dailyStats.bandwidth, ...this.dateRange, { total: 0 }),
 					prev: providerPeriodStats.prev.bandwidth,
 				},
 			};
-		}));
+		});
 
 		this.ctx.body = this.formatCombinedStatsExtended(combined, 'providers');
 
@@ -144,26 +145,26 @@ class StatsRequest extends BaseRequest {
 			CountryCdnHits.getCountryStatsForPeriod(this.period, this.date),
 		]);
 
-		let combined = _.pickBy(_.mapValues(dailyStats, (providerStats, country) => {
-			let countryPeriodStats = periodStats[country];
-
-			if (!countryPeriodStats) {
-				return;
-			}
+		let combined = periodStats.map((countryPeriodStats) => {
+			let providerStats = dailyStats[countryPeriodStats.code];
 
 			return {
 				hits: {
+					code: countryPeriodStats.code,
+					name: countryPeriodStats.name,
 					...countryPeriodStats.hits,
 					providers: providerStats.hits,
 					prev: countryPeriodStats.prev.hits,
 				},
 				bandwidth: {
+					code: countryPeriodStats.code,
+					name: countryPeriodStats.name,
 					...countryPeriodStats.bandwidth,
 					providers: providerStats.bandwidth,
 					prev: countryPeriodStats.prev.hits,
 				},
 			};
-		}));
+		});
 
 		this.ctx.body = this.formatCombinedStatsExtended(combined, 'countries');
 

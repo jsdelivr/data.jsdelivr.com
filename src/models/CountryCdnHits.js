@@ -1,9 +1,20 @@
 const Joi = require('joi');
+const { countries } = require('countries-list');
+
 const BaseModel = require('./BaseModel');
 const Country = require('./Country');
 const NetworkCdn = require('./views/NetworkCdn');
 const NetworkCountry = require('./views/NetworkCountry');
 const { toIsoDate } = require('../lib/date');
+
+const CDN_NAMES = {
+	BN: 'Bunny',
+	CF: 'Cloudflare',
+	FY: 'Fastly',
+	GC: 'GCore',
+	MX: 'StackPath',
+	QT: 'Quantil',
+};
 
 const schema = Joi.object({
 	countryIso: Joi.string().length(2).required(),
@@ -71,8 +82,8 @@ class CountryCdnHits extends BaseModel {
 
 		return _.mapValues(_.groupBy(stats, 'countryIso'), (countryStats) => {
 			return {
-				hits: _.fromPairs(_.map(countryStats, record => [ record.cdn, { total: record.hits }])),
-				bandwidth: _.fromPairs(_.map(countryStats, record => [ record.cdn, { total: record.bandwidth }])),
+				hits: _.map(countryStats, record => ({ code: record.cdn, name: CDN_NAMES[record.cdn], total: record.hits })).sort((a, b) => b.total - a.total),
+				bandwidth: _.map(countryStats, record => ({ code: record.cdn, name: CDN_NAMES[record.cdn], total: record.bandwidth })).sort((a, b) => b.total - a.total),
 			};
 		});
 	}
@@ -107,58 +118,58 @@ class CountryCdnHits extends BaseModel {
 	static async getCountryStatsForPeriod (period, date) {
 		let periodStats = await db(NetworkCountry.table)
 			.where({ period, date })
+			.orderBy('countryIso', 'desc')
 			.select();
 
-		return _.fromPairs(periodStats.map((country) => {
-			return [
-				country.countryIso,
-				{
+		return periodStats.map((country) => {
+			return {
+				code: country.countryIso,
+				name: countries[country.countryIso].name,
+				hits: {
+					total: country.hits,
+				},
+				bandwidth: {
+					total: country.bandwidth,
+				},
+				prev: {
 					hits: {
-						total: country.hits,
+						total: country.prevHits,
 					},
 					bandwidth: {
-						total: country.bandwidth,
-					},
-					prev: {
-						hits: {
-							total: country.prevHits,
-						},
-						bandwidth: {
-							total: country.prevBandwidth,
-						},
+						total: country.prevBandwidth,
 					},
 				},
-			];
-		}));
+			};
+		});
 	}
 
 	static async getProvidersStatsForPeriodAndLocation (period, date, composedLocationFilter) {
 		let periodStats = await db(NetworkCdn.table)
 			.where({ period, date })
 			.where(composedLocationFilter)
+			.orderBy('cdn', 'desc')
 			.select();
 
-		return _.fromPairs(periodStats.map((provider) => {
-			return [
-				provider.cdn,
-				{
+		return periodStats.map((provider) => {
+			return {
+				code: provider.cdn,
+				name: CDN_NAMES[provider.cdn],
+				hits: {
+					total: provider.hits,
+				},
+				bandwidth: {
+					total: provider.bandwidth,
+				},
+				prev: {
 					hits: {
-						total: provider.hits,
+						total: provider.prevHits,
 					},
 					bandwidth: {
-						total: provider.bandwidth,
-					},
-					prev: {
-						hits: {
-							total: provider.prevHits,
-						},
-						bandwidth: {
-							total: provider.prevBandwidth,
-						},
+						total: provider.prevBandwidth,
 					},
 				},
-			];
-		}));
+			};
+		});
 	}
 
 	toSqlFunctionCall () {
