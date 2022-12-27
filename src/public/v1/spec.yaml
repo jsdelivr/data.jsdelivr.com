@@ -204,7 +204,7 @@ components:
       name: country
       description: Include only data for this country. Specified as an ISO 3166-1 alpha-2 country code in uppercase. Mutually exclusive with the `continent` parameter.
       schema:
-        $ref: '#/components/schemas/Country'
+        $ref: '#/components/schemas/CountryCode'
     limit:
       in: query
       name: limit
@@ -327,7 +327,7 @@ components:
     BrowserVersion:
       type: string
       description: Browser version. `Unknown` if the version couldn't be determined.
-    Country:
+    CountryCode:
       type: string
       description: An ISO 3166-1 alpha-2 country code.
     PlatformName:
@@ -697,6 +697,29 @@ components:
       required:
         - total
         - dates
+    Provider:
+      type: object
+      properties:
+        code:
+          type: string
+          description: A two letter provider code.
+        name:
+          type: string
+          description: Provider name.
+      required:
+        - code
+        - name
+    Country:
+      type: object
+      properties:
+        code:
+          $ref: '#/components/schemas/CountryCode'
+        name:
+          type: string
+          description: Country name.
+      required:
+        - code
+        - name
     TotalDateBandwidthStatsExtended:
       type: object
       properties:
@@ -872,11 +895,12 @@ components:
             total:
               $ref: '#/components/schemas/HitsTotal'
             providers:
-              type: object
+              type: array
               description: |
-                A breakdown of the hits by provider. The object keys are two letter provider codes.
-              additionalProperties:
+                A breakdown of the hits by provider. The providers are sorted by hits in descending order.
+              items:
                 allOf:
+                  - $ref: '#/components/schemas/Provider'
                   - $ref: '#/components/schemas/TotalDateHitsStatsExtended'
                   - $ref: '#/components/schemas/PrevTotalWrapped'
             prev:
@@ -893,11 +917,12 @@ components:
             total:
               $ref: '#/components/schemas/BandwidthTotal'
             providers:
-              type: object
+              type: array
               description: |
-                A breakdown of the bandwidth by provider. The object keys are two letter provider codes.
-              additionalProperties:
+                A breakdown of the bandwidth by provider. The providers are sorted by bandwidth in descending order.
+              items:
                 allOf:
+                  - $ref: '#/components/schemas/Provider'
                   - $ref: '#/components/schemas/TotalDateBandwidthStatsExtended'
                   - $ref: '#/components/schemas/PrevTotalWrapped'
             prev:
@@ -992,27 +1017,31 @@ components:
             total:
               $ref: '#/components/schemas/HitsTotal'
             countries:
-              type: object
+              type: array
               description: |
-                A breakdown of the hits by country. The object keys are ISO 3166-1 alpha-2 country codes.
-              additionalProperties:
-                type: object
-                properties:
-                  total:
-                    type: integer
-                  providers:
-                    type: object
-                    description: |
-                      A breakdown of the country hits by provider. The object keys are two letter provider codes.
-                    additionalProperties:
-                      type: object
-                      properties:
-                        total:
-                          type: integer
-                      required:
-                        - total
-                  prev:
-                    $ref: '#/components/schemas/PrevTotal'
+                A breakdown of the hits by country. The countries are sorted by hits in descending order.
+              items:
+                allOf:
+                  - $ref: '#/components/schemas/Country'
+                  - type: object
+                    properties:
+                      total:
+                        type: integer
+                      providers:
+                        type: array
+                        description: |
+                          A breakdown of the country hits by provider. The providers are sorted by hits in descending order.
+                        items:
+                          allOf:
+                            - $ref: '#/components/schemas/Provider'
+                            - type: object
+                              properties:
+                                total:
+                                  type: integer
+                              required:
+                                - total
+                      prev:
+                        $ref: '#/components/schemas/PrevTotal'
                 required:
                   - total
                   - providers
@@ -1031,31 +1060,35 @@ components:
             total:
               $ref: '#/components/schemas/BandwidthTotal'
             countries:
-              type: object
+              type: array
               description: |
-                A breakdown of the bandwidth by country. The object keys are ISO 3166-1 alpha-2 country codes.
-              additionalProperties:
-                type: object
-                properties:
-                  total:
-                    type: integer
-                  providers:
-                    type: object
-                    description: |
-                      A breakdown of the country bandwidth by provider. The object keys are two letter provider codes.
-                    additionalProperties:
-                      type: object
-                      properties:
-                        total:
-                          type: integer
-                      required:
-                        - total
-                  prev:
-                    $ref: '#/components/schemas/PrevTotal'
-                required:
-                  - total
-                  - providers
-                  - prev
+                A breakdown of the bandwidth by country. The countries are sorted by bandwidth in descending order.
+              items:
+                allOf:
+                  - $ref: '#/components/schemas/Country'
+                  - type: object
+                    properties:
+                      total:
+                        type: integer
+                      providers:
+                        type: array
+                        description: |
+                          A breakdown of the country bandwidth by provider. The providers are sorted by bandwidth in descending order.
+                        items:
+                          allOf:
+                            - $ref: '#/components/schemas/Provider'
+                            - type: object
+                              properties:
+                                total:
+                                  type: integer
+                              required:
+                                - total
+                      prev:
+                        $ref: '#/components/schemas/PrevTotal'
+                    required:
+                      - total
+                      - providers
+                      - prev
             prev:
               $ref: '#/components/schemas/PrevTotal'
           required:
@@ -1129,7 +1162,7 @@ components:
         type: object
         properties:
           country:
-            $ref: '#/components/schemas/Country'
+            $ref: '#/components/schemas/CountryCode'
           share:
             type: number
             description: Market share of the browser within the country.
@@ -1213,7 +1246,7 @@ components:
         type: object
         properties:
           country:
-            $ref: '#/components/schemas/Country'
+            $ref: '#/components/schemas/CountryCode'
           share:
             type: number
             description: Market share of the browser version within the country.
@@ -1335,7 +1368,7 @@ components:
         type: object
         properties:
           country:
-            $ref: '#/components/schemas/Country'
+            $ref: '#/components/schemas/CountryCode'
           share:
             type: number
             description: Market share of the platform within the country.
@@ -1390,7 +1423,7 @@ components:
         type: object
         properties:
           country:
-            $ref: '#/components/schemas/Country'
+            $ref: '#/components/schemas/CountryCode'
           share:
             type: number
             description: Market share of the platform version within the country.
@@ -2352,8 +2385,10 @@ components:
         {
           "hits": {
             "total": 5236807991,
-            "providers": {
-              "CF": {
+            "providers": [
+              {
+                "code": "CF",
+                "name": "Cloudflare",
                 "total": 3509781800,
                 "dates": {
                   "2022-10-23": {
@@ -2364,15 +2399,17 @@ components:
                   "total": 3437754799
                 }
               }
-            },
+            ],
             "prev": {
               "total": 5158940426
             }
           },
           "bandwidth": {
             "total": 204537754976314,
-            "providers": {
-              "CF": {
+            "providers": [
+              {
+                "code": "CF",
+                "name": "Cloudflare",
                 "total": 146452745277697,
                 "dates": {
                   "2022-10-23": {
@@ -2383,7 +2420,7 @@ components:
                   "total": 139211612004975
                 }
               }
-            },
+            ],
             "prev": {
               "total": 198629311655708
             }
@@ -2476,38 +2513,46 @@ components:
         {
           "hits": {
             "total": 37199989390,
-            "countries": {
-              "PL": {
+            "countries": [
+              {
+                "code": "PL",
+                "name": "Poland",
                 "total": 676857172,
-                "providers": {
-                  "CF": {
+                "providers": [
+                  {
+                    "code": "CF",
+                    "name": "Cloudflare",
                     "total": 617283578
                   }
-                },
+                ],
                 "prev": {
                   "total": 670350408
                 }
               }
-            },
+            ],
             "prev": {
               "total": 37169818190
             }
           },
           "bandwidth": {
             "total": 1436261193038398,
-            "countries": {
-              "PL": {
+            "countries": [
+              {
+                "code": "PL",
+                "name": "Poland",
                 "total": 14859574455734,
-                "providers": {
-                  "CF": {
+                "providers": [
+                  {
+                    "code": "CF",
+                    "name": "Cloudflare",
                     "total": 13651650238655
                   }
-                },
+                ],
                 "prev": {
                   "total": 670350408
                 }
               }
-            },
+            ],
             "prev": {
               "total": 37169818190
             }
@@ -4124,9 +4169,11 @@ paths:
         Returns network-wide hits and bandwidth stats, with breakdown by country and provider.
         The list of providers may change over time. Only providers that served some traffic in the selected period are returned.
         The provider codes are:
+         - `BN` Bunny
          - `CF` Cloudflare
          - `FY` Fastly
          - `GC` Gcore
+         - `MX` StackPath
          - `QT` Quantil
       parameters:
         - $ref: '#/components/parameters/period'
