@@ -3,7 +3,7 @@ const { version } = require('../package.json');
 module.exports = {
 	server: {
 		host: 'https://data.jsdelivr.com',
-		docsHost: 'https://www-jsdelivr-com-pr-400.onrender.com',
+		docsHost: 'https://www.jsdelivr.com',
 		port: 4454,
 		debugToken: '',
 		userAgent: `data.jsdelivr.com/${version} (https://github.com/jsdelivr/data.jsdelivr.com)`,
