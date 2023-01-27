@@ -96,9 +96,28 @@ function getSchemaKeys (schema) {
 }
 
 function getRequiredSchemaKeys (schema) {
-	return schema ? Array.from(schema._ids._byKey.entries()).filter(([ , v ]) => v.schema._flags.presence === 'required').map(([ k ]) => k) : undefined;
+	if (!schema) {
+		return;
+	}
+
+	return Array.from(schema._ids._byKey.entries())
+		.filter(([ , value ]) => value.schema._flags.presence === 'required')
+		.map(([ key ]) => key);
 }
 
 function getSchemaKeysDefaults (schema) {
-	return schema ? Object.fromEntries(Array.from(schema._ids._byKey.entries()).map(([ k, v ]) => [ k, String(typeof v.schema._flags.default === 'function' ? v.schema._flags.default() : v.schema._flags.default) ])) : undefined;
+	if (!schema) {
+		return;
+	}
+
+	let entries = Array.from(schema._ids._byKey.entries()).map(([ key, value ]) => {
+		let def = value.schema._flags.default;
+
+		return [
+			key,
+			String(typeof def === 'function' ? def() : def),
+		];
+	});
+
+	return Object.fromEntries(entries);
 }
