@@ -151,9 +151,9 @@ class BaseModel {
 			sql.limit(limit).offset((page - 1) * limit);
 		}
 
-		let [ { count = 0 } = {}, records ] = await Promise.all([
-			countPromise,
+		let [ records, { count = records.length } = {} ] = await Promise.all([
 			sql.select(select),
+			countPromise,
 		]);
 
 		if (mapper) {
