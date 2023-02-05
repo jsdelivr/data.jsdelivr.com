@@ -101,7 +101,7 @@
 		"url-template": "^2.0.8"
 	},
 	"scripts": {
-		"coverage": "nyc mocha --exit test/tests.js",
+		"coverage": "cross-env FORCE_SETUP=1 nyc mocha",
 		"knex": "knex",
 		"lint": "eslint --cache bin config migrations seeds src test *.js .*.js",
 		"lint:fix": "npm run lint -- --fix",

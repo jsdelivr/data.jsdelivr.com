@@ -18,7 +18,7 @@ module.exports = async ({ databaseDate }) => {
 		hashDbSetupFiles(),
 	]);
 
-	if (dbEntry?.value === currentHash) {
+	if (!process.env.FORCE_SETUP && dbEntry?.value === currentHash) {
 		log.debug(`Database setup didn't change since last run. Skipping.`);
 	} else {
 		log.debug('Dropping existing tables.');
