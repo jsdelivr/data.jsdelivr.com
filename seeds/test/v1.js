@@ -257,7 +257,7 @@ exports.seed = async (db) => {
 				let [ versionId ] = await db('package_version').insert({ packageId, version, type: 'version' });
 
 				for (let st of data.db.stats) {
-					let [ fileId ] = await db('file').insert({ packageVersionId: versionId, filename: st.file });
+					let [ fileId ] = await db('file').insert({ packageVersionId: versionId, filename: st.file, sha256: crypto.createHash('sha256').update(st.file).digest() });
 					await db('file_hits').insert({ fileId, date, hits: st.hits });
 				}
 			}
