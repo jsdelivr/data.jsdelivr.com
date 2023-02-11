@@ -186,7 +186,6 @@ describe('/v1/package', () => {
 			});
 	});
 
-	// TODO: add commit stats tests.
 	it('GET /v1/package/gh/jquery/jquery@821bf34353a6baf97f7944379a6459afb16badae', () => {
 		return chai.request(server)
 			.get('/v1/package/gh/jquery/jquery@821bf34353a6baf97f7944379a6459afb16badae')

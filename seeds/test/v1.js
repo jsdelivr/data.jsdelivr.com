@@ -43,11 +43,15 @@ exports.seed = async (db) => {
 		return _.range(0, 2).map(i => ({ packageId, version: `branch-${i}`, type: 'branch' }));
 	})));
 
+	await db('package_version').insert(_.flatten(_.range(120, 121).map((packageId) => {
+		return _.range(0, 2).map(i => ({ packageId, version: crypto.createHash('sha1').update(`branch-${i}`).digest('hex'), type: 'commit' }));
+	})));
+
 	await db('package_version').insert(_.flatten(_.range(121, 123).map((packageId) => {
 		return _.range(0, 3).map(i => ({ packageId, version: `1.1.${i}` }));
 	})));
 
-	await db('file').insert(_.flatten(_.range(1, 369).map((packageVersionId) => {
+	await db('file').insert(_.flatten(_.range(1, 371).map((packageVersionId) => {
 		return _.range(0, 4).map((i) => {
 			return {
 				packageVersionId,
@@ -57,7 +61,7 @@ exports.seed = async (db) => {
 		});
 	})));
 
-	await db('file_hits').insert(_.flatten(_.range(1, 1473).map((fileId) => {
+	await db('file_hits').insert(_.flatten(_.range(1, 1475).map((fileId) => {
 		return _.range(0, 70).map((i) => {
 			return {
 				fileId,

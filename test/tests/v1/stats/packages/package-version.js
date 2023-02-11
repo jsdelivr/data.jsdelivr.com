@@ -37,6 +37,7 @@ function makePackageVersionStatsTests () {
 	makeEndpointSnapshotTests('/v1/stats/packages/gh/{user}/{repo}@{version}{?period}', defaults, [
 		{ user: 'user', repo: 'package-59', version: '1.1.2', ...commonValues },
 		{ user: 'user', repo: 'package-59', version: 'branch-1', ...commonValues },
+		{ user: 'user', repo: 'package-59', version: 'bbe269d1988019b5d2054cdffbb31e96e553fcf9', ...commonValues },
 	]);
 
 	makeEndpointSnapshotTests('/v1/stats/packages/gh/{user}/{repo}@{version}{?period}', defaults, [

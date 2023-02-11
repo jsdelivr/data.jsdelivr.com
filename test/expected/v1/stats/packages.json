@@ -4,11 +4,11 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 234980,
-			"bandwidth": 3650324400,
+			"hits": 329840,
+			"bandwidth": 5124689360,
 			"prev": {
-				"hits": 37303,
-				"bandwidth": 608385540
+				"hits": 52369,
+				"bandwidth": 854112289
 			},
 			"links": {
 				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59?period=2022-05",
@@ -1406,8 +1406,8 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 516780,
-			"bandwidth": 7771674900,
+			"hits": 725340,
+			"bandwidth": 10910652060,
 			"prev": {
 				"hits": 0,
 				"bandwidth": 0
@@ -2808,8 +2808,8 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 542340,
-			"bandwidth": 8124934920,
+			"hits": 761208,
+			"bandwidth": 11406593688,
 			"prev": {
 				"hits": 0,
 				"bandwidth": 0
@@ -4210,11 +4210,11 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 8540,
-			"bandwidth": 117753360,
+			"hits": 11984,
+			"bandwidth": 165313904,
 			"prev": {
-				"hits": 8520,
-				"bandwidth": 117753340
+				"hits": 11956,
+				"bandwidth": 165313876
 			},
 			"links": {
 				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59?period=day",
@@ -5612,11 +5612,11 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 247500,
-			"bandwidth": 3532592100,
+			"hits": 347340,
+			"bandwidth": 4959404940,
 			"prev": {
-				"hits": 229500,
-				"bandwidth": 3532574100
+				"hits": 322140,
+				"bandwidth": 4959379740
 			},
 			"links": {
 				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59",
@@ -7014,8 +7014,8 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 542340,
-			"bandwidth": 8124934920,
+			"hits": 761208,
+			"bandwidth": 11406593688,
 			"prev": {
 				"hits": 0,
 				"bandwidth": 0
@@ -8416,11 +8416,11 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 245700,
-			"bandwidth": 3532590300,
+			"hits": 344820,
+			"bandwidth": 4959402420,
 			"prev": {
-				"hits": 227400,
-				"bandwidth": 3532571998
+				"hits": 319200,
+				"bandwidth": 4959376798
 			},
 			"links": {
 				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59?period=s-month",
@@ -9818,8 +9818,8 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 516780,
-			"bandwidth": 7771674900,
+			"hits": 725340,
+			"bandwidth": 10910652060,
 			"prev": {
 				"hits": 0,
 				"bandwidth": 0
@@ -11221,11 +11221,11 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 59360,
-			"bandwidth": 824273100,
+			"hits": 83300,
+			"bandwidth": 1157196740,
 			"prev": {
-				"hits": 58380,
-				"bandwidth": 824272120
+				"hits": 81928,
+				"bandwidth": 1157195368
 			},
 			"links": {
 				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59?period=week",
@@ -12623,8 +12623,8 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 542340,
-			"bandwidth": 8124934920,
+			"hits": 761208,
+			"bandwidth": 11406593688,
 			"prev": {
 				"hits": 0,
 				"bandwidth": 0
@@ -14026,11 +14026,11 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 234980,
-			"bandwidth": 3650324400,
+			"hits": 329840,
+			"bandwidth": 5124689360,
 			"prev": {
-				"hits": 37303,
-				"bandwidth": 608385540
+				"hits": 52369,
+				"bandwidth": 854112289
 			},
 			"links": {
 				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59?period=2022-05",
@@ -14868,8 +14868,8 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 516780,
-			"bandwidth": 7771674900,
+			"hits": 725340,
+			"bandwidth": 10910652060,
 			"prev": {
 				"hits": 0,
 				"bandwidth": 0
@@ -15710,8 +15710,8 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 542340,
-			"bandwidth": 8124934920,
+			"hits": 761208,
+			"bandwidth": 11406593688,
 			"prev": {
 				"hits": 0,
 				"bandwidth": 0
@@ -16552,11 +16552,11 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 8540,
-			"bandwidth": 117753360,
+			"hits": 11984,
+			"bandwidth": 165313904,
 			"prev": {
-				"hits": 8520,
-				"bandwidth": 117753340
+				"hits": 11956,
+				"bandwidth": 165313876
 			},
 			"links": {
 				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59?period=day",
@@ -17394,11 +17394,11 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 247500,
-			"bandwidth": 3532592100,
+			"hits": 347340,
+			"bandwidth": 4959404940,
 			"prev": {
-				"hits": 229500,
-				"bandwidth": 3532574100
+				"hits": 322140,
+				"bandwidth": 4959379740
 			},
 			"links": {
 				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59",
@@ -18236,8 +18236,8 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 542340,
-			"bandwidth": 8124934920,
+			"hits": 761208,
+			"bandwidth": 11406593688,
 			"prev": {
 				"hits": 0,
 				"bandwidth": 0
@@ -19078,11 +19078,11 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 245700,
-			"bandwidth": 3532590300,
+			"hits": 344820,
+			"bandwidth": 4959402420,
 			"prev": {
-				"hits": 227400,
-				"bandwidth": 3532571998
+				"hits": 319200,
+				"bandwidth": 4959376798
 			},
 			"links": {
 				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59?period=s-month",
@@ -19920,8 +19920,8 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 516780,
-			"bandwidth": 7771674900,
+			"hits": 725340,
+			"bandwidth": 10910652060,
 			"prev": {
 				"hits": 0,
 				"bandwidth": 0
@@ -20763,11 +20763,11 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 59360,
-			"bandwidth": 824273100,
+			"hits": 83300,
+			"bandwidth": 1157196740,
 			"prev": {
-				"hits": 58380,
-				"bandwidth": 824272120
+				"hits": 81928,
+				"bandwidth": 1157195368
 			},
 			"links": {
 				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59?period=week",
@@ -21605,8 +21605,8 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 542340,
-			"bandwidth": 8124934920,
+			"hits": 761208,
+			"bandwidth": 11406593688,
 			"prev": {
 				"hits": 0,
 				"bandwidth": 0
@@ -32046,11 +32046,11 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 234980,
-			"bandwidth": 3650324400,
+			"hits": 329840,
+			"bandwidth": 5124689360,
 			"prev": {
-				"hits": 37303,
-				"bandwidth": 608385540
+				"hits": 52369,
+				"bandwidth": 854112289
 			},
 			"links": {
 				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59?period=2022-05",
@@ -33448,8 +33448,8 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 516780,
-			"bandwidth": 7771674900,
+			"hits": 725340,
+			"bandwidth": 10910652060,
 			"prev": {
 				"hits": 0,
 				"bandwidth": 0
@@ -34850,8 +34850,8 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 542340,
-			"bandwidth": 8124934920,
+			"hits": 761208,
+			"bandwidth": 11406593688,
 			"prev": {
 				"hits": 0,
 				"bandwidth": 0
@@ -36252,11 +36252,11 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 8540,
-			"bandwidth": 117753360,
+			"hits": 11984,
+			"bandwidth": 165313904,
 			"prev": {
-				"hits": 8520,
-				"bandwidth": 117753340
+				"hits": 11956,
+				"bandwidth": 165313876
 			},
 			"links": {
 				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59?period=day",
@@ -37654,11 +37654,11 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 247500,
-			"bandwidth": 3532592100,
+			"hits": 347340,
+			"bandwidth": 4959404940,
 			"prev": {
-				"hits": 229500,
-				"bandwidth": 3532574100
+				"hits": 322140,
+				"bandwidth": 4959379740
 			},
 			"links": {
 				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59",
@@ -39056,8 +39056,8 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 542340,
-			"bandwidth": 8124934920,
+			"hits": 761208,
+			"bandwidth": 11406593688,
 			"prev": {
 				"hits": 0,
 				"bandwidth": 0
@@ -40458,11 +40458,11 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 245700,
-			"bandwidth": 3532590300,
+			"hits": 344820,
+			"bandwidth": 4959402420,
 			"prev": {
-				"hits": 227400,
-				"bandwidth": 3532571998
+				"hits": 319200,
+				"bandwidth": 4959376798
 			},
 			"links": {
 				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59?period=s-month",
@@ -41860,8 +41860,8 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 516780,
-			"bandwidth": 7771674900,
+			"hits": 725340,
+			"bandwidth": 10910652060,
 			"prev": {
 				"hits": 0,
 				"bandwidth": 0
@@ -43263,11 +43263,11 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 59360,
-			"bandwidth": 824273100,
+			"hits": 83300,
+			"bandwidth": 1157196740,
 			"prev": {
-				"hits": 58380,
-				"bandwidth": 824272120
+				"hits": 81928,
+				"bandwidth": 1157195368
 			},
 			"links": {
 				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59?period=week",
@@ -44665,8 +44665,8 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 542340,
-			"bandwidth": 8124934920,
+			"hits": 761208,
+			"bandwidth": 11406593688,
 			"prev": {
 				"hits": 0,
 				"bandwidth": 0
@@ -46068,11 +46068,11 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 234980,
-			"bandwidth": 3650324400,
+			"hits": 329840,
+			"bandwidth": 5124689360,
 			"prev": {
-				"hits": 37303,
-				"bandwidth": 608385540
+				"hits": 52369,
+				"bandwidth": 854112289
 			},
 			"links": {
 				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59?period=2022-05",
@@ -46910,8 +46910,8 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 516780,
-			"bandwidth": 7771674900,
+			"hits": 725340,
+			"bandwidth": 10910652060,
 			"prev": {
 				"hits": 0,
 				"bandwidth": 0
@@ -47752,8 +47752,8 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 542340,
-			"bandwidth": 8124934920,
+			"hits": 761208,
+			"bandwidth": 11406593688,
 			"prev": {
 				"hits": 0,
 				"bandwidth": 0
@@ -48594,11 +48594,11 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 8540,
-			"bandwidth": 117753360,
+			"hits": 11984,
+			"bandwidth": 165313904,
 			"prev": {
-				"hits": 8520,
-				"bandwidth": 117753340
+				"hits": 11956,
+				"bandwidth": 165313876
 			},
 			"links": {
 				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59?period=day",
@@ -49436,11 +49436,11 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 247500,
-			"bandwidth": 3532592100,
+			"hits": 347340,
+			"bandwidth": 4959404940,
 			"prev": {
-				"hits": 229500,
-				"bandwidth": 3532574100
+				"hits": 322140,
+				"bandwidth": 4959379740
 			},
 			"links": {
 				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59",
@@ -50278,8 +50278,8 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 542340,
-			"bandwidth": 8124934920,
+			"hits": 761208,
+			"bandwidth": 11406593688,
 			"prev": {
 				"hits": 0,
 				"bandwidth": 0
@@ -51120,11 +51120,11 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 245700,
-			"bandwidth": 3532590300,
+			"hits": 344820,
+			"bandwidth": 4959402420,
 			"prev": {
-				"hits": 227400,
-				"bandwidth": 3532571998
+				"hits": 319200,
+				"bandwidth": 4959376798
 			},
 			"links": {
 				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59?period=s-month",
@@ -51962,8 +51962,8 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 516780,
-			"bandwidth": 7771674900,
+			"hits": 725340,
+			"bandwidth": 10910652060,
 			"prev": {
 				"hits": 0,
 				"bandwidth": 0
@@ -52805,11 +52805,11 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 59360,
-			"bandwidth": 824273100,
+			"hits": 83300,
+			"bandwidth": 1157196740,
 			"prev": {
-				"hits": 58380,
-				"bandwidth": 824272120
+				"hits": 81928,
+				"bandwidth": 1157195368
 			},
 			"links": {
 				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59?period=week",
@@ -53647,8 +53647,8 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 542340,
-			"bandwidth": 8124934920,
+			"hits": 761208,
+			"bandwidth": 11406593688,
 			"prev": {
 				"hits": 0,
 				"bandwidth": 0
@@ -64087,11 +64087,11 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 8540,
-			"bandwidth": 117753360,
+			"hits": 11984,
+			"bandwidth": 165313904,
 			"prev": {
-				"hits": 8520,
-				"bandwidth": 117753340
+				"hits": 11956,
+				"bandwidth": 165313876
 			},
 			"links": {
 				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59?period=day",
@@ -65489,11 +65489,11 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 247500,
-			"bandwidth": 3532592100,
+			"hits": 347340,
+			"bandwidth": 4959404940,
 			"prev": {
-				"hits": 229500,
-				"bandwidth": 3532574100
+				"hits": 322140,
+				"bandwidth": 4959379740
 			},
 			"links": {
 				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59",
@@ -66891,11 +66891,11 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 59360,
-			"bandwidth": 824273100,
+			"hits": 83300,
+			"bandwidth": 1157196740,
 			"prev": {
-				"hits": 58380,
-				"bandwidth": 824272120
+				"hits": 81928,
+				"bandwidth": 1157195368
 			},
 			"links": {
 				"self": "http://localhost:4454/v1/stats/packages/gh/user/package-59?period=week",
@@ -68293,8 +68293,8 @@
 		{
 			"type": "gh",
 			"name": "user/package-59",
-			"hits": 542340,
-			"bandwidth": 8124934920,
+			"hits": 761208,
+			"bandwidth": 11406593688,
 			"prev": {
 				"hits": 0,
 				"bandwidth": 0
