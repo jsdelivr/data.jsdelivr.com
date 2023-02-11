@@ -42,7 +42,7 @@ const httpClient = got.extend({
 	headers: {
 		'user-agent': config.get('server.userAgent'),
 	},
-	json: true,
+	responseType: 'json',
 	timeout: 30000,
 });
 
@@ -144,7 +144,7 @@ function fileExist (filename, files) {
 }
 
 async function findWorkingMainFile (pkg) {
-	let packageFiles = await httpClient(`${config.get('server.host')}/v1/package/npm/${pkg.name}@${pkg.version}/flat`)
+	let packageFiles = await httpClient(`${config.get('server.host')}/v1/packages/npm/${pkg.name}@${pkg.version}?structure=flat`)
 		.then(res => _.get(res, 'body.files', []))
 		.catch(() => []);
 
