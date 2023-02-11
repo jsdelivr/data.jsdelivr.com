@@ -11,7 +11,7 @@ info:
     name: Open Software License 3.0
     url: https://github.com/jsdelivr/data.jsdelivr.com/blob/master/LICENSE
 servers:
-  - url: https://data-jsdelivr-com-preview.onrender.com/
+  - url: https://data.jsdelivr.com
 tags:
   - name: 'Package metadata: GitHub'
   - name: 'Package metadata: npm'
@@ -1531,20 +1531,20 @@ components:
             {
               "version": "5.2.2",
               "links": {
-                "self": "https://data-jsdelivr-com-preview.onrender.com/v1/packages/gh/twbs/bootstrap@5.2.2",
-                "stats": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/gh/twbs/bootstrap@5.2.2"
+                "self": "https://data.jsdelivr.com/v1/packages/gh/twbs/bootstrap@5.2.2",
+                "stats": "https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap@5.2.2"
               }
             },
             {
               "version": "5.2.1",
               "links": {
-                "self": "https://data-jsdelivr-com-preview.onrender.com/v1/packages/gh/twbs/bootstrap@5.2.1",
-                "stats": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/gh/twbs/bootstrap@5.2.1"
+                "self": "https://data.jsdelivr.com/v1/packages/gh/twbs/bootstrap@5.2.1",
+                "stats": "https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap@5.2.1"
               }
             }
           ],
           "links": {
-            "stats": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/gh/twbs/bootstrap"
+            "stats": "https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap"
           }
         }
     ghResolved:
@@ -1555,8 +1555,8 @@ components:
           "name": "twbs/bootstrap",
           "version": "5.2.2",
           "links": {
-            "self": "https://data-jsdelivr-com-preview.onrender.com/v1/packages/gh/twbs/bootstrap@5.2.2",
-            "stats": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/gh/twbs/bootstrap@5.2.2"
+            "self": "https://data.jsdelivr.com/v1/packages/gh/twbs/bootstrap@5.2.2",
+            "stats": "https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap@5.2.2"
           }
         }
     ghResolvedNull:
@@ -1597,7 +1597,7 @@ components:
             }
           ],
           "links": {
-            "stats": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/gh/twbs/bootstrap@2.2.1"
+            "stats": "https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap@2.2.1"
           }
         }
     ghVersionMetadataFlat:
@@ -1621,7 +1621,7 @@ components:
             }
           ],
           "links": {
-            "stats": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/gh/twbs/bootstrap@2.2.1"
+            "stats": "https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap@2.2.1"
           }
         }
     npmMetadata:
@@ -1637,22 +1637,22 @@ components:
             {
               "version": "3.6.1",
               "links": {
-                "self": "https://data-jsdelivr-com-preview.onrender.com/v1/packages/npm/jquery@3.6.1",
-                "entrypoints": "https://data-jsdelivr-com-preview.onrender.com/v1/packages/npm/jquery@3.6.1/entrypoints",
-                "stats": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/npm/jquery@3.6.1"
+                "self": "https://data.jsdelivr.com/v1/packages/npm/jquery@3.6.1",
+                "entrypoints": "https://data.jsdelivr.com/v1/packages/npm/jquery@3.6.1/entrypoints",
+                "stats": "https://data.jsdelivr.com/v1/stats/packages/npm/jquery@3.6.1"
               }
             },
             {
               "version": "3.6.0",
               "links": {
-                "self": "https://data-jsdelivr-com-preview.onrender.com/v1/packages/npm/jquery@3.6.0",
-                "entrypoints": "https://data-jsdelivr-com-preview.onrender.com/v1/packages/npm/jquery@3.6.0/entrypoints",
-                "stats": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/npm/jquery@3.6.0"
+                "self": "https://data.jsdelivr.com/v1/packages/npm/jquery@3.6.0",
+                "entrypoints": "https://data.jsdelivr.com/v1/packages/npm/jquery@3.6.0/entrypoints",
+                "stats": "https://data.jsdelivr.com/v1/stats/packages/npm/jquery@3.6.0"
               }
             }
           ],
           "links": {
-            "stats": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/npm/jquery"
+            "stats": "https://data.jsdelivr.com/v1/stats/packages/npm/jquery"
           }
         }
     npmMetadataScoped:
@@ -1667,22 +1667,22 @@ components:
             {
               "version": "2.11.6",
               "links": {
-                "self": "https://data-jsdelivr-com-preview.onrender.com/v1/packages/npm/@popperjs/core@2.11.6",
-                "entrypoints": "https://data-jsdelivr-com-preview.onrender.com/v1/packages/npm/@popperjs/core@2.11.6/entrypoints",
-                "stats": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/npm/@popperjs/core@2.11.6"
+                "self": "https://data.jsdelivr.com/v1/packages/npm/@popperjs/core@2.11.6",
+                "entrypoints": "https://data.jsdelivr.com/v1/packages/npm/@popperjs/core@2.11.6/entrypoints",
+                "stats": "https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core@2.11.6"
               }
             },
             {
               "version": "2.11.5",
               "links": {
-                "self": "https://data-jsdelivr-com-preview.onrender.com/v1/packages/npm/@popperjs/core@2.11.5",
-                "entrypoints": "https://data-jsdelivr-com-preview.onrender.com/v1/packages/npm/@popperjs/core@2.11.5/entrypoints",
-                "stats": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/npm/@popperjs/core@2.11.5"
+                "self": "https://data.jsdelivr.com/v1/packages/npm/@popperjs/core@2.11.5",
+                "entrypoints": "https://data.jsdelivr.com/v1/packages/npm/@popperjs/core@2.11.5/entrypoints",
+                "stats": "https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core@2.11.5"
               }
             }
           ],
           "links": {
-            "stats": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/npm/@popperjs/core"
+            "stats": "https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core"
           }
         }
     npmResolved:
@@ -1693,9 +1693,9 @@ components:
           "name": "jquery",
           "version": "2.2.4",
           "links": {
-            "self": "https://data-jsdelivr-com-preview.onrender.com/v1/packages/npm/jquery@2.2.4",
-            "entrypoints": "https://data-jsdelivr-com-preview.onrender.com/v1/packages/npm/jquery@2.2.4/entrypoints",
-            "stats": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/npm/jquery@2.2.4"
+            "self": "https://data.jsdelivr.com/v1/packages/npm/jquery@2.2.4",
+            "entrypoints": "https://data.jsdelivr.com/v1/packages/npm/jquery@2.2.4/entrypoints",
+            "stats": "https://data.jsdelivr.com/v1/stats/packages/npm/jquery@2.2.4"
           }
         }
     npmResolvedNull:
@@ -1715,9 +1715,9 @@ components:
           "name": "@popperjs/core",
           "version": "2.2.3",
           "links": {
-            "self": "https://data-jsdelivr-com-preview.onrender.com/v1/packages/npm/@popperjs/core@2.2.3",
-            "entrypoints": "https://data-jsdelivr-com-preview.onrender.com/v1/packages/npm/@popperjs/core@2.2.3/entrypoints",
-            "stats": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/npm/@popperjs/core@2.2.3"
+            "self": "https://data.jsdelivr.com/v1/packages/npm/@popperjs/core@2.2.3",
+            "entrypoints": "https://data.jsdelivr.com/v1/packages/npm/@popperjs/core@2.2.3/entrypoints",
+            "stats": "https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core@2.2.3"
           }
         }
     npmResolvedScopedNull:
@@ -1758,8 +1758,8 @@ components:
             }
           ],
           "links": {
-            "stats": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/npm/jquery@2.2.1",
-            "entrypoints": "https://data-jsdelivr-com-preview.onrender.com/v1/packages/npm/jquery@2.2.1/entrypoints"
+            "stats": "https://data.jsdelivr.com/v1/stats/packages/npm/jquery@2.2.1",
+            "entrypoints": "https://data.jsdelivr.com/v1/packages/npm/jquery@2.2.1/entrypoints"
           }
         }
     npmVersionMetadataFlat:
@@ -1783,8 +1783,8 @@ components:
             }
           ],
           "links": {
-            "stats": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/npm/jquery@2.2.1",
-            "entrypoints": "https://data-jsdelivr-com-preview.onrender.com/v1/packages/npm/jquery@2.2.1/entrypoints"
+            "stats": "https://data.jsdelivr.com/v1/stats/packages/npm/jquery@2.2.1",
+            "entrypoints": "https://data.jsdelivr.com/v1/packages/npm/jquery@2.2.1/entrypoints"
           }
         }
     npmVersionMetadataScopedTree:
@@ -1822,8 +1822,8 @@ components:
             }
           ],
           "links": {
-            "stats": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/npm/@popperjs/core@2.2.1",
-            "entrypoints": "https://data-jsdelivr-com-preview.onrender.com/v1/packages/npm/@popperjs/core@2.2.1/entrypoints"
+            "stats": "https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core@2.2.1",
+            "entrypoints": "https://data.jsdelivr.com/v1/packages/npm/@popperjs/core@2.2.1/entrypoints"
           }
         }
     npmVersionMetadataScopedFlat:
@@ -1847,8 +1847,8 @@ components:
             }
           ],
           "links": {
-            "stats": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/npm/@popperjs/core@2.2.1",
-            "entrypoints": "https://data-jsdelivr-com-preview.onrender.com/v1/packages/npm/@popperjs/core@2.2.1/entrypoints"
+            "stats": "https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core@2.2.1",
+            "entrypoints": "https://data.jsdelivr.com/v1/packages/npm/@popperjs/core@2.2.1/entrypoints"
           }
         }
     npmVersionEntrypoints:
@@ -1878,38 +1878,38 @@ components:
             "period": "2022-03",
             "periodType": "s-month",
             "links": {
-              "browsers": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/browsers?period=2022-03",
-              "network": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/network?period=2022-03",
-              "packages": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages?period=2022-03",
-              "platforms": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/platforms?period=2022-03",
-              "proxies": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/proxies/{name}?period=2022-03"
+              "browsers": "https://data.jsdelivr.com/v1/stats/browsers?period=2022-03",
+              "network": "https://data.jsdelivr.com/v1/stats/network?period=2022-03",
+              "packages": "https://data.jsdelivr.com/v1/stats/packages?period=2022-03",
+              "platforms": "https://data.jsdelivr.com/v1/stats/platforms?period=2022-03",
+              "proxies": "https://data.jsdelivr.com/v1/stats/proxies/{name}?period=2022-03"
             }
           },
           {
             "period": "2022-02",
             "periodType": "s-month",
             "links": {
-              "network": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/network?period=2022-02",
-              "packages": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages?period=2022-02",
-              "proxies": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/proxies/{name}?period=2022-02"
+              "network": "https://data.jsdelivr.com/v1/stats/network?period=2022-02",
+              "packages": "https://data.jsdelivr.com/v1/stats/packages?period=2022-02",
+              "proxies": "https://data.jsdelivr.com/v1/stats/proxies/{name}?period=2022-02"
             }
           },
           {
             "period": "2022-01",
             "periodType": "s-month",
             "links": {
-              "network": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/network?period=2022-01",
-              "packages": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages?period=2022-01",
-              "proxies": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/proxies/{name}?period=2022-01"
+              "network": "https://data.jsdelivr.com/v1/stats/network?period=2022-01",
+              "packages": "https://data.jsdelivr.com/v1/stats/packages?period=2022-01",
+              "proxies": "https://data.jsdelivr.com/v1/stats/proxies/{name}?period=2022-01"
             }
           },
           {
             "period": "2021",
             "periodType": "s-year",
             "links": {
-              "network": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/network?period=2021",
-              "packages": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages?period=2021",
-              "proxies": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/proxies/{name}?period=2021"
+              "network": "https://data.jsdelivr.com/v1/stats/network?period=2021",
+              "packages": "https://data.jsdelivr.com/v1/stats/packages?period=2021",
+              "proxies": "https://data.jsdelivr.com/v1/stats/proxies/{name}?period=2021"
             }
           }
         ]
@@ -1926,8 +1926,8 @@ components:
               "bandwidth": 9262933914958
             },
             "links": {
-              "self": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/gh/prebid/currency-file?period=week",
-              "versions": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/gh/prebid/currency-file/versions?period=week"
+              "self": "https://data.jsdelivr.com/v1/stats/packages/gh/prebid/currency-file?period=week",
+              "versions": "https://data.jsdelivr.com/v1/stats/packages/gh/prebid/currency-file/versions?period=week"
             }
           },
           {
@@ -1940,8 +1940,8 @@ components:
               "bandwidth": 18246267828070
             },
             "links": {
-              "self": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/npm/prebid-universal-creative?period=week",
-              "versions": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/npm/prebid-universal-creative/versions?period=week"
+              "self": "https://data.jsdelivr.com/v1/stats/packages/npm/prebid-universal-creative?period=week",
+              "versions": "https://data.jsdelivr.com/v1/stats/packages/npm/prebid-universal-creative/versions?period=week"
             }
           }
         ]
@@ -1987,8 +1987,8 @@ components:
             }
           },
           "links": {
-            "self": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/gh/twbs/bootstrap?period=week",
-            "versions": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/gh/twbs/bootstrap/versions?period=week"
+            "self": "https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap?period=week",
+            "versions": "https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap/versions?period=week"
           }
         }
     ghTopRepoVersions:
@@ -2022,8 +2022,8 @@ components:
               }
             },
             "links": {
-              "self": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/gh/twbs/bootstrap@3.3.7?period=week",
-              "files": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/gh/twbs/bootstrap@3.3.7/files?period=week"
+              "self": "https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap@3.3.7?period=week",
+              "files": "https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap@3.3.7/files?period=week"
             }
           }
         ]
@@ -2055,8 +2055,8 @@ components:
             }
           },
           "links": {
-            "self": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/gh/twbs/bootstrap@2.2.1?period=week",
-            "files": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/gh/twbs/bootstrap@2.2.1/files?period=week"
+            "self": "https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap@2.2.1?period=week",
+            "files": "https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap@2.2.1/files?period=week"
           }
         }
     ghTopRepoVersionFiles:
@@ -2132,8 +2132,8 @@ components:
             }
           },
           "links": {
-            "self": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/npm/jquery?period=week",
-            "versions": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/npm/jquery/versions?period=week"
+            "self": "https://data.jsdelivr.com/v1/stats/packages/npm/jquery?period=week",
+            "versions": "https://data.jsdelivr.com/v1/stats/packages/npm/jquery/versions?period=week"
           }
         }
     npmPackageStatsScoped:
@@ -2178,8 +2178,8 @@ components:
             }
           },
           "links": {
-            "self": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/npm/jquery?period=week",
-            "versions": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/npm/jquery/versions?period=week"
+            "self": "https://data.jsdelivr.com/v1/stats/packages/npm/jquery?period=week",
+            "versions": "https://data.jsdelivr.com/v1/stats/packages/npm/jquery/versions?period=week"
           }
         }
     npmTopPackageVersions:
@@ -2213,8 +2213,8 @@ components:
               }
             },
             "links": {
-              "self": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/npm/jquery@3.6.0?period=week",
-              "files": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/npm/jquery@3.6.0/files?period=week"
+              "self": "https://data.jsdelivr.com/v1/stats/packages/npm/jquery@3.6.0?period=week",
+              "files": "https://data.jsdelivr.com/v1/stats/packages/npm/jquery@3.6.0/files?period=week"
             }
           }
         ]
@@ -2249,8 +2249,8 @@ components:
               }
             },
             "links": {
-              "self": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/npm/@popperjs/core@2.9.2?period=week",
-              "files": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/npm/@popperjs/core@2.9.2/files?period=week"
+              "self": "https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core@2.9.2?period=week",
+              "files": "https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core@2.9.2/files?period=week"
             }
           }
         ]
@@ -2282,8 +2282,8 @@ components:
             }
           },
           "links": {
-            "self": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/npm/jquery@2.2.1?period=week",
-            "files": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/npm/jquery@2.2.1/files?period=week"
+            "self": "https://data.jsdelivr.com/v1/stats/packages/npm/jquery@2.2.1?period=week",
+            "files": "https://data.jsdelivr.com/v1/stats/packages/npm/jquery@2.2.1/files?period=week"
           }
         }
     npmPackageVersionStatsScoped:
@@ -2314,8 +2314,8 @@ components:
             }
           },
           "links": {
-            "self": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/npm/@popperjs/core@2.2.1?period=week",
-            "files": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/npm/@popperjs/core@2.2.1/files?period=week"
+            "self": "https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core@2.2.1?period=week",
+            "files": "https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core@2.2.1/files?period=week"
           }
         }
     npmTopPackageVersionFiles:
@@ -2568,9 +2568,9 @@ components:
               "share": 59.92
             },
             "links": {
-              "countries": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/browsers/Chrome/countries",
-              "platforms": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/browsers/Chrome/platforms",
-              "versions": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/browsers/Chrome/versions"
+              "countries": "https://data.jsdelivr.com/v1/stats/browsers/Chrome/countries",
+              "platforms": "https://data.jsdelivr.com/v1/stats/browsers/Chrome/platforms",
+              "versions": "https://data.jsdelivr.com/v1/stats/browsers/Chrome/versions"
             }
           },
           {
@@ -2580,9 +2580,9 @@ components:
               "share": 22.12
             },
             "links": {
-              "countries": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/browsers/Safari/countries",
-              "platforms": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/browsers/Safari/platforms",
-              "versions": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/browsers/Safari/versions"
+              "countries": "https://data.jsdelivr.com/v1/stats/browsers/Safari/countries",
+              "platforms": "https://data.jsdelivr.com/v1/stats/browsers/Safari/platforms",
+              "versions": "https://data.jsdelivr.com/v1/stats/browsers/Safari/versions"
             }
           }
         ]
@@ -2597,7 +2597,7 @@ components:
               "share": 0.08
             },
             "links": {
-              "countries": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/browsers/Chrome/versions/105/countries"
+              "countries": "https://data.jsdelivr.com/v1/stats/browsers/Chrome/versions/105/countries"
             }
           },
           {
@@ -2608,7 +2608,7 @@ components:
               "share": 26.87
             },
             "links": {
-              "countries": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/browsers/Chrome/versions/104/countries"
+              "countries": "https://data.jsdelivr.com/v1/stats/browsers/Chrome/versions/104/countries"
             }
           }
         ]
@@ -2622,8 +2622,8 @@ components:
               "share": 95.79
             },
             "links": {
-              "browsers": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/browsers?country=GS",
-              "platforms": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/platforms?country=GS"
+              "browsers": "https://data.jsdelivr.com/v1/stats/browsers?country=GS",
+              "platforms": "https://data.jsdelivr.com/v1/stats/platforms?country=GS"
             }
           },
           {
@@ -2633,8 +2633,8 @@ components:
               "share": 86.51
             },
             "links": {
-              "browsers": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/browsers?country=BD",
-              "platforms": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/platforms?country=BD"
+              "browsers": "https://data.jsdelivr.com/v1/stats/browsers?country=BD",
+              "platforms": "https://data.jsdelivr.com/v1/stats/platforms?country=BD"
             }
           }
         ]
@@ -2648,9 +2648,9 @@ components:
               "share": 43.11
             },
             "links": {
-              "browsers": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/platforms/Windows/browsers",
-              "countries": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/platforms/Windows/countries",
-              "versions": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/platforms/Windows/versions"
+              "browsers": "https://data.jsdelivr.com/v1/stats/platforms/Windows/browsers",
+              "countries": "https://data.jsdelivr.com/v1/stats/platforms/Windows/countries",
+              "versions": "https://data.jsdelivr.com/v1/stats/platforms/Windows/versions"
             }
           },
           {
@@ -2660,9 +2660,9 @@ components:
               "share": 48.99
             },
             "links": {
-              "browsers": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/platforms/Android/browsers",
-              "countries": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/platforms/Android/countries",
-              "versions": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/platforms/Android/versions"
+              "browsers": "https://data.jsdelivr.com/v1/stats/platforms/Android/browsers",
+              "countries": "https://data.jsdelivr.com/v1/stats/platforms/Android/countries",
+              "versions": "https://data.jsdelivr.com/v1/stats/platforms/Android/versions"
             }
           }
         ]
@@ -2676,7 +2676,7 @@ components:
               "share": 0.08
             },
             "links": {
-              "countries": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/browsers/Chrome/versions/105/countries"
+              "countries": "https://data.jsdelivr.com/v1/stats/browsers/Chrome/versions/105/countries"
             }
           },
           {
@@ -2686,7 +2686,7 @@ components:
               "share": 26.87
             },
             "links": {
-              "countries": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/browsers/Chrome/versions/104/countries"
+              "countries": "https://data.jsdelivr.com/v1/stats/browsers/Chrome/versions/104/countries"
             }
           }
         ]
@@ -2700,8 +2700,8 @@ components:
               "share": 0.09
             },
             "links": {
-              "browsers": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/browsers?country=CO",
-              "platforms": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/platforms?country=CO"
+              "browsers": "https://data.jsdelivr.com/v1/stats/browsers?country=CO",
+              "platforms": "https://data.jsdelivr.com/v1/stats/platforms?country=CO"
             }
           },
           {
@@ -2711,8 +2711,8 @@ components:
               "share": 0.1
             },
             "links": {
-              "browsers": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/browsers?country=EC",
-              "platforms": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/platforms?country=EC"
+              "browsers": "https://data.jsdelivr.com/v1/stats/browsers?country=EC",
+              "platforms": "https://data.jsdelivr.com/v1/stats/platforms?country=EC"
             }
           }
         ]
@@ -2726,9 +2726,9 @@ components:
               "share": 40.33
             },
             "links": {
-              "browsers": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/platforms/Android/browsers",
-              "countries": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/platforms/Android/countries",
-              "versions": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/platforms/Android/versions"
+              "browsers": "https://data.jsdelivr.com/v1/stats/platforms/Android/browsers",
+              "countries": "https://data.jsdelivr.com/v1/stats/platforms/Android/countries",
+              "versions": "https://data.jsdelivr.com/v1/stats/platforms/Android/versions"
             }
           },
           {
@@ -2738,9 +2738,9 @@ components:
               "share": 24.51
             },
             "links": {
-              "browsers": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/platforms/Windows/browsers",
-              "countries": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/platforms/Windows/countries",
-              "versions": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/platforms/Windows/versions"
+              "browsers": "https://data.jsdelivr.com/v1/stats/platforms/Windows/browsers",
+              "countries": "https://data.jsdelivr.com/v1/stats/platforms/Windows/countries",
+              "versions": "https://data.jsdelivr.com/v1/stats/platforms/Windows/versions"
             }
           }
         ]
@@ -2756,7 +2756,7 @@ components:
               "share": 20.22
             },
             "links": {
-              "countries": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/platforms/Windows/versions/10/countries"
+              "countries": "https://data.jsdelivr.com/v1/stats/platforms/Windows/versions/10/countries"
             }
           },
           {
@@ -2768,7 +2768,7 @@ components:
               "share": 4.39
             },
             "links": {
-              "countries": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/platforms/macOS/versions/10.15/countries"
+              "countries": "https://data.jsdelivr.com/v1/stats/platforms/macOS/versions/10.15/countries"
             }
           }
         ]
@@ -2782,9 +2782,9 @@ components:
               "share": 76.01
             },
             "links": {
-              "countries": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/browsers/Chrome/countries",
-              "platforms": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/browsers/Chrome/platforms",
-              "versions": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/browsers/Chrome/versions"
+              "countries": "https://data.jsdelivr.com/v1/stats/browsers/Chrome/countries",
+              "platforms": "https://data.jsdelivr.com/v1/stats/browsers/Chrome/platforms",
+              "versions": "https://data.jsdelivr.com/v1/stats/browsers/Chrome/versions"
             }
           },
           {
@@ -2794,9 +2794,9 @@ components:
               "share": 7.58
             },
             "links": {
-              "countries": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/browsers/Microsoft%20Edge/countries",
-              "platforms": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/browsers/Microsoft%20Edge/platforms",
-              "versions": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/browsers/Microsoft%20Edge/versions"
+              "countries": "https://data.jsdelivr.com/v1/stats/browsers/Microsoft%20Edge/countries",
+              "platforms": "https://data.jsdelivr.com/v1/stats/browsers/Microsoft%20Edge/platforms",
+              "versions": "https://data.jsdelivr.com/v1/stats/browsers/Microsoft%20Edge/versions"
             }
           }
         ]
@@ -2810,8 +2810,8 @@ components:
               "share": 61.22
             },
             "links": {
-              "browsers": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/browsers?country=PN",
-              "platforms": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/platforms?country=PN"
+              "browsers": "https://data.jsdelivr.com/v1/stats/browsers?country=PN",
+              "platforms": "https://data.jsdelivr.com/v1/stats/platforms?country=PN"
             }
           },
           {
@@ -2821,8 +2821,8 @@ components:
               "share": 68.13
             },
             "links": {
-              "browsers": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/browsers?country=VA",
-              "platforms": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/platforms?country=VA"
+              "browsers": "https://data.jsdelivr.com/v1/stats/browsers?country=VA",
+              "platforms": "https://data.jsdelivr.com/v1/stats/platforms?country=VA"
             }
           }
         ]
@@ -2837,7 +2837,7 @@ components:
               "share": 4.39
             },
             "links": {
-              "countries": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/platforms/macOS/versions/10.15/countries"
+              "countries": "https://data.jsdelivr.com/v1/stats/platforms/macOS/versions/10.15/countries"
             }
           },
           {
@@ -2848,7 +2848,7 @@ components:
               "share": 0.33
             },
             "links": {
-              "countries": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/platforms/macOS/versions/10.14/countries"
+              "countries": "https://data.jsdelivr.com/v1/stats/platforms/macOS/versions/10.14/countries"
             }
           }
         ]
@@ -2862,8 +2862,8 @@ components:
               "share": 30.79
             },
             "links": {
-              "browsers": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/browsers?country=PN",
-              "platforms": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/platforms?country=PN"
+              "browsers": "https://data.jsdelivr.com/v1/stats/browsers?country=PN",
+              "platforms": "https://data.jsdelivr.com/v1/stats/platforms?country=PN"
             }
           },
           {
@@ -2873,8 +2873,8 @@ components:
               "share": 27.65
             },
             "links": {
-              "browsers": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/browsers?country=LS",
-              "platforms": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/platforms?country=LS"
+              "browsers": "https://data.jsdelivr.com/v1/stats/browsers?country=LS",
+              "platforms": "https://data.jsdelivr.com/v1/stats/platforms?country=LS"
             }
           }
         ]
@@ -2912,7 +2912,7 @@ components:
             }
           },
           "links": {
-            "files": "https://data-jsdelivr-com-preview.onrender.com/v1/stats/proxies/{name}/files?period=week"
+            "files": "https://data.jsdelivr.com/v1/stats/proxies/{name}/files?period=week"
           }
         }
     topProxyFiles:
@@ -3144,9 +3144,9 @@ components:
           examples:
             0:
               description: |
-                ![](https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/gh/twbs/bootstrap/badge?period=week)
-                ![](https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/gh/twbs/bootstrap/badge?period=week&type=rank)
-                ![](https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/gh/twbs/bootstrap/badge?period=week&type=type-rank)
+                ![](https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap/badge?period=week)
+                ![](https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap/badge?period=week&type=rank)
+                ![](https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap/badge?period=week&type=type-rank)
     npmPackageStats200:
       description: Success
       content:
@@ -3254,9 +3254,9 @@ components:
           examples:
             0:
               description: |
-                ![](https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/npm/jquery/badge?period=week)
-                ![](https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/npm/jquery/badge?period=week&type=rank)
-                ![](https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/npm/jquery/badge?period=week&type=type-rank)
+                ![](https://data.jsdelivr.com/v1/stats/packages/npm/jquery/badge?period=week)
+                ![](https://data.jsdelivr.com/v1/stats/packages/npm/jquery/badge?period=week&type=rank)
+                ![](https://data.jsdelivr.com/v1/stats/packages/npm/jquery/badge?period=week&type=type-rank)
     npmPackageBadgeScoped200:
       description: Success
       content:
@@ -3264,9 +3264,9 @@ components:
           examples:
             0:
               description: |
-                ![](https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/npm/@popperjs/core/badge?period=week)
-                ![](https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/npm/@popperjs/core/badge?period=week&type=rank)
-                ![](https://data-jsdelivr-com-preview.onrender.com/v1/stats/packages/npm/@popperjs/core/badge?period=week&type=type-rank)
+                ![](https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core/badge?period=week)
+                ![](https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core/badge?period=week&type=rank)
+                ![](https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core/badge?period=week&type=type-rank)
     networkStats200:
       description: Success
       content:
@@ -3801,7 +3801,7 @@ paths:
         - lang: js
           label: JS - List all months for which browser stats are available
           source: |
-            fetch('https://data-jsdelivr-com-preview.onrender.com/v1/stats/periods')
+            fetch('https://data.jsdelivr.com/v1/stats/periods')
               .then((resp) => resp.json())
               .then((data) => {
                 return data.filter((period) => {
