@@ -29,6 +29,10 @@ There is no search endpoint in this API because there are already two other APIs
  - [the official npm API](https://github.com/npm/registry/blob/master/docs/REGISTRY-API.md#get-v1search)
  - [Algolia's npm search](https://github.com/algolia/npm-search) ([more info](https://github.com/jsdelivr/data.jsdelivr.com/issues/6))
 
+## Contributing
+
+Refer to [CONTRIBUTING.md](CONTRIBUTING.md) for more information.
+
 ## Production config
 
 ```js
