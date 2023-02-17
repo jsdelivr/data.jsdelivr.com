@@ -24227,6 +24227,20 @@
 		},
 		{
 			"type": "npm",
+			"name": "entrypoint-no-local-cache-main-is-404",
+			"hits": 18,
+			"bandwidth": 0,
+			"prev": {
+				"hits": 0,
+				"bandwidth": 0
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-local-cache-main-is-404?period=2022-Q2",
+				"versions": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-local-cache-main-is-404/versions?by=bandwidth&period=2022-Q2"
+			}
+		},
+		{
+			"type": "npm",
 			"name": "entrypoint-main-no-extension-and-stats",
 			"hits": 20,
 			"bandwidth": 0,
@@ -25233,6 +25247,20 @@
 			"links": {
 				"self": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-trash-in-db?period=all",
 				"versions": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-trash-in-db/versions?by=bandwidth&period=all"
+			}
+		},
+		{
+			"type": "npm",
+			"name": "entrypoint-no-local-cache-main-is-404",
+			"hits": 18,
+			"bandwidth": 0,
+			"prev": {
+				"hits": 0,
+				"bandwidth": 0
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-local-cache-main-is-404?period=all",
+				"versions": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-local-cache-main-is-404/versions?by=bandwidth&period=all"
 			}
 		},
 		{
@@ -27089,6 +27117,20 @@
 		},
 		{
 			"type": "npm",
+			"name": "entrypoint-no-local-cache-main-is-404",
+			"hits": 18,
+			"bandwidth": 0,
+			"prev": {
+				"hits": 0,
+				"bandwidth": 0
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-local-cache-main-is-404",
+				"versions": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-local-cache-main-is-404/versions?by=bandwidth"
+			}
+		},
+		{
+			"type": "npm",
 			"name": "entrypoint-main-no-extension-and-stats",
 			"hits": 20,
 			"bandwidth": 0,
@@ -28095,6 +28137,20 @@
 			"links": {
 				"self": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-trash-in-db?period=quarter",
 				"versions": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-trash-in-db/versions?by=bandwidth&period=quarter"
+			}
+		},
+		{
+			"type": "npm",
+			"name": "entrypoint-no-local-cache-main-is-404",
+			"hits": 18,
+			"bandwidth": 0,
+			"prev": {
+				"hits": 0,
+				"bandwidth": 0
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-local-cache-main-is-404?period=quarter",
+				"versions": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-local-cache-main-is-404/versions?by=bandwidth&period=quarter"
 			}
 		},
 		{
@@ -29109,6 +29165,20 @@
 		},
 		{
 			"type": "npm",
+			"name": "entrypoint-no-local-cache-main-is-404",
+			"hits": 18,
+			"bandwidth": 0,
+			"prev": {
+				"hits": 0,
+				"bandwidth": 0
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-local-cache-main-is-404?period=s-month",
+				"versions": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-local-cache-main-is-404/versions?by=bandwidth&period=s-month"
+			}
+		},
+		{
+			"type": "npm",
 			"name": "entrypoint-main-no-extension-and-stats",
 			"hits": 20,
 			"bandwidth": 0,
@@ -30115,6 +30185,20 @@
 			"links": {
 				"self": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-trash-in-db?period=s-quarter",
 				"versions": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-trash-in-db/versions?by=bandwidth&period=s-quarter"
+			}
+		},
+		{
+			"type": "npm",
+			"name": "entrypoint-no-local-cache-main-is-404",
+			"hits": 18,
+			"bandwidth": 0,
+			"prev": {
+				"hits": 0,
+				"bandwidth": 0
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-local-cache-main-is-404?period=s-quarter",
+				"versions": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-local-cache-main-is-404/versions?by=bandwidth&period=s-quarter"
 			}
 		},
 		{
@@ -31968,6 +32052,20 @@
 			"links": {
 				"self": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-trash-in-db?period=year",
 				"versions": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-trash-in-db/versions?by=bandwidth&period=year"
+			}
+		},
+		{
+			"type": "npm",
+			"name": "entrypoint-no-local-cache-main-is-404",
+			"hits": 18,
+			"bandwidth": 0,
+			"prev": {
+				"hits": 0,
+				"bandwidth": 0
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-local-cache-main-is-404?period=year",
+				"versions": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-local-cache-main-is-404/versions?by=bandwidth&period=year"
 			}
 		},
 		{
@@ -56297,6 +56395,20 @@
 		},
 		{
 			"type": "npm",
+			"name": "entrypoint-no-local-cache-main-is-404",
+			"hits": 18,
+			"bandwidth": 0,
+			"prev": {
+				"hits": 0,
+				"bandwidth": 0
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-local-cache-main-is-404?period=2022-Q2",
+				"versions": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-local-cache-main-is-404/versions?period=2022-Q2"
+			}
+		},
+		{
+			"type": "npm",
 			"name": "entrypoint-main-is-css-and-stats-based-css-is-the-same",
 			"hits": 18,
 			"bandwidth": 0,
@@ -57303,6 +57415,20 @@
 			"links": {
 				"self": "http://localhost:4454/v1/stats/packages/npm/entrypoint-stats-based-js-is-the-same?period=all",
 				"versions": "http://localhost:4454/v1/stats/packages/npm/entrypoint-stats-based-js-is-the-same/versions?period=all"
+			}
+		},
+		{
+			"type": "npm",
+			"name": "entrypoint-no-local-cache-main-is-404",
+			"hits": 18,
+			"bandwidth": 0,
+			"prev": {
+				"hits": 0,
+				"bandwidth": 0
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-local-cache-main-is-404?period=all",
+				"versions": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-local-cache-main-is-404/versions?period=all"
 			}
 		},
 		{
@@ -59159,6 +59285,20 @@
 		},
 		{
 			"type": "npm",
+			"name": "entrypoint-no-local-cache-main-is-404",
+			"hits": 18,
+			"bandwidth": 0,
+			"prev": {
+				"hits": 0,
+				"bandwidth": 0
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-local-cache-main-is-404",
+				"versions": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-local-cache-main-is-404/versions"
+			}
+		},
+		{
+			"type": "npm",
 			"name": "entrypoint-main-is-css-and-stats-based-css-is-the-same",
 			"hits": 18,
 			"bandwidth": 0,
@@ -60165,6 +60305,20 @@
 			"links": {
 				"self": "http://localhost:4454/v1/stats/packages/npm/entrypoint-stats-based-js-is-the-same?period=quarter",
 				"versions": "http://localhost:4454/v1/stats/packages/npm/entrypoint-stats-based-js-is-the-same/versions?period=quarter"
+			}
+		},
+		{
+			"type": "npm",
+			"name": "entrypoint-no-local-cache-main-is-404",
+			"hits": 18,
+			"bandwidth": 0,
+			"prev": {
+				"hits": 0,
+				"bandwidth": 0
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-local-cache-main-is-404?period=quarter",
+				"versions": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-local-cache-main-is-404/versions?period=quarter"
 			}
 		},
 		{
@@ -61179,6 +61333,20 @@
 		},
 		{
 			"type": "npm",
+			"name": "entrypoint-no-local-cache-main-is-404",
+			"hits": 18,
+			"bandwidth": 0,
+			"prev": {
+				"hits": 0,
+				"bandwidth": 0
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-local-cache-main-is-404?period=s-month",
+				"versions": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-local-cache-main-is-404/versions?period=s-month"
+			}
+		},
+		{
+			"type": "npm",
 			"name": "entrypoint-main-is-css-and-stats-based-css-is-the-same",
 			"hits": 18,
 			"bandwidth": 0,
@@ -62185,6 +62353,20 @@
 			"links": {
 				"self": "http://localhost:4454/v1/stats/packages/npm/entrypoint-stats-based-js-is-the-same?period=s-quarter",
 				"versions": "http://localhost:4454/v1/stats/packages/npm/entrypoint-stats-based-js-is-the-same/versions?period=s-quarter"
+			}
+		},
+		{
+			"type": "npm",
+			"name": "entrypoint-no-local-cache-main-is-404",
+			"hits": 18,
+			"bandwidth": 0,
+			"prev": {
+				"hits": 0,
+				"bandwidth": 0
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-local-cache-main-is-404?period=s-quarter",
+				"versions": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-local-cache-main-is-404/versions?period=s-quarter"
 			}
 		},
 		{
@@ -64038,6 +64220,20 @@
 			"links": {
 				"self": "http://localhost:4454/v1/stats/packages/npm/entrypoint-stats-based-js-is-the-same?period=year",
 				"versions": "http://localhost:4454/v1/stats/packages/npm/entrypoint-stats-based-js-is-the-same/versions?period=year"
+			}
+		},
+		{
+			"type": "npm",
+			"name": "entrypoint-no-local-cache-main-is-404",
+			"hits": 18,
+			"bandwidth": 0,
+			"prev": {
+				"hits": 0,
+				"bandwidth": 0
+			},
+			"links": {
+				"self": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-local-cache-main-is-404?period=year",
+				"versions": "http://localhost:4454/v1/stats/packages/npm/entrypoint-no-local-cache-main-is-404/versions?period=year"
 			}
 		},
 		{
