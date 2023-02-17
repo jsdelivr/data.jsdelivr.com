@@ -141,8 +141,11 @@ class PackageRequest extends BaseRequest {
 			throw new BadVersionError();
 		}
 
-		new PackageEntrypoints({ ...props, entrypoints: JSON.stringify(response.data.entrypoints) }).insert().catch(() => {});
-		return response.data.entrypoints;
+		let { files } = JSON.parse(await this.getFilesAsJson());
+		let entrypoints = _.pickBy(response.data.entrypoints, value => files.some(file => file.name === value));
+
+		new PackageEntrypoints({ ...props, entrypoints: JSON.stringify(entrypoints) }).insert().catch(() => {});
+		return entrypoints;
 	}
 
 	async getMetadata () {

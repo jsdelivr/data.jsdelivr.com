@@ -130,14 +130,29 @@ module.exports.mochaGlobalSetup = async () => {
 		.reply(200, { version: '1.0.0', entrypoints: { main: '/index.js' } });
 
 	nock('https://cdn.jsdelivr.net')
+		.get('/npm/entrypoint-no-local-cache@1.0.0/+private-json')
+		.times(1)
+		.reply(200, { version: '1.0.0', files: [{ name: '/index.js' }] });
+
+	nock('https://cdn.jsdelivr.net')
 		.get('/npm/@scoped/entrypoint-no-local-cache@1.0.0/+private-entrypoints')
 		.times(1)
 		.reply(200, { version: '1.0.0', entrypoints: { main: '/index.js' } });
 
 	nock('https://cdn.jsdelivr.net')
+		.get('/npm/@scoped/entrypoint-no-local-cache@1.0.0/+private-json')
+		.times(1)
+		.reply(200, { version: '1.0.0', files: [{ name: '/index.js' }] });
+
+	nock('https://cdn.jsdelivr.net')
 		.get('/npm/entrypoint-no-local-cache-empty-remote@1.0.0/+private-entrypoints')
 		.times(1)
 		.reply(200, { version: '1.0.0', entrypoints: {} });
+
+	nock('https://cdn.jsdelivr.net')
+		.get('/npm/entrypoint-no-local-cache-empty-remote@1.0.0/+private-json')
+		.times(1)
+		.reply(200, { version: '1.0.0', files: [] });
 
 	nock('https://cdn.jsdelivr.net')
 		.get('/npm/entrypoint-no-local-cache-404-remote@1.0.0-404/+private-entrypoints')
@@ -153,6 +168,16 @@ module.exports.mochaGlobalSetup = async () => {
 		.get('/npm/entrypoint-no-local-cache-different-remote-version@1.0.0/+private-entrypoints')
 		.times(1)
 		.reply(200, { version: '2.0.0' });
+
+	nock('https://cdn.jsdelivr.net')
+		.get('/npm/entrypoint-no-local-cache-main-is-404@1.0.0/+private-entrypoints')
+		.times(1)
+		.reply(200, { version: '1.0.0', entrypoints: { style: '/wrong-file.css' } });
+
+	nock('https://cdn.jsdelivr.net')
+		.get('/npm/entrypoint-no-local-cache-main-is-404@1.0.0/+private-json')
+		.times(1)
+		.reply(200, { version: '1.0.0', files: [] });
 
 	await setupDb({ databaseDate: '2022-07-05' });
 };

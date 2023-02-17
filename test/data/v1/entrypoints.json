@@ -641,8 +641,8 @@
 	"entrypoint-no-local-cache-main-is-404@1.0.0": {
 		"expected": {
 			"css": {
-				"file": "/wrong-file.min.css",
-				"guessed": false
+				"file": "/style.min.css",
+				"guessed": true
 			}
 		},
 		"db": {
