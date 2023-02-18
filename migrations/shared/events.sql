@@ -25,10 +25,6 @@ create or replace event update_daily_data
 				end if;
 			end if;
 
-			if not exists(select * from view_top_package_files where `date` = utc_date()) then
-				call updateViewTopPackageFiles(utc_date());
-			end if;
-
 			if not exists(select * from view_top_packages where `date` = utc_date()) then
 				call updateViewTopPackages(utc_date());
 			end if;
@@ -57,6 +53,10 @@ create or replace event update_daily_data
 				if not exists(select * from view_top_proxy_files where `date` = date_add(utc_date(), interval 1 day)) then
 					call updateViewTopProxyFiles(date_add(utc_date(), interval 1 day));
 				end if;
+			end if;
+
+			if not exists(select * from view_top_package_files where `date` = utc_date()) then
+				call updateViewTopPackageFiles(utc_date());
 			end if;
 
 			call updateMonthlyViews(utc_date());
