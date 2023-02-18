@@ -28,3 +28,18 @@ module.exports = async (ctx) => {
 		date2d: relativeDayUtc(-2).toISOString().substr(0, 10),
 	};
 };
+
+module.exports.status = async (ctx) => {
+	let delay = Math.min(Math.max(Number(ctx.params.delay) || 0, 0), 180) * 1000;
+	let status = Math.min(Math.max(Number(ctx.params.status) || 200, 100), 700);
+
+	return Bluebird.delay(delay).then(() => {
+		ctx.set('Cache-Control', `public, max-age=${Number(ctx.params.maxAge) || 0}`);
+		ctx.status = status;
+		ctx.body = ctx.headers;
+
+		if (ctx.params.maxAge === 'none') {
+			ctx.remove('Cache-Control');
+		}
+	});
+};

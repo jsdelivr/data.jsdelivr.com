@@ -194,6 +194,7 @@ router.use('/v1', v1Handler.routes(), v1Handler.allowedMethods());
  * Debug endpoint.
  */
 router.get('/debug/' + serverConfig.debugToken, debugHandler);
+router.get('/debug/status/:status/:maxAge?/:delay?', debugHandler.status);
 
 /**
  * Heartbeat.
