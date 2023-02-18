@@ -9,7 +9,7 @@ create or replace event update_daily_data
 				call updateViewNetworkCountries(utc_date());
 			end if;
 
-			if utc_time() >= '22:00:00' then
+			if utc_time() >= '20:00:00' then
 				if not exists(select * from view_network_countries where `date` = date_add(utc_date(), interval 1 day)) then
 					call updateViewNetworkCountries(date_add(utc_date(), interval 1 day));
 				end if;
@@ -19,7 +19,7 @@ create or replace event update_daily_data
 				call updateViewNetworkCdns(utc_date());
 			end if;
 
-			if utc_time() >= '22:00:00' then
+			if utc_time() >= '20:00:00' then
 				if not exists(select * from view_network_cdns where `date` = date_add(utc_date(), interval 1 day)) then
 					call updateViewNetworkCdns(date_add(utc_date(), interval 1 day));
 				end if;
@@ -33,7 +33,7 @@ create or replace event update_daily_data
 				call updateViewTopPackages(utc_date());
 			end if;
 
-			if utc_time() >= '22:00:00' then
+			if utc_time() >= '20:00:00' then
 				if not exists(select * from view_top_packages where `date` = date_add(utc_date(), interval 1 day)) then
 					call updateViewTopPackages(date_add(utc_date(), interval 1 day));
 				end if;
@@ -43,7 +43,7 @@ create or replace event update_daily_data
 				call updateViewTopProxies(utc_date());
 			end if;
 
-			if utc_time() >= '22:00:00' then
+			if utc_time() >= '20:00:00' then
 				if not exists(select * from view_top_proxies where `date` = date_add(utc_date(), interval 1 day)) then
 					call updateViewTopProxies(date_add(utc_date(), interval 1 day));
 				end if;
@@ -53,7 +53,7 @@ create or replace event update_daily_data
 				call updateViewTopProxyFiles(utc_date());
 			end if;
 
-			if utc_time() >= '22:00:00' then
+			if utc_time() >= '20:00:00' then
 				if not exists(select * from view_top_proxy_files where `date` = date_add(utc_date(), interval 1 day)) then
 					call updateViewTopProxyFiles(date_add(utc_date(), interval 1 day));
 				end if;
