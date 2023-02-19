@@ -142,7 +142,8 @@ class PackageRequest extends BaseRequest {
 		}
 
 		let { files } = JSON.parse(await this.getFilesAsJson());
-		let entrypoints = _.pickBy(response.data.entrypoints, value => files.some(file => file.name === value));
+		let filenames = files.map(file => entrypoint.normalizeFilename(file.name));
+		let entrypoints = _.pickBy(entrypoint.normalizeFields(response.data.entrypoints), value => filenames.includes(value));
 
 		new PackageEntrypoints({ ...props, entrypoints: JSON.stringify(entrypoints) }).insert().catch(() => {});
 		return entrypoints;
@@ -168,7 +169,7 @@ class PackageRequest extends BaseRequest {
 	}
 
 	async getResolvedEntrypoints () {
-		let entrypoints = entrypoint.normalize(await this.getEntrypoints());
+		let entrypoints = await this.getEntrypoints();
 
 		return entrypoint.resolve(entrypoints, [
 			() => {

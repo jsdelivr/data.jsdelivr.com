@@ -47,7 +47,7 @@ const isReadyForResponse = (data) => {
 	return data.js && data.css;
 };
 
-const normalize = (pkg) => {
+const normalizeFields = (pkg) => {
 	return _.mapValues(pkg, filename => normalizeFilename(filename));
 };
 
@@ -81,6 +81,7 @@ const responseByExtension = (entries, extension) => {
 module.exports = {
 	fromFields,
 	fromFallbackFields,
-	normalize,
+	normalizeFields,
+	normalizeFilename,
 	resolve,
 };

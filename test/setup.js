@@ -179,5 +179,25 @@ module.exports.mochaGlobalSetup = async () => {
 		.times(1)
 		.reply(200, { version: '1.0.0', files: [] });
 
+	nock('https://cdn.jsdelivr.net')
+		.get('/npm/entrypoint-main-no-extension@1.0.0/+private-entrypoints')
+		.times(1)
+		.reply(200, { version: '1.0.0', entrypoints: { main: '/main' } });
+
+	nock('https://cdn.jsdelivr.net')
+		.get('/npm/entrypoint-main-no-extension@1.0.0/+private-json')
+		.times(1)
+		.reply(200, { version: '1.0.0', files: [{ name: '/main.js' }] });
+
+	nock('https://cdn.jsdelivr.net')
+		.get('/npm/entrypoint-main-no-extension-and-stats@1.0.0/+private-entrypoints')
+		.times(1)
+		.reply(200, { version: '1.0.0', entrypoints: { main: '/main' } });
+
+	nock('https://cdn.jsdelivr.net')
+		.get('/npm/entrypoint-main-no-extension-and-stats@1.0.0/+private-json')
+		.times(1)
+		.reply(200, { version: '1.0.0', files: [{ name: '/main.js' }] });
+
 	await setupDb({ databaseDate: '2022-07-05' });
 };

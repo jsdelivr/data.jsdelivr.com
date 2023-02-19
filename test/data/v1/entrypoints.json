@@ -129,11 +129,7 @@
 				"guessed": false
 			}
 		},
-		"db": {
-			"entrypoints": {
-				"main": "/main"
-			}
-		}
+		"db": {}
 	},
 	"entrypoint-main-no-extension-and-stats@1.0.0": {
 		"expected": {
@@ -143,9 +139,6 @@
 			}
 		},
 		"db": {
-			"entrypoints": {
-				"main": "/main"
-			},
 			"stats": [
 				{
 					"file": "/main.js",
@@ -609,11 +602,11 @@
 		},
 		"db": {
 			"entrypoints": {
-				"main": "/script.js"
+				"main": "/script.min.js"
 			},
 			"stats": [
 				{
-					"file": "/script.js",
+					"file": "/script.min.js",
 					"hits": 18
 				}
 			]
@@ -628,7 +621,7 @@
 		},
 		"db": {
 			"entrypoints": {
-				"main": "/style.css"
+				"main": "/style.min.css"
 			},
 			"stats": [
 				{
