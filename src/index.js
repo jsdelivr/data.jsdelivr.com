@@ -180,8 +180,11 @@ server.use(async (ctx, next) => {
 		ctx.status = 400;
 		await next();
 	} catch (e) {
-		ctx.status = 500;
-		ctx.app.emit('error', e, ctx);
+		ctx.status = e.statusCode || e.status || 500;
+
+		if (ctx.status >= 500 && !e.silent) {
+			ctx.app.emit('error', e, ctx);
+		}
 	}
 });
 
