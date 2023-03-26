@@ -108,7 +108,7 @@
 		"migrate": "knex migrate:latest",
 		"mocha": "mocha",
 		"prepare": "husky install",
-		"start": "cross-env NODE_ENV=development node src",
+		"start": "cross-env NODE_ENV=development node --no-experimental-fetch src",
 		"test": "npm run lint && npm run mocha",
 		"test:prune": "cross-env PRUNE_OLD_SNAPSHOTS=1 mocha",
 		"test:snapshot": "cross-env SNAPSHOT_RESPONSES=1 mocha",
@@ -126,6 +126,6 @@
 		"url": "https://github.com/jsdelivr/data.jsdelivr.com/issues"
 	},
 	"engines": {
-		"node": "^16.9.0"
+		"node": "^18.15.0"
 	}
 }
