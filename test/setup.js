@@ -199,5 +199,15 @@ module.exports.mochaGlobalSetup = async () => {
 		.times(1)
 		.reply(200, { version: '1.0.0', files: [{ name: '/main.js' }] });
 
+	nock('https://cdn.jsdelivr.net')
+		.get('/npm/entrypoint-over-size-limit@1.0.0/+private-entrypoints')
+		.times(1)
+		.reply(200, { version: '1.0.0', entrypoints: { main: '/main' } });
+
+	nock('https://cdn.jsdelivr.net')
+		.get('/npm/entrypoint-over-size-limit@1.0.0/+private-json')
+		.times(1)
+		.reply(403, 'Package size exceeded the configured limit of 50 MB.');
+
 	await setupDb({ databaseDate: '2022-07-05' });
 };

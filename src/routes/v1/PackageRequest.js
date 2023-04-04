@@ -142,7 +142,7 @@ class PackageRequest extends BaseRequest {
 		}
 
 		let { files } = JSON.parse(await this.getFilesAsJson());
-		let filenames = files.map(file => entrypoint.normalizeFilename(file.name));
+		let filenames = (files || []).map(file => entrypoint.normalizeFilename(file.name)); // files may be missing if the package exceeds the size limit
 		let entrypoints = _.pickBy(entrypoint.normalizeFields(response.data.entrypoints), value => filenames.includes(value));
 
 		new PackageEntrypoints({ ...props, entrypoints: JSON.stringify(entrypoints) }).insert().catch(() => {});

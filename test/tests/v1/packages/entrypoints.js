@@ -101,7 +101,7 @@ describe('/v1/packages/entrypoints', () => {
 			});
 	});
 
-	it(`GET @1.0.0/v1/packages/npm/entrypoint-no-local-cache-different-remote-version@1.0.0/entrypoints`, async () => {
+	it(`GET /v1/packages/npm/entrypoint-no-local-cache-different-remote-version@1.0.0/entrypoints`, async () => {
 		return chai.request(server)
 			.get('/v1/packages/npm/entrypoint-no-local-cache-different-remote-version@1.0.0/entrypoints')
 			.then((response) => {
@@ -113,6 +113,20 @@ describe('/v1/packages/entrypoints', () => {
 				expect(response).to.be.json;
 				expect(response.body.status).to.equal(404);
 				expect(response.body.message).to.equal('Couldn\'t find version 1.0.0 for entrypoint-no-local-cache-different-remote-version. Make sure you use a specific version number, and not a version range or an npm tag.');
+			});
+	});
+
+	it(`GET /v1/packages/npm/entrypoint-over-size-limit@1.0.0/entrypoints`, async () => {
+		return chai.request(server)
+			.get('/v1/packages/npm/entrypoint-over-size-limit@1.0.0/entrypoints')
+			.then((response) => {
+				expect(response).to.have.status(200);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=604800, stale-while-revalidate=86400, stale-if-error=86400');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response.body.entrypoints).to.be.empty;
 			});
 	});
 });
