@@ -1,5 +1,8 @@
 {
 	"extends": "@martin-kolarik/eslint-config",
+	"ignorePatterns": [
+		"coverage/**"
+	],
 	"globals": {
 		"_": false,
 		"db": false,
