@@ -5,6 +5,7 @@ const path = require('path');
 const urlTemplate = require('url-template');
 const HttpLinkHeader = require('http-link-header');
 const dateRange = require('../src/routes/utils/dateRange');
+const isDeepEmpty = require('../src/routes/utils/isDeepEmpty');
 require('./plugins/wrap-it');
 
 // based on https://stackoverflow.com/a/43053803
@@ -59,7 +60,11 @@ function makeEndpointAssertion (uriTemplate, defaults, { params, assert }, { lim
 				expect(response).to.be.json;
 
 				if (status < 400) {
-					expect(response).to.have.header('Cache-Control', 'public, stale-while-revalidate=3600, stale-if-error=86400');
+					if (isDeepEmpty(response.body)) {
+						expect(response).to.have.header('Cache-Control', 'public, max-age=300');
+					} else {
+						expect(response).to.have.header('Cache-Control', 'public, stale-while-revalidate=3600, stale-if-error=86400');
+					}
 				} else {
 					expect(response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
 				}
@@ -242,7 +247,7 @@ module.exports = {
 			__dirname,
 			'expected',
 			path.relative(path.join(__dirname, 'tests'), path.dirname(file)),
-			`${path.basename(file, path.extname(file))}.json`
+			`${path.basename(file, path.extname(file))}.json`,
 		));
 	},
 };

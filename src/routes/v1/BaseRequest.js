@@ -2,6 +2,7 @@ const config = require('config');
 const relativeDayUtc = require('relative-day-utc');
 
 const dateRange = require('../utils/dateRange');
+const isDeepEmpty = require('../utils/isDeepEmpty');
 const pagination = require('../utils/pagination');
 const LinkBuilder = require('../utils/LinkBuilder');
 const { splitPackageUserAndName } = require('../utils/link-builder-transforms');
@@ -136,6 +137,11 @@ class BaseRequest {
 	}
 
 	setCacheHeader (delay = 0) {
+		if (isDeepEmpty(this.ctx.body)) {
+			this.ctx.maxAge = v1Config.maxAgeShort;
+			return;
+		}
+
 		this.ctx.expires = new Date(relativeDayUtc(1).valueOf() + delay).toUTCString();
 		this.ctx.maxStale = v1Config.maxStaleShort;
 		this.ctx.maxStaleError = v1Config.maxStaleError;

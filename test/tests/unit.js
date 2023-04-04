@@ -3,6 +3,7 @@ const expect = chai.expect;
 
 const relativeDayUtc = require('relative-day-utc');
 const dateRange = require('../../src/routes/utils/dateRange');
+const isDeepEmpty = require('../../src/routes/utils/isDeepEmpty');
 const pagination = require('../../src/routes/utils/pagination');
 
 describe('Unit tests', () => {
@@ -90,6 +91,33 @@ describe('Unit tests', () => {
 		it('invalid period', () => {
 			let range = () => dateRange('xxx', relativeDayUtc(-10));
 			expect(range).to.throw('period');
+		});
+	});
+
+	describe('utils/isDeepEmpty.js', () => {
+		it('works', () => {
+			expect(isDeepEmpty({})).to.be.true;
+			expect(isDeepEmpty({ array: [] })).to.be.true;
+			expect(isDeepEmpty({ object: {} })).to.be.true;
+			expect(isDeepEmpty({ number: 0 })).to.be.true;
+			expect(isDeepEmpty({ other: null })).to.be.true;
+			expect(isDeepEmpty({ object: { array: [] }, number: 0, other: null })).to.be.true;
+
+			expect(isDeepEmpty({ x: 1 })).to.be.true;
+			expect(isDeepEmpty({ array: [ 1 ] })).to.be.true;
+			expect(isDeepEmpty({ object: { x: 1 } })).to.be.true;
+			expect(isDeepEmpty({ number: 1 })).to.be.true;
+			expect(isDeepEmpty({ object: { array: [ 1 ] }, number: 0, other: null })).to.be.true;
+		});
+
+		it('ignores links', () => {
+			expect(isDeepEmpty({ links: { something: '/something' } })).to.be.true;
+			expect(isDeepEmpty({ array: [{ links: { something: '/something' } }] })).to.be.true;
+			expect(isDeepEmpty({ object: { links: { something: '/something' } } })).to.be.true;
+		});
+
+		it('ignores simple empty raw json', () => {
+			expect(isDeepEmpty('[\n\t\n]')).to.be.true;
 		});
 	});
 
