@@ -9,8 +9,8 @@
 /httpRequests/
 
 # Other local files
-/dictionaries/
 /shelf/
+/dictionaries
 
 # All other XML files except the explicitly allowed ones
 /*.xml
