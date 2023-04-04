@@ -3,6 +3,7 @@ global.apmClient = require('elastic-apm-node').start({});
 apmClient.addTransactionFilter(require('elastic-apm-utils').apm.transactionFilter({ filterNotSampled: false }));
 require('./lib/startup');
 
+const zlib = require('zlib');
 const config = require('config');
 const signalExit = require('signal-exit');
 const Koa = require('koa');
@@ -85,7 +86,7 @@ server.use(async (ctx, next) => {
 /**
  * Gzip compression.
  */
-server.use(koaCompress());
+server.use(koaCompress({ br: { params: { [zlib.constants.BROTLI_PARAM_QUALITY]: 4 } } }));
 
 /**
  * ETag support.
