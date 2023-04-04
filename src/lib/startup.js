@@ -19,7 +19,7 @@ global.logger = new Logger(
 		new ElasticWriter(process.env.LOG_LEVEL || Logger.levels.info, { esClient, apmClient: global.apmClient }),
 	] : [
 		new Logger.ConsoleWriter(process.env.LOG_LEVEL || Logger.levels.trace),
-	]
+	],
 );
 
 global.log = logger.scope('global');

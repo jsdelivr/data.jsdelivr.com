@@ -34,7 +34,7 @@ const log = (() => {
 			new ElasticWriter(process.env.LOG_LEVEL || Logger.levels.info, { esClient }),
 		] : [
 			new Logger.ConsoleWriter(process.env.LOG_LEVEL || Logger.levels.info),
-		]
+		],
 	);
 })();
 
@@ -209,7 +209,7 @@ Bluebird.all([ fetchVersionsList(), fetchExistingPackages() ])
 			return pipeline(
 				httpClient.stream(tarballUrl),
 				zlib.createGunzip(),
-				fetchPackages(versionsList, existingPackages, packages)
+				fetchPackages(versionsList, existingPackages, packages),
 			).then(() => packages).catch(retry);
 		}, { retries: 2 }).then(packages => storePackages(packages));
 	})

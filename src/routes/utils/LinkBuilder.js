@@ -88,7 +88,7 @@ class LinkBuilder {
 			_.pick(_.omit(this.ctx.originalQuery, this._omitQuery), validator?.schemaKeys?.query), // Keys from the current request if they are in the target schema as well.
 			_.pick(mappedResource, validator?.requiredSchemaKeys?.query), // Keys required in the target schema.
 			_.pick(mappedResource, this._includeQuery), // Explicitly added keys.
-			this._queryValues // Explicitly added values that are not in mappedResource.
+			this._queryValues, // Explicitly added values that are not in mappedResource.
 		), (v, k) => String(v) !== validator?.schemaDefaults?.query?.[k]); // Filter out default values.
 
 		let requiredParamsDefaults = paramNames
