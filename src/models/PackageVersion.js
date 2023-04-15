@@ -115,7 +115,8 @@ class PackageVersion extends BaseModel {
 
 		return db('view_top_package_files')
 			.select([ 'filename' ])
-			.where({ name, version });
+			.where({ name, version })
+			.orderBy('idx');
 	}
 
 	static async getSumDateHitsPerFileByName (type, name, version, from, to) {

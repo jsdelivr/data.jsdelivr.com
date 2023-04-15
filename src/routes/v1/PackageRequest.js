@@ -115,16 +115,20 @@ class PackageRequest extends BaseRequest {
 	}
 
 	async getFilesAsJson () {
+		if (this._filesAsJson) {
+			return this._filesAsJson;
+		}
+
 		let props = { type: this.params.type, name: this.params.name, version: this.params.version };
 		let packageListing = await PackageListing.find(props);
 
 		if (packageListing) {
-			return packageListing.listing;
+			return this._filesAsJson = packageListing.listing;
 		}
 
 		let listing = JSON.stringify(await this.fetchFiles());
 		new PackageListing({ ...props, listing }).insert().catch(() => {});
-		return listing;
+		return this._filesAsJson = listing;
 	}
 
 	async getEntrypoints () {
@@ -180,8 +184,16 @@ class PackageRequest extends BaseRequest {
 				return files.map(file => ({ file: file.filename }));
 			},
 			async () => {
-				let files = await PackageVersion.getMostUsedFiles(this.params.name, this.params.version);
-				return files.map(file => ({ file: file.filename, guessed: true }));
+				let [ mostUsedFiles, filesAsJson ] = await Promise.all([
+					PackageVersion.getMostUsedFiles(this.params.name, this.params.version),
+					this.getFilesAsJson(),
+				]);
+
+				let { files: versionFiles } = JSON.parse(filesAsJson);
+				let filenames = (versionFiles || []).map(file => entrypoint.normalizeFilename(file.name)); // files may be missing if the package exceeds the size limit
+
+				return mostUsedFiles.map(entry => ({ file: entrypoint.normalizeFilename(entry.filename), guessed: true }))
+					.filter(entry => filenames.includes(entry.file));
 			},
 			() => {
 				return entrypoint.fromFallbackFields(entrypoints);

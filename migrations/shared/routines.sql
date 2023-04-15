@@ -50,8 +50,8 @@ begin
 	delete from view_top_package_files;
 
 	insert into view_top_package_files
-	(name, version, filename, date)
-	select t.name, t.v, t.filename, utc_date()
+	(name, version, idx, filename, date)
+	select t.name, t.v, t.rowNum, t.filename, utc_date()
 	from (
 		select
 			package.name as name,
@@ -66,8 +66,8 @@ begin
 			and package.type = 'npm'
 			and file.filename rlike '^(?:(?!/(docs?|documentation|examples?|samples?|demos?|tests?|cjs|esm|es6?)(?:/|\\.))(?!/[._]).)+\\.(js|css)$'
 			and file.sha256 is not null
-		group by file.id
-	) t where t.rowNum = 1;
+		group by name, v, filename
+	) t where t.rowNum <= 10;
 
 	commit;
 end;

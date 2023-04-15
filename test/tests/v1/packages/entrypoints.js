@@ -1,11 +1,17 @@
 const chai = require('chai');
 const expect = chai.expect;
+const nock = require('nock');
 
 const testCases = require('../../../data/v1/entrypoints.json');
 
 describe('/v1/packages/entrypoints', () => {
 	for (let [ packageName, data ] of Object.entries(testCases)) {
 		it(`GET /v1/packages/npm/${packageName}/entrypoints`, () => {
+			nock('https://cdn.jsdelivr.net')
+				.get(`/npm/${packageName}/+private-json`)
+				.times(1)
+				.reply(200, { version: '1.0.0', files: (data.db?.stats || []).map(entry => ({ name: entry.file })) });
+
 			return chai.request(server)
 				.get(`/v1/packages/npm/${packageName}/entrypoints`)
 				.then((response) => {

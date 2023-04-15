@@ -16,17 +16,14 @@ const upstreamCdnResponses = require('./data/v1/cdn.json');
 const upstreamGitHubResponses = require('./data/v1/github.json');
 
 module.exports.mochaGlobalSetup = async () => {
+	// nock.recorder.rec();
+	// nock.cleanAll();
 	nock.disableNetConnect();
 	nock.enableNetConnect('127.0.0.1');
 
 	await Bluebird.fromCallback((callback) => {
 		http.createServer(serverCallback).listen(process.env.PORT || config.get('server.port'), callback);
 	});
-
-	// nock.recorder.rec();
-	nock.cleanAll();
-	nock.disableNetConnect();
-	nock.enableNetConnect('127.0.0.1');
 
 	// package tests
 	nock('https://registry.npmjs.org')
@@ -175,11 +172,6 @@ module.exports.mochaGlobalSetup = async () => {
 		.reply(200, { version: '1.0.0', entrypoints: { style: '/wrong-file.css' } });
 
 	nock('https://cdn.jsdelivr.net')
-		.get('/npm/entrypoint-no-local-cache-main-is-404@1.0.0/+private-json')
-		.times(1)
-		.reply(200, { version: '1.0.0', files: [] });
-
-	nock('https://cdn.jsdelivr.net')
 		.get('/npm/entrypoint-main-no-extension@1.0.0/+private-entrypoints')
 		.times(1)
 		.reply(200, { version: '1.0.0', entrypoints: { main: '/main' } });
@@ -193,11 +185,6 @@ module.exports.mochaGlobalSetup = async () => {
 		.get('/npm/entrypoint-main-no-extension-and-stats@1.0.0/+private-entrypoints')
 		.times(1)
 		.reply(200, { version: '1.0.0', entrypoints: { main: '/main' } });
-
-	nock('https://cdn.jsdelivr.net')
-		.get('/npm/entrypoint-main-no-extension-and-stats@1.0.0/+private-json')
-		.times(1)
-		.reply(200, { version: '1.0.0', files: [{ name: '/main.js' }] });
 
 	nock('https://cdn.jsdelivr.net')
 		.get('/npm/entrypoint-over-size-limit@1.0.0/+private-entrypoints')
