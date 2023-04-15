@@ -380,7 +380,11 @@
 				},
 				{
 					"file": "/docs/index.js",
-					"hits": 100
+					"hits": 50
+				},
+				{
+					"file": "/docs.js",
+					"hits": 50
 				},
 				{
 					"file": "/tests/index.js",
