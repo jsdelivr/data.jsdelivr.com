@@ -3595,6 +3595,7 @@ paths:
       - $ref: '#/components/parameters/ghRepo'
     get:
       summary: 'Get repo metadata'
+      operationId: getRepoMetadata
       description: |
         Returns a list of versions for the repository and links to related resources.
         The versions are sorted in descending order using [`v-compare`](https://www.npmjs.com/package/v-compare).
@@ -3611,6 +3612,7 @@ paths:
       - $ref: '#/components/parameters/ghRepo'
     get:
       summary: Get a resolved version from a range or a tag
+      operationId: getResolvedRepoVersion
       description: |
         Returns the latest version matching `specifier` or `null` if there is no matching version.
         Only valid [semver](https://semver.org/) versions are considered.
@@ -3630,6 +3632,7 @@ paths:
       - $ref: '#/components/parameters/version'
     get:
       summary: 'Get version metadata'
+      operationId: getRepoVersionMetadata
       description: |
         Returns the default file and a list of all files in this version.
         An error is returned if the package size exceeds 50 MB.
@@ -3649,6 +3652,7 @@ paths:
       - $ref: '#/components/parameters/package'
     get:
       summary: Get package metadata
+      operationId: getPackageMetadata
       description: |
         Returns a list of tags and versions for the package and links to related resources.
         The versions are sorted in descending order using [`semver`](https://www.npmjs.com/package/semver).
@@ -3665,6 +3669,7 @@ paths:
       - $ref: '#/components/parameters/packageScoped'
     get:
       summary: Get package metadata (scoped)
+      operationId: getScopedPackageMetadata
       description: |
         Returns a list of tags and versions for the package and links to related resources.
         The versions are sorted in descending order using [`semver`](https://www.npmjs.com/package/semver).
@@ -3680,6 +3685,7 @@ paths:
       - $ref: '#/components/parameters/package'
     get:
       summary: Get a resolved version from a range or a tag
+      operationId: getResolvedPackageVersion
       description: |
         Returns the latest version matching `specifier` or `null` if there is no matching version.
       parameters:
@@ -3697,6 +3703,7 @@ paths:
       - $ref: '#/components/parameters/packageScoped'
     get:
       summary: Get a resolved version from a range or a tag (scoped)
+      operationId: getResolvedScopedPackageVersion
       description: |
         Returns the latest version matching `specifier` or `null` if there is no matching version.
       parameters:
@@ -3714,6 +3721,7 @@ paths:
       - $ref: '#/components/parameters/version'
     get:
       summary: Get version metadata
+      operationId: getPackageVersionMetadata
       description: |
         Returns the default file and a list of all files in this version.
         An error is returned if the package size exceeds 100 MB.
@@ -3735,6 +3743,7 @@ paths:
       - $ref: '#/components/parameters/version'
     get:
       summary: Get version metadata (scoped)
+      operationId: getScopedPackageVersionMetadata
       description: |
         Returns the default file and a list of all files in this version.
         An error is returned if the package size exceeds 100 MB.
@@ -3755,6 +3764,7 @@ paths:
       - $ref: '#/components/parameters/version'
     get:
       summary: Get version entry points
+      operationId: getPackageVersionEntrypoints
       description: |
         Returns the recommended files to use from this package based on package metadata and additional heuristics.
         The response includes one file of each supported type (js, css), if available.
@@ -3773,6 +3783,7 @@ paths:
       - $ref: '#/components/parameters/version'
     get:
       summary: Get version entry points (scoped)
+      operationId: getScopedPackageVersionEntrypoints
       description: |
         Returns the recommended files to use from this package based on package metadata and additional heuristics.
         The response includes one file of each supported type (js, css), if available.
@@ -3787,6 +3798,7 @@ paths:
   /v1/stats/periods:
     get:
       summary: List stats periods
+      operationId: listStatsPeriods
       description: |
         Returns a list of all periods for which some stats are available in descending order.
         The `links` property of each period indicates which stats are available.
@@ -3815,6 +3827,7 @@ paths:
   /v1/stats/packages:
     get:
       summary: List top packages
+      operationId: listTopPackages
       description: |
         Returns the most popular packages and their stats totals for the selected period.
         More detailed stats can be accessed via the provided links.
@@ -3837,6 +3850,7 @@ paths:
       - $ref: '#/components/parameters/ghRepo'
     get:
       summary: Get repo stats
+      operationId: getRepoStats
       description: |
         Returns daily usage stats for the repository.
         Stats for specific versions can be accessed via the provided link.
@@ -3855,6 +3869,7 @@ paths:
       - $ref: '#/components/parameters/ghRepo'
     get:
       summary: List top repo versions
+      operationId: listTopRepoVersions
       description: |
         Returns daily usage stats for the most popular repository versions.
         Stats for the individual version files can be accessed via the provided link.
@@ -3879,6 +3894,7 @@ paths:
       - $ref: '#/components/parameters/version'
     get:
       summary: Get repo version stats
+      operationId: getRepoVersionStats
       description: |
         Returns daily usage stats for the specified repository version.
         Stats for the individual version files can be accessed via the provided link.
@@ -3898,6 +3914,7 @@ paths:
       - $ref: '#/components/parameters/version'
     get:
       summary: 'List top repo version files'
+      operationId: listTopRepoVersionFiles
       description: |
         Returns daily usage stats for the most popular repository version files.
       parameters:
@@ -3920,6 +3937,7 @@ paths:
       - $ref: '#/components/parameters/ghRepo'
     get:
       summary: Get repo badge
+      operationId: getRepoBadge
       description: |
         Returns a badge with repo hits or rank.
       parameters:
@@ -3937,6 +3955,7 @@ paths:
       - $ref: '#/components/parameters/package'
     get:
       summary: Get package stats
+      operationId: getPackageStats
       description: |
         Returns daily usage stats for the package.
         Stats for specific versions can be accessed via the provided link.
@@ -3955,6 +3974,7 @@ paths:
       - $ref: '#/components/parameters/packageScoped'
     get:
       summary: Get package stats (scoped)
+      operationId: getScopedPackageStats
       description: |
         Returns daily usage stats for the package.
         Stats for specific versions can be accessed via the provided link.
@@ -3972,6 +3992,7 @@ paths:
       - $ref: '#/components/parameters/package'
     get:
       summary: List top package versions
+      operationId: listTopPackageVersions
       description: |
         Returns daily usage stats for the most popular package versions.
         Stats for the individual version files can be accessed via the provided link.
@@ -3995,6 +4016,7 @@ paths:
       - $ref: '#/components/parameters/packageScoped'
     get:
       summary: List top package versions (scoped)
+      operationId: listTopScopedPackageVersions
       description: |
         Returns daily usage stats for the most popular package versions.
         Stats for the individual version files can be accessed via the provided link.
@@ -4018,6 +4040,7 @@ paths:
       - $ref: '#/components/parameters/version'
     get:
       summary: Get package version stats
+      operationId: getPackageVersionStats
       description: |
         Returns daily usage stats for the specified package version.
         Stats for the individual version files can be accessed via the provided link.
@@ -4037,6 +4060,7 @@ paths:
       - $ref: '#/components/parameters/version'
     get:
       summary: Get package version stats (scoped)
+      operationId: getScopedPackageVersionStats
       description: |
         Returns daily usage stats for the specified package version.
         Stats for the individual version files can be accessed via the provided link.
@@ -4055,6 +4079,7 @@ paths:
       - $ref: '#/components/parameters/version'
     get:
       summary: List top package version files
+      operationId: listTopPackageVersionFiles
       description: |
         Returns daily usage stats for the most popular package version files.
       parameters:
@@ -4078,6 +4103,7 @@ paths:
       - $ref: '#/components/parameters/version'
     get:
       summary: List top package version files (scoped)
+      operationId: listTopScopedPackageVersionFiles
       description: |
         Returns daily usage stats for the most popular package version files.
       parameters:
@@ -4099,6 +4125,7 @@ paths:
       - $ref: '#/components/parameters/package'
     get:
       summary: Get package badge
+      operationId: getPackageBadge
       description: |
         Returns a badge with package hits or rank.
       parameters:
@@ -4117,6 +4144,7 @@ paths:
       - $ref: '#/components/parameters/packageScoped'
     get:
       summary: Get package badge (scoped)
+      operationId: getScopedPackageBadge
       description: |
         Returns a badge with package hits or rank.
       parameters:
@@ -4132,6 +4160,7 @@ paths:
   /v1/stats/network:
     get:
       summary: Get network-wide stats
+      operationId: getNetworkStats
       description: |
         Returns network-wide hits and bandwidth stats, with breakdowns by provider and date.
         The list of providers may change over time. Only providers that served some traffic in the selected period are returned.
@@ -4156,6 +4185,7 @@ paths:
   /v1/stats/network/content:
     get:
       summary: Get network-wide content stats
+      operationId: getNetworkContentStats
       description: |
         Returns network-wide hits and bandwidth stats, with breakdown by content type (packages, proxy endpoints, other) and date.
       parameters:
@@ -4168,6 +4198,7 @@ paths:
   /v1/stats/network/countries:
     get:
       summary: Get network-wide country stats
+      operationId: getNetworkCountriesStats
       description: |
         Returns network-wide hits and bandwidth stats, with breakdown by country and provider.
         The list of providers may change over time. Only providers that served some traffic in the selected period are returned.
@@ -4190,6 +4221,7 @@ paths:
   /v1/stats/browsers:
     get:
       summary: List top browsers (grouped versions)
+      operationId: listTopBrowsers
       description: |
         Returns a list of the most popular browsers with stats combined across all versions and platforms.
       parameters:
@@ -4208,6 +4240,7 @@ paths:
   /v1/stats/browsers/versions:
     get:
       summary: List top browsers (separate versions)
+      operationId: listTopBrowsersVersions
       description: |
         Returns a list of the most popular browsers with each major version listed separately.
       parameters:
@@ -4228,6 +4261,7 @@ paths:
       - $ref: '#/components/parameters/browserName'
     get:
       summary: List top browser countries
+      operationId: listTopBrowserCountries
       description: |
         Returns countries ordered by the market share of the specified browser.
       parameters:
@@ -4248,6 +4282,7 @@ paths:
       - $ref: '#/components/parameters/browserName'
     get:
       summary: List top browser platforms
+      operationId: listTopBrowserPlatforms
       description: |
         Returns platforms ordered by their percentage share on all requests by the specified browser.
       parameters:
@@ -4268,6 +4303,7 @@ paths:
       - $ref: '#/components/parameters/browserName'
     get:
       summary: List top browser versions
+      operationId: listTopBrowserVersions
       description: |
         Returns the browser versions ordered by their market share.
       parameters:
@@ -4289,6 +4325,7 @@ paths:
       - $ref: '#/components/parameters/browserVersion'
     get:
       summary: List top browser version countries
+      operationId: listTopBrowserVersionCountries
       description: |
         Returns countries ordered by the market share of the specified browser version.
       parameters:
@@ -4307,6 +4344,7 @@ paths:
   /v1/stats/platforms:
     get:
       summary: List top platforms (grouped versions)
+      operationId: listTopPlatforms
       description: |
         Returns a list of the most popular platforms with stats combined across all versions.
       parameters:
@@ -4324,7 +4362,8 @@ paths:
         - 'Stats: platforms'
   /v1/stats/platforms/versions:
     get:
-      summary: List top platform (separate versions)
+      summary: List top platforms (separate versions)
+      operationId: listTopPlatformsVersions
       description: |
         Returns a list of the most popular platforms with each major version listed separately.
       parameters:
@@ -4345,6 +4384,7 @@ paths:
       - $ref: '#/components/parameters/platformName'
     get:
       summary: List top platform browsers
+      operationId: listTopPlatformBrowsers
       description: |
         Returns browsers ordered by their percentage share on all requests on the specified platform.
       parameters:
@@ -4365,6 +4405,7 @@ paths:
       - $ref: '#/components/parameters/platformName'
     get:
       summary: List top platform countries
+      operationId: listTopPlatformCountries
       description: |
         Returns countries ordered by the market share of the specified platform.
       parameters:
@@ -4383,6 +4424,7 @@ paths:
       - $ref: '#/components/parameters/platformName'
     get:
       summary: List top platform versions
+      operationId: listTopPlatformVersions
       description: |
         Returns the platform versions ordered by their market share.
       parameters:
@@ -4404,6 +4446,7 @@ paths:
       - $ref: '#/components/parameters/platformVersion'
     get:
       summary: List top platform version countries
+      operationId: listTopPlatformVersionCountries
       description: |
         Returns countries ordered by the market share of the specified platform version.
       parameters:
@@ -4422,6 +4465,7 @@ paths:
       - $ref: '#/components/parameters/proxyName'
     get:
       summary: Get proxy stats
+      operationId: getProxyStats
       description: |
         Returns daily usage stats for the proxy.
       parameters:
@@ -4438,6 +4482,7 @@ paths:
       - $ref: '#/components/parameters/proxyName'
     get:
       summary: List top proxy files
+      operationId: listTopProxyFiles
       description: |
         EXPERIMENTAL: This feature may change or be removed in the future.
 
@@ -4462,6 +4507,7 @@ paths:
       - $ref: '#/components/parameters/hash'
     get:
       summary: Get file metadata from file hash
+      operationId: lookupFileHash
       description:
         Allows a reverse lookup of a file at the CDN by its hash. Works only for files which were accessed at least once.
         If there are multiple files with the same hash, only the one which was accessed first via the CDN is returned.
