@@ -1,7 +1,8 @@
 openapi: 3.1.0
 info:
   title: jsDelivr API
-  summary: The public jsDelivr API. Get npm packages, files, versions, entry points, as well as their CDN URLs and download stats.
+  summary: The public jsDelivr API.
+  description: Get npm packages, files, versions, entry points, as well as their CDN URLs and download stats.
   version: 1.3.0
   termsOfService: https://github.com/jsdelivr/data.jsdelivr.com
   contact:
@@ -3150,6 +3151,7 @@ components:
                 ![](https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap/badge?period=week)
                 ![](https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap/badge?period=week&type=rank)
                 ![](https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap/badge?period=week&type=type-rank)
+              externalValue: https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap/badge?period=week
     npmPackageStats200:
       description: Success
       content:
@@ -3260,6 +3262,7 @@ components:
                 ![](https://data.jsdelivr.com/v1/stats/packages/npm/jquery/badge?period=week)
                 ![](https://data.jsdelivr.com/v1/stats/packages/npm/jquery/badge?period=week&type=rank)
                 ![](https://data.jsdelivr.com/v1/stats/packages/npm/jquery/badge?period=week&type=type-rank)
+              externalValue: https://data.jsdelivr.com/v1/stats/packages/npm/jquery/badge?period=week
     npmPackageBadgeScoped200:
       description: Success
       content:
@@ -3270,6 +3273,7 @@ components:
                 ![](https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core/badge?period=week)
                 ![](https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core/badge?period=week&type=rank)
                 ![](https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core/badge?period=week&type=type-rank)
+              externalValue: https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core/badge?period=week
     networkStats200:
       description: Success
       content:
