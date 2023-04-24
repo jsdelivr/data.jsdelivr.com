@@ -58,7 +58,7 @@ components:
         $ref: '#/components/schemas/BrowserName'
       examples:
         browser:
-          value: Microsoft Edge
+          value: 'Microsoft Edge'
     browserVersion:
       in: path
       name: version
@@ -67,7 +67,7 @@ components:
         $ref: '#/components/schemas/BrowserVersion'
       examples:
         version:
-          value: 101
+          value: '101'
     ghRepo:
       in: path
       name: repo
@@ -77,7 +77,7 @@ components:
         type: string
       examples:
         repo:
-          value: bootstrap
+          value: 'bootstrap'
     ghUser:
       in: path
       name: user
@@ -87,7 +87,7 @@ components:
         type: string
       examples:
         user:
-          value: twbs
+          value: 'twbs'
     hash:
       in: path
       name: hash
@@ -97,7 +97,7 @@ components:
         type: string
       examples:
         hash:
-          value: 87083882cc6015984eb0411a99d3981817f5dc5c90ba24f0940420c5548d82de
+          value: '87083882cc6015984eb0411a99d3981817f5dc5c90ba24f0940420c5548d82de'
     package:
       in: path
       name: package
@@ -107,7 +107,7 @@ components:
         type: string
       examples:
         package:
-          value: jquery
+          value: 'jquery'
     packageScope:
       in: path
       name: scope
@@ -117,7 +117,7 @@ components:
         type: string
       examples:
         scope:
-          value: popperjs
+          value: 'popperjs'
     packageScoped:
       in: path
       name: package
@@ -127,7 +127,7 @@ components:
         type: string
       examples:
         package:
-          value: core
+          value: 'core'
     platformName:
       in: path
       name: name
@@ -136,7 +136,7 @@ components:
         $ref: '#/components/schemas/PlatformName'
       examples:
         platform:
-          value: Windows
+          value: 'Windows'
     platformVersion:
       in: path
       name: version
@@ -144,7 +144,7 @@ components:
       schema:
         $ref: '#/components/schemas/PlatformVersion'
       examples:
-        version: 101
+        version: '101'
     proxyName:
       in: path
       name: name
@@ -154,7 +154,7 @@ components:
         type: string
       examples:
         proxy:
-          value: cocoa
+          value: 'cocoa'
     version:
       in: path
       name: version
@@ -164,7 +164,7 @@ components:
         type: string
       examples:
         version:
-          value: 2.2.1
+          value: '2.2.1'
     badgeType:
       in: query
       name: type
@@ -249,15 +249,15 @@ components:
         default: month
       examples:
         floating:
-          value: week
+          value: 'week'
         static:
-          value: s-month
+          value: 's-month'
         dateMonth:
-          value: 2022-08
+          value: '2022-08'
         dateQuarter:
-          value: 2022-Q1
+          value: '2022-Q1'
         dateYear:
-          value: 2022
+          value: '2022'
     periodStatic:
       in: query
       name: period
@@ -275,13 +275,13 @@ components:
         default: s-month
       examples:
         static:
-          value: s-month
+          value: 's-month'
         dateMonth:
-          value: 2022-08
+          value: '2022-08'
         dateQuarter:
-          value: 2022-Q1
+          value: '2022-Q1'
         dateYear:
-          value: 2022
+          value: '2022'
     specifier:
       in: query
       name: specifier
@@ -291,9 +291,9 @@ components:
         default: latest
       examples:
         range:
-          value: 2.2
+          value: '2.2'
         tag:
-          value: next
+          value: 'next'
     structure:
       in: query
       name: structure
@@ -2951,7 +2951,7 @@ components:
           schema:
             $ref: '#/components/schemas/PackageMetadata'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/ghMetadata'
     ghResolved200:
       description: Success
@@ -2960,9 +2960,9 @@ components:
           schema:
             $ref: '#/components/schemas/PackageResolved'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/ghResolved'
-            1:
+            '1':
               $ref: '#/components/examples/ghResolvedNull'
     ghVersionMetadata200:
       description: Success
@@ -2971,9 +2971,9 @@ components:
           schema:
             $ref: '#/components/schemas/PackageVersionMetadata'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/ghVersionMetadataTree'
-            1:
+            '1':
               $ref: '#/components/examples/ghVersionMetadataFlat'
     npmMetadata200:
       description: Success
@@ -2982,7 +2982,7 @@ components:
           schema:
             $ref: '#/components/schemas/PackageMetadata'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/npmMetadata'
     npmMetadataScoped200:
       description: Success
@@ -2991,7 +2991,7 @@ components:
           schema:
             $ref: '#/components/schemas/PackageMetadata'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/npmMetadataScoped'
     npmResolved200:
       description: Success
@@ -3000,9 +3000,9 @@ components:
           schema:
             $ref: '#/components/schemas/PackageResolved'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/npmResolved'
-            1:
+            '1':
               $ref: '#/components/examples/npmResolvedNull'
     npmResolvedScoped200:
       description: Success
@@ -3011,9 +3011,9 @@ components:
           schema:
             $ref: '#/components/schemas/PackageResolved'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/npmResolvedScoped'
-            1:
+            '1':
               $ref: '#/components/examples/npmResolvedScopedNull'
     npmVersionMetadata200:
       description: Success
@@ -3022,9 +3022,9 @@ components:
           schema:
             $ref: '#/components/schemas/PackageVersionMetadata'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/npmVersionMetadataTree'
-            1:
+            '1':
               $ref: '#/components/examples/npmVersionMetadataFlat'
     npmVersionMetadataScoped200:
       description: Success
@@ -3033,9 +3033,9 @@ components:
           schema:
             $ref: '#/components/schemas/PackageVersionMetadata'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/npmVersionMetadataScopedTree'
-            1:
+            '1':
               $ref: '#/components/examples/npmVersionMetadataScopedFlat'
     npmVersionEntrypoints200:
       description: Success
@@ -3044,7 +3044,7 @@ components:
           schema:
             $ref: '#/components/schemas/PackageEntrypoints'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/npmVersionEntrypoints'
     npmVersionEntrypointsScoped200:
       description: Success
@@ -3053,7 +3053,7 @@ components:
           schema:
             $ref: '#/components/schemas/PackageEntrypoints'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/npmVersionEntrypointsScoped'
     periods200:
       description: Success
@@ -3069,7 +3069,7 @@ components:
           schema:
             $ref: '#/components/schemas/Periods'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/periods'
     topPackages200:
       description: Success
@@ -3085,7 +3085,7 @@ components:
           schema:
             $ref: '#/components/schemas/TopPackages'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/topPackages'
     ghPackageStats200:
       description: Success
@@ -3094,7 +3094,7 @@ components:
           schema:
             $ref: '#/components/schemas/PackageStats'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/ghPackageStats'
     ghTopRepoVersions200:
       description: Success
@@ -3110,7 +3110,7 @@ components:
           schema:
             $ref: '#/components/schemas/TopPackageVersions'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/ghTopRepoVersions'
     ghRepoVersionStats200:
       description: Success
@@ -3119,7 +3119,7 @@ components:
           schema:
             $ref: '#/components/schemas/PackageVersionStats'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/ghRepoVersionStats'
     ghTopRepoVersionFiles200:
       description: Success
@@ -3135,14 +3135,14 @@ components:
           schema:
             $ref: '#/components/schemas/TopPackageVersionFiles'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/ghTopRepoVersionFiles'
     ghRepoBadge200:
       description: Success
       content:
         image/svg+xml:
           examples:
-            0:
+            '0':
               description: |
                 ![](https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap/badge?period=week)
                 ![](https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap/badge?period=week&type=rank)
@@ -3154,7 +3154,7 @@ components:
           schema:
             $ref: '#/components/schemas/PackageStats'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/npmPackageStats'
     npmPackageStatsScoped200:
       description: Success
@@ -3163,7 +3163,7 @@ components:
           schema:
             $ref: '#/components/schemas/PackageStats'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/npmPackageStatsScoped'
     npmTopPackageVersions200:
       description: Success
@@ -3179,7 +3179,7 @@ components:
           schema:
             $ref: '#/components/schemas/TopPackageVersions'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/npmTopPackageVersions'
     npmTopPackageVersionsScoped200:
       description: Success
@@ -3195,7 +3195,7 @@ components:
           schema:
             $ref: '#/components/schemas/TopPackageVersions'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/npmTopPackageVersionsScoped'
     npmPackageVersionStats200:
       description: Success
@@ -3204,7 +3204,7 @@ components:
           schema:
             $ref: '#/components/schemas/PackageVersionStats'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/npmPackageVersionStats'
     npmPackageVersionStatsScoped200:
       description: Success
@@ -3213,7 +3213,7 @@ components:
           schema:
             $ref: '#/components/schemas/PackageVersionStats'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/npmPackageVersionStatsScoped'
     npmTopRepoVersionFiles200:
       description: Success
@@ -3229,7 +3229,7 @@ components:
           schema:
             $ref: '#/components/schemas/TopPackageVersionFiles'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/npmTopPackageVersionFiles'
     npmTopRepoVersionFilesScoped200:
       description: Success
@@ -3245,14 +3245,14 @@ components:
           schema:
             $ref: '#/components/schemas/TopPackageVersionFiles'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/npmTopPackageVersionFilesScoped'
     npmPackageBadge200:
       description: Success
       content:
         image/svg+xml:
           examples:
-            0:
+            '0':
               description: |
                 ![](https://data.jsdelivr.com/v1/stats/packages/npm/jquery/badge?period=week)
                 ![](https://data.jsdelivr.com/v1/stats/packages/npm/jquery/badge?period=week&type=rank)
@@ -3262,7 +3262,7 @@ components:
       content:
         image/svg+xml:
           examples:
-            0:
+            '0':
               description: |
                 ![](https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core/badge?period=week)
                 ![](https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core/badge?period=week&type=rank)
@@ -3274,7 +3274,7 @@ components:
           schema:
             $ref: '#/components/schemas/NetworkStats'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/networkStats'
     networkContentStats200:
       description: Success
@@ -3283,7 +3283,7 @@ components:
           schema:
             $ref: '#/components/schemas/NetworkContentStats'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/networkContentStats'
     networkCountryStats200:
       description: Success
@@ -3292,7 +3292,7 @@ components:
           schema:
             $ref: '#/components/schemas/NetworkCountryStats'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/networkCountryStats'
     browsers200:
       description: Success
@@ -3308,7 +3308,7 @@ components:
           schema:
             $ref: '#/components/schemas/TopBrowsers'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/topBrowsers'
     browsersVersions200:
       description: Success
@@ -3324,7 +3324,7 @@ components:
           schema:
             $ref: '#/components/schemas/TopBrowsersVersions'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/topBrowsersVersions'
     browserCountries200:
       description: Success
@@ -3340,7 +3340,7 @@ components:
           schema:
             $ref: '#/components/schemas/TopBrowserCountries'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/topBrowserCountries'
     browserPlatforms200:
       description: Success
@@ -3356,7 +3356,7 @@ components:
           schema:
             $ref: '#/components/schemas/TopBrowserPlatforms'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/topBrowserPlatforms'
     browserVersions200:
       description: Success
@@ -3372,7 +3372,7 @@ components:
           schema:
             $ref: '#/components/schemas/TopBrowserVersions'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/topBrowserVersions'
     browserVersionCountries200:
       description: Success
@@ -3388,7 +3388,7 @@ components:
           schema:
             $ref: '#/components/schemas/TopBrowserVersionCountries'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/topBrowserVersionCountries'
     platforms200:
       description: Success
@@ -3404,7 +3404,7 @@ components:
           schema:
             $ref: '#/components/schemas/TopPlatforms'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/topPlatforms'
     platformsVersions200:
       description: Success
@@ -3420,7 +3420,7 @@ components:
           schema:
             $ref: '#/components/schemas/TopPlatformsVersions'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/topPlatformsVersions'
     platformBrowsers200:
       description: Success
@@ -3436,7 +3436,7 @@ components:
           schema:
             $ref: '#/components/schemas/TopPlatformBrowsers'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/topPlatformBrowsers'
     platformCountries200:
       description: Success
@@ -3452,7 +3452,7 @@ components:
           schema:
             $ref: '#/components/schemas/TopPlatformCountries'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/topPlatformCountries'
     platformVersions200:
       description: Success
@@ -3468,7 +3468,7 @@ components:
           schema:
             $ref: '#/components/schemas/TopPlatformVersions'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/topPlatformVersions'
     platformVersionCountries200:
       description: Success
@@ -3484,7 +3484,7 @@ components:
           schema:
             $ref: '#/components/schemas/TopPlatformVersionCountries'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/topPlatformVersionCountries'
     proxyStats200:
       description: Success
@@ -3493,7 +3493,7 @@ components:
           schema:
             $ref: '#/components/schemas/ProxyStats'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/proxyStats'
     topProxyFiles200:
       description: Success
@@ -3509,7 +3509,7 @@ components:
           schema:
             $ref: '#/components/schemas/TopProxyFiles'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/topProxyFiles'
     lookupHash200:
       description: Success
@@ -3518,9 +3518,9 @@ components:
           schema:
             $ref: '#/components/schemas/LookupHash'
           examples:
-            0:
+            '0':
               $ref: '#/components/examples/lookupHash'
-    400:
+    '400':
       description: Bad Request
       content:
         application/json:
@@ -3547,7 +3547,7 @@ components:
                 message: Invalid parameter value...
                 links:
                   documentation: https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com
-    403:
+    '403':
       description: Forbidden
       content:
         application/json:
@@ -3566,7 +3566,7 @@ components:
               value:
                 status: 403
                 message: Package size exceeded the configured limit of 100 MB.
-    404:
+    '404':
       description: Not Found
       content:
         application/json:
@@ -3596,9 +3596,9 @@ paths:
         Returns a list of versions for the repository and links to related resources.
         The versions are sorted in descending order using [`v-compare`](https://www.npmjs.com/package/v-compare).
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/ghMetadata200'
-        404:
+        '404':
           $ref: '#/components/responses/404'
       tags:
         - 'Package metadata: GitHub'
@@ -3614,9 +3614,9 @@ paths:
       parameters:
         - $ref: '#/components/parameters/specifier'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/ghResolved200'
-        404:
+        '404':
           $ref: '#/components/responses/404'
       tags:
         - 'Package metadata: GitHub'
@@ -3633,11 +3633,11 @@ paths:
       parameters:
         - $ref: '#/components/parameters/structure'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/ghVersionMetadata200'
-        403:
+        '403':
           $ref: '#/components/responses/403'
-        404:
+        '404':
           $ref: '#/components/responses/404'
       tags:
         - 'Package metadata: GitHub'
@@ -3650,9 +3650,9 @@ paths:
         Returns a list of tags and versions for the package and links to related resources.
         The versions are sorted in descending order using [`semver`](https://www.npmjs.com/package/semver).
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/npmMetadata200'
-        404:
+        '404':
           $ref: '#/components/responses/404'
       tags:
         - 'Package metadata: npm'
@@ -3666,9 +3666,9 @@ paths:
         Returns a list of tags and versions for the package and links to related resources.
         The versions are sorted in descending order using [`semver`](https://www.npmjs.com/package/semver).
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/npmMetadataScoped200'
-        404:
+        '404':
           $ref: '#/components/responses/404'
       tags:
         - 'Package metadata: npm'
@@ -3682,9 +3682,9 @@ paths:
       parameters:
         - $ref: '#/components/parameters/specifier'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/npmResolved200'
-        404:
+        '404':
           $ref: '#/components/responses/404'
       tags:
         - 'Package metadata: npm'
@@ -3699,9 +3699,9 @@ paths:
       parameters:
         - $ref: '#/components/parameters/specifier'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/npmResolvedScoped200'
-        404:
+        '404':
           $ref: '#/components/responses/404'
       tags:
         - 'Package metadata: npm'
@@ -3717,11 +3717,11 @@ paths:
       parameters:
         - $ref: '#/components/parameters/structure'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/npmVersionMetadata200'
-        403:
+        '403':
           $ref: '#/components/responses/403'
-        404:
+        '404':
           $ref: '#/components/responses/404'
       tags:
         - 'Package metadata: npm'
@@ -3738,11 +3738,11 @@ paths:
       parameters:
         - $ref: '#/components/parameters/structure'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/npmVersionMetadataScoped200'
-        403:
+        '403':
           $ref: '#/components/responses/403'
-        404:
+        '404':
           $ref: '#/components/responses/404'
       tags:
         - 'Package metadata: npm'
@@ -3757,9 +3757,9 @@ paths:
         The response includes one file of each supported type (js, css), if available.
         The output may change over time as our algorithm improves.
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/npmVersionEntrypoints200'
-        404:
+        '404':
           $ref: '#/components/responses/404'
       tags:
         - 'Package metadata: npm'
@@ -3775,9 +3775,9 @@ paths:
         The response includes one file of each supported type (js, css), if available.
         The output may change over time as our algorithm improves.
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/npmVersionEntrypointsScoped200'
-        404:
+        '404':
           $ref: '#/components/responses/404'
       tags:
         - 'Package metadata: npm'
@@ -3791,7 +3791,7 @@ paths:
         - $ref: '#/components/parameters/limit'
         - $ref: '#/components/parameters/page'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/periods200'
       tags:
         - Stats
@@ -3822,9 +3822,9 @@ paths:
         - $ref: '#/components/parameters/limit'
         - $ref: '#/components/parameters/page'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/topPackages200'
-        400:
+        '400':
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: packages'
@@ -3840,9 +3840,9 @@ paths:
       parameters:
         - $ref: '#/components/parameters/period'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/ghPackageStats200'
-        400:
+        '400':
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: GitHub packages'
@@ -3861,9 +3861,9 @@ paths:
         - $ref: '#/components/parameters/limit'
         - $ref: '#/components/parameters/page'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/ghTopRepoVersions200'
-        400:
+        '400':
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: GitHub packages'
@@ -3882,9 +3882,9 @@ paths:
       parameters:
         - $ref: '#/components/parameters/period'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/ghRepoVersionStats200'
-        400:
+        '400':
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: GitHub packages'
@@ -3903,9 +3903,9 @@ paths:
         - $ref: '#/components/parameters/limit'
         - $ref: '#/components/parameters/page'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/ghTopRepoVersionFiles200'
-        400:
+        '400':
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: GitHub packages'
@@ -3923,9 +3923,9 @@ paths:
         - $ref: '#/components/parameters/badgeType'
         - $ref: '#/components/parameters/period'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/ghRepoBadge200'
-        400:
+        '400':
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: GitHub packages'
@@ -3940,9 +3940,9 @@ paths:
       parameters:
         - $ref: '#/components/parameters/period'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/npmPackageStats200'
-        400:
+        '400':
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: npm packages'
@@ -3958,9 +3958,9 @@ paths:
       parameters:
         - $ref: '#/components/parameters/period'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/npmPackageStatsScoped200'
-        400:
+        '400':
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: npm packages'
@@ -3978,9 +3978,9 @@ paths:
         - $ref: '#/components/parameters/limit'
         - $ref: '#/components/parameters/page'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/npmTopPackageVersions200'
-        400:
+        '400':
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: npm packages'
@@ -4001,9 +4001,9 @@ paths:
         - $ref: '#/components/parameters/limit'
         - $ref: '#/components/parameters/page'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/npmTopPackageVersionsScoped200'
-        400:
+        '400':
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: npm packages'
@@ -4021,9 +4021,9 @@ paths:
       parameters:
         - $ref: '#/components/parameters/period'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/npmPackageVersionStats200'
-        400:
+        '400':
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: npm packages'
@@ -4040,9 +4040,9 @@ paths:
       parameters:
         - $ref: '#/components/parameters/period'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/npmPackageVersionStats200'
-        400:
+        '400':
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: npm packages'
@@ -4060,9 +4060,9 @@ paths:
         - $ref: '#/components/parameters/limit'
         - $ref: '#/components/parameters/page'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/npmTopRepoVersionFiles200'
-        400:
+        '400':
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: npm packages'
@@ -4083,9 +4083,9 @@ paths:
         - $ref: '#/components/parameters/limit'
         - $ref: '#/components/parameters/page'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/npmTopRepoVersionFilesScoped200'
-        400:
+        '400':
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: npm packages'
@@ -4102,9 +4102,9 @@ paths:
         - $ref: '#/components/parameters/badgeType'
         - $ref: '#/components/parameters/period'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/npmPackageBadge200'
-        400:
+        '400':
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: npm packages'
@@ -4120,9 +4120,9 @@ paths:
         - $ref: '#/components/parameters/badgeType'
         - $ref: '#/components/parameters/period'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/npmPackageBadgeScoped200'
-        400:
+        '400':
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: npm packages'
@@ -4144,9 +4144,9 @@ paths:
         - $ref: '#/components/parameters/country'
         - $ref: '#/components/parameters/period'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/networkStats200'
-        400:
+        '400':
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: network'
@@ -4158,7 +4158,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/period'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/networkContentStats200'
       tags:
         - 'Stats: network'
@@ -4178,9 +4178,9 @@ paths:
       parameters:
         - $ref: '#/components/parameters/period'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/networkCountryStats200'
-        400:
+        '400':
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: network'
@@ -4196,9 +4196,9 @@ paths:
         - $ref: '#/components/parameters/limit'
         - $ref: '#/components/parameters/page'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/browsers200'
-        400:
+        '400':
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: browsers'
@@ -4214,9 +4214,9 @@ paths:
         - $ref: '#/components/parameters/limit'
         - $ref: '#/components/parameters/page'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/browsersVersions200'
-        400:
+        '400':
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: browsers'
@@ -4234,9 +4234,9 @@ paths:
         - $ref: '#/components/parameters/limit'
         - $ref: '#/components/parameters/page'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/browserCountries200'
-        400:
+        '400':
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: browsers'
@@ -4254,9 +4254,9 @@ paths:
         - $ref: '#/components/parameters/limit'
         - $ref: '#/components/parameters/page'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/browserPlatforms200'
-        400:
+        '400':
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: browsers'
@@ -4274,9 +4274,9 @@ paths:
         - $ref: '#/components/parameters/limit'
         - $ref: '#/components/parameters/page'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/browserVersions200'
-        400:
+        '400':
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: browsers'
@@ -4295,9 +4295,9 @@ paths:
         - $ref: '#/components/parameters/limit'
         - $ref: '#/components/parameters/page'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/browserVersionCountries200'
-        400:
+        '400':
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: browsers'
@@ -4313,9 +4313,9 @@ paths:
         - $ref: '#/components/parameters/limit'
         - $ref: '#/components/parameters/page'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/platforms200'
-        400:
+        '400':
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: platforms'
@@ -4331,9 +4331,9 @@ paths:
         - $ref: '#/components/parameters/limit'
         - $ref: '#/components/parameters/page'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/platformsVersions200'
-        400:
+        '400':
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: platforms'
@@ -4351,9 +4351,9 @@ paths:
         - $ref: '#/components/parameters/limit'
         - $ref: '#/components/parameters/page'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/platformBrowsers200'
-        400:
+        '400':
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: platforms'
@@ -4371,7 +4371,7 @@ paths:
         - $ref: '#/components/parameters/limit'
         - $ref: '#/components/parameters/page'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/platformCountries200'
       tags:
         - 'Stats: platforms'
@@ -4389,9 +4389,9 @@ paths:
         - $ref: '#/components/parameters/limit'
         - $ref: '#/components/parameters/page'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/platformVersions200'
-        400:
+        '400':
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: platforms'
@@ -4410,7 +4410,7 @@ paths:
         - $ref: '#/components/parameters/limit'
         - $ref: '#/components/parameters/page'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/platformVersionCountries200'
       tags:
         - 'Stats: platforms'
@@ -4424,9 +4424,9 @@ paths:
       parameters:
         - $ref: '#/components/parameters/period'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/proxyStats200'
-        400:
+        '400':
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: proxies'
@@ -4445,9 +4445,9 @@ paths:
         - $ref: '#/components/parameters/limit'
         - $ref: '#/components/parameters/page'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/topProxyFiles200'
-        400:
+        '400':
           $ref: '#/components/responses/400'
       tags:
         - 'Stats: proxies'
@@ -4463,11 +4463,11 @@ paths:
         Allows a reverse lookup of a file at the CDN by its hash. Works only for files which were accessed at least once.
         If there are multiple files with the same hash, only the one which was accessed first via the CDN is returned.
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/lookupHash200'
-        400:
+        '400':
           $ref: '#/components/responses/400'
-        404:
+        '404':
           $ref: '#/components/responses/404'
       tags:
         - Lookup
