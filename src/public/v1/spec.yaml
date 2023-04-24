@@ -371,7 +371,7 @@ components:
                         description: A link to metadata for this version.
                       entrypoints:
                         type: string
-                        description: A link to entrypoint information for this version. Only for npm packages.
+                        description: A link to entry point information for this version. Only for npm packages.
                       stats:
                         type: string
                         description: A link to stats for this version.
@@ -411,7 +411,7 @@ components:
                   description: A link to this resource.
                 entrypoints:
                   type: string
-                  description: A link to entrypoint information for this version. Only for npm packages.
+                  description: A link to entry point information for this version. Only for npm packages.
                 stats:
                   type: string
                   description: A link to stats for this version.
@@ -515,7 +515,7 @@ components:
         guessed:
           type: boolean
           description: |
-            A flag that indicates how the entrypoint was resolved:
+            A flag that indicates how the entry point was resolved:
               - `false` based on trusted package metadata
               - `true` based on our heuristics
       required:
@@ -3754,7 +3754,7 @@ paths:
       - $ref: '#/components/parameters/package'
       - $ref: '#/components/parameters/version'
     get:
-      summary: Get version entrypoints
+      summary: Get version entry points
       description: |
         Returns the recommended files to use from this package based on package metadata and additional heuristics.
         The response includes one file of each supported type (js, css), if available.
@@ -3772,7 +3772,7 @@ paths:
       - $ref: '#/components/parameters/packageScoped'
       - $ref: '#/components/parameters/version'
     get:
-      summary: Get version entrypoints (scoped)
+      summary: Get version entry points (scoped)
       description: |
         Returns the recommended files to use from this package based on package metadata and additional heuristics.
         The response includes one file of each supported type (js, css), if available.
@@ -3786,7 +3786,7 @@ paths:
         - 'Package metadata: npm'
   /v1/stats/periods:
     get:
-      summary: List stat periods
+      summary: List stats periods
       description: |
         Returns a list of all periods for which some stats are available in descending order.
         The `links` property of each period indicates which stats are available.
@@ -3816,7 +3816,7 @@ paths:
     get:
       summary: List top packages
       description: |
-        Returns the most popular packages and their stat totals for the selected period.
+        Returns the most popular packages and their stats totals for the selected period.
         More detailed stats can be accessed via the provided links.
       parameters:
         - $ref: '#/components/parameters/by'
