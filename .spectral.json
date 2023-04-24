@@ -1,0 +1,21 @@
+{
+	"extends": [
+		"spectral:oas",
+		"./.spectral.adidas.yaml"
+	],
+	"overrides": [
+		{
+			"files": [
+				"*#/components/examples/ghVersionMetadataTree/value/default",
+				"*#/components/examples/ghVersionMetadataFlat/value/default",
+				"*#/components/examples/npmVersionMetadataTree/value/default",
+				"*#/components/examples/npmVersionMetadataFlat/value/default",
+				"*#/components/examples/npmVersionMetadataScopedTree/value/default",
+				"*#/components/examples/npmVersionMetadataScopedFlat/value/default"
+			],
+			"rules": {
+				"oas3-valid-schema-example": "off"
+			}
+		}
+	]
+}
