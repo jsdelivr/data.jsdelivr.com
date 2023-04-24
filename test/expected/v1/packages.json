@@ -1872,7 +1872,7 @@
 		"date": "2010-12-31",
 		"type": "gh",
 		"name": "adobe/source-sans-pro",
-		"tags": [],
+		"tags": {},
 		"versions": [
 			{
 				"version": "2.020-ro/1.075-it",
@@ -2610,7 +2610,7 @@
 		"date": "2010-12-31",
 		"type": "gh",
 		"name": "jquery/jquery",
-		"tags": [],
+		"tags": {},
 		"versions": [
 			{
 				"version": "3.2.1",
