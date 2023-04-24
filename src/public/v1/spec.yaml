@@ -31,6 +31,7 @@ tags:
   - name: 'Stats: proxies'
     x-labels:
       - new
+  - name: 'Lookup'
 components:
   headers:
     Link:
@@ -144,7 +145,8 @@ components:
       schema:
         $ref: '#/components/schemas/PlatformVersion'
       examples:
-        version: '101'
+        version:
+          value: '101'
     proxyName:
       in: path
       name: name
@@ -567,9 +569,10 @@ components:
           - period
           - periodType
           - links
-    PrevDescription: |
-      The stats for previous period.
-      In case the periods have a different number of days (which happens with calendar months), the values are automatically adjusted.
+    PrevDescription:
+      description: |
+        The stats for previous period.
+        In case the periods have a different number of days (which happens with calendar months), the values are automatically adjusted.
     StatsWithPrev:
       type: object
       properties:
@@ -578,21 +581,21 @@ components:
         bandwidth:
           $ref: '#/components/schemas/BandwidthTotal'
         prev:
-          type: object
-          description:
-            $ref: '#/components/schemas/PrevDescription'
-          properties:
-            hits:
-              type: integer
-            bandwidth:
-              type: integer
-          required:
-            - hits
-            - bandwidth
-            - prev
+          allOf:
+            - $ref: '#/components/schemas/PrevDescription'
+            - type: object
+              properties:
+                hits:
+                  type: integer
+                bandwidth:
+                  type: integer
+              required:
+                - hits
+                - bandwidth
       required:
         - hits
         - bandwidth
+        - prev
     TopPackages:
       type: array
       items:
@@ -747,20 +750,20 @@ components:
             - type: object
               properties:
                 prev:
-                  type: object
-                  description:
-                    $ref: '#/components/schemas/PrevDescription'
-                  properties:
-                    rank:
-                      type: integer
-                    typeRank:
-                      type: integer
-                    total:
-                      type: integer
-                  required:
-                    - rank
-                    - typeRank
-                    - total
+                  allOf:
+                    - $ref: '#/components/schemas/PrevDescription'
+                    - type: object
+                      properties:
+                        rank:
+                          type: integer
+                        typeRank:
+                          type: integer
+                        total:
+                          type: integer
+                      required:
+                        - rank
+                        - typeRank
+                        - total
               required:
                 - rank
                 - typeRank
@@ -779,20 +782,20 @@ components:
             - type: object
               properties:
                 prev:
-                  type: object
-                  description:
-                    $ref: '#/components/schemas/PrevDescription'
-                  properties:
-                    rank:
-                      type: integer
-                    typeRank:
-                      type: integer
-                    total:
-                      type: integer
-                  required:
-                    - rank
-                    - typeRank
-                    - total
+                  allOf:
+                    - $ref: '#/components/schemas/PrevDescription'
+                    - type: object
+                      properties:
+                        rank:
+                          type: integer
+                        typeRank:
+                          type: integer
+                        total:
+                          type: integer
+                      required:
+                        - rank
+                        - typeRank
+                        - total
               required:
                 - rank
                 - typeRank
@@ -869,14 +872,14 @@ components:
           - hits
           - bandwidth
     PrevTotal:
-      type: object
-      description:
-        $ref: '#/components/schemas/PrevDescription'
-      properties:
-        total:
-          type: integer
-      required:
-        - total
+      allOf:
+        - $ref: '#/components/schemas/PrevDescription'
+        - type: object
+          properties:
+            total:
+              type: integer
+          required:
+            - total
     PrevTotalWrapped:
       type: object
       properties:
@@ -1211,7 +1214,7 @@ components:
                 description: A link to versions stats for this platform.
             required:
               - browsers
-              - platforms
+              - versions
         required:
           - name
           - share
@@ -1295,7 +1298,7 @@ components:
                 description: A link to version stats for this platform.
             required:
               - browsers
-              - platforms
+              - versions
         required:
           - name
           - share
@@ -1526,7 +1529,7 @@ components:
         {
           "type": "gh",
           "name": "twbs/bootstrap",
-          "tags": [ ],
+          "tags": {},
           "versions": [
             {
               "version": "5.2.2",
@@ -4041,7 +4044,7 @@ paths:
         - $ref: '#/components/parameters/period'
       responses:
         '200':
-          $ref: '#/components/responses/npmPackageVersionStats200'
+          $ref: '#/components/responses/npmPackageVersionStatsScoped200'
         '400':
           $ref: '#/components/responses/400'
       tags:
