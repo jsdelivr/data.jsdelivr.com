@@ -1,0 +1,64 @@
+{
+	"version": 1,
+	"tests": {
+		"contractTests": [
+			{
+				"openApiOperation": "*::/*",
+				"excludeForOperations": [
+					"getScopedPackageMetadata",
+					"getScopedPackageVersionMetadata",
+					"getScopedPackageVersionEntrypoints",
+					"getResolvedScopedPackageVersion"
+				],
+				"statusSuccess": {
+					"enabled": true
+				},
+				"contentType": {
+					"enabled": true
+				},
+				"jsonBody": {
+					"enabled": true
+				},
+				"schemaValidation": {
+					"enabled": true
+				},
+				"headersPresent": {
+					"enabled": true
+				}
+			}
+		]
+	},
+	"overwrites": [
+		{
+			"openApiOperation": "*::/*",
+			"overwriteRequestPathVariables": [
+				{
+					"key": "hash",
+					"value": "a302da3294ef556ab933c9b09a7fdebf7ca7bb51868dee1cc24b35dc4e68cf97",
+					"insert": false
+				},
+				{
+					"key": "user",
+					"value": "jquery",
+					"insert": false
+				},
+				{
+					"key": "repo",
+					"value": "jquery",
+					"insert": false
+				},
+				{
+					"key": "package",
+					"value": "jquery",
+					"insert": false
+				}
+			],
+			"overwriteRequestQueryParams": [
+				{
+					"key": "country",
+					"remove": true
+				}
+			]
+		}
+	]
+}

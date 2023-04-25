@@ -278,6 +278,15 @@
 				"sha": "a55c5eeb709b584f58a1f3d8d0bc9f1432cd998a",
 				"url": "https://api.github.com/repos/jquery/jquery/commits/a55c5eeb709b584f58a1f3d8d0bc9f1432cd998a"
 			}
+		},
+		{
+			"name": "1.0.0",
+			"zipball_url": "https://api.github.com/repos/jquery/jquery/zipball/1.0.0",
+			"tarball_url": "https://api.github.com/repos/jquery/jquery/tarball/1.0.0",
+			"commit": {
+				"sha": "a55c5eeb709b584f58a1f3d8d0bc9f1432cd998a",
+				"url": "https://api.github.com/repos/jquery/jquery/commits/a55c5eeb709b584f58a1f3d8d0bc9f1432cd998a"
+			}
 		}
 	],
 	"/repos/adobe/source-sans-pro/tags": [

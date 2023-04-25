@@ -1,4 +1,6 @@
 drop table if exists _test;
+drop event if exists update_daily_data;
+drop event if exists update_daily_data_once;
 
 create table _test (
 	`key` varchar(255) not null primary key,

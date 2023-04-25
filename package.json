@@ -53,6 +53,7 @@
 		"v-compare": "^1.0.0"
 	},
 	"devDependencies": {
+		"@apideck/portman": "^1.22.0",
 		"@martin-kolarik/eslint-config": "^7.1.6",
 		"@sinonjs/fake-timers": "^10.0.2",
 		"@stoplight/spectral-cli": "^6.6.0",
@@ -99,6 +100,7 @@
 		"nock": "^13.3.0",
 		"nyc": "^15.1.0",
 		"recursive-readdir": "^2.2.3",
+		"start-server-and-test": "^2.0.0",
 		"url-template": "^2.0.8"
 	},
 	"scripts": {
@@ -110,14 +112,19 @@
 		"lint:js": "eslint --cache .",
 		"lint:js:fix": "npm run lint -- --fix",
 		"migrate": "knex migrate:latest",
-		"mocha": "mocha",
 		"prepare": "husky install",
-		"start": "cross-env NODE_ENV=development node --no-experimental-fetch src",
-		"test": "npm run lint && npm run mocha",
-		"test:prune": "cross-env PRUNE_OLD_SNAPSHOTS=1 mocha",
-		"test:snapshot": "cross-env SNAPSHOT_RESPONSES=1 mocha",
-		"test:update": "cross-env UPDATE_EXISTING_SNAPSHOTS=1 PRUNE_OLD_SNAPSHOTS=1 mocha",
-		"test:updateNoPrune": "cross-env UPDATE_EXISTING_SNAPSHOTS=1 mocha"
+		"start": "cross-env NODE_ENV=production node --no-experimental-fetch src",
+		"start:dev": "cross-env NODE_ENV=development node --no-experimental-fetch src",
+		"start:test": "cross-env NODE_ENV=test node --no-experimental-fetch test/setup",
+		"test": "npm run lint && npm run test:mocha && npm run test:portman",
+		"test:mocha": "mocha",
+		"test:mocha:prune": "cross-env PRUNE_OLD_SNAPSHOTS=1 mocha",
+		"test:mocha:snapshot": "cross-env SNAPSHOT_RESPONSES=1 mocha",
+		"test:mocha:update": "cross-env UPDATE_EXISTING_SNAPSHOTS=1 PRUNE_OLD_SNAPSHOTS=1 mocha",
+		"test:mocha:updateNoPrune": "cross-env UPDATE_EXISTING_SNAPSHOTS=1 mocha",
+		"test:portman": "start-test 'npm run start:test' http://localhost:4454/heartbeat 'npm run test:portman:create && npm run test:portman:run' 2> /dev/null || E=$?; rm -rf tmp; exit $E;",
+		"test:portman:create": "portman --cliOptionsFile test/tests/contract/portman-cli.json",
+		"test:portman:run": "newman run tmp/converted/jsDelivrApi.json -e test/tests/contract/newman-env.json --ignore-redirects"
 	},
 	"lint-staged": {
 		"*.js": "eslint --cache --fix"

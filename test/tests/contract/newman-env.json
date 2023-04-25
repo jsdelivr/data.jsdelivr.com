@@ -1,0 +1,14 @@
+{
+	"values": [
+		{
+			"key": "repo",
+			"value": "jquery",
+			"enabled": true
+		},
+		{
+			"key": "version",
+			"value": "1.0.0",
+			"enabled": true
+		}
+	]
+}

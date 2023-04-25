@@ -383,6 +383,14 @@
 					"entrypoints": "http://localhost:4454/v1/packages/npm/jquery@1.5.1/entrypoints",
 					"stats": "http://localhost:4454/v1/stats/packages/npm/jquery@1.5.1"
 				}
+			},
+			{
+				"version": "1.0.0",
+				"links": {
+					"self": "http://localhost:4454/v1/packages/npm/jquery@1.0.0",
+					"entrypoints": "http://localhost:4454/v1/packages/npm/jquery@1.0.0/entrypoints",
+					"stats": "http://localhost:4454/v1/stats/packages/npm/jquery@1.0.0"
+				}
 			}
 		],
 		"links": {
@@ -2820,6 +2828,13 @@
 				"links": {
 					"self": "http://localhost:4454/v1/packages/gh/jquery/jquery@2.0.0",
 					"stats": "http://localhost:4454/v1/stats/packages/gh/jquery/jquery@2.0.0"
+				}
+			},
+			{
+				"version": "1.0.0",
+				"links": {
+					"self": "http://localhost:4454/v1/packages/gh/jquery/jquery@1.0.0",
+					"stats": "http://localhost:4454/v1/stats/packages/gh/jquery/jquery@1.0.0"
 				}
 			}
 		],
