@@ -245,8 +245,8 @@ module.exports = {
 	setupSnapshots (file) {
 		chaiSnapshotInstance.setCurrentFile(path.join(
 			__dirname,
-			'expected',
-			path.relative(path.join(__dirname, 'tests'), path.dirname(file)),
+			'snapshots',
+			path.relative(path.join(__dirname, 'tests/integration'), path.dirname(file)),
 			`${path.basename(file, path.extname(file))}.json`,
 		));
 	},
