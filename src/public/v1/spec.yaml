@@ -348,6 +348,10 @@ components:
     BandwidthTotal:
       type: integer
       description: The bandwidth in bytes in the selected period.
+    NullableInteger:
+      type:
+        - integer
+        - 'null'
     PackageMetadata:
       allOf:
         - $ref: '#/components/schemas/PackageTypeName'
@@ -742,10 +746,10 @@ components:
             - type: object
               properties:
                 rank:
-                  type: integer
+                  $ref: '#/components/schemas/NullableInteger'
                   description: The number of packages with more hits. `null` if the package doesn't have any hits.
                 typeRank:
-                  type: integer
+                  $ref: '#/components/schemas/NullableInteger'
                   description: The number of packages of the same type (gh/npm) with more hits. `null` if the package doesn't have any hits.
             - $ref: '#/components/schemas/TotalDateHitsStats'
             - type: object
@@ -756,9 +760,9 @@ components:
                     - type: object
                       properties:
                         rank:
-                          type: integer
+                          $ref: '#/components/schemas/NullableInteger'
                         typeRank:
-                          type: integer
+                          $ref: '#/components/schemas/NullableInteger'
                         total:
                           type: integer
                       required:
@@ -774,10 +778,10 @@ components:
             - type: object
               properties:
                 rank:
-                  type: integer
+                  $ref: '#/components/schemas/NullableInteger'
                   description: The number of packages with more bandwidth. `null` if the package doesn't have any bandwidth.
                 typeRank:
-                  type: integer
+                  $ref: '#/components/schemas/NullableInteger'
                   description: The number of packages of the same type (gh/npm) with more bandwidth. `null` if the package doesn't have any bandwidth.
             - $ref: '#/components/schemas/TotalDateBandwidthStats'
             - type: object
@@ -788,9 +792,9 @@ components:
                     - type: object
                       properties:
                         rank:
-                          type: integer
+                          $ref: '#/components/schemas/NullableInteger'
                         typeRank:
-                          type: integer
+                          $ref: '#/components/schemas/NullableInteger'
                         total:
                           type: integer
                       required:
