@@ -352,6 +352,10 @@ components:
       type:
         - integer
         - 'null'
+    NullableNumber:
+      type:
+        - number
+        - 'null'
     PackageMetadata:
       allOf:
         - $ref: '#/components/schemas/PackageTypeName'
@@ -1460,7 +1464,8 @@ components:
         The stats for previous period.
       properties:
         share:
-          type: number
+          $ref: '#/components/schemas/NullableNumber'
+          description: '`null` if there are no data for the previous period.'
       required:
         - share
     ProxyStats:
