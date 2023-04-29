@@ -29,7 +29,7 @@ function makeStatsPackagesTests () {
 		{
 			period: periodOptions,
 		},
-	]);
+	], { validateSchema: false });
 
 	makeEndpointPaginationTests('/v1/stats/packages');
 }

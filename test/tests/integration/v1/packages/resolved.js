@@ -19,6 +19,7 @@ describe('/v1/packages/resolved', () => {
 				expect(response).to.be.json;
 				expect(response.body).to.include({ version: '3.2.1' });
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -34,6 +35,7 @@ describe('/v1/packages/resolved', () => {
 				expect(response).to.be.json;
 				expect(response.body).to.include({ version: '3.2.1' });
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -49,6 +51,7 @@ describe('/v1/packages/resolved', () => {
 				expect(response).to.be.json;
 				expect(response.body).to.include({ version: '3.2.1' });
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -64,6 +67,7 @@ describe('/v1/packages/resolved', () => {
 				expect(response).to.be.json;
 				expect(response.body).to.include({ version: '3.2.1' });
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -79,6 +83,7 @@ describe('/v1/packages/resolved', () => {
 				expect(response).to.be.json;
 				expect(response.body).to.include({ version: '3.2.1' });
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -94,6 +99,7 @@ describe('/v1/packages/resolved', () => {
 				expect(response).to.be.json;
 				expect(response.body).to.include({ version: null });
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -109,6 +115,7 @@ describe('/v1/packages/resolved', () => {
 				expect(response).to.be.json;
 				expect(response.body).to.include({ version: '3.0.0-rc1' });
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -124,6 +131,7 @@ describe('/v1/packages/resolved', () => {
 				expect(response).to.be.json;
 				expect(response.body).to.include({ version: '3.0.0-rc1' });
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -139,6 +147,7 @@ describe('/v1/packages/resolved', () => {
 				expect(response).to.be.json;
 				expect(response.body).to.include({ version: '1.0.0' });
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -154,6 +163,7 @@ describe('/v1/packages/resolved', () => {
 				expect(response).to.be.json;
 				expect(response.body).to.include({ version: '3.2.1' });
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -169,6 +179,7 @@ describe('/v1/packages/resolved', () => {
 				expect(response).to.be.json;
 				expect(response.body).to.include({ version: '2.020R-ro/1.075R-it' });
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -184,6 +195,7 @@ describe('/v1/packages/resolved', () => {
 				expect(response).to.be.json;
 				expect(response.body).to.include({ version: '3.2.1' });
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -199,6 +211,7 @@ describe('/v1/packages/resolved', () => {
 				expect(response).to.be.json;
 				expect(response.body).to.include({ version: '3.2.1' });
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -214,6 +227,7 @@ describe('/v1/packages/resolved', () => {
 				expect(response).to.be.json;
 				expect(response.body).to.include({ version: '3.2.1' });
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -229,6 +243,7 @@ describe('/v1/packages/resolved', () => {
 				expect(response).to.be.json;
 				expect(response.body).to.include({ version: null });
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -244,6 +259,7 @@ describe('/v1/packages/resolved', () => {
 				expect(response).to.be.json;
 				expect(response.body).to.include({ version: '3.0.0-rc1' });
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -259,6 +275,7 @@ describe('/v1/packages/resolved', () => {
 				expect(response).to.be.json;
 				expect(response.body).to.include({ version: '3.0.0-rc1' });
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -275,6 +292,7 @@ describe('/v1/packages/resolved', () => {
 				expect(response.body).to.have.property('status', 404);
 				expect(response.body).to.have.property('message');
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -291,6 +309,7 @@ describe('/v1/packages/resolved', () => {
 				expect(response.body).to.have.property('status', 404);
 				expect(response.body).to.have.property('message');
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 });

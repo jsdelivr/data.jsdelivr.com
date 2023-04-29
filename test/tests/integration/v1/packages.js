@@ -19,6 +19,7 @@ describe('/v1/packages', () => {
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -33,6 +34,7 @@ describe('/v1/packages', () => {
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -47,6 +49,7 @@ describe('/v1/packages', () => {
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -61,6 +64,7 @@ describe('/v1/packages', () => {
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -75,6 +79,7 @@ describe('/v1/packages', () => {
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -89,6 +94,7 @@ describe('/v1/packages', () => {
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -103,6 +109,7 @@ describe('/v1/packages', () => {
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -117,6 +124,7 @@ describe('/v1/packages', () => {
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -131,6 +139,7 @@ describe('/v1/packages', () => {
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -145,6 +154,7 @@ describe('/v1/packages', () => {
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -159,6 +169,7 @@ describe('/v1/packages', () => {
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -173,6 +184,7 @@ describe('/v1/packages', () => {
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -187,6 +199,7 @@ describe('/v1/packages', () => {
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -201,6 +214,7 @@ describe('/v1/packages', () => {
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -215,6 +229,7 @@ describe('/v1/packages', () => {
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -229,6 +244,7 @@ describe('/v1/packages', () => {
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -243,6 +259,7 @@ describe('/v1/packages', () => {
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
 				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -258,6 +275,7 @@ describe('/v1/packages', () => {
 				expect(response).to.be.json;
 				expect(response.body).to.have.property('status', 404);
 				expect(response.body).to.have.property('message');
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -273,6 +291,7 @@ describe('/v1/packages', () => {
 				expect(response).to.be.json;
 				expect(response.body).to.have.property('status', 404);
 				expect(response.body).to.have.property('message');
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -288,6 +307,7 @@ describe('/v1/packages', () => {
 				expect(response).to.be.json;
 				expect(response.body).to.have.property('status', 404);
 				expect(response.body).to.have.property('message');
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -303,6 +323,7 @@ describe('/v1/packages', () => {
 				expect(response).to.be.json;
 				expect(response.body).to.have.property('status', 404);
 				expect(response.body).to.have.property('message');
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -318,6 +339,7 @@ describe('/v1/packages', () => {
 				expect(response).to.be.json;
 				expect(response.body).to.have.property('status', 403);
 				expect(response.body).to.have.property('message', 'Package size exceeded the configured limit of 50 MB.');
+				expect(response).to.matchApiSchema();
 			});
 	});
 
@@ -333,6 +355,7 @@ describe('/v1/packages', () => {
 				expect(response).to.be.json;
 				expect(response.body).to.have.property('status', 404);
 				expect(response.body).to.have.property('message');
+				expect(response).to.matchApiSchema();
 			});
 	});
 });
