@@ -1054,10 +1054,10 @@ components:
                                 - total
                       prev:
                         $ref: '#/components/schemas/PrevTotal'
-                required:
-                  - total
-                  - providers
-                  - prev
+                    required:
+                      - total
+                      - providers
+                      - prev
             prev:
               $ref: '#/components/schemas/PrevTotal'
           required:
@@ -4430,6 +4430,8 @@ paths:
       responses:
         '200':
           $ref: '#/components/responses/platformCountries200'
+        '400':
+          $ref: '#/components/responses/400'
       tags:
         - 'Stats: platforms'
   /v1/stats/platforms/{name}/versions:
@@ -4471,6 +4473,8 @@ paths:
       responses:
         '200':
           $ref: '#/components/responses/platformVersionCountries200'
+        '400':
+          $ref: '#/components/responses/400'
       tags:
         - 'Stats: platforms'
   /v1/stats/proxies/{name}:
