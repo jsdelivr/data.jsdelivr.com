@@ -183,7 +183,7 @@ class StatsRequest extends BaseRequest {
 				.build(records);
 
 			return { meta: { page, pages, count }, data };
-		}).asRawArrayWithMeta().getTopPackages(this.query.by, this.period, this.date, this.query.type, ...this.pagination);
+		}, ({ meta }) => meta.count ? 24 * 60 * 60 : 60).asRawArrayWithMeta().getTopPackages(this.query.by, this.period, this.date, this.query.type, ...this.pagination);
 
 		this.ctx.body = data;
 

@@ -136,7 +136,8 @@ module.exports.ProxyTargetHandler = _.defaults({
 
 					if (value) {
 						let serialized = await target.serialize(value);
-						let expiration = target.expiration instanceof Date ? Math.floor((target.expiration - Date.now()) / 1000) : target.expiration;
+						let expiration = typeof target.expiration === 'function' ? target.expiration(value) : target.expiration;
+						expiration = expiration instanceof Date ? Math.floor((expiration - Date.now()) / 1000) : expiration;
 						redis.setCompressedAsync(key, serialized, 'EX', expiration).catch(() => {});
 
 						if (target.options.raw) {
