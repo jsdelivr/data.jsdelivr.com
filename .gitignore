@@ -3,6 +3,7 @@
 .nyc_output/
 coverage/
 node_modules/
+tmp/
 config/local*
 .DS_Store
 .eslintcache

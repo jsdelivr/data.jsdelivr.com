@@ -1,0 +1,5617 @@
+{
+	"/v1/stats/platforms/versions?continent=EU&country=PL": {
+		"date": "2010-12-31",
+		"status": 400,
+		"message": "Invalid parameter value: object contains a conflict between optional exclusive peers [continent, country].",
+		"links": {
+			"documentation": "http://localhost:4400/docs/data.jsdelivr.com#get-/v1/stats/platforms/versions"
+		}
+	},
+	"/v1/stats/platforms/versions?continent=EU&period=2020": [
+		{
+			"name": "platform 9",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%209/versions/2/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 19",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/2/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 9",
+			"version": "1",
+			"versionName": "",
+			"share": 4.56,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%209/versions/1/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 19",
+			"version": "1",
+			"versionName": "",
+			"share": 4.56,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/1/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 9",
+			"version": "0",
+			"versionName": "",
+			"share": 4.25,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%209/versions/0/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 19",
+			"version": "0",
+			"versionName": "",
+			"share": 4.25,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/0/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 8",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.95,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%208/versions/2/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 18",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.95,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2018/versions/2/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 8",
+			"version": "1",
+			"versionName": "",
+			"share": 3.67,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%208/versions/1/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 18",
+			"version": "1",
+			"versionName": "",
+			"share": 3.67,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2018/versions/1/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 8",
+			"version": "0",
+			"versionName": "",
+			"share": 3.39,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%208/versions/0/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 18",
+			"version": "0",
+			"versionName": "",
+			"share": 3.39,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2018/versions/0/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 7",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.12,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%207/versions/2/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 17",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.12,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2017/versions/2/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 7",
+			"version": "1",
+			"versionName": "",
+			"share": 2.87,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%207/versions/1/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 17",
+			"version": "1",
+			"versionName": "",
+			"share": 2.87,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2017/versions/1/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 7",
+			"version": "0",
+			"versionName": "",
+			"share": 2.62,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%207/versions/0/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 17",
+			"version": "0",
+			"versionName": "",
+			"share": 2.62,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2017/versions/0/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 6",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 2.39,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%206/versions/2/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 16",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 2.39,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2016/versions/2/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 6",
+			"version": "1",
+			"versionName": "",
+			"share": 2.17,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%206/versions/1/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 16",
+			"version": "1",
+			"versionName": "",
+			"share": 2.17,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2016/versions/1/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 6",
+			"version": "0",
+			"versionName": "",
+			"share": 1.96,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%206/versions/0/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 16",
+			"version": "0",
+			"versionName": "",
+			"share": 1.96,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2016/versions/0/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 5",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.75,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%205/versions/2/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 15",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.75,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2015/versions/2/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 5",
+			"version": "1",
+			"versionName": "",
+			"share": 1.56,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%205/versions/1/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 15",
+			"version": "1",
+			"versionName": "",
+			"share": 1.56,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2015/versions/1/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 5",
+			"version": "0",
+			"versionName": "",
+			"share": 1.39,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%205/versions/0/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 15",
+			"version": "0",
+			"versionName": "",
+			"share": 1.39,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2015/versions/0/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 4",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.22,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%204/versions/2/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 14",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.22,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2014/versions/2/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 4",
+			"version": "1",
+			"versionName": "",
+			"share": 1.06,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%204/versions/1/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 14",
+			"version": "1",
+			"versionName": "",
+			"share": 1.06,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2014/versions/1/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 4",
+			"version": "0",
+			"versionName": "",
+			"share": 0.91,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%204/versions/0/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 14",
+			"version": "0",
+			"versionName": "",
+			"share": 0.91,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2014/versions/0/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 3",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.78,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%203/versions/2/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 13",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.78,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2013/versions/2/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 3",
+			"version": "1",
+			"versionName": "",
+			"share": 0.35,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%203/versions/1/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 13",
+			"version": "1",
+			"versionName": "",
+			"share": 0.35,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2013/versions/1/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 3",
+			"version": "0",
+			"versionName": "",
+			"share": 0.29,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%203/versions/0/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 13",
+			"version": "0",
+			"versionName": "",
+			"share": 0.29,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2013/versions/0/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 2",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.24,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%202/versions/2/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 12",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.24,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2012/versions/2/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 2",
+			"version": "1",
+			"versionName": "",
+			"share": 0.19,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%202/versions/1/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 12",
+			"version": "1",
+			"versionName": "",
+			"share": 0.19,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2012/versions/1/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 2",
+			"version": "0",
+			"versionName": "",
+			"share": 0.15,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%202/versions/0/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 12",
+			"version": "0",
+			"versionName": "",
+			"share": 0.15,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2012/versions/0/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 11",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.11,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2011/versions/2/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 1",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.11,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%201/versions/2/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 11",
+			"version": "1",
+			"versionName": "",
+			"share": 0.08,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2011/versions/1/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 1",
+			"version": "1",
+			"versionName": "",
+			"share": 0.08,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%201/versions/1/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 11",
+			"version": "0",
+			"versionName": "",
+			"share": 0.05,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2011/versions/0/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 1",
+			"version": "0",
+			"versionName": "",
+			"share": 0.05,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%201/versions/0/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 10",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.03,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2010/versions/2/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 0",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.03,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%200/versions/2/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 10",
+			"version": "1",
+			"versionName": "",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2010/versions/1/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"name": "platform 0",
+			"version": "1",
+			"versionName": "",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%200/versions/1/countries?period=2020&continent=EU"
+			}
+		}
+	],
+	"/v1/stats/platforms/versions?continent=EU&period=2020-02": [
+		{
+			"name": "platform 9",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%209/versions/2/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 19",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/2/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 9",
+			"version": "1",
+			"versionName": "",
+			"share": 4.52,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%209/versions/1/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 19",
+			"version": "1",
+			"versionName": "",
+			"share": 4.52,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/1/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 9",
+			"version": "0",
+			"versionName": "",
+			"share": 4.2,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%209/versions/0/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 19",
+			"version": "0",
+			"versionName": "",
+			"share": 4.2,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/0/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 8",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.9,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%208/versions/2/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 18",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.9,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2018/versions/2/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 8",
+			"version": "1",
+			"versionName": "",
+			"share": 3.62,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%208/versions/1/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 18",
+			"version": "1",
+			"versionName": "",
+			"share": 3.62,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2018/versions/1/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 8",
+			"version": "0",
+			"versionName": "",
+			"share": 3.34,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%208/versions/0/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 18",
+			"version": "0",
+			"versionName": "",
+			"share": 3.34,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2018/versions/0/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 7",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.07,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%207/versions/2/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 17",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.07,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2017/versions/2/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 7",
+			"version": "1",
+			"versionName": "",
+			"share": 2.81,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%207/versions/1/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 17",
+			"version": "1",
+			"versionName": "",
+			"share": 2.81,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2017/versions/1/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 7",
+			"version": "0",
+			"versionName": "",
+			"share": 2.57,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%207/versions/0/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 17",
+			"version": "0",
+			"versionName": "",
+			"share": 2.57,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2017/versions/0/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 6",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 2.34,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%206/versions/2/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 16",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 2.34,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2016/versions/2/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 6",
+			"version": "1",
+			"versionName": "",
+			"share": 2.11,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%206/versions/1/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 16",
+			"version": "1",
+			"versionName": "",
+			"share": 2.11,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2016/versions/1/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 6",
+			"version": "0",
+			"versionName": "",
+			"share": 1.9,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%206/versions/0/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 16",
+			"version": "0",
+			"versionName": "",
+			"share": 1.9,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2016/versions/0/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 5",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.7,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%205/versions/2/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 15",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.7,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2015/versions/2/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 5",
+			"version": "1",
+			"versionName": "",
+			"share": 1.51,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%205/versions/1/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 15",
+			"version": "1",
+			"versionName": "",
+			"share": 1.51,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2015/versions/1/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 5",
+			"version": "0",
+			"versionName": "",
+			"share": 1.33,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%205/versions/0/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 15",
+			"version": "0",
+			"versionName": "",
+			"share": 1.33,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2015/versions/0/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 4",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.17,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%204/versions/2/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 14",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.17,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2014/versions/2/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 4",
+			"version": "1",
+			"versionName": "",
+			"share": 1.01,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%204/versions/1/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 14",
+			"version": "1",
+			"versionName": "",
+			"share": 1.01,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2014/versions/1/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 4",
+			"version": "0",
+			"versionName": "",
+			"share": 0.87,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%204/versions/0/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 14",
+			"version": "0",
+			"versionName": "",
+			"share": 0.87,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2014/versions/0/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 3",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.73,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%203/versions/2/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 13",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.73,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2013/versions/2/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 3",
+			"version": "1",
+			"versionName": "",
+			"share": 0.61,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%203/versions/1/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 13",
+			"version": "1",
+			"versionName": "",
+			"share": 0.61,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2013/versions/1/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 3",
+			"version": "0",
+			"versionName": "",
+			"share": 0.5,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%203/versions/0/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 13",
+			"version": "0",
+			"versionName": "",
+			"share": 0.5,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2013/versions/0/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 2",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.4,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%202/versions/2/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 12",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.4,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2012/versions/2/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 2",
+			"version": "1",
+			"versionName": "",
+			"share": 0.31,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%202/versions/1/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 12",
+			"version": "1",
+			"versionName": "",
+			"share": 0.31,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2012/versions/1/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 2",
+			"version": "0",
+			"versionName": "",
+			"share": 0.23,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%202/versions/0/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 12",
+			"version": "0",
+			"versionName": "",
+			"share": 0.23,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2012/versions/0/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 11",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.17,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2011/versions/2/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 1",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.17,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%201/versions/2/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 11",
+			"version": "1",
+			"versionName": "",
+			"share": 0.11,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2011/versions/1/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 1",
+			"version": "1",
+			"versionName": "",
+			"share": 0.11,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%201/versions/1/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 11",
+			"version": "0",
+			"versionName": "",
+			"share": 0.07,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2011/versions/0/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 1",
+			"version": "0",
+			"versionName": "",
+			"share": 0.07,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%201/versions/0/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 10",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.03,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2010/versions/2/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 0",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.03,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%200/versions/2/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 10",
+			"version": "1",
+			"versionName": "",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2010/versions/1/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"name": "platform 0",
+			"version": "1",
+			"versionName": "",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%200/versions/1/countries?period=2020-02&continent=EU"
+			}
+		}
+	],
+	"/v1/stats/platforms/versions?continent=EU&period=2020-04": [
+		{
+			"name": "platform 9",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%209/versions/2/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 19",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/2/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 9",
+			"version": "1",
+			"versionName": "",
+			"share": 4.75,
+			"prev": {
+				"share": 3.22
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%209/versions/1/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 19",
+			"version": "1",
+			"versionName": "",
+			"share": 4.75,
+			"prev": {
+				"share": 3.22
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/1/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 9",
+			"version": "0",
+			"versionName": "",
+			"share": 4.42,
+			"prev": {
+				"share": 3.1
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%209/versions/0/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 19",
+			"version": "0",
+			"versionName": "",
+			"share": 4.42,
+			"prev": {
+				"share": 3.1
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/0/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 8",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 4.11,
+			"prev": {
+				"share": 2.99
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%208/versions/2/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 18",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 4.11,
+			"prev": {
+				"share": 2.99
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2018/versions/2/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 8",
+			"version": "1",
+			"versionName": "",
+			"share": 3.8,
+			"prev": {
+				"share": 2.87
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%208/versions/1/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 18",
+			"version": "1",
+			"versionName": "",
+			"share": 3.8,
+			"prev": {
+				"share": 2.87
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2018/versions/1/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 8",
+			"version": "0",
+			"versionName": "",
+			"share": 3.51,
+			"prev": {
+				"share": 2.76
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%208/versions/0/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 18",
+			"version": "0",
+			"versionName": "",
+			"share": 3.51,
+			"prev": {
+				"share": 2.76
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2018/versions/0/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 7",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.23,
+			"prev": {
+				"share": 2.64
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%207/versions/2/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 17",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.23,
+			"prev": {
+				"share": 2.64
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2017/versions/2/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 7",
+			"version": "1",
+			"versionName": "",
+			"share": 2.96,
+			"prev": {
+				"share": 2.53
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%207/versions/1/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 17",
+			"version": "1",
+			"versionName": "",
+			"share": 2.96,
+			"prev": {
+				"share": 2.53
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2017/versions/1/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 7",
+			"version": "0",
+			"versionName": "",
+			"share": 2.7,
+			"prev": {
+				"share": 2.41
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%207/versions/0/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 17",
+			"version": "0",
+			"versionName": "",
+			"share": 2.7,
+			"prev": {
+				"share": 2.41
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2017/versions/0/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 6",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 2.46,
+			"prev": {
+				"share": 2.3
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%206/versions/2/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 16",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 2.46,
+			"prev": {
+				"share": 2.3
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2016/versions/2/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 6",
+			"version": "1",
+			"versionName": "",
+			"share": 2.22,
+			"prev": {
+				"share": 2.18
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%206/versions/1/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 16",
+			"version": "1",
+			"versionName": "",
+			"share": 2.22,
+			"prev": {
+				"share": 2.18
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2016/versions/1/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 6",
+			"version": "0",
+			"versionName": "",
+			"share": 2,
+			"prev": {
+				"share": 2.07
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%206/versions/0/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 16",
+			"version": "0",
+			"versionName": "",
+			"share": 2,
+			"prev": {
+				"share": 2.07
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2016/versions/0/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 5",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.79,
+			"prev": {
+				"share": 1.95
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%205/versions/2/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 15",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.79,
+			"prev": {
+				"share": 1.95
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2015/versions/2/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 5",
+			"version": "1",
+			"versionName": "",
+			"share": 1.59,
+			"prev": {
+				"share": 1.84
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%205/versions/1/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 15",
+			"version": "1",
+			"versionName": "",
+			"share": 1.59,
+			"prev": {
+				"share": 1.84
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2015/versions/1/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 5",
+			"version": "0",
+			"versionName": "",
+			"share": 1.4,
+			"prev": {
+				"share": 1.72
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%205/versions/0/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 15",
+			"version": "0",
+			"versionName": "",
+			"share": 1.4,
+			"prev": {
+				"share": 1.72
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2015/versions/0/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 4",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.23,
+			"prev": {
+				"share": 1.61
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%204/versions/2/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 14",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.23,
+			"prev": {
+				"share": 1.61
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2014/versions/2/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 4",
+			"version": "1",
+			"versionName": "",
+			"share": 1.06,
+			"prev": {
+				"share": 1.49
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%204/versions/1/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 14",
+			"version": "1",
+			"versionName": "",
+			"share": 1.06,
+			"prev": {
+				"share": 1.49
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2014/versions/1/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 4",
+			"version": "0",
+			"versionName": "",
+			"share": 0.91,
+			"prev": {
+				"share": 1.38
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%204/versions/0/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 14",
+			"version": "0",
+			"versionName": "",
+			"share": 0.91,
+			"prev": {
+				"share": 1.38
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2014/versions/0/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 3",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.77,
+			"prev": {
+				"share": 1.26
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%203/versions/2/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"name": "platform 13",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.77,
+			"prev": {
+				"share": 1.26
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2013/versions/2/countries?period=2020-04&continent=EU"
+			}
+		}
+	],
+	"/v1/stats/platforms/versions?continent=X": {
+		"date": "2010-12-31",
+		"status": 400,
+		"message": "Invalid parameter value: `continent` must be a valid continent code in uppercase.",
+		"links": {
+			"documentation": "http://localhost:4400/docs/data.jsdelivr.com#get-/v1/stats/platforms/versions"
+		}
+	},
+	"/v1/stats/platforms/versions?country=PL&period=2020": [
+		{
+			"name": "platform 9",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 19",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 9",
+			"version": "1",
+			"versionName": "",
+			"share": 4.56,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 19",
+			"version": "1",
+			"versionName": "",
+			"share": 4.56,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 9",
+			"version": "0",
+			"versionName": "",
+			"share": 4.25,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 19",
+			"version": "0",
+			"versionName": "",
+			"share": 4.25,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 8",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.95,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 18",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.95,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 8",
+			"version": "1",
+			"versionName": "",
+			"share": 3.67,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 18",
+			"version": "1",
+			"versionName": "",
+			"share": 3.67,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 8",
+			"version": "0",
+			"versionName": "",
+			"share": 3.39,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 18",
+			"version": "0",
+			"versionName": "",
+			"share": 3.39,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 7",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.12,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 17",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.12,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 7",
+			"version": "1",
+			"versionName": "",
+			"share": 2.87,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 17",
+			"version": "1",
+			"versionName": "",
+			"share": 2.87,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 7",
+			"version": "0",
+			"versionName": "",
+			"share": 2.62,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 17",
+			"version": "0",
+			"versionName": "",
+			"share": 2.62,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 6",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 2.39,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 16",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 2.39,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 6",
+			"version": "1",
+			"versionName": "",
+			"share": 2.17,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 16",
+			"version": "1",
+			"versionName": "",
+			"share": 2.17,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 6",
+			"version": "0",
+			"versionName": "",
+			"share": 1.96,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 16",
+			"version": "0",
+			"versionName": "",
+			"share": 1.96,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 5",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.75,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 15",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.75,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 5",
+			"version": "1",
+			"versionName": "",
+			"share": 1.56,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 15",
+			"version": "1",
+			"versionName": "",
+			"share": 1.56,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 5",
+			"version": "0",
+			"versionName": "",
+			"share": 1.39,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 15",
+			"version": "0",
+			"versionName": "",
+			"share": 1.39,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 4",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.22,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 14",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.22,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 4",
+			"version": "1",
+			"versionName": "",
+			"share": 1.06,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 14",
+			"version": "1",
+			"versionName": "",
+			"share": 1.06,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 4",
+			"version": "0",
+			"versionName": "",
+			"share": 0.91,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 14",
+			"version": "0",
+			"versionName": "",
+			"share": 0.91,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 3",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.78,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 13",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.78,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 3",
+			"version": "1",
+			"versionName": "",
+			"share": 0.35,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 13",
+			"version": "1",
+			"versionName": "",
+			"share": 0.35,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 3",
+			"version": "0",
+			"versionName": "",
+			"share": 0.29,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 13",
+			"version": "0",
+			"versionName": "",
+			"share": 0.29,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 2",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.24,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 12",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.24,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 2",
+			"version": "1",
+			"versionName": "",
+			"share": 0.19,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 12",
+			"version": "1",
+			"versionName": "",
+			"share": 0.19,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 2",
+			"version": "0",
+			"versionName": "",
+			"share": 0.15,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 12",
+			"version": "0",
+			"versionName": "",
+			"share": 0.15,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 11",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.11,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 1",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.11,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 11",
+			"version": "1",
+			"versionName": "",
+			"share": 0.08,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 1",
+			"version": "1",
+			"versionName": "",
+			"share": 0.08,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 11",
+			"version": "0",
+			"versionName": "",
+			"share": 0.05,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 1",
+			"version": "0",
+			"versionName": "",
+			"share": 0.05,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 10",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.03,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 0",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.03,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 10",
+			"version": "1",
+			"versionName": "",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 0",
+			"version": "1",
+			"versionName": "",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		}
+	],
+	"/v1/stats/platforms/versions?country=PL&period=2020-02": [
+		{
+			"name": "platform 9",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 19",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 9",
+			"version": "1",
+			"versionName": "",
+			"share": 4.52,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 19",
+			"version": "1",
+			"versionName": "",
+			"share": 4.52,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 9",
+			"version": "0",
+			"versionName": "",
+			"share": 4.2,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 19",
+			"version": "0",
+			"versionName": "",
+			"share": 4.2,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 8",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.9,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 18",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.9,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 8",
+			"version": "1",
+			"versionName": "",
+			"share": 3.62,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 18",
+			"version": "1",
+			"versionName": "",
+			"share": 3.62,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 8",
+			"version": "0",
+			"versionName": "",
+			"share": 3.34,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 18",
+			"version": "0",
+			"versionName": "",
+			"share": 3.34,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 7",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.07,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 17",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.07,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 7",
+			"version": "1",
+			"versionName": "",
+			"share": 2.81,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 17",
+			"version": "1",
+			"versionName": "",
+			"share": 2.81,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 7",
+			"version": "0",
+			"versionName": "",
+			"share": 2.57,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 17",
+			"version": "0",
+			"versionName": "",
+			"share": 2.57,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 6",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 2.34,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 16",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 2.34,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 6",
+			"version": "1",
+			"versionName": "",
+			"share": 2.11,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 16",
+			"version": "1",
+			"versionName": "",
+			"share": 2.11,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 6",
+			"version": "0",
+			"versionName": "",
+			"share": 1.9,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 16",
+			"version": "0",
+			"versionName": "",
+			"share": 1.9,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 5",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.7,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 15",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.7,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 5",
+			"version": "1",
+			"versionName": "",
+			"share": 1.51,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 15",
+			"version": "1",
+			"versionName": "",
+			"share": 1.51,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 5",
+			"version": "0",
+			"versionName": "",
+			"share": 1.33,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 15",
+			"version": "0",
+			"versionName": "",
+			"share": 1.33,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 4",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.17,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 14",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.17,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 4",
+			"version": "1",
+			"versionName": "",
+			"share": 1.01,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 14",
+			"version": "1",
+			"versionName": "",
+			"share": 1.01,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 4",
+			"version": "0",
+			"versionName": "",
+			"share": 0.87,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 14",
+			"version": "0",
+			"versionName": "",
+			"share": 0.87,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 3",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.73,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 13",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.73,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 3",
+			"version": "1",
+			"versionName": "",
+			"share": 0.61,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 13",
+			"version": "1",
+			"versionName": "",
+			"share": 0.61,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 3",
+			"version": "0",
+			"versionName": "",
+			"share": 0.5,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 13",
+			"version": "0",
+			"versionName": "",
+			"share": 0.5,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 2",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.4,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 12",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.4,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 2",
+			"version": "1",
+			"versionName": "",
+			"share": 0.31,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 12",
+			"version": "1",
+			"versionName": "",
+			"share": 0.31,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 2",
+			"version": "0",
+			"versionName": "",
+			"share": 0.23,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 12",
+			"version": "0",
+			"versionName": "",
+			"share": 0.23,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 11",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.17,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 1",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.17,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 11",
+			"version": "1",
+			"versionName": "",
+			"share": 0.11,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 1",
+			"version": "1",
+			"versionName": "",
+			"share": 0.11,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 11",
+			"version": "0",
+			"versionName": "",
+			"share": 0.07,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 1",
+			"version": "0",
+			"versionName": "",
+			"share": 0.07,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 10",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.03,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 0",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.03,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 10",
+			"version": "1",
+			"versionName": "",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 0",
+			"version": "1",
+			"versionName": "",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		}
+	],
+	"/v1/stats/platforms/versions?country=PL&period=2020-04": [
+		{
+			"name": "platform 9",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 19",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 9",
+			"version": "1",
+			"versionName": "",
+			"share": 4.75,
+			"prev": {
+				"share": 3.22
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 19",
+			"version": "1",
+			"versionName": "",
+			"share": 4.75,
+			"prev": {
+				"share": 3.22
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 9",
+			"version": "0",
+			"versionName": "",
+			"share": 4.42,
+			"prev": {
+				"share": 3.1
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 19",
+			"version": "0",
+			"versionName": "",
+			"share": 4.42,
+			"prev": {
+				"share": 3.1
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 8",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 4.11,
+			"prev": {
+				"share": 2.99
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 18",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 4.11,
+			"prev": {
+				"share": 2.99
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 8",
+			"version": "1",
+			"versionName": "",
+			"share": 3.8,
+			"prev": {
+				"share": 2.87
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 18",
+			"version": "1",
+			"versionName": "",
+			"share": 3.8,
+			"prev": {
+				"share": 2.87
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 8",
+			"version": "0",
+			"versionName": "",
+			"share": 3.51,
+			"prev": {
+				"share": 2.76
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 18",
+			"version": "0",
+			"versionName": "",
+			"share": 3.51,
+			"prev": {
+				"share": 2.76
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 7",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.23,
+			"prev": {
+				"share": 2.64
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 17",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.23,
+			"prev": {
+				"share": 2.64
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 7",
+			"version": "1",
+			"versionName": "",
+			"share": 2.96,
+			"prev": {
+				"share": 2.53
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 17",
+			"version": "1",
+			"versionName": "",
+			"share": 2.96,
+			"prev": {
+				"share": 2.53
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 7",
+			"version": "0",
+			"versionName": "",
+			"share": 2.7,
+			"prev": {
+				"share": 2.41
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 17",
+			"version": "0",
+			"versionName": "",
+			"share": 2.7,
+			"prev": {
+				"share": 2.41
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 6",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 2.46,
+			"prev": {
+				"share": 2.3
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 16",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 2.46,
+			"prev": {
+				"share": 2.3
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 6",
+			"version": "1",
+			"versionName": "",
+			"share": 2.22,
+			"prev": {
+				"share": 2.18
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 16",
+			"version": "1",
+			"versionName": "",
+			"share": 2.22,
+			"prev": {
+				"share": 2.18
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 6",
+			"version": "0",
+			"versionName": "",
+			"share": 2,
+			"prev": {
+				"share": 2.07
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 16",
+			"version": "0",
+			"versionName": "",
+			"share": 2,
+			"prev": {
+				"share": 2.07
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 5",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.79,
+			"prev": {
+				"share": 1.95
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 15",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.79,
+			"prev": {
+				"share": 1.95
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 5",
+			"version": "1",
+			"versionName": "",
+			"share": 1.59,
+			"prev": {
+				"share": 1.84
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 15",
+			"version": "1",
+			"versionName": "",
+			"share": 1.59,
+			"prev": {
+				"share": 1.84
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 5",
+			"version": "0",
+			"versionName": "",
+			"share": 1.4,
+			"prev": {
+				"share": 1.72
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 15",
+			"version": "0",
+			"versionName": "",
+			"share": 1.4,
+			"prev": {
+				"share": 1.72
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 4",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.23,
+			"prev": {
+				"share": 1.61
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 14",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.23,
+			"prev": {
+				"share": 1.61
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 4",
+			"version": "1",
+			"versionName": "",
+			"share": 1.06,
+			"prev": {
+				"share": 1.49
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 14",
+			"version": "1",
+			"versionName": "",
+			"share": 1.06,
+			"prev": {
+				"share": 1.49
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 4",
+			"version": "0",
+			"versionName": "",
+			"share": 0.91,
+			"prev": {
+				"share": 1.38
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 14",
+			"version": "0",
+			"versionName": "",
+			"share": 0.91,
+			"prev": {
+				"share": 1.38
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 3",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.77,
+			"prev": {
+				"share": 1.26
+			},
+			"links": {}
+		},
+		{
+			"name": "platform 13",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.77,
+			"prev": {
+				"share": 1.26
+			},
+			"links": {}
+		}
+	],
+	"/v1/stats/platforms/versions?country=X": {
+		"date": "2010-12-31",
+		"status": 400,
+		"message": "Invalid parameter value: `country` must be a valid ISO 3166-1 alpha-2 country code in uppercase.",
+		"links": {
+			"documentation": "http://localhost:4400/docs/data.jsdelivr.com#get-/v1/stats/platforms/versions"
+		}
+	},
+	"/v1/stats/platforms/versions?period=2020": [
+		{
+			"name": "platform 9",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%209/versions/2/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 19",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/2/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 9",
+			"version": "1",
+			"versionName": "",
+			"share": 4.56,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%209/versions/1/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 19",
+			"version": "1",
+			"versionName": "",
+			"share": 4.56,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/1/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 9",
+			"version": "0",
+			"versionName": "",
+			"share": 4.25,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%209/versions/0/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 19",
+			"version": "0",
+			"versionName": "",
+			"share": 4.25,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/0/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 8",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.95,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%208/versions/2/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 18",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.95,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2018/versions/2/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 8",
+			"version": "1",
+			"versionName": "",
+			"share": 3.67,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%208/versions/1/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 18",
+			"version": "1",
+			"versionName": "",
+			"share": 3.67,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2018/versions/1/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 8",
+			"version": "0",
+			"versionName": "",
+			"share": 3.39,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%208/versions/0/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 18",
+			"version": "0",
+			"versionName": "",
+			"share": 3.39,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2018/versions/0/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 7",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.12,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%207/versions/2/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 17",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.12,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2017/versions/2/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 7",
+			"version": "1",
+			"versionName": "",
+			"share": 2.87,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%207/versions/1/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 17",
+			"version": "1",
+			"versionName": "",
+			"share": 2.87,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2017/versions/1/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 7",
+			"version": "0",
+			"versionName": "",
+			"share": 2.62,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%207/versions/0/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 17",
+			"version": "0",
+			"versionName": "",
+			"share": 2.62,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2017/versions/0/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 6",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 2.39,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%206/versions/2/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 16",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 2.39,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2016/versions/2/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 6",
+			"version": "1",
+			"versionName": "",
+			"share": 2.17,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%206/versions/1/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 16",
+			"version": "1",
+			"versionName": "",
+			"share": 2.17,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2016/versions/1/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 6",
+			"version": "0",
+			"versionName": "",
+			"share": 1.96,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%206/versions/0/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 16",
+			"version": "0",
+			"versionName": "",
+			"share": 1.96,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2016/versions/0/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 5",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.75,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%205/versions/2/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 15",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.75,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2015/versions/2/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 5",
+			"version": "1",
+			"versionName": "",
+			"share": 1.56,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%205/versions/1/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 15",
+			"version": "1",
+			"versionName": "",
+			"share": 1.56,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2015/versions/1/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 5",
+			"version": "0",
+			"versionName": "",
+			"share": 1.39,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%205/versions/0/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 15",
+			"version": "0",
+			"versionName": "",
+			"share": 1.39,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2015/versions/0/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 4",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.22,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%204/versions/2/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 14",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.22,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2014/versions/2/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 4",
+			"version": "1",
+			"versionName": "",
+			"share": 1.06,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%204/versions/1/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 14",
+			"version": "1",
+			"versionName": "",
+			"share": 1.06,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2014/versions/1/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 4",
+			"version": "0",
+			"versionName": "",
+			"share": 0.91,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%204/versions/0/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 14",
+			"version": "0",
+			"versionName": "",
+			"share": 0.91,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2014/versions/0/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 3",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.78,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%203/versions/2/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 13",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.78,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2013/versions/2/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 3",
+			"version": "1",
+			"versionName": "",
+			"share": 0.35,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%203/versions/1/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 13",
+			"version": "1",
+			"versionName": "",
+			"share": 0.35,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2013/versions/1/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 3",
+			"version": "0",
+			"versionName": "",
+			"share": 0.29,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%203/versions/0/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 13",
+			"version": "0",
+			"versionName": "",
+			"share": 0.29,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2013/versions/0/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 2",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.24,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%202/versions/2/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 12",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.24,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2012/versions/2/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 2",
+			"version": "1",
+			"versionName": "",
+			"share": 0.19,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%202/versions/1/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 12",
+			"version": "1",
+			"versionName": "",
+			"share": 0.19,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2012/versions/1/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 2",
+			"version": "0",
+			"versionName": "",
+			"share": 0.15,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%202/versions/0/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 12",
+			"version": "0",
+			"versionName": "",
+			"share": 0.15,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2012/versions/0/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 11",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.11,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2011/versions/2/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 1",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.11,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%201/versions/2/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 11",
+			"version": "1",
+			"versionName": "",
+			"share": 0.08,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2011/versions/1/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 1",
+			"version": "1",
+			"versionName": "",
+			"share": 0.08,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%201/versions/1/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 11",
+			"version": "0",
+			"versionName": "",
+			"share": 0.05,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2011/versions/0/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 1",
+			"version": "0",
+			"versionName": "",
+			"share": 0.05,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%201/versions/0/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 10",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.03,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2010/versions/2/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 0",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.03,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%200/versions/2/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 10",
+			"version": "1",
+			"versionName": "",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2010/versions/1/countries?period=2020"
+			}
+		},
+		{
+			"name": "platform 0",
+			"version": "1",
+			"versionName": "",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%200/versions/1/countries?period=2020"
+			}
+		}
+	],
+	"/v1/stats/platforms/versions?period=2020-02": [
+		{
+			"name": "platform 9",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%209/versions/2/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 19",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/2/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 9",
+			"version": "1",
+			"versionName": "",
+			"share": 4.52,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%209/versions/1/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 19",
+			"version": "1",
+			"versionName": "",
+			"share": 4.52,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/1/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 9",
+			"version": "0",
+			"versionName": "",
+			"share": 4.2,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%209/versions/0/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 19",
+			"version": "0",
+			"versionName": "",
+			"share": 4.2,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/0/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 8",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.9,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%208/versions/2/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 18",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.9,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2018/versions/2/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 8",
+			"version": "1",
+			"versionName": "",
+			"share": 3.62,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%208/versions/1/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 18",
+			"version": "1",
+			"versionName": "",
+			"share": 3.62,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2018/versions/1/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 8",
+			"version": "0",
+			"versionName": "",
+			"share": 3.34,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%208/versions/0/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 18",
+			"version": "0",
+			"versionName": "",
+			"share": 3.34,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2018/versions/0/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 7",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.07,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%207/versions/2/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 17",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.07,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2017/versions/2/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 7",
+			"version": "1",
+			"versionName": "",
+			"share": 2.81,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%207/versions/1/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 17",
+			"version": "1",
+			"versionName": "",
+			"share": 2.81,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2017/versions/1/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 7",
+			"version": "0",
+			"versionName": "",
+			"share": 2.57,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%207/versions/0/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 17",
+			"version": "0",
+			"versionName": "",
+			"share": 2.57,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2017/versions/0/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 6",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 2.34,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%206/versions/2/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 16",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 2.34,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2016/versions/2/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 6",
+			"version": "1",
+			"versionName": "",
+			"share": 2.11,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%206/versions/1/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 16",
+			"version": "1",
+			"versionName": "",
+			"share": 2.11,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2016/versions/1/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 6",
+			"version": "0",
+			"versionName": "",
+			"share": 1.9,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%206/versions/0/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 16",
+			"version": "0",
+			"versionName": "",
+			"share": 1.9,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2016/versions/0/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 5",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.7,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%205/versions/2/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 15",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.7,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2015/versions/2/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 5",
+			"version": "1",
+			"versionName": "",
+			"share": 1.51,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%205/versions/1/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 15",
+			"version": "1",
+			"versionName": "",
+			"share": 1.51,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2015/versions/1/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 5",
+			"version": "0",
+			"versionName": "",
+			"share": 1.33,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%205/versions/0/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 15",
+			"version": "0",
+			"versionName": "",
+			"share": 1.33,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2015/versions/0/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 4",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.17,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%204/versions/2/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 14",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.17,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2014/versions/2/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 4",
+			"version": "1",
+			"versionName": "",
+			"share": 1.01,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%204/versions/1/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 14",
+			"version": "1",
+			"versionName": "",
+			"share": 1.01,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2014/versions/1/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 4",
+			"version": "0",
+			"versionName": "",
+			"share": 0.87,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%204/versions/0/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 14",
+			"version": "0",
+			"versionName": "",
+			"share": 0.87,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2014/versions/0/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 3",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.73,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%203/versions/2/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 13",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.73,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2013/versions/2/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 3",
+			"version": "1",
+			"versionName": "",
+			"share": 0.61,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%203/versions/1/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 13",
+			"version": "1",
+			"versionName": "",
+			"share": 0.61,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2013/versions/1/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 3",
+			"version": "0",
+			"versionName": "",
+			"share": 0.5,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%203/versions/0/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 13",
+			"version": "0",
+			"versionName": "",
+			"share": 0.5,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2013/versions/0/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 2",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.4,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%202/versions/2/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 12",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.4,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2012/versions/2/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 2",
+			"version": "1",
+			"versionName": "",
+			"share": 0.31,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%202/versions/1/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 12",
+			"version": "1",
+			"versionName": "",
+			"share": 0.31,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2012/versions/1/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 2",
+			"version": "0",
+			"versionName": "",
+			"share": 0.23,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%202/versions/0/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 12",
+			"version": "0",
+			"versionName": "",
+			"share": 0.23,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2012/versions/0/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 11",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.17,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2011/versions/2/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 1",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.17,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%201/versions/2/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 11",
+			"version": "1",
+			"versionName": "",
+			"share": 0.11,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2011/versions/1/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 1",
+			"version": "1",
+			"versionName": "",
+			"share": 0.11,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%201/versions/1/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 11",
+			"version": "0",
+			"versionName": "",
+			"share": 0.07,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2011/versions/0/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 1",
+			"version": "0",
+			"versionName": "",
+			"share": 0.07,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%201/versions/0/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 10",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.03,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2010/versions/2/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 0",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.03,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%200/versions/2/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 10",
+			"version": "1",
+			"versionName": "",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2010/versions/1/countries?period=2020-02"
+			}
+		},
+		{
+			"name": "platform 0",
+			"version": "1",
+			"versionName": "",
+			"share": 0.01,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%200/versions/1/countries?period=2020-02"
+			}
+		}
+	],
+	"/v1/stats/platforms/versions?period=2020-04": [
+		{
+			"name": "platform 9",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%209/versions/2/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 19",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/2/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 9",
+			"version": "1",
+			"versionName": "",
+			"share": 4.75,
+			"prev": {
+				"share": 3.22
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%209/versions/1/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 19",
+			"version": "1",
+			"versionName": "",
+			"share": 4.75,
+			"prev": {
+				"share": 3.22
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/1/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 9",
+			"version": "0",
+			"versionName": "",
+			"share": 4.42,
+			"prev": {
+				"share": 3.1
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%209/versions/0/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 19",
+			"version": "0",
+			"versionName": "",
+			"share": 4.42,
+			"prev": {
+				"share": 3.1
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/0/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 8",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 4.11,
+			"prev": {
+				"share": 2.99
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%208/versions/2/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 18",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 4.11,
+			"prev": {
+				"share": 2.99
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2018/versions/2/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 8",
+			"version": "1",
+			"versionName": "",
+			"share": 3.8,
+			"prev": {
+				"share": 2.87
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%208/versions/1/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 18",
+			"version": "1",
+			"versionName": "",
+			"share": 3.8,
+			"prev": {
+				"share": 2.87
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2018/versions/1/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 8",
+			"version": "0",
+			"versionName": "",
+			"share": 3.51,
+			"prev": {
+				"share": 2.76
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%208/versions/0/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 18",
+			"version": "0",
+			"versionName": "",
+			"share": 3.51,
+			"prev": {
+				"share": 2.76
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2018/versions/0/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 7",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.23,
+			"prev": {
+				"share": 2.64
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%207/versions/2/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 17",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 3.23,
+			"prev": {
+				"share": 2.64
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2017/versions/2/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 7",
+			"version": "1",
+			"versionName": "",
+			"share": 2.96,
+			"prev": {
+				"share": 2.53
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%207/versions/1/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 17",
+			"version": "1",
+			"versionName": "",
+			"share": 2.96,
+			"prev": {
+				"share": 2.53
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2017/versions/1/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 7",
+			"version": "0",
+			"versionName": "",
+			"share": 2.7,
+			"prev": {
+				"share": 2.41
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%207/versions/0/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 17",
+			"version": "0",
+			"versionName": "",
+			"share": 2.7,
+			"prev": {
+				"share": 2.41
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2017/versions/0/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 6",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 2.46,
+			"prev": {
+				"share": 2.3
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%206/versions/2/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 16",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 2.46,
+			"prev": {
+				"share": 2.3
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2016/versions/2/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 6",
+			"version": "1",
+			"versionName": "",
+			"share": 2.22,
+			"prev": {
+				"share": 2.18
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%206/versions/1/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 16",
+			"version": "1",
+			"versionName": "",
+			"share": 2.22,
+			"prev": {
+				"share": 2.18
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2016/versions/1/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 6",
+			"version": "0",
+			"versionName": "",
+			"share": 2,
+			"prev": {
+				"share": 2.07
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%206/versions/0/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 16",
+			"version": "0",
+			"versionName": "",
+			"share": 2,
+			"prev": {
+				"share": 2.07
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2016/versions/0/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 5",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.79,
+			"prev": {
+				"share": 1.95
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%205/versions/2/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 15",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.79,
+			"prev": {
+				"share": 1.95
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2015/versions/2/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 5",
+			"version": "1",
+			"versionName": "",
+			"share": 1.59,
+			"prev": {
+				"share": 1.84
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%205/versions/1/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 15",
+			"version": "1",
+			"versionName": "",
+			"share": 1.59,
+			"prev": {
+				"share": 1.84
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2015/versions/1/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 5",
+			"version": "0",
+			"versionName": "",
+			"share": 1.4,
+			"prev": {
+				"share": 1.72
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%205/versions/0/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 15",
+			"version": "0",
+			"versionName": "",
+			"share": 1.4,
+			"prev": {
+				"share": 1.72
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2015/versions/0/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 4",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.23,
+			"prev": {
+				"share": 1.61
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%204/versions/2/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 14",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 1.23,
+			"prev": {
+				"share": 1.61
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2014/versions/2/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 4",
+			"version": "1",
+			"versionName": "",
+			"share": 1.06,
+			"prev": {
+				"share": 1.49
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%204/versions/1/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 14",
+			"version": "1",
+			"versionName": "",
+			"share": 1.06,
+			"prev": {
+				"share": 1.49
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2014/versions/1/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 4",
+			"version": "0",
+			"versionName": "",
+			"share": 0.91,
+			"prev": {
+				"share": 1.38
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%204/versions/0/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 14",
+			"version": "0",
+			"versionName": "",
+			"share": 0.91,
+			"prev": {
+				"share": 1.38
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2014/versions/0/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 3",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.77,
+			"prev": {
+				"share": 1.26
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%203/versions/2/countries?period=2020-04"
+			}
+		},
+		{
+			"name": "platform 13",
+			"version": "2",
+			"versionName": "version 2",
+			"share": 0.77,
+			"prev": {
+				"share": 1.26
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2013/versions/2/countries?period=2020-04"
+			}
+		}
+	],
+	"/v1/stats/platforms/versions?period=month": {
+		"date": "2010-12-31",
+		"status": 400,
+		"message": "Invalid parameter value: `period` must be one of [s-month, s-quarter, s-year] or a valid date in one of the following ISO formats [YYYY-MM, YYYY-Qq, YYYY].",
+		"links": {
+			"documentation": "http://localhost:4400/docs/data.jsdelivr.com#get-/v1/stats/platforms/versions"
+		}
+	},
+	"/v1/stats/platforms/platform%2019/versions?continent=EU&country=PL": {
+		"date": "2010-12-31",
+		"status": 400,
+		"message": "Invalid parameter value: object contains a conflict between optional exclusive peers [continent, country].",
+		"links": {
+			"documentation": "http://localhost:4400/docs/data.jsdelivr.com#get-/v1/stats/platforms/-name-/versions"
+		}
+	},
+	"/v1/stats/platforms/platform%2019/versions?continent=EU&period=2020": [
+		{
+			"version": "2",
+			"versionName": "version 2",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/2/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"version": "1",
+			"versionName": "",
+			"share": 4.56,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/1/countries?period=2020&continent=EU"
+			}
+		},
+		{
+			"version": "0",
+			"versionName": "",
+			"share": 4.25,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/0/countries?period=2020&continent=EU"
+			}
+		}
+	],
+	"/v1/stats/platforms/platform%2019/versions?continent=EU&period=2020-02": [
+		{
+			"version": "2",
+			"versionName": "version 2",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/2/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"version": "1",
+			"versionName": "",
+			"share": 4.52,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/1/countries?period=2020-02&continent=EU"
+			}
+		},
+		{
+			"version": "0",
+			"versionName": "",
+			"share": 4.2,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/0/countries?period=2020-02&continent=EU"
+			}
+		}
+	],
+	"/v1/stats/platforms/platform%2019/versions?continent=EU&period=2020-04": [
+		{
+			"version": "2",
+			"versionName": "version 2",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/2/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"version": "1",
+			"versionName": "",
+			"share": 4.75,
+			"prev": {
+				"share": 3.22
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/1/countries?period=2020-04&continent=EU"
+			}
+		},
+		{
+			"version": "0",
+			"versionName": "",
+			"share": 4.42,
+			"prev": {
+				"share": 3.1
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/0/countries?period=2020-04&continent=EU"
+			}
+		}
+	],
+	"/v1/stats/platforms/platform%2019/versions?continent=X": {
+		"date": "2010-12-31",
+		"status": 400,
+		"message": "Invalid parameter value: `continent` must be a valid continent code in uppercase.",
+		"links": {
+			"documentation": "http://localhost:4400/docs/data.jsdelivr.com#get-/v1/stats/platforms/-name-/versions"
+		}
+	},
+	"/v1/stats/platforms/platform%2019/versions?country=PL&period=2020": [
+		{
+			"version": "2",
+			"versionName": "version 2",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"version": "1",
+			"versionName": "",
+			"share": 4.56,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"version": "0",
+			"versionName": "",
+			"share": 4.25,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		}
+	],
+	"/v1/stats/platforms/platform%2019/versions?country=PL&period=2020-02": [
+		{
+			"version": "2",
+			"versionName": "version 2",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"version": "1",
+			"versionName": "",
+			"share": 4.52,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		},
+		{
+			"version": "0",
+			"versionName": "",
+			"share": 4.2,
+			"prev": {
+				"share": null
+			},
+			"links": {}
+		}
+	],
+	"/v1/stats/platforms/platform%2019/versions?country=PL&period=2020-04": [
+		{
+			"version": "2",
+			"versionName": "version 2",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			},
+			"links": {}
+		},
+		{
+			"version": "1",
+			"versionName": "",
+			"share": 4.75,
+			"prev": {
+				"share": 3.22
+			},
+			"links": {}
+		},
+		{
+			"version": "0",
+			"versionName": "",
+			"share": 4.42,
+			"prev": {
+				"share": 3.1
+			},
+			"links": {}
+		}
+	],
+	"/v1/stats/platforms/platform%2019/versions?country=X": {
+		"date": "2010-12-31",
+		"status": 400,
+		"message": "Invalid parameter value: `country` must be a valid ISO 3166-1 alpha-2 country code in uppercase.",
+		"links": {
+			"documentation": "http://localhost:4400/docs/data.jsdelivr.com#get-/v1/stats/platforms/-name-/versions"
+		}
+	},
+	"/v1/stats/platforms/platform%2019/versions?period=2020": [
+		{
+			"version": "2",
+			"versionName": "version 2",
+			"share": 4.88,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/2/countries?period=2020"
+			}
+		},
+		{
+			"version": "1",
+			"versionName": "",
+			"share": 4.56,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/1/countries?period=2020"
+			}
+		},
+		{
+			"version": "0",
+			"versionName": "",
+			"share": 4.25,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/0/countries?period=2020"
+			}
+		}
+	],
+	"/v1/stats/platforms/platform%2019/versions?period=2020-02": [
+		{
+			"version": "2",
+			"versionName": "version 2",
+			"share": 4.84,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/2/countries?period=2020-02"
+			}
+		},
+		{
+			"version": "1",
+			"versionName": "",
+			"share": 4.52,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/1/countries?period=2020-02"
+			}
+		},
+		{
+			"version": "0",
+			"versionName": "",
+			"share": 4.2,
+			"prev": {
+				"share": null
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/0/countries?period=2020-02"
+			}
+		}
+	],
+	"/v1/stats/platforms/platform%2019/versions?period=2020-04": [
+		{
+			"version": "2",
+			"versionName": "version 2",
+			"share": 5.09,
+			"prev": {
+				"share": 3.33
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/2/countries?period=2020-04"
+			}
+		},
+		{
+			"version": "1",
+			"versionName": "",
+			"share": 4.75,
+			"prev": {
+				"share": 3.22
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/1/countries?period=2020-04"
+			}
+		},
+		{
+			"version": "0",
+			"versionName": "",
+			"share": 4.42,
+			"prev": {
+				"share": 3.1
+			},
+			"links": {
+				"countries": "http://localhost:4454/v1/stats/platforms/platform%2019/versions/0/countries?period=2020-04"
+			}
+		}
+	],
+	"/v1/stats/platforms/platform%2019/versions?period=month": {
+		"date": "2010-12-31",
+		"status": 400,
+		"message": "Invalid parameter value: `period` must be one of [s-month, s-quarter, s-year] or a valid date in one of the following ISO formats [YYYY-MM, YYYY-Qq, YYYY].",
+		"links": {
+			"documentation": "http://localhost:4400/docs/data.jsdelivr.com#get-/v1/stats/platforms/-name-/versions"
+		}
+	}
+}

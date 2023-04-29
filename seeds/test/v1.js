@@ -135,7 +135,7 @@ exports.seed = async (db) => {
 	await db('platform').insert(_.range(0, 20).map(i => ({ name: `platform ${i}` })));
 
 	await db('platform_version').insert(_.flatten(_.range(1, 21).map((platformId) => {
-		return _.range(0, 3).map(i => ({ platformId, version: i, versionName: i === 2 ? `version ${i}` : null }));
+		return _.range(0, 3).map(i => ({ platformId, version: i, versionName: i === 2 ? `version ${i}` : '' }));
 	})));
 
 	await db('country_browser_version_hits').insert(_.flatten(countries.map((countryIso, countryIndex) => {

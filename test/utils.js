@@ -25,7 +25,7 @@ function getUriWithValues (template, values, defaults) {
 	return urlTemplate.parse(template).expand(defaults ? _.defaults(values, defaults) : values);
 }
 
-function makeEndpointAssertion (uriTemplate, defaults, { params, assert }, { limit = params.limit || 100, note, status = 200 } = {}) {
+function makeEndpointAssertion (uriTemplate, defaults, { params, assert }, { limit = params.limit || 100, note, status = 200, validateSchema = true } = {}) {
 	let getUri = d => getUriWithValues(uriTemplate, params, d);
 	let apiLimit = params.limit || 100;
 	let page = params.page || 1, response;
@@ -58,6 +58,10 @@ function makeEndpointAssertion (uriTemplate, defaults, { params, assert }, { lim
 				expect(response).to.have.header('Timing-Allow-Origin', '*');
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
+
+				if (validateSchema) {
+					expect(response).to.matchApiSchema();
+				}
 
 				if (status < 400) {
 					if (isDeepEmpty(response.body)) {
@@ -245,8 +249,8 @@ module.exports = {
 	setupSnapshots (file) {
 		chaiSnapshotInstance.setCurrentFile(path.join(
 			__dirname,
-			'expected',
-			path.relative(path.join(__dirname, 'tests'), path.dirname(file)),
+			'snapshots',
+			path.relative(path.join(__dirname, 'tests/integration'), path.dirname(file)),
 			`${path.basename(file, path.extname(file))}.json`,
 		));
 	},

@@ -11,7 +11,7 @@
     <ui>bdd</ui>
     <extra-mocha-options />
     <test-kind>TEST_FILE</test-kind>
-    <test-file>$PROJECT_DIR$/test/tests/tests.js</test-file>
+    <test-file>$PROJECT_DIR$/test/tests/integration/tests.js</test-file>
     <method v="2" />
   </configuration>
 </component>

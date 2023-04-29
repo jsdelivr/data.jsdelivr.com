@@ -50,7 +50,7 @@ class PackageRequest extends BaseRequest {
 			apmClient.addLabels({ githubRepo: this.params.repo });
 
 			return gitHubRemoteService.usingContext(this.ctx).listTags(this.params.user, this.params.repo).then((response) => {
-				return { tags: [], versions: response.data };
+				return { tags: {}, versions: response.data };
 			}).catch((error) => {
 				// istanbul ignore next
 				if (error.statusCode === 404) {

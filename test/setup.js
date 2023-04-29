@@ -21,10 +21,6 @@ module.exports.mochaGlobalSetup = async () => {
 	nock.disableNetConnect();
 	nock.enableNetConnect('127.0.0.1');
 
-	await Bluebird.fromCallback((callback) => {
-		http.createServer(serverCallback).listen(process.env.PORT || config.get('server.port'), callback);
-	});
-
 	// package tests
 	nock('https://registry.npmjs.org')
 		.get('/jquery')
@@ -33,6 +29,10 @@ module.exports.mochaGlobalSetup = async () => {
 	nock('https://cdn.jsdelivr.net')
 		.get('/npm/jquery@3.2.1/+private-json')
 		.reply(200, upstreamCdnResponses['/npm/jquery@3.2.1/+private-json']);
+
+	nock('https://cdn.jsdelivr.net')
+		.get('/npm/jquery@1.0.0/+private-json')
+		.reply(200, { ...upstreamCdnResponses['/npm/jquery@3.2.1/+private-json'], version: '1.0.0' });
 
 	nock('https://api.github.com')
 		.get('/repos/jquery/jquery/tags')
@@ -59,6 +59,10 @@ module.exports.mochaGlobalSetup = async () => {
 	nock('https://cdn.jsdelivr.net')
 		.get('/gh/jquery/jquery@3.2.1/+private-json')
 		.reply(200, upstreamCdnResponses['/gh/jquery/jquery@3.2.1/+private-json']);
+
+	nock('https://cdn.jsdelivr.net')
+		.get('/gh/jquery/jquery@1.0.0/+private-json')
+		.reply(200, { ...upstreamCdnResponses['/gh/jquery/jquery@3.2.1/+private-json'], version: '1.0.0' });
 
 	nock('https://cdn.jsdelivr.net')
 		.get('/gh/adobe/source-sans-pro@2.020R-ro%2F1.075R-it/+private-json')
@@ -196,5 +200,18 @@ module.exports.mochaGlobalSetup = async () => {
 		.times(1)
 		.reply(403, 'Package size exceeded the configured limit of 50 MB.');
 
+	nock('https://cdn.jsdelivr.net')
+		.get('/npm/jquery@1.0.0/+private-entrypoints')
+		.times(1)
+		.reply(200, { version: '1.0.0', entrypoints: { main: '/main' } });
+
 	await setupDb({ databaseDate: '2022-07-05' });
+
+	await Bluebird.fromCallback((callback) => {
+		http.createServer(serverCallback).listen(process.env.PORT || config.get('server.port'), callback);
+	});
 };
+
+if (require.main === module) {
+	module.exports.mochaGlobalSetup().catch(console.error);
+}

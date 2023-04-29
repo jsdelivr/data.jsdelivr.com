@@ -1,0 +1,6 @@
+{
+	"local": "src/public/v1/spec.yaml",
+	"baseUrl": "http://localhost:4454",
+	"portmanConfigFile": "test/tests/contract/portman-config.json",
+	"ignoreCircularRefs": true
+}

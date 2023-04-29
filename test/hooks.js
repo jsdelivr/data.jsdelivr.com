@@ -14,6 +14,7 @@ chai.expect = expectAssert(chai.expect);
 const chaiHttp = require('chai-http');
 chai.use(chaiHttp);
 
+const chaiOas = require('./plugins/oas');
 const chaiSnapshot = require('./plugins/snapshot');
 
 global.chaiSnapshotInstance = chaiSnapshot({
@@ -24,7 +25,9 @@ global.chaiSnapshotInstance = chaiSnapshot({
 chai.use(chaiSnapshotInstance);
 
 exports.mochaHooks = {
-	beforeAll () {
+	async beforeAll () {
+		chai.use(await chaiOas({ specPath: __dirname + '/../src/public/v1/spec.yaml' }));
+
 		if (global.v8debug === undefined && !/--debug|--inspect/.test(process.execArgv.join(' ')) && !process.env.JB_IDE_PORT) {
 			require('blocked')((ms) => {
 				throw new Error(`Blocked for ${ms} ms.`);

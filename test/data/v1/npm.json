@@ -9,6 +9,47 @@
 			"latest": "3.2.1"
 		},
 		"versions": {
+			"1.0.0": {
+				"name": "jquery",
+				"description": "jQuery: The Write Less, Do More, JavaScript Library",
+				"url": "jquery.com",
+				"keywords": [
+					"util",
+					"dom",
+					"jquery"
+				],
+				"author": {
+					"name": "John Resig",
+					"email": "jeresig@gmail.com"
+				},
+				"contributors": [ ],
+				"dependencies": {
+					"jsdom": "=0.1.20",
+					"htmlparser": ">= 1.7.3"
+				},
+				"lib": "lib",
+				"main": "./dist/node-jquery.js",
+				"version": "1.0.0",
+				"_id": "jquery@1.0.0",
+				"engines": {
+					"node": "*"
+				},
+				"_engineSupported": true,
+				"_npmVersion": "0.3.15",
+				"_nodeVersion": "v0.4.2",
+				"directories": {
+					"lib": "./lib"
+				},
+				"files": [
+					""
+				],
+				"_defaultsLoaded": true,
+				"dist": {
+					"shasum": "2ae2d661e906c1a01e044a71bb5b2743942183e5",
+					"tarball": "https://registry.npmjs.org/jquery/-/jquery-1.0.0.tgz"
+				},
+				"deprecated": "Versions of the jquery npm package older than 1.9.0 are patched versions that don't work in web browsers. Please upgrade to >=1.11.0."
+			},
 			"1.5.1": {
 				"name": "jquery",
 				"description": "jQuery: The Write Less, Do More, JavaScript Library",
