@@ -338,23 +338,28 @@ class PackageRequest extends BaseRequest {
 	}
 
 	async handlePackageStatsDeprecated () {
-		let periodStats = this.getStatsForPeriod();
-
 		if (this.params.groupBy === 'date') {
-			let stats = await Package.getSumDateHitsPerVersionByName(this.params.type, this.params.name, ...this.dateRange);
+			let [ periodStats, stats ] = await Promise.all([
+				this.getStatsForPeriod(),
+				Package.getSumDateHitsPerVersionByName(this.params.type, this.params.name, ...this.dateRange),
+			]);
 
 			this.ctx.body = {
-				...(await periodStats).hits,
+				...periodStats.hits,
 				dates: dateRange.fill(_.mapValues(stats, ({ versions, commits, branches }) => {
 					return { total: sumDeep(versions), versions, commits, branches };
 				}), ...this.dateRange, { total: 0, versions: {}, commits: {}, branches: {} }),
 			};
 		} else {
-			let stats = await Package.getSumVersionHitsPerDateByName(this.params.type, this.params.name, ...this.dateRange);
+			let [ periodStats, stats ] = await Promise.all([
+				this.getStatsForPeriod(),
+				Package.getSumVersionHitsPerDateByName(this.params.type, this.params.name, ...this.dateRange),
+			]);
+
 			let fn = data => _.mapValues(data, dates => ({ total: sumDeep(dates), dates: dateRange.fill(dates, ...this.dateRange) }));
 
 			this.ctx.body = {
-				...(await periodStats).hits,
+				...periodStats.hits,
 				versions: fn(stats.versions),
 				commits: fn(stats.commits),
 				branches: fn(stats.branches),
