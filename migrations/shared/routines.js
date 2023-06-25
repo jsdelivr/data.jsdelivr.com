@@ -24,6 +24,7 @@ ${periods.map(period => topPackagesForPeriod(period)).join('\n')}
 				end;
 
 			start transaction;
+			call logProcedureCallStart('updateViewTopPackagesForPeriod', concat_ws(' ', aPeriod, aDateFrom, aDateTo));
 
 			delete from view_top_packages where \`period\` = aPeriod and \`date\` = aDate;
 
@@ -70,6 +71,7 @@ ${periods.map(period => topPackagesForPeriod(period)).join('\n')}
 				order by hits desc
 			) t;
 
+			call logProcedureCallEnd();
 			commit;
 		end;
 	`);
@@ -96,6 +98,7 @@ ${periods.map(period => topProxiesForPeriod(period)).join('\n')}
 				end;
 
 			start transaction;
+			call logProcedureCallStart('updateViewTopProxiesForPeriod', concat_ws(' ', aPeriod, aDateFrom, aDateTo));
 
 			delete from view_top_proxies where \`period\` = aPeriod and \`date\` = aDate;
 
@@ -123,6 +126,7 @@ ${periods.map(period => topProxiesForPeriod(period)).join('\n')}
 				order by hits desc
 			) t;
 
+			call logProcedureCallEnd();
 			commit;
 		end;
 	`);
@@ -149,6 +153,7 @@ ${periods.map(period => topProxiesForPeriod(period)).join('\n')}
 				end;
 
 			start transaction;
+			call logProcedureCallStart('updateViewTopProxyFilesForPeriod', concat_ws(' ', aPeriod, aDateFrom, aDateTo));
 
 			delete from view_top_proxy_files where \`period\` = aPeriod and \`date\` = aDate;
 
@@ -176,6 +181,7 @@ ${periods.map(period => topProxiesForPeriod(period)).join('\n')}
 				order by hits desc
 			) t;
 
+			call logProcedureCallEnd();
 			commit;
 		end;
 	`);
@@ -202,6 +208,7 @@ ${periods.map(period => countriesForPeriod(period)).join('\n')}
 				end;
 
 			start transaction;
+			call logProcedureCallStart('updateViewNetworkCountriesForPeriod', concat_ws(' ', aPeriod, aDateFrom, aDateTo));
 
 			delete from view_network_countries where \`period\` = aPeriod and \`date\` = aDate;
 
@@ -228,6 +235,7 @@ ${periods.map(period => countriesForPeriod(period)).join('\n')}
 				order by hits desc
 			) t;
 
+			call logProcedureCallEnd();
 			commit;
 		end;
 	`);
@@ -254,6 +262,7 @@ ${periods.map(period => cdnsForPeriod(period)).join('\n')}
 				end;
 
 			start transaction;
+			call logProcedureCallStart('updateViewNetworkCdnsForPeriod', concat_ws(' ', aPeriod, aDateFrom, aDateTo));
 
 			delete from view_network_cdns where \`period\` = aPeriod and \`date\` = aDate;
 
@@ -331,6 +340,7 @@ ${periods.map(period => cdnsForPeriod(period)).join('\n')}
 				order by hits desc
 			) t;
 
+			call logProcedureCallEnd();
 			commit;
 		end;
 	`);

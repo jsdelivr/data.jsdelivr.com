@@ -9,6 +9,21 @@ begin
 	end for;
 end;
 
+
+create or replace procedure logProcedureCallStart(aName varchar(255), aArguments varchar(255))
+begin
+    set @logProcedureCallName = aName;
+    set @logProcedureCallArguments = aArguments;
+    set @logProcedureCallStartedAt = utc_timestamp();
+end;
+
+
+create or replace procedure logProcedureCallEnd()
+begin
+	insert into _logs (name, arguments, startedAt, duration)
+	values (@logProcedureCallName, @logProcedureCallArguments, @logProcedureCallStartedAt, timediff(utc_timestamp(), @logProcedureCallStartedAt));
+end;
+
 create or replace procedure updateViewNetworkPackages(aDate date)
 begin
 	declare exit handler for sqlexception
@@ -18,6 +33,7 @@ begin
 		end;
 
 	start transaction;
+	call logProcedureCallStart('updateViewNetworkPackages', '');
 
 	set @dateTo = date_sub(aDate, interval 2 day);
 
@@ -30,6 +46,8 @@ begin
 		     join package_hits on package.id = package_hits.packageId
 	where date <= @dateTo
 	group by date;
+
+	call logProcedureCallEnd();
 	commit;
 end;
 
@@ -43,6 +61,7 @@ begin
 		end;
 
 	start transaction;
+	call logProcedureCallStart('updateViewTopPackageFiles', '');
 
 	set @dateFrom = date_sub(aDate, interval 31 day);
 	set @dateTo = date_sub(aDate, interval 2 day);
@@ -69,6 +88,7 @@ begin
 		group by name, v, filename
 	) t where t.rowNum <= 10;
 
+	call logProcedureCallEnd();
 	commit;
 end;
 

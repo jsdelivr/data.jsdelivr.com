@@ -7,6 +7,7 @@ begin
 		end;
 
 	start transaction;
+	call logProcedureCallStart('updateViewTopBrowsers', concat_ws(' ', aPeriod, aDateFrom, aDateTo));
 
 	delete from view_top_browsers where `period` = aPeriod and `date` = aDateFrom;
 
@@ -104,6 +105,7 @@ begin
 	where share > 0
 	order by share desc;
 
+	call logProcedureCallEnd();
 	commit;
 end;
 
@@ -117,6 +119,7 @@ begin
 		end;
 
 	start transaction;
+	call logProcedureCallStart('updateViewTopBrowserVersions', concat_ws(' ', aPeriod, aDateFrom, aDateTo));
 
 	delete from view_top_browser_versions where `period` = aPeriod and `date` = aDateFrom;
 
@@ -211,6 +214,7 @@ begin
 	where share > 0
 	order by share desc;
 
+	call logProcedureCallEnd();
 	commit;
 end;
 
@@ -224,6 +228,7 @@ begin
 		end;
 
 	start transaction;
+	call logProcedureCallStart('updateViewTopBrowserPlatforms', concat_ws(' ', aPeriod, aDateFrom, aDateTo));
 
 	delete from view_top_browser_platforms where `period` = aPeriod and `date` = aDateFrom;
 
@@ -322,6 +327,7 @@ begin
 	where share > 0
 	order by share desc;
 
+	call logProcedureCallEnd();
 	commit;
 end;
 
@@ -335,6 +341,7 @@ begin
 		end;
 
 	start transaction;
+	call logProcedureCallStart('updateViewTopBrowserCountries', concat_ws(' ', aPeriod, aDateFrom, aDateTo));
 
 	delete from view_top_browser_countries where `period` = aPeriod and `date` = aDateFrom;
 
@@ -400,6 +407,7 @@ begin
 	where share > 0
 	order by share desc;
 
+	call logProcedureCallEnd();
 	commit;
 end;
 
@@ -413,6 +421,7 @@ begin
 		end;
 
 	start transaction;
+	call logProcedureCallStart('updateViewTopBrowserVersionCountries', concat_ws(' ', aPeriod, aDateFrom, aDateTo));
 
 	delete from view_top_browser_version_countries where `period` = aPeriod and `date` = aDateFrom;
 
@@ -476,5 +485,6 @@ begin
 	where share > 0
 	order by share desc;
 
+	call logProcedureCallEnd();
 	commit;
 end;
