@@ -145,12 +145,16 @@ ${periods.map(period => topProxiesForPeriod(period)).join('\n')}
 		end;
 
 		create or replace procedure updateViewTopProxyFilesForPeriod(aPeriod varchar(255), aDate date, aDateFrom date, aDateTo date, aPrevDateFrom date, aPrevDateTo date, deleteOlder bool)
-		begin
+		proc:begin
 			declare exit handler for sqlexception
 				begin
 					rollback;
 					resignal;
 				end;
+
+			if not exists (select * from proxy_file_hits where date >= aDateFrom and date <= aDateTo) then
+				leave proc;
+			end if;
 
 			start transaction;
 			call logProcedureCallStart('updateViewTopProxyFilesForPeriod', concat_ws(' ', aPeriod, aDateFrom, aDateTo));
