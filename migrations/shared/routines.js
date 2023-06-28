@@ -168,22 +168,17 @@ ${periods.map(period => topProxiesForPeriod(period)).join('\n')}
 			set @prevScaleFactor = (datediff(aDateTo, aDateFrom) + 1) / (datediff(aPrevDateTo, aPrevDateFrom) + 1);
 
 			insert into view_top_proxy_files
-			(period, date, name, filename,
-			 hits, bandwidth)
-			select aPeriod, aDate, name, filename,
-				hits,
-				bandwidth
-			from (
-				select name, filename,
-					sum(hits) as hits,
-					sum(bandwidth) as bandwidth
-				from proxy
-						 join proxy_file on proxy.id = proxy_file.proxyId
-						 join proxy_file_hits on proxy_file.id = proxy_file_hits.proxyFileId
-				where date >= aDateFrom and date <= aDateTo
-				group by proxyId, filename
-				order by hits desc
-			) t;
+			(period, date, name, filename, hits, bandwidth)
+			select aPeriod, aDate,
+				(select name from proxy where id = proxyId) as name,
+				filename,
+				sum(hits) as hits,
+				sum(bandwidth) as bandwidth
+			from proxy_file
+				join proxy_file_hits on proxy_file.id = proxy_file_hits.proxyFileId
+			where date >= aDateFrom and date <= aDateTo
+			group by proxy_file.id
+			order by hits desc;
 
 			call logProcedureCallEnd();
 			commit;
