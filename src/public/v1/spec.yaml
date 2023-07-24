@@ -2,8 +2,20 @@ openapi: 3.1.0
 info:
   title: jsDelivr API
   summary: The public jsDelivr API.
-  description: Get npm packages, files, versions, entry points, as well as their CDN URLs and download stats.
   version: 1.3.0
+  description: |
+    The public jsDelivr API provides information about npm packages, files, versions, entry points,
+    as well as their CDN URLs and download stats. The API is free to use and imposes no rate limits.
+    However, if you plan to make 100+ RPM for longer periods of time, you should contact us first.
+
+    ## Let us know how you use this API
+
+    If you create a tool/plugin/etc. which uses this API,
+    please include a link to your tool in the **User-Agent** header so that we can learn more about how this API is being used.
+
+    ## Endpoints
+
+    https://data.jsdelivr.com/v1/
   termsOfService: https://github.com/jsdelivr/data.jsdelivr.com
   contact:
     url: https://github.com/jsdelivr/data.jsdelivr.com/issues
@@ -15,21 +27,41 @@ servers:
   - url: https://data.jsdelivr.com
 tags:
   - name: 'Package metadata: GitHub'
+    description: |
+      Provides information about repository versions and files.
   - name: 'Package metadata: npm'
+    description: |
+      Provides information about package versions, files, and entry points.
   - name: 'Stats'
+    description: |
+      Provides a wide range of usage statistics of jsDelivr.
+      Most data are available with a two days delay, monthly and yearly summaries are available with a four days delay.
+      Please note that different categories of data have different historical availability.
+      The [List stat periods](#get-/v1/stats/periods) endpoint provides
+      information about which data are available for which time periods.
   - name: 'Stats: packages'
+    description: |
+      Provides detailed usage information for npm and GitHub packages.
   - name: 'Stats: GitHub packages'
   - name: 'Stats: npm packages'
   - name: 'Stats: network'
+    description: |
+      Provides network-wide hits and bandwidth stats.
     x-labels:
       - new
   - name: 'Stats: browsers'
+    description: |
+      Provides browser market share stats.
     x-labels:
       - new
   - name: 'Stats: platforms'
+    description: |
+      Provides platform market share stats.
     x-labels:
       - new
   - name: 'Stats: proxies'
+    description: |
+      Provides hits and bandwidth stats for proxy endpoints.
     x-labels:
       - new
   - name: 'Lookup'
