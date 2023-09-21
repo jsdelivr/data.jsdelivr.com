@@ -1,0 +1,18 @@
+components:
+  headers:
+    Link:
+      description: |
+        Pagination information using [RFC 8288](https://www.rfc-editor.org/rfc/rfc8288.html) style links.
+        Possible `rel` values are `first`, `prev`, `self`, `next`, and `last`.
+      schema:
+        type: string
+    X-Total-Count:
+      description: |
+        The number of resources in the collection.
+      schema:
+        type: integer
+    X-Total-Pages:
+      description: |
+        The number of available pages.
+      schema:
+        type: integer

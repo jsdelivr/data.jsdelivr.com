@@ -65,3579 +65,11 @@ tags:
     x-labels:
       - new
   - name: 'Lookup'
-components:
-  headers:
-    Link:
-      description: |
-        Pagination information using [RFC 8288](https://www.rfc-editor.org/rfc/rfc8288.html) style links.
-        Possible `rel` values are `first`, `prev`, `self`, `next`, and `last`.
-      schema:
-        type: string
-    X-Total-Count:
-      description: |
-        The number of resources in the collection.
-      schema:
-        type: integer
-    X-Total-Pages:
-      description: |
-        The number of available pages.
-      schema:
-        type: integer
-  parameters:
-    browserName:
-      in: path
-      name: name
-      required: true
-      schema:
-        $ref: '#/components/schemas/BrowserName'
-      examples:
-        browser:
-          value: 'Microsoft Edge'
-    browserVersion:
-      in: path
-      name: version
-      required: true
-      schema:
-        $ref: '#/components/schemas/BrowserVersion'
-      examples:
-        version:
-          value: '101'
-    ghRepo:
-      in: path
-      name: repo
-      required: true
-      description: A GitHub repository name.
-      schema:
-        type: string
-      examples:
-        repo:
-          value: 'bootstrap'
-    ghUser:
-      in: path
-      name: user
-      required: true
-      description: A GitHub username.
-      schema:
-        type: string
-      examples:
-        user:
-          value: 'twbs'
-    hash:
-      in: path
-      name: hash
-      required: true
-      description: A hex-encoded sha256 of file contents.
-      schema:
-        type: string
-      examples:
-        hash:
-          value: '87083882cc6015984eb0411a99d3981817f5dc5c90ba24f0940420c5548d82de'
-    package:
-      in: path
-      name: package
-      required: true
-      description: npm package name.
-      schema:
-        type: string
-      examples:
-        package:
-          value: 'jquery'
-    packageScope:
-      in: path
-      name: scope
-      required: true
-      description: npm scope (username, organization).
-      schema:
-        type: string
-      examples:
-        scope:
-          value: 'popperjs'
-    packageScoped:
-      in: path
-      name: package
-      required: true
-      description: npm package name.
-      schema:
-        type: string
-      examples:
-        package:
-          value: 'core'
-    platformName:
-      in: path
-      name: name
-      required: true
-      schema:
-        $ref: '#/components/schemas/PlatformName'
-      examples:
-        platform:
-          value: 'Windows'
-    platformVersion:
-      in: path
-      name: version
-      required: true
-      schema:
-        $ref: '#/components/schemas/PlatformVersion'
-      examples:
-        version:
-          value: '101'
-    proxyName:
-      in: path
-      name: name
-      required: true
-      description: The name of the proxy endpoint.
-      schema:
-        type: string
-      examples:
-        proxy:
-          value: 'cocoa'
-    version:
-      in: path
-      name: version
-      required: true
-      description: An exact package version (not a version range or a tag)
-      schema:
-        type: string
-      examples:
-        version:
-          value: '2.2.1'
-    badgeType:
-      in: query
-      name: type
-      description: |
-        What kind of value to show in the badge:
-          1. `hits` number of hits in the selected period.
-          2. `rank` rank of the package in the selected period.
-          3. `type-rank` rank of the package in the selected period, within its type category (gh/npm).
-      schema:
-        $ref: '#/components/schemas/BadgeType'
-    by:
-      in: query
-      name: by
-      description: The value to sort by.
-      schema:
-        type: string
-        enum:
-          - hits
-          - bandwidth
-        default: hits
-    continent:
-      in: query
-      name: continent
-      description: Include only data for this continent. Specified as a continent code in uppercase. Mutually exclusive with the `country` parameter.
-      schema:
-        type: string
-        enum:
-          - AF
-          - AN
-          - AS
-          - EU
-          - NA
-          - OC
-          - SA
-    country:
-      in: query
-      name: country
-      description: Include only data for this country. Specified as an ISO 3166-1 alpha-2 country code in uppercase. Mutually exclusive with the `continent` parameter.
-      schema:
-        $ref: '#/components/schemas/CountryCode'
-    limit:
-      in: query
-      name: limit
-      description: Include at most this many results.
-      schema:
-        type: integer
-        minimum: 1
-        maximum: 100
-        default: 100
-    page:
-      in: query
-      name: page
-      description: |
-        Note that an [RFC 8288](https://www.rfc-editor.org/rfc/rfc8288.html) style `Link` header
-        is provided with all responses that support pagination so you don't need to set this directly in most cases.
-      schema:
-        type: integer
-        minimum: 1
-        maximum: 100
-        default: 1
-    period:
-      in: query
-      name: period
-      description: |
-        The time period for which the stats are returned. Can be one of the following:
-          1. A floating period, which represents:
-             - `day` the past 1 day,
-             - `week` the past 7 days,
-             - `month` the past 30 days,
-             - `quarter` the past 90 days,
-             - `year` the past 365 days.
-          2. A static period, which represents:
-             - `s-month` the last calendar month,
-             - `s-quarter` the last calendar quarter,
-             - `s-year` the last calendar year.
-          3. A valid date in:
-             - `YYYY-MM` format for a specific month,
-             - `YYYY-Qq` format for a specific quarter,
-             - `YYYY` format for a specific year.
-      schema:
-        type: string
-        default: month
-      examples:
-        floating:
-          value: 'week'
-        static:
-          value: 's-month'
-        dateMonth:
-          value: '2022-08'
-        dateQuarter:
-          value: '2022-Q1'
-        dateYear:
-          value: '2022'
-    periodStatic:
-      in: query
-      name: period
-      description: |
-        The time period for which the stats are returned. Can be one of the following:
-          1. A static period, which represents:
-             - `s-month` the last calendar month,
-             - `s-year` the last calendar year.
-          2. A valid date in:
-             - `YYYY-MM` format for a specific month,
-             - `YYYY-Qq` format for a specific quarter,
-             - `YYYY` format for a specific year.
-      schema:
-        type: string
-        default: s-month
-      examples:
-        static:
-          value: 's-month'
-        dateMonth:
-          value: '2022-08'
-        dateQuarter:
-          value: '2022-Q1'
-        dateYear:
-          value: '2022'
-    specifier:
-      in: query
-      name: specifier
-      description: A valid semver version range or a tag.
-      schema:
-        type: string
-        default: latest
-      examples:
-        range:
-          value: '2.2'
-        tag:
-          value: 'next'
-    structure:
-      in: query
-      name: structure
-      description: A structure of the `files` array.
-      schema:
-        type: string
-        enum:
-          - tree
-          - flat
-        default: tree
-    type:
-      in: query
-      name: type
-      description: Filter for packages of this type.
-      schema:
-        type: string
-        enum:
-          - gh
-          - npm
-  schemas:
-    BadgeType:
-      type: string
-      enum:
-        - hits
-        - rank
-        - type-rank
-      default: hits
-    BrowserName:
-      type: string
-      description: Browser name.
-    BrowserVersion:
-      type: string
-      description: Browser version. `Unknown` if the version couldn't be determined.
-    CountryCode:
-      type: string
-      description: An ISO 3166-1 alpha-2 country code.
-    PlatformName:
-      type: string
-      description: Platform name. `Other` if the platform couldn't be determined.
-    PlatformVersion:
-      type: string
-      description: Platform version. `Unknown` if the version couldn't be determined.
-    PlatformVersionName:
-      type: string
-      description: Platform version name. Empty for platforms that do not have named versions.
-    HitsTotal:
-      type: integer
-      description: The number of hits in the selected period.
-    BandwidthTotal:
-      type: integer
-      description: The bandwidth in bytes in the selected period.
-    NullableInteger:
-      type:
-        - integer
-        - 'null'
-    NullableNumber:
-      type:
-        - number
-        - 'null'
-    PackageMetadata:
-      allOf:
-        - $ref: '#/components/schemas/PackageTypeName'
-        - type: object
-          properties:
-            tags:
-              type: object
-              description: An object mapping dist-tags to version numbers. Always empty for GitHub repos.
-            versions:
-              type: array
-              description: A list of all versions sorted in descending order.
-              items:
-                type: object
-                properties:
-                  version:
-                    type: string
-                  links:
-                    type: object
-                    properties:
-                      self:
-                        type: string
-                        description: A link to metadata for this version.
-                      entrypoints:
-                        type: string
-                        description: A link to entry point information for this version. Only for npm packages.
-                      stats:
-                        type: string
-                        description: A link to stats for this version.
-                    required:
-                      - self
-                      - stats
-                required:
-                  - version
-                  - links
-            links:
-              type: object
-              properties:
-                stats:
-                  type: string
-                  description: A link to stats for this package.
-              required:
-                - stats
-          required:
-            - tags
-            - versions
-            - links
-    PackageResolved:
-      allOf:
-        - $ref: '#/components/schemas/PackageTypeName'
-        - type: object
-          properties:
-            version:
-              type:
-                - string
-                - 'null'
-              description: The resolved version or `null` if there is no matching version.
-            links:
-              type: object
-              properties:
-                self:
-                  type: string
-                  description: A link to this resource.
-                entrypoints:
-                  type: string
-                  description: A link to entry point information for this version. Only for npm packages.
-                stats:
-                  type: string
-                  description: A link to stats for this version.
-          required:
-            - version
-            - links
-    PackageVersionMetadata:
-      allOf:
-        - $ref: '#/components/schemas/PackageTypeName'
-        - type: object
-          properties:
-            version:
-              type: string
-            default:
-              type:
-                - string
-                - 'null'
-              description: A path to the default file in the package. `null` for GitHub repos or if no default file is set.
-            files:
-              oneOf:
-                - $ref: '#/components/schemas/PackageVersionMetadataTreeFiles'
-                - $ref: '#/components/schemas/PackageVersionMetadataFlatFiles'
-            links:
-              type: object
-              properties:
-                stats:
-                  type: string
-                  description: A link to stats for this package version.
-              required:
-                - stats
-          required:
-            - type
-            - name
-            - version
-            - default
-            - files
-    PackageVersionMetadataTreeFiles:
-      type: array
-      title: PackageVersionMetadataTreeFiles
-      items:
-        oneOf:
-          - type: object
-            title: DirectoryItem
-            properties:
-              type:
-                type: string
-                const: directory
-              name:
-                type: string
-                description: The directory name.
-              files:
-                $ref: '#/components/schemas/PackageVersionMetadataTreeFiles'
-            required:
-              - type
-              - name
-              - files
-          - type: object
-            title: FileItem
-            properties:
-              type:
-                type: string
-                const: file
-              name:
-                type: string
-                description: The filename.
-              hash:
-                type: string
-                description: A base64-encoded sha256 of file contents.
-              size:
-                type: integer
-                description: The file size in bytes.
-            required:
-              - type
-              - name
-              - hash
-              - size
-    PackageVersionMetadataFlatFiles:
-      title: PackageVersionMetadataFlatFiles
-      type: array
-      items:
-        type: object
-        properties:
-          name:
-            type: string
-            description: An absolute file path within the package.
-          hash:
-            type: string
-            description: A base64-encoded sha256 of file contents.
-          size:
-            type: integer
-            description: The file size in bytes.
-        required:
-          - name
-          - hash
-          - size
-    PackageEntrypoint:
-      type: object
-      properties:
-        file:
-          type: string
-        guessed:
-          type: boolean
-          description: |
-            A flag that indicates how the entry point was resolved:
-              - `false` based on trusted package metadata
-              - `true` based on our heuristics
-      required:
-        - file
-        - guessed
-    PackageEntrypoints:
-      type: object
-      properties:
-        entrypoints:
-          type: object
-          properties:
-            css:
-              $ref: '#/components/schemas/PackageEntrypoint'
-            js:
-              $ref: '#/components/schemas/PackageEntrypoint'
-    Periods:
-      type: array
-      items:
-        type: object
-        properties:
-          period:
-            type: string
-            description: The period date in `YYYY` or `YYYY-MM` format.
-          periodType:
-            type: string
-            description: The period type.
-            enum:
-              - s-month
-              - s-quarter
-              - s-year
-          links:
-            type: object
-            description: An object with links to all stats that are available in this period.
-            properties:
-              browsers:
-                type: string
-                description: A link to browser stats for this period.
-              network:
-                type: string
-                description: A link to network stats for this period.
-              packages:
-                type: string
-                description: A link to package stats for this period.
-              platforms:
-                type: string
-                description: A link to platform stats for this period.
-              proxies:
-                type: string
-                description: A link to proxy stats for this period.
-        required:
-          - period
-          - periodType
-          - links
-    PrevDescription:
-      description: |
-        The stats for previous period.
-        In case the periods have a different number of days (which happens with calendar months), the values are automatically adjusted.
-    StatsWithPrev:
-      type: object
-      properties:
-        hits:
-          $ref: '#/components/schemas/HitsTotal'
-        bandwidth:
-          $ref: '#/components/schemas/BandwidthTotal'
-        prev:
-          allOf:
-            - $ref: '#/components/schemas/PrevDescription'
-            - type: object
-              properties:
-                hits:
-                  type: integer
-                bandwidth:
-                  type: integer
-              required:
-                - hits
-                - bandwidth
-      required:
-        - hits
-        - bandwidth
-        - prev
-    TopPackages:
-      type: array
-      items:
-        allOf:
-          - $ref: '#/components/schemas/PackageTypeName'
-          - $ref: '#/components/schemas/StatsWithPrev'
-          - type: object
-            properties:
-              links:
-                type: object
-                properties:
-                  self:
-                    type: string
-                    description: A link to detailed stats for this package.
-                  versions:
-                    type: string
-                    description: A link to top versions stats for this package.
-                required:
-                  - self
-                  - versions
-            required:
-              - links
-    PackageTypeName:
-      type: object
-      properties:
-        type:
-          type: string
-        name:
-          type: string
-      required:
-        - type
-        - name
-    DateHitsStats:
-      type: object
-      description: A breakdown of the hits by date. The object keys are in `YYYY-MM-DD` format.
-      additionalProperties:
-        x-key-pattern: <YYYY-MM-DD>
-        type: integer
-      propertyNames:
-        pattern: '^\d{4}-\d{2}-\d{2}$'
-    DateBandwidthStats:
-      type: object
-      description: A breakdown of the bandwidth by date. The object keys are in `YYYY-MM-DD` format.
-      additionalProperties:
-        x-key-pattern: <YYYY-MM-DD>
-        type: integer
-      propertyNames:
-        pattern: '^\d{4}-\d{2}-\d{2}$'
-    DateHitsStatsExtended:
-      type: object
-      description: A breakdown of the hits by date. The object keys are in `YYYY-MM-DD` format.
-      additionalProperties:
-        x-key-pattern: <YYYY-MM-DD>
-        type: object
-        properties:
-          total:
-            type: integer
-        required:
-          - total
-      propertyNames:
-        pattern: '^\d{4}-\d{2}-\d{2}$'
-    DateBandwidthStatsExtended:
-      type: object
-      description: A breakdown of the bandwidth by date. The object keys are in `YYYY-MM-DD` format.
-      additionalProperties:
-        x-key-pattern: <YYYY-MM-DD>
-        type: object
-        properties:
-          total:
-            type: integer
-        required:
-          - total
-      propertyNames:
-        pattern: '^\d{4}-\d{2}-\d{2}$'
-    TotalDateHitsStats:
-      type: object
-      properties:
-        total:
-          $ref: '#/components/schemas/HitsTotal'
-        dates:
-          $ref: '#/components/schemas/DateHitsStats'
-      required:
-        - total
-        - dates
-    TotalDateBandwidthStats:
-      type: object
-      properties:
-        total:
-          $ref: '#/components/schemas/BandwidthTotal'
-        dates:
-          $ref: '#/components/schemas/DateBandwidthStats'
-      required:
-        - total
-        - dates
-    TotalDateHitsStatsExtended:
-      type: object
-      properties:
-        total:
-          $ref: '#/components/schemas/HitsTotal'
-        dates:
-          $ref: '#/components/schemas/DateHitsStatsExtended'
-      required:
-        - total
-        - dates
-    Provider:
-      type: object
-      properties:
-        code:
-          type: string
-          description: A two letter provider code.
-        name:
-          type: string
-          description: Provider name.
-      required:
-        - code
-        - name
-    Country:
-      type: object
-      properties:
-        code:
-          $ref: '#/components/schemas/CountryCode'
-        name:
-          type: string
-          description: Country name.
-      required:
-        - code
-        - name
-    TotalDateBandwidthStatsExtended:
-      type: object
-      properties:
-        total:
-          $ref: '#/components/schemas/BandwidthTotal'
-        dates:
-          $ref: '#/components/schemas/DateBandwidthStatsExtended'
-      required:
-        - total
-        - dates
-    PackageStats:
-      type: object
-      properties:
-        hits:
-          allOf:
-            - type: object
-              properties:
-                rank:
-                  $ref: '#/components/schemas/NullableInteger'
-                  description: The number of packages with more hits. `null` if the package doesn't have any hits.
-                typeRank:
-                  $ref: '#/components/schemas/NullableInteger'
-                  description: The number of packages of the same type (gh/npm) with more hits. `null` if the package doesn't have any hits.
-            - $ref: '#/components/schemas/TotalDateHitsStats'
-            - type: object
-              properties:
-                prev:
-                  allOf:
-                    - $ref: '#/components/schemas/PrevDescription'
-                    - type: object
-                      properties:
-                        rank:
-                          $ref: '#/components/schemas/NullableInteger'
-                        typeRank:
-                          $ref: '#/components/schemas/NullableInteger'
-                        total:
-                          type: integer
-                      required:
-                        - rank
-                        - typeRank
-                        - total
-              required:
-                - rank
-                - typeRank
-                - prev
-        bandwidth:
-          allOf:
-            - type: object
-              properties:
-                rank:
-                  $ref: '#/components/schemas/NullableInteger'
-                  description: The number of packages with more bandwidth. `null` if the package doesn't have any bandwidth.
-                typeRank:
-                  $ref: '#/components/schemas/NullableInteger'
-                  description: The number of packages of the same type (gh/npm) with more bandwidth. `null` if the package doesn't have any bandwidth.
-            - $ref: '#/components/schemas/TotalDateBandwidthStats'
-            - type: object
-              properties:
-                prev:
-                  allOf:
-                    - $ref: '#/components/schemas/PrevDescription'
-                    - type: object
-                      properties:
-                        rank:
-                          $ref: '#/components/schemas/NullableInteger'
-                        typeRank:
-                          $ref: '#/components/schemas/NullableInteger'
-                        total:
-                          type: integer
-                      required:
-                        - rank
-                        - typeRank
-                        - total
-              required:
-                - rank
-                - typeRank
-                - prev
-        links:
-          type: object
-          properties:
-            versions:
-              type: string
-              description: A link to top versions stats for this package.
-          required:
-            - versions
-      required:
-        - hits
-        - bandwidth
-        - links
-    PackageVersionStats:
-      type: object
-      properties:
-        hits:
-          $ref: '#/components/schemas/TotalDateHitsStats'
-        bandwidth:
-          $ref: '#/components/schemas/TotalDateBandwidthStats'
-        links:
-          type: object
-          properties:
-            self:
-              type: string
-              description: A link to detailed stats for this version.
-            files:
-              type: string
-              description: A link to top files stats for this version.
-          required:
-            - self
-            - files
-      required:
-        - hits
-        - bandwidth
-        - links
-    TopPackageVersions:
-      type: array
-      items:
-        allOf:
-          - type: object
-            properties:
-              type:
-                type: string
-                description: Identifies whether this is a regular `version` (release), a `commit`, or a `branch`. Always `version` for npm packages.
-                enum:
-                  - branch
-                  - commit
-                  - version
-              version:
-                type: string
-                description: The version identifier.
-            required:
-              - type
-              - version
-          - $ref: '#/components/schemas/PackageVersionStats'
-    TopPackageVersionFiles:
-      type: array
-      items:
-        type: object
-        properties:
-          name:
-            type: string
-            description: An absolute file path within the package.
-          hits:
-            $ref: '#/components/schemas/TotalDateHitsStats'
-          bandwidth:
-            $ref: '#/components/schemas/TotalDateBandwidthStats'
-        required:
-          - name
-          - hits
-          - bandwidth
-    PrevTotal:
-      allOf:
-        - $ref: '#/components/schemas/PrevDescription'
-        - type: object
-          properties:
-            total:
-              type: integer
-          required:
-            - total
-    PrevTotalWrapped:
-      type: object
-      properties:
-        prev:
-          $ref: '#/components/schemas/PrevTotal'
-      required:
-        - prev
-    NetworkStats:
-      type: object
-      properties:
-        hits:
-          type: object
-          description: |
-            Network-wide hits stats.
-          properties:
-            total:
-              $ref: '#/components/schemas/HitsTotal'
-            providers:
-              type: array
-              description: |
-                A breakdown of the hits by provider. The providers are sorted by hits in descending order.
-              items:
-                allOf:
-                  - $ref: '#/components/schemas/Provider'
-                  - $ref: '#/components/schemas/TotalDateHitsStatsExtended'
-                  - $ref: '#/components/schemas/PrevTotalWrapped'
-            prev:
-              $ref: '#/components/schemas/PrevTotal'
-          required:
-            - total
-            - providers
-            - prev
-        bandwidth:
-          type: object
-          description: |
-            Network-wide bandwidth stats.
-          properties:
-            total:
-              $ref: '#/components/schemas/BandwidthTotal'
-            providers:
-              type: array
-              description: |
-                A breakdown of the bandwidth by provider. The providers are sorted by bandwidth in descending order.
-              items:
-                allOf:
-                  - $ref: '#/components/schemas/Provider'
-                  - $ref: '#/components/schemas/TotalDateBandwidthStatsExtended'
-                  - $ref: '#/components/schemas/PrevTotalWrapped'
-            prev:
-              $ref: '#/components/schemas/PrevTotal'
-          required:
-            - total
-            - providers
-            - prev
-      required:
-        - hits
-        - bandwidth
-    NetworkContentStats:
-      type: object
-      properties:
-        hits:
-          type: object
-          description: |
-            Network-wide hits stats.
-          properties:
-            total:
-              type: integer
-            packages:
-              allOf:
-                - description: |
-                    Stats for package requests.
-                - $ref: '#/components/schemas/TotalDateHitsStatsExtended'
-                - $ref: '#/components/schemas/PrevTotalWrapped'
-            proxies:
-              allOf:
-                - description: |
-                    Stats for custom proxy endpoint requests.
-                - $ref: '#/components/schemas/TotalDateHitsStatsExtended'
-                - $ref: '#/components/schemas/PrevTotalWrapped'
-            other:
-              allOf:
-                - description: |
-                    Stats for other requests that don't fall into any other category.
-                - $ref: '#/components/schemas/TotalDateHitsStatsExtended'
-                - $ref: '#/components/schemas/PrevTotalWrapped'
-            prev:
-              $ref: '#/components/schemas/PrevTotal'
-          required:
-            - total
-            - packages
-            - proxies
-            - other
-            - prev
-        bandwidth:
-          type: object
-          description: |
-            Network-wide bandwidth stats.
-          properties:
-            total:
-              type: integer
-            packages:
-              allOf:
-                - description: |
-                    Stats for package requests.
-                - $ref: '#/components/schemas/TotalDateBandwidthStatsExtended'
-                - $ref: '#/components/schemas/PrevTotalWrapped'
-            proxies:
-              allOf:
-                - description: |
-                    Stats for custom proxy endpoint requests.
-                - $ref: '#/components/schemas/TotalDateBandwidthStatsExtended'
-                - $ref: '#/components/schemas/PrevTotalWrapped'
-            other:
-              allOf:
-                - description: |
-                    Stats for other requests that don't fall into any other category.
-                - $ref: '#/components/schemas/TotalDateBandwidthStatsExtended'
-                - $ref: '#/components/schemas/PrevTotalWrapped'
-            prev:
-              $ref: '#/components/schemas/PrevTotal'
-          required:
-            - total
-            - packages
-            - proxies
-            - other
-            - prev
-      required:
-        - hits
-        - bandwidth
-    NetworkCountryStats:
-      type: object
-      properties:
-        hits:
-          type: object
-          description: |
-            Network-wide hits stats.
-          properties:
-            total:
-              $ref: '#/components/schemas/HitsTotal'
-            countries:
-              type: array
-              description: |
-                A breakdown of the hits by country. The countries are sorted by hits in descending order.
-              items:
-                allOf:
-                  - $ref: '#/components/schemas/Country'
-                  - type: object
-                    properties:
-                      total:
-                        type: integer
-                      providers:
-                        type: array
-                        description: |
-                          A breakdown of the country hits by provider. The providers are sorted by hits in descending order.
-                        items:
-                          allOf:
-                            - $ref: '#/components/schemas/Provider'
-                            - type: object
-                              properties:
-                                total:
-                                  type: integer
-                              required:
-                                - total
-                      prev:
-                        $ref: '#/components/schemas/PrevTotal'
-                    required:
-                      - total
-                      - providers
-                      - prev
-            prev:
-              $ref: '#/components/schemas/PrevTotal'
-          required:
-            - total
-            - countries
-            - prev
-        bandwidth:
-          type: object
-          description: |
-            Network-wide bandwidth stats.
-          properties:
-            total:
-              $ref: '#/components/schemas/BandwidthTotal'
-            countries:
-              type: array
-              description: |
-                A breakdown of the bandwidth by country. The countries are sorted by bandwidth in descending order.
-              items:
-                allOf:
-                  - $ref: '#/components/schemas/Country'
-                  - type: object
-                    properties:
-                      total:
-                        type: integer
-                      providers:
-                        type: array
-                        description: |
-                          A breakdown of the country bandwidth by provider. The providers are sorted by bandwidth in descending order.
-                        items:
-                          allOf:
-                            - $ref: '#/components/schemas/Provider'
-                            - type: object
-                              properties:
-                                total:
-                                  type: integer
-                              required:
-                                - total
-                      prev:
-                        $ref: '#/components/schemas/PrevTotal'
-                    required:
-                      - total
-                      - providers
-                      - prev
-            prev:
-              $ref: '#/components/schemas/PrevTotal'
-          required:
-            - total
-            - countries
-            - prev
-      required:
-        - hits
-        - bandwidth
-    TopBrowsers:
-      type: array
-      items:
-        type: object
-        properties:
-          name:
-            $ref: '#/components/schemas/BrowserName'
-          share:
-            type: number
-            description: Market share of the browser.
-          prev:
-            $ref: '#/components/schemas/PrevShare'
-          links:
-            type: object
-            properties:
-              countries:
-                type: string
-                description: A link to country stats for this browser.
-              platforms:
-                type: string
-                description: A link to platform stats for this browser.
-              versions:
-                type: string
-                description: A link to version stats for this browser.
-            required:
-              - platforms
-              - versions
-        required:
-          - name
-          - share
-          - prev
-          - links
-    TopBrowsersVersions:
-      type: array
-      items:
-        type: object
-        properties:
-          name:
-            $ref: '#/components/schemas/BrowserName'
-          version:
-            $ref: '#/components/schemas/BrowserVersion'
-          share:
-            type: number
-            description: Market share of the browser version.
-          prev:
-            $ref: '#/components/schemas/PrevShare'
-          links:
-            type: object
-            properties:
-              countries:
-                type: string
-                description: A link to country stats for this browser version.
-        required:
-          - name
-          - version
-          - share
-          - prev
-          - links
-    TopBrowserCountries:
-      type: array
-      items:
-        type: object
-        properties:
-          country:
-            $ref: '#/components/schemas/CountryCode'
-          share:
-            type: number
-            description: Market share of the browser within the country.
-          prev:
-            $ref: '#/components/schemas/PrevShare'
-          links:
-            type: object
-            properties:
-              browsers:
-                type: string
-                description: A link to browser stats for this country.
-              platforms:
-                type: string
-                description: A link to platform stats for this country.
-            required:
-              - browsers
-              - platforms
-        required:
-          - country
-          - share
-          - prev
-          - links
-    TopBrowserPlatforms:
-      type: array
-      items:
-        type: object
-        properties:
-          name:
-            $ref: '#/components/schemas/PlatformName'
-          share:
-            type: number
-            description: Percentage share of the platform on all requests by the specified browser.
-          prev:
-            $ref: '#/components/schemas/PrevShare'
-          links:
-            type: object
-            properties:
-              browsers:
-                type: string
-                description: A link to browser stats for this platform.
-              countries:
-                type: string
-                description: A link to country stats for this platform.
-              versions:
-                type: string
-                description: A link to versions stats for this platform.
-            required:
-              - browsers
-              - versions
-        required:
-          - name
-          - share
-          - prev
-          - links
-    TopBrowserVersions:
-      type: array
-      items:
-        type: object
-        properties:
-          version:
-            $ref: '#/components/schemas/BrowserVersion'
-          share:
-            type: number
-            description: Market share of the browser version.
-          prev:
-            $ref: '#/components/schemas/PrevShare'
-          links:
-            type: object
-            properties:
-              countries:
-                type: string
-                description: A link to country stats for this browser version.
-        required:
-          - version
-          - share
-          - prev
-          - links
-    TopBrowserVersionCountries:
-      type: array
-      items:
-        type: object
-        properties:
-          country:
-            $ref: '#/components/schemas/CountryCode'
-          share:
-            type: number
-            description: Market share of the browser version within the country.
-          prev:
-            $ref: '#/components/schemas/PrevShare'
-          links:
-            type: object
-            properties:
-              browsers:
-                type: string
-                description: A link to browser stats for this country.
-              platforms:
-                type: string
-                description: A link to platform stats for this country.
-            required:
-              - browsers
-              - platforms
-        required:
-          - country
-          - share
-          - prev
-          - links
-    TopPlatforms:
-      type: array
-      items:
-        type: object
-        properties:
-          name:
-            $ref: '#/components/schemas/PlatformName'
-          share:
-            type: number
-            description: Market share of the platform.
-          prev:
-            $ref: '#/components/schemas/PrevShare'
-          links:
-            type: object
-            properties:
-              browsers:
-                type: string
-                description: A link to browser stats for this browser.
-              countries:
-                type: string
-                description: A link to country stats for this platform.
-              versions:
-                type: string
-                description: A link to version stats for this platform.
-            required:
-              - browsers
-              - versions
-        required:
-          - name
-          - share
-          - prev
-          - links
-    TopPlatformsVersions:
-      type: array
-      items:
-        type: object
-        properties:
-          name:
-            $ref: '#/components/schemas/PlatformName'
-          version:
-            $ref: '#/components/schemas/PlatformVersion'
-          versionName:
-            $ref: '#/components/schemas/PlatformVersionName'
-          share:
-            type: number
-            description: Market share of the platform version.
-          prev:
-            $ref: '#/components/schemas/PrevShare'
-          links:
-            type: object
-            properties:
-              countries:
-                type: string
-                description: A link to country stats for this platform version.
-        required:
-          - name
-          - version
-          - versionName
-          - share
-          - prev
-          - links
-    TopPlatformBrowsers:
-      type: array
-      items:
-        type: object
-        properties:
-          name:
-            $ref: '#/components/schemas/BrowserName'
-          share:
-            type: number
-            description: Percentage share of the browser on all requests on the specified platform.
-          prev:
-            $ref: '#/components/schemas/PrevShare'
-          links:
-            type: object
-            properties:
-              countries:
-                type: string
-                description: A link to country stats for this platform.
-              platforms:
-                type: string
-                description: A link to platform stats for this browser.
-              versions:
-                type: string
-                description: A link to versions stats for this platform.
-            required:
-              - platforms
-              - versions
-        required:
-          - name
-          - share
-          - prev
-          - links
-    TopPlatformCountries:
-      type: array
-      items:
-        type: object
-        properties:
-          country:
-            $ref: '#/components/schemas/CountryCode'
-          share:
-            type: number
-            description: Market share of the platform within the country.
-          prev:
-            $ref: '#/components/schemas/PrevShare'
-          links:
-            type: object
-            properties:
-              browsers:
-                type: string
-                description: A link to browser stats for this country.
-              platforms:
-                type: string
-                description: A link to platform stats for this country.
-            required:
-              - browsers
-              - platforms
-        required:
-          - country
-          - share
-          - prev
-          - links
-    TopPlatformVersions:
-      type: array
-      items:
-        type: object
-        properties:
-          version:
-            $ref: '#/components/schemas/PlatformVersion'
-          versionName:
-            $ref: '#/components/schemas/PlatformVersionName'
-          share:
-            type: number
-            description: Market share of the platform version.
-          prev:
-            $ref: '#/components/schemas/PrevShare'
-          links:
-            type: object
-            properties:
-              countries:
-                type: string
-                description: A link to country stats for this platform version.
-        required:
-          - version
-          - versionName
-          - share
-          - prev
-          - links
-    TopPlatformVersionCountries:
-      type: array
-      items:
-        type: object
-        properties:
-          country:
-            $ref: '#/components/schemas/CountryCode'
-          share:
-            type: number
-            description: Market share of the platform version within the country.
-          prev:
-            $ref: '#/components/schemas/PrevShare'
-          links:
-            type: object
-            properties:
-              browsers:
-                type: string
-                description: A link to browser stats for this country.
-              platforms:
-                type: string
-                description: A link to platform stats for this country.
-            required:
-              - browsers
-              - platforms
-        required:
-          - country
-          - share
-          - prev
-          - links
-    PrevShare:
-      type: object
-      description: |
-        The stats for previous period.
-      properties:
-        share:
-          $ref: '#/components/schemas/NullableNumber'
-          description: '`null` if there are no data for the previous period.'
-      required:
-        - share
-    ProxyStats:
-      type: object
-      properties:
-        hits:
-          allOf:
-            - $ref: '#/components/schemas/TotalDateHitsStats'
-            - $ref: '#/components/schemas/PrevTotalWrapped'
-        bandwidth:
-          allOf:
-            - $ref: '#/components/schemas/TotalDateBandwidthStats'
-            - $ref: '#/components/schemas/PrevTotalWrapped'
-        links:
-          type: object
-          properties:
-            files:
-              type: string
-              description: A link to top files stats for this version.
-          required:
-            - files
-      required:
-        - hits
-        - bandwidth
-        - links
-    TopProxyFiles:
-      type: array
-      items:
-        type: object
-        properties:
-          name:
-            type: string
-            description: An absolute file path within the proxy.
-          hits:
-            type: object
-            properties:
-              total:
-                $ref: '#/components/schemas/HitsTotal'
-            required:
-              - total
-          bandwidth:
-            type: object
-            properties:
-              total:
-                $ref: '#/components/schemas/BandwidthTotal'
-            required:
-              - total
-        required:
-          - name
-          - hits
-          - bandwidth
-    LookupHash:
-      type: object
-      properties:
-        type:
-          type: string
-        name:
-          type: string
-        version:
-          type: string
-        file:
-          type: string
-      required:
-        - type
-        - name
-        - version
-        - file
-  examples:
-    ghMetadata:
-      value:
-        {
-          "type": "gh",
-          "name": "twbs/bootstrap",
-          "tags": {},
-          "versions": [
-            {
-              "version": "5.2.2",
-              "links": {
-                "self": "https://data.jsdelivr.com/v1/packages/gh/twbs/bootstrap@5.2.2",
-                "stats": "https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap@5.2.2"
-              }
-            },
-            {
-              "version": "5.2.1",
-              "links": {
-                "self": "https://data.jsdelivr.com/v1/packages/gh/twbs/bootstrap@5.2.1",
-                "stats": "https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap@5.2.1"
-              }
-            }
-          ],
-          "links": {
-            "stats": "https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap"
-          }
-        }
-    ghResolved:
-      summary: 'specifier: 2.2'
-      value:
-        {
-          "type": "gh",
-          "name": "twbs/bootstrap",
-          "version": "5.2.2",
-          "links": {
-            "self": "https://data.jsdelivr.com/v1/packages/gh/twbs/bootstrap@5.2.2",
-            "stats": "https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap@5.2.2"
-          }
-        }
-    ghResolvedNull:
-      summary: 'specifier: 9.9 - no match'
-      value:
-        {
-          "type": "gh",
-          "name": "twbs/bootstrap",
-          "version": null,
-          "links": {}
-        }
-    ghVersionMetadataTree:
-      summary: 'structure: tree'
-      value:
-        {
-          "type": "gh",
-          "name": "twbs/bootstrap",
-          "version": "2.2.1",
-          "default": null,
-          "files": [
-            {
-              "type": "directory",
-              "name": "img",
-              "files": [
-                {
-                  "type": "file",
-                  "name": "glyphicons-halflings.png",
-                  "hash": "2Z4/oyxkEDLwgUmRSyjC3GrPLsYvcJh/Ilnqu/p/wN4=",
-                  "size": 12799
-                }
-              ]
-            },
-            {
-              "type": "file",
-              "name": "README.md",
-              "hash": "thpBIpeGxhNkVzLrOXmdBR8ReuuXauxF37X1AwA6t0E=",
-              "size": 4017
-            }
-          ],
-          "links": {
-            "stats": "https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap@2.2.1"
-          }
-        }
-    ghVersionMetadataFlat:
-      summary: 'structure: flat'
-      value:
-        {
-          "type": "gh",
-          "name": "twbs/bootstrap",
-          "version": "2.2.1",
-          "default": null,
-          "files": [
-            {
-              "name": "/img/glyphicons-halflings.png",
-              "hash": "2Z4/oyxkEDLwgUmRSyjC3GrPLsYvcJh/Ilnqu/p/wN4=",
-              "size": 12799
-            },
-            {
-              "name": "/README.md",
-              "hash": "thpBIpeGxhNkVzLrOXmdBR8ReuuXauxF37X1AwA6t0E=",
-              "size": 4017
-            }
-          ],
-          "links": {
-            "stats": "https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap@2.2.1"
-          }
-        }
-    npmMetadata:
-      value:
-        {
-          "type": "npm",
-          "name": "jquery",
-          "tags": {
-            "beta": "3.6.1",
-            "latest": "3.6.1"
-          },
-          "versions": [
-            {
-              "version": "3.6.1",
-              "links": {
-                "self": "https://data.jsdelivr.com/v1/packages/npm/jquery@3.6.1",
-                "entrypoints": "https://data.jsdelivr.com/v1/packages/npm/jquery@3.6.1/entrypoints",
-                "stats": "https://data.jsdelivr.com/v1/stats/packages/npm/jquery@3.6.1"
-              }
-            },
-            {
-              "version": "3.6.0",
-              "links": {
-                "self": "https://data.jsdelivr.com/v1/packages/npm/jquery@3.6.0",
-                "entrypoints": "https://data.jsdelivr.com/v1/packages/npm/jquery@3.6.0/entrypoints",
-                "stats": "https://data.jsdelivr.com/v1/stats/packages/npm/jquery@3.6.0"
-              }
-            }
-          ],
-          "links": {
-            "stats": "https://data.jsdelivr.com/v1/stats/packages/npm/jquery"
-          }
-        }
-    npmMetadataScoped:
-      value:
-        {
-          "type": "npm",
-          "name": "@popperjs/core",
-          "tags": {
-            "latest": "2.11.6"
-          },
-          "versions": [
-            {
-              "version": "2.11.6",
-              "links": {
-                "self": "https://data.jsdelivr.com/v1/packages/npm/@popperjs/core@2.11.6",
-                "entrypoints": "https://data.jsdelivr.com/v1/packages/npm/@popperjs/core@2.11.6/entrypoints",
-                "stats": "https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core@2.11.6"
-              }
-            },
-            {
-              "version": "2.11.5",
-              "links": {
-                "self": "https://data.jsdelivr.com/v1/packages/npm/@popperjs/core@2.11.5",
-                "entrypoints": "https://data.jsdelivr.com/v1/packages/npm/@popperjs/core@2.11.5/entrypoints",
-                "stats": "https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core@2.11.5"
-              }
-            }
-          ],
-          "links": {
-            "stats": "https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core"
-          }
-        }
-    npmResolved:
-      summary: 'specifier: 2.2'
-      value:
-        {
-          "type": "npm",
-          "name": "jquery",
-          "version": "2.2.4",
-          "links": {
-            "self": "https://data.jsdelivr.com/v1/packages/npm/jquery@2.2.4",
-            "entrypoints": "https://data.jsdelivr.com/v1/packages/npm/jquery@2.2.4/entrypoints",
-            "stats": "https://data.jsdelivr.com/v1/stats/packages/npm/jquery@2.2.4"
-          }
-        }
-    npmResolvedNull:
-      summary: 'specifier: 9.9 - no match'
-      value:
-        {
-          "type": "npm",
-          "name": "jquery",
-          "version": null,
-          "links": {}
-        }
-    npmResolvedScoped:
-      summary: 'specifier: 2.2'
-      value:
-        {
-          "type": "npm",
-          "name": "@popperjs/core",
-          "version": "2.2.3",
-          "links": {
-            "self": "https://data.jsdelivr.com/v1/packages/npm/@popperjs/core@2.2.3",
-            "entrypoints": "https://data.jsdelivr.com/v1/packages/npm/@popperjs/core@2.2.3/entrypoints",
-            "stats": "https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core@2.2.3"
-          }
-        }
-    npmResolvedScopedNull:
-      summary: 'specifier: 9.9 - no match'
-      value:
-        {
-          "type": "npm",
-          "name": "@popperjs/core",
-          "version": null,
-          "links": {}
-        }
-    npmVersionMetadataTree:
-      summary: 'structure: true'
-      value:
-        {
-          "type": "npm",
-          "name": "jquery",
-          "version": "2.2.1",
-          "default": "/dist/jquery.min.js",
-          "files": [
-            {
-              "type": "directory",
-              "name": "dist",
-              "files": [
-                {
-                  "type": "file",
-                  "name": "jquery.js",
-                  "hash": "eNcUzO3jsv0XlJLveFEkbB8bA7/CroNpNVk3XpmnwHc=",
-                  "size": 258549
-                }
-              ]
-            },
-            {
-              "type": "file",
-              "name": "README.md",
-              "hash": "dDAW4KVJC79PWRZaShIMialayIp1cX7IVxL3FSr3O4g=",
-              "size": 1794
-            }
-          ],
-          "links": {
-            "stats": "https://data.jsdelivr.com/v1/stats/packages/npm/jquery@2.2.1",
-            "entrypoints": "https://data.jsdelivr.com/v1/packages/npm/jquery@2.2.1/entrypoints"
-          }
-        }
-    npmVersionMetadataFlat:
-      summary: 'structure: flat'
-      value:
-        {
-          "type": "npm",
-          "name": "jquery",
-          "version": "2.2.1",
-          "default": "/dist/jquery.min.js",
-          "files": [
-            {
-              "name": "/dist/jquery.js",
-              "hash": "eNcUzO3jsv0XlJLveFEkbB8bA7/CroNpNVk3XpmnwHc=",
-              "size": 258549
-            },
-            {
-              "name": "/README.md",
-              "hash": "dDAW4KVJC79PWRZaShIMialayIp1cX7IVxL3FSr3O4g=",
-              "size": 1794
-            }
-          ],
-          "links": {
-            "stats": "https://data.jsdelivr.com/v1/stats/packages/npm/jquery@2.2.1",
-            "entrypoints": "https://data.jsdelivr.com/v1/packages/npm/jquery@2.2.1/entrypoints"
-          }
-        }
-    npmVersionMetadataScopedTree:
-      summary: 'structure: true'
-      value:
-        {
-          "type": "npm",
-          "name": "@popperjs/core",
-          "version": "2.2.1",
-          "default": "/dist/cjs/popper.min.js",
-          "files": [
-            {
-              "type": "directory",
-              "name": "dist",
-              "files": [
-                {
-                  "type": "directory",
-                  "name": "umd",
-                  "files": [
-                    {
-                      "type": "file",
-                      "name": "popper.js",
-                      "hash": "zbwpmNIy7sbBONeMvSVMIXmJsqIhqnTi1A4YgapOgwA=",
-                      "size": 60568
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "file",
-              "name": "README.md",
-              "hash": "mIdfA921f1MkxXhmCKaJ+Y59puSj97J9dzPKoOVoMpY=",
-              "size": 12373
-            }
-          ],
-          "links": {
-            "stats": "https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core@2.2.1",
-            "entrypoints": "https://data.jsdelivr.com/v1/packages/npm/@popperjs/core@2.2.1/entrypoints"
-          }
-        }
-    npmVersionMetadataScopedFlat:
-      summary: 'structure: flat'
-      value:
-        {
-          "type": "npm",
-          "name": "@popperjs/core",
-          "version": "2.2.1",
-          "default": "/dist/cjs/popper.min.js",
-          "files": [
-            {
-              "name": "/dist/umd/popper.js",
-              "hash": "zbwpmNIy7sbBONeMvSVMIXmJsqIhqnTi1A4YgapOgwA=",
-              "size": 60568
-            },
-            {
-              "name": "/README.md",
-              "hash": "mIdfA921f1MkxXhmCKaJ+Y59puSj97J9dzPKoOVoMpY=",
-              "size": 12373
-            }
-          ],
-          "links": {
-            "stats": "https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core@2.2.1",
-            "entrypoints": "https://data.jsdelivr.com/v1/packages/npm/@popperjs/core@2.2.1/entrypoints"
-          }
-        }
-    npmVersionEntrypoints:
-      value:
-        {
-          "entrypoints": {
-            "js": {
-              "file": "/dist/jquery.min.js",
-              "guessed": false
-            }
-          }
-        }
-    npmVersionEntrypointsScoped:
-      value:
-        {
-          "entrypoints": {
-            "js": {
-              "file": "/dist/umd/popper.min.js",
-              "guessed": true
-            }
-          }
-        }
-    periods:
-      value:
-        [
-          {
-            "period": "2022-03",
-            "periodType": "s-month",
-            "links": {
-              "browsers": "https://data.jsdelivr.com/v1/stats/browsers?period=2022-03",
-              "network": "https://data.jsdelivr.com/v1/stats/network?period=2022-03",
-              "packages": "https://data.jsdelivr.com/v1/stats/packages?period=2022-03",
-              "platforms": "https://data.jsdelivr.com/v1/stats/platforms?period=2022-03",
-              "proxies": "https://data.jsdelivr.com/v1/stats/proxies/{name}?period=2022-03"
-            }
-          },
-          {
-            "period": "2022-02",
-            "periodType": "s-month",
-            "links": {
-              "network": "https://data.jsdelivr.com/v1/stats/network?period=2022-02",
-              "packages": "https://data.jsdelivr.com/v1/stats/packages?period=2022-02",
-              "proxies": "https://data.jsdelivr.com/v1/stats/proxies/{name}?period=2022-02"
-            }
-          },
-          {
-            "period": "2022-01",
-            "periodType": "s-month",
-            "links": {
-              "network": "https://data.jsdelivr.com/v1/stats/network?period=2022-01",
-              "packages": "https://data.jsdelivr.com/v1/stats/packages?period=2022-01",
-              "proxies": "https://data.jsdelivr.com/v1/stats/proxies/{name}?period=2022-01"
-            }
-          },
-          {
-            "period": "2021",
-            "periodType": "s-year",
-            "links": {
-              "network": "https://data.jsdelivr.com/v1/stats/network?period=2021",
-              "packages": "https://data.jsdelivr.com/v1/stats/packages?period=2021",
-              "proxies": "https://data.jsdelivr.com/v1/stats/proxies/{name}?period=2021"
-            }
-          }
-        ]
-    topPackages:
-      value:
-        [
-          {
-            "type": "gh",
-            "name": "prebid/currency-file",
-            "hits": 5383263850,
-            "bandwidth": 9421801565730,
-            "prev": {
-              "hits": 5320563477,
-              "bandwidth": 9262933914958
-            },
-            "links": {
-              "self": "https://data.jsdelivr.com/v1/stats/packages/gh/prebid/currency-file?period=week",
-              "versions": "https://data.jsdelivr.com/v1/stats/packages/gh/prebid/currency-file/versions?period=week"
-            }
-          },
-          {
-            "type": "npm",
-            "name": "prebid-universal-creative",
-            "hits": 2060705889,
-            "bandwidth": 18652589467183,
-            "prev": {
-              "hits": 2023986926,
-              "bandwidth": 18246267828070
-            },
-            "links": {
-              "self": "https://data.jsdelivr.com/v1/stats/packages/npm/prebid-universal-creative?period=week",
-              "versions": "https://data.jsdelivr.com/v1/stats/packages/npm/prebid-universal-creative/versions?period=week"
-            }
-          }
-        ]
-    ghPackageStats:
-      value:
-        {
-          "hits": {
-            "rank": 817,
-            "typeRank": 273,
-            "total": 2077449,
-            "dates": {
-              "2022-10-15": 311693,
-              "2022-10-16": 334698,
-              "2022-10-17": 283700,
-              "2022-10-18": 266822,
-              "2022-10-19": 263361,
-              "2022-10-20": 319285,
-              "2022-10-21": 297890
-            },
-            "prev": {
-              "rank": 819,
-              "typeRank": 269,
-              "total": 2038555
-            }
-          },
-          "bandwidth": {
-            "rank": 1174,
-            "typeRank": 608,
-            "total": 33431191086,
-            "dates": {
-              "2022-10-15": 5148082281,
-              "2022-10-16": 5449361001,
-              "2022-10-17": 4642068503,
-              "2022-10-18": 4460342994,
-              "2022-10-19": 4497136347,
-              "2022-10-20": 4590028290,
-              "2022-10-21": 4644171670
-            },
-            "prev": {
-              "rank": 1160,
-              "typeRank": 607,
-              "total": 34557768886
-            }
-          },
-          "links": {
-            "self": "https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap?period=week",
-            "versions": "https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap/versions?period=week"
-          }
-        }
-    ghTopRepoVersions:
-      value:
-        [
-          {
-            "type": "version",
-            "version": "3.3.7",
-            "hits": {
-              "total": 1151861,
-              "dates": {
-                "2022-10-15": 195449,
-                "2022-10-16": 202512,
-                "2022-10-17": 151396,
-                "2022-10-18": 147114,
-                "2022-10-19": 152232,
-                "2022-10-20": 151406,
-                "2022-10-21": 151752
-              }
-            },
-            "bandwidth": {
-              "total": 15380230133,
-              "dates": {
-                "2022-10-15": 2716576082,
-                "2022-10-16": 2853275668,
-                "2022-10-17": 1958465183,
-                "2022-10-18": 1883115991,
-                "2022-10-19": 1987523165,
-                "2022-10-20": 1933111899,
-                "2022-10-21": 2048162145
-              }
-            },
-            "links": {
-              "self": "https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap@3.3.7?period=week",
-              "files": "https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap@3.3.7/files?period=week"
-            }
-          }
-        ]
-    ghRepoVersionStats:
-      value:
-        {
-          "hits": {
-            "total": 0,
-            "dates": {
-              "2022-10-15": 0,
-              "2022-10-16": 0,
-              "2022-10-17": 0,
-              "2022-10-18": 0,
-              "2022-10-19": 0,
-              "2022-10-20": 0,
-              "2022-10-21": 0
-            }
-          },
-          "bandwidth": {
-            "total": 0,
-            "dates": {
-              "2022-10-15": 0,
-              "2022-10-16": 0,
-              "2022-10-17": 0,
-              "2022-10-18": 0,
-              "2022-10-19": 0,
-              "2022-10-20": 0,
-              "2022-10-21": 0
-            }
-          },
-          "links": {
-            "self": "https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap@2.2.1?period=week",
-            "files": "https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap@2.2.1/files?period=week"
-          }
-        }
-    ghTopRepoVersionFiles:
-      value:
-        [
-          {
-            "name": "/js/bootstrap-carousel.min.js",
-            "hits": {
-              "total": 134,
-              "dates": {
-                "2022-10-15": 28,
-                "2022-10-16": 12,
-                "2022-10-17": 16,
-                "2022-10-18": 34,
-                "2022-10-19": 18,
-                "2022-10-20": 14,
-                "2022-10-21": 12
-              }
-            },
-            "bandwidth": {
-              "total": 599978,
-              "dates": {
-                "2022-10-15": 124012,
-                "2022-10-16": 55282,
-                "2022-10-17": 73670,
-                "2022-10-18": 151462,
-                "2022-10-19": 82890,
-                "2022-10-20": 59728,
-                "2022-10-21": 52934
-              }
-            }
-          }
-        ]
-    npmPackageStats:
-      value:
-        {
-          "hits": {
-            "rank": 12,
-            "typeRank": 8,
-            "total": 391125652,
-            "dates": {
-              "2022-10-15": 55837846,
-              "2022-10-16": 55338508,
-              "2022-10-17": 57214095,
-              "2022-10-18": 54958178,
-              "2022-10-19": 56141707,
-              "2022-10-20": 55554972,
-              "2022-10-21": 56080346
-            },
-            "prev": {
-              "rank": 11,
-              "typeRank": 7,
-              "total": 394596626
-            }
-          },
-          "bandwidth": {
-            "rank": 14,
-            "typeRank": 8,
-            "total": 13814261430272,
-            "dates": {
-              "2022-10-15": 1967179162485,
-              "2022-10-16": 1934764912863,
-              "2022-10-17": 2033354400453,
-              "2022-10-18": 1949298371800,
-              "2022-10-19": 1989111366447,
-              "2022-10-20": 1971311589445,
-              "2022-10-21": 1969241626779
-            },
-            "prev": {
-              "rank": 12,
-              "typeRank": 8,
-              "total": 13953579906384
-            }
-          },
-          "links": {
-            "self": "https://data.jsdelivr.com/v1/stats/packages/npm/jquery?period=week",
-            "versions": "https://data.jsdelivr.com/v1/stats/packages/npm/jquery/versions?period=week"
-          }
-        }
-    npmPackageStatsScoped:
-      value:
-        {
-          "hits": {
-            "rank": 12,
-            "typeRank": 8,
-            "total": 391125652,
-            "dates": {
-              "2022-10-15": 55837846,
-              "2022-10-16": 55338508,
-              "2022-10-17": 57214095,
-              "2022-10-18": 54958178,
-              "2022-10-19": 56141707,
-              "2022-10-20": 55554972,
-              "2022-10-21": 56080346
-            },
-            "prev": {
-              "rank": 11,
-              "typeRank": 7,
-              "total": 394596626
-            }
-          },
-          "bandwidth": {
-            "rank": 14,
-            "typeRank": 8,
-            "total": 13814261430272,
-            "dates": {
-              "2022-10-15": 1967179162485,
-              "2022-10-16": 1934764912863,
-              "2022-10-17": 2033354400453,
-              "2022-10-18": 1949298371800,
-              "2022-10-19": 1989111366447,
-              "2022-10-20": 1971311589445,
-              "2022-10-21": 1969241626779
-            },
-            "prev": {
-              "rank": 12,
-              "typeRank": 8,
-              "total": 13953579906384
-            }
-          },
-          "links": {
-            "self": "https://data.jsdelivr.com/v1/stats/packages/npm/jquery?period=week",
-            "versions": "https://data.jsdelivr.com/v1/stats/packages/npm/jquery/versions?period=week"
-          }
-        }
-    npmTopPackageVersions:
-      value:
-        [
-          {
-            "type": "version",
-            "version": "3.6.0",
-            "hits": {
-              "total": 104340391,
-              "dates": {
-                "2022-10-15": 14876209,
-                "2022-10-16": 14918710,
-                "2022-10-17": 14857650,
-                "2022-10-18": 14480282,
-                "2022-10-19": 14746639,
-                "2022-10-20": 15045700,
-                "2022-10-21": 15415201
-              }
-            },
-            "bandwidth": {
-              "total": 3501550774379,
-              "dates": {
-                "2022-10-15": 502854503736,
-                "2022-10-16": 503247991129,
-                "2022-10-17": 499509969372,
-                "2022-10-18": 485407686287,
-                "2022-10-19": 493984194209,
-                "2022-10-20": 502396212836,
-                "2022-10-21": 514150216810
-              }
-            },
-            "links": {
-              "self": "https://data.jsdelivr.com/v1/stats/packages/npm/jquery@3.6.0?period=week",
-              "files": "https://data.jsdelivr.com/v1/stats/packages/npm/jquery@3.6.0/files?period=week"
-            }
-          }
-        ]
-    npmTopPackageVersionsScoped:
-      value:
-        [
-          {
-            "type": "version",
-            "version": "2.9.2",
-            "hits": {
-              "total": 18603551,
-              "dates": {
-                "2022-10-15": 2392472,
-                "2022-10-16": 2203952,
-                "2022-10-17": 2808902,
-                "2022-10-18": 2913953,
-                "2022-10-19": 2900852,
-                "2022-10-20": 2755628,
-                "2022-10-21": 2627792
-              }
-            },
-            "bandwidth": {
-              "total": 169134241165,
-              "dates": {
-                "2022-10-15": 20296860206,
-                "2022-10-16": 18320250509,
-                "2022-10-17": 26257370945,
-                "2022-10-18": 27116370898,
-                "2022-10-19": 27096903718,
-                "2022-10-20": 26144952955,
-                "2022-10-21": 23901531934
-              }
-            },
-            "links": {
-              "self": "https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core@2.9.2?period=week",
-              "files": "https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core@2.9.2/files?period=week"
-            }
-          }
-        ]
-    npmPackageVersionStats:
-      value:
-        {
-          "hits": {
-            "total": 111095,
-            "dates": {
-              "2022-10-15": 15819,
-              "2022-10-16": 15319,
-              "2022-10-17": 14437,
-              "2022-10-18": 15936,
-              "2022-10-19": 16318,
-              "2022-10-20": 16561,
-              "2022-10-21": 16705
-            }
-          },
-          "bandwidth": {
-            "total": 3621969180,
-            "dates": {
-              "2022-10-15": 513853653,
-              "2022-10-16": 503432370,
-              "2022-10-17": 466969419,
-              "2022-10-18": 522886594,
-              "2022-10-19": 533948831,
-              "2022-10-20": 541273344,
-              "2022-10-21": 539604969
-            }
-          },
-          "links": {
-            "self": "https://data.jsdelivr.com/v1/stats/packages/npm/jquery@2.2.1?period=week",
-            "files": "https://data.jsdelivr.com/v1/stats/packages/npm/jquery@2.2.1/files?period=week"
-          }
-        }
-    npmPackageVersionStatsScoped:
-      value:
-        {
-          "hits": {
-            "total": 24,
-            "dates": {
-              "2022-10-15": 0,
-              "2022-10-16": 0,
-              "2022-10-17": 0,
-              "2022-10-18": 0,
-              "2022-10-19": 24,
-              "2022-10-20": 0,
-              "2022-10-21": 0
-            }
-          },
-          "bandwidth": {
-            "total": 355871,
-            "dates": {
-              "2022-10-15": 0,
-              "2022-10-16": 0,
-              "2022-10-17": 0,
-              "2022-10-18": 0,
-              "2022-10-19": 355871,
-              "2022-10-20": 0,
-              "2022-10-21": 0
-            }
-          },
-          "links": {
-            "self": "https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core@2.2.1?period=week",
-            "files": "https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core@2.2.1/files?period=week"
-          }
-        }
-    npmTopPackageVersionFiles:
-      value:
-        [
-          {
-            "name": "/dist/jquery.min.js",
-            "hits": {
-              "total": 111047,
-              "dates": {
-                "2022-10-15": 15815,
-                "2022-10-16": 15313,
-                "2022-10-17": 14425,
-                "2022-10-18": 15929,
-                "2022-10-19": 16308,
-                "2022-10-20": 16559,
-                "2022-10-21": 16698
-              }
-            },
-            "bandwidth": {
-              "total": 3617854047,
-              "dates": {
-                "2022-10-15": 513536933,
-                "2022-10-16": 502957519,
-                "2022-10-17": 466069773,
-                "2022-10-18": 522148981,
-                "2022-10-19": 532971501,
-                "2022-10-20": 541113496,
-                "2022-10-21": 539055844
-              }
-            }
-          }
-        ]
-    npmTopPackageVersionFilesScoped:
-      value:
-        [
-          {
-            "name": "/dist/umd/popper.min.js",
-            "hits": {
-              "total": 13,
-              "dates": {
-                "2022-10-15": 0,
-                "2022-10-16": 0,
-                "2022-10-17": 0,
-                "2022-10-18": 0,
-                "2022-10-19": 13,
-                "2022-10-20": 0,
-                "2022-10-21": 0
-              }
-            },
-            "bandwidth": {
-              "total": 78968,
-              "dates": {
-                "2022-10-15": 0,
-                "2022-10-16": 0,
-                "2022-10-17": 0,
-                "2022-10-18": 0,
-                "2022-10-19": 78968,
-                "2022-10-20": 0,
-                "2022-10-21": 0
-              }
-            }
-          }
-        ]
-    networkStats:
-      value:
-        {
-          "hits": {
-            "total": 5236807991,
-            "providers": [
-              {
-                "code": "CF",
-                "name": "Cloudflare",
-                "total": 3509781800,
-                "dates": {
-                  "2022-10-23": {
-                    "total": 3509781800
-                  }
-                },
-                "prev": {
-                  "total": 3437754799
-                }
-              }
-            ],
-            "prev": {
-              "total": 5158940426
-            }
-          },
-          "bandwidth": {
-            "total": 204537754976314,
-            "providers": [
-              {
-                "code": "CF",
-                "name": "Cloudflare",
-                "total": 146452745277697,
-                "dates": {
-                  "2022-10-23": {
-                    "total": 146452745277697
-                  }
-                },
-                "prev": {
-                  "total": 139211612004975
-                }
-              }
-            ],
-            "prev": {
-              "total": 198629311655708
-            }
-          }
-        }
-    networkContentStats:
-      value:
-        {
-          "hits": {
-            "total": 5236810375,
-            "packages": {
-              "total": 5067685353,
-              "dates": {
-                "2022-10-23": {
-                  "total": 5067685353
-                }
-              },
-              "prev": {
-                "total": 4993550683
-              }
-            },
-            "proxies": {
-              "total": 135237495,
-              "dates": {
-                "2022-10-23": {
-                  "total": 135237495
-                }
-              },
-              "prev": {
-                "total": 133491234
-              }
-            },
-            "other": {
-              "total": 33887527,
-              "dates": {
-                "2022-10-23": {
-                  "total": 33887527
-                }
-              },
-              "prev": {
-                "total": 31900761
-              }
-            },
-            "prev": {
-              "total": 5158942678
-            }
-          },
-          "bandwidth": {
-            "total": 204537758715384,
-            "packages": {
-              "total": 195505252690783,
-              "dates": {
-                "2022-10-23": {
-                  "total": 195505252690783
-                }
-              },
-              "prev": {
-                "total": 190014119098992
-              }
-            },
-            "proxies": {
-              "total": 1911013174714,
-              "dates": {
-                "2022-10-23": {
-                  "total": 1911013174714
-                }
-              },
-              "prev": {
-                "total": 1779181827857
-              }
-            },
-            "other": {
-              "total": 7121492849887,
-              "dates": {
-                "2022-10-23": {
-                  "total": 7121492849887
-                }
-              },
-              "prev": {
-                "total": 6836013276124
-              }
-            },
-            "prev": {
-              "total": 198629314202973
-            }
-          }
-        }
-    networkCountryStats:
-      value:
-        {
-          "hits": {
-            "total": 37199989390,
-            "countries": [
-              {
-                "code": "PL",
-                "name": "Poland",
-                "total": 676857172,
-                "providers": [
-                  {
-                    "code": "CF",
-                    "name": "Cloudflare",
-                    "total": 617283578
-                  }
-                ],
-                "prev": {
-                  "total": 670350408
-                }
-              }
-            ],
-            "prev": {
-              "total": 37169818190
-            }
-          },
-          "bandwidth": {
-            "total": 1436261193038398,
-            "countries": [
-              {
-                "code": "PL",
-                "name": "Poland",
-                "total": 14859574455734,
-                "providers": [
-                  {
-                    "code": "CF",
-                    "name": "Cloudflare",
-                    "total": 13651650238655
-                  }
-                ],
-                "prev": {
-                  "total": 670350408
-                }
-              }
-            ],
-            "prev": {
-              "total": 37169818190
-            }
-          }
-        }
-    topBrowsers:
-      value:
-        [
-          {
-            "name": "Chrome",
-            "share": 59.13,
-            "prev": {
-              "share": 59.92
-            },
-            "links": {
-              "countries": "https://data.jsdelivr.com/v1/stats/browsers/Chrome/countries",
-              "platforms": "https://data.jsdelivr.com/v1/stats/browsers/Chrome/platforms",
-              "versions": "https://data.jsdelivr.com/v1/stats/browsers/Chrome/versions"
-            }
-          },
-          {
-            "name": "Safari",
-            "share": 22.69,
-            "prev": {
-              "share": 22.12
-            },
-            "links": {
-              "countries": "https://data.jsdelivr.com/v1/stats/browsers/Safari/countries",
-              "platforms": "https://data.jsdelivr.com/v1/stats/browsers/Safari/platforms",
-              "versions": "https://data.jsdelivr.com/v1/stats/browsers/Safari/versions"
-            }
-          }
-        ]
-    topBrowsersVersions:
-      value:
-        [
-          {
-            "name": "Chrome",
-            "version": "105",
-            "share": 30.32,
-            "prev": {
-              "share": 0.08
-            },
-            "links": {
-              "countries": "https://data.jsdelivr.com/v1/stats/browsers/Chrome/versions/105/countries"
-            }
-          },
-          {
-            "name": "Chrome",
-            "version": "104",
-            "share": 11.94,
-            "prev": {
-              "share": 26.87
-            },
-            "links": {
-              "countries": "https://data.jsdelivr.com/v1/stats/browsers/Chrome/versions/104/countries"
-            }
-          }
-        ]
-    topBrowserCountries:
-      value:
-        [
-          {
-            "country": "GS",
-            "share": 98.38,
-            "prev": {
-              "share": 95.79
-            },
-            "links": {
-              "browsers": "https://data.jsdelivr.com/v1/stats/browsers?country=GS",
-              "platforms": "https://data.jsdelivr.com/v1/stats/platforms?country=GS"
-            }
-          },
-          {
-            "country": "BD",
-            "share": 86.55,
-            "prev": {
-              "share": 86.51
-            },
-            "links": {
-              "browsers": "https://data.jsdelivr.com/v1/stats/browsers?country=BD",
-              "platforms": "https://data.jsdelivr.com/v1/stats/platforms?country=BD"
-            }
-          }
-        ]
-    topBrowserPlatforms:
-      value:
-        [
-          {
-            "name": "Windows",
-            "share": 53.75,
-            "prev": {
-              "share": 43.11
-            },
-            "links": {
-              "browsers": "https://data.jsdelivr.com/v1/stats/platforms/Windows/browsers",
-              "countries": "https://data.jsdelivr.com/v1/stats/platforms/Windows/countries",
-              "versions": "https://data.jsdelivr.com/v1/stats/platforms/Windows/versions"
-            }
-          },
-          {
-            "name": "Android",
-            "share": 42.12,
-            "prev": {
-              "share": 48.99
-            },
-            "links": {
-              "browsers": "https://data.jsdelivr.com/v1/stats/platforms/Android/browsers",
-              "countries": "https://data.jsdelivr.com/v1/stats/platforms/Android/countries",
-              "versions": "https://data.jsdelivr.com/v1/stats/platforms/Android/versions"
-            }
-          }
-        ]
-    topBrowserVersions:
-      value:
-        [
-          {
-            "version": "105",
-            "share": 30.32,
-            "prev": {
-              "share": 0.08
-            },
-            "links": {
-              "countries": "https://data.jsdelivr.com/v1/stats/browsers/Chrome/versions/105/countries"
-            }
-          },
-          {
-            "version": "104",
-            "share": 11.94,
-            "prev": {
-              "share": 26.87
-            },
-            "links": {
-              "countries": "https://data.jsdelivr.com/v1/stats/browsers/Chrome/versions/104/countries"
-            }
-          }
-        ]
-    topBrowserVersionCountries:
-      value:
-        [
-          {
-            "country": "CO",
-            "share": 51.29,
-            "prev": {
-              "share": 0.09
-            },
-            "links": {
-              "browsers": "https://data.jsdelivr.com/v1/stats/browsers?country=CO",
-              "platforms": "https://data.jsdelivr.com/v1/stats/platforms?country=CO"
-            }
-          },
-          {
-            "country": "EC",
-            "share": 50.17,
-            "prev": {
-              "share": 0.1
-            },
-            "links": {
-              "browsers": "https://data.jsdelivr.com/v1/stats/browsers?country=EC",
-              "platforms": "https://data.jsdelivr.com/v1/stats/platforms?country=EC"
-            }
-          }
-        ]
-    topPlatforms:
-      value:
-        [
-          {
-            "name": "Android",
-            "share": 40.12,
-            "prev": {
-              "share": 40.33
-            },
-            "links": {
-              "browsers": "https://data.jsdelivr.com/v1/stats/platforms/Android/browsers",
-              "countries": "https://data.jsdelivr.com/v1/stats/platforms/Android/countries",
-              "versions": "https://data.jsdelivr.com/v1/stats/platforms/Android/versions"
-            }
-          },
-          {
-            "name": "Windows",
-            "share": 25.16,
-            "prev": {
-              "share": 24.51
-            },
-            "links": {
-              "browsers": "https://data.jsdelivr.com/v1/stats/platforms/Windows/browsers",
-              "countries": "https://data.jsdelivr.com/v1/stats/platforms/Windows/countries",
-              "versions": "https://data.jsdelivr.com/v1/stats/platforms/Windows/versions"
-            }
-          }
-        ]
-    topPlatformsVersions:
-      value:
-        [
-          {
-            "name": "Windows",
-            "version": "10",
-            "versionName": "",
-            "share": 21.13,
-            "prev": {
-              "share": 20.22
-            },
-            "links": {
-              "countries": "https://data.jsdelivr.com/v1/stats/platforms/Windows/versions/10/countries"
-            }
-          },
-          {
-            "name": "macOS",
-            "version": "10.15",
-            "versionName": "Catalina",
-            "share": 4.74,
-            "prev": {
-              "share": 4.39
-            },
-            "links": {
-              "countries": "https://data.jsdelivr.com/v1/stats/platforms/macOS/versions/10.15/countries"
-            }
-          }
-        ]
-    topPlatformBrowsers:
-      value:
-        [
-          {
-            "name": "Chrome",
-            "share": 80.84,
-            "prev": {
-              "share": 76.01
-            },
-            "links": {
-              "countries": "https://data.jsdelivr.com/v1/stats/browsers/Chrome/countries",
-              "platforms": "https://data.jsdelivr.com/v1/stats/browsers/Chrome/platforms",
-              "versions": "https://data.jsdelivr.com/v1/stats/browsers/Chrome/versions"
-            }
-          },
-          {
-            "name": "Microsoft Edge",
-            "share": 9.4,
-            "prev": {
-              "share": 7.58
-            },
-            "links": {
-              "countries": "https://data.jsdelivr.com/v1/stats/browsers/Microsoft%20Edge/countries",
-              "platforms": "https://data.jsdelivr.com/v1/stats/browsers/Microsoft%20Edge/platforms",
-              "versions": "https://data.jsdelivr.com/v1/stats/browsers/Microsoft%20Edge/versions"
-            }
-          }
-        ]
-    topPlatformCountries:
-      value:
-        [
-          {
-            "country": "PN",
-            "share": 79.64,
-            "prev": {
-              "share": 61.22
-            },
-            "links": {
-              "browsers": "https://data.jsdelivr.com/v1/stats/browsers?country=PN",
-              "platforms": "https://data.jsdelivr.com/v1/stats/platforms?country=PN"
-            }
-          },
-          {
-            "country": "VA",
-            "share": 69.19,
-            "prev": {
-              "share": 68.13
-            },
-            "links": {
-              "browsers": "https://data.jsdelivr.com/v1/stats/browsers?country=VA",
-              "platforms": "https://data.jsdelivr.com/v1/stats/platforms?country=VA"
-            }
-          }
-        ]
-    topPlatformVersions:
-      value:
-        [
-          {
-            "version": "10.15",
-            "versionName": "Catalina",
-            "share": 4.74,
-            "prev": {
-              "share": 4.39
-            },
-            "links": {
-              "countries": "https://data.jsdelivr.com/v1/stats/platforms/macOS/versions/10.15/countries"
-            }
-          },
-          {
-            "version": "10.14",
-            "versionName": "Mojave",
-            "share": 0.37,
-            "prev": {
-              "share": 0.33
-            },
-            "links": {
-              "countries": "https://data.jsdelivr.com/v1/stats/platforms/macOS/versions/10.14/countries"
-            }
-          }
-        ]
-    topPlatformVersionCountries:
-      value:
-        [
-          {
-            "country": "PN",
-            "share": 65.33,
-            "prev": {
-              "share": 30.79
-            },
-            "links": {
-              "browsers": "https://data.jsdelivr.com/v1/stats/browsers?country=PN",
-              "platforms": "https://data.jsdelivr.com/v1/stats/platforms?country=PN"
-            }
-          },
-          {
-            "country": "LS",
-            "share": 63.36,
-            "prev": {
-              "share": 27.65
-            },
-            "links": {
-              "browsers": "https://data.jsdelivr.com/v1/stats/browsers?country=LS",
-              "platforms": "https://data.jsdelivr.com/v1/stats/platforms?country=LS"
-            }
-          }
-        ]
-    proxyStats:
-      value:
-        {
-          "hits": {
-            "total": 501974973,
-            "dates": {
-              "2022-10-18": 94023831,
-              "2022-10-19": 99855963,
-              "2022-10-20": 96454369,
-              "2022-10-21": 88777244,
-              "2022-10-22": 18647264,
-              "2022-10-23": 20868989,
-              "2022-10-24": 83347313
-            },
-            "prev": {
-              "total": 505414658
-            }
-          },
-          "bandwidth": {
-            "total": 830708341009,
-            "dates": {
-              "2022-10-18": 167445787621,
-              "2022-10-19": 173491229423,
-              "2022-10-20": 168976602219,
-              "2022-10-21": 147140856970,
-              "2022-10-22": 23661278859,
-              "2022-10-23": 27455033406,
-              "2022-10-24": 122537552511
-            },
-            "prev": {
-              "total": 842658445699
-            }
-          },
-          "links": {
-            "files": "https://data.jsdelivr.com/v1/stats/proxies/{name}/files?period=week"
-          }
-        }
-    topProxyFiles:
-      value:
-        [
-          {
-            "name": "/Specs/8/b/d/FirebaseCore/10.0.0/FirebaseCore.podspec.json",
-            "hits": {
-              "total": 189895
-            },
-            "bandwidth": {
-              "total": 365643085
-            }
-          },
-          {
-            "name": "/Specs/0/8/4/GoogleUtilities/7.8.0/GoogleUtilities.podspec.json",
-            "hits": {
-              "total": 188103
-            },
-            "bandwidth": {
-              "total": 388346532
-            }
-          }
-        ]
-    lookupHash:
-      value:
-        type: npm
-        name: jquery
-        version: 3.2.1
-        file: /dist/jquery.min.js
-  responses:
-    ghMetadata200:
-      description: Success
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/PackageMetadata'
-          examples:
-            '0':
-              $ref: '#/components/examples/ghMetadata'
-    ghResolved200:
-      description: Success
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/PackageResolved'
-          examples:
-            '0':
-              $ref: '#/components/examples/ghResolved'
-            '1':
-              $ref: '#/components/examples/ghResolvedNull'
-    ghVersionMetadata200:
-      description: Success
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/PackageVersionMetadata'
-          examples:
-            '0':
-              $ref: '#/components/examples/ghVersionMetadataTree'
-            '1':
-              $ref: '#/components/examples/ghVersionMetadataFlat'
-    npmMetadata200:
-      description: Success
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/PackageMetadata'
-          examples:
-            '0':
-              $ref: '#/components/examples/npmMetadata'
-    npmMetadataScoped200:
-      description: Success
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/PackageMetadata'
-          examples:
-            '0':
-              $ref: '#/components/examples/npmMetadataScoped'
-    npmResolved200:
-      description: Success
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/PackageResolved'
-          examples:
-            '0':
-              $ref: '#/components/examples/npmResolved'
-            '1':
-              $ref: '#/components/examples/npmResolvedNull'
-    npmResolvedScoped200:
-      description: Success
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/PackageResolved'
-          examples:
-            '0':
-              $ref: '#/components/examples/npmResolvedScoped'
-            '1':
-              $ref: '#/components/examples/npmResolvedScopedNull'
-    npmVersionMetadata200:
-      description: Success
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/PackageVersionMetadata'
-          examples:
-            '0':
-              $ref: '#/components/examples/npmVersionMetadataTree'
-            '1':
-              $ref: '#/components/examples/npmVersionMetadataFlat'
-    npmVersionMetadataScoped200:
-      description: Success
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/PackageVersionMetadata'
-          examples:
-            '0':
-              $ref: '#/components/examples/npmVersionMetadataScopedTree'
-            '1':
-              $ref: '#/components/examples/npmVersionMetadataScopedFlat'
-    npmVersionEntrypoints200:
-      description: Success
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/PackageEntrypoints'
-          examples:
-            '0':
-              $ref: '#/components/examples/npmVersionEntrypoints'
-    npmVersionEntrypointsScoped200:
-      description: Success
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/PackageEntrypoints'
-          examples:
-            '0':
-              $ref: '#/components/examples/npmVersionEntrypointsScoped'
-    periods200:
-      description: Success
-      headers:
-        Link:
-          $ref: '#/components/headers/Link'
-        X-Total-Count:
-          $ref: '#/components/headers/X-Total-Count'
-        X-Total-Pages:
-          $ref: '#/components/headers/X-Total-Pages'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Periods'
-          examples:
-            '0':
-              $ref: '#/components/examples/periods'
-    topPackages200:
-      description: Success
-      headers:
-        Link:
-          $ref: '#/components/headers/Link'
-        X-Total-Count:
-          $ref: '#/components/headers/X-Total-Count'
-        X-Total-Pages:
-          $ref: '#/components/headers/X-Total-Pages'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/TopPackages'
-          examples:
-            '0':
-              $ref: '#/components/examples/topPackages'
-    ghPackageStats200:
-      description: Success
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/PackageStats'
-          examples:
-            '0':
-              $ref: '#/components/examples/ghPackageStats'
-    ghTopRepoVersions200:
-      description: Success
-      headers:
-        Link:
-          $ref: '#/components/headers/Link'
-        X-Total-Count:
-          $ref: '#/components/headers/X-Total-Count'
-        X-Total-Pages:
-          $ref: '#/components/headers/X-Total-Pages'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/TopPackageVersions'
-          examples:
-            '0':
-              $ref: '#/components/examples/ghTopRepoVersions'
-    ghRepoVersionStats200:
-      description: Success
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/PackageVersionStats'
-          examples:
-            '0':
-              $ref: '#/components/examples/ghRepoVersionStats'
-    ghTopRepoVersionFiles200:
-      description: Success
-      headers:
-        Link:
-          $ref: '#/components/headers/Link'
-        X-Total-Count:
-          $ref: '#/components/headers/X-Total-Count'
-        X-Total-Pages:
-          $ref: '#/components/headers/X-Total-Pages'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/TopPackageVersionFiles'
-          examples:
-            '0':
-              $ref: '#/components/examples/ghTopRepoVersionFiles'
-    ghRepoBadge200:
-      description: Success
-      content:
-        image/svg+xml:
-          examples:
-            '0':
-              description: |
-                ![](https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap/badge?period=week)
-                ![](https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap/badge?period=week&type=rank)
-                ![](https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap/badge?period=week&type=type-rank)
-              externalValue: https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap/badge?period=week
-    npmPackageStats200:
-      description: Success
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/PackageStats'
-          examples:
-            '0':
-              $ref: '#/components/examples/npmPackageStats'
-    npmPackageStatsScoped200:
-      description: Success
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/PackageStats'
-          examples:
-            '0':
-              $ref: '#/components/examples/npmPackageStatsScoped'
-    npmTopPackageVersions200:
-      description: Success
-      headers:
-        Link:
-          $ref: '#/components/headers/Link'
-        X-Total-Count:
-          $ref: '#/components/headers/X-Total-Count'
-        X-Total-Pages:
-          $ref: '#/components/headers/X-Total-Pages'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/TopPackageVersions'
-          examples:
-            '0':
-              $ref: '#/components/examples/npmTopPackageVersions'
-    npmTopPackageVersionsScoped200:
-      description: Success
-      headers:
-        Link:
-          $ref: '#/components/headers/Link'
-        X-Total-Count:
-          $ref: '#/components/headers/X-Total-Count'
-        X-Total-Pages:
-          $ref: '#/components/headers/X-Total-Pages'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/TopPackageVersions'
-          examples:
-            '0':
-              $ref: '#/components/examples/npmTopPackageVersionsScoped'
-    npmPackageVersionStats200:
-      description: Success
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/PackageVersionStats'
-          examples:
-            '0':
-              $ref: '#/components/examples/npmPackageVersionStats'
-    npmPackageVersionStatsScoped200:
-      description: Success
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/PackageVersionStats'
-          examples:
-            '0':
-              $ref: '#/components/examples/npmPackageVersionStatsScoped'
-    npmTopRepoVersionFiles200:
-      description: Success
-      headers:
-        Link:
-          $ref: '#/components/headers/Link'
-        X-Total-Count:
-          $ref: '#/components/headers/X-Total-Count'
-        X-Total-Pages:
-          $ref: '#/components/headers/X-Total-Pages'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/TopPackageVersionFiles'
-          examples:
-            '0':
-              $ref: '#/components/examples/npmTopPackageVersionFiles'
-    npmTopRepoVersionFilesScoped200:
-      description: Success
-      headers:
-        Link:
-          $ref: '#/components/headers/Link'
-        X-Total-Count:
-          $ref: '#/components/headers/X-Total-Count'
-        X-Total-Pages:
-          $ref: '#/components/headers/X-Total-Pages'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/TopPackageVersionFiles'
-          examples:
-            '0':
-              $ref: '#/components/examples/npmTopPackageVersionFilesScoped'
-    npmPackageBadge200:
-      description: Success
-      content:
-        image/svg+xml:
-          examples:
-            '0':
-              description: |
-                ![](https://data.jsdelivr.com/v1/stats/packages/npm/jquery/badge?period=week)
-                ![](https://data.jsdelivr.com/v1/stats/packages/npm/jquery/badge?period=week&type=rank)
-                ![](https://data.jsdelivr.com/v1/stats/packages/npm/jquery/badge?period=week&type=type-rank)
-              externalValue: https://data.jsdelivr.com/v1/stats/packages/npm/jquery/badge?period=week
-    npmPackageBadgeScoped200:
-      description: Success
-      content:
-        image/svg+xml:
-          examples:
-            '0':
-              description: |
-                ![](https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core/badge?period=week)
-                ![](https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core/badge?period=week&type=rank)
-                ![](https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core/badge?period=week&type=type-rank)
-              externalValue: https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core/badge?period=week
-    networkStats200:
-      description: Success
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/NetworkStats'
-          examples:
-            '0':
-              $ref: '#/components/examples/networkStats'
-    networkContentStats200:
-      description: Success
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/NetworkContentStats'
-          examples:
-            '0':
-              $ref: '#/components/examples/networkContentStats'
-    networkCountryStats200:
-      description: Success
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/NetworkCountryStats'
-          examples:
-            '0':
-              $ref: '#/components/examples/networkCountryStats'
-    browsers200:
-      description: Success
-      headers:
-        Link:
-          $ref: '#/components/headers/Link'
-        X-Total-Count:
-          $ref: '#/components/headers/X-Total-Count'
-        X-Total-Pages:
-          $ref: '#/components/headers/X-Total-Pages'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/TopBrowsers'
-          examples:
-            '0':
-              $ref: '#/components/examples/topBrowsers'
-    browsersVersions200:
-      description: Success
-      headers:
-        Link:
-          $ref: '#/components/headers/Link'
-        X-Total-Count:
-          $ref: '#/components/headers/X-Total-Count'
-        X-Total-Pages:
-          $ref: '#/components/headers/X-Total-Pages'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/TopBrowsersVersions'
-          examples:
-            '0':
-              $ref: '#/components/examples/topBrowsersVersions'
-    browserCountries200:
-      description: Success
-      headers:
-        Link:
-          $ref: '#/components/headers/Link'
-        X-Total-Count:
-          $ref: '#/components/headers/X-Total-Count'
-        X-Total-Pages:
-          $ref: '#/components/headers/X-Total-Pages'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/TopBrowserCountries'
-          examples:
-            '0':
-              $ref: '#/components/examples/topBrowserCountries'
-    browserPlatforms200:
-      description: Success
-      headers:
-        Link:
-          $ref: '#/components/headers/Link'
-        X-Total-Count:
-          $ref: '#/components/headers/X-Total-Count'
-        X-Total-Pages:
-          $ref: '#/components/headers/X-Total-Pages'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/TopBrowserPlatforms'
-          examples:
-            '0':
-              $ref: '#/components/examples/topBrowserPlatforms'
-    browserVersions200:
-      description: Success
-      headers:
-        Link:
-          $ref: '#/components/headers/Link'
-        X-Total-Count:
-          $ref: '#/components/headers/X-Total-Count'
-        X-Total-Pages:
-          $ref: '#/components/headers/X-Total-Pages'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/TopBrowserVersions'
-          examples:
-            '0':
-              $ref: '#/components/examples/topBrowserVersions'
-    browserVersionCountries200:
-      description: Success
-      headers:
-        Link:
-          $ref: '#/components/headers/Link'
-        X-Total-Count:
-          $ref: '#/components/headers/X-Total-Count'
-        X-Total-Pages:
-          $ref: '#/components/headers/X-Total-Pages'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/TopBrowserVersionCountries'
-          examples:
-            '0':
-              $ref: '#/components/examples/topBrowserVersionCountries'
-    platforms200:
-      description: Success
-      headers:
-        Link:
-          $ref: '#/components/headers/Link'
-        X-Total-Count:
-          $ref: '#/components/headers/X-Total-Count'
-        X-Total-Pages:
-          $ref: '#/components/headers/X-Total-Pages'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/TopPlatforms'
-          examples:
-            '0':
-              $ref: '#/components/examples/topPlatforms'
-    platformsVersions200:
-      description: Success
-      headers:
-        Link:
-          $ref: '#/components/headers/Link'
-        X-Total-Count:
-          $ref: '#/components/headers/X-Total-Count'
-        X-Total-Pages:
-          $ref: '#/components/headers/X-Total-Pages'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/TopPlatformsVersions'
-          examples:
-            '0':
-              $ref: '#/components/examples/topPlatformsVersions'
-    platformBrowsers200:
-      description: Success
-      headers:
-        Link:
-          $ref: '#/components/headers/Link'
-        X-Total-Count:
-          $ref: '#/components/headers/X-Total-Count'
-        X-Total-Pages:
-          $ref: '#/components/headers/X-Total-Pages'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/TopPlatformBrowsers'
-          examples:
-            '0':
-              $ref: '#/components/examples/topPlatformBrowsers'
-    platformCountries200:
-      description: Success
-      headers:
-        Link:
-          $ref: '#/components/headers/Link'
-        X-Total-Count:
-          $ref: '#/components/headers/X-Total-Count'
-        X-Total-Pages:
-          $ref: '#/components/headers/X-Total-Pages'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/TopPlatformCountries'
-          examples:
-            '0':
-              $ref: '#/components/examples/topPlatformCountries'
-    platformVersions200:
-      description: Success
-      headers:
-        Link:
-          $ref: '#/components/headers/Link'
-        X-Total-Count:
-          $ref: '#/components/headers/X-Total-Count'
-        X-Total-Pages:
-          $ref: '#/components/headers/X-Total-Pages'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/TopPlatformVersions'
-          examples:
-            '0':
-              $ref: '#/components/examples/topPlatformVersions'
-    platformVersionCountries200:
-      description: Success
-      headers:
-        Link:
-          $ref: '#/components/headers/Link'
-        X-Total-Count:
-          $ref: '#/components/headers/X-Total-Count'
-        X-Total-Pages:
-          $ref: '#/components/headers/X-Total-Pages'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/TopPlatformVersionCountries'
-          examples:
-            '0':
-              $ref: '#/components/examples/topPlatformVersionCountries'
-    proxyStats200:
-      description: Success
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ProxyStats'
-          examples:
-            '0':
-              $ref: '#/components/examples/proxyStats'
-    topProxyFiles200:
-      description: Success
-      headers:
-        Link:
-          $ref: '#/components/headers/Link'
-        X-Total-Count:
-          $ref: '#/components/headers/X-Total-Count'
-        X-Total-Pages:
-          $ref: '#/components/headers/X-Total-Pages'
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/TopProxyFiles'
-          examples:
-            '0':
-              $ref: '#/components/examples/topProxyFiles'
-    lookupHash200:
-      description: Success
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/LookupHash'
-          examples:
-            '0':
-              $ref: '#/components/examples/lookupHash'
-    '400':
-      description: Bad Request
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: integer
-              message:
-                type: string
-              links:
-                type: object
-                properties:
-                  documentation:
-                    type: string
-                    description: A link to documentation for this endpoint.
-            required:
-             - status
-             - message
-          examples:
-            json:
-              value:
-                status: 400
-                message: Invalid parameter value...
-                links:
-                  documentation: https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com
-    '403':
-      description: Forbidden
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: integer
-              message:
-                type: string
-            required:
-              - status
-              - message
-          examples:
-            json:
-              value:
-                status: 403
-                message: Package size exceeded the configured limit of 100 MB.
-    '404':
-      description: Not Found
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: integer
-              message:
-                type: string
-            required:
-              - status
-              - message
-          examples:
-            json:
-              value:
-                status: 404
-                message: Couldn't find the requested item...
 paths:
   /v1/packages/gh/{user}/{repo}:
     parameters:
-      - $ref: '#/components/parameters/ghUser'
-      - $ref: '#/components/parameters/ghRepo'
+      - $ref: 'components/parameters.yaml#/components/parameters/ghUser'
+      - $ref: 'components/parameters.yaml#/components/parameters/ghRepo'
     get:
       summary: 'Get repo metadata'
       operationId: getRepoMetadata
@@ -3646,15 +78,15 @@ paths:
         The versions are sorted in descending order using [`v-compare`](https://www.npmjs.com/package/v-compare).
       responses:
         '200':
-          $ref: '#/components/responses/ghMetadata200'
+          $ref: 'components/responses.yaml#/components/responses/ghMetadata200'
         '404':
-          $ref: '#/components/responses/404'
+          $ref: 'components/responses.yaml#/components/responses/404'
       tags:
         - 'Package metadata: GitHub'
   /v1/packages/gh/{user}/{repo}/resolved:
     parameters:
-      - $ref: '#/components/parameters/ghUser'
-      - $ref: '#/components/parameters/ghRepo'
+      - $ref: 'components/parameters.yaml#/components/parameters/ghUser'
+      - $ref: 'components/parameters.yaml#/components/parameters/ghRepo'
     get:
       summary: Get a resolved version from a range or a tag
       operationId: getResolvedRepoVersion
@@ -3662,19 +94,19 @@ paths:
         Returns the latest version matching `specifier` or `null` if there is no matching version.
         Only valid [semver](https://semver.org/) versions are considered.
       parameters:
-        - $ref: '#/components/parameters/specifier'
+        - $ref: 'components/parameters.yaml#/components/parameters/specifier'
       responses:
         '200':
-          $ref: '#/components/responses/ghResolved200'
+          $ref: 'components/responses.yaml#/components/responses/ghResolved200'
         '404':
-          $ref: '#/components/responses/404'
+          $ref: 'components/responses.yaml#/components/responses/404'
       tags:
         - 'Package metadata: GitHub'
   /v1/packages/gh/{user}/{repo}@{version}:
     parameters:
-      - $ref: '#/components/parameters/ghUser'
-      - $ref: '#/components/parameters/ghRepo'
-      - $ref: '#/components/parameters/version'
+      - $ref: 'components/parameters.yaml#/components/parameters/ghUser'
+      - $ref: 'components/parameters.yaml#/components/parameters/ghRepo'
+      - $ref: 'components/parameters.yaml#/components/parameters/version'
     get:
       summary: 'Get version metadata'
       operationId: getRepoVersionMetadata
@@ -3682,19 +114,19 @@ paths:
         Returns the default file and a list of all files in this version.
         An error is returned if the package size exceeds 50 MB.
       parameters:
-        - $ref: '#/components/parameters/structure'
+        - $ref: 'components/parameters.yaml#/components/parameters/structure'
       responses:
         '200':
-          $ref: '#/components/responses/ghVersionMetadata200'
+          $ref: 'components/responses.yaml#/components/responses/ghVersionMetadata200'
         '403':
-          $ref: '#/components/responses/403'
+          $ref: 'components/responses.yaml#/components/responses/403'
         '404':
-          $ref: '#/components/responses/404'
+          $ref: 'components/responses.yaml#/components/responses/404'
       tags:
         - 'Package metadata: GitHub'
   /v1/packages/npm/{package}:
     parameters:
-      - $ref: '#/components/parameters/package'
+      - $ref: 'components/parameters.yaml#/components/parameters/package'
     get:
       summary: Get package metadata
       operationId: getPackageMetadata
@@ -3703,15 +135,15 @@ paths:
         The versions are sorted in descending order using [`semver`](https://www.npmjs.com/package/semver).
       responses:
         '200':
-          $ref: '#/components/responses/npmMetadata200'
+          $ref: 'components/responses.yaml#/components/responses/npmMetadata200'
         '404':
-          $ref: '#/components/responses/404'
+          $ref: 'components/responses.yaml#/components/responses/404'
       tags:
         - 'Package metadata: npm'
   /v1/packages/npm/@{scope}/{package}:
     parameters:
-      - $ref: '#/components/parameters/packageScope'
-      - $ref: '#/components/parameters/packageScoped'
+      - $ref: 'components/parameters.yaml#/components/parameters/packageScope'
+      - $ref: 'components/parameters.yaml#/components/parameters/packageScoped'
     get:
       summary: Get package metadata (scoped)
       operationId: getScopedPackageMetadata
@@ -3720,50 +152,50 @@ paths:
         The versions are sorted in descending order using [`semver`](https://www.npmjs.com/package/semver).
       responses:
         '200':
-          $ref: '#/components/responses/npmMetadataScoped200'
+          $ref: 'components/responses.yaml#/components/responses/npmMetadataScoped200'
         '404':
-          $ref: '#/components/responses/404'
+          $ref: 'components/responses.yaml#/components/responses/404'
       tags:
         - 'Package metadata: npm'
   /v1/packages/npm/{package}/resolved:
     parameters:
-      - $ref: '#/components/parameters/package'
+      - $ref: 'components/parameters.yaml#/components/parameters/package'
     get:
       summary: Get a resolved version from a range or a tag
       operationId: getResolvedPackageVersion
       description: |
         Returns the latest version matching `specifier` or `null` if there is no matching version.
       parameters:
-        - $ref: '#/components/parameters/specifier'
+        - $ref: 'components/parameters.yaml#/components/parameters/specifier'
       responses:
         '200':
-          $ref: '#/components/responses/npmResolved200'
+          $ref: 'components/responses.yaml#/components/responses/npmResolved200'
         '404':
-          $ref: '#/components/responses/404'
+          $ref: 'components/responses.yaml#/components/responses/404'
       tags:
         - 'Package metadata: npm'
   /v1/packages/npm/@{scope}/{package}/resolved:
     parameters:
-      - $ref: '#/components/parameters/packageScope'
-      - $ref: '#/components/parameters/packageScoped'
+      - $ref: 'components/parameters.yaml#/components/parameters/packageScope'
+      - $ref: 'components/parameters.yaml#/components/parameters/packageScoped'
     get:
       summary: Get a resolved version from a range or a tag (scoped)
       operationId: getResolvedScopedPackageVersion
       description: |
         Returns the latest version matching `specifier` or `null` if there is no matching version.
       parameters:
-        - $ref: '#/components/parameters/specifier'
+        - $ref: 'components/parameters.yaml#/components/parameters/specifier'
       responses:
         '200':
-          $ref: '#/components/responses/npmResolvedScoped200'
+          $ref: 'components/responses.yaml#/components/responses/npmResolvedScoped200'
         '404':
-          $ref: '#/components/responses/404'
+          $ref: 'components/responses.yaml#/components/responses/404'
       tags:
         - 'Package metadata: npm'
   /v1/packages/npm/{package}@{version}:
     parameters:
-      - $ref: '#/components/parameters/package'
-      - $ref: '#/components/parameters/version'
+      - $ref: 'components/parameters.yaml#/components/parameters/package'
+      - $ref: 'components/parameters.yaml#/components/parameters/version'
     get:
       summary: Get version metadata
       operationId: getPackageVersionMetadata
@@ -3771,21 +203,21 @@ paths:
         Returns the default file and a list of all files in this version.
         An error is returned if the package size exceeds 100 MB.
       parameters:
-        - $ref: '#/components/parameters/structure'
+        - $ref: 'components/parameters.yaml#/components/parameters/structure'
       responses:
         '200':
-          $ref: '#/components/responses/npmVersionMetadata200'
+          $ref: 'components/responses.yaml#/components/responses/npmVersionMetadata200'
         '403':
-          $ref: '#/components/responses/403'
+          $ref: 'components/responses.yaml#/components/responses/403'
         '404':
-          $ref: '#/components/responses/404'
+          $ref: 'components/responses.yaml#/components/responses/404'
       tags:
         - 'Package metadata: npm'
   /v1/packages/npm/@{scope}/{package}@{version}:
     parameters:
-      - $ref: '#/components/parameters/packageScope'
-      - $ref: '#/components/parameters/packageScoped'
-      - $ref: '#/components/parameters/version'
+      - $ref: 'components/parameters.yaml#/components/parameters/packageScope'
+      - $ref: 'components/parameters.yaml#/components/parameters/packageScoped'
+      - $ref: 'components/parameters.yaml#/components/parameters/version'
     get:
       summary: Get version metadata (scoped)
       operationId: getScopedPackageVersionMetadata
@@ -3793,20 +225,20 @@ paths:
         Returns the default file and a list of all files in this version.
         An error is returned if the package size exceeds 100 MB.
       parameters:
-        - $ref: '#/components/parameters/structure'
+        - $ref: 'components/parameters.yaml#/components/parameters/structure'
       responses:
         '200':
-          $ref: '#/components/responses/npmVersionMetadataScoped200'
+          $ref: 'components/responses.yaml#/components/responses/npmVersionMetadataScoped200'
         '403':
-          $ref: '#/components/responses/403'
+          $ref: 'components/responses.yaml#/components/responses/403'
         '404':
-          $ref: '#/components/responses/404'
+          $ref: 'components/responses.yaml#/components/responses/404'
       tags:
         - 'Package metadata: npm'
   /v1/packages/npm/{package}@{version}/entrypoints:
     parameters:
-      - $ref: '#/components/parameters/package'
-      - $ref: '#/components/parameters/version'
+      - $ref: 'components/parameters.yaml#/components/parameters/package'
+      - $ref: 'components/parameters.yaml#/components/parameters/version'
     get:
       summary: Get version entry points
       operationId: getPackageVersionEntrypoints
@@ -3816,16 +248,16 @@ paths:
         The output may change over time as our algorithm improves.
       responses:
         '200':
-          $ref: '#/components/responses/npmVersionEntrypoints200'
+          $ref: 'components/responses.yaml#/components/responses/npmVersionEntrypoints200'
         '404':
-          $ref: '#/components/responses/404'
+          $ref: 'components/responses.yaml#/components/responses/404'
       tags:
         - 'Package metadata: npm'
   /v1/packages/npm/@{scope}/{package}@{version}/entrypoints:
     parameters:
-      - $ref: '#/components/parameters/packageScope'
-      - $ref: '#/components/parameters/packageScoped'
-      - $ref: '#/components/parameters/version'
+      - $ref: 'components/parameters.yaml#/components/parameters/packageScope'
+      - $ref: 'components/parameters.yaml#/components/parameters/packageScoped'
+      - $ref: 'components/parameters.yaml#/components/parameters/version'
     get:
       summary: Get version entry points (scoped)
       operationId: getScopedPackageVersionEntrypoints
@@ -3835,9 +267,9 @@ paths:
         The output may change over time as our algorithm improves.
       responses:
         '200':
-          $ref: '#/components/responses/npmVersionEntrypointsScoped200'
+          $ref: 'components/responses.yaml#/components/responses/npmVersionEntrypointsScoped200'
         '404':
-          $ref: '#/components/responses/404'
+          $ref: 'components/responses.yaml#/components/responses/404'
       tags:
         - 'Package metadata: npm'
   /v1/stats/periods:
@@ -3848,11 +280,11 @@ paths:
         Returns a list of all periods for which some stats are available in descending order.
         The `links` property of each period indicates which stats are available.
       parameters:
-        - $ref: '#/components/parameters/limit'
-        - $ref: '#/components/parameters/page'
+        - $ref: 'components/parameters.yaml#/components/parameters/limit'
+        - $ref: 'components/parameters.yaml#/components/parameters/page'
       responses:
         '200':
-          $ref: '#/components/responses/periods200'
+          $ref: 'components/responses.yaml#/components/responses/periods200'
       tags:
         - Stats
       x-labels:
@@ -3877,22 +309,22 @@ paths:
         Returns the most popular packages and their stats totals for the selected period.
         More detailed stats can be accessed via the provided links.
       parameters:
-        - $ref: '#/components/parameters/by'
-        - $ref: '#/components/parameters/type'
-        - $ref: '#/components/parameters/period'
-        - $ref: '#/components/parameters/limit'
-        - $ref: '#/components/parameters/page'
+        - $ref: 'components/parameters.yaml#/components/parameters/by'
+        - $ref: 'components/parameters.yaml#/components/parameters/type'
+        - $ref: 'components/parameters.yaml#/components/parameters/period'
+        - $ref: 'components/parameters.yaml#/components/parameters/limit'
+        - $ref: 'components/parameters.yaml#/components/parameters/page'
       responses:
         '200':
-          $ref: '#/components/responses/topPackages200'
+          $ref: 'components/responses.yaml#/components/responses/topPackages200'
         '400':
-          $ref: '#/components/responses/400'
+          $ref: 'components/responses.yaml#/components/responses/400'
       tags:
         - 'Stats: packages'
   /v1/stats/packages/gh/{user}/{repo}:
     parameters:
-      - $ref: '#/components/parameters/ghUser'
-      - $ref: '#/components/parameters/ghRepo'
+      - $ref: 'components/parameters.yaml#/components/parameters/ghUser'
+      - $ref: 'components/parameters.yaml#/components/parameters/ghRepo'
     get:
       summary: Get repo stats
       operationId: getRepoStats
@@ -3900,18 +332,18 @@ paths:
         Returns daily usage stats for the repository.
         Stats for specific versions can be accessed via the provided link.
       parameters:
-        - $ref: '#/components/parameters/period'
+        - $ref: 'components/parameters.yaml#/components/parameters/period'
       responses:
         '200':
-          $ref: '#/components/responses/ghPackageStats200'
+          $ref: 'components/responses.yaml#/components/responses/ghPackageStats200'
         '400':
-          $ref: '#/components/responses/400'
+          $ref: 'components/responses.yaml#/components/responses/400'
       tags:
         - 'Stats: GitHub packages'
   /v1/stats/packages/gh/{user}/{repo}/versions:
     parameters:
-      - $ref: '#/components/parameters/ghUser'
-      - $ref: '#/components/parameters/ghRepo'
+      - $ref: 'components/parameters.yaml#/components/parameters/ghUser'
+      - $ref: 'components/parameters.yaml#/components/parameters/ghRepo'
     get:
       summary: List top repo versions
       operationId: listTopRepoVersions
@@ -3919,24 +351,24 @@ paths:
         Returns daily usage stats for the most popular repository versions.
         Stats for the individual version files can be accessed via the provided link.
       parameters:
-        - $ref: '#/components/parameters/by'
-        - $ref: '#/components/parameters/period'
-        - $ref: '#/components/parameters/limit'
-        - $ref: '#/components/parameters/page'
+        - $ref: 'components/parameters.yaml#/components/parameters/by'
+        - $ref: 'components/parameters.yaml#/components/parameters/period'
+        - $ref: 'components/parameters.yaml#/components/parameters/limit'
+        - $ref: 'components/parameters.yaml#/components/parameters/page'
       responses:
         '200':
-          $ref: '#/components/responses/ghTopRepoVersions200'
+          $ref: 'components/responses.yaml#/components/responses/ghTopRepoVersions200'
         '400':
-          $ref: '#/components/responses/400'
+          $ref: 'components/responses.yaml#/components/responses/400'
       tags:
         - 'Stats: GitHub packages'
       x-labels:
         - new
   /v1/stats/packages/gh/{user}/{repo}@{version}:
     parameters:
-      - $ref: '#/components/parameters/ghUser'
-      - $ref: '#/components/parameters/ghRepo'
-      - $ref: '#/components/parameters/version'
+      - $ref: 'components/parameters.yaml#/components/parameters/ghUser'
+      - $ref: 'components/parameters.yaml#/components/parameters/ghRepo'
+      - $ref: 'components/parameters.yaml#/components/parameters/version'
     get:
       summary: Get repo version stats
       operationId: getRepoVersionStats
@@ -3944,60 +376,60 @@ paths:
         Returns daily usage stats for the specified repository version.
         Stats for the individual version files can be accessed via the provided link.
       parameters:
-        - $ref: '#/components/parameters/period'
+        - $ref: 'components/parameters.yaml#/components/parameters/period'
       responses:
         '200':
-          $ref: '#/components/responses/ghRepoVersionStats200'
+          $ref: 'components/responses.yaml#/components/responses/ghRepoVersionStats200'
         '400':
-          $ref: '#/components/responses/400'
+          $ref: 'components/responses.yaml#/components/responses/400'
       tags:
         - 'Stats: GitHub packages'
   /v1/stats/packages/gh/{user}/{repo}@{version}/files:
     parameters:
-      - $ref: '#/components/parameters/ghUser'
-      - $ref: '#/components/parameters/ghRepo'
-      - $ref: '#/components/parameters/version'
+      - $ref: 'components/parameters.yaml#/components/parameters/ghUser'
+      - $ref: 'components/parameters.yaml#/components/parameters/ghRepo'
+      - $ref: 'components/parameters.yaml#/components/parameters/version'
     get:
       summary: 'List top repo version files'
       operationId: listTopRepoVersionFiles
       description: |
         Returns daily usage stats for the most popular repository version files.
       parameters:
-        - $ref: '#/components/parameters/by'
-        - $ref: '#/components/parameters/period'
-        - $ref: '#/components/parameters/limit'
-        - $ref: '#/components/parameters/page'
+        - $ref: 'components/parameters.yaml#/components/parameters/by'
+        - $ref: 'components/parameters.yaml#/components/parameters/period'
+        - $ref: 'components/parameters.yaml#/components/parameters/limit'
+        - $ref: 'components/parameters.yaml#/components/parameters/page'
       responses:
         '200':
-          $ref: '#/components/responses/ghTopRepoVersionFiles200'
+          $ref: 'components/responses.yaml#/components/responses/ghTopRepoVersionFiles200'
         '400':
-          $ref: '#/components/responses/400'
+          $ref: 'components/responses.yaml#/components/responses/400'
       tags:
         - 'Stats: GitHub packages'
       x-labels:
         - new
   /v1/stats/packages/gh/{user}/{repo}/badge:
     parameters:
-      - $ref: '#/components/parameters/ghUser'
-      - $ref: '#/components/parameters/ghRepo'
+      - $ref: 'components/parameters.yaml#/components/parameters/ghUser'
+      - $ref: 'components/parameters.yaml#/components/parameters/ghRepo'
     get:
       summary: Get repo badge
       operationId: getRepoBadge
       description: |
         Returns a badge with repo hits or rank.
       parameters:
-        - $ref: '#/components/parameters/badgeType'
-        - $ref: '#/components/parameters/period'
+        - $ref: 'components/parameters.yaml#/components/parameters/badgeType'
+        - $ref: 'components/parameters.yaml#/components/parameters/period'
       responses:
         '200':
-          $ref: '#/components/responses/ghRepoBadge200'
+          $ref: 'components/responses.yaml#/components/responses/ghRepoBadge200'
         '400':
-          $ref: '#/components/responses/400'
+          $ref: 'components/responses.yaml#/components/responses/400'
       tags:
         - 'Stats: GitHub packages'
   /v1/stats/packages/npm/{package}:
     parameters:
-      - $ref: '#/components/parameters/package'
+      - $ref: 'components/parameters.yaml#/components/parameters/package'
     get:
       summary: Get package stats
       operationId: getPackageStats
@@ -4005,18 +437,18 @@ paths:
         Returns daily usage stats for the package.
         Stats for specific versions can be accessed via the provided link.
       parameters:
-        - $ref: '#/components/parameters/period'
+        - $ref: 'components/parameters.yaml#/components/parameters/period'
       responses:
         '200':
-          $ref: '#/components/responses/npmPackageStats200'
+          $ref: 'components/responses.yaml#/components/responses/npmPackageStats200'
         '400':
-          $ref: '#/components/responses/400'
+          $ref: 'components/responses.yaml#/components/responses/400'
       tags:
         - 'Stats: npm packages'
   /v1/stats/packages/npm/@{scope}/{package}:
     parameters:
-      - $ref: '#/components/parameters/packageScope'
-      - $ref: '#/components/parameters/packageScoped'
+      - $ref: 'components/parameters.yaml#/components/parameters/packageScope'
+      - $ref: 'components/parameters.yaml#/components/parameters/packageScoped'
     get:
       summary: Get package stats (scoped)
       operationId: getScopedPackageStats
@@ -4024,17 +456,17 @@ paths:
         Returns daily usage stats for the package.
         Stats for specific versions can be accessed via the provided link.
       parameters:
-        - $ref: '#/components/parameters/period'
+        - $ref: 'components/parameters.yaml#/components/parameters/period'
       responses:
         '200':
-          $ref: '#/components/responses/npmPackageStatsScoped200'
+          $ref: 'components/responses.yaml#/components/responses/npmPackageStatsScoped200'
         '400':
-          $ref: '#/components/responses/400'
+          $ref: 'components/responses.yaml#/components/responses/400'
       tags:
         - 'Stats: npm packages'
   /v1/stats/packages/npm/{package}/versions:
     parameters:
-      - $ref: '#/components/parameters/package'
+      - $ref: 'components/parameters.yaml#/components/parameters/package'
     get:
       summary: List top package versions
       operationId: listTopPackageVersions
@@ -4042,23 +474,23 @@ paths:
         Returns daily usage stats for the most popular package versions.
         Stats for the individual version files can be accessed via the provided link.
       parameters:
-        - $ref: '#/components/parameters/by'
-        - $ref: '#/components/parameters/period'
-        - $ref: '#/components/parameters/limit'
-        - $ref: '#/components/parameters/page'
+        - $ref: 'components/parameters.yaml#/components/parameters/by'
+        - $ref: 'components/parameters.yaml#/components/parameters/period'
+        - $ref: 'components/parameters.yaml#/components/parameters/limit'
+        - $ref: 'components/parameters.yaml#/components/parameters/page'
       responses:
         '200':
-          $ref: '#/components/responses/npmTopPackageVersions200'
+          $ref: 'components/responses.yaml#/components/responses/npmTopPackageVersions200'
         '400':
-          $ref: '#/components/responses/400'
+          $ref: 'components/responses.yaml#/components/responses/400'
       tags:
         - 'Stats: npm packages'
       x-labels:
         - new
   /v1/stats/packages/npm/@{scope}/{package}/versions:
     parameters:
-      - $ref: '#/components/parameters/packageScope'
-      - $ref: '#/components/parameters/packageScoped'
+      - $ref: 'components/parameters.yaml#/components/parameters/packageScope'
+      - $ref: 'components/parameters.yaml#/components/parameters/packageScoped'
     get:
       summary: List top package versions (scoped)
       operationId: listTopScopedPackageVersions
@@ -4066,23 +498,23 @@ paths:
         Returns daily usage stats for the most popular package versions.
         Stats for the individual version files can be accessed via the provided link.
       parameters:
-        - $ref: '#/components/parameters/by'
-        - $ref: '#/components/parameters/period'
-        - $ref: '#/components/parameters/limit'
-        - $ref: '#/components/parameters/page'
+        - $ref: 'components/parameters.yaml#/components/parameters/by'
+        - $ref: 'components/parameters.yaml#/components/parameters/period'
+        - $ref: 'components/parameters.yaml#/components/parameters/limit'
+        - $ref: 'components/parameters.yaml#/components/parameters/page'
       responses:
         '200':
-          $ref: '#/components/responses/npmTopPackageVersionsScoped200'
+          $ref: 'components/responses.yaml#/components/responses/npmTopPackageVersionsScoped200'
         '400':
-          $ref: '#/components/responses/400'
+          $ref: 'components/responses.yaml#/components/responses/400'
       tags:
         - 'Stats: npm packages'
       x-labels:
         - new
   /v1/stats/packages/npm/{package}@{version}:
     parameters:
-      - $ref: '#/components/parameters/package'
-      - $ref: '#/components/parameters/version'
+      - $ref: 'components/parameters.yaml#/components/parameters/package'
+      - $ref: 'components/parameters.yaml#/components/parameters/version'
     get:
       summary: Get package version stats
       operationId: getPackageVersionStats
@@ -4090,19 +522,19 @@ paths:
         Returns daily usage stats for the specified package version.
         Stats for the individual version files can be accessed via the provided link.
       parameters:
-        - $ref: '#/components/parameters/period'
+        - $ref: 'components/parameters.yaml#/components/parameters/period'
       responses:
         '200':
-          $ref: '#/components/responses/npmPackageVersionStats200'
+          $ref: 'components/responses.yaml#/components/responses/npmPackageVersionStats200'
         '400':
-          $ref: '#/components/responses/400'
+          $ref: 'components/responses.yaml#/components/responses/400'
       tags:
         - 'Stats: npm packages'
   /v1/stats/packages/npm/@{scope}/{package}@{version}:
     parameters:
-      - $ref: '#/components/parameters/packageScope'
-      - $ref: '#/components/parameters/packageScoped'
-      - $ref: '#/components/parameters/version'
+      - $ref: 'components/parameters.yaml#/components/parameters/packageScope'
+      - $ref: 'components/parameters.yaml#/components/parameters/packageScoped'
+      - $ref: 'components/parameters.yaml#/components/parameters/version'
     get:
       summary: Get package version stats (scoped)
       operationId: getScopedPackageVersionStats
@@ -4110,96 +542,96 @@ paths:
         Returns daily usage stats for the specified package version.
         Stats for the individual version files can be accessed via the provided link.
       parameters:
-        - $ref: '#/components/parameters/period'
+        - $ref: 'components/parameters.yaml#/components/parameters/period'
       responses:
         '200':
-          $ref: '#/components/responses/npmPackageVersionStatsScoped200'
+          $ref: 'components/responses.yaml#/components/responses/npmPackageVersionStatsScoped200'
         '400':
-          $ref: '#/components/responses/400'
+          $ref: 'components/responses.yaml#/components/responses/400'
       tags:
         - 'Stats: npm packages'
   /v1/stats/packages/npm/{package}@{version}/files:
     parameters:
-      - $ref: '#/components/parameters/package'
-      - $ref: '#/components/parameters/version'
+      - $ref: 'components/parameters.yaml#/components/parameters/package'
+      - $ref: 'components/parameters.yaml#/components/parameters/version'
     get:
       summary: List top package version files
       operationId: listTopPackageVersionFiles
       description: |
         Returns daily usage stats for the most popular package version files.
       parameters:
-        - $ref: '#/components/parameters/by'
-        - $ref: '#/components/parameters/period'
-        - $ref: '#/components/parameters/limit'
-        - $ref: '#/components/parameters/page'
+        - $ref: 'components/parameters.yaml#/components/parameters/by'
+        - $ref: 'components/parameters.yaml#/components/parameters/period'
+        - $ref: 'components/parameters.yaml#/components/parameters/limit'
+        - $ref: 'components/parameters.yaml#/components/parameters/page'
       responses:
         '200':
-          $ref: '#/components/responses/npmTopRepoVersionFiles200'
+          $ref: 'components/responses.yaml#/components/responses/npmTopRepoVersionFiles200'
         '400':
-          $ref: '#/components/responses/400'
+          $ref: 'components/responses.yaml#/components/responses/400'
       tags:
         - 'Stats: npm packages'
       x-labels:
         - new
   /v1/stats/packages/npm/@{scope}/{package}@{version}/files:
     parameters:
-      - $ref: '#/components/parameters/packageScope'
-      - $ref: '#/components/parameters/packageScoped'
-      - $ref: '#/components/parameters/version'
+      - $ref: 'components/parameters.yaml#/components/parameters/packageScope'
+      - $ref: 'components/parameters.yaml#/components/parameters/packageScoped'
+      - $ref: 'components/parameters.yaml#/components/parameters/version'
     get:
       summary: List top package version files (scoped)
       operationId: listTopScopedPackageVersionFiles
       description: |
         Returns daily usage stats for the most popular package version files.
       parameters:
-        - $ref: '#/components/parameters/by'
-        - $ref: '#/components/parameters/period'
-        - $ref: '#/components/parameters/limit'
-        - $ref: '#/components/parameters/page'
+        - $ref: 'components/parameters.yaml#/components/parameters/by'
+        - $ref: 'components/parameters.yaml#/components/parameters/period'
+        - $ref: 'components/parameters.yaml#/components/parameters/limit'
+        - $ref: 'components/parameters.yaml#/components/parameters/page'
       responses:
         '200':
-          $ref: '#/components/responses/npmTopRepoVersionFilesScoped200'
+          $ref: 'components/responses.yaml#/components/responses/npmTopRepoVersionFilesScoped200'
         '400':
-          $ref: '#/components/responses/400'
+          $ref: 'components/responses.yaml#/components/responses/400'
       tags:
         - 'Stats: npm packages'
       x-labels:
         - new
   /v1/stats/packages/npm/{package}/badge:
     parameters:
-      - $ref: '#/components/parameters/package'
+      - $ref: 'components/parameters.yaml#/components/parameters/package'
     get:
       summary: Get package badge
       operationId: getPackageBadge
       description: |
         Returns a badge with package hits or rank.
       parameters:
-        - $ref: '#/components/parameters/badgeType'
-        - $ref: '#/components/parameters/period'
+        - $ref: 'components/parameters.yaml#/components/parameters/badgeType'
+        - $ref: 'components/parameters.yaml#/components/parameters/period'
       responses:
         '200':
-          $ref: '#/components/responses/npmPackageBadge200'
+          $ref: 'components/responses.yaml#/components/responses/npmPackageBadge200'
         '400':
-          $ref: '#/components/responses/400'
+          $ref: 'components/responses.yaml#/components/responses/400'
       tags:
         - 'Stats: npm packages'
   /v1/stats/packages/npm/@{scope}/{package}/badge:
     parameters:
-      - $ref: '#/components/parameters/packageScope'
-      - $ref: '#/components/parameters/packageScoped'
+      - $ref: 'components/parameters.yaml#/components/parameters/packageScope'
+      - $ref: 'components/parameters.yaml#/components/parameters/packageScoped'
     get:
       summary: Get package badge (scoped)
       operationId: getScopedPackageBadge
       description: |
         Returns a badge with package hits or rank.
       parameters:
-        - $ref: '#/components/parameters/badgeType'
-        - $ref: '#/components/parameters/period'
+        - $ref: 'components/parameters.yaml#/components/parameters/badgeType'
+        - $ref: 'components/parameters.yaml#/components/parameters/period'
       responses:
         '200':
-          $ref: '#/components/responses/npmPackageBadgeScoped200'
+          $ref: 'components/responses.yaml#/components/responses/npmPackageBadgeScoped200'
         '400':
-          $ref: '#/components/responses/400'
+          $ref: 'components/responses.yaml#/components/responses/400'
       tags:
         - 'Stats: npm packages'
   /v1/stats/network:
@@ -4217,14 +649,14 @@ paths:
          - `MX` StackPath
          - `QT` Quantil
       parameters:
-        - $ref: '#/components/parameters/continent'
-        - $ref: '#/components/parameters/country'
-        - $ref: '#/components/parameters/period'
+        - $ref: 'components/parameters.yaml#/components/parameters/continent'
+        - $ref: 'components/parameters.yaml#/components/parameters/country'
+        - $ref: 'components/parameters.yaml#/components/parameters/period'
       responses:
         '200':
-          $ref: '#/components/responses/networkStats200'
+          $ref: 'components/responses.yaml#/components/responses/networkStats200'
         '400':
-          $ref: '#/components/responses/400'
+          $ref: 'components/responses.yaml#/components/responses/400'
       tags:
         - 'Stats: network'
   /v1/stats/network/content:
@@ -4234,10 +666,10 @@ paths:
       description: |
         Returns network-wide hits and bandwidth stats, with breakdown by content type (packages, proxy endpoints, other) and date.
       parameters:
-        - $ref: '#/components/parameters/period'
+        - $ref: 'components/parameters.yaml#/components/parameters/period'
       responses:
         '200':
-          $ref: '#/components/responses/networkContentStats200'
+          $ref: 'components/responses.yaml#/components/responses/networkContentStats200'
       tags:
         - 'Stats: network'
   /v1/stats/network/countries:
@@ -4255,12 +687,12 @@ paths:
          - `MX` StackPath
          - `QT` Quantil
       parameters:
-        - $ref: '#/components/parameters/period'
+        - $ref: 'components/parameters.yaml#/components/parameters/period'
       responses:
         '200':
-          $ref: '#/components/responses/networkCountryStats200'
+          $ref: 'components/responses.yaml#/components/responses/networkCountryStats200'
         '400':
-          $ref: '#/components/responses/400'
+          $ref: 'components/responses.yaml#/components/responses/400'
       tags:
         - 'Stats: network'
   /v1/stats/browsers:
@@ -4270,16 +702,16 @@ paths:
       description: |
         Returns a list of the most popular browsers with stats combined across all versions and platforms.
       parameters:
-        - $ref: '#/components/parameters/continent'
-        - $ref: '#/components/parameters/country'
-        - $ref: '#/components/parameters/periodStatic'
-        - $ref: '#/components/parameters/limit'
-        - $ref: '#/components/parameters/page'
+        - $ref: 'components/parameters.yaml#/components/parameters/continent'
+        - $ref: 'components/parameters.yaml#/components/parameters/country'
+        - $ref: 'components/parameters.yaml#/components/parameters/periodStatic'
+        - $ref: 'components/parameters.yaml#/components/parameters/limit'
+        - $ref: 'components/parameters.yaml#/components/parameters/page'
       responses:
         '200':
-          $ref: '#/components/responses/browsers200'
+          $ref: 'components/responses.yaml#/components/responses/browsers200'
         '400':
-          $ref: '#/components/responses/400'
+          $ref: 'components/responses.yaml#/components/responses/400'
       tags:
         - 'Stats: browsers'
   /v1/stats/browsers/versions:
@@ -4289,101 +721,101 @@ paths:
       description: |
         Returns a list of the most popular browsers with each major version listed separately.
       parameters:
-        - $ref: '#/components/parameters/continent'
-        - $ref: '#/components/parameters/country'
-        - $ref: '#/components/parameters/periodStatic'
-        - $ref: '#/components/parameters/limit'
-        - $ref: '#/components/parameters/page'
+        - $ref: 'components/parameters.yaml#/components/parameters/continent'
+        - $ref: 'components/parameters.yaml#/components/parameters/country'
+        - $ref: 'components/parameters.yaml#/components/parameters/periodStatic'
+        - $ref: 'components/parameters.yaml#/components/parameters/limit'
+        - $ref: 'components/parameters.yaml#/components/parameters/page'
       responses:
         '200':
-          $ref: '#/components/responses/browsersVersions200'
+          $ref: 'components/responses.yaml#/components/responses/browsersVersions200'
         '400':
-          $ref: '#/components/responses/400'
+          $ref: 'components/responses.yaml#/components/responses/400'
       tags:
         - 'Stats: browsers'
   /v1/stats/browsers/{name}/countries:
     parameters:
-      - $ref: '#/components/parameters/browserName'
+      - $ref: 'components/parameters.yaml#/components/parameters/browserName'
     get:
       summary: List top browser countries
       operationId: listTopBrowserCountries
       description: |
         Returns countries ordered by the market share of the specified browser.
       parameters:
-        - $ref: '#/components/parameters/continent'
-        - $ref: '#/components/parameters/country'
-        - $ref: '#/components/parameters/periodStatic'
-        - $ref: '#/components/parameters/limit'
-        - $ref: '#/components/parameters/page'
+        - $ref: 'components/parameters.yaml#/components/parameters/continent'
+        - $ref: 'components/parameters.yaml#/components/parameters/country'
+        - $ref: 'components/parameters.yaml#/components/parameters/periodStatic'
+        - $ref: 'components/parameters.yaml#/components/parameters/limit'
+        - $ref: 'components/parameters.yaml#/components/parameters/page'
       responses:
         '200':
-          $ref: '#/components/responses/browserCountries200'
+          $ref: 'components/responses.yaml#/components/responses/browserCountries200'
         '400':
-          $ref: '#/components/responses/400'
+          $ref: 'components/responses.yaml#/components/responses/400'
       tags:
         - 'Stats: browsers'
   /v1/stats/browsers/{name}/platforms:
     parameters:
-      - $ref: '#/components/parameters/browserName'
+      - $ref: 'components/parameters.yaml#/components/parameters/browserName'
     get:
       summary: List top browser platforms
       operationId: listTopBrowserPlatforms
       description: |
         Returns platforms ordered by their percentage share on all requests by the specified browser.
       parameters:
-        - $ref: '#/components/parameters/continent'
-        - $ref: '#/components/parameters/country'
-        - $ref: '#/components/parameters/periodStatic'
-        - $ref: '#/components/parameters/limit'
-        - $ref: '#/components/parameters/page'
+        - $ref: 'components/parameters.yaml#/components/parameters/continent'
+        - $ref: 'components/parameters.yaml#/components/parameters/country'
+        - $ref: 'components/parameters.yaml#/components/parameters/periodStatic'
+        - $ref: 'components/parameters.yaml#/components/parameters/limit'
+        - $ref: 'components/parameters.yaml#/components/parameters/page'
       responses:
         '200':
-          $ref: '#/components/responses/browserPlatforms200'
+          $ref: 'components/responses.yaml#/components/responses/browserPlatforms200'
         '400':
-          $ref: '#/components/responses/400'
+          $ref: 'components/responses.yaml#/components/responses/400'
       tags:
         - 'Stats: browsers'
   /v1/stats/browsers/{name}/versions:
     parameters:
-      - $ref: '#/components/parameters/browserName'
+      - $ref: 'components/parameters.yaml#/components/parameters/browserName'
     get:
       summary: List top browser versions
       operationId: listTopBrowserVersions
       description: |
         Returns the browser versions ordered by their market share.
       parameters:
-        - $ref: '#/components/parameters/continent'
-        - $ref: '#/components/parameters/country'
-        - $ref: '#/components/parameters/periodStatic'
-        - $ref: '#/components/parameters/limit'
-        - $ref: '#/components/parameters/page'
+        - $ref: 'components/parameters.yaml#/components/parameters/continent'
+        - $ref: 'components/parameters.yaml#/components/parameters/country'
+        - $ref: 'components/parameters.yaml#/components/parameters/periodStatic'
+        - $ref: 'components/parameters.yaml#/components/parameters/limit'
+        - $ref: 'components/parameters.yaml#/components/parameters/page'
       responses:
         '200':
-          $ref: '#/components/responses/browserVersions200'
+          $ref: 'components/responses.yaml#/components/responses/browserVersions200'
         '400':
-          $ref: '#/components/responses/400'
+          $ref: 'components/responses.yaml#/components/responses/400'
       tags:
         - 'Stats: browsers'
   /v1/stats/browsers/{name}/versions/{version}/countries:
     parameters:
-      - $ref: '#/components/parameters/browserName'
-      - $ref: '#/components/parameters/browserVersion'
+      - $ref: 'components/parameters.yaml#/components/parameters/browserName'
+      - $ref: 'components/parameters.yaml#/components/parameters/browserVersion'
     get:
       summary: List top browser version countries
       operationId: listTopBrowserVersionCountries
       description: |
         Returns countries ordered by the market share of the specified browser version.
       parameters:
-        - $ref: '#/components/parameters/continent'
-        - $ref: '#/components/parameters/country'
-        - $ref: '#/components/parameters/periodStatic'
-        - $ref: '#/components/parameters/limit'
-        - $ref: '#/components/parameters/page'
+        - $ref: 'components/parameters.yaml#/components/parameters/continent'
+        - $ref: 'components/parameters.yaml#/components/parameters/country'
+        - $ref: 'components/parameters.yaml#/components/parameters/periodStatic'
+        - $ref: 'components/parameters.yaml#/components/parameters/limit'
+        - $ref: 'components/parameters.yaml#/components/parameters/page'
       responses:
         '200':
-          $ref: '#/components/responses/browserVersionCountries200'
+          $ref: 'components/responses.yaml#/components/responses/browserVersionCountries200'
         '400':
-          $ref: '#/components/responses/400'
+          $ref: 'components/responses.yaml#/components/responses/400'
       tags:
         - 'Stats: browsers'
   /v1/stats/platforms:
@@ -4393,16 +825,16 @@ paths:
       description: |
         Returns a list of the most popular platforms with stats combined across all versions.
       parameters:
-        - $ref: '#/components/parameters/continent'
-        - $ref: '#/components/parameters/country'
-        - $ref: '#/components/parameters/periodStatic'
-        - $ref: '#/components/parameters/limit'
-        - $ref: '#/components/parameters/page'
+        - $ref: 'components/parameters.yaml#/components/parameters/continent'
+        - $ref: 'components/parameters.yaml#/components/parameters/country'
+        - $ref: 'components/parameters.yaml#/components/parameters/periodStatic'
+        - $ref: 'components/parameters.yaml#/components/parameters/limit'
+        - $ref: 'components/parameters.yaml#/components/parameters/page'
       responses:
         '200':
-          $ref: '#/components/responses/platforms200'
+          $ref: 'components/responses.yaml#/components/responses/platforms200'
         '400':
-          $ref: '#/components/responses/400'
+          $ref: 'components/responses.yaml#/components/responses/400'
       tags:
         - 'Stats: platforms'
   /v1/stats/platforms/versions:
@@ -4412,123 +844,123 @@ paths:
       description: |
         Returns a list of the most popular platforms with each major version listed separately.
       parameters:
-        - $ref: '#/components/parameters/continent'
-        - $ref: '#/components/parameters/country'
-        - $ref: '#/components/parameters/periodStatic'
-        - $ref: '#/components/parameters/limit'
-        - $ref: '#/components/parameters/page'
+        - $ref: 'components/parameters.yaml#/components/parameters/continent'
+        - $ref: 'components/parameters.yaml#/components/parameters/country'
+        - $ref: 'components/parameters.yaml#/components/parameters/periodStatic'
+        - $ref: 'components/parameters.yaml#/components/parameters/limit'
+        - $ref: 'components/parameters.yaml#/components/parameters/page'
       responses:
         '200':
-          $ref: '#/components/responses/platformsVersions200'
+          $ref: 'components/responses.yaml#/components/responses/platformsVersions200'
         '400':
-          $ref: '#/components/responses/400'
+          $ref: 'components/responses.yaml#/components/responses/400'
       tags:
         - 'Stats: platforms'
   /v1/stats/platforms/{name}/browsers:
     parameters:
-      - $ref: '#/components/parameters/platformName'
+      - $ref: 'components/parameters.yaml#/components/parameters/platformName'
     get:
       summary: List top platform browsers
       operationId: listTopPlatformBrowsers
       description: |
         Returns browsers ordered by their percentage share on all requests on the specified platform.
       parameters:
-        - $ref: '#/components/parameters/continent'
-        - $ref: '#/components/parameters/country'
-        - $ref: '#/components/parameters/periodStatic'
-        - $ref: '#/components/parameters/limit'
-        - $ref: '#/components/parameters/page'
+        - $ref: 'components/parameters.yaml#/components/parameters/continent'
+        - $ref: 'components/parameters.yaml#/components/parameters/country'
+        - $ref: 'components/parameters.yaml#/components/parameters/periodStatic'
+        - $ref: 'components/parameters.yaml#/components/parameters/limit'
+        - $ref: 'components/parameters.yaml#/components/parameters/page'
       responses:
         '200':
-          $ref: '#/components/responses/platformBrowsers200'
+          $ref: 'components/responses.yaml#/components/responses/platformBrowsers200'
         '400':
-          $ref: '#/components/responses/400'
+          $ref: 'components/responses.yaml#/components/responses/400'
       tags:
         - 'Stats: platforms'
   /v1/stats/platforms/{name}/countries:
     parameters:
-      - $ref: '#/components/parameters/platformName'
+      - $ref: 'components/parameters.yaml#/components/parameters/platformName'
     get:
       summary: List top platform countries
       operationId: listTopPlatformCountries
       description: |
         Returns countries ordered by the market share of the specified platform.
       parameters:
-        - $ref: '#/components/parameters/continent'
-        - $ref: '#/components/parameters/country'
-        - $ref: '#/components/parameters/periodStatic'
-        - $ref: '#/components/parameters/limit'
-        - $ref: '#/components/parameters/page'
+        - $ref: 'components/parameters.yaml#/components/parameters/continent'
+        - $ref: 'components/parameters.yaml#/components/parameters/country'
+        - $ref: 'components/parameters.yaml#/components/parameters/periodStatic'
+        - $ref: 'components/parameters.yaml#/components/parameters/limit'
+        - $ref: 'components/parameters.yaml#/components/parameters/page'
       responses:
         '200':
-          $ref: '#/components/responses/platformCountries200'
+          $ref: 'components/responses.yaml#/components/responses/platformCountries200'
         '400':
-          $ref: '#/components/responses/400'
+          $ref: 'components/responses.yaml#/components/responses/400'
       tags:
         - 'Stats: platforms'
   /v1/stats/platforms/{name}/versions:
     parameters:
-      - $ref: '#/components/parameters/platformName'
+      - $ref: 'components/parameters.yaml#/components/parameters/platformName'
     get:
       summary: List top platform versions
       operationId: listTopPlatformVersions
       description: |
         Returns the platform versions ordered by their market share.
       parameters:
-        - $ref: '#/components/parameters/continent'
-        - $ref: '#/components/parameters/country'
-        - $ref: '#/components/parameters/periodStatic'
-        - $ref: '#/components/parameters/limit'
-        - $ref: '#/components/parameters/page'
+        - $ref: 'components/parameters.yaml#/components/parameters/continent'
+        - $ref: 'components/parameters.yaml#/components/parameters/country'
+        - $ref: 'components/parameters.yaml#/components/parameters/periodStatic'
+        - $ref: 'components/parameters.yaml#/components/parameters/limit'
+        - $ref: 'components/parameters.yaml#/components/parameters/page'
       responses:
         '200':
-          $ref: '#/components/responses/platformVersions200'
+          $ref: 'components/responses.yaml#/components/responses/platformVersions200'
         '400':
-          $ref: '#/components/responses/400'
+          $ref: 'components/responses.yaml#/components/responses/400'
       tags:
         - 'Stats: platforms'
   /v1/stats/platforms/{name}/versions/{version}/countries:
     parameters:
-      - $ref: '#/components/parameters/platformName'
-      - $ref: '#/components/parameters/platformVersion'
+      - $ref: 'components/parameters.yaml#/components/parameters/platformName'
+      - $ref: 'components/parameters.yaml#/components/parameters/platformVersion'
     get:
       summary: List top platform version countries
       operationId: listTopPlatformVersionCountries
       description: |
         Returns countries ordered by the market share of the specified platform version.
       parameters:
-        - $ref: '#/components/parameters/continent'
-        - $ref: '#/components/parameters/country'
-        - $ref: '#/components/parameters/periodStatic'
-        - $ref: '#/components/parameters/limit'
-        - $ref: '#/components/parameters/page'
+        - $ref: 'components/parameters.yaml#/components/parameters/continent'
+        - $ref: 'components/parameters.yaml#/components/parameters/country'
+        - $ref: 'components/parameters.yaml#/components/parameters/periodStatic'
+        - $ref: 'components/parameters.yaml#/components/parameters/limit'
+        - $ref: 'components/parameters.yaml#/components/parameters/page'
       responses:
         '200':
-          $ref: '#/components/responses/platformVersionCountries200'
+          $ref: 'components/responses.yaml#/components/responses/platformVersionCountries200'
         '400':
-          $ref: '#/components/responses/400'
+          $ref: 'components/responses.yaml#/components/responses/400'
       tags:
         - 'Stats: platforms'
   /v1/stats/proxies/{name}:
     parameters:
-      - $ref: '#/components/parameters/proxyName'
+      - $ref: 'components/parameters.yaml#/components/parameters/proxyName'
     get:
       summary: Get proxy stats
       operationId: getProxyStats
       description: |
         Returns daily usage stats for the proxy.
       parameters:
-        - $ref: '#/components/parameters/period'
+        - $ref: 'components/parameters.yaml#/components/parameters/period'
       responses:
         '200':
-          $ref: '#/components/responses/proxyStats200'
+          $ref: 'components/responses.yaml#/components/responses/proxyStats200'
         '400':
-          $ref: '#/components/responses/400'
+          $ref: 'components/responses.yaml#/components/responses/400'
       tags:
         - 'Stats: proxies'
   /v1/stats/proxies/{name}/files:
     parameters:
-      - $ref: '#/components/parameters/proxyName'
+      - $ref: 'components/parameters.yaml#/components/parameters/proxyName'
     get:
       summary: List top proxy files
       operationId: listTopProxyFiles
@@ -4537,15 +969,15 @@ paths:
 
         Returns stats for the most popular proxy files.
       parameters:
-        - $ref: '#/components/parameters/by'
-        - $ref: '#/components/parameters/period'
-        - $ref: '#/components/parameters/limit'
-        - $ref: '#/components/parameters/page'
+        - $ref: 'components/parameters.yaml#/components/parameters/by'
+        - $ref: 'components/parameters.yaml#/components/parameters/period'
+        - $ref: 'components/parameters.yaml#/components/parameters/limit'
+        - $ref: 'components/parameters.yaml#/components/parameters/page'
       responses:
         '200':
-          $ref: '#/components/responses/topProxyFiles200'
+          $ref: 'components/responses.yaml#/components/responses/topProxyFiles200'
         '400':
-          $ref: '#/components/responses/400'
+          $ref: 'components/responses.yaml#/components/responses/400'
       tags:
         - 'Stats: proxies'
       x-badges:
@@ -4553,19 +985,19 @@ paths:
           label: Experimental
   /v1/lookup/hash/{hash}:
     parameters:
-      - $ref: '#/components/parameters/hash'
+      - $ref: 'components/parameters.yaml#/components/parameters/hash'
     get:
       summary: Get file metadata from file hash
       operationId: lookupFileHash
-      description:
+      description: |
         Allows a reverse lookup of a file at the CDN by its hash. Works only for files which were accessed at least once.
         If there are multiple files with the same hash, only the one which was accessed first via the CDN is returned.
       responses:
         '200':
-          $ref: '#/components/responses/lookupHash200'
+          $ref: 'components/responses.yaml#/components/responses/lookupHash200'
         '400':
-          $ref: '#/components/responses/400'
+          $ref: 'components/responses.yaml#/components/responses/400'
         '404':
-          $ref: '#/components/responses/404'
+          $ref: 'components/responses.yaml#/components/responses/404'
       tags:
         - Lookup

@@ -1,10 +1,16 @@
 const _ = require('lodash');
 const Ajv = require('ajv');
 const SwaggerParser = require('@apidevtools/swagger-parser');
+const openApiCore = require('@redocly/openapi-core');
 const betterAjvErrors = require('better-ajv-errors').default;
 
 module.exports = async ({ specPath, ajvBodyOptions = {}, ajvHeadersOptions = {} }) => {
-	let refs = await SwaggerParser.resolve(specPath);
+	let bundled = await openApiCore.bundle({
+		ref: specPath,
+		config: await openApiCore.createConfig('apis:'),
+	});
+
+	let refs = await SwaggerParser.resolve(bundled.bundle.parsed);
 	let spec = refs.get(refs.paths()[0]);
 	let specPaths = Object.keys(spec.paths).map((path) => {
 		return {

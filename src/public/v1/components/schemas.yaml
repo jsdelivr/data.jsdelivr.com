@@ -1,0 +1,1218 @@
+components:
+  schemas:
+    BadgeType:
+      type: string
+      enum:
+        - hits
+        - rank
+        - type-rank
+      default: hits
+    BrowserName:
+      type: string
+      description: Browser name.
+    BrowserVersion:
+      type: string
+      description: Browser version. `Unknown` if the version couldn't be determined.
+    CountryCode:
+      type: string
+      description: An ISO 3166-1 alpha-2 country code.
+    PlatformName:
+      type: string
+      description: Platform name. `Other` if the platform couldn't be determined.
+    PlatformVersion:
+      type: string
+      description: Platform version. `Unknown` if the version couldn't be determined.
+    PlatformVersionName:
+      type: string
+      description: Platform version name. Empty for platforms that do not have named versions.
+    HitsTotal:
+      type: integer
+      description: The number of hits in the selected period.
+    BandwidthTotal:
+      type: integer
+      description: The bandwidth in bytes in the selected period.
+    NullableInteger:
+      type:
+        - integer
+        - 'null'
+    NullableNumber:
+      type:
+        - number
+        - 'null'
+    PackageMetadata:
+      allOf:
+        - $ref: '#/components/schemas/PackageTypeName'
+        - type: object
+          properties:
+            tags:
+              type: object
+              description: An object mapping dist-tags to version numbers. Always empty for GitHub repos.
+            versions:
+              type: array
+              description: A list of all versions sorted in descending order.
+              items:
+                type: object
+                properties:
+                  version:
+                    type: string
+                  links:
+                    type: object
+                    properties:
+                      self:
+                        type: string
+                        description: A link to metadata for this version.
+                      entrypoints:
+                        type: string
+                        description: A link to entry point information for this version. Only for npm packages.
+                      stats:
+                        type: string
+                        description: A link to stats for this version.
+                    required:
+                      - self
+                      - stats
+                required:
+                  - version
+                  - links
+            links:
+              type: object
+              properties:
+                stats:
+                  type: string
+                  description: A link to stats for this package.
+              required:
+                - stats
+          required:
+            - tags
+            - versions
+            - links
+    PackageResolved:
+      allOf:
+        - $ref: '#/components/schemas/PackageTypeName'
+        - type: object
+          properties:
+            version:
+              type:
+                - string
+                - 'null'
+              description: The resolved version or `null` if there is no matching version.
+            links:
+              type: object
+              properties:
+                self:
+                  type: string
+                  description: A link to this resource.
+                entrypoints:
+                  type: string
+                  description: A link to entry point information for this version. Only for npm packages.
+                stats:
+                  type: string
+                  description: A link to stats for this version.
+          required:
+            - version
+            - links
+    PackageVersionMetadata:
+      allOf:
+        - $ref: '#/components/schemas/PackageTypeName'
+        - type: object
+          properties:
+            version:
+              type: string
+            default:
+              type:
+                - string
+                - 'null'
+              description: A path to the default file in the package. `null` for GitHub repos or if no default file is set.
+            files:
+              oneOf:
+                - $ref: '#/components/schemas/PackageVersionMetadataTreeFiles'
+                - $ref: '#/components/schemas/PackageVersionMetadataFlatFiles'
+            links:
+              type: object
+              properties:
+                stats:
+                  type: string
+                  description: A link to stats for this package version.
+              required:
+                - stats
+          required:
+            - type
+            - name
+            - version
+            - default
+            - files
+    PackageVersionMetadataTreeFiles:
+      type: array
+      title: PackageVersionMetadataTreeFiles
+      items:
+        oneOf:
+          - type: object
+            title: DirectoryItem
+            properties:
+              type:
+                type: string
+                const: directory
+              name:
+                type: string
+                description: The directory name.
+              files:
+                $ref: '#/components/schemas/PackageVersionMetadataTreeFiles'
+            required:
+              - type
+              - name
+              - files
+          - type: object
+            title: FileItem
+            properties:
+              type:
+                type: string
+                const: file
+              name:
+                type: string
+                description: The filename.
+              hash:
+                type: string
+                description: A base64-encoded sha256 of file contents.
+              size:
+                type: integer
+                description: The file size in bytes.
+            required:
+              - type
+              - name
+              - hash
+              - size
+    PackageVersionMetadataFlatFiles:
+      title: PackageVersionMetadataFlatFiles
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+            description: An absolute file path within the package.
+          hash:
+            type: string
+            description: A base64-encoded sha256 of file contents.
+          size:
+            type: integer
+            description: The file size in bytes.
+        required:
+          - name
+          - hash
+          - size
+    PackageEntrypoint:
+      type: object
+      properties:
+        file:
+          type: string
+        guessed:
+          type: boolean
+          description: |
+            A flag that indicates how the entry point was resolved:
+              - `false` based on trusted package metadata
+              - `true` based on our heuristics
+      required:
+        - file
+        - guessed
+    PackageEntrypoints:
+      type: object
+      properties:
+        entrypoints:
+          type: object
+          properties:
+            css:
+              $ref: '#/components/schemas/PackageEntrypoint'
+            js:
+              $ref: '#/components/schemas/PackageEntrypoint'
+    Periods:
+      type: array
+      items:
+        type: object
+        properties:
+          period:
+            type: string
+            description: The period date in `YYYY` or `YYYY-MM` format.
+          periodType:
+            type: string
+            description: The period type.
+            enum:
+              - s-month
+              - s-quarter
+              - s-year
+          links:
+            type: object
+            description: An object with links to all stats that are available in this period.
+            properties:
+              browsers:
+                type: string
+                description: A link to browser stats for this period.
+              network:
+                type: string
+                description: A link to network stats for this period.
+              packages:
+                type: string
+                description: A link to package stats for this period.
+              platforms:
+                type: string
+                description: A link to platform stats for this period.
+              proxies:
+                type: string
+                description: A link to proxy stats for this period.
+        required:
+          - period
+          - periodType
+          - links
+    PrevDescription:
+      description: |
+        The stats for previous period.
+        In case the periods have a different number of days (which happens with calendar months), the values are automatically adjusted.
+    StatsWithPrev:
+      type: object
+      properties:
+        hits:
+          $ref: '#/components/schemas/HitsTotal'
+        bandwidth:
+          $ref: '#/components/schemas/BandwidthTotal'
+        prev:
+          allOf:
+            - $ref: '#/components/schemas/PrevDescription'
+            - type: object
+              properties:
+                hits:
+                  type: integer
+                bandwidth:
+                  type: integer
+              required:
+                - hits
+                - bandwidth
+      required:
+        - hits
+        - bandwidth
+        - prev
+    TopPackages:
+      type: array
+      items:
+        allOf:
+          - $ref: '#/components/schemas/PackageTypeName'
+          - $ref: '#/components/schemas/StatsWithPrev'
+          - type: object
+            properties:
+              links:
+                type: object
+                properties:
+                  self:
+                    type: string
+                    description: A link to detailed stats for this package.
+                  versions:
+                    type: string
+                    description: A link to top versions stats for this package.
+                required:
+                  - self
+                  - versions
+            required:
+              - links
+    PackageTypeName:
+      type: object
+      properties:
+        type:
+          type: string
+        name:
+          type: string
+      required:
+        - type
+        - name
+    DateHitsStats:
+      type: object
+      description: A breakdown of the hits by date. The object keys are in `YYYY-MM-DD` format.
+      additionalProperties:
+        x-key-pattern: <YYYY-MM-DD>
+        type: integer
+      propertyNames:
+        pattern: '^\d{4}-\d{2}-\d{2}$'
+    DateBandwidthStats:
+      type: object
+      description: A breakdown of the bandwidth by date. The object keys are in `YYYY-MM-DD` format.
+      additionalProperties:
+        x-key-pattern: <YYYY-MM-DD>
+        type: integer
+      propertyNames:
+        pattern: '^\d{4}-\d{2}-\d{2}$'
+    DateHitsStatsExtended:
+      type: object
+      description: A breakdown of the hits by date. The object keys are in `YYYY-MM-DD` format.
+      additionalProperties:
+        x-key-pattern: <YYYY-MM-DD>
+        type: object
+        properties:
+          total:
+            type: integer
+        required:
+          - total
+      propertyNames:
+        pattern: '^\d{4}-\d{2}-\d{2}$'
+    DateBandwidthStatsExtended:
+      type: object
+      description: A breakdown of the bandwidth by date. The object keys are in `YYYY-MM-DD` format.
+      additionalProperties:
+        x-key-pattern: <YYYY-MM-DD>
+        type: object
+        properties:
+          total:
+            type: integer
+        required:
+          - total
+      propertyNames:
+        pattern: '^\d{4}-\d{2}-\d{2}$'
+    TotalDateHitsStats:
+      type: object
+      properties:
+        total:
+          $ref: '#/components/schemas/HitsTotal'
+        dates:
+          $ref: '#/components/schemas/DateHitsStats'
+      required:
+        - total
+        - dates
+    TotalDateBandwidthStats:
+      type: object
+      properties:
+        total:
+          $ref: '#/components/schemas/BandwidthTotal'
+        dates:
+          $ref: '#/components/schemas/DateBandwidthStats'
+      required:
+        - total
+        - dates
+    TotalDateHitsStatsExtended:
+      type: object
+      properties:
+        total:
+          $ref: '#/components/schemas/HitsTotal'
+        dates:
+          $ref: '#/components/schemas/DateHitsStatsExtended'
+      required:
+        - total
+        - dates
+    Provider:
+      type: object
+      properties:
+        code:
+          type: string
+          description: A two letter provider code.
+        name:
+          type: string
+          description: Provider name.
+      required:
+        - code
+        - name
+    Country:
+      type: object
+      properties:
+        code:
+          $ref: '#/components/schemas/CountryCode'
+        name:
+          type: string
+          description: Country name.
+      required:
+        - code
+        - name
+    TotalDateBandwidthStatsExtended:
+      type: object
+      properties:
+        total:
+          $ref: '#/components/schemas/BandwidthTotal'
+        dates:
+          $ref: '#/components/schemas/DateBandwidthStatsExtended'
+      required:
+        - total
+        - dates
+    PackageStats:
+      type: object
+      properties:
+        hits:
+          allOf:
+            - type: object
+              properties:
+                rank:
+                  $ref: '#/components/schemas/NullableInteger'
+                  description: The number of packages with more hits. `null` if the package doesn't have any hits.
+                typeRank:
+                  $ref: '#/components/schemas/NullableInteger'
+                  description: The number of packages of the same type (gh/npm) with more hits. `null` if the package doesn't have any hits.
+            - $ref: '#/components/schemas/TotalDateHitsStats'
+            - type: object
+              properties:
+                prev:
+                  allOf:
+                    - $ref: '#/components/schemas/PrevDescription'
+                    - type: object
+                      properties:
+                        rank:
+                          $ref: '#/components/schemas/NullableInteger'
+                        typeRank:
+                          $ref: '#/components/schemas/NullableInteger'
+                        total:
+                          type: integer
+                      required:
+                        - rank
+                        - typeRank
+                        - total
+              required:
+                - rank
+                - typeRank
+                - prev
+        bandwidth:
+          allOf:
+            - type: object
+              properties:
+                rank:
+                  $ref: '#/components/schemas/NullableInteger'
+                  description: The number of packages with more bandwidth. `null` if the package doesn't have any bandwidth.
+                typeRank:
+                  $ref: '#/components/schemas/NullableInteger'
+                  description: The number of packages of the same type (gh/npm) with more bandwidth. `null` if the package doesn't have any bandwidth.
+            - $ref: '#/components/schemas/TotalDateBandwidthStats'
+            - type: object
+              properties:
+                prev:
+                  allOf:
+                    - $ref: '#/components/schemas/PrevDescription'
+                    - type: object
+                      properties:
+                        rank:
+                          $ref: '#/components/schemas/NullableInteger'
+                        typeRank:
+                          $ref: '#/components/schemas/NullableInteger'
+                        total:
+                          type: integer
+                      required:
+                        - rank
+                        - typeRank
+                        - total
+              required:
+                - rank
+                - typeRank
+                - prev
+        links:
+          type: object
+          properties:
+            versions:
+              type: string
+              description: A link to top versions stats for this package.
+          required:
+            - versions
+      required:
+        - hits
+        - bandwidth
+        - links
+    PackageVersionStats:
+      type: object
+      properties:
+        hits:
+          $ref: '#/components/schemas/TotalDateHitsStats'
+        bandwidth:
+          $ref: '#/components/schemas/TotalDateBandwidthStats'
+        links:
+          type: object
+          properties:
+            self:
+              type: string
+              description: A link to detailed stats for this version.
+            files:
+              type: string
+              description: A link to top files stats for this version.
+          required:
+            - self
+            - files
+      required:
+        - hits
+        - bandwidth
+        - links
+    TopPackageVersions:
+      type: array
+      items:
+        allOf:
+          - type: object
+            properties:
+              type:
+                type: string
+                description: Identifies whether this is a regular `version` (release), a `commit`, or a `branch`. Always `version` for npm packages.
+                enum:
+                  - branch
+                  - commit
+                  - version
+              version:
+                type: string
+                description: The version identifier.
+            required:
+              - type
+              - version
+          - $ref: '#/components/schemas/PackageVersionStats'
+    TopPackageVersionFiles:
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+            description: An absolute file path within the package.
+          hits:
+            $ref: '#/components/schemas/TotalDateHitsStats'
+          bandwidth:
+            $ref: '#/components/schemas/TotalDateBandwidthStats'
+        required:
+          - name
+          - hits
+          - bandwidth
+    PrevTotal:
+      allOf:
+        - $ref: '#/components/schemas/PrevDescription'
+        - type: object
+          properties:
+            total:
+              type: integer
+          required:
+            - total
+    PrevTotalWrapped:
+      type: object
+      properties:
+        prev:
+          $ref: '#/components/schemas/PrevTotal'
+      required:
+        - prev
+    NetworkStats:
+      type: object
+      properties:
+        hits:
+          type: object
+          description: |
+            Network-wide hits stats.
+          properties:
+            total:
+              $ref: '#/components/schemas/HitsTotal'
+            providers:
+              type: array
+              description: |
+                A breakdown of the hits by provider. The providers are sorted by hits in descending order.
+              items:
+                allOf:
+                  - $ref: '#/components/schemas/Provider'
+                  - $ref: '#/components/schemas/TotalDateHitsStatsExtended'
+                  - $ref: '#/components/schemas/PrevTotalWrapped'
+            prev:
+              $ref: '#/components/schemas/PrevTotal'
+          required:
+            - total
+            - providers
+            - prev
+        bandwidth:
+          type: object
+          description: |
+            Network-wide bandwidth stats.
+          properties:
+            total:
+              $ref: '#/components/schemas/BandwidthTotal'
+            providers:
+              type: array
+              description: |
+                A breakdown of the bandwidth by provider. The providers are sorted by bandwidth in descending order.
+              items:
+                allOf:
+                  - $ref: '#/components/schemas/Provider'
+                  - $ref: '#/components/schemas/TotalDateBandwidthStatsExtended'
+                  - $ref: '#/components/schemas/PrevTotalWrapped'
+            prev:
+              $ref: '#/components/schemas/PrevTotal'
+          required:
+            - total
+            - providers
+            - prev
+      required:
+        - hits
+        - bandwidth
+    NetworkContentStats:
+      type: object
+      properties:
+        hits:
+          type: object
+          description: |
+            Network-wide hits stats.
+          properties:
+            total:
+              type: integer
+            packages:
+              allOf:
+                - description: |
+                    Stats for package requests.
+                - $ref: '#/components/schemas/TotalDateHitsStatsExtended'
+                - $ref: '#/components/schemas/PrevTotalWrapped'
+            proxies:
+              allOf:
+                - description: |
+                    Stats for custom proxy endpoint requests.
+                - $ref: '#/components/schemas/TotalDateHitsStatsExtended'
+                - $ref: '#/components/schemas/PrevTotalWrapped'
+            other:
+              allOf:
+                - description: |
+                    Stats for other requests that don't fall into any other category.
+                - $ref: '#/components/schemas/TotalDateHitsStatsExtended'
+                - $ref: '#/components/schemas/PrevTotalWrapped'
+            prev:
+              $ref: '#/components/schemas/PrevTotal'
+          required:
+            - total
+            - packages
+            - proxies
+            - other
+            - prev
+        bandwidth:
+          type: object
+          description: |
+            Network-wide bandwidth stats.
+          properties:
+            total:
+              type: integer
+            packages:
+              allOf:
+                - description: |
+                    Stats for package requests.
+                - $ref: '#/components/schemas/TotalDateBandwidthStatsExtended'
+                - $ref: '#/components/schemas/PrevTotalWrapped'
+            proxies:
+              allOf:
+                - description: |
+                    Stats for custom proxy endpoint requests.
+                - $ref: '#/components/schemas/TotalDateBandwidthStatsExtended'
+                - $ref: '#/components/schemas/PrevTotalWrapped'
+            other:
+              allOf:
+                - description: |
+                    Stats for other requests that don't fall into any other category.
+                - $ref: '#/components/schemas/TotalDateBandwidthStatsExtended'
+                - $ref: '#/components/schemas/PrevTotalWrapped'
+            prev:
+              $ref: '#/components/schemas/PrevTotal'
+          required:
+            - total
+            - packages
+            - proxies
+            - other
+            - prev
+      required:
+        - hits
+        - bandwidth
+    NetworkCountryStats:
+      type: object
+      properties:
+        hits:
+          type: object
+          description: |
+            Network-wide hits stats.
+          properties:
+            total:
+              $ref: '#/components/schemas/HitsTotal'
+            countries:
+              type: array
+              description: |
+                A breakdown of the hits by country. The countries are sorted by hits in descending order.
+              items:
+                allOf:
+                  - $ref: '#/components/schemas/Country'
+                  - type: object
+                    properties:
+                      total:
+                        type: integer
+                      providers:
+                        type: array
+                        description: |
+                          A breakdown of the country hits by provider. The providers are sorted by hits in descending order.
+                        items:
+                          allOf:
+                            - $ref: '#/components/schemas/Provider'
+                            - type: object
+                              properties:
+                                total:
+                                  type: integer
+                              required:
+                                - total
+                      prev:
+                        $ref: '#/components/schemas/PrevTotal'
+                    required:
+                      - total
+                      - providers
+                      - prev
+            prev:
+              $ref: '#/components/schemas/PrevTotal'
+          required:
+            - total
+            - countries
+            - prev
+        bandwidth:
+          type: object
+          description: |
+            Network-wide bandwidth stats.
+          properties:
+            total:
+              $ref: '#/components/schemas/BandwidthTotal'
+            countries:
+              type: array
+              description: |
+                A breakdown of the bandwidth by country. The countries are sorted by bandwidth in descending order.
+              items:
+                allOf:
+                  - $ref: '#/components/schemas/Country'
+                  - type: object
+                    properties:
+                      total:
+                        type: integer
+                      providers:
+                        type: array
+                        description: |
+                          A breakdown of the country bandwidth by provider. The providers are sorted by bandwidth in descending order.
+                        items:
+                          allOf:
+                            - $ref: '#/components/schemas/Provider'
+                            - type: object
+                              properties:
+                                total:
+                                  type: integer
+                              required:
+                                - total
+                      prev:
+                        $ref: '#/components/schemas/PrevTotal'
+                    required:
+                      - total
+                      - providers
+                      - prev
+            prev:
+              $ref: '#/components/schemas/PrevTotal'
+          required:
+            - total
+            - countries
+            - prev
+      required:
+        - hits
+        - bandwidth
+    TopBrowsers:
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            $ref: '#/components/schemas/BrowserName'
+          share:
+            type: number
+            description: Market share of the browser.
+          prev:
+            $ref: '#/components/schemas/PrevShare'
+          links:
+            type: object
+            properties:
+              countries:
+                type: string
+                description: A link to country stats for this browser.
+              platforms:
+                type: string
+                description: A link to platform stats for this browser.
+              versions:
+                type: string
+                description: A link to version stats for this browser.
+            required:
+              - platforms
+              - versions
+        required:
+          - name
+          - share
+          - prev
+          - links
+    TopBrowsersVersions:
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            $ref: '#/components/schemas/BrowserName'
+          version:
+            $ref: '#/components/schemas/BrowserVersion'
+          share:
+            type: number
+            description: Market share of the browser version.
+          prev:
+            $ref: '#/components/schemas/PrevShare'
+          links:
+            type: object
+            properties:
+              countries:
+                type: string
+                description: A link to country stats for this browser version.
+        required:
+          - name
+          - version
+          - share
+          - prev
+          - links
+    TopBrowserCountries:
+      type: array
+      items:
+        type: object
+        properties:
+          country:
+            $ref: '#/components/schemas/CountryCode'
+          share:
+            type: number
+            description: Market share of the browser within the country.
+          prev:
+            $ref: '#/components/schemas/PrevShare'
+          links:
+            type: object
+            properties:
+              browsers:
+                type: string
+                description: A link to browser stats for this country.
+              platforms:
+                type: string
+                description: A link to platform stats for this country.
+            required:
+              - browsers
+              - platforms
+        required:
+          - country
+          - share
+          - prev
+          - links
+    TopBrowserPlatforms:
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            $ref: '#/components/schemas/PlatformName'
+          share:
+            type: number
+            description: Percentage share of the platform on all requests by the specified browser.
+          prev:
+            $ref: '#/components/schemas/PrevShare'
+          links:
+            type: object
+            properties:
+              browsers:
+                type: string
+                description: A link to browser stats for this platform.
+              countries:
+                type: string
+                description: A link to country stats for this platform.
+              versions:
+                type: string
+                description: A link to versions stats for this platform.
+            required:
+              - browsers
+              - versions
+        required:
+          - name
+          - share
+          - prev
+          - links
+    TopBrowserVersions:
+      type: array
+      items:
+        type: object
+        properties:
+          version:
+            $ref: '#/components/schemas/BrowserVersion'
+          share:
+            type: number
+            description: Market share of the browser version.
+          prev:
+            $ref: '#/components/schemas/PrevShare'
+          links:
+            type: object
+            properties:
+              countries:
+                type: string
+                description: A link to country stats for this browser version.
+        required:
+          - version
+          - share
+          - prev
+          - links
+    TopBrowserVersionCountries:
+      type: array
+      items:
+        type: object
+        properties:
+          country:
+            $ref: '#/components/schemas/CountryCode'
+          share:
+            type: number
+            description: Market share of the browser version within the country.
+          prev:
+            $ref: '#/components/schemas/PrevShare'
+          links:
+            type: object
+            properties:
+              browsers:
+                type: string
+                description: A link to browser stats for this country.
+              platforms:
+                type: string
+                description: A link to platform stats for this country.
+            required:
+              - browsers
+              - platforms
+        required:
+          - country
+          - share
+          - prev
+          - links
+    TopPlatforms:
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            $ref: '#/components/schemas/PlatformName'
+          share:
+            type: number
+            description: Market share of the platform.
+          prev:
+            $ref: '#/components/schemas/PrevShare'
+          links:
+            type: object
+            properties:
+              browsers:
+                type: string
+                description: A link to browser stats for this browser.
+              countries:
+                type: string
+                description: A link to country stats for this platform.
+              versions:
+                type: string
+                description: A link to version stats for this platform.
+            required:
+              - browsers
+              - versions
+        required:
+          - name
+          - share
+          - prev
+          - links
+    TopPlatformsVersions:
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            $ref: '#/components/schemas/PlatformName'
+          version:
+            $ref: '#/components/schemas/PlatformVersion'
+          versionName:
+            $ref: '#/components/schemas/PlatformVersionName'
+          share:
+            type: number
+            description: Market share of the platform version.
+          prev:
+            $ref: '#/components/schemas/PrevShare'
+          links:
+            type: object
+            properties:
+              countries:
+                type: string
+                description: A link to country stats for this platform version.
+        required:
+          - name
+          - version
+          - versionName
+          - share
+          - prev
+          - links
+    TopPlatformBrowsers:
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            $ref: '#/components/schemas/BrowserName'
+          share:
+            type: number
+            description: Percentage share of the browser on all requests on the specified platform.
+          prev:
+            $ref: '#/components/schemas/PrevShare'
+          links:
+            type: object
+            properties:
+              countries:
+                type: string
+                description: A link to country stats for this platform.
+              platforms:
+                type: string
+                description: A link to platform stats for this browser.
+              versions:
+                type: string
+                description: A link to versions stats for this platform.
+            required:
+              - platforms
+              - versions
+        required:
+          - name
+          - share
+          - prev
+          - links
+    TopPlatformCountries:
+      type: array
+      items:
+        type: object
+        properties:
+          country:
+            $ref: '#/components/schemas/CountryCode'
+          share:
+            type: number
+            description: Market share of the platform within the country.
+          prev:
+            $ref: '#/components/schemas/PrevShare'
+          links:
+            type: object
+            properties:
+              browsers:
+                type: string
+                description: A link to browser stats for this country.
+              platforms:
+                type: string
+                description: A link to platform stats for this country.
+            required:
+              - browsers
+              - platforms
+        required:
+          - country
+          - share
+          - prev
+          - links
+    TopPlatformVersions:
+      type: array
+      items:
+        type: object
+        properties:
+          version:
+            $ref: '#/components/schemas/PlatformVersion'
+          versionName:
+            $ref: '#/components/schemas/PlatformVersionName'
+          share:
+            type: number
+            description: Market share of the platform version.
+          prev:
+            $ref: '#/components/schemas/PrevShare'
+          links:
+            type: object
+            properties:
+              countries:
+                type: string
+                description: A link to country stats for this platform version.
+        required:
+          - version
+          - versionName
+          - share
+          - prev
+          - links
+    TopPlatformVersionCountries:
+      type: array
+      items:
+        type: object
+        properties:
+          country:
+            $ref: '#/components/schemas/CountryCode'
+          share:
+            type: number
+            description: Market share of the platform version within the country.
+          prev:
+            $ref: '#/components/schemas/PrevShare'
+          links:
+            type: object
+            properties:
+              browsers:
+                type: string
+                description: A link to browser stats for this country.
+              platforms:
+                type: string
+                description: A link to platform stats for this country.
+            required:
+              - browsers
+              - platforms
+        required:
+          - country
+          - share
+          - prev
+          - links
+    PrevShare:
+      type: object
+      description: |
+        The stats for previous period.
+      properties:
+        share:
+          $ref: '#/components/schemas/NullableNumber'
+          description: '`null` if there are no data for the previous period.'
+      required:
+        - share
+    ProxyStats:
+      type: object
+      properties:
+        hits:
+          allOf:
+            - $ref: '#/components/schemas/TotalDateHitsStats'
+            - $ref: '#/components/schemas/PrevTotalWrapped'
+        bandwidth:
+          allOf:
+            - $ref: '#/components/schemas/TotalDateBandwidthStats'
+            - $ref: '#/components/schemas/PrevTotalWrapped'
+        links:
+          type: object
+          properties:
+            files:
+              type: string
+              description: A link to top files stats for this version.
+          required:
+            - files
+      required:
+        - hits
+        - bandwidth
+        - links
+    TopProxyFiles:
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+            description: An absolute file path within the proxy.
+          hits:
+            type: object
+            properties:
+              total:
+                $ref: '#/components/schemas/HitsTotal'
+            required:
+              - total
+          bandwidth:
+            type: object
+            properties:
+              total:
+                $ref: '#/components/schemas/BandwidthTotal'
+            required:
+              - total
+        required:
+          - name
+          - hits
+          - bandwidth
+    LookupHash:
+      type: object
+      properties:
+        type:
+          type: string
+        name:
+          type: string
+        version:
+          type: string
+        file:
+          type: string
+      required:
+        - type
+        - name
+        - version
+        - file

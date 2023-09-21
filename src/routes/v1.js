@@ -2,6 +2,7 @@ const Router = require('koa-router');
 const isSha = require('is-hexdigest');
 const koaElasticUtils = require('elastic-apm-utils').koa;
 const Joi = require('joi');
+const openApiCore = require('@redocly/openapi-core');
 
 const validate = require('../middleware/validate');
 const schema = require('./schemas/v1');
@@ -74,6 +75,23 @@ router.param('structure', async (value, ctx, next) => {
 });
 
 const routes = {
+	'/spec.yaml': {
+		handlers: [
+			async (ctx) => {
+				let bundled = await openApiCore.bundle({
+					ref: 'src/public/v1/spec.yaml',
+					config: await openApiCore.createConfig('apis:'),
+				});
+
+				ctx.body = openApiCore.stringifyYaml(bundled.bundle.parsed, {
+					lineWidth: -1,
+				});
+
+				ctx.maxAge = ctx.app.env === 'production' ? 600 : 0;
+			},
+		],
+	},
+
 	'/lookup/hash/:hash': {
 		handlers: [
 			async (ctx) => {

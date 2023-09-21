@@ -1,0 +1,646 @@
+components:
+  responses:
+    ghMetadata200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/PackageMetadata'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/ghMetadata'
+    ghResolved200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/PackageResolved'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/ghResolved'
+            '1':
+              $ref: 'examples.yaml#/components/examples/ghResolvedNull'
+    ghVersionMetadata200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/PackageVersionMetadata'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/ghVersionMetadataTree'
+            '1':
+              $ref: 'examples.yaml#/components/examples/ghVersionMetadataFlat'
+    npmMetadata200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/PackageMetadata'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/npmMetadata'
+    npmMetadataScoped200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/PackageMetadata'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/npmMetadataScoped'
+    npmResolved200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/PackageResolved'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/npmResolved'
+            '1':
+              $ref: 'examples.yaml#/components/examples/npmResolvedNull'
+    npmResolvedScoped200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/PackageResolved'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/npmResolvedScoped'
+            '1':
+              $ref: 'examples.yaml#/components/examples/npmResolvedScopedNull'
+    npmVersionMetadata200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/PackageVersionMetadata'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/npmVersionMetadataTree'
+            '1':
+              $ref: 'examples.yaml#/components/examples/npmVersionMetadataFlat'
+    npmVersionMetadataScoped200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/PackageVersionMetadata'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/npmVersionMetadataScopedTree'
+            '1':
+              $ref: 'examples.yaml#/components/examples/npmVersionMetadataScopedFlat'
+    npmVersionEntrypoints200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/PackageEntrypoints'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/npmVersionEntrypoints'
+    npmVersionEntrypointsScoped200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/PackageEntrypoints'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/npmVersionEntrypointsScoped'
+    periods200:
+      description: Success
+      headers:
+        Link:
+          $ref: 'headers.yaml#/components/headers/Link'
+        X-Total-Count:
+          $ref: 'headers.yaml#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: 'headers.yaml#/components/headers/X-Total-Pages'
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/Periods'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/periods'
+    topPackages200:
+      description: Success
+      headers:
+        Link:
+          $ref: 'headers.yaml#/components/headers/Link'
+        X-Total-Count:
+          $ref: 'headers.yaml#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: 'headers.yaml#/components/headers/X-Total-Pages'
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/TopPackages'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/topPackages'
+    ghPackageStats200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/PackageStats'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/ghPackageStats'
+    ghTopRepoVersions200:
+      description: Success
+      headers:
+        Link:
+          $ref: 'headers.yaml#/components/headers/Link'
+        X-Total-Count:
+          $ref: 'headers.yaml#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: 'headers.yaml#/components/headers/X-Total-Pages'
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/TopPackageVersions'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/ghTopRepoVersions'
+    ghRepoVersionStats200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/PackageVersionStats'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/ghRepoVersionStats'
+    ghTopRepoVersionFiles200:
+      description: Success
+      headers:
+        Link:
+          $ref: 'headers.yaml#/components/headers/Link'
+        X-Total-Count:
+          $ref: 'headers.yaml#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: 'headers.yaml#/components/headers/X-Total-Pages'
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/TopPackageVersionFiles'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/ghTopRepoVersionFiles'
+    ghRepoBadge200:
+      description: Success
+      content:
+        image/svg+xml:
+          examples:
+            '0':
+              description: |
+                ![](https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap/badge?period=week)
+                ![](https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap/badge?period=week&type=rank)
+                ![](https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap/badge?period=week&type=type-rank)
+              externalValue: https://data.jsdelivr.com/v1/stats/packages/gh/twbs/bootstrap/badge?period=week
+    npmPackageStats200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/PackageStats'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/npmPackageStats'
+    npmPackageStatsScoped200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/PackageStats'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/npmPackageStatsScoped'
+    npmTopPackageVersions200:
+      description: Success
+      headers:
+        Link:
+          $ref: 'headers.yaml#/components/headers/Link'
+        X-Total-Count:
+          $ref: 'headers.yaml#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: 'headers.yaml#/components/headers/X-Total-Pages'
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/TopPackageVersions'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/npmTopPackageVersions'
+    npmTopPackageVersionsScoped200:
+      description: Success
+      headers:
+        Link:
+          $ref: 'headers.yaml#/components/headers/Link'
+        X-Total-Count:
+          $ref: 'headers.yaml#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: 'headers.yaml#/components/headers/X-Total-Pages'
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/TopPackageVersions'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/npmTopPackageVersionsScoped'
+    npmPackageVersionStats200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/PackageVersionStats'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/npmPackageVersionStats'
+    npmPackageVersionStatsScoped200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/PackageVersionStats'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/npmPackageVersionStatsScoped'
+    npmTopRepoVersionFiles200:
+      description: Success
+      headers:
+        Link:
+          $ref: 'headers.yaml#/components/headers/Link'
+        X-Total-Count:
+          $ref: 'headers.yaml#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: 'headers.yaml#/components/headers/X-Total-Pages'
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/TopPackageVersionFiles'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/npmTopPackageVersionFiles'
+    npmTopRepoVersionFilesScoped200:
+      description: Success
+      headers:
+        Link:
+          $ref: 'headers.yaml#/components/headers/Link'
+        X-Total-Count:
+          $ref: 'headers.yaml#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: 'headers.yaml#/components/headers/X-Total-Pages'
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/TopPackageVersionFiles'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/npmTopPackageVersionFilesScoped'
+    npmPackageBadge200:
+      description: Success
+      content:
+        image/svg+xml:
+          examples:
+            '0':
+              description: |
+                ![](https://data.jsdelivr.com/v1/stats/packages/npm/jquery/badge?period=week)
+                ![](https://data.jsdelivr.com/v1/stats/packages/npm/jquery/badge?period=week&type=rank)
+                ![](https://data.jsdelivr.com/v1/stats/packages/npm/jquery/badge?period=week&type=type-rank)
+              externalValue: https://data.jsdelivr.com/v1/stats/packages/npm/jquery/badge?period=week
+    npmPackageBadgeScoped200:
+      description: Success
+      content:
+        image/svg+xml:
+          examples:
+            '0':
+              description: |
+                ![](https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core/badge?period=week)
+                ![](https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core/badge?period=week&type=rank)
+                ![](https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core/badge?period=week&type=type-rank)
+              externalValue: https://data.jsdelivr.com/v1/stats/packages/npm/@popperjs/core/badge?period=week
+    networkStats200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/NetworkStats'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/networkStats'
+    networkContentStats200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/NetworkContentStats'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/networkContentStats'
+    networkCountryStats200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/NetworkCountryStats'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/networkCountryStats'
+    browsers200:
+      description: Success
+      headers:
+        Link:
+          $ref: 'headers.yaml#/components/headers/Link'
+        X-Total-Count:
+          $ref: 'headers.yaml#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: 'headers.yaml#/components/headers/X-Total-Pages'
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/TopBrowsers'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/topBrowsers'
+    browsersVersions200:
+      description: Success
+      headers:
+        Link:
+          $ref: 'headers.yaml#/components/headers/Link'
+        X-Total-Count:
+          $ref: 'headers.yaml#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: 'headers.yaml#/components/headers/X-Total-Pages'
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/TopBrowsersVersions'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/topBrowsersVersions'
+    browserCountries200:
+      description: Success
+      headers:
+        Link:
+          $ref: 'headers.yaml#/components/headers/Link'
+        X-Total-Count:
+          $ref: 'headers.yaml#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: 'headers.yaml#/components/headers/X-Total-Pages'
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/TopBrowserCountries'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/topBrowserCountries'
+    browserPlatforms200:
+      description: Success
+      headers:
+        Link:
+          $ref: 'headers.yaml#/components/headers/Link'
+        X-Total-Count:
+          $ref: 'headers.yaml#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: 'headers.yaml#/components/headers/X-Total-Pages'
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/TopBrowserPlatforms'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/topBrowserPlatforms'
+    browserVersions200:
+      description: Success
+      headers:
+        Link:
+          $ref: 'headers.yaml#/components/headers/Link'
+        X-Total-Count:
+          $ref: 'headers.yaml#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: 'headers.yaml#/components/headers/X-Total-Pages'
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/TopBrowserVersions'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/topBrowserVersions'
+    browserVersionCountries200:
+      description: Success
+      headers:
+        Link:
+          $ref: 'headers.yaml#/components/headers/Link'
+        X-Total-Count:
+          $ref: 'headers.yaml#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: 'headers.yaml#/components/headers/X-Total-Pages'
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/TopBrowserVersionCountries'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/topBrowserVersionCountries'
+    platforms200:
+      description: Success
+      headers:
+        Link:
+          $ref: 'headers.yaml#/components/headers/Link'
+        X-Total-Count:
+          $ref: 'headers.yaml#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: 'headers.yaml#/components/headers/X-Total-Pages'
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/TopPlatforms'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/topPlatforms'
+    platformsVersions200:
+      description: Success
+      headers:
+        Link:
+          $ref: 'headers.yaml#/components/headers/Link'
+        X-Total-Count:
+          $ref: 'headers.yaml#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: 'headers.yaml#/components/headers/X-Total-Pages'
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/TopPlatformsVersions'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/topPlatformsVersions'
+    platformBrowsers200:
+      description: Success
+      headers:
+        Link:
+          $ref: 'headers.yaml#/components/headers/Link'
+        X-Total-Count:
+          $ref: 'headers.yaml#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: 'headers.yaml#/components/headers/X-Total-Pages'
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/TopPlatformBrowsers'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/topPlatformBrowsers'
+    platformCountries200:
+      description: Success
+      headers:
+        Link:
+          $ref: 'headers.yaml#/components/headers/Link'
+        X-Total-Count:
+          $ref: 'headers.yaml#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: 'headers.yaml#/components/headers/X-Total-Pages'
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/TopPlatformCountries'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/topPlatformCountries'
+    platformVersions200:
+      description: Success
+      headers:
+        Link:
+          $ref: 'headers.yaml#/components/headers/Link'
+        X-Total-Count:
+          $ref: 'headers.yaml#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: 'headers.yaml#/components/headers/X-Total-Pages'
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/TopPlatformVersions'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/topPlatformVersions'
+    platformVersionCountries200:
+      description: Success
+      headers:
+        Link:
+          $ref: 'headers.yaml#/components/headers/Link'
+        X-Total-Count:
+          $ref: 'headers.yaml#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: 'headers.yaml#/components/headers/X-Total-Pages'
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/TopPlatformVersionCountries'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/topPlatformVersionCountries'
+    proxyStats200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/ProxyStats'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/proxyStats'
+    topProxyFiles200:
+      description: Success
+      headers:
+        Link:
+          $ref: 'headers.yaml#/components/headers/Link'
+        X-Total-Count:
+          $ref: 'headers.yaml#/components/headers/X-Total-Count'
+        X-Total-Pages:
+          $ref: 'headers.yaml#/components/headers/X-Total-Pages'
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/TopProxyFiles'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/topProxyFiles'
+    lookupHash200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/LookupHash'
+          examples:
+            '0':
+              $ref: 'examples.yaml#/components/examples/lookupHash'
+    '400':
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: integer
+              message:
+                type: string
+              links:
+                type: object
+                properties:
+                  documentation:
+                    type: string
+                    description: A link to documentation for this endpoint.
+            required:
+              - status
+              - message
+          examples:
+            json:
+              value:
+                status: 400
+                message: Invalid parameter value...
+                links:
+                  documentation: https://www-jsdelivr-com-pr-400.onrender.com/docs/data.jsdelivr.com
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: integer
+              message:
+                type: string
+            required:
+              - status
+              - message
+          examples:
+            json:
+              value:
+                status: 403
+                message: Package size exceeded the configured limit of 100 MB.
+    '404':
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: integer
+              message:
+                type: string
+            required:
+              - status
+              - message
+          examples:
+            json:
+              value:
+                status: 404
+                message: Couldn't find the requested item...
