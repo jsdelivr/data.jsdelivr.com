@@ -6,7 +6,7 @@ exports.up = async (db) => {
 		table.string('countryIso', 2);
 		table.string('cdn', 2);
 		table.date('date').index();
-		table.integer('hits').unsigned().defaultTo(0).notNullable();
+		table.bigint('hits').unsigned().defaultTo(0).notNullable();
 		table.specificType('bandwidth', 'float').unsigned().defaultTo(0).notNullable();
 		table.primary([ 'cdn', 'countryIso', 'date' ]);
 	});
