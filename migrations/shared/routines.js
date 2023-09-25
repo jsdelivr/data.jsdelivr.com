@@ -4,7 +4,7 @@ const periods = [ [ 1, 'day' ], [ 7, 'week' ], [ 30, 'month' ], [ 90, 'quarter' 
 module.exports = async (db) => {
 	// language=MariaDB
 	await db.schema.raw(dedent`
-		create or replace procedure updateViewTopPackages(aDate date)
+		create or replace procedure updateViewTopPackages(aDate date, rebuildIfExists bool)
 		begin
 			declare exit handler for sqlexception
 				begin
@@ -78,7 +78,7 @@ ${periods.map(period => topPackagesForPeriod(period)).join('\n')}
 
 	// language=MariaDB
 	await db.schema.raw(dedent`
-		create or replace procedure updateViewTopProxies(aDate date)
+		create or replace procedure updateViewTopProxies(aDate date, rebuildIfExists bool)
 		begin
 			declare exit handler for sqlexception
 				begin
@@ -133,7 +133,7 @@ ${periods.map(period => topProxiesForPeriod(period)).join('\n')}
 
 	// language=MariaDB
 	await db.schema.raw(dedent`
-		create or replace procedure updateViewTopProxyFiles(aDate date)
+		create or replace procedure updateViewTopProxyFiles(aDate date, rebuildIfExists bool)
 		begin
 			declare exit handler for sqlexception
 				begin
@@ -187,7 +187,7 @@ ${periods.map(period => topProxiesForPeriod(period)).join('\n')}
 
 	// language=MariaDB
 	await db.schema.raw(dedent`
-		create or replace procedure updateViewNetworkCountries(aDate date)
+		create or replace procedure updateViewNetworkCountries(aDate date, rebuildIfExists bool)
 		begin
 			declare exit handler for sqlexception
 				begin
@@ -241,7 +241,7 @@ ${periods.map(period => countriesForPeriod(period)).join('\n')}
 
 	// language=MariaDB
 	await db.schema.raw(dedent`
-		create or replace procedure updateViewNetworkCdns(aDate date)
+		create or replace procedure updateViewNetworkCdns(aDate date, rebuildIfExists bool)
 		begin
 			declare exit handler for sqlexception
 				begin
@@ -360,7 +360,9 @@ function topPackagesForPeriod ([ days, period ]) {
 	// language=MariaDB
 	return `
 ${dateVarsForPeriod(days, period)}
+	if rebuildIfExists or not exists(select * from view_top_packages where \`date\` = aDate and \`period\` = @period) then
 		call updateViewTopPackagesForPeriod(@period, aDate, @dateFrom, @dateTo, @prevDateFrom, @prevDateTo, true);
+	end if;
 	`;
 }
 
@@ -368,7 +370,9 @@ function topProxiesForPeriod ([ days, period ]) {
 	// language=MariaDB
 	return `
 ${dateVarsForPeriod(days, period)}
+	if rebuildIfExists or not exists(select * from view_top_proxies where \`date\` = aDate and \`period\` = @period) then
 		call updateViewTopProxiesForPeriod(@period, aDate, @dateFrom, @dateTo, @prevDateFrom, @prevDateTo, true);
+	end if;
 	`;
 }
 
@@ -376,7 +380,9 @@ function topProxyFilesForPeriod ([ days, period ]) {
 	// language=MariaDB
 	return `
 ${dateVarsForPeriod(days, period)}
+	if rebuildIfExists or not exists(select * from view_top_proxy_files where \`date\` = aDate and \`period\` = @period) then
 		call updateViewTopProxyFilesForPeriod(@period, aDate, @dateFrom, @dateTo, @prevDateFrom, @prevDateTo, true);
+	end if;
 	`;
 }
 
@@ -384,7 +390,9 @@ function countriesForPeriod ([ days, period ]) {
 	// language=MariaDB
 	return `
 ${dateVarsForPeriod(days, period)}
+	if rebuildIfExists or not exists(select * from view_network_countries where \`date\` = aDate and \`period\` = @period) then
 		call updateViewNetworkCountriesForPeriod(@period, aDate, @dateFrom, @dateTo, @prevDateFrom, @prevDateTo, true);
+	end if;
 	`;
 }
 
@@ -392,6 +400,8 @@ function cdnsForPeriod ([ days, period ]) {
 	// language=MariaDB
 	return `
 ${dateVarsForPeriod(days, period)}
+	if rebuildIfExists or not exists(select * from view_network_cdns where \`date\` = aDate and \`period\` = @period) then
 		call updateViewNetworkCdnsForPeriod(@period, aDate, @dateFrom, @dateTo, @prevDateFrom, @prevDateTo, true);
+	end if;
 	`;
 }

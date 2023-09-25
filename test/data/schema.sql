@@ -32,13 +32,13 @@ group by proxyId, date;
 
 set @date = date('<<DATE>>');
 call analyzeAllTables();
-call updateViewNetworkCountries(@date);
-call updateViewNetworkCdns(@date);
+call updateViewNetworkCountries(@date, true);
+call updateViewNetworkCdns(@date, true);
 call updateViewNetworkPackages(@date);
 call updateViewTopPackageFiles(@date);
-call updateViewTopPackages(@date);
-call updateViewTopProxies(@date);
-call updateViewTopProxyFiles(@date);
+call updateViewTopPackages(@date, true);
+call updateViewTopProxies(@date, true);
+call updateViewTopProxyFiles(@date, true);
 call updateMonthlyViews(@date);
 call updateQuarterlyViews(@date);
 call updateYearlyViews(@date);
