@@ -209,7 +209,7 @@ components:
           "links": { }
         }
     npmVersionMetadataTree:
-      summary: 'structure: true'
+      summary: 'structure: tree'
       value:
         {
           "type": "npm",
@@ -267,7 +267,7 @@ components:
           }
         }
     npmVersionMetadataScopedTree:
-      summary: 'structure: true'
+      summary: 'structure: tree'
       value:
         {
           "type": "npm",
