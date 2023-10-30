@@ -58,11 +58,12 @@ class File extends BaseModel {
 			.first();
 	}
 
-	static async getWithPackages (criteria) {
+	static async getWithPackages (criteria, limit) {
 		return db(this.table)
 			.where(criteria)
 			.join(PackageVersion.table, `${this.table}.packageVersionId`, '=', `${PackageVersion.table}.id`)
 			.join(Package.table, `${PackageVersion.table}.packageId`, '=', `${Package.table}.id`)
+			.limit(limit)
 			.select([ '*', `${File.table}.id as fileId`, `${Package.table}.type as type` ]);
 	}
 
