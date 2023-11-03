@@ -64,7 +64,7 @@ class Jsonpp {
 	/**
 	 * @param {*} value
 	 * @param {function} [replacer]
-	 * @param {string|number} [space
+	 * @param {string|number} [space]
 	 * @returns {string}
 	 */
 	static stringify (value, replacer = (k, v) => v, space) {
