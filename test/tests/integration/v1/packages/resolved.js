@@ -71,6 +71,22 @@ describe('/v1/packages/resolved', () => {
 			});
 	});
 
+	it('GET /v1/packages/npm/jquery/resolved?specifier=*', () => {
+		return chai.request(server)
+			.get('/v1/packages/npm/jquery/resolved?specifier=*')
+			.then((response) => {
+				expect(response).to.have.status(200);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=300, stale-while-revalidate=3600, stale-if-error=86400');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response.body).to.include({ version: '3.2.1' });
+				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
+			});
+	});
+
 	it('GET /v1/packages/npm/jquery/resolved - implicit latest', () => {
 		return chai.request(server)
 			.get('/v1/packages/npm/jquery/resolved')
@@ -130,6 +146,38 @@ describe('/v1/packages/resolved', () => {
 				expect(response).to.have.header('Vary', 'Accept-Encoding');
 				expect(response).to.be.json;
 				expect(response.body).to.include({ version: '3.0.0-rc1' });
+				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
+			});
+	});
+
+	it('GET /v1/packages/npm/jquery/resolved?specifier=<1.8.0 - deprecated versions', () => {
+		return chai.request(server)
+			.get('/v1/packages/npm/jquery/resolved?specifier=<1.8.0')
+			.then((response) => {
+				expect(response).to.have.status(200);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=300, stale-while-revalidate=3600, stale-if-error=86400');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response.body).to.include({ version: '1.0.0' });
+				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
+			});
+	});
+
+	it('GET /v1/packages/npm/package-only-prereleases/resolved', () => {
+		return chai.request(server)
+			.get('/v1/packages/npm/package-only-prereleases/resolved')
+			.then((response) => {
+				expect(response).to.have.status(200);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=300, stale-while-revalidate=3600, stale-if-error=86400');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response.body).to.include({ version: '1.0.0-beta.1' });
 				expect(response).to.matchSnapshot();
 				expect(response).to.matchApiSchema();
 			});
@@ -218,6 +266,22 @@ describe('/v1/packages/resolved', () => {
 	it('GET /v1/packages/gh/jquery/jquery/resolved?specifier=latest', () => {
 		return chai.request(server)
 			.get('/v1/packages/gh/jquery/jquery/resolved?specifier=latest')
+			.then((response) => {
+				expect(response).to.have.status(200);
+				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
+				expect(response).to.have.header('Cache-Control', 'public, max-age=300, stale-while-revalidate=3600, stale-if-error=86400');
+				expect(response).to.have.header('Timing-Allow-Origin', '*');
+				expect(response).to.have.header('Vary', 'Accept-Encoding');
+				expect(response).to.be.json;
+				expect(response.body).to.include({ version: '3.2.1' });
+				expect(response).to.matchSnapshot();
+				expect(response).to.matchApiSchema();
+			});
+	});
+
+	it('GET /v1/packages/gh/jquery/jquery/resolved?specifier=*', () => {
+		return chai.request(server)
+			.get('/v1/packages/gh/jquery/jquery/resolved?specifier=*')
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');

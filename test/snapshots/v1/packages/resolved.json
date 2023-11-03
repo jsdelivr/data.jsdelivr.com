@@ -15,6 +15,17 @@
 			"stats": "http://localhost:4454/v1/stats/packages/npm/jquery@3.2.1"
 		}
 	},
+	"/v1/packages/npm/jquery/resolved?specifier=%3C1.8.0": {
+		"date": "2010-12-31",
+		"type": "npm",
+		"name": "jquery",
+		"version": "1.0.0",
+		"links": {
+			"self": "http://localhost:4454/v1/packages/npm/jquery@1.0.0",
+			"entrypoints": "http://localhost:4454/v1/packages/npm/jquery@1.0.0/entrypoints",
+			"stats": "http://localhost:4454/v1/stats/packages/npm/jquery@1.0.0"
+		}
+	},
 	"/v1/packages/npm/jquery/resolved?specifier=%5E3.0.0-rc1%20%3C3.0.0": {
 		"date": "2010-12-31",
 		"type": "npm",
@@ -24,6 +35,17 @@
 			"self": "http://localhost:4454/v1/packages/npm/jquery@3.0.0-rc1",
 			"entrypoints": "http://localhost:4454/v1/packages/npm/jquery@3.0.0-rc1/entrypoints",
 			"stats": "http://localhost:4454/v1/stats/packages/npm/jquery@3.0.0-rc1"
+		}
+	},
+	"/v1/packages/npm/jquery/resolved?specifier=*": {
+		"date": "2010-12-31",
+		"type": "npm",
+		"name": "jquery",
+		"version": "3.2.1",
+		"links": {
+			"self": "http://localhost:4454/v1/packages/npm/jquery@3.2.1",
+			"entrypoints": "http://localhost:4454/v1/packages/npm/jquery@3.2.1/entrypoints",
+			"stats": "http://localhost:4454/v1/stats/packages/npm/jquery@3.2.1"
 		}
 	},
 	"/v1/packages/npm/jquery/resolved?specifier=3.0.0-rc1": {
@@ -88,6 +110,17 @@
 		"version": null,
 		"links": {}
 	},
+	"/v1/packages/npm/package-only-prereleases/resolved": {
+		"date": "2010-12-31",
+		"type": "npm",
+		"name": "package-only-prereleases",
+		"version": "1.0.0-beta.1",
+		"links": {
+			"self": "http://localhost:4454/v1/packages/npm/package-only-prereleases@1.0.0-beta.1",
+			"entrypoints": "http://localhost:4454/v1/packages/npm/package-only-prereleases@1.0.0-beta.1/entrypoints",
+			"stats": "http://localhost:4454/v1/stats/packages/npm/package-only-prereleases@1.0.0-beta.1"
+		}
+	},
 	"/v1/packages/gh/adobe/source-sans-pro/resolved?specifier=2.020R-ro%2F1.075R-it": {
 		"date": "2010-12-31",
 		"type": "gh",
@@ -106,6 +139,16 @@
 		"links": {
 			"self": "http://localhost:4454/v1/packages/gh/jquery/jquery@3.0.0-rc1",
 			"stats": "http://localhost:4454/v1/stats/packages/gh/jquery/jquery@3.0.0-rc1"
+		}
+	},
+	"/v1/packages/gh/jquery/jquery/resolved?specifier=*": {
+		"date": "2010-12-31",
+		"type": "gh",
+		"name": "jquery/jquery",
+		"version": "3.2.1",
+		"links": {
+			"self": "http://localhost:4454/v1/packages/gh/jquery/jquery@3.2.1",
+			"stats": "http://localhost:4454/v1/stats/packages/gh/jquery/jquery@3.2.1"
 		}
 	},
 	"/v1/packages/gh/jquery/jquery/resolved?specifier=3.0.0-rc1": {

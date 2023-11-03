@@ -32,10 +32,20 @@ class NpmRemoteService extends RemoteService {
 					});
 				}
 
+				let sortedVersionPairs = Object.keys(remoteResource.data.versions)
+					.sort(semver.rcompare)
+					.map(version => [
+						version,
+						{
+							deprecated: remoteResource.data.versions[version].deprecated ? true : undefined,
+							deprecatedReason: remoteResource.data.versions[version].deprecated,
+						},
+					]);
+
 				return Object.assign(remoteResource, {
 					data: {
 						tags: remoteResource.data['dist-tags'],
-						versions: Object.keys(remoteResource.data.versions).sort(semver.rcompare),
+						versions: _.fromPairs(sortedVersionPairs),
 					},
 					headers: _.pick(remoteResource.headers, 'etag', 'last-modified'),
 				});

@@ -47,8 +47,7 @@
 				"dist": {
 					"shasum": "2ae2d661e906c1a01e044a71bb5b2743942183e5",
 					"tarball": "https://registry.npmjs.org/jquery/-/jquery-1.0.0.tgz"
-				},
-				"deprecated": "Versions of the jquery npm package older than 1.9.0 are patched versions that don't work in web browsers. Please upgrade to >=1.11.0."
+				}
 			},
 			"1.5.1": {
 				"name": "jquery",
@@ -7656,6 +7655,13 @@
 	},
 	"/package-without-versions": {
 		"name": "package-without-versions"
+	},
+	"/package-only-prereleases": {
+		"name": "package-only-prereleases",
+		"dist-tags": {},
+		"versions": {
+			"1.0.0-beta.1": {}
+		}
 	},
 	"/@martin-kolarik%2Fbatch-queue": {
 		"_id": "@martin-kolarik/batch-queue",

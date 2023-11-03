@@ -81,6 +81,10 @@ module.exports.mochaGlobalSetup = async () => {
 		.reply(200, upstreamNpmResponses['/package-without-versions']);
 
 	nock('https://registry.npmjs.org')
+		.get('/package-only-prereleases')
+		.reply(200, upstreamNpmResponses['/package-only-prereleases']);
+
+	nock('https://registry.npmjs.org')
 		.get('/@martin-kolarik%2Fbatch-queue')
 		.reply(200, upstreamNpmResponses['/@martin-kolarik%2Fbatch-queue']);
 

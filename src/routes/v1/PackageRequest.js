@@ -1,5 +1,4 @@
 const got = require('got');
-const semver = require('semver');
 const config = require('config');
 const { makeBadge } = require('badge-maker');
 
@@ -18,6 +17,7 @@ const dateRange = require('../utils/dateRange');
 const sumDeep = require('../utils/sumDeep');
 const entrypoint = require('../utils/packageEntrypoint');
 
+const semverResolver = require('../../lib/semver-resolver');
 const NpmRemoteService = require('../../remote-services/NpmRemoteService');
 const GitHubRemoteService = require('../../remote-services/GitHubRemoteService');
 const JsDelivrRemoteService = require('../../remote-services/JsDelivrRemoteService');
@@ -50,7 +50,7 @@ class PackageRequest extends BaseRequest {
 			apmClient.addLabels({ githubRepo: this.params.repo });
 
 			return gitHubRemoteService.usingContext(this.ctx).listTags(this.params.user, this.params.repo).then((response) => {
-				return { tags: {}, versions: response.data };
+				return { tags: {}, versions: _.fromPairs(response.data.map(v => [ v, {}])) };
 			}).catch((error) => {
 				// istanbul ignore next
 				if (error.statusCode === 404) {
@@ -159,16 +159,7 @@ class PackageRequest extends BaseRequest {
 
 	async getResolvedVersion (specifier = 'latest') {
 		return this.getMetadata().then((metadata) => {
-			let versions = metadata.versions.filter(v => semver.valid(v));
-
-			if (metadata.versions.includes(specifier)) {
-				return specifier;
-			} else if (Object.hasOwn(metadata.tags, specifier)) {
-				return metadata.tags[specifier];
-			}
-
-			// "latest" is not actually a range, it's a tag - its equivalent (needed for GitHub sources) is an empty range
-			return semver.maxSatisfying(versions, specifier === 'latest' ? '' : specifier);
+			return semverResolver.resolve(metadata, specifier).version;
 		});
 	}
 
@@ -255,7 +246,8 @@ class PackageRequest extends BaseRequest {
 
 	async handleVersionsDeprecated () {
 		try {
-			this.ctx.body = await this.getMetadata();
+			let metadata = await this.getMetadata();
+			this.ctx.body = { tags: metadata.tags, versions: Object.keys(metadata.versions) };
 			this.ctx.maxAge = v1Config.maxAgeShort;
 			this.ctx.maxStale = v1Config.maxStaleShort;
 			this.ctx.maxStaleError = v1Config.maxStaleError;
@@ -284,7 +276,7 @@ class PackageRequest extends BaseRequest {
 							stats: routes['/stats/packages/:type/:name@:version'].getName(this.params),
 						})
 						.withValues(this.params)
-						.build(pkg.versions.map(version => ({ version }))),
+						.build(Object.keys(pkg.versions).map(version => ({ version }))),
 				});
 
 			this.ctx.maxAge = v1Config.maxAgeShort;

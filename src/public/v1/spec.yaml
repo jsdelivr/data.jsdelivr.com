@@ -93,6 +93,7 @@ paths:
       description: |
         Returns the latest version matching `specifier` or `null` if there is no matching version.
         Only valid [semver](https://semver.org/) versions are considered.
+        Stable versions are prioritized over pre-releases.
       parameters:
         - $ref: 'components/parameters.yaml#/components/parameters/specifier'
       responses:
@@ -165,6 +166,8 @@ paths:
       operationId: getResolvedPackageVersion
       description: |
         Returns the latest version matching `specifier` or `null` if there is no matching version.
+        Non-deprecated versions are prioritized over deprecated ones,
+        and stable versions are prioritized over pre-releases.
       parameters:
         - $ref: 'components/parameters.yaml#/components/parameters/specifier'
       responses:
@@ -183,6 +186,8 @@ paths:
       operationId: getResolvedScopedPackageVersion
       description: |
         Returns the latest version matching `specifier` or `null` if there is no matching version.
+        Non-deprecated versions are prioritized over deprecated ones,
+        and stable versions are prioritized over pre-releases.
       parameters:
         - $ref: 'components/parameters.yaml#/components/parameters/specifier'
       responses:
