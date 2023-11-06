@@ -14,6 +14,7 @@ module.exports = {
 			'Cross-Origin-Resource-Policy': 'cross-origin',
 			'Timing-Allow-Origin': '*',
 			'Vary': 'Accept-Encoding',
+			'X-Robots-Tag': 'noindex',
 		},
 	},
 	db: {
