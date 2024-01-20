@@ -216,6 +216,7 @@ components:
         The time period for which the stats are returned. Can be one of the following:
           1. A static period, which represents:
              - `s-month` the last calendar month,
+             - `s-quarter` the last calendar quarter,
              - `s-year` the last calendar year.
           2. A valid date in:
              - `YYYY-MM` format for a specific month,
