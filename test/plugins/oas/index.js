@@ -126,6 +126,12 @@ module.exports = async ({ specPath, ajvBodyOptions = {}, ajvHeadersOptions = {} 
 					return;
 				}
 
+				let headerOptional = dereference(responseHeadersSpec, header, 'required') !== true;
+
+				if (response.headers[header.toLowerCase()] === undefined && headerOptional) {
+					return;
+				}
+
 				new chai.Assertion(response.headers, `expected the response to have a header ${header}`).to.have.property(header.toLowerCase());
 
 				let responseHeaderValue = response.headers[header.toLowerCase()];
