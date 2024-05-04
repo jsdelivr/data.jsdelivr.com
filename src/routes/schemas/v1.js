@@ -100,6 +100,9 @@ const primitives = {
 	specifier:
 		Joi.string(),
 
+	statsBadgeStyle:
+		Joi.valid('square', 'rounded').default('square'),
+
 	statsBadgeType:
 		Joi.valid('hits', 'rank', 'type-rank').default('hits'),
 

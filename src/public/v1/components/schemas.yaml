@@ -1,5 +1,11 @@
 components:
   schemas:
+    BadgeStyle:
+      type: string
+      enum:
+        - square
+        - rounded
+      default: square
     BadgeType:
       type: string
       enum:

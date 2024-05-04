@@ -116,6 +116,13 @@ components:
       examples:
         version:
           value: '2.2.1'
+    badgeStyle:
+      in: query
+      name: style
+      description: |
+        The badge style. See the examples.
+      schema:
+        $ref: 'schemas.yaml#/components/schemas/BadgeStyle'
     badgeType:
       in: query
       name: type

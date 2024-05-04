@@ -425,6 +425,7 @@ paths:
       parameters:
         - $ref: 'components/parameters.yaml#/components/parameters/badgeType'
         - $ref: 'components/parameters.yaml#/components/parameters/period'
+        - $ref: 'components/parameters.yaml#/components/parameters/badgeStyle'
       responses:
         '200':
           $ref: 'components/responses.yaml#/components/responses/ghRepoBadge200'
@@ -613,6 +614,7 @@ paths:
       parameters:
         - $ref: 'components/parameters.yaml#/components/parameters/badgeType'
         - $ref: 'components/parameters.yaml#/components/parameters/period'
+        - $ref: 'components/parameters.yaml#/components/parameters/badgeStyle'
       responses:
         '200':
           $ref: 'components/responses.yaml#/components/responses/npmPackageBadge200'
@@ -632,6 +634,7 @@ paths:
       parameters:
         - $ref: 'components/parameters.yaml#/components/parameters/badgeType'
         - $ref: 'components/parameters.yaml#/components/parameters/period'
+        - $ref: 'components/parameters.yaml#/components/parameters/badgeStyle'
       responses:
         '200':
           $ref: 'components/responses.yaml#/components/responses/npmPackageBadgeScoped200'

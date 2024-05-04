@@ -311,9 +311,17 @@ components:
           examples:
             '0':
               description: |
+                Default style:
+
                 ![](https://data.jsdelivr.com/v1/stats/packages/npm/jquery/badge?period=week)
                 ![](https://data.jsdelivr.com/v1/stats/packages/npm/jquery/badge?period=week&type=rank)
                 ![](https://data.jsdelivr.com/v1/stats/packages/npm/jquery/badge?period=week&type=type-rank)
+
+                Rounded style:
+
+                ![](https://data.jsdelivr.com/v1/stats/packages/npm/jquery/badge?period=week&style=rounded)
+                ![](https://data.jsdelivr.com/v1/stats/packages/npm/jquery/badge?period=week&type=rank&style=rounded)
+                ![](https://data.jsdelivr.com/v1/stats/packages/npm/jquery/badge?period=week&type=type-rank&style=rounded)
               externalValue: https://data.jsdelivr.com/v1/stats/packages/npm/jquery/badge?period=week
     npmPackageBadgeScoped200:
       description: Success
