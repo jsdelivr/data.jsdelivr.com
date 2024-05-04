@@ -144,6 +144,7 @@ const routes = {
 		handlers: [
 			validate({
 				query: Joi.object({
+					style: schema.statsBadgeStyle,
 					period: schema.periodFloating,
 				}),
 			}),
@@ -174,6 +175,7 @@ const routes = {
 		handlers: [
 			validate({
 				query: Joi.object({
+					style: schema.statsBadgeStyle,
 					period: schema.periodFloating,
 				}),
 			}),
