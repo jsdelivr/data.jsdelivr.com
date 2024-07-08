@@ -22,7 +22,7 @@ module.exports = _.merge(...[ 'development', 'production', 'staging', 'test' ].m
 			seeds: {
 				directory: `./seeds/${environment}`,
 			},
-			acquireConnectionTimeout: 10000,
+			acquireConnectionTimeout: 5000,
 		},
 	};
 }));

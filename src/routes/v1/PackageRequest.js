@@ -120,7 +120,7 @@ class PackageRequest extends BaseRequest {
 		}
 
 		let props = { type: this.params.type, name: this.params.name, version: this.params.version };
-		let packageListing = await PackageListing.find(props);
+		let packageListing = await PackageListing.find(props).catch(() => {});
 
 		if (packageListing) {
 			return this._filesAsJson = packageListing.listing;
