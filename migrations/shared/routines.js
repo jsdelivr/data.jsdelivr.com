@@ -169,16 +169,20 @@ ${periods.map(period => topProxiesForPeriod(period)).join('\n')}
 
 			insert into view_top_proxy_files
 			(period, date, name, filename, hits, bandwidth)
-			select aPeriod, aDate,
-				(select name from proxy where id = proxyId) as name,
-				filename,
-				sum(hits) as hits,
-				sum(bandwidth) as bandwidth
-			from proxy_file
-				join proxy_file_hits on proxy_file.id = proxy_file_hits.proxyFileId
-			where date >= aDateFrom and date <= aDateTo
-			group by proxy_file.id
-			order by hits desc;
+			select aPeriod, aDate, name, filename, hits, bandwidth
+			from (
+				select (select name from proxy where id = proxyId) as name,
+					filename,
+					sum(hits) as hits,
+					sum(bandwidth) as bandwidth,
+					row_number() over (partition by proxyId order by hits desc) as hitsRank,
+					row_number() over (partition by proxyId order by bandwidth desc) as bandwidthRank
+				from proxy_file
+					     join proxy_file_hits on proxy_file.id = proxy_file_hits.proxyFileId
+				where date >= aDateFrom and date <= aDateTo
+				group by proxy_file.id
+			) t
+			where hitsRank <= 10000 or bandwidthRank <= 10000;
 
 			call logProcedureCallEnd();
 			commit;
