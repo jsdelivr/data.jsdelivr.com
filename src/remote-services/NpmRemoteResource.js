@@ -1,5 +1,5 @@
 const RemoteResource = require('./RemoteResource');
-const oneWeek = 7 * 24 * 60 * 60 * 1000;
+const twoWeeks = 14 * 24 * 60 * 60 * 1000;
 const baseTtl = 5 * 60 * 1000;
 
 class NpmRemoteResource extends RemoteResource {
@@ -13,7 +13,7 @@ class NpmRemoteResource extends RemoteResource {
 
 	get defaultTtlInternalStore () {
 		if ([ 200, 404 ].includes(this.statusCode)) {
-			return oneWeek;
+			return twoWeeks;
 		}
 
 		return super.defaultTtlInternalStore;
