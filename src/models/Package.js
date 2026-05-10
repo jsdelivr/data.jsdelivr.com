@@ -163,8 +163,7 @@ class Package extends BaseCacheModel {
 
 		return this.paginate(sql, limit, page, [ `type`, `name`, `hits`, `bandwidth`, `prevHits`, `prevBandwidth` ], ({ type, name, hits, bandwidth, ...prev }) => {
 			return {
-				type, name, hits, bandwidth,
-				prev: { hits: prev.prevHits, bandwidth: prev.prevBandwidth },
+				type, name, hits, bandwidth, prev: { hits: prev.prevHits, bandwidth: prev.prevBandwidth },
 			};
 		});
 	}
