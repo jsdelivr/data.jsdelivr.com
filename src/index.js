@@ -89,6 +89,21 @@ server.use(async (ctx, next) => {
 server.use(koaCompress({ br: { params: { [zlib.constants.BROTLI_PARAM_QUALITY]: 4 } } }));
 
 /**
+ * Send response size to APM.
+ */
+if (global.apmClient) {
+	server.use(async (ctx, next) => {
+		await next();
+
+		let responseSize = ctx.response.length;
+
+		if (typeof responseSize === 'number') {
+			apmClient.addLabels({ responseSize }, false);
+		}
+	});
+}
+
+/**
  * ETag support.
  */
 server.use(koaConditionalGet());
