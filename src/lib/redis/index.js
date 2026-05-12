@@ -1,5 +1,5 @@
 const zlib = require('zlib');
-const redis = require('redis');
+const { createClient: createRedisClient, RESP_TYPES } = require('redis');
 const config = require('config');
 const redisConfig = config.get('redis');
 const redisLog = logger.scope('redis');
@@ -8,16 +8,16 @@ module.exports = createClient();
 module.exports.createClient = createClient;
 
 if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test') {
-	module.exports.once('ready', () => module.exports.flushallAsync().catch(() => {}));
+	module.exports.once('ready', () => module.exports.flushAll().catch(() => {}));
 }
 
 if (process.env.NO_CACHE) {
 	setInterval(() => {
-		module.exports.flushallAsync().catch(() => {});
+		module.exports.flushAll().catch(() => {});
 	}, 1000);
 }
 
-redis.RedisClient.prototype.compress = async function (value) {
+async function compress (value) {
 	value = String(value);
 
 	// Don't compress if the data is less than 1024 bytes.
@@ -27,40 +27,55 @@ redis.RedisClient.prototype.compress = async function (value) {
 	}
 
 	return zlib.deflateAsync(value);
-};
+}
 
-redis.RedisClient.prototype.decompress = async function (value) {
+async function decompress (value) {
 	if (!value) {
 		return value;
-	} else if (value[0] === 0) {
-		return value.toString('utf8', 1);
+	} else if (value[0] === 0 || value.charCodeAt?.(0) === 0) {
+		return Buffer.isBuffer(value) ? value.toString('utf8', 1) : value.substring(1);
 	}
 
 	return (await zlib.inflateAsync(value)).toString();
-};
+}
 
-redis.RedisClient.prototype.getCompressedAsync = async function (key) {
-	return this.decompress(await this.getAsync(Buffer.from(key, 'utf8')));
-};
+async function getCompressedAsync (key) {
+	return this.decompress(await this.get(Buffer.from(key, 'utf8')));
+}
 
-redis.RedisClient.prototype.setCompressedAsync = async function (key, value, ...other) {
-	return this.setAsync(key, await this.compress(value), ...other);
-};
+async function setCompressedAsync (key, value, options) {
+	return this.set(key, await this.compress(value), options);
+}
+
+function patchClient (client) {
+	client.compress = compress;
+	client.decompress = decompress;
+	client.getCompressedAsync = getCompressedAsync;
+	client.setCompressedAsync = setCompressedAsync;
+
+	return client;
+}
 
 function createClient () {
-	let client = redis.createClient({
-		db: redisConfig.db,
-		host: redisConfig.host,
-		port: redisConfig.port,
+	let client = createRedisClient({
+		database: redisConfig.db,
 		password: redisConfig.password,
-		return_buffers: true, // needed for compressed pub/sub
-		enable_offline_queue: false,
+		socket: _.pickBy({
+			host: redisConfig.host,
+			port: Number(redisConfig.port) || undefined,
+		}),
+		disableOfflineQueue: true,
+	}).withTypeMapping({
+		[RESP_TYPES.BLOB_STRING]: Buffer, // needed for compressed cache and pub/sub values
 	});
 
 	client
 		.on('ready', () => redisLog.debug('Connection ready.'))
 		.on('reconnecting', info => redisLog.debug('Reconnecting.', _.pick(info, [ 'attempt', 'delay' ])))
 		.on('error', error => redisLog.error('Connection error.', error));
+
+	patchClient(client);
+	client.connect().catch(() => {});
 
 	return client;
 }

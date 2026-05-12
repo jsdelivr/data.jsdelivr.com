@@ -34,8 +34,17 @@ class PromiseLock {
 		this.pubClient = createRedisClient();
 		this.subClient = createRedisClient();
 
-		this.subClient.on('message', (channel, message) => this.onMessage(channel, message));
-		this.subClient.on('ready', () => this.subClient.subscribe(this.channel));
+		let subscribe = () => {
+			if (!this.subClient.isReady) {
+				return this.subClient.once('ready', subscribe);
+			}
+
+			this.subClient.subscribe(this.channel, (message, channel) => {
+				this.onMessage(channel, message);
+			}, true).catch(() => setTimeout(subscribe, 1000));
+		};
+
+		subscribe();
 	}
 
 	/**
@@ -46,7 +55,7 @@ class PromiseLock {
 	async delete (key) {
 		this.pendingR.delete(key);
 		this.pendingL.delete(key);
-		return redis.delAsync(this.getRedisKey(key));
+		return redis.del(this.getRedisKey(key));
 	}
 
 	/**
@@ -161,8 +170,8 @@ class PromiseLock {
 	 */
 	async getLockOrValue (key, maxAge) {
 		let rKey = this.getRedisKey(key);
-		let result = await redis.multi().set(rKey, '\x00{"s":0}\n', 'PX', maxAge, 'NX').get(rKey).execAsync();
-		return result[0] === null ? PromiseLock.parse(await redis.decompress(result[1])) : null;
+		let result = await redis.set(rKey, '\x00{"s":0}\n', { PX: maxAge, NX: true, GET: true });
+		return result === null ? null : PromiseLock.parse(await redis.decompress(result));
 	}
 
 	/**
@@ -207,20 +216,20 @@ class PromiseLock {
 	 */
 	async notify (message) {
 		let key = this.getRedisKey(message.key);
-		let ttl = await redis.pttlAsync(key);
+		let ttl = await redis.pTTL(key);
 		let res = await redis.compress(await PromiseLock.serialize(message));
 
 		// Store result in redis so that we can resolve future promises.
 		// istanbul ignore else
 		if (ttl > 0) {
-			await redis.setAsync(key, res, 'PX', ttl, 'XX');
+			await redis.set(key, res, { PX: ttl, XX: true });
 		} else if (ttl === -1) {
-			await redis.setAsync(key, res, 'XX');
+			await redis.set(key, res, { XX: true });
 		}
 
 		// Resolve existing promises in other processes and this process.
 		let args = [ this.channel, res ];
-		this.pubClient.publish(...args);
+		this.pubClient.publish(...args).catch(() => {});
 		this.onMessage(...args);
 	}
 
@@ -298,7 +307,7 @@ class ScopedLock {
 	}
 
 	refresh (key, maxAge) {
-		return redis.pexpireAsync(module.exports.promiseLock.getRedisKey(`${this.scope}/${key}`), maxAge);
+		return redis.pExpire(module.exports.promiseLock.getRedisKey(`${this.scope}/${key}`), maxAge);
 	}
 }
 

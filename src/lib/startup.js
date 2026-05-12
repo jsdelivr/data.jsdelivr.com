@@ -26,12 +26,9 @@ global.log = logger.scope('global');
 
 const fs = require('fs-extra');
 const zlib = require('zlib');
-const redis = require('redis');
 
 Bluebird.promisifyAll(fs);
 Bluebird.promisifyAll(zlib);
-Bluebird.promisifyAll(redis.RedisClient.prototype);
-Bluebird.promisifyAll(redis.Multi.prototype);
 
 global.redis = require('./redis');
 global.db = require('./db');

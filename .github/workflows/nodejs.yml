@@ -14,25 +14,25 @@ jobs:
         node-version: [ 24.x ]
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Setup Redis
         uses: zhulik/redis-action@1.1.0
         with:
-          redis version: 5
+          redis version: 8
 
       - name: Shutdown Ubuntu MySQL
         run: sudo service mysql stop
 
       - name: Setup MariaDB
-        uses: getong/mariadb-action@v1.1
+        uses: getong/mariadb-action@v1.11
         with:
           mariadb version: '10.5.19'
           mysql root password: ''
           mysql database: 'jsdelivr-stats-test'
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ matrix.node-version }}
 

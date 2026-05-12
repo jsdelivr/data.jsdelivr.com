@@ -1,5 +1,6 @@
 const { TTLCache: TTL } = require('@isaacs/ttlcache');
 const redis = require('../lib/redis');
+const { RESP_TYPES } = require('redis');
 const JSONPP = require('../lib/jsonpp');
 
 const ArrayStream = require('../lib/array-stream');
@@ -31,7 +32,7 @@ class PromiseCacheShared {
 	 */
 	async delete (key) {
 		this.pendingL.delete(key);
-		return redis.delAsync(this.getRedisKey(key));
+		return redis.del(this.getRedisKey(key));
 	}
 
 	/**
@@ -106,8 +107,15 @@ class PromiseCacheShared {
 	 */
 	async getCachedValue (key) {
 		let rKey = this.getRedisKey(key);
-		let result = await redis.multi().get(rKey).pttl(rKey).execAsync();
-		return result[0] ? [ await PromiseCacheShared.parse(await redis.decompress(result[0])), result[1] ] : [ null ];
+		let replies = await Promise.all([
+			redis.sendCommand([ 'MULTI' ]),
+			redis.get(rKey),
+			redis.pTTL(rKey),
+			redis.sendCommand([ 'EXEC' ], { typeMapping: { [RESP_TYPES.BLOB_STRING]: Buffer } }),
+		]);
+		let [ value, ttl ] = replies[3];
+
+		return value ? [ await PromiseCacheShared.parse(await redis.decompress(value)), ttl ] : [ null ];
 	}
 
 	/**
@@ -133,7 +141,7 @@ class PromiseCacheShared {
 		let key = this.getRedisKey(message.key);
 		let res = await redis.compress(await PromiseCacheShared.serialize(message));
 
-		await redis.setAsync(key, res, 'PX', maxAge);
+		await redis.set(key, res, { PX: maxAge });
 	}
 
 	/**
