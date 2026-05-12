@@ -1,5 +1,6 @@
 const { TTLCache: TTL } = require('@isaacs/ttlcache');
 const redis = require('../lib/redis');
+const { RESP_TYPES } = require('redis');
 const JSONPP = require('../lib/jsonpp');
 
 const ArrayStream = require('../lib/array-stream');
@@ -106,7 +107,14 @@ class PromiseCacheShared {
 	 */
 	async getCachedValue (key) {
 		let rKey = this.getRedisKey(key);
-		let [ value, ttl ] = await redis.multi().get(rKey).pTTL(rKey).exec();
+		let replies = await Promise.all([
+			redis.sendCommand([ 'MULTI' ]),
+			redis.get(rKey),
+			redis.pTTL(rKey),
+			redis.sendCommand([ 'EXEC' ], { typeMapping: { [RESP_TYPES.BLOB_STRING]: Buffer } }),
+		]);
+		let [ value, ttl ] = replies[3];
+
 		return value ? [ await PromiseCacheShared.parse(await redis.decompress(value)), ttl ] : [ null ];
 	}
 
