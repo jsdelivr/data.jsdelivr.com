@@ -106,7 +106,7 @@ class PromiseCacheShared {
 	 */
 	async getCachedValue (key) {
 		let rKey = this.getRedisKey(key);
-		let [ value, ttl ] = await redis.multi().get(rKey).pTTL(rKey).execAsPipeline();
+		let [ value, ttl ] = await redis.multi().get(rKey).pTTL(rKey).exec();
 		return value ? [ await PromiseCacheShared.parse(await redis.decompress(value)), ttl ] : [ null ];
 	}
 
