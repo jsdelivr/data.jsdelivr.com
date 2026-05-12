@@ -1,4 +1,4 @@
-const TTL = require('@isaacs/ttlcache');
+const { TTLCache: TTL } = require('@isaacs/ttlcache');
 const pTimeout = require('p-timeout');
 const redis = require('../redis');
 const createRedisClient = require('../redis').createClient;

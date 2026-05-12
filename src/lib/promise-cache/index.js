@@ -1,4 +1,4 @@
-const TTL = require('@isaacs/ttlcache');
+const { TTLCache: TTL } = require('@isaacs/ttlcache');
 
 class PromiseCache {
 	constructor ({ ttl }) {
@@ -6,7 +6,7 @@ class PromiseCache {
 	}
 
 	delete (key) {
-		this.ttl.del(key);
+		this.ttl.delete(key);
 	}
 
 	get (key, fn) {

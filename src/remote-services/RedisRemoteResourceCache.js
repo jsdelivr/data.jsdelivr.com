@@ -1,4 +1,4 @@
-const TTL = require('@isaacs/ttlcache');
+const { TTLCache: TTL } = require('@isaacs/ttlcache');
 const redis = require('../lib/redis');
 const JSONPP = require('../lib/jsonpp');
 

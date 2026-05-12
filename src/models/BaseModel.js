@@ -123,7 +123,7 @@ class BaseModel {
 			let found = await this.constructor.find(this.unique);
 
 			if (!found) {
-				throw new Error(`Error 23000 thrown but then not found: ${e.message}`);
+				throw new Error(`Error 23000 thrown but then not found: ${e.message}`, { cause: e });
 			}
 
 			Object.assign(this, found);
@@ -136,7 +136,7 @@ class BaseModel {
 	async isValid () {
 		try {
 			await this.validate();
-		} catch (e) {
+		} catch {
 			return false;
 		}
 

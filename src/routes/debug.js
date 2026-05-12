@@ -8,7 +8,7 @@ let commit = 'git not available';
 
 try {
 	commit = childProcess.execSync('git log -1 "--format=%cd - commit %H"', { encoding: 'utf8' }).trim();
-} catch (e) {}
+} catch {}
 
 module.exports = async (ctx) => {
 	if (!serverConfig.debugToken) {

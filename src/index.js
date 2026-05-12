@@ -5,7 +5,7 @@ require('./lib/startup');
 
 const zlib = require('zlib');
 const config = require('config');
-const signalExit = require('signal-exit');
+const { onExit } = require('signal-exit');
 const Koa = require('koa');
 const koaStatic = require('koa-static');
 const koaFavicon = require('koa-favicon');
@@ -246,7 +246,7 @@ if (require.main === module) {
 	/**
 	 * Always log before exit.
 	 */
-	signalExit((code, signal) => {
+	onExit((code, signal) => {
 		log[code === 0 ? 'info' : 'fatal']('Web server stopped.', { code, signal });
 	});
 
