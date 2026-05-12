@@ -126,7 +126,7 @@ module.exports.mochaGlobalSetup = async () => {
 	nock('https://registry.npmjs.org')
 		.get(/.*/)
 		.times(Infinity)
-		.reply(504);
+		.reply(418);
 
 	// entrypoint tests
 	nock('https://cdn.jsdelivr.net')
