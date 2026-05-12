@@ -31,7 +31,7 @@ class PromiseCacheShared {
 	 */
 	async delete (key) {
 		this.pendingL.delete(key);
-		return redis.delAsync(this.getRedisKey(key));
+		return redis.del(this.getRedisKey(key));
 	}
 
 	/**
@@ -106,8 +106,8 @@ class PromiseCacheShared {
 	 */
 	async getCachedValue (key) {
 		let rKey = this.getRedisKey(key);
-		let result = await redis.multi().get(rKey).pttl(rKey).execAsync();
-		return result[0] ? [ await PromiseCacheShared.parse(await redis.decompress(result[0])), result[1] ] : [ null ];
+		let [ value, ttl ] = await redis.multi().get(rKey).pTTL(rKey).execAsPipeline();
+		return value ? [ await PromiseCacheShared.parse(await redis.decompress(value)), ttl ] : [ null ];
 	}
 
 	/**
@@ -133,7 +133,7 @@ class PromiseCacheShared {
 		let key = this.getRedisKey(message.key);
 		let res = await redis.compress(await PromiseCacheShared.serialize(message));
 
-		await redis.setAsync(key, res, 'PX', maxAge);
+		await redis.set(key, res, { PX: maxAge });
 	}
 
 	/**

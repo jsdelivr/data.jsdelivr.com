@@ -19,7 +19,7 @@ jobs:
       - name: Setup Redis
         uses: zhulik/redis-action@1.1.0
         with:
-          redis version: 5
+          redis version: 8
 
       - name: Shutdown Ubuntu MySQL
         run: sudo service mysql stop
