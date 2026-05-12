@@ -126,7 +126,7 @@
 		"test:mocha:updateNoPrune": "cross-env UPDATE_EXISTING_SNAPSHOTS=1 mocha",
 		"test:portman": "start-test 'npm run start:test' http://localhost:4454/heartbeat 'npm run test:portman:create && npm run test:portman:run' 2> /dev/null || E=$?; rm -rf tmp; exit $E;",
 		"test:portman:create": "mkdir -p tmp && redocly bundle src/public/v1/spec.yaml > tmp/spec.yaml && portman --cliOptionsFile test/tests/contract/portman-cli.json",
-		"test:portman:run": "newman run tmp/converted/jsDelivrApi.json -e test/tests/contract/newman-env.json --ignore-redirects"
+		"test:portman:run": "newman run tmp/converted/jsdelivrApi.json -e test/tests/contract/newman-env.json --ignore-redirects"
 	},
 	"lint-staged": {
 		"*.js": "eslint --cache --fix"
