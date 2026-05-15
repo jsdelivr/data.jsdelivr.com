@@ -10,7 +10,7 @@ Hi! We're really excited that you're interested in contributing to data.jsdelivr
 
 ## Repo Setup
 
-To get started, you need to have Node.js 24, MariaDB 10.5, and Redis installed and configured.
+To get started, you need to have Node.js 22 or 24, MariaDB 10.5, and Redis installed and configured.
 
 The default configuration file is `config/default.cjs`. To change any of the default values, either:
 - create a file `config/local.cjs` with the necessary changes; the options set in this file will be merged with `config/default.cjs` so `config/local.cjs` should only contain options that you actually changed,
@@ -21,15 +21,17 @@ Run the following commands:
 ```bash
 npm install # install dependencies
 npm run migrate # setup the database
-npm start # start the app
+npm run start:dev # start the app
 ```
 
 Configuration for IntelliJ based IDEs is also available in this repository. If you use one, it is a good idea to add https://github.com/MartinKolarik/idea-config as a [read-only settings repository](https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html#share-more-settings-through-read-only-repo). It contains code style and inspection profiles used by this project.
 
 ## Testing
 
--   JS code style: `npm run lint`
--   Integration tests: `npm run mocha`
+-   JS code style: `npm run lint:js`
+-   OpenAPI docs style: `npm run lint:docs`
+-   Unit and integration tests: `npm run test:mocha`
+-   Contract tests: `npm run test:portman`
 -   All combined: `npm test`
 
 Most IDEs have plugins integrating the used linter (eslint), including support for automated fixes on save.
