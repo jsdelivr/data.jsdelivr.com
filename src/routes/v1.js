@@ -1,5 +1,6 @@
 import Router from 'koa-router';
 import isSha from 'is-hexdigest';
+import apmClient from 'elastic-apm-node';
 import koaElasticUtilsModule from 'elastic-apm-utils';
 const koaElasticUtils = koaElasticUtilsModule.koa;
 
@@ -16,7 +17,7 @@ const router = new Router({ strict: true, sensitive: true });
 /**
  * More accurate APM route names.
  */
-router.use(koaElasticUtils.middleware(global.apmClient, { prefix: '/v1' }));
+router.use(koaElasticUtils.middleware(apmClient, { prefix: '/v1' }));
 
 /**
  * Validate hash param.

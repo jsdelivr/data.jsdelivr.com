@@ -1,6 +1,7 @@
 import got from 'got';
 import config from 'config';
 import { makeBadge } from 'badge-maker';
+import apmClient from 'elastic-apm-node';
 import isSemverStatic from 'is-semver-static';
 import NumberAbbreviate from 'number-abbreviate';
 const number = new NumberAbbreviate([ 'k', 'M', 'B', 'T' ]);

@@ -2,6 +2,7 @@ import HttpLinkHeader from 'http-link-header';
 import { Octokit } from '@octokit/rest';
 import vCompare from 'v-compare';
 import config from 'config';
+import apmClient from 'elastic-apm-node';
 import GitHubRemoteResource from './GitHubRemoteResource.js';
 import RemoteService from './RemoteService.js';
 

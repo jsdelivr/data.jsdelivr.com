@@ -116,7 +116,7 @@
 		"lint:js:fix": "eslint --cache . --fix",
 		"migrate": "knex migrate:latest",
 		"prepare": "husky install",
-		"start": "cross-env NODE_ENV=production node src",
+		"start": "cross-env NODE_ENV=production ELASTIC_APM_CONFIG_FILE=elastic-apm-node.cjs node --experimental-loader elastic-apm-node/loader.mjs -r elastic-apm-node/start.js src",
 		"start:dev": "cross-env NODE_ENV=development node src",
 		"start:test": "cross-env NODE_ENV=test node test/setup",
 		"test": "npm run lint && npm run test:mocha && npm run test:portman",
