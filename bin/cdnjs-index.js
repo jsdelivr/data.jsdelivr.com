@@ -1,22 +1,26 @@
 #!/usr/bin/env node
-global._ = require('lodash'); // ¯\_(ツ)_/¯
+import _ from 'lodash';
+global._ = _; // ¯\_(ツ)_/¯
 
-const path = require('path');
-const tar = require('tar-stream');
-const config = require('config');
-const zlib = require('zlib');
-const got = require('got');
-const promiseRetry = require('promise-retry');
-const micromatch = require('micromatch');
-const Bluebird = require('bluebird');
-const pipeline = require('util').promisify(require('stream').pipeline);
+import path from 'path';
+import tar from 'tar-stream';
+import config from 'config';
+import zlib from 'zlib';
+import got from 'got';
+import promiseRetry from 'promise-retry';
+import micromatch from 'micromatch';
+import Bluebird from 'bluebird';
 
-const Logger = require('h-logger2');
-const ElasticWriter = require('h-logger2-elastic');
-const ElasticSearch = require('@elastic/elasticsearch').Client;
+import { promisify } from 'util';
+import { pipeline as streamPipeline } from 'stream';
 
-const db = require('../src/lib/db/index.js');
-const CdnJsPackage = require('../src/models/CdnJsPackage');
+const pipeline = promisify(streamPipeline);
+
+import Logger from 'h-logger2';
+import ElasticWriter from 'h-logger2-elastic';
+import { Client as ElasticSearch } from '@elastic/elasticsearch';
+import db from '../src/lib/db/index.js';
+import CdnJsPackage from '../src/models/CdnJsPackage.js';
 
 const log = (() => {
 	let esClient;
@@ -223,4 +227,3 @@ Bluebird.all([ fetchVersionsList(), fetchExistingPackages() ])
 		log.error(`Error during sync`, error);
 		setTimeout(() => process.exit(1), 2000);
 	});
-

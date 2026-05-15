@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-const got = require('got');
-const Promise = require('bluebird');
+import got from 'got';
+import Promise from 'bluebird';
 const host = 'https://data.jsdelivr.com';
 
 setTimeout(async () => {
