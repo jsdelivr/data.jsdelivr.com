@@ -1,1 +1,1 @@
-module.exports = require('../test/v1');
+export { seed } from '../test/v1.js';

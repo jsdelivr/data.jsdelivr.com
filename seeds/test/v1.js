@@ -1,11 +1,13 @@
-const _ = require('lodash');
-const crypto = require('crypto');
-const Bluebird = require('bluebird');
-const relativeDateUtc = require('relative-day-utc');
-const { listTables } = require('../../src/lib/db/utils');
-const dateRange = require('../../src/routes/utils/dateRange');
-const entrypointTestCases = require('../../test/data/v1/entrypoints.json');
-const countries = Object.keys(require('countries-list').countries);
+import _ from 'lodash';
+import crypto from 'crypto';
+import Bluebird from 'bluebird';
+import relativeDateUtc from 'relative-day-utc';
+import countriesList from 'countries-list';
+import { listTables } from '../../src/lib/db/utils.js';
+import dateRange from '../../src/routes/utils/dateRange.js';
+import entrypointTestCases from '../../test/data/v1/entrypoints.json' with { type: 'json' };
+
+const countries = Object.keys(countriesList.countries);
 const providers = [ 'CF', 'FY', 'GC', 'QT' ];
 
 const PACKAGE_TYPES = [ 'npm', 'gh' ];
@@ -16,7 +18,7 @@ const FLOATING_MONTHS = [
 ];
 const STATS_START_TIMESTAMP = relativeDateUtc(-70).valueOf();
 
-exports.seed = async (db) => {
+export const seed = async (db) => {
 	let tablesToClean = _.difference(listTables(db), [
 		'knex_migrations',
 		'proxy',
@@ -266,4 +268,3 @@ exports.seed = async (db) => {
 
 	await seedEntrypointsData(entrypointTestCases);
 };
-
