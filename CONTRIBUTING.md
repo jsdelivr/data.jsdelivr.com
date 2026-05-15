@@ -12,8 +12,8 @@ Hi! We're really excited that you're interested in contributing to data.jsdelivr
 
 To get started, you need to have Node.js 24, MariaDB 10.5, and Redis installed and configured.
 
-The default configuration file is `config/default.js`. To change any of the default values, either:
-- create a file `config/local.js` with the necessary changes; the options set in this file will be merged with `config/default.js` so `config/local.js` should only contain options that you actually changed,
+The default configuration file is `config/default.cjs`. To change any of the default values, either:
+- create a file `config/local.cjs` with the necessary changes; the options set in this file will be merged with `config/default.cjs` so `config/local.cjs` should only contain options that you actually changed,
 - use environment variables.
 
 Run the following commands:
