@@ -4,6 +4,7 @@
 	"license": "OSL-3.0",
 	"description": "jsDelivr API",
 	"private": true,
+	"type": "module",
 	"main": "./src/index.js",
 	"dependencies": {
 		"@elastic/elasticsearch": "^9.4.0",
