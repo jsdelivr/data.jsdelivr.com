@@ -1,4 +1,4 @@
-exports.up = async (db) => {
+export const up = async (db) => {
 	await db('proxy').insert([
 		{ path: '/rawgit' },
 		{ path: '/mdi' },
@@ -6,4 +6,4 @@ exports.up = async (db) => {
 	]);
 };
 
-exports.down = () => {};
+export const down = () => {};

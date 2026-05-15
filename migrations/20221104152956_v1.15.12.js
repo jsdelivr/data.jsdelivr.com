@@ -1,9 +1,9 @@
-const Bluebird = require('bluebird');
-const updateSharedObjects = require('./shared/updateSharedObjects');
+import Bluebird from 'bluebird';
+import updateSharedObjects from './shared/updateSharedObjects.js';
 const staticPeriods = [ 's-day', 's-week', 's-month', 's-quarter', 's-year' ];
 const periods = [ 'day', 'week', 'month', 'quarter', 'year', 'all', ...staticPeriods ];
 
-exports.up = async (db) => {
+export const up = async (db) => {
 	await Bluebird.mapSeries([
 		'view_top_browser_countries',
 		'view_top_browser_platforms',
@@ -36,4 +36,4 @@ exports.up = async (db) => {
 	await updateSharedObjects(db);
 };
 
-exports.down = () => {};
+export const down = () => {};

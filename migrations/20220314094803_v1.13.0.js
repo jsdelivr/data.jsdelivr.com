@@ -1,6 +1,6 @@
-const updateSharedObjects = require('./shared/updateSharedObjects');
+import updateSharedObjects from './shared/updateSharedObjects.js';
 
-exports.up = async (db) => {
+export const up = async (db) => {
 	await db.schema.alterTable('package', (table) => {
 		table.tinyint('isPrivate').defaultTo(0).notNullable();
 	});
@@ -8,4 +8,4 @@ exports.up = async (db) => {
 	await updateSharedObjects(db);
 };
 
-exports.down = () => {};
+export const down = () => {};

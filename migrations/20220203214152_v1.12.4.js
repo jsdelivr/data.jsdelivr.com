@@ -1,4 +1,4 @@
-exports.up = async (db) => {
+export const up = async (db) => {
 	await db.schema.alterTable('file_hits', (table) => {
 		table.dropForeign([ 'fileId' ]);
 		table.dropIndex([ 'date' ]);
@@ -25,4 +25,4 @@ exports.up = async (db) => {
 	`);
 };
 
-exports.down = () => {};
+export const down = () => {};

@@ -1,7 +1,8 @@
-const fs = require('fs');
-const sql = fs.readFileSync(__filename + '.sql', 'utf8');
+import fs from 'fs';
 
-exports.up = async (db) => {
+const sql = fs.readFileSync(new URL(`${import.meta.url}.sql`), 'utf8');
+
+export const up = async (db) => {
 	await db.schema.alterTable('file_hits', (table) => {
 		table.specificType('bandwidth', 'float').unsigned().defaultTo(0).notNullable();
 	});
@@ -25,4 +26,4 @@ exports.up = async (db) => {
 	await db.schema.raw(sql);
 };
 
-exports.down = () => {};
+export const down = () => {};

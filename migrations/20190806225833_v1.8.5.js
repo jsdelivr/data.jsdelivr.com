@@ -1,7 +1,7 @@
-exports.up = async (db) => {
+export const up = async (db) => {
 	await db.schema.alterTable('package_listing', (table) => {
 		table.datetime('updatedAt').index();
 	});
 };
 
-exports.down = () => {};
+export const down = () => {};

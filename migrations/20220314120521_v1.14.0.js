@@ -1,7 +1,7 @@
-const updateSharedObjects = require('./shared/updateSharedObjects');
+import updateSharedObjects from './shared/updateSharedObjects.js';
 const periods = [ 'day', 'week', 'month', 'year', 'all' ];
 
-exports.up = async (db) => {
+export const up = async (db) => {
 	for (let period of periods) {
 		await db.schema.alterTable(`view_top_packages_${period}`, (table) => {
 			table.integer('typeRank').unsigned().index().after('rank');
@@ -11,4 +11,4 @@ exports.up = async (db) => {
 	await updateSharedObjects(db);
 };
 
-exports.down = () => {};
+export const down = () => {};

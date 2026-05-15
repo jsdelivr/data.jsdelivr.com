@@ -1,4 +1,4 @@
-exports.up = async (db) => {
+export const up = async (db) => {
 	await db('proxy').insert([
 		{ name: 'atlas', path: '/atlas' },
 		{ name: 'openwrt', path: '/openwrt/:type' },
@@ -7,4 +7,4 @@ exports.up = async (db) => {
 	]);
 };
 
-exports.down = () => {};
+export const down = () => {};

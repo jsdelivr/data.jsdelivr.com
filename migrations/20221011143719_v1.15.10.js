@@ -1,4 +1,4 @@
-exports.up = async (db) => {
+export const up = async (db) => {
 	await db.schema.alterTable('normalized_raw_log_file', (table) => {
 		table.check('processed <= 1', [], 'processed_valid');
 	});
@@ -14,4 +14,4 @@ exports.up = async (db) => {
 	await db.schema.raw('drop trigger if exists log_file_valid_update;');
 };
 
-exports.down = () => {};
+export const down = () => {};

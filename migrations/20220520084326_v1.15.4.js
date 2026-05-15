@@ -1,6 +1,8 @@
-const _ = require('lodash');
-const { continents, countries } = require('countries-list');
-const updateSharedObjects = require('./shared/updateSharedObjects');
+import _ from 'lodash';
+import countriesList from 'countries-list';
+import updateSharedObjects from './shared/updateSharedObjects.js';
+
+const { continents, countries } = countriesList;
 const locationTypes = [ 'continent', 'country', 'global' ];
 
 const periods = [
@@ -8,7 +10,7 @@ const periods = [
 	's-day', 's-week', 's-month', 's-year',
 ];
 
-exports.up = async (db) => {
+export const up = async (db) => {
 	await db.schema.raw(`drop event if exists network_packages_update`);
 	await db.schema.raw(`drop event if exists top_package_files_update`);
 	await db.schema.raw(`drop event if exists top_packages_update_2`);
@@ -43,4 +45,4 @@ exports.up = async (db) => {
 	await updateSharedObjects(db);
 };
 
-exports.down = () => {};
+export const down = () => {};

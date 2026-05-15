@@ -1,7 +1,7 @@
-const dedent = require('dedent-js');
+import dedent from 'dedent-js';
 const periods = [ [ 1, 'day' ], [ 7, 'week' ], [ 30, 'month' ], [ 90, 'quarter' ], [ 365, 'year' ], [ '2017-08-17', 'all' ] ];
 
-module.exports = async (db) => {
+export default async (db) => {
 	// language=MariaDB
 	await db.schema.raw(dedent`
 		create or replace procedure updateViewTopPackages(aDate date, rebuildIfExists bool)

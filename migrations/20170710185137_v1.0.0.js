@@ -1,7 +1,7 @@
-const knexfile = require('../knexfile');
+import knexfile from '../knexfile.js';
 const dbConfig = knexfile[process.env.NODE_ENV] || knexfile.development;
 
-exports.up = async (db) => {
+export const up = async (db) => {
 	await db.schema.raw('SET @@foreign_key_checks = 0;');
 	await db.schema.raw(`alter database \`${dbConfig.connection.database}\` character set utf8mb4 collate utf8mb4_unicode_ci;`);
 
@@ -48,4 +48,4 @@ exports.up = async (db) => {
 	await db.schema.raw('SET @@foreign_key_checks = 1;');
 };
 
-exports.down = () => {};
+export const down = () => {};

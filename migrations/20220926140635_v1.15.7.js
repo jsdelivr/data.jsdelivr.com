@@ -1,6 +1,6 @@
-const updateSharedObjects = require('./shared/updateSharedObjects');
+import updateSharedObjects from './shared/updateSharedObjects.js';
 
-exports.up = async (db) => {
+export const up = async (db) => {
 	await db.schema.createTable(`proxy_file`, (table) => {
 		table.increments();
 		table.integer('proxyId').unsigned().references('id').inTable('proxy').onUpdate('cascade').onDelete('cascade');
@@ -19,4 +19,4 @@ exports.up = async (db) => {
 	await updateSharedObjects(db);
 };
 
-exports.down = () => {};
+export const down = () => {};
