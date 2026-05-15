@@ -1,8 +1,7 @@
-const got = require('../lib/got');
-const semver = require('semver');
-
-const NpmRemoteResource = require('./NpmRemoteResource');
-const RemoteService = require('./RemoteService');
+import got from '../lib/got/index.js';
+import semver from 'semver';
+import NpmRemoteResource from './NpmRemoteResource.js';
+import RemoteService from './RemoteService.js';
 
 class NpmRemoteService extends RemoteService {
 	constructor ({ baseUrl }, resourceCache) {
@@ -85,4 +84,4 @@ class NpmRemoteService extends RemoteService {
 	}
 }
 
-module.exports = NpmRemoteService;
+export default NpmRemoteService;

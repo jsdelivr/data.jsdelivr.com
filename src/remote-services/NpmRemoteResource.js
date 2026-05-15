@@ -1,4 +1,4 @@
-const RemoteResource = require('./RemoteResource');
+import RemoteResource from './RemoteResource.js';
 const twoWeeks = 14 * 24 * 60 * 60 * 1000;
 const baseTtl = 5 * 60 * 1000;
 
@@ -20,4 +20,4 @@ class NpmRemoteResource extends RemoteResource {
 	}
 }
 
-module.exports = NpmRemoteResource;
+export default NpmRemoteResource;

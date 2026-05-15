@@ -85,4 +85,4 @@ class RemoteService {
 	}
 }
 
-module.exports = RemoteService;
+export default RemoteService;

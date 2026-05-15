@@ -1,8 +1,7 @@
-const got = require('../lib/got');
-const promiseRetry = require('promise-retry');
-
-const JsDelivrRemoteResource = require('./JsDelivrRemoteResource');
-const RemoteService = require('./RemoteService');
+import got from '../lib/got/index.js';
+import promiseRetry from 'promise-retry';
+import JsDelivrRemoteResource from './JsDelivrRemoteResource.js';
+import RemoteService from './RemoteService.js';
 
 class JsDelivrRemoteService extends RemoteService {
 	constructor ({ baseUrl }, resourceCache) {
@@ -94,4 +93,4 @@ class JsDelivrRemoteService extends RemoteService {
 	}
 }
 
-module.exports = JsDelivrRemoteService;
+export default JsDelivrRemoteService;
