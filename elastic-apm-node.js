@@ -1,7 +1,9 @@
-module.exports = {
+import pkg from './package.json' with { type: 'json' };
+
+export default {
 	active: process.env.NODE_ENV === 'production',
 	serviceName: 'jsdelivr-api',
-	serviceVersion: require('./package.json').version,
+	serviceVersion: pkg.version,
 	logLevel: 'fatal',
 	centralConfig: false,
 	captureExceptions: false,
