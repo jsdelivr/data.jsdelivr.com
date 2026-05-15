@@ -41,5 +41,5 @@ class ArrayStream {
 	}
 }
 
-module.exports = ArrayStream;
+export default ArrayStream;
 // TODO: check the possibility of integrating this into JSONPP.

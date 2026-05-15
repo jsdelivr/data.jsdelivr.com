@@ -1,8 +1,8 @@
-const got = require('got');
-const config = require('config');
+import got from 'got';
+import config from 'config';
 const { userAgent } = config.get('server');
 
-module.exports = got.extend({
+export default got.extend({
 	headers: {
 		'User-Agent': userAgent,
 	},

@@ -1,4 +1,4 @@
-const { TTLCache: TTL } = require('@isaacs/ttlcache');
+import { TTLCache as TTL } from '@isaacs/ttlcache';
 
 class PromiseCache {
 	constructor ({ ttl }) {
@@ -22,4 +22,4 @@ class PromiseCache {
 	}
 }
 
-module.exports = PromiseCache;
+export default PromiseCache;

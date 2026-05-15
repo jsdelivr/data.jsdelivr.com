@@ -92,4 +92,4 @@ class Jsonpp {
 	}
 }
 
-module.exports = Jsonpp;
+export default Jsonpp;

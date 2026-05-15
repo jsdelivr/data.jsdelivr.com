@@ -1,19 +1,18 @@
-const zlib = require('zlib');
-const { createClient: createRedisClient, RESP_TYPES } = require('redis');
-const config = require('config');
+import zlib from 'zlib';
+import { createClient as createRedisClient, RESP_TYPES } from 'redis';
+import config from 'config';
+
 const redisConfig = config.get('redis');
 const redisLog = logger.scope('redis');
-
-module.exports = createClient();
-module.exports.createClient = createClient;
+const client = createClient();
 
 if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test') {
-	module.exports.once('ready', () => module.exports.flushAll().catch(() => {}));
+	client.once('ready', () => client.flushAll().catch(() => {}));
 }
 
 if (process.env.NO_CACHE) {
 	setInterval(() => {
-		module.exports.flushAll().catch(() => {});
+		client.flushAll().catch(() => {});
 	}, 1000);
 }
 
@@ -56,7 +55,7 @@ function patchClient (client) {
 	return client;
 }
 
-function createClient () {
+export function createClient () {
 	let client = createRedisClient({
 		database: redisConfig.db,
 		password: redisConfig.password,
@@ -79,3 +78,5 @@ function createClient () {
 
 	return client;
 }
+
+export default client;

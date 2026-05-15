@@ -1,10 +1,8 @@
-const { TTLCache: TTL } = require('@isaacs/ttlcache');
-const pTimeout = require('p-timeout');
-const redis = require('../redis');
-const createRedisClient = require('../redis').createClient;
-const JSONPP = require('../jsonpp');
-
-const ArrayStream = require('../array-stream');
+import { TTLCache as TTL } from '@isaacs/ttlcache';
+import pTimeout from 'p-timeout';
+import redis, { createClient as createRedisClient } from '../redis/index.js';
+import JSONPP from '../jsonpp/index.js';
+import ArrayStream from '../array-stream/index.js';
 const arrayStream = new ArrayStream(JSONPP);
 
 const STATUS_PENDING = 0;
@@ -17,6 +15,7 @@ const VALUE_TYPE_ARRAY = '2';
 
 let lastMessageId = 0;
 let getNextMessageId = () => lastMessageId = (lastMessageId + 1) % Number.MAX_SAFE_INTEGER;
+let promiseLock;
 
 class PromiseLock {
 	/**
@@ -297,20 +296,19 @@ class ScopedLock {
 	constructor (scope) {
 		this.scope = scope;
 
-		if (typeof module.exports.promiseLock === 'undefined') {
-			module.exports.promiseLock = new PromiseLock();
+		if (!promiseLock) {
+			promiseLock = new PromiseLock();
 		}
 	}
 
 	get (key, fn, maxAge, lockOnly) {
-		return module.exports.promiseLock.get(`${this.scope}/${key}`, fn, maxAge, lockOnly);
+		return promiseLock.get(`${this.scope}/${key}`, fn, maxAge, lockOnly);
 	}
 
 	refresh (key, maxAge) {
-		return redis.pExpire(module.exports.promiseLock.getRedisKey(`${this.scope}/${key}`), maxAge);
+		return redis.pExpire(promiseLock.getRedisKey(`${this.scope}/${key}`), maxAge);
 	}
 }
 
-module.exports = ScopedLock;
-module.exports.PromiseLock = PromiseLock;
-module.exports.PromiseLockError = PromiseLockError;
+export default ScopedLock;
+export { PromiseLock, PromiseLockError };

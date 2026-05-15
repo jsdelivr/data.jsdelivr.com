@@ -1,9 +1,12 @@
-global._ = require('lodash');
-global.Bluebird = require('bluebird');
+import _ from 'lodash';
+global._ = _;
+import Bluebird from 'bluebird';
+global.Bluebird = Bluebird;
 
-const Logger = require('h-logger2');
-const ElasticWriter = require('h-logger2-elastic');
-const ElasticSearch = require('@elastic/elasticsearch').Client;
+import Logger from 'h-logger2';
+import ElasticWriter from 'h-logger2-elastic';
+import { Client as ElasticSearch } from '@elastic/elasticsearch';
+
 let esClient;
 
 if (process.env.ELASTIC_SEARCH_URL) {
@@ -24,19 +27,28 @@ global.logger = new Logger(
 
 global.log = logger.scope('global');
 
-const fs = require('fs-extra');
-const zlib = require('zlib');
+import fs from 'fs-extra';
+import zlib from 'zlib';
 
 Bluebird.promisifyAll(fs);
 Bluebird.promisifyAll(zlib);
 
-global.redis = require('./redis');
-global.db = require('./db');
+const { default: redis } = await import('./redis/index.js');
+global.redis = redis;
+const { default: db } = await import('./db/index.js');
+global.db = db;
 
-const JSONPP = require('./jsonpp');
-JSONPP.addConstructor(require('./promise-lock').PromiseLockError);
-JSONPP.addConstructor(require('../remote-services/RemoteResource'));
-JSONPP.addConstructor(require('../remote-services/NpmRemoteResource'));
-JSONPP.addConstructor(require('../remote-services/GitHubRemoteResource'));
-JSONPP.addConstructor(require('../remote-services/JsDelivrRemoteResource'));
-JSONPP.addConstructor(require('../remote-services/RemoteResourceSerializableError'));
+const { default: JSONPP } = await import('./jsonpp/index.js');
+const { PromiseLockError } = await import('./promise-lock/index.js');
+const { default: RemoteResource } = await import('../remote-services/RemoteResource.js');
+const { default: NpmRemoteResource } = await import('../remote-services/NpmRemoteResource.js');
+const { default: GitHubRemoteResource } = await import('../remote-services/GitHubRemoteResource.js');
+const { default: JsDelivrRemoteResource } = await import('../remote-services/JsDelivrRemoteResource.js');
+const { default: RemoteResourceSerializableError } = await import('../remote-services/RemoteResourceSerializableError.js');
+
+JSONPP.addConstructor(PromiseLockError);
+JSONPP.addConstructor(RemoteResource);
+JSONPP.addConstructor(NpmRemoteResource);
+JSONPP.addConstructor(GitHubRemoteResource);
+JSONPP.addConstructor(JsDelivrRemoteResource);
+JSONPP.addConstructor(RemoteResourceSerializableError);
