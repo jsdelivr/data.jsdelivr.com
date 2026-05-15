@@ -1,7 +1,7 @@
-const { defineConfig } = require('eslint/config');
-const javascript = require('@martin-kolarik/eslint-config');
+import { defineConfig } from 'eslint/config';
+import javascript from '@martin-kolarik/eslint-config';
 
-module.exports = defineConfig([
+export default defineConfig([
 	{
 		ignores: [ 'coverage/**' ],
 	},
