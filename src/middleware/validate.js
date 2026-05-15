@@ -6,7 +6,7 @@
  * @param {{ body: Joi.Schema?, params: Joi.Schema?, query: Joi.Schema? }} options
  * @returns {Application.Middleware}
  */
-module.exports = ({ body, params, query }) => {
+const validate = ({ body, params, query }) => {
 	let validations = [
 		{ name: 'body', schema: body },
 		{ name: 'params', schema: params },
@@ -50,13 +50,13 @@ module.exports = ({ body, params, query }) => {
  * @param {Joi.Schema} schema
  * @returns {Router.IParamMiddleware<any, {}>}
  */
-module.exports.param = (schema) => {
+export const param = (schema) => {
 	return async (value, ctx, next) => {
 		return validateSingle(schema, value, ctx) && next();
 	};
 };
 
-module.exports.single = validateSingle;
+export const single = validateSingle;
 
 /**
  * @param {Joi.Schema} schema
@@ -121,3 +121,8 @@ function getSchemaKeysDefaults (schema) {
 
 	return Object.fromEntries(entries);
 }
+
+validate.param = param;
+validate.single = single;
+
+export default validate;
