@@ -1,14 +1,16 @@
-const fs = require('fs-extra');
-const path = require('path');
-const crypto = require('crypto');
-const config = require('config');
-const readdir = require('recursive-readdir');
+import fs from 'fs-extra';
+import crypto from 'crypto';
+import { fileURLToPath } from 'url';
+import config from 'config';
+import readdir from 'recursive-readdir';
 
-const { listTables, listViews } = require('../src/lib/db/utils');
-const { toIsoDate } = require('../src/lib/date');
+import { listTables, listViews } from '../src/lib/db/utils.js';
+import { toIsoDate } from '../src/lib/date/index.js';
+
+const localPath = file => fileURLToPath(new URL(file, import.meta.url));
 const dbConfig = config.get('db');
 
-module.exports = async ({ databaseDate }) => {
+export default async ({ databaseDate }) => {
 	if (!dbConfig.connection.database.endsWith('-test') && dbConfig.connection.host !== 'localhost') {
 		throw new Error(`Database name for test env needs to end with "-test" or the host must be "localhost". Got "${dbConfig.connection.database}"@"${dbConfig.connection.host}".`);
 	}
@@ -34,7 +36,7 @@ module.exports = async ({ databaseDate }) => {
 		await db.seed.run();
 
 		log.debug('Generating materialized views.');
-		await db.schema.raw(fs.readFileSync(__dirname + '/data/schema.sql', 'utf8').replace(/<<DATE>>/g, databaseDate));
+		await db.schema.raw(fs.readFileSync(new URL('./data/schema.sql', import.meta.url), 'utf8').replace(/<<DATE>>/g, databaseDate));
 		await db('_test').insert({ key: 'hash', value: currentHash });
 
 		log.debug('Setup done.');
@@ -47,13 +49,13 @@ async function getCurrentDbHash () {
 
 async function hashDbSetupFiles () {
 	let files = await Bluebird.map(_.sortBy([
-		...await readdir(path.join(__dirname, '../migrations')),
-		...await readdir(path.join(__dirname, '../seeds')),
-		path.join(__dirname, '/data/schema.sql'),
-		path.join(__dirname, '/data/v1/entrypoints.json'),
-		path.join(__dirname, '/setup.js'),
-		path.join(__dirname, '/setup-db.js'),
-		path.join(__dirname, '/setup-dev.js'),
+		...await readdir(localPath('../migrations')),
+		...await readdir(localPath('../seeds')),
+		localPath('./data/schema.sql'),
+		localPath('./data/v1/entrypoints.json'),
+		localPath('./setup.js'),
+		localPath('./setup-db.js'),
+		localPath('./setup-dev.js'),
 	]), file => fs.readFile(file), { concurrency: 32 });
 
 	return files.reduce((hash, file) => {

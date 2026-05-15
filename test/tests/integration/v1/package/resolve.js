@@ -1,4 +1,5 @@
-const chai = require('chai');
+import chai from 'chai';
+
 const expect = chai.expect;
 
 describe('/v1/package/resolve', () => {

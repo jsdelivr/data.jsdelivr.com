@@ -1,10 +1,11 @@
-const chai = require('chai');
-const { setupSnapshots } = require('../../../../utils');
+import chai from 'chai';
+import { setupSnapshots } from '../../../../utils.js';
+
 const expect = chai.expect;
 
 describe('/v1/packages/resolved', () => {
 	before(() => {
-		setupSnapshots(__filename);
+		setupSnapshots(import.meta.url);
 	});
 
 	it('GET /v1/packages/npm/jquery/resolved?specifier=3.2', () => {

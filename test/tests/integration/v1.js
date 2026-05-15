@@ -1,7 +1,9 @@
-const chai = require('chai');
-const expect = chai.expect;
+import { createRequire } from 'module';
+import chai from 'chai';
+import expectedResponses from '../../data/v1/expected.json' with { type: 'json' };
 
-const expectedResponses = require('../../data/v1/expected.json');
+const expect = chai.expect;
+const require = createRequire(import.meta.url);
 
 describe('v1', function () {
 	this.timeout(10000);
@@ -22,36 +24,36 @@ describe('v1', function () {
 			});
 	});
 
-	require('./v1/package');
-	require('./v1/package/badge');
-	require('./v1/package/entrypoints');
-	require('./v1/package/resolve');
-	require('./v1/package/stats');
-	require('./v1/packages');
-	require('./v1/packages/entrypoints');
-	require('./v1/packages/resolved');
-	require('./v1/stats/browsers');
-	require('./v1/stats/browsers/countries');
-	require('./v1/stats/browsers/platforms');
-	require('./v1/stats/browsers/versions');
-	require('./v1/stats/browsers/versions/countries');
-	require('./v1/stats/network');
-	require('./v1/stats/network/content');
-	require('./v1/stats/network/countries');
-	require('./v1/stats/packages');
-	require('./v1/stats/packages/package');
-	require('./v1/stats/packages/package/badge');
-	require('./v1/stats/packages/package/versions');
-	require('./v1/stats/packages/package-version');
-	require('./v1/stats/packages/package-version/files');
-	require('./v1/stats/periods');
-	require('./v1/stats/platforms');
-	require('./v1/stats/platforms/browsers');
-	require('./v1/stats/platforms/countries');
-	require('./v1/stats/platforms/versions');
-	require('./v1/stats/platforms/versions/countries');
-	require('./v1/stats/proxies/proxy');
-	require('./v1/stats/proxies/proxy/files');
+	require('./v1/package.js');
+	require('./v1/package/badge.js');
+	require('./v1/package/entrypoints.js');
+	require('./v1/package/resolve.js');
+	require('./v1/package/stats.js');
+	require('./v1/packages.js');
+	require('./v1/packages/entrypoints.js');
+	require('./v1/packages/resolved.js');
+	require('./v1/stats/browsers.js');
+	require('./v1/stats/browsers/countries.js');
+	require('./v1/stats/browsers/platforms.js');
+	require('./v1/stats/browsers/versions.js');
+	require('./v1/stats/browsers/versions/countries.js');
+	require('./v1/stats/network.js');
+	require('./v1/stats/network/content.js');
+	require('./v1/stats/network/countries.js');
+	require('./v1/stats/packages.js');
+	require('./v1/stats/packages/package.js');
+	require('./v1/stats/packages/package/badge.js');
+	require('./v1/stats/packages/package/versions.js');
+	require('./v1/stats/packages/package-version.js');
+	require('./v1/stats/packages/package-version/files.js');
+	require('./v1/stats/periods.js');
+	require('./v1/stats/platforms.js');
+	require('./v1/stats/platforms/browsers.js');
+	require('./v1/stats/platforms/countries.js');
+	require('./v1/stats/platforms/versions.js');
+	require('./v1/stats/platforms/versions/countries.js');
+	require('./v1/stats/proxies/proxy.js');
+	require('./v1/stats/proxies/proxy/files.js');
 
 	describe('/v1/lookup', () => {
 		it('GET /v1/lookup/hash/xx', () => {

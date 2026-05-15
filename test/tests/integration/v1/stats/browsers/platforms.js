@@ -1,9 +1,9 @@
-const { expect } = require('chai');
-const { makeEndpointSnapshotTests, makeEndpointPaginationTests, makePaginatedEndpointAssertions, setupSnapshots } = require('../../../../../utils');
+import { expect } from 'chai';
+import { makeEndpointSnapshotTests, makeEndpointPaginationTests, makePaginatedEndpointAssertions, setupSnapshots } from '../../../../../utils.js';
 
 describe('/v1/stats/browsers/platforms', () => {
 	before(() => {
-		setupSnapshots(__filename);
+		setupSnapshots(import.meta.url);
 	});
 
 	makeStatsBrowsersVersionTests();

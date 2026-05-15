@@ -1,10 +1,12 @@
-const _ = require('lodash');
-const Ajv = require('ajv');
-const SwaggerParser = require('@apidevtools/swagger-parser');
-const openApiCore = require('@redocly/openapi-core');
-const betterAjvErrors = require('better-ajv-errors').default;
+import _ from 'lodash';
+import Ajv from 'ajv';
+import SwaggerParser from '@apidevtools/swagger-parser';
+import openApiCore from '@redocly/openapi-core';
+import betterAjvErrorsModule from 'better-ajv-errors';
 
-module.exports = async ({ specPath, ajvBodyOptions = {}, ajvHeadersOptions = {} }) => {
+const betterAjvErrors = betterAjvErrorsModule.default;
+
+export default async ({ specPath, ajvBodyOptions = {}, ajvHeadersOptions = {} }) => {
 	let bundled = await openApiCore.bundle({
 		ref: specPath,
 		config: await openApiCore.createConfig('apis:'),

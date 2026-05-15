@@ -1,7 +1,7 @@
 process.env.NODE_ENV = 'development';
 
-require('../src/lib/startup');
-const setupDb = require('./setup-db');
+import '../src/lib/startup.js';
+import setupDb from './setup-db.js';
 
 (async () => {
 	await setupDb({ databaseDate: new Date().toISOString().substr(0, 10) });

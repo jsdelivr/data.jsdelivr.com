@@ -1,10 +1,10 @@
-const { makeEndpointSnapshotTests, makeEndpointPaginationTests, setupSnapshots } = require('../../../../utils');
+import { makeEndpointSnapshotTests, makeEndpointPaginationTests, setupSnapshots } from '../../../../utils.js';
 
 const periodOptions = [ 'day', 'week', 'month', 'year', undefined ];
 
 describe('/v1/stats/packages', () => {
 	before(() => {
-		setupSnapshots(__filename);
+		setupSnapshots(import.meta.url);
 	});
 
 	makeStatsPackagesTests();

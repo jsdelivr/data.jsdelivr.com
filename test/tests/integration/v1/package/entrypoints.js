@@ -1,8 +1,8 @@
-const chai = require('chai');
-const expect = chai.expect;
-const nock = require('nock');
+import chai from 'chai';
+import nock from 'nock';
+import testCases from '../../../../data/v1/entrypoints.json' with { type: 'json' };
 
-const testCases = require('../../../../data/v1/entrypoints.json');
+const expect = chai.expect;
 
 describe('/v1/package/entrypoints', () => {
 	for (let [ packageName, data ] of Object.entries(testCases)) {

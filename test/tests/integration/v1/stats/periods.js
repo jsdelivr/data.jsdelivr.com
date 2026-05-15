@@ -1,9 +1,9 @@
-const { expect } = require('chai');
-const { makeEndpointAssertions, makeEndpointPaginationTests, setupSnapshots } = require('../../../../utils');
+import { expect } from 'chai';
+import { makeEndpointAssertions, makeEndpointPaginationTests, setupSnapshots } from '../../../../utils.js';
 
 describe('/v1/stats/periods', () => {
 	before(() => {
-		setupSnapshots(__filename);
+		setupSnapshots(import.meta.url);
 	});
 
 	makeStatsPeriodsTests();

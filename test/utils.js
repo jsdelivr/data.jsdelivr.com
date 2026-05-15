@@ -1,12 +1,14 @@
-const chai = require('chai');
-const expect = chai.expect;
+import path from 'path';
+import { fileURLToPath } from 'url';
+import chai from 'chai';
+import urlTemplate from 'url-template';
+import HttpLinkHeader from 'http-link-header';
+import dateRange from '../src/routes/utils/dateRange.js';
+import isDeepEmpty from '../src/routes/utils/isDeepEmpty.js';
+import './plugins/wrap-it/index.js';
 
-const path = require('path');
-const urlTemplate = require('url-template');
-const HttpLinkHeader = require('http-link-header');
-const dateRange = require('../src/routes/utils/dateRange');
-const isDeepEmpty = require('../src/routes/utils/isDeepEmpty');
-require('./plugins/wrap-it');
+const expect = chai.expect;
+const localPath = file => fileURLToPath(new URL(file, import.meta.url));
 
 // based on https://stackoverflow.com/a/43053803
 const cartesian = (...sets) => {
@@ -78,13 +80,13 @@ function makeEndpointAssertion (uriTemplate, defaults, { params, assert }, { lim
 	});
 }
 
-function makeEndpointAssertions (uriTemplate, defaults, testCases, options) {
+export function makeEndpointAssertions (uriTemplate, defaults, testCases, options) {
 	for (let testCase of testCases) {
 		makeEndpointAssertion(uriTemplate, defaults, testCase, options);
 	}
 }
 
-function makePaginatedEndpointAssertions (uriTemplate, defaults, testCases, options) {
+export function makePaginatedEndpointAssertions (uriTemplate, defaults, testCases, options) {
 	uriTemplate += `${uriTemplate.includes('{?') ? '{&' : '{?'}page,limit,all}`;
 
 	for (let testCase of testCases) {
@@ -105,7 +107,7 @@ function makeEndpointSnapshotTest (uriTemplate, defaults, params, options) {
 	}, options);
 }
 
-function makeEndpointSnapshotTests (uriTemplate, defaults, testTemplates, options) {
+export function makeEndpointSnapshotTests (uriTemplate, defaults, testTemplates, options) {
 	for (let testTemplate of testTemplates) {
 		let templateKeys = Object.keys(testTemplate);
 		let templateValues = Object.values(testTemplate).map(item => Array.isArray(item) ? item : [ item ]);
@@ -117,7 +119,7 @@ function makeEndpointSnapshotTests (uriTemplate, defaults, testTemplates, option
 	}
 }
 
-function makeEndpointPaginationTests (uri, query = {}) {
+export function makeEndpointPaginationTests (uri, query = {}) {
 	describe(`GET ${uri} - pagination`, () => {
 		let first10, first11, first98, first99;
 
@@ -241,17 +243,13 @@ function validateResponseForPeriod (object, period) {
 	return _.every(object, value => validateResponseForPeriod(value, period));
 }
 
-module.exports = {
-	makeEndpointAssertions,
-	makeEndpointSnapshotTests,
-	makeEndpointPaginationTests,
-	makePaginatedEndpointAssertions,
-	setupSnapshots (file) {
-		chaiSnapshotInstance.setCurrentFile(path.join(
-			__dirname,
-			'snapshots',
-			path.relative(path.join(__dirname, 'tests/integration'), path.dirname(file)),
-			`${path.basename(file, path.extname(file))}.json`,
-		));
-	},
-};
+export function setupSnapshots (fileUrl) {
+	let file = fileURLToPath(fileUrl);
+
+	chaiSnapshotInstance.setCurrentFile(path.join(
+		localPath('./'),
+		'snapshots',
+		path.relative(localPath('./tests/integration'), path.dirname(file)),
+		`${path.basename(file, path.extname(file))}.json`,
+	));
+}

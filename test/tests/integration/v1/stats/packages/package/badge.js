@@ -1,14 +1,13 @@
-const chai = require('chai');
+import chai from 'chai';
+import config from 'config';
+import { setupSnapshots } from '../../../../../../utils.js';
+
 const expect = chai.expect;
-
-const config = require('config');
-const { setupSnapshots } = require('../../../../../../utils');
-
 const server = `http://127.0.0.1:${config.get(`server.port`)}`;
 
 describe('/v1/stats/packages/badge', () => {
 	before(() => {
-		setupSnapshots(__filename);
+		setupSnapshots(import.meta.url);
 	});
 
 	it(`GET /v1/stats/packages/npm/package-2/badge`, () => {
