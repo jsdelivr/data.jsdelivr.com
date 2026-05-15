@@ -2,8 +2,8 @@
 process.env.NODE_ENV = 'test';
 
 module.exports = {
-	'exit': true,
-	'reporter-option': [ 'maxDiffSize=0' ],
-	'require': [ 'expect-assert/hooks', './test/setup.js', './test/hooks.js' ],
-	'spec': [ './test/tests/unit/tests.js', './test/tests/integration/tests.js' ],
+	exit: true,
+	reporterOption: [ 'maxDiffSize=0' ],
+	require: [ 'expect-assert/hooks', './test/setup.js', './test/hooks.js' ],
+	spec: [ './test/tests/unit/tests.js', './test/tests/integration/tests.js' ],
 };
