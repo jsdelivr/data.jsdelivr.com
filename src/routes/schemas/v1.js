@@ -1,6 +1,8 @@
-const Joi = require('joi');
-const { continents, countries } = require('countries-list');
-const dateRange = require('../utils/dateRange');
+import Joi from 'joi';
+import countriesList from 'countries-list';
+import dateRange from '../utils/dateRange.js';
+
+const { continents, countries } = countriesList;
 
 const primitives = {
 	by:
@@ -123,7 +125,7 @@ const composedSchemas = {
 		.messages({ 'object.oxor': 'object contains a conflict between optional exclusive peers {{#peersWithLabels}}' }),
 };
 
-module.exports = {
+export default {
 	...primitives,
 	...composedTypes,
 	...composedSchemas,

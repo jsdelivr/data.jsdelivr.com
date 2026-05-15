@@ -1,5 +1,5 @@
-const relativeDayUtc = require('relative-day-utc');
-const { toIsoDate, toIsoMonth, toIsoYear, toQuarter } = require('../../lib/date');
+import relativeDayUtc from 'relative-day-utc';
+import { toIsoDate, toIsoMonth, toIsoYear, toQuarter } from '../../lib/date/index.js';
 
 const floatingPeriodDurations = { day: 1, week: 7, month: 30, quarter: 90, year: 365 };
 const floatingPeriods = [ ...Object.keys(floatingPeriodDurations), 'all' ];
@@ -8,14 +8,14 @@ const staticPeriods = [ 's-month', 's-quarter', 's-year' ];
 const staticPeriodPattern = /^(\d{4})(?:-(?:(Q[1-4])|(\d{2})))?$/;
 const quarterDurations = [ 31 + 28 + 31, 30 + 31 + 30, 31 + 31 + 30, 31 + 30 + 31 ];
 
-module.exports = (period, date) => {
+const dateRange = (period, date) => {
 	return [
-		module.exports.periodToFromDate(period, date),
-		module.exports.periodToToDate(period, date),
+		periodToFromDate(period, date),
+		periodToToDate(period, date),
 	];
 };
 
-module.exports.periodToFromDate = (period, date) => {
+export const periodToFromDate = (period, date) => {
 	switch (period) {
 		case 'day':
 			return relativeDayUtc(-2, date);
@@ -45,7 +45,7 @@ module.exports.periodToFromDate = (period, date) => {
 	}
 };
 
-module.exports.periodToToDate = (period, date) => {
+export const periodToToDate = (period, date) => {
 	switch (period) {
 		case 'day':
 		case 'week':
@@ -69,7 +69,7 @@ module.exports.periodToToDate = (period, date) => {
 	}
 };
 
-module.exports.fill = (data, from, to, defaultValue = 0) => {
+export const fill = (data, from, to, defaultValue = 0) => {
 	let result = {};
 
 	if (from.valueOf() === allPeriodFrom) {
@@ -86,25 +86,25 @@ module.exports.fill = (data, from, to, defaultValue = 0) => {
 	return result;
 };
 
-module.exports.isFloatingPeriod = (period) => {
+export const isFloatingPeriod = (period) => {
 	return floatingPeriods.includes(period);
 };
 
-module.exports.isStaticPeriod = (period) => {
+export const isStaticPeriod = (period) => {
 	return staticPeriods.includes(period) || staticPeriodPattern.test(period);
 };
 
-module.exports.parse = (period) => {
-	if (module.exports.isFloatingPeriod(period)) {
-		return module.exports.parseFloatingPeriod(period);
+export const parse = (period) => {
+	if (isFloatingPeriod(period)) {
+		return parseFloatingPeriod(period);
 	}
 
-	if (module.exports.isStaticPeriod(period)) {
-		return module.exports.parseStaticPeriod(period);
+	if (isStaticPeriod(period)) {
+		return parseStaticPeriod(period);
 	}
 };
 
-module.exports.parseFloatingPeriod = (period, date = new Date()) => {
+export const parseFloatingPeriod = (period, date = new Date()) => {
 	return {
 		date: relativeDayUtc(0, date),
 		period,
@@ -115,7 +115,7 @@ module.exports.parseFloatingPeriod = (period, date = new Date()) => {
 	};
 };
 
-module.exports.parseStaticPeriod = (period, date = new Date()) => {
+export const parseStaticPeriod = (period, date = new Date()) => {
 	date = relativeDayUtc(-4, date);
 	let duration, match;
 
@@ -157,8 +157,8 @@ module.exports.parseStaticPeriod = (period, date = new Date()) => {
 	};
 };
 
-module.exports.periodToString = (period, date) => {
-	if (module.exports.isFloatingPeriod(period)) {
+export const periodToString = (period, date) => {
+	if (isFloatingPeriod(period)) {
 		return period;
 	}
 
@@ -176,3 +176,17 @@ module.exports.periodToString = (period, date) => {
 			throw new Error(`Invalid period value: ${period}`);
 	}
 };
+
+Object.assign(dateRange, {
+	periodToFromDate,
+	periodToToDate,
+	fill,
+	isFloatingPeriod,
+	isStaticPeriod,
+	parse,
+	parseFloatingPeriod,
+	parseStaticPeriod,
+	periodToString,
+});
+
+export default dateRange;

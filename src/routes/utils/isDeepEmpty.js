@@ -1,4 +1,4 @@
-module.exports = function isDeepEmpty (body) {
+export default function isDeepEmpty (body) {
 	if (_.isEmpty(body)) {
 		return true;
 	} else if (Array.isArray(body)) {
@@ -10,4 +10,4 @@ module.exports = function isDeepEmpty (body) {
 	}
 
 	return false;
-};
+}

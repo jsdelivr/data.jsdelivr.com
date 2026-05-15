@@ -1,21 +1,19 @@
-const BaseRequest = require('./BaseRequest');
-
-const BaseModel = require('../../models/BaseModel');
-const Package = require('../../models/Package');
-const CountryCdnHits = require('../../models/CountryCdnHits');
-const PackageHits = require('../../models/PackageHits');
-const PackageVersion = require('../../models/PackageVersion');
-const ProxyModel = require('../../models/Proxy');
-const ProxyHits = require('../../models/ProxyHits');
-const OtherHits = require('../../models/OtherHits');
-const Platform = require('../../models/Platform');
-const Browser = require('../../models/Browser');
-const Logs = require('../../models/Logs');
-
-const dateRange = require('../utils/dateRange');
-const sumDeep = require('../utils/sumDeep');
-const { splitPackageUserAndName } = require('../utils/link-builder-transforms');
-const { routes } = require('../v1');
+import BaseRequest from './BaseRequest.js';
+import BaseModel from '../../models/BaseModel.js';
+import Package from '../../models/Package.js';
+import CountryCdnHits from '../../models/CountryCdnHits.js';
+import PackageHits from '../../models/PackageHits.js';
+import PackageVersion from '../../models/PackageVersion.js';
+import ProxyModel from '../../models/Proxy.js';
+import ProxyHits from '../../models/ProxyHits.js';
+import OtherHits from '../../models/OtherHits.js';
+import Platform from '../../models/Platform.js';
+import Browser from '../../models/Browser.js';
+import Logs from '../../models/Logs.js';
+import dateRange from '../utils/dateRange.js';
+import sumDeep from '../utils/sumDeep.js';
+import { splitPackageUserAndName } from '../utils/link-builder-transforms.js';
+import { routes } from '../v1.js';
 
 class StatsRequest extends BaseRequest {
 	async handleNetwork () {
@@ -486,4 +484,4 @@ class StatsRequest extends BaseRequest {
 	}
 }
 
-module.exports = StatsRequest;
+export default StatsRequest;

@@ -1,6 +1,6 @@
-const config = require('config');
-const BaseRequest = require('./BaseRequest');
-const File = require('../../models/File');
+import config from 'config';
+import BaseRequest from './BaseRequest.js';
+import File from '../../models/File.js';
 const v1Config = config.get('v1');
 
 class LookupRequest extends BaseRequest {
@@ -22,4 +22,4 @@ class LookupRequest extends BaseRequest {
 	}
 }
 
-module.exports = LookupRequest;
+export default LookupRequest;

@@ -1,11 +1,15 @@
-const Router = require('koa-router');
-const isSha = require('is-hexdigest');
-const koaElasticUtils = require('elastic-apm-utils').koa;
-const Joi = require('joi');
-const openApiCore = require('@redocly/openapi-core');
+import Router from 'koa-router';
+import isSha from 'is-hexdigest';
+import koaElasticUtilsModule from 'elastic-apm-utils';
+const koaElasticUtils = koaElasticUtilsModule.koa;
 
-const validate = require('../middleware/validate');
-const schema = require('./schemas/v1');
+import Joi from 'joi';
+import openApiCore from '@redocly/openapi-core';
+import validate from '../middleware/validate.js';
+import schema from './schemas/v1.js';
+import LookupRequest from './v1/LookupRequest.js';
+import PackageRequest from './v1/PackageRequest.js';
+import StatsRequest from './v1/StatsRequest.js';
 
 const router = new Router({ strict: true, sensitive: true });
 
@@ -844,8 +848,7 @@ const routes = {
 	},
 };
 
-module.exports.routes = routes;
-module.exports.router = router;
+export { routes, router };
 
 Object.entries(routes).forEach(([ routeName, definition ]) => {
 	_.defaults(definition, {
@@ -871,7 +874,3 @@ router.stack.forEach((route) => {
 		? `${method.toLowerCase()}-/v1${route.name.replace(/:(\w+)/g, '-$1-')}`
 		: '';
 });
-
-const LookupRequest = require('./v1/LookupRequest');
-const PackageRequest = require('./v1/PackageRequest');
-const StatsRequest = require('./v1/StatsRequest');
