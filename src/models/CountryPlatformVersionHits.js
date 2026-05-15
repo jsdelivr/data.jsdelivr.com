@@ -1,5 +1,5 @@
-const Joi = require('joi');
-const BaseModel = require('./BaseModel');
+import Joi from 'joi';
+import BaseModel from './BaseModel.js';
 
 const schema = Joi.object({
 	platformVersionId: Joi.number().integer().min(0).required().allow(null),
@@ -49,4 +49,4 @@ class CountryPlatformVersionHits extends BaseModel {
 	}
 }
 
-module.exports = CountryPlatformVersionHits;
+export default CountryPlatformVersionHits;

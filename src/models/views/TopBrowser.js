@@ -29,4 +29,4 @@ class TopBrowser {
 	}
 }
 
-module.exports = TopBrowser;
+export default TopBrowser;

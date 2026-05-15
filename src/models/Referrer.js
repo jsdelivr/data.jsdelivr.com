@@ -1,5 +1,5 @@
-const Joi = require('joi');
-const BaseModel = require('./BaseModel');
+import Joi from 'joi';
+import BaseModel from './BaseModel.js';
 
 const schema = Joi.object({
 	id: Joi.number().integer().min(0).required().allow(null),
@@ -37,4 +37,4 @@ class Referrer extends BaseModel {
 	}
 }
 
-module.exports = Referrer;
+export default Referrer;

@@ -1,6 +1,6 @@
-const Joi = require('joi');
-const BaseCacheModel = require('./BaseCacheModel');
-const { toIsoDate } = require('../lib/date');
+import Joi from 'joi';
+import BaseCacheModel from './BaseCacheModel.js';
+import { toIsoDate } from '../lib/date/index.js';
 
 const schema = Joi.object({
 	date: Joi.date().required(),
@@ -65,4 +65,4 @@ class OtherHits extends BaseCacheModel {
 	}
 }
 
-module.exports = OtherHits;
+export default OtherHits;

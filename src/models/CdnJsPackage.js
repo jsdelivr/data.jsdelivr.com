@@ -1,5 +1,5 @@
-const Joi = require('joi');
-const BaseModel = require('./BaseModel');
+import Joi from 'joi';
+import BaseModel from './BaseModel.js';
 
 const schema = Joi.object({
 	name: Joi.string().max(255).required(),
@@ -53,4 +53,4 @@ class CdnJsPackage extends BaseModel {
 	}
 }
 
-module.exports = CdnJsPackage;
+export default CdnJsPackage;

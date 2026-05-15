@@ -1,10 +1,10 @@
-const Joi = require('joi');
-const BaseCacheModel = require('./BaseCacheModel');
-const TopBrowser = require('./views/TopBrowser');
-const TopBrowserPlatform = require('./views/TopBrowserPlatform');
-const TopBrowserCountry = require('./views/TopBrowserCountry');
-const TopBrowserVersionCountry = require('./views/TopBrowserVersionCountry');
-const TopBrowserVersion = require('./views/TopBrowserVersion');
+import Joi from 'joi';
+import BaseCacheModel from './BaseCacheModel.js';
+import TopBrowser from './views/TopBrowser.js';
+import TopBrowserPlatform from './views/TopBrowserPlatform.js';
+import TopBrowserCountry from './views/TopBrowserCountry.js';
+import TopBrowserVersionCountry from './views/TopBrowserVersionCountry.js';
+import TopBrowserVersion from './views/TopBrowserVersion.js';
 
 const schema = Joi.object({
 	id: Joi.number().integer().min(0).required().allow(null),
@@ -156,4 +156,4 @@ class Browser extends BaseCacheModel {
 	}
 }
 
-module.exports = Browser;
+export default Browser;

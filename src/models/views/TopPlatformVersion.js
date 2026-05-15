@@ -35,4 +35,4 @@ class TopPlatformVersion {
 	}
 }
 
-module.exports = TopPlatformVersion;
+export default TopPlatformVersion;

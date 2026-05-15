@@ -1,5 +1,5 @@
-const Joi = require('joi');
-const BaseModel = require('./BaseModel');
+import Joi from 'joi';
+import BaseModel from './BaseModel.js';
 
 const schema = Joi.object({
 	id: Joi.number().integer().min(0).required().allow(null),
@@ -72,7 +72,7 @@ class File extends BaseModel {
 	}
 }
 
-module.exports = File;
+export default File;
 
-const Package = require('./Package');
-const PackageVersion = require('./PackageVersion');
+import Package from './Package.js';
+import PackageVersion from './PackageVersion.js';

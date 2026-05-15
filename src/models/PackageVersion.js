@@ -1,6 +1,6 @@
-const Joi = require('joi');
-const BaseModel = require('./BaseModel');
-const { toIsoDate } = require('../lib/date');
+import Joi from 'joi';
+import BaseModel from './BaseModel.js';
+import { toIsoDate } from '../lib/date/index.js';
 
 const schema = Joi.object({
 	id: Joi.number().integer().min(0).required().allow(null),
@@ -171,9 +171,9 @@ class PackageVersion extends BaseModel {
 	}
 }
 
-module.exports = PackageVersion;
+export default PackageVersion;
 
-const Package = require('./Package');
-const File = require('./File');
-const FileHits = require('./FileHits');
-const PackageVersionHits = require('./PackageVersionHits');
+import Package from './Package.js';
+import File from './File.js';
+import FileHits from './FileHits.js';
+import PackageVersionHits from './PackageVersionHits.js';

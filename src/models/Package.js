@@ -1,6 +1,6 @@
-const Joi = require('joi');
-const BaseCacheModel = require('./BaseCacheModel');
-const { toIsoDate } = require('../lib/date');
+import Joi from 'joi';
+import BaseCacheModel from './BaseCacheModel.js';
+import { toIsoDate } from '../lib/date/index.js';
 
 const schema = Joi.object({
 	id: Joi.number().integer().min(0).required().allow(null),
@@ -207,9 +207,9 @@ function splitCommitsAndVersions (collection) {
 	return { commits, versions, branches };
 }
 
-module.exports = Package;
+export default Package;
 
-const PackageHits = require('./PackageHits');
-const PackageVersion = require('./PackageVersion');
-const PackageVersionHits = require('./PackageVersionHits');
-const TopPackage = require('./views/TopPackage');
+import PackageHits from './PackageHits.js';
+import PackageVersion from './PackageVersion.js';
+import PackageVersionHits from './PackageVersionHits.js';
+import TopPackage from './views/TopPackage.js';

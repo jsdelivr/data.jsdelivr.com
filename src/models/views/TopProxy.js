@@ -29,4 +29,4 @@ class TopProxy {
 	}
 }
 
-module.exports = TopProxy;
+export default TopProxy;

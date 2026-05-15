@@ -56,4 +56,4 @@ class TopPackage {
 	}
 }
 
-module.exports = TopPackage;
+export default TopPackage;

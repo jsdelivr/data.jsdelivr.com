@@ -1,9 +1,9 @@
-const Joi = require('joi');
-const BaseModel = require('./BaseModel');
-const ProxyHits = require('./ProxyHits');
-const TopProxy = require('./views/TopProxy');
-const { toIsoDate } = require('../lib/date');
-const TopProxyFile = require('./views/TopProxyFile');
+import Joi from 'joi';
+import BaseModel from './BaseModel.js';
+import ProxyHits from './ProxyHits.js';
+import TopProxy from './views/TopProxy.js';
+import { toIsoDate } from '../lib/date/index.js';
+import TopProxyFile from './views/TopProxyFile.js';
 
 const schema = Joi.object({
 	id: Joi.number().integer().min(1).required().allow(null),
@@ -105,4 +105,4 @@ class ProxyModel extends BaseModel {
 	}
 }
 
-module.exports = ProxyModel;
+export default ProxyModel;

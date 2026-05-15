@@ -32,4 +32,4 @@ class TopPlatformCountry {
 	}
 }
 
-module.exports = TopPlatformCountry;
+export default TopPlatformCountry;

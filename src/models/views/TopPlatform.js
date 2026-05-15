@@ -29,4 +29,4 @@ class TopPlatform {
 	}
 }
 
-module.exports = TopPlatform;
+export default TopPlatform;
