@@ -57,7 +57,7 @@
 	"devDependencies": {
 		"@apideck/portman": "^1.34.0",
 		"@apidevtools/swagger-parser": "^12.1.0",
-		"@martin-kolarik/eslint-config": "^9.0.0",
+		"@martin-kolarik/eslint-config": "^9.0.1",
 		"@redocly/cli": "^1.34.14",
 		"@sinonjs/fake-timers": "^15.4.0",
 		"@stoplight/spectral-cli": "^6.15.1",
