@@ -1,4 +1,6 @@
 import './lib/startup.js';
+import path from 'path';
+import { createRequire } from 'module';
 import { fileURLToPath } from 'url';
 import zlib from 'zlib';
 import apmClient from 'elastic-apm-node';
@@ -23,6 +25,9 @@ import { router as v1Handler } from './routes/v1.js';
 apmClient.addTransactionFilter(apmUtils.apm.transactionFilter({ filterNotSampled: false }));
 
 const serverConfig = config.get('server');
+const require = createRequire(import.meta.url);
+const entrypoint = process.argv[1] && require.resolve(path.resolve(process.argv[1]));
+const isMainEntrypoint = import.meta.main || entrypoint === fileURLToPath(import.meta.url);
 
 let server = new Koa();
 let router = new Router({ strict: true, sensitive: true });
@@ -246,7 +251,7 @@ server.on('error', (error, ctx) => {
 });
 
 // istanbul ignore next
-if (import.meta.main) {
+if (isMainEntrypoint) {
 	/**
 	 * Start listening on the configured port.
 	 */
