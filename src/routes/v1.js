@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import Router from 'koa-router';
+import Router from '@koa/router';
 import isSha from 'is-hexdigest';
 import apmClient from 'elastic-apm-node';
 import koaElasticUtilsModule from 'elastic-apm-utils';

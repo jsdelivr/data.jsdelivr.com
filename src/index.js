@@ -16,7 +16,7 @@ import koaCompress from 'koa-compress';
 import koaLogger from 'koa-logger';
 import koaETag from 'koa-etag';
 import koaJson from 'koa-json';
-import Router from 'koa-router';
+import Router from '@koa/router';
 import statuses from 'statuses';
 import debugHandler, { status as debugStatusHandler } from './routes/debug.js';
 import heartbeatHandler from './routes/heartbeat.js';
