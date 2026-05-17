@@ -25,6 +25,7 @@ export default defineConfig([
 			globals: {
 				server: 'readonly',
 				chaiSnapshotInstance: 'readonly',
+				expect: 'readonly',
 			},
 		},
 	},

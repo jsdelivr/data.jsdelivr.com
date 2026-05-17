@@ -1,12 +1,8 @@
 import '../../../src/lib/startup.js';
-import chai from 'chai';
-import chaiHttp from 'chai-http';
+import { request } from 'chai-http';
 import nock from 'nock';
 import './v1.js';
 
-const expect = chai.expect;
-
-chai.use(chaiHttp);
 nock.disableNetConnect();
 nock.enableNetConnect('127.0.0.1');
 
@@ -14,7 +10,7 @@ describe('Other', function () {
 	this.timeout(10000);
 
 	it('GET /debug/4f5dbb6427b186c054465729f5ed0fc6', () => {
-		return chai.request(server)
+		return request.execute(server)
 			.get('/debug/4f5dbb6427b186c054465729f5ed0fc6')
 			.then((res) => {
 				expect(res).to.have.status(200);
@@ -22,7 +18,7 @@ describe('Other', function () {
 	});
 
 	it('GET /heartbeat', () => {
-		return chai.request(server)
+		return request.execute(server)
 			.get('/heartbeat')
 			.buffer()
 			.then((res) => {

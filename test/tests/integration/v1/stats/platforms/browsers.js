@@ -1,5 +1,4 @@
 import _ from 'lodash';
-import { expect } from 'chai';
 import { makeEndpointSnapshotTests, makeEndpointPaginationTests, makePaginatedEndpointAssertions, setupSnapshots } from '../../../../../utils.js';
 
 describe('/v1/stats/platforms/browsers', () => {

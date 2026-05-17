@@ -1,8 +1,7 @@
-import chai from 'chai';
+import { request } from 'chai-http';
 import config from 'config';
 import { setupSnapshots } from '../../../../../../utils.js';
 
-const expect = chai.expect;
 const server = `http://127.0.0.1:${config.get(`server.port`)}`;
 
 describe('/v1/stats/packages/badge', () => {
@@ -11,7 +10,7 @@ describe('/v1/stats/packages/badge', () => {
 	});
 
 	it(`GET /v1/stats/packages/npm/package-2/badge`, () => {
-		return chai.request(server)
+		return request.execute(server)
 			.get(`/v1/stats/packages/npm/package-2/badge`)
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -24,7 +23,7 @@ describe('/v1/stats/packages/badge', () => {
 	});
 
 	it(`GET /v1/stats/packages/npm/package-2/badge?type=rank`, () => {
-		return chai.request(server)
+		return request.execute(server)
 			.get(`/v1/stats/packages/npm/package-2/badge?type=rank`)
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -37,7 +36,7 @@ describe('/v1/stats/packages/badge', () => {
 	});
 
 	it(`GET /v1/stats/packages/npm/package-2/badge?type=type-rank`, () => {
-		return chai.request(server)
+		return request.execute(server)
 			.get(`/v1/stats/packages/npm/package-2/badge?type=type-rank`)
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -50,7 +49,7 @@ describe('/v1/stats/packages/badge', () => {
 	});
 
 	it(`GET /v1/stats/packages/npm/package-2/badge?type=type-rank&period=year`, () => {
-		return chai.request(server)
+		return request.execute(server)
 			.get(`/v1/stats/packages/npm/package-2/badge?type=type-rank&period=year`)
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -63,7 +62,7 @@ describe('/v1/stats/packages/badge', () => {
 	});
 
 	it(`GET /v1/stats/packages/npm/package-2/badge?type=type-rank&period=s-year`, () => {
-		return chai.request(server)
+		return request.execute(server)
 			.get(`/v1/stats/packages/npm/package-2/badge?type=type-rank&period=s-year`)
 			.then((response) => {
 				expect(response).to.have.status(400);
@@ -76,7 +75,7 @@ describe('/v1/stats/packages/badge', () => {
 	});
 
 	it(`GET /v1/stats/packages/npm/@scope/package-1/badge?type=type-rank`, () => {
-		return chai.request(server)
+		return request.execute(server)
 			.get(`/v1/stats/packages/npm/@scope/package-1/badge?type=type-rank`)
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -89,7 +88,7 @@ describe('/v1/stats/packages/badge', () => {
 	});
 
 	it(`GET /v1/stats/packages/npm/@scope/package-1/badge?style=rounded`, () => {
-		return chai.request(server)
+		return request.execute(server)
 			.get(`/v1/stats/packages/npm/@scope/package-1/badge?style=rounded`)
 			.then((response) => {
 				expect(response).to.have.status(200);

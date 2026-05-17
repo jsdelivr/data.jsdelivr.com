@@ -1,11 +1,8 @@
 import '../../../src/lib/startup.js';
-import chai from 'chai';
 import relativeDayUtc from 'relative-day-utc';
 import dateRange from '../../../src/routes/utils/dateRange.js';
 import isDeepEmpty from '../../../src/routes/utils/isDeepEmpty.js';
 import pagination from '../../../src/routes/utils/pagination.js';
-
-const expect = chai.expect;
 
 describe('Unit tests', () => {
 	describe('utils/dateRange.js', () => {

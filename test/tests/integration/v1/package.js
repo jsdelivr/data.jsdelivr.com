@@ -1,7 +1,5 @@
-import chai from 'chai';
+import { request } from 'chai-http';
 import { setupSnapshots } from '../../../utils.js';
-
-const expect = chai.expect;
 
 describe('/v1/package', () => {
 	before(() => {
@@ -9,7 +7,7 @@ describe('/v1/package', () => {
 	});
 
 	it('GET /v1/package/npm/jquery', () => {
-		return chai.request(server)
+		return request.execute(server)
 			.get('/v1/package/npm/jquery')
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -25,7 +23,7 @@ describe('/v1/package', () => {
 	});
 
 	it('GET /v1/package/npm/jquery - cache hit', () => {
-		return chai.request(server)
+		return request.execute(server)
 			.get('/v1/package/npm/jquery')
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -39,7 +37,7 @@ describe('/v1/package', () => {
 	});
 
 	it('GET /v1/package/npm/jquery@3.2.1', () => {
-		return chai.request(server)
+		return request.execute(server)
 			.get('/v1/package/npm/jquery@3.2.1')
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -55,7 +53,7 @@ describe('/v1/package', () => {
 	});
 
 	it('GET /v1/package/npm/jquery@3.2.1 - cache hit', () => {
-		return chai.request(server)
+		return request.execute(server)
 			.get('/v1/package/npm/jquery@3.2.1')
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -69,7 +67,7 @@ describe('/v1/package', () => {
 	});
 
 	it('GET /v1/package/npm/jquery@3.2.1/flat', () => {
-		return chai.request(server)
+		return request.execute(server)
 			.get('/v1/package/npm/jquery@3.2.1/flat')
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -85,7 +83,7 @@ describe('/v1/package', () => {
 	});
 
 	it('GET /v1/package/npm/jquery@3.2.1/flat - cache hit', () => {
-		return chai.request(server)
+		return request.execute(server)
 			.get('/v1/package/npm/jquery@3.2.1/flat')
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -99,7 +97,7 @@ describe('/v1/package', () => {
 	});
 
 	it('GET /v1/package/gh/jquery/jquery', () => {
-		return chai.request(server)
+		return request.execute(server)
 			.get('/v1/package/gh/jquery/jquery')
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -115,7 +113,7 @@ describe('/v1/package', () => {
 	});
 
 	it('GET /v1/package/gh/jquery/jquery - cache hit', () => {
-		return chai.request(server)
+		return request.execute(server)
 			.get('/v1/package/gh/jquery/jquery')
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -129,7 +127,7 @@ describe('/v1/package', () => {
 	});
 
 	it('GET /v1/package/gh/adobe/source-sans-pro', () => {
-		return chai.request(server)
+		return request.execute(server)
 			.get('/v1/package/gh/adobe/source-sans-pro')
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -143,7 +141,7 @@ describe('/v1/package', () => {
 	});
 
 	it('GET /v1/package/gh/jquery/jquery@3.2.1', () => {
-		return chai.request(server)
+		return request.execute(server)
 			.get('/v1/package/gh/jquery/jquery@3.2.1')
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -159,7 +157,7 @@ describe('/v1/package', () => {
 	});
 
 	it('GET /v1/package/gh/jquery/jquery@3.2.1 - cache hit', () => {
-		return chai.request(server)
+		return request.execute(server)
 			.get('/v1/package/gh/jquery/jquery@3.2.1')
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -173,7 +171,7 @@ describe('/v1/package', () => {
 	});
 
 	it('GET /v1/package/gh/adobe/source-sans-pro@2.020R-ro%2F1.075R-it', () => {
-		return chai.request(server)
+		return request.execute(server)
 			.get('/v1/package/gh/adobe/source-sans-pro@2.020R-ro%2F1.075R-it')
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -187,7 +185,7 @@ describe('/v1/package', () => {
 	});
 
 	it('GET /v1/package/gh/jquery/jquery@821bf34353a6baf97f7944379a6459afb16badae', () => {
-		return chai.request(server)
+		return request.execute(server)
 			.get('/v1/package/gh/jquery/jquery@821bf34353a6baf97f7944379a6459afb16badae')
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -201,7 +199,7 @@ describe('/v1/package', () => {
 	});
 
 	it('GET /v1/package/gh/jquery/jquery@3.2.1/flat', () => {
-		return chai.request(server)
+		return request.execute(server)
 			.get('/v1/package/gh/jquery/jquery@3.2.1/flat')
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -217,7 +215,7 @@ describe('/v1/package', () => {
 	});
 
 	it('GET /v1/package/gh/jquery/jquery@3.2.1/flat - cache hit', () => {
-		return chai.request(server)
+		return request.execute(server)
 			.get('/v1/package/gh/jquery/jquery@3.2.1/flat')
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -231,7 +229,7 @@ describe('/v1/package', () => {
 	});
 
 	it('GET /v1/package/npm/foo', () => {
-		return chai.request(server)
+		return request.execute(server)
 			.get('/v1/package/npm/foo')
 			.then((response) => {
 				expect(response).to.have.status(404);
@@ -246,7 +244,7 @@ describe('/v1/package', () => {
 	});
 
 	it('GET /v1/package/npm/package-without-versions', () => {
-		return chai.request(server)
+		return request.execute(server)
 			.get('/v1/package/npm/package-without-versions')
 			.then((response) => {
 				expect(response).to.have.status(404);
@@ -261,7 +259,7 @@ describe('/v1/package', () => {
 	});
 
 	it('GET /v1/package/npm/foo@1', () => {
-		return chai.request(server)
+		return request.execute(server)
 			.get('/v1/package/npm/foo@1')
 			.then((response) => {
 				expect(response).to.have.status(404);
@@ -276,7 +274,7 @@ describe('/v1/package', () => {
 	});
 
 	it('GET /v1/package/npm/jquery@1', () => {
-		return chai.request(server)
+		return request.execute(server)
 			.get('/v1/package/npm/jquery@1')
 			.then((response) => {
 				expect(response).to.have.status(404);
@@ -291,7 +289,7 @@ describe('/v1/package', () => {
 	});
 
 	it('GET /v1/package/npm/emojione@3.1.1', () => {
-		return chai.request(server)
+		return request.execute(server)
 			.get('/v1/package/npm/emojione@3.1.1')
 			.then((response) => {
 				expect(response).to.have.status(403);
@@ -306,7 +304,7 @@ describe('/v1/package', () => {
 	});
 
 	it('GET /v1/package/gh/jquery/jqueryxxx', () => {
-		return chai.request(server)
+		return request.execute(server)
 			.get('/v1/package/gh/jquery/jqueryxxx')
 			.then((response) => {
 				expect(response).to.have.status(404);
@@ -321,7 +319,7 @@ describe('/v1/package', () => {
 	});
 
 	it('GET /v1/package/gh/jquery/dmca-blocked-451', () => {
-		return chai.request(server)
+		return request.execute(server)
 			.get('/v1/package/gh/jquery/dmca-blocked-451')
 			.then((response) => {
 				expect(response).to.have.status(404);
@@ -336,7 +334,7 @@ describe('/v1/package', () => {
 	});
 
 	it('GET /v1/package/gh/jquery/tos-blocked-403', () => {
-		return chai.request(server)
+		return request.execute(server)
 			.get('/v1/package/gh/jquery/tos-blocked-403')
 			.then((response) => {
 				expect(response).to.have.status(404);

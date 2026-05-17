@@ -1,14 +1,13 @@
 import _ from 'lodash';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import chai from 'chai';
+import { request } from 'chai-http';
 import { parseTemplate } from 'url-template';
 import HttpLinkHeader from 'http-link-header';
 import dateRange from '../src/routes/utils/dateRange.js';
 import isDeepEmpty from '../src/routes/utils/isDeepEmpty.js';
 import './plugins/wrap-it/index.js';
 
-const expect = chai.expect;
 const localPath = file => fileURLToPath(new URL(file, import.meta.url));
 
 // based on https://stackoverflow.com/a/43053803
@@ -34,7 +33,7 @@ function makeEndpointAssertion (uriTemplate, defaults, { params, assert }, { lim
 	let page = params.page || 1, response;
 
 	it(`GET ${getUri()}${note ? ` - ${note}` : ''}`, () => {
-		let request = uri => chai.request(server)
+		let fetchPage = uri => request.execute(server)
 			.get(uri)
 			.then((partialResponse) => {
 				if (!response) {
@@ -45,7 +44,7 @@ function makeEndpointAssertion (uriTemplate, defaults, { params, assert }, { lim
 
 				if (Array.isArray(partialResponse.body)) {
 					if (partialResponse.body.length >= apiLimit && partialResponse.body.length < limit) {
-						return request(getUriWithValues(uriTemplate, { ...params, page: ++page }));
+						return fetchPage(getUriWithValues(uriTemplate, { ...params, page: ++page }));
 					}
 
 					response.body.splice(limit);
@@ -77,7 +76,7 @@ function makeEndpointAssertion (uriTemplate, defaults, { params, assert }, { lim
 				}
 			});
 
-		return request(getUri());
+		return fetchPage(getUri());
 	});
 }
 
@@ -125,19 +124,19 @@ export function makeEndpointPaginationTests (uri, query = {}) {
 		let first10, first11, first98, first99;
 
 		before(async () => {
-			first10 = await chai.request(server)
+			first10 = await request.execute(server)
 				.get(uri)
 				.query({ ...query, limit: 10 });
 
-			first11 = await chai.request(server)
+			first11 = await request.execute(server)
 				.get(uri)
 				.query({ ...query, limit: 11 });
 
-			first98 = await chai.request(server)
+			first98 = await request.execute(server)
 				.get(uri)
 				.query({ ...query, limit: 98 });
 
-			first99 = await chai.request(server)
+			first99 = await request.execute(server)
 				.get(uri)
 				.query({ ...query, limit: 99 });
 		});
@@ -179,7 +178,7 @@ export function makeEndpointPaginationTests (uri, query = {}) {
 
 		_.range(1, 11).forEach((index) => {
 			it(`works with limit=1&page=${index}`, () => {
-				return chai.request(server)
+				return request.execute(server)
 					.get(uri)
 					.query({ ...query, limit: 1, page: index })
 					.then((response) => {
@@ -191,7 +190,7 @@ export function makeEndpointPaginationTests (uri, query = {}) {
 
 		_.range(1, 6).forEach((index) => {
 			it(`works with limit=2&page=${index}`, () => {
-				return chai.request(server)
+				return request.execute(server)
 					.get(uri)
 					.query({ ...query, limit: 2, page: index })
 					.then((response) => {
@@ -202,7 +201,7 @@ export function makeEndpointPaginationTests (uri, query = {}) {
 		});
 
 		it('validates the limit param', () => {
-			return chai.request(server)
+			return request.execute(server)
 				.get(uri)
 				.query({ ...query, limit: -1 })
 				.then((response) => {
@@ -211,7 +210,7 @@ export function makeEndpointPaginationTests (uri, query = {}) {
 		});
 
 		it('validates the page param', () => {
-			return chai.request(server)
+			return request.execute(server)
 				.get(uri)
 				.query({ ...query, page: -1 })
 				.then((response) => {

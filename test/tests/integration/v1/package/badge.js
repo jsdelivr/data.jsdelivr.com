@@ -1,8 +1,7 @@
-import chai from 'chai';
+import { request } from 'chai-http';
 import config from 'config';
 import { setupSnapshots } from '../../../../utils.js';
 
-const expect = chai.expect;
 const server = `http://127.0.0.1:${config.get(`server.port`)}`;
 
 describe('/v1/package/badge', () => {
@@ -11,7 +10,7 @@ describe('/v1/package/badge', () => {
 	});
 
 	it(`GET /v1/package/npm/package-2/badge`, () => {
-		return chai.request(server)
+		return request.execute(server)
 			.get(`/v1/package/npm/package-2/badge`)
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -26,7 +25,7 @@ describe('/v1/package/badge', () => {
 	});
 
 	it(`GET /v1/package/npm/package-2/badge/rank`, () => {
-		return chai.request(server)
+		return request.execute(server)
 			.get(`/v1/package/npm/package-2/badge/rank`)
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -41,7 +40,7 @@ describe('/v1/package/badge', () => {
 	});
 
 	it(`GET /v1/package/npm/package-2/badge/type-rank`, () => {
-		return chai.request(server)
+		return request.execute(server)
 			.get(`/v1/package/npm/package-2/badge/type-rank`)
 			.then((response) => {
 				expect(response).to.have.status(200);

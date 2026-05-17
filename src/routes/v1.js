@@ -5,7 +5,7 @@ import apmClient from 'elastic-apm-node';
 import koaElasticUtilsModule from 'elastic-apm-utils';
 
 import Joi from 'joi';
-import openApiCore from '@redocly/openapi-core';
+import * as openApiCore from '@redocly/openapi-core';
 import validate from '../middleware/validate.js';
 import schema from './schemas/v1.js';
 import LookupRequest from './v1/LookupRequest.js';
