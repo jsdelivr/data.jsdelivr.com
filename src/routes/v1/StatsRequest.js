@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import BaseRequest from './BaseRequest.js';
 import BaseModel from '../../models/BaseModel.js';
 import Package from '../../models/Package.js';

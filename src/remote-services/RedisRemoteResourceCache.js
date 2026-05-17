@@ -1,8 +1,10 @@
+import Bluebird from 'bluebird';
 import { TTLCache as TTL } from '@isaacs/ttlcache';
 import { RESP_TYPES } from 'redis';
 import redis from '../lib/redis/index.js';
 import JSONPP from '../lib/jsonpp/index.js';
 import ArrayStream from '../lib/array-stream/index.js';
+
 const arrayStream = new ArrayStream(JSONPP);
 
 const STATUS_PENDING = 0;

@@ -1,4 +1,5 @@
 import knexfile from '../knexfile.js';
+
 const dbConfig = knexfile[process.env.NODE_ENV] || knexfile.development;
 
 export const up = async (db) => {

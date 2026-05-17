@@ -1,4 +1,5 @@
 import http from 'http';
+import Bluebird from 'bluebird';
 import fakeTimers from '@sinonjs/fake-timers';
 import nock from 'nock';
 import config from 'config';

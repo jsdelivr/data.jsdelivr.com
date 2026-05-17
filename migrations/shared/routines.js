@@ -1,4 +1,5 @@
 import dedent from 'dedent-js';
+
 const periods = [ [ 1, 'day' ], [ 7, 'week' ], [ 30, 'month' ], [ 90, 'quarter' ], [ 365, 'year' ], [ '2017-08-17', 'all' ] ];
 
 export default async (db) => {

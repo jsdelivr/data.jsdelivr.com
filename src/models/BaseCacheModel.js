@@ -1,9 +1,11 @@
+import _ from 'lodash';
 import crypto from 'crypto';
 
 import config from 'config';
 import BaseModel, { ProxyHandler as BaseProxyHandler } from './BaseModel.js';
 import ArrayStream from '../lib/array-stream/index.js';
 import ScopedPromiseLock, { PromiseLock as Lock } from '../lib/promise-lock/index.js';
+import redis from '../lib/redis/index.js';
 
 let arrayStream = new ArrayStream(JSON);
 let PromiseLock, promiseLock;

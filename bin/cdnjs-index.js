@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 import _ from 'lodash';
-global._ = _; // ¯\_(ツ)_/¯
 
 import path from 'path';
 import tar from 'tar-stream';

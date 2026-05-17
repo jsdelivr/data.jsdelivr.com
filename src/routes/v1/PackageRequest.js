@@ -1,10 +1,10 @@
+import _ from 'lodash';
 import got from 'got';
 import config from 'config';
 import { makeBadge } from 'badge-maker';
 import apmClient from 'elastic-apm-node';
 import isSemverStatic from 'is-semver-static';
 import NumberAbbreviate from 'number-abbreviate';
-const number = new NumberAbbreviate([ 'k', 'M', 'B', 'T' ]);
 
 import BaseRequest from './BaseRequest.js';
 import BadVersionError from '../errors/BadVersionError.js';
@@ -23,6 +23,7 @@ import JsDelivrRemoteService from '../../remote-services/JsDelivrRemoteService.j
 import RedisRemoteResourceCache from '../../remote-services/RedisRemoteResourceCache.js';
 import { routes } from '../v1.js';
 
+const number = new NumberAbbreviate([ 'k', 'M', 'B', 'T' ]);
 const v1Config = config.get('v1');
 const npmRemoteService = new NpmRemoteService({ baseUrl: v1Config.npm.sourceUrl }, new RedisRemoteResourceCache('pr/npm'));
 const gitHubRemoteService = new GitHubRemoteService({ auth: `token ${v1Config.gh.apiToken}`, baseUrl: v1Config.gh.sourceUrl }, new RedisRemoteResourceCache('pr/gh'));

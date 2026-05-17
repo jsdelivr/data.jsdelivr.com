@@ -1,3 +1,5 @@
+import Bluebird from 'bluebird';
+
 class ArrayStream {
 	constructor (json) {
 		this.json = json;

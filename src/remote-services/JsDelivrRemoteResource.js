@@ -1,4 +1,5 @@
 import RemoteResource from './RemoteResource.js';
+
 const baseTtl = 5 * 60 * 1000;
 
 class JsDelivrRemoteResource extends RemoteResource {

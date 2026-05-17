@@ -1,4 +1,5 @@
 import Joi from 'joi';
+import Bluebird from 'bluebird';
 import BaseModel from './BaseModel.js';
 
 const schema = Joi.object({

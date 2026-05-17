@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import Joi from 'joi';
 import BaseModel from './BaseModel.js';
 import ProxyHits from './ProxyHits.js';

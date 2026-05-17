@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 export default function isDeepEmpty (body) {
 	if (_.isEmpty(body)) {
 		return true;

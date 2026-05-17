@@ -1,8 +1,8 @@
+import _ from 'lodash';
 import Router from 'koa-router';
 import isSha from 'is-hexdigest';
 import apmClient from 'elastic-apm-node';
 import koaElasticUtilsModule from 'elastic-apm-utils';
-const koaElasticUtils = koaElasticUtilsModule.koa;
 
 import Joi from 'joi';
 import openApiCore from '@redocly/openapi-core';
@@ -12,6 +12,7 @@ import LookupRequest from './v1/LookupRequest.js';
 import PackageRequest from './v1/PackageRequest.js';
 import StatsRequest from './v1/StatsRequest.js';
 
+const koaElasticUtils = koaElasticUtilsModule.koa;
 const router = new Router({ strict: true, sensitive: true });
 
 /**

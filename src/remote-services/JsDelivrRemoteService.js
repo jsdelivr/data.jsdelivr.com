@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import got from '../lib/got/index.js';
 import promiseRetry from 'promise-retry';
 import JsDelivrRemoteResource from './JsDelivrRemoteResource.js';

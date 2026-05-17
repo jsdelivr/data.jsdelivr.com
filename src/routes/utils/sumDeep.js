@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 export default function sumDeep (data, depth = 1) {
 	if (typeof data !== 'object') {
 		return 0;

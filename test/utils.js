@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import chai from 'chai';

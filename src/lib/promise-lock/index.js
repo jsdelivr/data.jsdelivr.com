@@ -1,9 +1,9 @@
+import Bluebird from 'bluebird';
 import { TTLCache as TTL } from '@isaacs/ttlcache';
 import pTimeout from 'p-timeout';
 import redis, { createClient as createRedisClient } from '../redis/index.js';
 import JSONPP from '../jsonpp/index.js';
 import ArrayStream from '../array-stream/index.js';
-const arrayStream = new ArrayStream(JSONPP);
 
 const STATUS_PENDING = 0;
 const STATUS_RESOLVED = 1;
@@ -13,6 +13,7 @@ const VALUE_TYPE_OBJECT = '0';
 const VALUE_TYPE_STRING = '1';
 const VALUE_TYPE_ARRAY = '2';
 
+const arrayStream = new ArrayStream(JSONPP);
 let lastMessageId = 0;
 let getNextMessageId = () => lastMessageId = (lastMessageId + 1) % Number.MAX_SAFE_INTEGER;
 let promiseLock;

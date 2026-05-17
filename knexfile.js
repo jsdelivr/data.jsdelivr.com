@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import config from 'config';
+
 const dbConfig = config.get('db');
 
 // WARNING: This configuration is now used for both the CLI and the application.

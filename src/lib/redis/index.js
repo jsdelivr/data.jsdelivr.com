@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import zlib from 'zlib';
 import { createClient as createRedisClient, RESP_TYPES } from 'redis';
 import config from 'config';

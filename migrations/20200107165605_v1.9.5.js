@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import dedent from 'dedent-js';
+
 const periods = [ [ 1, 'day' ], [ 7, 'week' ], [ 30, 'month' ], [ 365, 'year' ], [ undefined, 'all' ] ];
 
 export const up = async (db) => {

@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 const PRIMARY_FIELDS = {
 	js: [ 'jsdelivr', 'cdn', 'browser' ],
 	css: [ 'jsdelivr', 'cdn', 'browser', 'style' ],

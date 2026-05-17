@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import Joi from 'joi';
 import countriesList from 'countries-list';
 import BaseModel from './BaseModel.js';

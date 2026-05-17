@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 /**
  * Validates `body`, `params`, and `query` according to the provided schema
  * and copies the validated object to `ctx.state`. Properties not declared

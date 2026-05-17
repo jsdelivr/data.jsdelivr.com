@@ -1,6 +1,7 @@
 import config from 'config';
 import BaseRequest from './BaseRequest.js';
 import File from '../../models/File.js';
+
 const v1Config = config.get('v1');
 
 class LookupRequest extends BaseRequest {

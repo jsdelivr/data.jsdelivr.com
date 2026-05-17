@@ -1,6 +1,7 @@
 import os from 'os';
 import childProcess from 'child_process';
 import relativeDayUtc from 'relative-day-utc';
+import Bluebird from 'bluebird';
 import config from 'config';
 import pkg from '../../package.json' with { type: 'json' };
 

@@ -1,5 +1,6 @@
 import Bluebird from 'bluebird';
 import updateSharedObjects from './shared/updateSharedObjects.js';
+
 const staticPeriods = [ 's-day', 's-week', 's-month', 's-quarter', 's-year' ];
 const periods = [ 'day', 'week', 'month', 'quarter', 'year', 'all', ...staticPeriods ];
 

@@ -1,4 +1,5 @@
 import updateSharedObjects from './shared/updateSharedObjects.js';
+
 const locationTypes = [ 'continent', 'country', 'global' ];
 
 const periods = [

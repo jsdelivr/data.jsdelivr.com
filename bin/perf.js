@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import got from 'got';
 import Promise from 'bluebird';
+
 const host = 'https://data.jsdelivr.com';
 
 setTimeout(async () => {

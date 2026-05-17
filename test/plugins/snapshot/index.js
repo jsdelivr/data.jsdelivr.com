@@ -1,7 +1,9 @@
 'use strict';
 
+import _ from 'lodash';
 import fs from 'fs-extra';
 import relativeDayUtc from 'relative-day-utc';
+
 const defaultSnapshotDate = '2010-12-31';
 
 export default ({ snapshotResponses = false, updateExistingSnapshots = false }) => {

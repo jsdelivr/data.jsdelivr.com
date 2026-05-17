@@ -1,3 +1,5 @@
+import _ from 'lodash';
+import Bluebird from 'bluebird';
 import got from '../lib/got/index.js';
 import semver from 'semver';
 import NpmRemoteResource from './NpmRemoteResource.js';

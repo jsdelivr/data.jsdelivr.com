@@ -9,13 +9,9 @@ export default defineConfig([
 	{
 		languageOptions: {
 			globals: {
-				_: 'readonly',
 				db: 'readonly',
 				log: 'readonly',
-				redis: 'readonly',
 				logger: 'readonly',
-				Bluebird: 'readonly',
-				apmClient: 'readonly',
 			},
 		},
 	},

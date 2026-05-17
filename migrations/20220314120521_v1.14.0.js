@@ -1,4 +1,5 @@
 import updateSharedObjects from './shared/updateSharedObjects.js';
+
 const periods = [ 'day', 'week', 'month', 'year', 'all' ];
 
 export const up = async (db) => {

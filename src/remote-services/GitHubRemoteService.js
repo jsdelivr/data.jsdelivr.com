@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import HttpLinkHeader from 'http-link-header';
 import { Octokit } from '@octokit/rest';
 import vCompare from 'v-compare';

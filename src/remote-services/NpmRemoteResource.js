@@ -1,4 +1,5 @@
 import RemoteResource from './RemoteResource.js';
+
 const twoWeeks = 14 * 24 * 60 * 60 * 1000;
 const baseTtl = 5 * 60 * 1000;
 
