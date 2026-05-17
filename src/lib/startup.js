@@ -1,8 +1,3 @@
-import _ from 'lodash';
-global._ = _;
-import Bluebird from 'bluebird';
-global.Bluebird = Bluebird;
-
 import Logger from 'h-logger2';
 import apmClient from 'elastic-apm-node';
 import ElasticWriter from 'h-logger2-elastic';
@@ -28,14 +23,6 @@ global.logger = new Logger(
 
 global.log = logger.scope('global');
 
-import fs from 'fs-extra';
-import zlib from 'zlib';
-
-Bluebird.promisifyAll(fs);
-Bluebird.promisifyAll(zlib);
-
-const { default: redis } = await import('./redis/index.js');
-global.redis = redis;
 const { default: db } = await import('./db/index.js');
 global.db = db;
 

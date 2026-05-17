@@ -1,11 +1,14 @@
 import _ from 'lodash';
 import zlib from 'zlib';
+import { promisify } from 'util';
 import { createClient as createRedisClient, RESP_TYPES } from 'redis';
 import config from 'config';
 
 const redisConfig = config.get('redis');
 const redisLog = logger.scope('redis');
 const client = createClient();
+const deflate = promisify(zlib.deflate);
+const inflate = promisify(zlib.inflate);
 
 if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test') {
 	client.once('ready', () => client.flushAll().catch(() => {}));
@@ -26,7 +29,7 @@ async function compress (value) {
 		return '\x00' + value;
 	}
 
-	return zlib.deflateAsync(value);
+	return deflate(value);
 }
 
 async function decompress (value) {
@@ -36,7 +39,7 @@ async function decompress (value) {
 		return Buffer.isBuffer(value) ? value.toString('utf8', 1) : value.substring(1);
 	}
 
-	return (await zlib.inflateAsync(value)).toString();
+	return (await inflate(value)).toString();
 }
 
 async function getCompressedAsync (key) {
