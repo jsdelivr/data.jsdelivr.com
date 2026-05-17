@@ -2,7 +2,7 @@ import _ from 'lodash';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import chai from 'chai';
-import urlTemplate from 'url-template';
+import { parseTemplate } from 'url-template';
 import HttpLinkHeader from 'http-link-header';
 import dateRange from '../src/routes/utils/dateRange.js';
 import isDeepEmpty from '../src/routes/utils/isDeepEmpty.js';
@@ -25,7 +25,7 @@ const cartesian = (...sets) => {
 };
 
 function getUriWithValues (template, values, defaults) {
-	return urlTemplate.parse(template).expand(defaults ? _.defaults(values, defaults) : values);
+	return parseTemplate(template).expand(defaults ? _.defaults(values, defaults) : values);
 }
 
 function makeEndpointAssertion (uriTemplate, defaults, { params, assert }, { limit = params.limit || 100, note, status = 200, validateSchema = true } = {}) {
