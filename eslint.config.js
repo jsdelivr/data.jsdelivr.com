@@ -1,7 +1,7 @@
-const { defineConfig } = require('eslint/config');
-const javascript = require('@martin-kolarik/eslint-config');
+import { defineConfig } from 'eslint/config';
+import javascript from '@martin-kolarik/eslint-config';
 
-module.exports = defineConfig([
+export default defineConfig([
 	{
 		ignores: [ 'coverage/**' ],
 	},
@@ -9,13 +9,9 @@ module.exports = defineConfig([
 	{
 		languageOptions: {
 			globals: {
-				_: 'readonly',
 				db: 'readonly',
 				log: 'readonly',
-				redis: 'readonly',
 				logger: 'readonly',
-				Bluebird: 'readonly',
-				apmClient: 'readonly',
 			},
 		},
 	},

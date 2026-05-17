@@ -1,4 +1,4 @@
-const { makeEndpointSnapshotTests, setupSnapshots, makeEndpointPaginationTests } = require('../../../../../../utils');
+import { makeEndpointSnapshotTests, setupSnapshots, makeEndpointPaginationTests } from '../../../../../../utils.js';
 
 const periodOptions = [
 	'day', 'week', 'month', 'quarter', 'year', 'all', undefined,
@@ -7,7 +7,7 @@ const periodOptions = [
 
 describe('/v1/stats/proxies/proxy/files', () => {
 	before(() => {
-		setupSnapshots(__filename);
+		setupSnapshots(import.meta.url);
 	});
 
 	makeProxyFilesStatsTests();

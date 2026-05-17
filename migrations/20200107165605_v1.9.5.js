@@ -1,8 +1,9 @@
-const _ = require('lodash');
-const dedent = require('dedent-js');
+import _ from 'lodash';
+import dedent from 'dedent-js';
+
 const periods = [ [ 1, 'day' ], [ 7, 'week' ], [ 30, 'month' ], [ 365, 'year' ], [ undefined, 'all' ] ];
 
-exports.up = async (db) => {
+export const up = async (db) => {
 	for (let [ days, period ] of periods) {
 		await db.schema.createTable(`view_top_packages_${period}`, (table) => {
 			table.date('date');
@@ -86,4 +87,4 @@ function getTopPackagesUpdateCodeForPeriod (period) {
 	`;
 }
 
-exports.down = () => {};
+export const down = () => {};

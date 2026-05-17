@@ -1,4 +1,6 @@
-const config = require('config');
+import _ from 'lodash';
+import config from 'config';
+
 const serverConfig = config.get('server');
 
 /**
@@ -171,4 +173,4 @@ class LinkBuilder {
 	}
 }
 
-module.exports = LinkBuilder;
+export default LinkBuilder;

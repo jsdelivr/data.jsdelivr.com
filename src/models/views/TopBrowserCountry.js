@@ -32,4 +32,4 @@ class TopBrowserCountry {
 	}
 }
 
-module.exports = TopBrowserCountry;
+export default TopBrowserCountry;

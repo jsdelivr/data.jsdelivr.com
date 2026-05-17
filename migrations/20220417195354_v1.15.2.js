@@ -1,4 +1,4 @@
-exports.up = async (db) => {
+export const up = async (db) => {
 	await db.schema.alterTable('proxy', (table) => {
 		table.string('name').after('id').unique();
 	});
@@ -6,4 +6,4 @@ exports.up = async (db) => {
 	await db.raw(`update proxy set name = replace(substring(path, 2), '/', '-')`);
 };
 
-exports.down = () => {};
+export const down = () => {};

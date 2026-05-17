@@ -1,11 +1,11 @@
-const updateSharedObjects = require('./shared/updateSharedObjects');
+import updateSharedObjects from './shared/updateSharedObjects.js';
 
 const periods = [
 	'day', 'week', 'month', 'year', 'all',
 	's-day', 's-week', 's-month', 's-year',
 ];
 
-exports.up = async (db) => {
+export const up = async (db) => {
 	await db.schema.createTable(`view_network_countries`, (table) => {
 		table.enum('period', periods);
 		table.date('date');
@@ -20,4 +20,4 @@ exports.up = async (db) => {
 	await updateSharedObjects(db);
 };
 
-exports.down = () => {};
+export const down = () => {};

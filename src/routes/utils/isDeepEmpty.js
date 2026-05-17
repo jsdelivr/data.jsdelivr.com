@@ -1,4 +1,6 @@
-module.exports = function isDeepEmpty (body) {
+import _ from 'lodash';
+
+export default function isDeepEmpty (body) {
 	if (_.isEmpty(body)) {
 		return true;
 	} else if (Array.isArray(body)) {
@@ -10,4 +12,4 @@ module.exports = function isDeepEmpty (body) {
 	}
 
 	return false;
-};
+}

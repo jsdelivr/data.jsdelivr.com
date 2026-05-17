@@ -35,4 +35,4 @@ class TopBrowserVersionCountry {
 	}
 }
 
-module.exports = TopBrowserVersionCountry;
+export default TopBrowserVersionCountry;

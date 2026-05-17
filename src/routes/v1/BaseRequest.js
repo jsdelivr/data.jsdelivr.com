@@ -1,11 +1,10 @@
-const config = require('config');
-const relativeDayUtc = require('relative-day-utc');
-
-const dateRange = require('../utils/dateRange');
-const isDeepEmpty = require('../utils/isDeepEmpty');
-const pagination = require('../utils/pagination');
-const LinkBuilder = require('../utils/LinkBuilder');
-const { splitPackageUserAndName } = require('../utils/link-builder-transforms');
+import config from 'config';
+import relativeDayUtc from 'relative-day-utc';
+import dateRange from '../utils/dateRange.js';
+import isDeepEmpty from '../utils/isDeepEmpty.js';
+import pagination from '../utils/pagination.js';
+import LinkBuilder from '../utils/LinkBuilder.js';
+import { splitPackageUserAndName } from '../utils/link-builder-transforms.js';
 
 const v1Config = config.get('v1');
 
@@ -152,4 +151,4 @@ class BaseRequest {
 	}
 }
 
-module.exports = BaseRequest;
+export default BaseRequest;

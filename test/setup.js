@@ -1,21 +1,20 @@
-process.env.NODE_ENV = 'test';
+import http from 'http';
+import Bluebird from 'bluebird';
+import fakeTimers from '@sinonjs/fake-timers';
+import nock from 'nock';
+import config from 'config';
+import upstreamNpmResponses from './data/v1/npm.json' with { type: 'json' };
+import upstreamCdnResponses from './data/v1/cdn.json' with { type: 'json' };
+import upstreamGitHubResponses from './data/v1/github.json' with { type: 'json' };
 
-require('@sinonjs/fake-timers').install({ now: new Date('2022-07-05T00:00:00Z'), shouldAdvanceTime: true });
+fakeTimers.install({ now: new Date('2022-07-05T00:00:00Z'), shouldAdvanceTime: true });
 console.log(`Starting with fake time set to ${new Date().toISOString()}`);
 
-require('../src/lib/startup');
-const http = require('http');
-const nock = require('nock');
-const config = require('config');
+await import('../src/lib/startup.js');
+const { default: serverCallback } = await import('../src/index.js');
+const { default: setupDb } = await import('./setup-db.js');
 
-const serverCallback = require('../src');
-const setupDb = require('./setup-db');
-
-const upstreamNpmResponses = require('./data/v1/npm.json');
-const upstreamCdnResponses = require('./data/v1/cdn.json');
-const upstreamGitHubResponses = require('./data/v1/github.json');
-
-module.exports.mochaGlobalSetup = async () => {
+export const mochaGlobalSetup = async () => {
 	// nock.recorder.rec();
 	// nock.cleanAll();
 	nock.disableNetConnect();
@@ -216,6 +215,6 @@ module.exports.mochaGlobalSetup = async () => {
 	});
 };
 
-if (require.main === module) {
-	module.exports.mochaGlobalSetup().catch(console.error);
+if (import.meta.main) {
+	mochaGlobalSetup().catch(console.error);
 }

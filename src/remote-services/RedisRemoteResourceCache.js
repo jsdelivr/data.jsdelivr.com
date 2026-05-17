@@ -1,9 +1,10 @@
-const { TTLCache: TTL } = require('@isaacs/ttlcache');
-const redis = require('../lib/redis');
-const { RESP_TYPES } = require('redis');
-const JSONPP = require('../lib/jsonpp');
+import Bluebird from 'bluebird';
+import { TTLCache as TTL } from '@isaacs/ttlcache';
+import { RESP_TYPES } from 'redis';
+import redis from '../lib/redis/index.js';
+import JSONPP from '../lib/jsonpp/index.js';
+import ArrayStream from '../lib/array-stream/index.js';
 
-const ArrayStream = require('../lib/array-stream');
 const arrayStream = new ArrayStream(JSONPP);
 
 const STATUS_PENDING = 0;
@@ -13,6 +14,7 @@ const STATUS_REJECTED = 2;
 const VALUE_TYPE_OBJECT = '0';
 const VALUE_TYPE_STRING = '1';
 const VALUE_TYPE_ARRAY = '2';
+let promiseCacheShared;
 
 // TODO: this is an experimental implementation based on promise-lock and shares a lot of code with it.
 // If it works well it should be merged somehow.
@@ -208,16 +210,15 @@ class ScopedPromiseCacheShared {
 	constructor (scope) {
 		this.scope = scope;
 
-		if (typeof module.exports.promiseCacheShared === 'undefined') {
-			module.exports.promiseCacheShared = new PromiseCacheShared();
+		if (!promiseCacheShared) {
+			promiseCacheShared = new PromiseCacheShared();
 		}
 	}
 
 	getOrExec (key, fn) {
-		return module.exports.promiseCacheShared.getOrExec(`${this.scope}${key}`, fn);
+		return promiseCacheShared.getOrExec(`${this.scope}${key}`, fn);
 	}
 }
 
-module.exports = ScopedPromiseCacheShared;
-module.exports.PromiseCacheShared = PromiseCacheShared;
-module.exports.PromiseCacheSharedError = PromiseCacheSharedError;
+export default ScopedPromiseCacheShared;
+export { PromiseCacheShared, PromiseCacheSharedError };

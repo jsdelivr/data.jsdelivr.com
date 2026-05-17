@@ -1,11 +1,11 @@
-const chai = require('chai');
-const expect = chai.expect;
+import chai from 'chai';
+import { setupSnapshots } from '../../../utils.js';
 
-const { setupSnapshots } = require('../../../utils');
+const expect = chai.expect;
 
 describe('/v1/packages', () => {
 	before(() => {
-		setupSnapshots(__filename);
+		setupSnapshots(import.meta.url);
 	});
 
 	it('GET /v1/packages/npm/jquery', () => {

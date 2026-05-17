@@ -1,4 +1,4 @@
-module.exports = (limit, page) => {
+export default (limit, page) => {
 	let l = Number(limit);
 	let p = Number(page);
 

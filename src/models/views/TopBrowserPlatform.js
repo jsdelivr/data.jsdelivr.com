@@ -32,4 +32,4 @@ class TopBrowserPlatform {
 	}
 }
 
-module.exports = TopBrowserPlatform;
+export default TopBrowserPlatform;

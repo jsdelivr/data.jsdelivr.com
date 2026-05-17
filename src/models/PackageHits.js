@@ -1,6 +1,7 @@
-const Joi = require('joi');
-const BaseCacheModel = require('./BaseCacheModel');
-const { toIsoDate } = require('../lib/date');
+import _ from 'lodash';
+import Joi from 'joi';
+import BaseCacheModel from './BaseCacheModel.js';
+import { toIsoDate } from '../lib/date/index.js';
 
 const schema = Joi.object({
 	packageId: Joi.number().integer().min(0).required().allow(null),
@@ -69,4 +70,4 @@ class PackageHits extends BaseCacheModel {
 	}
 }
 
-module.exports = PackageHits;
+export default PackageHits;

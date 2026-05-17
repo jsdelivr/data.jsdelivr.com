@@ -13,4 +13,4 @@ class RemoteResourceSerializableError extends Error {
 	}
 }
 
-module.exports = RemoteResourceSerializableError;
+export default RemoteResourceSerializableError;

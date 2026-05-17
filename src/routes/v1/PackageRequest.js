@@ -1,29 +1,29 @@
-const got = require('got');
-const config = require('config');
-const { makeBadge } = require('badge-maker');
+import _ from 'lodash';
+import got from 'got';
+import config from 'config';
+import { makeBadge } from 'badge-maker';
+import apmClient from 'elastic-apm-node';
+import isSemverStatic from 'is-semver-static';
+import NumberAbbreviate from 'number-abbreviate';
 
-const isSemverStatic = require('is-semver-static');
-const NumberAbbreviate = require('number-abbreviate');
+import BaseRequest from './BaseRequest.js';
+import BadVersionError from '../errors/BadVersionError.js';
+import Package from '../../models/Package.js';
+import PackageListing from '../../models/PackageListing.js';
+import PackageEntrypoints from '../../models/PackageEntrypoints.js';
+import PackageVersion from '../../models/PackageVersion.js';
+import CdnJsPackage from '../../models/CdnJsPackage.js';
+import dateRange from '../utils/dateRange.js';
+import sumDeep from '../utils/sumDeep.js';
+import * as entrypoint from '../utils/packageEntrypoint.js';
+import { resolve as resolveSemver } from '../../lib/semver-resolver/index.js';
+import NpmRemoteService from '../../remote-services/NpmRemoteService.js';
+import GitHubRemoteService from '../../remote-services/GitHubRemoteService.js';
+import JsDelivrRemoteService from '../../remote-services/JsDelivrRemoteService.js';
+import RedisRemoteResourceCache from '../../remote-services/RedisRemoteResourceCache.js';
+import { routes } from '../v1.js';
+
 const number = new NumberAbbreviate([ 'k', 'M', 'B', 'T' ]);
-
-const BaseRequest = require('./BaseRequest');
-const BadVersionError = require('../errors/BadVersionError');
-const Package = require('../../models/Package');
-const PackageListing = require('../../models/PackageListing');
-const PackageEntrypoints = require('../../models/PackageEntrypoints');
-const PackageVersion = require('../../models/PackageVersion');
-const CdnJsPackage = require('../../models/CdnJsPackage');
-const dateRange = require('../utils/dateRange');
-const sumDeep = require('../utils/sumDeep');
-const entrypoint = require('../utils/packageEntrypoint');
-
-const semverResolver = require('../../lib/semver-resolver');
-const NpmRemoteService = require('../../remote-services/NpmRemoteService');
-const GitHubRemoteService = require('../../remote-services/GitHubRemoteService');
-const JsDelivrRemoteService = require('../../remote-services/JsDelivrRemoteService');
-const RedisRemoteResourceCache = require('../../remote-services/RedisRemoteResourceCache');
-const { routes } = require('../v1');
-
 const v1Config = config.get('v1');
 const npmRemoteService = new NpmRemoteService({ baseUrl: v1Config.npm.sourceUrl }, new RedisRemoteResourceCache('pr/npm'));
 const gitHubRemoteService = new GitHubRemoteService({ auth: `token ${v1Config.gh.apiToken}`, baseUrl: v1Config.gh.sourceUrl }, new RedisRemoteResourceCache('pr/gh'));
@@ -159,7 +159,7 @@ class PackageRequest extends BaseRequest {
 
 	async getResolvedVersion (specifier = 'latest') {
 		return this.getMetadata().then((metadata) => {
-			return semverResolver.resolve(metadata, specifier).version;
+			return resolveSemver(metadata, specifier).version;
 		});
 	}
 
@@ -445,7 +445,7 @@ class PackageRequest extends BaseRequest {
 	}
 }
 
-module.exports = PackageRequest;
+export default PackageRequest;
 
 setTimeout(() => {
 	if (apmClient._conf.active) {

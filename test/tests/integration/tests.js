@@ -1,10 +1,10 @@
-process.env.NODE_ENV = 'test';
-require('../../../src/lib/startup');
+import '../../../src/lib/startup.js';
+import chai from 'chai';
+import chaiHttp from 'chai-http';
+import nock from 'nock';
+import './v1.js';
 
-const chai = require('chai');
-const chaiHttp = require('chai-http');
-const nock = require('nock');
-const expect = chai.expect; // = require('expect-assert')(chai.expect);
+const expect = chai.expect;
 
 chai.use(chaiHttp);
 nock.disableNetConnect();
@@ -31,5 +31,3 @@ describe('Other', function () {
 			});
 	});
 });
-
-require('./v1');

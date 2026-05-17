@@ -1,19 +1,22 @@
-const zlib = require('zlib');
-const { createClient: createRedisClient, RESP_TYPES } = require('redis');
-const config = require('config');
+import _ from 'lodash';
+import zlib from 'zlib';
+import { promisify } from 'util';
+import { createClient as createRedisClient, RESP_TYPES } from 'redis';
+import config from 'config';
+
 const redisConfig = config.get('redis');
 const redisLog = logger.scope('redis');
-
-module.exports = createClient();
-module.exports.createClient = createClient;
+const client = createClient();
+const deflate = promisify(zlib.deflate);
+const inflate = promisify(zlib.inflate);
 
 if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test') {
-	module.exports.once('ready', () => module.exports.flushAll().catch(() => {}));
+	client.once('ready', () => client.flushAll().catch(() => {}));
 }
 
 if (process.env.NO_CACHE) {
 	setInterval(() => {
-		module.exports.flushAll().catch(() => {});
+		client.flushAll().catch(() => {});
 	}, 1000);
 }
 
@@ -26,7 +29,7 @@ async function compress (value) {
 		return '\x00' + value;
 	}
 
-	return zlib.deflateAsync(value);
+	return deflate(value);
 }
 
 async function decompress (value) {
@@ -36,7 +39,7 @@ async function decompress (value) {
 		return Buffer.isBuffer(value) ? value.toString('utf8', 1) : value.substring(1);
 	}
 
-	return (await zlib.inflateAsync(value)).toString();
+	return (await inflate(value)).toString();
 }
 
 async function getCompressedAsync (key) {
@@ -56,7 +59,7 @@ function patchClient (client) {
 	return client;
 }
 
-function createClient () {
+export function createClient () {
 	let client = createRedisClient({
 		database: redisConfig.db,
 		password: redisConfig.password,
@@ -79,3 +82,5 @@ function createClient () {
 
 	return client;
 }
+
+export default client;

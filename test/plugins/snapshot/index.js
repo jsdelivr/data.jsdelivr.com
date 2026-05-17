@@ -1,10 +1,12 @@
 'use strict';
 
-const fs = require('fs-extra');
-const relativeDayUtc = require('relative-day-utc');
+import _ from 'lodash';
+import fs from 'fs-extra';
+import relativeDayUtc from 'relative-day-utc';
+
 const defaultSnapshotDate = '2010-12-31';
 
-module.exports = ({ snapshotResponses = false, updateExistingSnapshots = false }) => {
+export default ({ snapshotResponses = false, updateExistingSnapshots = false }) => {
 	if (updateExistingSnapshots) {
 		snapshotResponses = true;
 	}

@@ -1,5 +1,5 @@
-const Joi = require('joi');
-const BaseCacheModel = require('./BaseCacheModel');
+import Joi from 'joi';
+import BaseCacheModel from './BaseCacheModel.js';
 
 const schema = Joi.object({
 	iso: Joi.string().length(2).required(),
@@ -29,4 +29,4 @@ class Continent extends BaseCacheModel {
 	}
 }
 
-module.exports = Continent;
+export default Continent;

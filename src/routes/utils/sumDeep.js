@@ -1,4 +1,6 @@
-module.exports = function sumDeep (data, depth = 1) {
+import _ from 'lodash';
+
+export default function sumDeep (data, depth = 1) {
 	if (typeof data !== 'object') {
 		return 0;
 	}
@@ -10,4 +12,4 @@ module.exports = function sumDeep (data, depth = 1) {
 
 		return sum + sumDeep(value, depth - 1);
 	}, 0);
-};
+}

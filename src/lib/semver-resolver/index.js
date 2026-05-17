@@ -1,6 +1,6 @@
-const semver = require('semver');
+import semver from 'semver';
 
-module.exports.resolve = (manifest, specifier, tagSpecifier = specifier) => {
+export const resolve = (manifest, specifier, tagSpecifier = specifier) => {
 	let tags = manifest.tags || {};
 	let versions = manifest.versions || {};
 	tagSpecifier = tagSpecifier === '*' ? 'latest' : tagSpecifier;

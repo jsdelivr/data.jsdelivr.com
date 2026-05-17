@@ -1,8 +1,11 @@
-const os = require('os');
-const childProcess = require('child_process');
-const relativeDayUtc = require('relative-day-utc');
-const config = require('config');
-const version = require('../../package.json').version;
+import os from 'os';
+import childProcess from 'child_process';
+import relativeDayUtc from 'relative-day-utc';
+import Bluebird from 'bluebird';
+import config from 'config';
+import pkg from '../../package.json' with { type: 'json' };
+
+const version = pkg.version;
 const serverConfig = config.get('server');
 let commit = 'git not available';
 
@@ -10,7 +13,7 @@ try {
 	commit = childProcess.execSync('git log -1 "--format=%cd - commit %H"', { encoding: 'utf8' }).trim();
 } catch {}
 
-module.exports = async (ctx) => {
+export default async (ctx) => {
 	if (!serverConfig.debugToken) {
 		return ctx.status = 403;
 	}
@@ -29,7 +32,7 @@ module.exports = async (ctx) => {
 	};
 };
 
-module.exports.status = async (ctx) => {
+export const status = async (ctx) => {
 	let delay = Math.min(Math.max(Number(ctx.params.delay) || 0, 0), 180) * 1000;
 	let status = Math.min(Math.max(Number(ctx.params.status) || 200, 100), 700);
 

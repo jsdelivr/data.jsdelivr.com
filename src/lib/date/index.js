@@ -1,15 +1,15 @@
-module.exports.toIsoDate = (date) => {
+export const toIsoDate = (date) => {
 	return date.toISOString().substr(0, 10);
 };
 
-module.exports.toIsoMonth = (date) => {
+export const toIsoMonth = (date) => {
 	return date.toISOString().substr(0, 7);
 };
 
-module.exports.toQuarter = (date) => {
+export const toQuarter = (date) => {
 	return `${date.toISOString().substr(0, 4)}-Q${Math.ceil((date.getUTCMonth() + 1) / 3)}`;
 };
 
-module.exports.toIsoYear = (date) => {
+export const toIsoYear = (date) => {
 	return date.toISOString().substr(0, 4);
 };

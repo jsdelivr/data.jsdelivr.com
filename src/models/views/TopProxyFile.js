@@ -26,4 +26,4 @@ class TopProxyFile {
 	}
 }
 
-module.exports = TopProxyFile;
+export default TopProxyFile;

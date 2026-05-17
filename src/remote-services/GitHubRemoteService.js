@@ -1,10 +1,11 @@
-const HttpLinkHeader = require('http-link-header');
-const { Octokit } = require('@octokit/rest');
-const vCompare = require('v-compare');
-const config = require('config');
-
-const GitHubRemoteResource = require('./GitHubRemoteResource');
-const RemoteService = require('./RemoteService');
+import _ from 'lodash';
+import HttpLinkHeader from 'http-link-header';
+import { Octokit } from '@octokit/rest';
+import vCompare from 'v-compare';
+import config from 'config';
+import apmClient from 'elastic-apm-node';
+import GitHubRemoteResource from './GitHubRemoteResource.js';
+import RemoteService from './RemoteService.js';
 
 const { userAgent } = config.get('server');
 
@@ -148,4 +149,4 @@ class GitHubRemoteService extends RemoteService {
 	}
 }
 
-module.exports = GitHubRemoteService;
+export default GitHubRemoteService;

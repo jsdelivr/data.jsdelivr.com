@@ -1,6 +1,6 @@
-const dedent = require('dedent-js');
+import dedent from 'dedent-js';
 
-exports.up = async (db) => {
+export const up = async (db) => {
 	await db.schema.createTable(`view_network_packages`, (table) => {
 		table.date('date').primary();
 		table.bigInteger('hits').unsigned().defaultTo(0).notNullable().index();
@@ -59,4 +59,4 @@ exports.up = async (db) => {
 	`);
 };
 
-exports.down = () => {};
+export const down = () => {};

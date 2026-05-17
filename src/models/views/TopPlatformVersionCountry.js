@@ -35,4 +35,4 @@ class TopPlatformVersionCountry {
 	}
 }
 
-module.exports = TopPlatformVersionCountry;
+export default TopPlatformVersionCountry;

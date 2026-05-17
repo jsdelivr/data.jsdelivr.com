@@ -29,4 +29,4 @@ class NetworkCountry {
 	}
 }
 
-module.exports = NetworkCountry;
+export default NetworkCountry;

@@ -1,26 +1,26 @@
-// This needs to run before any require() call.
-global.apmClient = require('elastic-apm-node').start({});
-apmClient.addTransactionFilter(require('elastic-apm-utils').apm.transactionFilter({ filterNotSampled: false }));
-require('./lib/startup');
+import './lib/startup.js';
+import { fileURLToPath } from 'url';
+import zlib from 'zlib';
+import apmClient from 'elastic-apm-node';
+import apmUtils from 'elastic-apm-utils';
+import config from 'config';
+import { onExit } from 'signal-exit';
+import Koa from 'koa';
+import koaStatic from 'koa-static';
+import koaFavicon from 'koa-favicon';
+import koaResponseTime from 'koa-response-time';
+import koaConditionalGet from 'koa-conditional-get';
+import koaCompress from 'koa-compress';
+import koaLogger from 'koa-logger';
+import koaETag from 'koa-etag';
+import koaJson from 'koa-json';
+import Router from 'koa-router';
+import statuses from 'statuses';
+import debugHandler, { status as debugStatusHandler } from './routes/debug.js';
+import heartbeatHandler from './routes/heartbeat.js';
+import { router as v1Handler } from './routes/v1.js';
 
-const zlib = require('zlib');
-const config = require('config');
-const { onExit } = require('signal-exit');
-const Koa = require('koa');
-const koaStatic = require('koa-static');
-const koaFavicon = require('koa-favicon');
-const koaResponseTime = require('koa-response-time');
-const koaConditionalGet = require('koa-conditional-get');
-const koaCompress = require('koa-compress');
-const koaLogger = require('koa-logger');
-const koaETag = require('koa-etag');
-const koaJson = require('koa-json');
-const Router = require('koa-router');
-const statuses = require('statuses');
-
-const debugHandler = require('./routes/debug');
-const heartbeatHandler = require('./routes/heartbeat');
-const { router: v1Handler } = require('./routes/v1');
+apmClient.addTransactionFilter(apmUtils.apm.transactionFilter({ filterNotSampled: false }));
 
 const serverConfig = config.get('server');
 
@@ -46,22 +46,20 @@ server.use(async (ctx, next) => {
 /**
  * Handle favicon requests before anything else.
  */
-server.use(koaFavicon(__dirname + '/public/favicon.ico'));
+server.use(koaFavicon(fileURLToPath(new URL('./public/favicon.ico', import.meta.url))));
 
 /**
  * Custom APM tags.
  */
-if (global.apmClient) {
-	server.use(async (ctx, next) => {
-		let userAgent = ctx.headers['user-agent'];
+server.use(async (ctx, next) => {
+	let userAgent = ctx.headers['user-agent'];
 
-		if (userAgent && !/\bchrome|edge|mozilla|opera|trident\b/i.test(userAgent)) {
-			apmClient.addLabels({ userAgent });
-		}
+	if (userAgent && !/\bchrome|edge|mozilla|opera|trident\b/i.test(userAgent)) {
+		apmClient.addLabels({ userAgent });
+	}
 
-		return next();
-	});
-}
+	return next();
+});
 
 /**
  * Log requests during development.
@@ -91,17 +89,15 @@ server.use(koaCompress({ br: { params: { [zlib.constants.BROTLI_PARAM_QUALITY]: 
 /**
  * Send response size to APM.
  */
-if (global.apmClient) {
-	server.use(async (ctx, next) => {
-		await next();
+server.use(async (ctx, next) => {
+	await next();
 
-		let responseSize = ctx.response.length;
+	let responseSize = ctx.response.length;
 
-		if (typeof responseSize === 'number') {
-			apmClient.addLabels({ responseSize }, false);
-		}
-	});
-}
+	if (typeof responseSize === 'number') {
+		apmClient.addLabels({ responseSize }, false);
+	}
+});
 
 /**
  * ETag support.
@@ -213,7 +209,7 @@ router.use('/v1', v1Handler.routes(), v1Handler.allowedMethods());
  * Debug endpoint.
  */
 router.get('/debug/' + serverConfig.debugToken, debugHandler);
-router.get('/debug/status/:status/:maxAge?/:delay?', debugHandler.status);
+router.get('/debug/status/:status/:maxAge?/:delay?', debugStatusHandler);
 
 /**
  * Heartbeat.
@@ -228,7 +224,7 @@ server.use(router.routes()).use(router.allowedMethods());
 /**
  * Static files
  */
-server.use(koaStatic(__dirname + '/public', {
+server.use(koaStatic(fileURLToPath(new URL('./public', import.meta.url)), {
 	setHeaders (res) {
 		if (server.env === 'production') {
 			res.setHeader('Cache-Control', 'public, max-age=600');
@@ -250,7 +246,7 @@ server.on('error', (error, ctx) => {
 });
 
 // istanbul ignore next
-if (require.main === module) {
+if (import.meta.main) {
 	/**
 	 * Start listening on the configured port.
 	 */
@@ -285,4 +281,4 @@ if (require.main === module) {
 	});
 }
 
-module.exports = server.callback();
+export default server.callback();

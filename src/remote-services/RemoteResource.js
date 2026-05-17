@@ -1,4 +1,4 @@
-const RemoteResourceSerializableError = require('./RemoteResourceSerializableError');
+import RemoteResourceSerializableError from './RemoteResourceSerializableError.js';
 
 class RemoteResource extends Error {
 	/**
@@ -101,4 +101,4 @@ class RemoteResource extends Error {
 	}
 }
 
-module.exports = RemoteResource;
+export default RemoteResource;

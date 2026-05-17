@@ -1,4 +1,4 @@
-exports.up = async (db) => {
+export const up = async (db) => {
 	await db.schema.raw('SET @@foreign_key_checks = 0;');
 
 	await db.schema.createTable('logs', (table) => {
@@ -10,4 +10,4 @@ exports.up = async (db) => {
 	await db.schema.raw('SET @@foreign_key_checks = 1;');
 };
 
-exports.down = () => {};
+export const down = () => {};

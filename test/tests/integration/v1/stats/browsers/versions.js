@@ -1,9 +1,10 @@
-const { expect } = require('chai');
-const { makeEndpointSnapshotTests, makeEndpointPaginationTests, makePaginatedEndpointAssertions, setupSnapshots } = require('../../../../../utils');
+import _ from 'lodash';
+import { expect } from 'chai';
+import { makeEndpointSnapshotTests, makeEndpointPaginationTests, makePaginatedEndpointAssertions, setupSnapshots } from '../../../../../utils.js';
 
 describe('/v1/stats/browsers/versions', () => {
 	before(() => {
-		setupSnapshots(__filename);
+		setupSnapshots(import.meta.url);
 	});
 
 	makeStatsBrowsersVersionTests();

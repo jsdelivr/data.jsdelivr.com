@@ -1,10 +1,10 @@
-const Joi = require('joi');
-const BaseCacheModel = require('./BaseCacheModel');
-const TopPlatform = require('./views/TopPlatform');
-const TopPlatformBrowser = require('./views/TopPlatformBrowser');
-const TopPlatformCountry = require('./views/TopPlatformCountry');
-const TopPlatformVersionCountry = require('./views/TopPlatformVersionCountry');
-const TopPlatformVersion = require('./views/TopPlatformVersion');
+import Joi from 'joi';
+import BaseCacheModel from './BaseCacheModel.js';
+import TopPlatform from './views/TopPlatform.js';
+import TopPlatformBrowser from './views/TopPlatformBrowser.js';
+import TopPlatformCountry from './views/TopPlatformCountry.js';
+import TopPlatformVersionCountry from './views/TopPlatformVersionCountry.js';
+import TopPlatformVersion from './views/TopPlatformVersion.js';
 
 const schema = Joi.object({
 	id: Joi.number().integer().min(0).required().allow(null),
@@ -158,4 +158,4 @@ class Platform extends BaseCacheModel {
 	}
 }
 
-module.exports = Platform;
+export default Platform;

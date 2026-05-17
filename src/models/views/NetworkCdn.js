@@ -29,4 +29,4 @@ class NetworkCdn {
 	}
 }
 
-module.exports = NetworkCdn;
+export default NetworkCdn;

@@ -1,4 +1,4 @@
-exports.up = async (db) => {
+export const up = async (db) => {
 	await db.schema.createTable('package_listing', (table) => {
 		table.string('type');
 		table.string('name');
@@ -11,4 +11,4 @@ exports.up = async (db) => {
 	await db.schema.raw('alter table package_listing row_format = compressed;');
 };
 
-exports.down = () => {};
+export const down = () => {};

@@ -1,14 +1,17 @@
-const crypto = require('crypto');
-const config = require('config');
+import _ from 'lodash';
+import crypto from 'crypto';
 
-const BaseModel = require('./BaseModel');
-const ArrayStream = require('../lib/array-stream');
+import config from 'config';
+import BaseModel, { ProxyHandler as BaseProxyHandler } from './BaseModel.js';
+import ArrayStream from '../lib/array-stream/index.js';
+import ScopedPromiseLock, { PromiseLock as Lock } from '../lib/promise-lock/index.js';
+import redis from '../lib/redis/index.js';
 
 let arrayStream = new ArrayStream(JSON);
 let PromiseLock, promiseLock;
 
 if (config.has('redis')) {
-	PromiseLock = require('../lib/promise-lock');
+	PromiseLock = ScopedPromiseLock;
 	promiseLock = new PromiseLock('cm');
 }
 
@@ -116,10 +119,10 @@ class ProxyTarget {
 	}
 }
 
-module.exports = BaseCacheModel;
-module.exports.ProxyHandler = BaseModel.ProxyHandler;
+export default BaseCacheModel;
+export const ProxyHandler = BaseProxyHandler;
 
-module.exports.ProxyTargetHandler = _.defaults({
+export const ProxyTargetHandler = _.defaults({
 	get (target, property) {
 		if (target[property]) {
 			return target[property];
@@ -156,4 +159,9 @@ module.exports.ProxyTargetHandler = _.defaults({
 			};
 		}
 	},
-}, BaseModel.ProxyHandler);
+}, ProxyHandler);
+
+export { Lock as PromiseLock };
+
+BaseCacheModel.ProxyHandler = ProxyHandler;
+BaseCacheModel.ProxyTargetHandler = ProxyTargetHandler;

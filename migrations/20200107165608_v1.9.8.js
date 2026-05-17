@@ -1,8 +1,8 @@
-exports.up = async (db) => {
+export const up = async (db) => {
 	await db('proxy').insert([
 		{ path: '/esm' },
 		{ path: '/pyodide' },
 	]);
 };
 
-exports.down = () => {};
+export const down = () => {};

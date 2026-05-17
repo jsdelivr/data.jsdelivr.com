@@ -1,21 +1,18 @@
-process.env.NODE_ENV = 'test';
+import { fileURLToPath } from 'url';
 
-const nock = require('nock');
-const chai = require('chai');
-const config = require('config');
+import nock from 'nock';
+import chai from 'chai';
+import config from 'config';
+import expectAssert from 'expect-assert';
+import chaiHttp from 'chai-http';
+import chaiOas from './plugins/oas/index.js';
+import chaiSnapshot from './plugins/snapshot/index.js';
 
 const serverConfig = config.get('server');
 global.server = `http://127.0.0.1:${serverConfig.port}`;
-global.log = logger.scope('test');
-
-const expectAssert = require('expect-assert');
 chai.expect = expectAssert(chai.expect);
 
-const chaiHttp = require('chai-http');
 chai.use(chaiHttp);
-
-const chaiOas = require('./plugins/oas');
-const chaiSnapshot = require('./plugins/snapshot');
 
 global.chaiSnapshotInstance = chaiSnapshot({
 	snapshotResponses: !!Number(process.env.SNAPSHOT_RESPONSES),
@@ -24,12 +21,15 @@ global.chaiSnapshotInstance = chaiSnapshot({
 
 chai.use(chaiSnapshotInstance);
 
-exports.mochaHooks = {
+export const mochaHooks = {
 	async beforeAll () {
-		chai.use(await chaiOas({ specPath: __dirname + '/../src/public/v1/spec.yaml' }));
+		global.log = logger.scope('test');
+		chai.use(await chaiOas({ specPath: fileURLToPath(new URL('../src/public/v1/spec.yaml', import.meta.url)) }));
 
 		if (global.v8debug === undefined && !/--debug|--inspect/.test(process.execArgv.join(' ')) && !process.env.JB_IDE_PORT) {
-			require('blocked')((ms) => {
+			let { default: blocked } = await import('blocked');
+
+			blocked((ms) => {
 				throw new Error(`Blocked for ${ms} ms.`);
 			}, { threshold: 100 });
 		}

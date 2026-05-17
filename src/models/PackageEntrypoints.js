@@ -1,5 +1,5 @@
-const Joi = require('joi');
-const BaseCacheModel = require('./BaseCacheModel');
+import Joi from 'joi';
+import BaseCacheModel from './BaseCacheModel.js';
 
 const schema = Joi.object({
 	type: Joi.string().max(255).required(),
@@ -45,4 +45,4 @@ class PackageEntrypoints extends BaseCacheModel {
 	}
 }
 
-module.exports = PackageEntrypoints;
+export default PackageEntrypoints;

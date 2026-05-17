@@ -1,4 +1,5 @@
-const RemoteResource = require('./RemoteResource');
+import RemoteResource from './RemoteResource.js';
+
 const oneMonth = 30 * 24 * 60 * 60 * 1000;
 const baseTtl = 10 * 60 * 1000;
 
@@ -24,4 +25,4 @@ class GitHubRemoteResource extends RemoteResource {
 	}
 }
 
-module.exports = GitHubRemoteResource;
+export default GitHubRemoteResource;

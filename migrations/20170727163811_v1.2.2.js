@@ -1,6 +1,6 @@
-const dedent = require('dedent-js');
+import dedent from 'dedent-js';
 
-exports.up = async (db) => {
+export const up = async (db) => {
 	await db.raw(dedent`
 		CREATE TRIGGER log_file_valid_insert
 		BEFORE INSERT ON log_file
@@ -22,4 +22,4 @@ exports.up = async (db) => {
 	`);
 };
 
-exports.down = () => {};
+export const down = () => {};

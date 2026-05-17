@@ -32,4 +32,4 @@ class TopBrowserVersion {
 	}
 }
 
-module.exports = TopBrowserVersion;
+export default TopBrowserVersion;

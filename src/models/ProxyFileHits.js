@@ -1,5 +1,5 @@
-const Joi = require('joi');
-const BaseCacheModel = require('./BaseCacheModel');
+import Joi from 'joi';
+import BaseCacheModel from './BaseCacheModel.js';
 
 const schema = Joi.object({
 	proxyFileId: Joi.number().integer().min(0).required().allow(null),
@@ -45,4 +45,4 @@ class ProxyFileHits extends BaseCacheModel {
 	}
 }
 
-module.exports = ProxyFileHits;
+export default ProxyFileHits;

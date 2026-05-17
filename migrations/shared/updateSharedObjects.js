@@ -1,11 +1,14 @@
-const fs = require('fs');
+import fs from 'fs';
+import routines from './routines.js';
 
-module.exports = async (db) => {
-	await db.schema.raw(fs.readFileSync(__dirname + '/events.sql', 'utf8'));
-	await db.schema.raw(fs.readFileSync(__dirname + '/routines.sql', 'utf8'));
-	await db.schema.raw(fs.readFileSync(__dirname + '/routines/browserViews.sql', 'utf8'));
-	await db.schema.raw(fs.readFileSync(__dirname + '/routines/platformViews.sql', 'utf8'));
-	await db.schema.raw(fs.readFileSync(__dirname + '/routines/updateOrInsert.sql', 'utf8'));
-	await db.schema.raw(fs.readFileSync(__dirname + '/views.sql', 'utf8'));
-	await require('./routines')(db);
+const readLocalFile = file => fs.readFileSync(new URL(file, import.meta.url), 'utf8');
+
+export default async (db) => {
+	await db.schema.raw(readLocalFile('./events.sql'));
+	await db.schema.raw(readLocalFile('./routines.sql'));
+	await db.schema.raw(readLocalFile('./routines/browserViews.sql'));
+	await db.schema.raw(readLocalFile('./routines/platformViews.sql'));
+	await db.schema.raw(readLocalFile('./routines/updateOrInsert.sql'));
+	await db.schema.raw(readLocalFile('./views.sql'));
+	await routines(db);
 };

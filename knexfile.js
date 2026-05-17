@@ -1,9 +1,10 @@
-const _ = require('lodash');
-const config = require('config');
+import _ from 'lodash';
+import config from 'config';
+
 const dbConfig = config.get('db');
 
 // WARNING: This configuration is now used for both the CLI and the application.
-module.exports = _.merge(...[ 'development', 'production', 'staging', 'test' ].map((environment) => {
+export default _.merge(...[ 'development', 'production', 'staging', 'test' ].map((environment) => {
 	return {
 		[environment]: {
 			client: dbConfig.type,

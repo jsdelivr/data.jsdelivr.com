@@ -1,6 +1,7 @@
-const Joi = require('joi');
-const BaseCacheModel = require('./BaseCacheModel');
-const { toIsoDate } = require('../lib/date');
+import _ from 'lodash';
+import Joi from 'joi';
+import BaseCacheModel from './BaseCacheModel.js';
+import { toIsoDate } from '../lib/date/index.js';
 
 const schema = Joi.object({
 	date: Joi.date().required(),
@@ -79,4 +80,4 @@ class Logs extends BaseCacheModel {
 	}
 }
 
-module.exports = Logs;
+export default Logs;

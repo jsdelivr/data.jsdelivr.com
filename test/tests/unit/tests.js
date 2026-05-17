@@ -1,13 +1,11 @@
-process.env.NODE_ENV = 'test';
-require('../../../src/lib/startup');
+import '../../../src/lib/startup.js';
+import chai from 'chai';
+import relativeDayUtc from 'relative-day-utc';
+import dateRange from '../../../src/routes/utils/dateRange.js';
+import isDeepEmpty from '../../../src/routes/utils/isDeepEmpty.js';
+import pagination from '../../../src/routes/utils/pagination.js';
 
-const chai = require('chai');
 const expect = chai.expect;
-
-const relativeDayUtc = require('relative-day-utc');
-const dateRange = require('../../../src/routes/utils/dateRange');
-const isDeepEmpty = require('../../../src/routes/utils/isDeepEmpty');
-const pagination = require('../../../src/routes/utils/pagination');
 
 describe('Unit tests', () => {
 	describe('utils/dateRange.js', () => {

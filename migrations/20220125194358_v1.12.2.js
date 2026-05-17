@@ -1,7 +1,7 @@
-const Bluebird = require('bluebird');
-const updateSharedObjects = require('./shared/updateSharedObjects');
+import Bluebird from 'bluebird';
+import updateSharedObjects from './shared/updateSharedObjects.js';
 
-exports.up = async (db) => {
+export const up = async (db) => {
 	await Bluebird.mapSeries([
 		'country_cdn_hits',
 		'file_hits',
@@ -24,4 +24,4 @@ exports.up = async (db) => {
 	await updateSharedObjects(db);
 };
 
-exports.down = () => {};
+export const down = () => {};

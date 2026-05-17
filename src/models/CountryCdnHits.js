@@ -1,11 +1,13 @@
-const Joi = require('joi');
-const { countries } = require('countries-list');
+import _ from 'lodash';
+import Joi from 'joi';
+import countriesList from 'countries-list';
+import BaseModel from './BaseModel.js';
+import Country from './Country.js';
+import NetworkCdn from './views/NetworkCdn.js';
+import NetworkCountry from './views/NetworkCountry.js';
+import { toIsoDate } from '../lib/date/index.js';
 
-const BaseModel = require('./BaseModel');
-const Country = require('./Country');
-const NetworkCdn = require('./views/NetworkCdn');
-const NetworkCountry = require('./views/NetworkCountry');
-const { toIsoDate } = require('../lib/date');
+const { countries } = countriesList;
 
 const CDN_NAMES = {
 	BN: 'Bunny',
@@ -177,4 +179,4 @@ class CountryCdnHits extends BaseModel {
 	}
 }
 
-module.exports = CountryCdnHits;
+export default CountryCdnHits;
