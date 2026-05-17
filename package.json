@@ -98,7 +98,7 @@
 		"eslint-plugin-prefer-let": "^4.2.2",
 		"eslint-plugin-promise": "^7.3.0",
 		"expect-assert": "github:MartinKolarik/expect-assert",
-		"lint-staged": "^16.4.0",
+		"lint-staged": "^17.0.5",
 		"mocha": "^11.7.5",
 		"nock": "^14.0.15",
 		"nyc": "^18.0.0",
