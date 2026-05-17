@@ -23,7 +23,6 @@ chai.use(chaiSnapshotInstance);
 
 export const mochaHooks = {
 	async beforeAll () {
-		global.log = logger.scope('test');
 		chai.use(await chaiOas({ specPath: fileURLToPath(new URL('../src/public/v1/spec.yaml', import.meta.url)) }));
 
 		if (global.v8debug === undefined && !/--debug|--inspect/.test(process.execArgv.join(' ')) && !process.env.JB_IDE_PORT) {

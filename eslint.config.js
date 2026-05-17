@@ -11,7 +11,6 @@ export default defineConfig([
 			globals: {
 				db: 'readonly',
 				log: 'readonly',
-				logger: 'readonly',
 			},
 		},
 	},

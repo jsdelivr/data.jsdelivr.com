@@ -3,6 +3,7 @@ import zlib from 'zlib';
 import { promisify } from 'util';
 import { createClient as createRedisClient, RESP_TYPES } from 'redis';
 import config from 'config';
+import logger from '../logger/index.js';
 
 const redisConfig = config.get('redis');
 const redisLog = logger.scope('redis');
