@@ -1,4 +1,3 @@
-import { request } from 'chai-http';
 import nock from 'nock';
 import testCases from '../../../../data/v1/entrypoints.json' with { type: 'json' };
 
@@ -10,7 +9,7 @@ describe('/v1/package/entrypoints', () => {
 				.times(1)
 				.reply(200, { version: '1.0.0', files: (data.db?.stats || []).map(entry => ({ name: entry.file })) });
 
-			return request.execute(server)
+			return chai.request(server)
 				.get(`/v1/package/npm/${packageName}/entrypoints`)
 				.then((response) => {
 					expect(response).to.have.status(200);
@@ -42,7 +41,7 @@ describe('/v1/package/entrypoints', () => {
 	});
 
 	it(`GET /v1/package/npm/entrypoint-no-local-cache@1.0.0/entrypoints`, async () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get('/v1/package/npm/entrypoint-no-local-cache@1.0.0/entrypoints')
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -56,7 +55,7 @@ describe('/v1/package/entrypoints', () => {
 	});
 
 	it(`GET /v1/package/npm/entrypoint-no-local-cache-empty-remote@1.0.0/entrypoints`, async () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get('/v1/package/npm/entrypoint-no-local-cache-empty-remote@1.0.0/entrypoints')
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -70,7 +69,7 @@ describe('/v1/package/entrypoints', () => {
 	});
 
 	it(`GET /v1/package/npm/entrypoint-no-local-cache-404-remote@1.0.0-404/entrypoints`, async () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get('/v1/package/npm/entrypoint-no-local-cache-404-remote@1.0.0-404/entrypoints')
 			.then((response) => {
 				expect(response).to.have.status(404);
@@ -85,7 +84,7 @@ describe('/v1/package/entrypoints', () => {
 	});
 
 	it(`GET /v1/package/npm/entrypoint-no-local-cache-500-remote@1.0.0-500/entrypoints`, async () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get('/v1/package/npm/entrypoint-no-local-cache-500-remote@1.0.0-500/entrypoints')
 			.then((response) => {
 				expect(response).to.have.status(500);
@@ -100,7 +99,7 @@ describe('/v1/package/entrypoints', () => {
 	});
 
 	it(`GET @1.0.0/v1/package/npm/entrypoint-no-local-cache-different-remote-version@1.0.0/entrypoints`, async () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get('/v1/package/npm/entrypoint-no-local-cache-different-remote-version@1.0.0/entrypoints')
 			.then((response) => {
 				expect(response).to.have.status(404);

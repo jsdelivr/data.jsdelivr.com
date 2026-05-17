@@ -1,8 +1,7 @@
-import { request } from 'chai-http';
 
 describe('/v1/package/resolve', () => {
 	it('GET /v1/package/resolve/npm/jquery@3.2', () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get('/v1/package/resolve/npm/jquery@3.2')
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -18,7 +17,7 @@ describe('/v1/package/resolve', () => {
 	});
 
 	it('GET /v1/package/resolve/npm/jquery@v3.2', () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get('/v1/package/resolve/npm/jquery@v3.2')
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -32,7 +31,7 @@ describe('/v1/package/resolve', () => {
 	});
 
 	it('GET /v1/package/resolve/npm/jquery@3.2.1', () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get('/v1/package/resolve/npm/jquery@3.2.1')
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -46,7 +45,7 @@ describe('/v1/package/resolve', () => {
 	});
 
 	it('GET /v1/package/resolve/npm/jquery@latest', () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get('/v1/package/resolve/npm/jquery@latest')
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -60,7 +59,7 @@ describe('/v1/package/resolve', () => {
 	});
 
 	it('GET /v1/package/resolve/npm/jquery - implicit latest', () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get('/v1/package/resolve/npm/jquery')
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -76,7 +75,7 @@ describe('/v1/package/resolve', () => {
 	});
 
 	it('GET /v1/package/resolve/npm/jquery@xxx', () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get('/v1/package/resolve/npm/jquery@xxx')
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -90,7 +89,7 @@ describe('/v1/package/resolve', () => {
 	});
 
 	it('GET /v1/package/resolve/npm/jquery@3.0.0-rc1', () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get('/v1/package/resolve/npm/jquery@3.0.0-rc1')
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -104,7 +103,7 @@ describe('/v1/package/resolve', () => {
 	});
 
 	it('GET /v1/package/resolve/npm/jquery@%5E3.0.0-rc1%20%3C3.0.0', () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get('/v1/package/resolve/npm/jquery@%5E3.0.0-rc1%20%3C3.0.0')
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -118,7 +117,7 @@ describe('/v1/package/resolve', () => {
 	});
 
 	it('GET /v1/package/resolve/gh/jquery/jquery2@v3.2.1', () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get('/v1/package/resolve/gh/jquery/jquery2@v3.2.1')
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -132,7 +131,7 @@ describe('/v1/package/resolve', () => {
 	});
 
 	it('GET /v1/package/resolve/gh/adobe/source-sans-pro@2.020R-ro%2F1.075R-it', () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get('/v1/package/resolve/gh/adobe/source-sans-pro@2.020R-ro%2F1.075R-it')
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -146,7 +145,7 @@ describe('/v1/package/resolve', () => {
 	});
 
 	it('GET /v1/package/resolve/gh/jquery/jquery@3.2.1', () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get('/v1/package/resolve/gh/jquery/jquery@3.2.1')
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -160,7 +159,7 @@ describe('/v1/package/resolve', () => {
 	});
 
 	it('GET /v1/package/resolve/gh/jquery/jquery@3.2', () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get('/v1/package/resolve/gh/jquery/jquery@3.2')
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -174,7 +173,7 @@ describe('/v1/package/resolve', () => {
 	});
 
 	it('GET /v1/package/resolve/gh/jquery/jquery@latest', () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get('/v1/package/resolve/gh/jquery/jquery@latest')
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -188,7 +187,7 @@ describe('/v1/package/resolve', () => {
 	});
 
 	it('GET /v1/package/resolve/gh/jquery/jquery@xxx', () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get('/v1/package/resolve/gh/jquery/jquery@xxx')
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -202,7 +201,7 @@ describe('/v1/package/resolve', () => {
 	});
 
 	it('GET /v1/package/resolve/gh/jquery/jquery@3.0.0-rc1', () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get('/v1/package/resolve/gh/jquery/jquery@3.0.0-rc1')
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -216,7 +215,7 @@ describe('/v1/package/resolve', () => {
 	});
 
 	it('GET /v1/package/resolve/gh/jquery/jquery@%5E3.0.0-rc1%20%3C3.0.0', () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get('/v1/package/resolve/gh/jquery/jquery@%5E3.0.0-rc1%20%3C3.0.0')
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -230,7 +229,7 @@ describe('/v1/package/resolve', () => {
 	});
 
 	it('GET /v1/package/resolve/npm/foo', () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get('/v1/package/resolve/npm/foo')
 			.then((response) => {
 				expect(response).to.have.status(404);
@@ -245,7 +244,7 @@ describe('/v1/package/resolve', () => {
 	});
 
 	it('GET /v1/package/resolve/gh/jquery/jqueryxxx@xxx', () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get('/v1/package/resolve/gh/jquery/jqueryxxx@xxx')
 			.then((response) => {
 				expect(response).to.have.status(404);

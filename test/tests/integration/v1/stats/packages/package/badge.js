@@ -1,4 +1,3 @@
-import { request } from 'chai-http';
 import config from 'config';
 import { setupSnapshots } from '../../../../../../utils.js';
 
@@ -10,7 +9,7 @@ describe('/v1/stats/packages/badge', () => {
 	});
 
 	it(`GET /v1/stats/packages/npm/package-2/badge`, () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get(`/v1/stats/packages/npm/package-2/badge`)
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -23,7 +22,7 @@ describe('/v1/stats/packages/badge', () => {
 	});
 
 	it(`GET /v1/stats/packages/npm/package-2/badge?type=rank`, () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get(`/v1/stats/packages/npm/package-2/badge?type=rank`)
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -36,7 +35,7 @@ describe('/v1/stats/packages/badge', () => {
 	});
 
 	it(`GET /v1/stats/packages/npm/package-2/badge?type=type-rank`, () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get(`/v1/stats/packages/npm/package-2/badge?type=type-rank`)
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -49,7 +48,7 @@ describe('/v1/stats/packages/badge', () => {
 	});
 
 	it(`GET /v1/stats/packages/npm/package-2/badge?type=type-rank&period=year`, () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get(`/v1/stats/packages/npm/package-2/badge?type=type-rank&period=year`)
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -62,7 +61,7 @@ describe('/v1/stats/packages/badge', () => {
 	});
 
 	it(`GET /v1/stats/packages/npm/package-2/badge?type=type-rank&period=s-year`, () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get(`/v1/stats/packages/npm/package-2/badge?type=type-rank&period=s-year`)
 			.then((response) => {
 				expect(response).to.have.status(400);
@@ -75,7 +74,7 @@ describe('/v1/stats/packages/badge', () => {
 	});
 
 	it(`GET /v1/stats/packages/npm/@scope/package-1/badge?type=type-rank`, () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get(`/v1/stats/packages/npm/@scope/package-1/badge?type=type-rank`)
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -88,7 +87,7 @@ describe('/v1/stats/packages/badge', () => {
 	});
 
 	it(`GET /v1/stats/packages/npm/@scope/package-1/badge?style=rounded`, () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get(`/v1/stats/packages/npm/@scope/package-1/badge?style=rounded`)
 			.then((response) => {
 				expect(response).to.have.status(200);

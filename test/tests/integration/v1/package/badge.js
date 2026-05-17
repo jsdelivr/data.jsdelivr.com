@@ -1,4 +1,3 @@
-import { request } from 'chai-http';
 import config from 'config';
 import { setupSnapshots } from '../../../../utils.js';
 
@@ -10,7 +9,7 @@ describe('/v1/package/badge', () => {
 	});
 
 	it(`GET /v1/package/npm/package-2/badge`, () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get(`/v1/package/npm/package-2/badge`)
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -25,7 +24,7 @@ describe('/v1/package/badge', () => {
 	});
 
 	it(`GET /v1/package/npm/package-2/badge/rank`, () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get(`/v1/package/npm/package-2/badge/rank`)
 			.then((response) => {
 				expect(response).to.have.status(200);
@@ -40,7 +39,7 @@ describe('/v1/package/badge', () => {
 	});
 
 	it(`GET /v1/package/npm/package-2/badge/type-rank`, () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get(`/v1/package/npm/package-2/badge/type-rank`)
 			.then((response) => {
 				expect(response).to.have.status(200);

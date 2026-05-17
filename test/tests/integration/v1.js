@@ -1,5 +1,4 @@
 import { createRequire } from 'module';
-import { request } from 'chai-http';
 import expectedResponses from '../../data/v1/expected.json' with { type: 'json' };
 
 const require = createRequire(import.meta.url);
@@ -8,7 +7,7 @@ describe('v1', function () {
 	this.timeout(10000);
 
 	it('GET /v1/', () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get('/v1/')
 			.then((response) => {
 				expect(response).to.have.status(400);
@@ -56,7 +55,7 @@ describe('v1', function () {
 
 	describe('/v1/lookup', () => {
 		it('GET /v1/lookup/hash/xx', () => {
-			return request.execute(server)
+			return chai.request(server)
 				.get('/v1/lookup/hash/xx')
 				.then((response) => {
 					expect(response).to.have.status(400);
@@ -68,7 +67,7 @@ describe('v1', function () {
 		});
 
 		it('GET /v1/lookup/hash/1B5A2D2D240F16D42C420F1CF8D911CC3BB4D4667D7631F24D064B6161E97729', () => {
-			return request.execute(server)
+			return chai.request(server)
 				.get('/v1/lookup/hash/1B5A2D2D240F16D42C420F1CF8D911CC3BB4D4667D7631F24D064B6161E97729')
 				.then((response) => {
 					expect(response).to.have.status(404);
@@ -80,7 +79,7 @@ describe('v1', function () {
 		});
 
 		it('GET /v1/lookup/hash/AFAC519CC8E522B42073B24C5D45BD7E28A68ADB823E3D5CB1869EA08BE468D6', () => {
-			return request.execute(server)
+			return chai.request(server)
 				.get('/v1/lookup/hash/AFAC519CC8E522B42073B24C5D45BD7E28A68ADB823E3D5CB1869EA08BE468D6')
 				.then((response) => {
 					expect(response).to.have.status(200);

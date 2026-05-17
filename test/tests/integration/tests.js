@@ -1,5 +1,4 @@
 import '../../../src/lib/startup.js';
-import { request } from 'chai-http';
 import nock from 'nock';
 import './v1.js';
 
@@ -10,7 +9,7 @@ describe('Other', function () {
 	this.timeout(10000);
 
 	it('GET /debug/4f5dbb6427b186c054465729f5ed0fc6', () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get('/debug/4f5dbb6427b186c054465729f5ed0fc6')
 			.then((res) => {
 				expect(res).to.have.status(200);
@@ -18,7 +17,7 @@ describe('Other', function () {
 	});
 
 	it('GET /heartbeat', () => {
-		return request.execute(server)
+		return chai.request(server)
 			.get('/heartbeat')
 			.buffer()
 			.then((res) => {
