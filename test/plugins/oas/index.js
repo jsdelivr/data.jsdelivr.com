@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import Ajv from 'ajv';
 import SwaggerParser from '@apidevtools/swagger-parser';
-import openApiCore from '@redocly/openapi-core';
+import * as openApiCore from '@redocly/openapi-core';
 import betterAjvErrorsModule from 'better-ajv-errors';
 
 const betterAjvErrors = betterAjvErrorsModule.default;

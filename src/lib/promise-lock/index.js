@@ -136,7 +136,7 @@ class PromiseLock {
 				}
 
 				this.pendingR.set(key, { resolve, reject }, { ttl });
-			}), ttl);
+			}), { milliseconds: ttl });
 
 			// Cache the promise to make sure we don't create multiple for the same key.
 			this.pendingL.set(key, value, { ttl });

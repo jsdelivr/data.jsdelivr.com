@@ -1,11 +1,9 @@
 import '../../../src/lib/startup.js';
-import chai from 'chai';
 import relativeDayUtc from 'relative-day-utc';
 import dateRange from '../../../src/routes/utils/dateRange.js';
 import isDeepEmpty from '../../../src/routes/utils/isDeepEmpty.js';
+import isSha1Hash from '../../../src/routes/utils/isSha1Hash.js';
 import pagination from '../../../src/routes/utils/pagination.js';
-
-const expect = chai.expect;
 
 describe('Unit tests', () => {
 	describe('utils/dateRange.js', () => {
@@ -119,6 +117,17 @@ describe('Unit tests', () => {
 
 		it('ignores simple empty raw json', () => {
 			expect(isDeepEmpty('[\n\t\n]')).to.be.true;
+		});
+	});
+
+	describe('utils/isSha1Hash.js', () => {
+		it('matches only SHA-1 hex digests', () => {
+			expect(isSha1Hash('0123456789abcdef0123456789abcdef01234567')).to.be.true;
+			expect(isSha1Hash('0123456789ABCDEF0123456789ABCDEF01234567')).to.be.true;
+			expect(isSha1Hash('0123456789abcdef0123456789abcdef0123456')).to.be.false;
+			expect(isSha1Hash('0123456789abcdef0123456789abcdef012345678')).to.be.false;
+			expect(isSha1Hash('0123456789abcdef0123456789abcdef0123456g')).to.be.false;
+			expect(isSha1Hash('v0123456789abcdef0123456789abcdef0123456')).to.be.false;
 		});
 	});
 

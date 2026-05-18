@@ -1,14 +1,12 @@
 import _ from 'lodash';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import chai from 'chai';
-import urlTemplate from 'url-template';
+import { parseTemplate } from 'url-template';
 import HttpLinkHeader from 'http-link-header';
 import dateRange from '../src/routes/utils/dateRange.js';
 import isDeepEmpty from '../src/routes/utils/isDeepEmpty.js';
 import './plugins/wrap-it/index.js';
 
-const expect = chai.expect;
 const localPath = file => fileURLToPath(new URL(file, import.meta.url));
 
 // based on https://stackoverflow.com/a/43053803
@@ -25,7 +23,7 @@ const cartesian = (...sets) => {
 };
 
 function getUriWithValues (template, values, defaults) {
-	return urlTemplate.parse(template).expand(defaults ? _.defaults(values, defaults) : values);
+	return parseTemplate(template).expand(defaults ? _.defaults(values, defaults) : values);
 }
 
 function makeEndpointAssertion (uriTemplate, defaults, { params, assert }, { limit = params.limit || 100, note, status = 200, validateSchema = true } = {}) {
@@ -34,7 +32,7 @@ function makeEndpointAssertion (uriTemplate, defaults, { params, assert }, { lim
 	let page = params.page || 1, response;
 
 	it(`GET ${getUri()}${note ? ` - ${note}` : ''}`, () => {
-		let request = uri => chai.request(server)
+		let fetchPage = uri => chai.request(server)
 			.get(uri)
 			.then((partialResponse) => {
 				if (!response) {
@@ -45,7 +43,7 @@ function makeEndpointAssertion (uriTemplate, defaults, { params, assert }, { lim
 
 				if (Array.isArray(partialResponse.body)) {
 					if (partialResponse.body.length >= apiLimit && partialResponse.body.length < limit) {
-						return request(getUriWithValues(uriTemplate, { ...params, page: ++page }));
+						return fetchPage(getUriWithValues(uriTemplate, { ...params, page: ++page }));
 					}
 
 					response.body.splice(limit);
@@ -77,7 +75,7 @@ function makeEndpointAssertion (uriTemplate, defaults, { params, assert }, { lim
 				}
 			});
 
-		return request(getUri());
+		return fetchPage(getUri());
 	});
 }
 

@@ -1,16 +1,20 @@
 import { fileURLToPath } from 'url';
 
 import nock from 'nock';
-import chai from 'chai';
+import * as chaiModule from 'chai';
 import config from 'config';
 import expectAssert from 'expect-assert';
-import chaiHttp from 'chai-http';
+import chaiHttp, { request } from 'chai-http';
 import chaiOas from './plugins/oas/index.js';
 import chaiSnapshot from './plugins/snapshot/index.js';
 
+const chai = { ...chaiModule };
 const serverConfig = config.get('server');
 global.server = `http://127.0.0.1:${serverConfig.port}`;
 chai.expect = expectAssert(chai.expect);
+chai.request = app => request.execute(app);
+global.chai = chai;
+global.expect = chai.expect;
 
 chai.use(chaiHttp);
 

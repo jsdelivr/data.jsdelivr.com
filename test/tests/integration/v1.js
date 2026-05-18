@@ -1,8 +1,6 @@
 import { createRequire } from 'module';
-import chai from 'chai';
 import expectedResponses from '../../data/v1/expected.json' with { type: 'json' };
 
-const expect = chai.expect;
 const require = createRequire(import.meta.url);
 
 describe('v1', function () {

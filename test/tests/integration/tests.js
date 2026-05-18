@@ -1,12 +1,7 @@
 import '../../../src/lib/startup.js';
-import chai from 'chai';
-import chaiHttp from 'chai-http';
 import nock from 'nock';
 import './v1.js';
 
-const expect = chai.expect;
-
-chai.use(chaiHttp);
 nock.disableNetConnect();
 nock.enableNetConnect('127.0.0.1');
 

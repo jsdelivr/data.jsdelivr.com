@@ -1,6 +1,3 @@
-import chai from 'chai';
-
-const expect = chai.expect;
 
 describe('/v1/package/resolve', () => {
 	it('GET /v1/package/resolve/npm/jquery@3.2', () => {

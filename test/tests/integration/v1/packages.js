@@ -1,7 +1,4 @@
-import chai from 'chai';
 import { setupSnapshots } from '../../../utils.js';
-
-const expect = chai.expect;
 
 describe('/v1/packages', () => {
 	before(() => {

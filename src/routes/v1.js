@@ -1,13 +1,13 @@
 import _ from 'lodash';
-import Router from 'koa-router';
-import isSha from 'is-hexdigest';
+import Router from '@koa/router';
 import apmClient from 'elastic-apm-node';
 import koaElasticUtilsModule from 'elastic-apm-utils';
 
 import Joi from 'joi';
-import openApiCore from '@redocly/openapi-core';
+import * as openApiCore from '@redocly/openapi-core';
 import validate from '../middleware/validate.js';
 import schema from './schemas/v1.js';
+import isSha1Hash from './utils/isSha1Hash.js';
 import LookupRequest from './v1/LookupRequest.js';
 import PackageRequest from './v1/PackageRequest.js';
 import StatsRequest from './v1/StatsRequest.js';
@@ -54,7 +54,7 @@ router.param('package', async (value, ctx, next) => {
 router.param('version', async (value, ctx, next) => {
 	if (value && value.charAt(0) === 'v') {
 		ctx.params.version = value.substr(1);
-	} else if (value && (ctx.params.type === 'gh' && isSha(value, 'sha1'))) {
+	} else if (value && (ctx.params.type === 'gh' && isSha1Hash(value))) {
 		ctx.params.version = value.toLowerCase();
 	}
 

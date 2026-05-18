@@ -1,8 +1,5 @@
-import chai from 'chai';
 import nock from 'nock';
 import testCases from '../../../../data/v1/entrypoints.json' with { type: 'json' };
-
-const expect = chai.expect;
 
 describe('/v1/packages/entrypoints', () => {
 	for (let [ packageName, data ] of Object.entries(testCases)) {

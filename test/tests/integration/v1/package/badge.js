@@ -1,8 +1,6 @@
-import chai from 'chai';
 import config from 'config';
 import { setupSnapshots } from '../../../../utils.js';
 
-const expect = chai.expect;
 const server = `http://127.0.0.1:${config.get(`server.port`)}`;
 
 describe('/v1/package/badge', () => {

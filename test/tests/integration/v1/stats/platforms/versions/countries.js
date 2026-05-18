@@ -1,4 +1,3 @@
-import { expect } from 'chai';
 import { makePaginatedEndpointAssertions, makeEndpointSnapshotTests, makeEndpointPaginationTests, setupSnapshots } from '../../../../../../utils.js';
 
 describe('/v1/stats/platforms/versions/countries', () => {

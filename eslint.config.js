@@ -24,7 +24,9 @@ export default defineConfig([
 		languageOptions: {
 			globals: {
 				server: 'readonly',
+				chai: 'readonly',
 				chaiSnapshotInstance: 'readonly',
+				expect: 'readonly',
 			},
 		},
 	},
