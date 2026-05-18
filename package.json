@@ -26,7 +26,6 @@
 		"h-logger2-elastic": "^7.0.1",
 		"http-link-header": "^1.1.3",
 		"husky": "^9.1.7",
-		"is-hexdigest": "^1.0.1",
 		"is-semver-static": "^1.0.1",
 		"joi": "^18.2.1",
 		"knex": "^3.2.10",
