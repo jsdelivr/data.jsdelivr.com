@@ -16,20 +16,18 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: Setup Redis
-        uses: zhulik/redis-action@1.1.0
-        with:
-          redis version: 8
-
       - name: Shutdown Ubuntu MySQL
         run: sudo service mysql stop
 
-      - name: Setup MariaDB
-        uses: getong/mariadb-action@v1.11
-        with:
-          mariadb version: '10.5.19'
-          mysql root password: ''
-          mysql database: 'jsdelivr-stats-test'
+      - name: Setup MariaDB and Redis
+        run: docker compose up -d --build --wait
+
+      - name: Verify MariaDB LZ4 provider
+        run: |
+          if ! docker compose exec -T mariadb mariadb -uroot -proot -Nse "SELECT COUNT(*) FROM information_schema.PLUGINS WHERE PLUGIN_NAME = 'provider_lz4' AND PLUGIN_STATUS = 'ACTIVE'" | grep -qx '1'; then
+            echo "MariaDB LZ4 provider is missing or inactive"
+            exit 1
+          fi
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v6

@@ -6,7 +6,12 @@ module.exports = {
 	},
 	db: {
 		connection: {
+			port: 3316,
+			password: 'root',
 			database: 'jsdelivr-stats-test',
 		},
+	},
+	redis: {
+		port: 6389,
 	},
 };

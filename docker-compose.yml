@@ -1,0 +1,23 @@
+services:
+  mariadb:
+    build:
+      context: ./config/mariadb
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+    healthcheck:
+      test: [ "CMD", "mariadb-admin", "ping", "-uroot" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    ports:
+      - "127.0.0.1:3316:3306"
+
+  redis:
+    image: redis/redis-stack-server:7.4.0-v8
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    ports:
+      - "127.0.0.1:6389:6379"
