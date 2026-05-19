@@ -20,7 +20,7 @@ jobs:
         run: sudo service mysql stop
 
       - name: Setup MariaDB and Redis
-        run: docker compose up -d --build --wait
+        run: docker compose up -d --build --wait --wait-timeout 120
 
       - name: Verify MariaDB LZ4 provider
         run: |
