@@ -1,9 +1,10 @@
 services:
   mariadb:
-    build:
-      context: ./config/mariadb
+    image: mariadb:11.8.6
     environment:
       MARIADB_ROOT_PASSWORD: root
+    volumes:
+      - ./config/mariadb/init.sql:/docker-entrypoint-initdb.d/10-init.sql:ro
     healthcheck:
       test: [ "CMD", "mariadb-admin", "ping", "-uroot" ]
       interval: 10s
