@@ -10,7 +10,7 @@ Hi! We're really excited that you're interested in contributing to data.jsdelivr
 
 ## Repo Setup
 
-To get started, you need to have Node.js 22 or 24, MariaDB 10.5, and Redis installed and configured.
+To get started, you need to have Node.js 22 or 24 and Docker Compose; run `docker compose up -d --wait` to start MariaDB 11.8 and Redis.
 
 The default configuration file is `config/default.cjs`. To change any of the default values, either:
 - create a file `config/local.cjs` with the necessary changes; the options set in this file will be merged with `config/default.cjs` so `config/local.cjs` should only contain options that you actually changed,
