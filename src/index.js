@@ -14,7 +14,7 @@ import koaResponseTime from 'koa-response-time';
 import koaConditionalGet from 'koa-conditional-get';
 import koaCompress from 'koa-compress';
 import koaLogger from 'koa-logger';
-import koaETag from 'koa-etag';
+import koaETag from '@koa/etag';
 import koaJson from 'koa-json';
 import Router from '@koa/router';
 import statuses from 'statuses';
