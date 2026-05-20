@@ -15,7 +15,6 @@ export default _.merge(...[ 'development', 'production', 'staging', 'test' ].map
 			pool: {
 				min: 0,
 				max: 60,
-				propagateCreateError: false,
 				afterCreate (connection, callback) {
 					connection.query('SET names utf8mb4 COLLATE utf8mb4_unicode_ci; SET TRANSACTION ISOLATION LEVEL READ COMMITTED;', callback);
 				},
