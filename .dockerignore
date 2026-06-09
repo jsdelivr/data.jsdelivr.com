@@ -1,0 +1,13 @@
+.docker/
+.git/
+.github/
+.husky/
+.idea/
+.local/
+.nyc_output/
+coverage/
+node_modules/
+tmp/
+
+.DS_Store
+.eslintcache

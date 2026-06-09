@@ -1,289 +1,54 @@
 import './lib/startup.js';
-import path from 'path';
-import { createRequire } from 'module';
-import { fileURLToPath } from 'url';
-import zlib from 'zlib';
-import apmClient from 'elastic-apm-node';
-import apmUtils from 'elastic-apm-utils';
+import cluster from 'cluster';
 import config from 'config';
 import { onExit } from 'signal-exit';
-import Koa from 'koa';
-import koaStatic from 'koa-static';
-import koaFavicon from 'koa-favicon';
-import koaResponseTime from 'koa-response-time';
-import koaConditionalGet from 'koa-conditional-get';
-import koaCompress from 'koa-compress';
-import koaLogger from 'koa-logger';
-import koaETag from '@koa/etag';
-import koaJson from 'koa-json';
-import Router from '@koa/router';
-import statuses from 'statuses';
-import debugHandler, { status as debugStatusHandler } from './routes/debug.js';
-import heartbeatHandler from './routes/heartbeat.js';
-import { router as v1Handler } from './routes/v1.js';
-
-apmClient.addTransactionFilter(apmUtils.apm.transactionFilter({ filterNotSampled: false }));
 
 const serverConfig = config.get('server');
-const require = createRequire(import.meta.url);
-const entrypoint = process.argv[1] && require.resolve(path.resolve(process.argv[1]));
-const isMainEntrypoint = import.meta.main || entrypoint === fileURLToPath(import.meta.url);
 
-let server = new Koa();
-let router = new Router({ strict: true, sensitive: true });
+async function listen () {
+	let { default: server } = await import('./server.js');
 
-/**
- * Server config.
- */
-server.name = serverConfig.name;
-server.keys = serverConfig.keys;
-server.silent = server.env === 'production';
-server.proxy = true;
-
-/**
- * Set default headers.
- */
-server.use(async (ctx, next) => {
-	ctx.set(serverConfig.headers);
-	return next();
-});
-
-/**
- * Handle favicon requests before anything else.
- */
-server.use(koaFavicon(fileURLToPath(new URL('./public/favicon.ico', import.meta.url))));
-
-/**
- * Custom APM tags.
- */
-server.use(async (ctx, next) => {
-	let userAgent = ctx.headers['user-agent'];
-
-	if (userAgent && !/\bchrome|edge|mozilla|opera|trident\b/i.test(userAgent)) {
-		apmClient.addLabels({ userAgent });
-	}
-
-	return next();
-});
-
-/**
- * Log requests during development.
- */
-if (server.env === 'development') {
-	server.use(koaLogger());
-}
-
-/**
- * Add a X-Response-Time header.
- */
-server.use(koaResponseTime());
-
-/**
- * Remove x-forwarded-port because it's wrong for CF + CC combo.
- */
-server.use(async (ctx, next) => {
-	delete ctx.headers['x-forwarded-port'];
-	return next();
-});
-
-/**
- * Gzip compression.
- */
-server.use(koaCompress({ br: { params: { [zlib.constants.BROTLI_PARAM_QUALITY]: 4 } } }));
-
-/**
- * Send response size to APM.
- */
-server.use(async (ctx, next) => {
-	await next();
-
-	let responseSize = ctx.response.length;
-
-	if (typeof responseSize === 'number') {
-		apmClient.addLabels({ responseSize }, false);
-	}
-});
-
-/**
- * ETag support.
- */
-server.use(koaConditionalGet());
-server.use(koaETag({ weak: true }));
-
-/**
- * Normalize URLs.
- */
-server.use((ctx, next) => {
-	let { path, querystring } = ctx.request;
-
-	if (path === '/' || !path.endsWith('/')) {
-		return next();
-	}
-
-	ctx.status = 301;
-	ctx.redirect(path.replace(/^\/+/, '/').replace(/\/+$/, '') + (querystring ? `?${querystring}` : ''));
-});
-
-/**
- * Pretty-print JSON.
- */
-server.use(koaJson({ spaces: '\t' }));
-
-/**
- * Replace 502/504 HTTP codes with 500,
- * because Cloudflare requires an enterprise account
- * to serve these correctly.
- */
-server.use(async (ctx, next) => {
-	await next();
-
-	if ([ 502, 504 ].includes(ctx.status)) {
-		ctx.status = 500;
-	}
-});
-
-/**
- * Add a helper for generating docs links.
- */
-server.use((ctx, next) => {
-	ctx.getDocsLink = (routeName = ctx._matchedRouteName, method = ctx.method === 'HEAD' ? 'GET' : ctx.method) => {
-		return `${serverConfig.docsHost}/docs/data.jsdelivr.com${(routeName && `#${ctx.router.route(routeName).getDocsPath(method)}`) || ''}`;
-	};
-
-	return next();
-});
-
-/**
- * Always respond with a JSON.
- */
-server.use(async (ctx, next) => {
-	await next();
-
-	if (!ctx.body) {
-		ctx.body = {
-			status: ctx.status,
-			message: `${statuses.message[ctx.status]}.`,
-			links: {
-				documentation: ctx.getDocsLink(),
-			},
-		};
-	} else if (!ctx.body.status) {
-		ctx.status = 200;
-	}
-
-	if (ctx.body.status) {
-		ctx.status = ctx.body.status;
-	}
-
-	if (!ctx.maxStaleError) {
-		ctx.maxStaleError = ctx.maxStale;
-	}
-
-	if (ctx.isStale) {
-		ctx.set('Cache-Control', `public, max-age=10, stale-if-error=${ctx.maxStaleError}`);
-	} else if (ctx.maxAge) {
-		ctx.set('Cache-Control', `public, max-age=${ctx.maxAge}${ctx.maxStale ? `, stale-while-revalidate=${ctx.maxStale}, stale-if-error=${ctx.maxStaleError}` : ''}`);
-	} else if (ctx.expires) {
-		ctx.set('Cache-Control', `public${ctx.maxStale ? `, stale-while-revalidate=${ctx.maxStale}, stale-if-error=${ctx.maxStaleError}` : ''}`);
-		ctx.set('Expires', ctx.expires);
-	}
-});
-
-/**
- * Catch all errors to make sure we respond with a JSON.
- */
-server.use(async (ctx, next) => {
-	try {
-		ctx.status = 400;
-		await next();
-	} catch (e) {
-		ctx.status = e.statusCode || e.status || 500;
-
-		if (ctx.status >= 500 && !e.silent) {
-			ctx.app.emit('error', e, ctx);
-		}
-	}
-});
-
-/**
- * API v1.
- */
-router.use('/v1', v1Handler.routes(), v1Handler.allowedMethods());
-
-/**
- * Debug endpoint.
- */
-router.get('/debug/' + serverConfig.debugToken, debugHandler);
-router.get('/debug/status/:status/:maxAge?/:delay?', debugStatusHandler);
-
-/**
- * Heartbeat.
- */
-router.get('/heartbeat', heartbeatHandler);
-
-/**
- * Routing.
- */
-server.use(router.routes()).use(router.allowedMethods());
-
-/**
- * Static files
- */
-server.use(koaStatic(fileURLToPath(new URL('./public', import.meta.url)), {
-	setHeaders (res) {
-		if (server.env === 'production') {
-			res.setHeader('Cache-Control', 'public, max-age=600');
-		}
-	},
-}));
-
-/**
- * Koa error handling.
- */
-server.on('error', (error, ctx) => {
-	let ignore = [ 'ECONNABORTED', 'ECONNRESET', 'EPIPE' ];
-
-	if (ignore.includes(error.code)) {
-		return;
-	}
-
-	log.error('Koa server error.', error, { ctx });
-});
-
-// istanbul ignore next
-if (isMainEntrypoint) {
-	/**
-	 * Start listening on the configured port.
-	 */
 	server.listen(process.env.PORT || serverConfig.port, function () {
 		log.info(`Web server started at http://localhost:${this.address().port}, NODE_ENV=${process.env.NODE_ENV}.`);
 	});
-
-	/**
-	 * Always log before exit.
-	 */
-	onExit((code, signal) => {
-		log[code === 0 ? 'info' : 'fatal']('Web server stopped.', { code, signal });
-	});
-
-	/**
-	 * If we exit because of an uncaught exception, log the error details as well.
-	 */
-	process.on('uncaughtException', (error) => {
-		log.fatal(`Uncaught exception. Exiting.`, error, { handled: false });
-
-		setTimeout(() => {
-			process.exit(1);
-		}, 10000);
-	});
-
-	process.on('unhandledRejection', (error) => {
-		log.fatal('Unhandled rejection. Exiting.', error, { handled: false });
-
-		setTimeout(() => {
-			process.exit(1);
-		}, 10000);
-	});
 }
 
-export default server.callback();
+let processes = serverConfig.processes;
+
+if (cluster.isPrimary && processes > 1) {
+	for (let i = 0; i < processes; i++) {
+		cluster.fork();
+	}
+
+	cluster.on('exit', (worker, code, signal) => {
+		if (!worker.exitedAfterDisconnect) {
+			log.error(`Worker ${worker.process.pid} exited.`, { code, signal });
+			cluster.fork();
+		}
+	});
+} else {
+	await listen();
+}
+
+// istanbul ignore next
+onExit((code, signal) => {
+	log[code === 0 ? 'info' : 'fatal']('Web server stopped.', { code, signal });
+});
+
+// istanbul ignore next
+process.on('uncaughtException', (error) => {
+	log.fatal(`Uncaught exception. Exiting.`, error, { handled: false });
+
+	setTimeout(() => {
+		process.exit(1);
+	}, 10000);
+});
+
+// istanbul ignore next
+process.on('unhandledRejection', (error) => {
+	log.fatal('Unhandled rejection. Exiting.', error, { handled: false });
+
+	setTimeout(() => {
+		process.exit(1);
+	}, 10000);
+});

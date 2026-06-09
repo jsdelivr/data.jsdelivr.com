@@ -11,7 +11,8 @@ fakeTimers.install({ now: new Date('2022-07-05T00:00:00Z'), shouldAdvanceTime: t
 console.log(`Starting with fake time set to ${new Date().toISOString()}`);
 
 await import('../src/lib/startup.js');
-const { default: serverCallback } = await import('../src/index.js');
+const { default: server } = await import('../src/server.js');
+const serverCallback = server.callback();
 const { default: setupDb } = await import('./setup-db.js');
 
 export const mochaGlobalSetup = async () => {

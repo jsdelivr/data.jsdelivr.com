@@ -5,6 +5,7 @@ module.exports = {
 		host: 'https://data.jsdelivr.com',
 		docsHost: 'https://www.jsdelivr.com',
 		port: 4454,
+		processes: 1,
 		debugToken: '',
 		userAgent: `data.jsdelivr.com/${version} (https://github.com/jsdelivr/data.jsdelivr.com)`,
 		headers: {
