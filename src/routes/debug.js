@@ -10,7 +10,7 @@ const serverConfig = config.get('server');
 let commit = 'git not available';
 
 try {
-	commit = childProcess.execSync('git log -1 "--format=%cd - commit %H"', { encoding: 'utf8' }).trim();
+	commit = process.env.SOURCE_COMMIT || childProcess.execSync('git log -1 "--format=%cd - commit %H"', { encoding: 'utf8' }).trim();
 } catch {}
 
 export default async (ctx) => {

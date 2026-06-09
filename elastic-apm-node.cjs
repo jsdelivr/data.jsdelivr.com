@@ -3,7 +3,7 @@ const { version } = require('./package.json');
 module.exports = {
 	active: process.env.NODE_ENV === 'production',
 	serviceName: 'jsdelivr-api',
-	serviceVersion: version,
+	serviceVersion: process.env.SOURCE_COMMIT || version,
 	logLevel: 'fatal',
 	centralConfig: false,
 	captureExceptions: false,
