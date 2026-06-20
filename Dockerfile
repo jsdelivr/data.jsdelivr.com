@@ -12,11 +12,11 @@ RUN npm ci --omit=dev \
 	&& npm cache clean --force
 
 COPY --chown=node:node package.json package-lock.json elastic-apm-node.cjs elastic-apm-utils.cjs knexfile.js ./
+COPY --chown=node:node bin ./bin
 COPY --chown=node:node config ./config
 COPY --chown=node:node src ./src
 
-ENV NODE_ENV=production \
-	ELASTIC_APM_CONFIG_FILE=elastic-apm-node.cjs
+ENV ELASTIC_APM_CONFIG_FILE=elastic-apm-node.cjs
 
 USER node
 
