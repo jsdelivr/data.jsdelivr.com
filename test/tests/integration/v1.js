@@ -22,6 +22,15 @@ describe('v1', function () {
 			});
 	});
 
+	it('GET /v1/spec.yaml', () => {
+		return chai.request(server)
+			.get('/v1/spec.yaml')
+			.then((response) => {
+				expect(response).to.have.status(200);
+				expect(response).to.have.header('Content-Type', 'application/yaml');
+			});
+	});
+
 	require('./v1/package.js');
 	require('./v1/package/badge.js');
 	require('./v1/package/entrypoints.js');
