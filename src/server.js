@@ -49,6 +49,17 @@ server.use(async (ctx, next) => {
 server.use(koaFavicon(fileURLToPath(new URL('./public/favicon.ico', import.meta.url))));
 
 /**
+ * Advertise API documentation and its machine-readable description.
+ */
+server.use(async (ctx, next) => {
+	await next();
+
+	if (!ctx.state.staticFile) {
+		ctx.append('Link', `<${serverConfig.host}/v1/spec.yaml>; rel="service-desc"; type="application/yaml", <${serverConfig.docsHost}/docs/data.jsdelivr.com>; rel="service-doc"; type="text/html"`);
+	}
+});
+
+/**
  * Custom APM tags.
  */
 server.use(async (ctx, next) => {
@@ -229,6 +240,14 @@ server.use(router.routes()).use(router.allowedMethods());
 /**
  * Static files
  */
+server.use(async (ctx, next) => {
+	await next();
+
+	if (ctx.body) {
+		ctx.state.staticFile = true;
+	}
+});
+
 server.use(koaStatic(fileURLToPath(new URL('./public', import.meta.url)), {
 	setHeaders (res) {
 		if (server.env === 'production') {

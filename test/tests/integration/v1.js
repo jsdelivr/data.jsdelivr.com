@@ -11,6 +11,7 @@ describe('v1', function () {
 			.get('/v1/')
 			.then((response) => {
 				expect(response).to.have.status(400);
+				expect(response).to.have.header('Link', '<http://localhost:4454/v1/spec.yaml>; rel="service-desc"; type="application/yaml", <http://localhost:4400/docs/data.jsdelivr.com>; rel="service-doc"; type="text/html"');
 				expect(response).to.have.header('Access-Control-Allow-Origin', '*');
 				expect(response).to.have.header('Cache-Control', 'no-cache, no-store, must-revalidate');
 				expect(response).to.have.header('Cross-Origin-Resource-Policy', 'cross-origin');
@@ -28,6 +29,7 @@ describe('v1', function () {
 			.then((response) => {
 				expect(response).to.have.status(200);
 				expect(response).to.have.header('Content-Type', 'application/yaml');
+				expect(response).to.have.header('Link', '<http://localhost:4454/v1/spec.yaml>; rel="service-desc"; type="application/yaml", <http://localhost:4400/docs/data.jsdelivr.com>; rel="service-doc"; type="text/html"');
 			});
 	});
 
