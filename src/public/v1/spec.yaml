@@ -44,7 +44,11 @@ tags:
     description: |
       Provides detailed usage information for npm and GitHub packages.
   - name: 'Stats: GitHub packages'
+    description: |
+      Provides usage statistics for packages served from GitHub repositories.
   - name: 'Stats: npm packages'
+    description: |
+      Provides usage statistics for packages served from the npm registry.
   - name: 'Stats: network'
     description: |
       Provides network-wide hits and bandwidth stats.
@@ -66,6 +70,8 @@ tags:
     x-labels:
       - new
   - name: 'Lookup'
+    description: |
+      Allows looking up CDN files by their metadata.
 paths:
   /v1/packages/gh/{user}/{repo}:
     parameters:
