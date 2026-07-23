@@ -25,6 +25,7 @@ info:
     url: https://github.com/jsdelivr/data.jsdelivr.com/blob/master/LICENSE
 servers:
   - url: https://data.jsdelivr.com
+security: []
 tags:
   - name: 'Package metadata: GitHub'
     description: |
