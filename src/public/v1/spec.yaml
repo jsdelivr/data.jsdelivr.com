@@ -16,6 +16,26 @@ info:
     ## Endpoints
 
     https://data.jsdelivr.com/v1/
+
+    ## Common workflows
+
+    ### Resolve an npm package and build a CDN URL
+
+    1. Request `/v1/packages/npm/bootstrap/resolved?specifier=5` and read the returned `version`.
+    2. Request `/v1/packages/npm/bootstrap@{version}/entrypoints` and select an entry point.
+    3. Append the entry point's `file` to `https://cdn.jsdelivr.net/npm/bootstrap@{version}`.
+
+    ### Build a package file picker
+
+    Request `/v1/packages/npm/bootstrap@5.3.8?structure=tree` for a hierarchical file listing,
+    or use `structure=flat` for a searchable list of full paths. To build a CDN URL for a selected file,
+    append its path to `https://cdn.jsdelivr.net/npm/bootstrap@5.3.8`.
+
+    ### Request available statistics
+
+    1. Request `/v1/stats/periods` and select a period that links to the required category of statistics.
+    2. Follow that link for category-wide statistics, or pass the selected `period` to a package endpoint such as
+       `/v1/stats/packages/npm/bootstrap?period={period}`.
   termsOfService: https://github.com/jsdelivr/data.jsdelivr.com
   contact:
     url: https://github.com/jsdelivr/data.jsdelivr.com/issues
