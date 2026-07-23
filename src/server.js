@@ -15,6 +15,7 @@ import koaETag from '@koa/etag';
 import koaJson from 'koa-json';
 import Router from '@koa/router';
 import statuses from 'statuses';
+import apiCatalogHandler from './routes/api-catalog.js';
 import debugHandler, { status as debugStatusHandler } from './routes/debug.js';
 import heartbeatHandler from './routes/heartbeat.js';
 import { router as v1Handler } from './routes/v1.js';
@@ -203,6 +204,11 @@ server.use(async (ctx, next) => {
  * API v1.
  */
 router.use('/v1', v1Handler.routes(), v1Handler.allowedMethods());
+
+/**
+ * API catalog.
+ */
+router.get('/.well-known/api-catalog', apiCatalogHandler);
 
 /**
  * Debug endpoint.
