@@ -297,6 +297,8 @@ paths:
       responses:
         '200':
           $ref: 'components/responses.yaml#/components/responses/periods200'
+        '400':
+          $ref: 'components/responses.yaml#/components/responses/400'
       tags:
         - Stats
       x-labels:
@@ -685,6 +687,8 @@ paths:
       responses:
         '200':
           $ref: 'components/responses.yaml#/components/responses/networkContentStats200'
+        '400':
+          $ref: 'components/responses.yaml#/components/responses/400'
       tags:
         - 'Stats: network'
   /v1/stats/network/countries:
