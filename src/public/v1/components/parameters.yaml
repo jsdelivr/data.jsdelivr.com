@@ -251,6 +251,8 @@ components:
       examples:
         range:
           value: '2.2'
+        caretRange:
+          value: '^5.2.0'
         tag:
           value: 'next'
     structure:

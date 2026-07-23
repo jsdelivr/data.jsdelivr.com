@@ -1391,7 +1391,7 @@ components:
             }
           },
           "links": {
-            "files": "https://data.jsdelivr.com/v1/stats/proxies/{name}/files?period=week"
+            "files": "https://data.jsdelivr.com/v1/stats/proxies/cocoa/files?period=week"
           }
         }
     topProxyFiles:

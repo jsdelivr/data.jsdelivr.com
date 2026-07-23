@@ -66,12 +66,15 @@ components:
                     properties:
                       self:
                         type: string
+                        format: uri
                         description: A link to metadata for this version.
                       entrypoints:
                         type: string
+                        format: uri
                         description: A link to entry point information for this version. Only for npm packages.
                       stats:
                         type: string
+                        format: uri
                         description: A link to stats for this version.
                     required:
                       - self
@@ -84,6 +87,7 @@ components:
               properties:
                 stats:
                   type: string
+                  format: uri
                   description: A link to stats for this package.
               required:
                 - stats
@@ -106,12 +110,15 @@ components:
               properties:
                 self:
                   type: string
+                  format: uri
                   description: A link to this resource.
                 entrypoints:
                   type: string
+                  format: uri
                   description: A link to entry point information for this version. Only for npm packages.
                 stats:
                   type: string
+                  format: uri
                   description: A link to stats for this version.
           required:
             - version
@@ -137,7 +144,12 @@ components:
               properties:
                 stats:
                   type: string
+                  format: uri
                   description: A link to stats for this package version.
+                entrypoints:
+                  type: string
+                  format: uri
+                  description: A link to entry point information for this version. Only for npm packages.
               required:
                 - stats
           required:
@@ -250,18 +262,23 @@ components:
             properties:
               browsers:
                 type: string
+                format: uri
                 description: A link to browser stats for this period.
               network:
                 type: string
+                format: uri
                 description: A link to network stats for this period.
               packages:
                 type: string
+                format: uri
                 description: A link to package stats for this period.
               platforms:
                 type: string
+                format: uri
                 description: A link to platform stats for this period.
               proxies:
                 type: string
+                format: uri-template
                 description: A link to proxy stats for this period.
         required:
           - period
@@ -307,9 +324,11 @@ components:
                 properties:
                   self:
                     type: string
+                    format: uri
                     description: A link to detailed stats for this package.
                   versions:
                     type: string
+                    format: uri
                     description: A link to top versions stats for this package.
                 required:
                   - self
@@ -501,10 +520,16 @@ components:
         links:
           type: object
           properties:
+            self:
+              type: string
+              format: uri
+              description: A link to stats for this package.
             versions:
               type: string
+              format: uri
               description: A link to top versions stats for this package.
           required:
+            - self
             - versions
       required:
         - hits
@@ -522,9 +547,11 @@ components:
           properties:
             self:
               type: string
+              format: uri
               description: A link to detailed stats for this version.
             files:
               type: string
+              format: uri
               description: A link to top files stats for this version.
           required:
             - self
@@ -816,12 +843,15 @@ components:
             properties:
               countries:
                 type: string
+                format: uri
                 description: A link to country stats for this browser.
               platforms:
                 type: string
+                format: uri
                 description: A link to platform stats for this browser.
               versions:
                 type: string
+                format: uri
                 description: A link to version stats for this browser.
             required:
               - platforms
@@ -850,6 +880,7 @@ components:
             properties:
               countries:
                 type: string
+                format: uri
                 description: A link to country stats for this browser version.
         required:
           - name
@@ -874,9 +905,11 @@ components:
             properties:
               browsers:
                 type: string
+                format: uri
                 description: A link to browser stats for this country.
               platforms:
                 type: string
+                format: uri
                 description: A link to platform stats for this country.
             required:
               - browsers
@@ -903,12 +936,15 @@ components:
             properties:
               browsers:
                 type: string
+                format: uri
                 description: A link to browser stats for this platform.
               countries:
                 type: string
+                format: uri
                 description: A link to country stats for this platform.
               versions:
                 type: string
+                format: uri
                 description: A link to versions stats for this platform.
             required:
               - browsers
@@ -935,6 +971,7 @@ components:
             properties:
               countries:
                 type: string
+                format: uri
                 description: A link to country stats for this browser version.
         required:
           - version
@@ -958,9 +995,11 @@ components:
             properties:
               browsers:
                 type: string
+                format: uri
                 description: A link to browser stats for this country.
               platforms:
                 type: string
+                format: uri
                 description: A link to platform stats for this country.
             required:
               - browsers
@@ -987,12 +1026,15 @@ components:
             properties:
               browsers:
                 type: string
+                format: uri
                 description: A link to browser stats for this browser.
               countries:
                 type: string
+                format: uri
                 description: A link to country stats for this platform.
               versions:
                 type: string
+                format: uri
                 description: A link to version stats for this platform.
             required:
               - browsers
@@ -1023,6 +1065,7 @@ components:
             properties:
               countries:
                 type: string
+                format: uri
                 description: A link to country stats for this platform version.
         required:
           - name
@@ -1048,12 +1091,15 @@ components:
             properties:
               countries:
                 type: string
+                format: uri
                 description: A link to country stats for this platform.
               platforms:
                 type: string
+                format: uri
                 description: A link to platform stats for this browser.
               versions:
                 type: string
+                format: uri
                 description: A link to versions stats for this platform.
             required:
               - platforms
@@ -1080,9 +1126,11 @@ components:
             properties:
               browsers:
                 type: string
+                format: uri
                 description: A link to browser stats for this country.
               platforms:
                 type: string
+                format: uri
                 description: A link to platform stats for this country.
             required:
               - browsers
@@ -1111,6 +1159,7 @@ components:
             properties:
               countries:
                 type: string
+                format: uri
                 description: A link to country stats for this platform version.
         required:
           - version
@@ -1135,9 +1184,11 @@ components:
             properties:
               browsers:
                 type: string
+                format: uri
                 description: A link to browser stats for this country.
               platforms:
                 type: string
+                format: uri
                 description: A link to platform stats for this country.
             required:
               - browsers
@@ -1173,6 +1224,7 @@ components:
           properties:
             files:
               type: string
+              format: uri
               description: A link to top files stats for this version.
           required:
             - files

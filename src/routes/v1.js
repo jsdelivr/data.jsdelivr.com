@@ -94,6 +94,7 @@ const routes = {
 				});
 
 				ctx.maxAge = ctx.app.env === 'production' ? 600 : 0;
+				ctx.type = 'application/yaml';
 			},
 		],
 	},
