@@ -22,6 +22,14 @@ import { router as v1Handler } from './routes/v1.js';
 
 apmClient.addTransactionFilter(apmUtils.apm.transactionFilter({ filterNotSampled: false }));
 
+apmClient.addErrorFilter((payload) => {
+	if (payload.context?.custom?.scope || !payload.exception?.handled) {
+		return payload;
+	}
+
+	return false;
+});
+
 const serverConfig = config.get('server');
 
 let server = new Koa();
