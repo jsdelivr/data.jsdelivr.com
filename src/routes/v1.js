@@ -58,7 +58,7 @@ router.param('version', async (value, ctx, next) => {
 		ctx.params.version = value.toLowerCase();
 	}
 
-	return next();
+	return validate.single(Joi.string().label('version'), ctx.params.version, ctx) && next();
 });
 
 /**

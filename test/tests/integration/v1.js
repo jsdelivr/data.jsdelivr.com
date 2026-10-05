@@ -6,6 +6,29 @@ const require = createRequire(import.meta.url);
 describe('v1', function () {
 	this.timeout(10000);
 
+	[
+		'/v1/package/gh/Rikorose/DeepFilterNet@v',
+		'/v1/package/gh/jquery/jquery@v/flat',
+		'/v1/package/npm/@scope/package@v',
+		'/v1/package/resolve/gh/jquery/jquery@v',
+		'/v1/packages/gh/jquery/jquery@v',
+		'/v1/packages/npm/jquery@v/entrypoints',
+		'/v1/package/gh/jquery/jquery@v/stats',
+		'/v1/stats/packages/gh/jquery/jquery@v/files',
+	].forEach((path) => {
+		it(`GET ${path} - rejects an empty normalized version`, () => {
+			return chai.request(server)
+				.get(path)
+				.then((response) => {
+					expect(response).to.have.status(400);
+					expect(response).to.be.json;
+					expect(response.body).to.have.property('status', 400);
+					expect(response.body.message).to.include('version');
+					expect(response.body.links.documentation).to.be.a('string');
+				});
+		});
+	});
+
 	it('GET /v1/', () => {
 		return chai.request(server)
 			.get('/v1/')
