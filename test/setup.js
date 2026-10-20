@@ -56,6 +56,15 @@ export const mochaGlobalSetup = async () => {
 		.query({ per_page: 100 })
 		.reply(200, upstreamGitHubResponses['/repos/jquery/jquery2/tags']);
 
+	nock('https://api.github.com')
+		.persist()
+		.get(path => decodeURIComponent(path).startsWith('/repos/jquery/jquery2/git/matching-refs/tags/'))
+		.query(true)
+		.reply((path) => {
+			let prefix = decodeURIComponent(path.split('?')[0]).substring('/repos/jquery/jquery2/git/matching-refs/tags/'.length);
+			return [ 200, upstreamGitHubResponses['/repos/jquery/jquery2/tags'].filter(tag => tag.name.startsWith(prefix)).map(tag => ({ ref: `refs/tags/${tag.name}` })) ];
+		});
+
 	nock('https://cdn.jsdelivr.net')
 		.get('/gh/jquery/jquery@3.2.1/+private-json')
 		.reply(200, upstreamCdnResponses['/gh/jquery/jquery@3.2.1/+private-json']);
