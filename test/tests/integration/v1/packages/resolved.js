@@ -390,6 +390,32 @@ describe('/v1/packages/resolved', () => {
 			expect(failure.isDone()).to.be.true;
 		});
 
+		it('keeps an exact stale prefix match missing from the complete list when refresh fails', async () => {
+			let upstream = nock('https://api.github.com')
+				.get('/repos/prefix-tests/literal-stale-match/tags').query({ per_page: 100 })
+				.reply(200, [{ name: 'older' }], { link: '<https://api.github.com/repos/prefix-tests/literal-stale-match/tags?per_page=100&page=2>; rel="next", <https://api.github.com/repos/prefix-tests/literal-stale-match/tags?per_page=100&page=11>; rel="last"' })
+				.get(path => decodeURIComponent(path) === '/repos/prefix-tests/literal-stale-match/git/matching-refs/tags/release').query(true).reply(200, [{ ref: 'refs/tags/release' }])
+				.get('/repos/prefix-tests/literal-stale-match/tags').query({ per_page: 100, page: 2 }).reply(200, []);
+			let url = '/v1/packages/gh/prefix-tests/literal-stale-match';
+			let first = await chai.request(server).get(`${url}/resolved?specifier=release`);
+			expect(first.body).to.include({ version: 'release' });
+			let metadata = await chai.request(server).get(url);
+			expect(metadata).to.have.status(200);
+			expect(metadata.body.versions.map(item => item.version)).to.deep.equal([ 'older' ]);
+			expect(upstream.isDone()).to.be.true;
+			expect(await redis.pExpire('rrrc/pr/gh/prefix-tests/literal-stale-match', (30 * 24 * 60 - 35) * 60 * 1000)).to.equal(1);
+			let keys = await redis.keys('rrrc/pr/gh*prefix-tests/literal-stale-match/git/*');
+			expect(keys).to.have.lengthOf(1);
+			expect(await redis.pExpire(keys[0], (30 * 24 * 60 - 25) * 60 * 1000)).to.equal(1);
+
+			let failure = nock('https://api.github.com')
+				.get(path => decodeURIComponent(path) === '/repos/prefix-tests/literal-stale-match/git/matching-refs/tags/release').query(true).reply(503);
+			let response = await chai.request(server).get(`${url}/resolved?specifier=release`);
+			expect(response).to.have.status(200);
+			expect(response.body).to.include({ version: 'release' });
+			expect(failure.isDone()).to.be.true;
+		});
+
 		it('conditionally refreshes a retained complete list instead of querying prefixes', async () => {
 			let upstream = nock('https://api.github.com')
 				.get('/repos/prefix-tests/retained/tags').query({ per_page: 100 })

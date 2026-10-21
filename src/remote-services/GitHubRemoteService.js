@@ -123,17 +123,17 @@ class GitHubRemoteService extends RemoteService {
 			for (let prefix of prefixes) {
 				let resource = await this.listTags(owner, repo, prefix);
 
-				// A stale prefix may hide a failed refresh; retain the complete-list fallback.
+				// An exact normalized tag always wins, regardless of other matching tags.
+				if (resource.data.includes(specifier)) {
+					return resource;
+				}
+
+				// A stale miss may hide a failed refresh; retain the complete-list fallback.
 				if (cached && resource.isStale && cached.age < cached.staleIfError) {
 					return cached;
 				}
 
 				resources.push(resource);
-
-				// An exact normalized tag always wins, regardless of other matching tags.
-				if (resource.data.includes(specifier)) {
-					return resource;
-				}
 			}
 		} catch (error) {
 			if (cached && cached.age < cached.staleIfError && !error.forceCacheUpdate) {
