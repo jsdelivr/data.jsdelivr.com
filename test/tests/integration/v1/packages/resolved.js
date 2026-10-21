@@ -305,15 +305,89 @@ describe('/v1/packages/resolved', () => {
 			let upstream = nock('https://api.github.com')
 				.get('/repos/prefix-tests/complete/tags')
 				.query({ per_page: 100 })
-				.reply(200, [{ name: 'v1.2.3' }]);
+				.reply(200, [{ name: 'v1.2.3' }, { name: 'release' }]);
 
 			let metadata = await chai.request(server).get('/v1/packages/gh/prefix-tests/complete');
 			expect(metadata).to.have.status(200);
 
-			let response = await chai.request(server).get('/v1/packages/gh/prefix-tests/complete/resolved?specifier=1.2.3');
-			expect(response).to.have.status(200);
-			expect(response.body).to.include({ version: '1.2.3' });
+			for (let specifier of [ '1.2.3', 'release' ]) {
+				let response = await chai.request(server).get('/v1/packages/gh/prefix-tests/complete/resolved').query({ specifier });
+				expect(response).to.have.status(200);
+				expect(response.body).to.include({ version: specifier });
+			}
+
 			expect(upstream.isDone()).to.be.true;
+		});
+
+		[
+			{ name: 'new-literal', cachedTags: [ 'older' ], refs: [ [ 'release', [ 'release', 'release-extra' ] ] ], version: 'release' },
+			{ name: 'prefixed-literal', cachedTags: [ 'older' ], refs: [ [ 'release', [ 'release-extra' ] ], [ 'vrelease', [ 'vrelease' ] ] ], version: 'release' },
+			{ name: 'removed-literal', cachedTags: [ 'release' ], refs: [ [ 'release', [ 'release-extra' ] ], [ 'vrelease', [] ] ], version: null },
+			{ name: 'literal-quota-error', cachedTags: [ 'release' ], status: 403, version: 'release' },
+			{ name: 'literal-server-error', cachedTags: [ 'release' ], status: 503, version: 'release' },
+			{ name: 'literal-network-error', cachedTags: [ 'release' ], networkError: true, version: 'release' },
+			{ name: 'literal-not-found', cachedTags: [ 'release' ], status: 404, responseStatus: 404 },
+		].forEach(({ name, cachedTags, refs, status, networkError, version, responseStatus = 200 }) => {
+			it(`looks up ${name} instead of refreshing a stale complete list`, async () => {
+				let upstream = nock('https://api.github.com')
+					.get(`/repos/prefix-tests/${name}/tags`).query({ per_page: 100 })
+					.reply(200, cachedTags.map(name => ({ name })), { etag: '"literal-complete"' });
+				let url = `/v1/packages/gh/prefix-tests/${name}`;
+				let metadata = await chai.request(server).get(url);
+				expect(metadata).to.have.status(200);
+				expect(upstream.isDone()).to.be.true;
+				expect(await redis.pExpire(`rrrc/pr/gh/prefix-tests/${name}`, (30 * 24 * 60 - 25) * 60 * 1000)).to.equal(1);
+
+				let lookup = nock('https://api.github.com');
+
+				for (let [ prefix, names ] of refs || [ [ 'release', [] ] ]) {
+					let request = lookup.get(path => decodeURIComponent(path) === `/repos/prefix-tests/${name}/git/matching-refs/tags/${prefix}`).query({ per_page: 100 });
+
+					if (networkError) {
+						request.replyWithError({ code: 'ECONNRESET', message: 'Connection reset' });
+					} else {
+						request.reply(status || 200, names.map(name => ({ ref: `refs/tags/${name}` })), status === 403 ? { 'x-ratelimit-remaining': '0' } : {});
+					}
+				}
+
+				let response = await chai.request(server).get(`${url}/resolved?specifier=release`);
+				expect(response).to.have.status(responseStatus);
+
+				if (responseStatus === 200) {
+					expect(response.body).to.include({ version });
+				}
+
+				expect(lookup.isDone()).to.be.true;
+				let complete = await new RedisRemoteResourceCache('pr/gh').getCached(`/prefix-tests/${name}`);
+				expect(complete.data).to.have.members(cachedTags);
+				expect(complete.isStale).to.be.true;
+			});
+		});
+
+		it('falls back to the complete list when revalidating an older empty literal prefix fails', async () => {
+			let upstream = nock('https://api.github.com')
+				.get('/repos/prefix-tests/literal-stale-prefix/tags').query({ per_page: 100 })
+				.reply(200, [], { link: '<https://api.github.com/repos/prefix-tests/literal-stale-prefix/tags?per_page=100&page=2>; rel="next", <https://api.github.com/repos/prefix-tests/literal-stale-prefix/tags?per_page=100&page=11>; rel="last"' })
+				.get(path => decodeURIComponent(path) === '/repos/prefix-tests/literal-stale-prefix/git/matching-refs/tags/release').query(true).reply(200, [])
+				.get(path => decodeURIComponent(path) === '/repos/prefix-tests/literal-stale-prefix/git/matching-refs/tags/vrelease').query(true).reply(200, [])
+				.get('/repos/prefix-tests/literal-stale-prefix/tags').query({ per_page: 100, page: 2 }).reply(200, [{ name: 'release' }]);
+			let url = '/v1/packages/gh/prefix-tests/literal-stale-prefix';
+			let first = await chai.request(server).get(`${url}/resolved?specifier=release`);
+			expect(first.body).to.include({ version: null });
+			let metadata = await chai.request(server).get(url);
+			expect(metadata).to.have.status(200);
+			expect(upstream.isDone()).to.be.true;
+			expect(await redis.pExpire('rrrc/pr/gh/prefix-tests/literal-stale-prefix', (30 * 24 * 60 - 25) * 60 * 1000)).to.equal(1);
+			let keys = await redis.keys('rrrc/pr/gh*prefix-tests/literal-stale-prefix/git/*');
+			expect(keys).to.have.lengthOf(2);
+			await Promise.all(keys.map(key => redis.pExpire(key, (30 * 24 * 60 - 25) * 60 * 1000)));
+
+			let failure = nock('https://api.github.com')
+				.get(path => decodeURIComponent(path) === '/repos/prefix-tests/literal-stale-prefix/git/matching-refs/tags/release').query(true).reply(503);
+			let response = await chai.request(server).get(`${url}/resolved?specifier=release`);
+			expect(response).to.have.status(200);
+			expect(response.body).to.include({ version: 'release' });
+			expect(failure.isDone()).to.be.true;
 		});
 
 		it('conditionally refreshes a retained complete list instead of querying prefixes', async () => {
