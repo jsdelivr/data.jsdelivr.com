@@ -21,6 +21,12 @@ class GitHubRemoteService extends RemoteService {
 			request: {
 				timeout: 30000,
 			},
+			log: {
+				debug: _.noop,
+				info: _.noop,
+				warn: _.noop,
+				error: _.noop,
+			},
 		});
 	}
 
