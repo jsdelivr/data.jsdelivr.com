@@ -128,11 +128,6 @@ class GitHubRemoteService extends RemoteService {
 					return resource;
 				}
 
-				// A stale miss may hide a failed refresh; retain the complete-list fallback.
-				if (cached && resource.isStale && cached.age < cached.staleIfError) {
-					return cached;
-				}
-
 				resources.push(resource);
 			}
 		} catch (error) {
@@ -141,6 +136,11 @@ class GitHubRemoteService extends RemoteService {
 			}
 
 			throw error;
+		}
+
+		// Check every literal prefix before falling back for a stale miss.
+		if (cached && cached.age < cached.staleIfError && resources.some(resource => resource.isStale)) {
+			return cached;
 		}
 
 		let data = _(resources).flatMap('data').uniq().value();

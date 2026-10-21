@@ -383,7 +383,8 @@ describe('/v1/packages/resolved', () => {
 			await Promise.all(keys.map(key => redis.pExpire(key, (30 * 24 * 60 - 25) * 60 * 1000)));
 
 			let failure = nock('https://api.github.com')
-				.get(path => decodeURIComponent(path) === '/repos/prefix-tests/literal-stale-prefix/git/matching-refs/tags/release').query(true).reply(503);
+				.get(path => decodeURIComponent(path) === '/repos/prefix-tests/literal-stale-prefix/git/matching-refs/tags/release').query(true).reply(503)
+				.get(path => decodeURIComponent(path) === '/repos/prefix-tests/literal-stale-prefix/git/matching-refs/tags/vrelease').query(true).reply(503);
 			let response = await chai.request(server).get(`${url}/resolved?specifier=release`);
 			expect(response).to.have.status(200);
 			expect(response.body).to.include({ version: 'release' });
@@ -415,6 +416,47 @@ describe('/v1/packages/resolved', () => {
 			expect(response.body).to.include({ version: 'release' });
 			expect(failure.isDone()).to.be.true;
 		});
+
+		for (let stale of [ false, true ]) {
+			it(`checks the ${stale ? 'stale' : 'fresh'} v-prefixed exact match after a stale literal miss`, async () => {
+				let repo = `literal-second-match-${stale ? 'stale' : 'fresh'}`;
+				let basePath = `/repos/prefix-tests/${repo}`;
+				let upstream = nock('https://api.github.com')
+					.get(`${basePath}/tags`).query({ per_page: 100 })
+					.reply(200, [{ name: 'older' }], { link: `<https://api.github.com${basePath}/tags?per_page=100&page=2>; rel="next", <https://api.github.com${basePath}/tags?per_page=100&page=11>; rel="last"` })
+					.get(path => decodeURIComponent(path) === `${basePath}/git/matching-refs/tags/release`).query(true).reply(200, [])
+					.get(path => decodeURIComponent(path) === `${basePath}/git/matching-refs/tags/vrelease`).query(true).reply(200, [{ ref: 'refs/tags/vrelease' }])
+					.get(`${basePath}/tags`).query({ per_page: 100, page: 2 }).reply(200, []);
+				let url = `/v1/packages/gh/prefix-tests/${repo}`;
+				let first = await chai.request(server).get(`${url}/resolved?specifier=release`);
+				expect(first.body).to.include({ version: 'release' });
+				let metadata = await chai.request(server).get(url);
+				expect(metadata).to.have.status(200);
+				expect(metadata.body.versions.map(item => item.version)).to.deep.equal([ 'older' ]);
+				expect(upstream.isDone()).to.be.true;
+				expect(await redis.pExpire(`rrrc/pr/gh/prefix-tests/${repo}`, (30 * 24 * 60 - 35) * 60 * 1000)).to.equal(1);
+				let keys = await redis.keys(`rrrc/pr/gh*prefix-tests/${repo}/git/*`);
+				expect(keys).to.have.lengthOf(2);
+
+				for (let key of keys) {
+					if (stale || !key.toString().endsWith('vrelease')) {
+						expect(await redis.pExpire(key, (30 * 24 * 60 - 25) * 60 * 1000)).to.equal(1);
+					}
+				}
+
+				let failure = nock('https://api.github.com')
+					.get(path => decodeURIComponent(path) === `${basePath}/git/matching-refs/tags/release`).query(true).reply(503);
+
+				if (stale) {
+					failure.get(path => decodeURIComponent(path) === `${basePath}/git/matching-refs/tags/vrelease`).query(true).reply(503);
+				}
+
+				let response = await chai.request(server).get(`${url}/resolved?specifier=release`);
+				expect(response).to.have.status(200);
+				expect(response.body).to.include({ version: 'release' });
+				expect(failure.isDone()).to.be.true;
+			});
+		}
 
 		it('conditionally refreshes a retained complete list instead of querying prefixes', async () => {
 			let upstream = nock('https://api.github.com')
