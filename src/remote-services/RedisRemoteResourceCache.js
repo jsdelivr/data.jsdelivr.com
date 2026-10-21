@@ -38,6 +38,21 @@ class PromiseCacheShared {
 	}
 
 	/**
+	 * Read a completed success or error resource without waiting for or starting a refresh.
+	 * @param {string} key
+	 * @returns {Promise<RemoteResource|null>} Resource with its current age, including stale entries, or null on a cache miss.
+	 */
+	async getCached (key) {
+		let [ cached, ttl ] = await this.getCachedValue(key);
+
+		if (cached) {
+			cached.v.age = cached.v.ttlInternalStore - ttl;
+		}
+
+		return cached && cached.v;
+	}
+
+	/**
 	 * @param {string} key
 	 * @param {function} fn
 	 * @returns {Promise<*>}
@@ -217,6 +232,15 @@ class ScopedPromiseCacheShared {
 
 	getOrExec (key, fn) {
 		return promiseCacheShared.getOrExec(`${this.scope}${key}`, fn);
+	}
+
+	/**
+	 * Read a completed resource within this cache scope without refreshing it.
+	 * @param {string} key
+	 * @returns {Promise<RemoteResource|null>}
+	 */
+	getCached (key) {
+		return promiseCacheShared.getCached(`${this.scope}${key}`);
 	}
 }
 

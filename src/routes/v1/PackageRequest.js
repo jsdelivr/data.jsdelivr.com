@@ -42,15 +42,27 @@ class PackageRequest extends BaseRequest {
 		return _.omit(response.data, 'version');
 	}
 
-	async fetchMetadata () {
+	async fetchMetadata (specifier) {
 		if (this.params.type === 'npm') {
 			return npmRemoteService.usingContext(this.ctx).listVersionsAndTags(this.params.name).then(response => response.data);
 		} else if (this.params.type === 'gh') {
 			apmClient.addLabels({ githubUser: this.params.user });
 			apmClient.addLabels({ githubRepo: this.params.repo });
 
-			return gitHubRemoteService.usingContext(this.ctx).listTags(this.params.user, this.params.repo).then((response) => {
-				return { tags: {}, versions: _.fromPairs(response.data.map(v => [ v, {}])) };
+			let service = gitHubRemoteService.usingContext(this.ctx);
+			let response = specifier === undefined
+				? service.listTags(this.params.user, this.params.repo)
+				: service.listTagsForSpecifier(this.params.user, this.params.repo, specifier);
+
+			return response.then((response) => {
+				let versions = response.data;
+
+				// A remaining v came from a double-v tag; keep it available only as an exact name.
+				if (specifier !== undefined && !versions.includes(specifier)) {
+					versions = versions.filter(version => !version.startsWith('v'));
+				}
+
+				return { tags: {}, versions: _.fromPairs(versions.map(v => [ v, {}])) };
 			}).catch((error) => {
 				// istanbul ignore next
 				if (error.statusCode === 404) {
@@ -158,7 +170,7 @@ class PackageRequest extends BaseRequest {
 	}
 
 	async getResolvedVersion (specifier = 'latest') {
-		return this.getMetadata().then((metadata) => {
+		return this.fetchMetadata(specifier).then((metadata) => {
 			return resolveSemver(metadata, specifier).version;
 		});
 	}
