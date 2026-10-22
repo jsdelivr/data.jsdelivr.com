@@ -87,7 +87,7 @@ class GitHubRemoteService extends RemoteService {
 	}
 
 	/**
-	 * Return normalized tag candidates, using prefix lookups only for known large repositories.
+	 * Return normalized tag candidates, preferring complete listings except for stale literal lookups.
 	 *
 	 * @param {string} owner
 	 * @param {string} repo
@@ -101,27 +101,46 @@ class GitHubRemoteService extends RemoteService {
 			return this.listTags(owner, repo);
 		}
 
-		// Reuse the full listing if available.
-		if (await this.resourceCache.getCached(`/${owner}/${repo}`)) {
+		let cached = await this.resourceCache.getCached(`/${owner}/${repo}`);
+
+		// Literal names can be checked directly when the complete listing is stale.
+		if (cached && (!cached.isStale || cached.statusCode !== 200 || semver.validRange(specifier, { includePrerelease: true }) !== null)) {
 			return this.listTags(owner, repo);
 		}
 
 		let resources = [];
-		let firstPage = await this.listTagsFirstPage(owner, repo);
 
-		// Use the full listing for small repos.
-		if (!firstPage.props.lastPage || firstPage.props.lastPage <= 10) {
-			return this.listTags(owner, repo, undefined, firstPage);
+		if (!cached) {
+			let firstPage = await this.listTagsFirstPage(owner, repo);
+
+			// Use the full listing for small repos.
+			if (!firstPage.props.lastPage || firstPage.props.lastPage <= 10) {
+				return this.listTags(owner, repo, undefined, firstPage);
+			}
 		}
 
-		for (let prefix of prefixes) {
-			let resource = await this.listTags(owner, repo, prefix);
-			resources.push(resource);
+		try {
+			for (let prefix of prefixes) {
+				let resource = await this.listTags(owner, repo, prefix);
 
-			// An exact normalized tag always wins, regardless of other matching tags.
-			if (resource.data.includes(specifier)) {
-				return resource;
+				// An exact normalized tag always wins, regardless of other matching tags.
+				if (resource.data.includes(specifier)) {
+					return resource;
+				}
+
+				resources.push(resource);
 			}
+		} catch (error) {
+			if (cached && cached.age < cached.staleIfError && !error.forceCacheUpdate) {
+				return cached;
+			}
+
+			throw error;
+		}
+
+		// Check every literal prefix before falling back for a stale miss.
+		if (cached && cached.age < cached.staleIfError && resources.some(resource => resource.isStale)) {
+			return cached;
 		}
 
 		let data = _(resources).flatMap('data').uniq().value();
