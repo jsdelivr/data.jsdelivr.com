@@ -3,9 +3,7 @@ import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import SwaggerParser from '@apidevtools/swagger-parser';
 import * as openApiCore from '@redocly/openapi-core';
-import betterAjvErrorsModule from 'better-ajv-errors';
-
-const betterAjvErrors = betterAjvErrorsModule.default;
+import betterAjvErrors from 'better-ajv-errors';
 
 export default async ({ specPath, ajvBodyOptions = {}, ajvHeadersOptions = {} }) => {
 	let bundled = await openApiCore.bundle({
