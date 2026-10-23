@@ -23,7 +23,7 @@ let promiseCacheShared;
  * @returns {string} Bounded metric family, matching origin where applicable.
  */
 function getMetricFamily (key) {
-	return key.startsWith('pr/gh/') ? 'gh' : key.startsWith('pr/npm/') ? 'npm' : key.startsWith('pr/jsd/') ? 'jsd' : 'other';
+	return key.startsWith('pr/gh') ? 'gh' : key.startsWith('pr/npm/') ? 'npm' : key.startsWith('pr/jsd/') ? 'jsd' : 'other';
 }
 
 /**
