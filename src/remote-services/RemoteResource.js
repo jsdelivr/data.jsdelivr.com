@@ -90,6 +90,7 @@ class RemoteResource extends Error {
 
 	toJSON () {
 		if (this.error && !(this.error instanceof RemoteResourceSerializableError)) {
+			// eslint-disable-next-line new-cap
 			return new this.constructor(this, new RemoteResourceSerializableError(this.error), this.isFromCache);
 		}
 
