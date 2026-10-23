@@ -4,8 +4,37 @@ import dateRange from '../../../src/routes/utils/dateRange.js';
 import isDeepEmpty from '../../../src/routes/utils/isDeepEmpty.js';
 import isSha1Hash from '../../../src/routes/utils/isSha1Hash.js';
 import pagination from '../../../src/routes/utils/pagination.js';
+import { EventLog } from '../../../src/lib/event-log/index.js';
 
 describe('Unit tests', () => {
+	describe('EventLog', () => {
+		it('reports independent interval totals and resets them after collection', () => {
+			let callbacks = {};
+			let registrations = 0;
+			let events = new EventLog({
+				_conf: { active: true },
+				registerMetric (name, callback) {
+					callbacks[name] = callback;
+					registrations++;
+				},
+			});
+
+			events.log('test.operations').log('test.operations').log('test.bytes', 20);
+			expect(registrations).to.equal(2);
+			expect(callbacks['test.operations']()).to.equal(2);
+			expect(callbacks['test.operations']()).to.equal(0);
+			expect(callbacks['test.bytes']()).to.equal(20);
+			events.log('test.operations', 3);
+			expect(callbacks['test.operations']()).to.equal(3);
+		});
+
+		it('does not register metrics when APM is inactive', () => {
+			let events = new EventLog({ _conf: { active: false } });
+			events.log('test.operations');
+			expect(events.events['test.operations']).to.equal(1);
+		});
+	});
+
 	describe('utils/dateRange.js', () => {
 		it('day', () => {
 			let range = dateRange('day', relativeDayUtc(-10));

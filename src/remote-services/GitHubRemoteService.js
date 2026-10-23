@@ -5,6 +5,7 @@ import vCompare from 'v-compare';
 import semver from 'semver';
 import config from 'config';
 import apmClient from 'elastic-apm-node';
+import eventLog from '../lib/event-log/index.js';
 import GitHubRemoteResource from './GitHubRemoteResource.js';
 import RemoteService from './RemoteService.js';
 
@@ -280,12 +281,22 @@ class GitHubRemoteService extends RemoteService {
 	 */
 	requestConditional (uri, remoteResource, options = {}) {
 		GitHubRemoteService.addConditionalHeaders(remoteResource, options);
+		let conditional = Boolean(options.headers['if-none-match'] || options.headers['if-modified-since']);
 
-		return this.request(uri, options).catch((error) => {
+		return this.request(uri, options).then((response) => {
+			eventLog.log(`GitHubRemoteService.${conditional ? 'modified' : 'unconditionalResponse'}`);
+
+			if (Array.isArray(response.data) && response.data.length === 0) {
+				eventLog.log('GitHubRemoteService.emptyResult');
+			}
+
+			return response;
+		}).catch((error) => {
 			if (error.statusCode === 304) {
 				return GitHubRemoteService.processConditionalResponse(error, remoteResource);
 			}
 
+			eventLog.log('GitHubRemoteService.requestConditionalError');
 			throw error;
 		});
 	}

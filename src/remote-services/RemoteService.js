@@ -1,3 +1,5 @@
+import eventLog from '../lib/event-log/index.js';
+
 class RemoteService {
 	constructor (resourceCache) {
 		this.resourceCache = resourceCache;
@@ -9,11 +11,15 @@ class RemoteService {
 	 * @returns {*}
 	 */
 	static addConditionalHeaders (remoteResource, options) {
+		eventLog.log(`${this.name}.requestConditional`);
+
 		if (!options.headers) {
 			options.headers = {};
 		}
 
 		if (remoteResource && remoteResource.headers) {
+			eventLog.log(`${this.name}.requestConditionalCached`);
+
 			if (remoteResource.headers.etag) {
 				options.headers['if-none-match'] = remoteResource.headers.etag;
 			}
@@ -21,6 +27,10 @@ class RemoteService {
 			if (remoteResource.headers['last-modified']) {
 				options.headers['if-modified-since'] = remoteResource.headers['last-modified'];
 			}
+		}
+
+		if (options.headers['if-none-match'] || options.headers['if-modified-since']) {
+			eventLog.log(`${this.name}.requestConditionalWithValidators`);
 		}
 
 		return options;
@@ -35,6 +45,8 @@ class RemoteService {
 		if (!cached || response.statusCode !== 304) {
 			return response;
 		}
+
+		eventLog.log(`${this.name}.notModified`);
 
 		if (cached.statusCode < 200 || cached.statusCode >= 400) {
 			throw cached;
