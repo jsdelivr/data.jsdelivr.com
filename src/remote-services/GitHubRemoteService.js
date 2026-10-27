@@ -5,11 +5,16 @@ import vCompare from 'v-compare';
 import semver from 'semver';
 import config from 'config';
 import apmClient from 'elastic-apm-node';
+import { execFile } from 'child_process';
+import { promisify } from 'util';
 import eventLog from '../lib/event-log/index.js';
 import GitHubRemoteResource from './GitHubRemoteResource.js';
 import RemoteService from './RemoteService.js';
 
 const { userAgent } = config.get('server');
+const execFileAsync = promisify(execFile);
+const oneHour = 60 * 60 * 1000;
+const oneDay = 24 * oneHour;
 
 class GitHubRemoteService extends RemoteService {
 	constructor ({ auth, baseUrl }, resourceCache) {
@@ -45,30 +50,91 @@ class GitHubRemoteService extends RemoteService {
 		let key = prefix ? uri : `/${owner}/${repo}`;
 
 		return this.requestWithCache(key, async (key, cached) => {
-			if (!prefix) {
-				firstPage = firstPage || await this.listTagsFirstPage(owner, repo, cached?.parts?.[0]);
+			let remoteResource;
 
-				// Join an in-progress first-page refresh rather than caching a stale assembly.
-				if (firstPage.isStale) {
-					firstPage = await this.listTagsFirstPage(owner, repo, cached?.parts?.[0]);
+			if (!prefix) {
+				if (cached?.props.gitFetchedAt) {
+					// Validate against the page paired with this Git snapshot, not the shared page cache.
+					firstPage = await this.requestPage(uri, response => response.data.map(tag => tag.name), cached.parts[0], { per_page: 100 });
+					let gitAge = Date.now() - cached.props.gitFetchedAt;
+
+					if (firstPage.isFromCache && gitAge < oneDay) {
+						let validated = new GitHubRemoteResource({ statusCode: 200, data: cached.data, parts: [ firstPage ], props: { ...cached.props } });
+						// Hourly validation must not postpone the independent daily Git fetch.
+						validated.ttlInternalRevalidate = Math.min(oneHour, oneDay - gitAge);
+						return validated;
+					}
+				} else {
+					firstPage = firstPage || await this.listTagsFirstPage(owner, repo, cached?.parts?.[0]);
+
+					// Join an in-progress first-page refresh rather than caching a stale assembly.
+					if (firstPage.isStale) {
+						firstPage = await this.listTagsFirstPage(owner, repo, cached?.parts?.[0]);
+					}
+				}
+
+				if (firstPage.props.lastPage > 50) {
+					remoteResource = await this.listTagsGit(owner, repo, firstPage);
 				}
 			}
 
-			return this.paginate(uri, response => response.data.map(t => prefix ? t.ref.substring('refs/tags/'.length) : t.name), cached, firstPage).then((remoteResource) => {
-				if (remoteResource.isFromCache) {
-					return remoteResource;
-				}
+			remoteResource = remoteResource || await this.paginate(uri, response => response.data.map(t => prefix ? t.ref.substring('refs/tags/'.length) : t.name), cached, firstPage);
 
-				remoteResource.data = _(remoteResource.data)
-					.map(tag => tag.charAt(0) === 'v' ? tag.substr(1) : tag)
-					.filter(v => v)
-					.sort(vCompare.rCompare)
-					.uniq()
-					.value();
-
+			if (remoteResource.isFromCache) {
 				return remoteResource;
-			});
+			}
+
+			remoteResource.data = _(remoteResource.data)
+				.map(tag => tag.charAt(0) === 'v' ? tag.substr(1) : tag)
+				.filter(v => v)
+				.sort(vCompare.rCompare)
+				.uniq()
+				.value();
+
+			return remoteResource;
 		});
+	}
+
+	/**
+	 * List all tag refs without REST pagination, keeping the REST validator with its Git snapshot.
+	 * @param {string} owner
+	 * @param {string} repo
+	 * @param {GitHubRemoteResource} firstPage
+	 * @returns {Promise<GitHubRemoteResource>}
+	 */
+	async listTagsGit (owner, repo, firstPage) {
+		let { token } = await this.octokit.auth();
+		let span = apmClient.startSpan('git ls-remote', 'external', 'git');
+		eventLog.log('GitHubRemoteService.gitTags');
+
+		try {
+			let { stdout } = await execFileAsync('git', [ '-c', 'protocol.version=2', '-c', 'credential.helper=', 'ls-remote', '--tags', '--refs', `https://github.com/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}.git` ], {
+				timeout: 30000,
+				killSignal: 'SIGKILL',
+				maxBuffer: 64 * 1024 * 1024,
+				windowsHide: true,
+				env: {
+					...process.env,
+					GIT_TERMINAL_PROMPT: '0',
+					GIT_CONFIG_COUNT: token ? '1' : '0',
+					GIT_CONFIG_KEY_0: 'http.https://github.com/.extraHeader',
+					// Keep credentials out of subprocess arguments and URLs.
+					GIT_CONFIG_VALUE_0: token ? `Authorization: Basic ${Buffer.from(`x-access-token:${token}`).toString('base64')}` : '',
+				},
+			});
+
+			let data = stdout.split('\n').filter(Boolean).map(line => line.substring(line.indexOf('\t') + '\trefs/tags/'.length));
+			span?.setOutcome('success');
+			return new GitHubRemoteResource({ statusCode: 200, data, parts: [ firstPage ], props: { gitFetchedAt: Date.now() } });
+		} catch (error) {
+			span?.setOutcome('failure');
+			eventLog.log('GitHubRemoteService.gitTagsError');
+			log.error('Git tag listing failed.', _.pick(error, [ 'code', 'signal', 'killed' ]));
+			// Subprocess diagnostics can include remote details; expose only a safe upstream error.
+			throw new GitHubRemoteResource({ statusCode: 502 }, new Error('Git tag listing failed.'));
+		} finally {
+			span?.end();
+		}
 	}
 
 	/**
@@ -234,7 +300,7 @@ class GitHubRemoteService extends RemoteService {
 		return this.requestConditional(uri, cached, options).then((response) => {
 			if (response.isFromCache) {
 				// A 304 validates this page again; do not retain its previous age or mutate it.
-				return new GitHubRemoteResource({ statusCode: 200, data: response.data, headers: response.headers, props: response.props });
+				return new GitHubRemoteResource({ statusCode: 200, data: response.data, headers: response.headers, props: response.props }, null, true);
 			}
 
 			let links = new HttpLinkHeader(response.headers.link || '');

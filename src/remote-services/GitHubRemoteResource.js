@@ -6,7 +6,7 @@ const baseTtl = 10 * 60 * 1000;
 class GitHubRemoteResource extends RemoteResource {
 	get defaultTtlInternalRevalidate () {
 		if (this.statusCode === 200) {
-			return baseTtl;
+			return this.props.gitFetchedAt ? baseTtl * 6 : baseTtl;
 		} else if (this.statusCode === 451 || (this.statusCode === 403 && this.data?.block)) { // The "block" property indicates GitHub blocked the account for ToS violation.
 			return oneMonth;
 		} else if (this.statusCode === 404) {
