@@ -126,9 +126,10 @@ class GitHubRemoteService extends RemoteService {
 			let data = stdout.split('\n').filter(Boolean).map(line => line.substring(line.indexOf('\t') + '\trefs/tags/'.length));
 			span?.setOutcome('success');
 			return new GitHubRemoteResource({ statusCode: 200, data, parts: [ firstPage ], props: { gitFetchedAt: Date.now() } });
-		} catch {
+		} catch (error) {
 			span?.setOutcome('failure');
 			eventLog.log('GitHubRemoteService.gitTagsError');
+			log.error('Git tag listing failed.', _.pick(error, [ 'code', 'signal', 'killed' ]));
 			// Subprocess diagnostics can include remote details; expose only a safe upstream error.
 			throw new GitHubRemoteResource({ statusCode: 502 }, new Error('Git tag listing failed.'));
 		} finally {
