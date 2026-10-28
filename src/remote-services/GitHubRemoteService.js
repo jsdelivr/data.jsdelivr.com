@@ -170,8 +170,8 @@ class GitHubRemoteService extends RemoteService {
 
 		let cached = await this.resourceCache.getCached(`/${owner}/${repo}`);
 
-		// Literal names can be checked directly when the complete listing is stale.
-		if (cached && (!cached.isStale || cached.statusCode !== 200 || semver.validRange(specifier, { includePrerelease: true }) !== null)) {
+		// Prefer Git-backed listings even when stale; literal lookups can bypass stale REST listings.
+		if (cached && (!cached.isStale || cached.props.gitFetchedAt || cached.statusCode !== 200 || semver.validRange(specifier, { includePrerelease: true }) !== null)) {
 			return this.listTags(owner, repo);
 		}
 
