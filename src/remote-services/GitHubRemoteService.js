@@ -7,7 +7,6 @@ import config from 'config';
 import apmClient from 'elastic-apm-node';
 import { execFile } from 'child_process';
 import { promisify } from 'util';
-import eventLog from '../lib/event-log/index.js';
 import GitHubRemoteResource from './GitHubRemoteResource.js';
 import RemoteService from './RemoteService.js';
 
@@ -105,7 +104,6 @@ class GitHubRemoteService extends RemoteService {
 	async listTagsGit (owner, repo, firstPage) {
 		let { token } = await this.octokit.auth();
 		let span = apmClient.startSpan('git ls-remote', 'external', 'git');
-		eventLog.log('GitHubRemoteService.gitTags');
 
 		try {
 			let { stdout } = await execFileAsync('git', [ '-c', 'protocol.version=2', '-c', 'credential.helper=', 'ls-remote', '--tags', '--refs', `https://github.com/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}.git` ], {
@@ -128,7 +126,6 @@ class GitHubRemoteService extends RemoteService {
 			return new GitHubRemoteResource({ statusCode: 200, data, parts: [ firstPage ], props: { gitFetchedAt: Date.now() } });
 		} catch (error) {
 			span?.setOutcome('failure');
-			eventLog.log('GitHubRemoteService.gitTagsError');
 			log.error('Git tag listing failed.', _.pick(error, [ 'code', 'signal', 'killed' ]));
 			// Subprocess diagnostics can include remote details; expose only a safe upstream error.
 			throw new GitHubRemoteResource({ statusCode: 502 }, new Error('Git tag listing failed.'));
@@ -347,22 +344,12 @@ class GitHubRemoteService extends RemoteService {
 	 */
 	requestConditional (uri, remoteResource, options = {}) {
 		GitHubRemoteService.addConditionalHeaders(remoteResource, options);
-		let conditional = Boolean(options.headers['if-none-match'] || options.headers['if-modified-since']);
 
-		return this.request(uri, options).then((response) => {
-			eventLog.log(`GitHubRemoteService.${conditional ? 'modified' : 'unconditionalResponse'}`);
-
-			if (Array.isArray(response.data) && response.data.length === 0) {
-				eventLog.log('GitHubRemoteService.emptyResult');
-			}
-
-			return response;
-		}).catch((error) => {
+		return this.request(uri, options).catch((error) => {
 			if (error.statusCode === 304) {
 				return GitHubRemoteService.processConditionalResponse(error, remoteResource);
 			}
 
-			eventLog.log('GitHubRemoteService.requestConditionalError');
 			throw error;
 		});
 	}

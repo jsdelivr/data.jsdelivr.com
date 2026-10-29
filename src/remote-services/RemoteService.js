@@ -29,10 +29,6 @@ class RemoteService {
 			}
 		}
 
-		if (options.headers['if-none-match'] || options.headers['if-modified-since']) {
-			eventLog.log(`${this.name}.requestConditionalWithValidators`);
-		}
-
 		return options;
 	}
 
