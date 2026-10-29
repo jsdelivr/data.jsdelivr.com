@@ -4,7 +4,6 @@ import { promisify } from 'util';
 import { createClient as createRedisClient, RESP_TYPES } from 'redis';
 import config from 'config';
 import logger from '../logger/index.js';
-import eventLog from '../event-log/index.js';
 
 const redisConfig = config.get('redis');
 const redisLog = logger.scope('redis');
@@ -22,7 +21,7 @@ if (process.env.NO_CACHE) {
 	}, 1000);
 }
 
-async function compress (value, family = 'other') {
+async function compress (value) {
 	value = String(value);
 
 	// Don't compress if the data is less than 1024 bytes.
@@ -31,25 +30,17 @@ async function compress (value, family = 'other') {
 		return '\x00' + value;
 	}
 
-	let metric = `workload.cache.${family}.compress`;
-	eventLog.log(`${metric}.operations`).log(`${metric}.inputCharacters`, value.length);
-	let compressed = await deflate(value);
-	eventLog.log(`${metric}.outputBytes`, compressed.length);
-	return compressed;
+	return deflate(value);
 }
 
-async function decompress (value, family = 'other') {
+async function decompress (value) {
 	if (!value) {
 		return value;
 	} else if (value[0] === 0 || value.charCodeAt?.(0) === 0) {
 		return Buffer.isBuffer(value) ? value.toString('utf8', 1) : value.substring(1);
 	}
 
-	let metric = `workload.cache.${family}.decompress`;
-	eventLog.log(`${metric}.operations`).log(`${metric}.inputBytes`, value.length);
-	let decompressed = await inflate(value);
-	eventLog.log(`${metric}.outputBytes`, decompressed.length);
-	return decompressed.toString();
+	return (await inflate(value)).toString();
 }
 
 async function getCompressedAsync (key) {
