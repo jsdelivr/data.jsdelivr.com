@@ -277,8 +277,6 @@ paths:
       description: |
         Returns the recommended files to use from this package based on package metadata and additional heuristics.
         The response includes one file of each supported type (js, css), if available.
-        The package's root `exports` entry is considered after `jsdelivr` and `browser` (`style` also takes precedence for CSS).
-        It is resolved with the `browser` and `production` conditions enabled.
         The output may change over time as our algorithm improves.
       responses:
         '200':
@@ -298,8 +296,6 @@ paths:
       description: |
         Returns the recommended files to use from this package based on package metadata and additional heuristics.
         The response includes one file of each supported type (js, css), if available.
-        The package's root `exports` entry is considered after `jsdelivr` and `browser` (`style` also takes precedence for CSS).
-        It is resolved with the `browser` and `production` conditions enabled.
         The output may change over time as our algorithm improves.
       responses:
         '200':
