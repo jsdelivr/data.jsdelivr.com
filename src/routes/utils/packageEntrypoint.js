@@ -10,17 +10,12 @@ const FALLBACK_FIELDS = {
 	css: [ 'main' ],
 };
 
-const hasExtension = (filename, extension) => {
-	filename = filename.toLowerCase();
-	return filename.endsWith(`.${extension}`) || (extension === 'js' && filename.endsWith('.mjs'));
-};
-
 const filterFields = (pkg, fields, extension) => {
 	return filterFilesByExtension(fields[extension].map(field => pkg[field]), extension).map(file => ({ file }));
 };
 
 const filterFilesByExtension = (entries, extension) => {
-	return entries.filter(entry => entry && hasExtension(entry, extension));
+	return entries.filter(entry => entry && entry.toLowerCase().endsWith(`.${extension.toLowerCase()}`));
 };
 
 export const fromFields = (pkg, fields = PRIMARY_FIELDS) => {
@@ -62,8 +57,8 @@ export const normalizeFilename = (filename) => {
 	return '/' + filename
 		.replace(/^\//, '') // remove leading slash
 		.replace(/^[^.]+$/, '$&.js') // assume js extension if there is none
-		.replace(/\.min\.(m?js|css)$/i, '.$1') // normalize minified
-		.replace(/\.(m?js|css)$/i, '.min.$1'); // convert to minified
+		.replace(/\.min\.(js|css)$/i, '.$1') // normalize minified
+		.replace(/\.(js|css)$/i, '.min.$1'); // convert to minified
 };
 
 export const resolve = async (normalizedPkg, sources) => {
@@ -82,5 +77,5 @@ export const resolve = async (normalizedPkg, sources) => {
 };
 
 const responseByExtension = (entries, extension) => {
-	return entries.find(entry => hasExtension(entry.file, extension));
+	return entries.find(entry => entry.file.toLowerCase().endsWith(`.${extension.toLowerCase()}`));
 };

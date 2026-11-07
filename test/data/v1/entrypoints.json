@@ -2,7 +2,7 @@
 	"entrypoint-exports-mjs@1.0.0": {
 		"expected": {
 			"js": {
-				"file": "/entry.min.mjs",
+				"file": "/main.min.js",
 				"guessed": false
 			}
 		},
@@ -10,6 +10,15 @@
 			"entrypoints": {
 				"exports": "/entry.mjs",
 				"main": "/main.js"
+			}
+		}
+	},
+	"entrypoint-exports-mjs-only@1.0.0": {
+		"expected": {},
+		"db": {
+			"entrypoints": {
+				"exports": "/entry.mjs",
+				"main": "/main.mjs"
 			}
 		}
 	},

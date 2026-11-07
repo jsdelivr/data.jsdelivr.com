@@ -3,20 +3,20 @@ import { randomUUID } from 'node:crypto';
 import testCases from '../../../../data/v1/entrypoints.json' with { type: 'json' };
 
 describe('/v1/packages/entrypoints', () => {
-	it('uses an mjs export returned by the backend on a cache miss', async () => {
-		let name = `entrypoint-exports-mjs-${randomUUID()}`;
+	it('uses a js export returned by the backend on a cache miss', async () => {
+		let name = `entrypoint-exports-js-${randomUUID()}`;
 		let entries = nock('https://cdn.jsdelivr.net')
 			.get(`/npm/${name}@1.0.0/+private-entrypoints`)
-			.reply(200, { version: '1.0.0', entrypoints: { exports: '/entry.min.mjs', main: '/main.min.js' } });
+			.reply(200, { version: '1.0.0', entrypoints: { exports: '/entry.min.js', main: '/main.min.js' } });
 
 		let listing = nock('https://cdn.jsdelivr.net')
 			.get(`/npm/${name}@1.0.0/+private-json`)
-			.reply(200, { version: '1.0.0', files: [{ name: '/entry.mjs' }, { name: '/main.js' }] });
+			.reply(200, { version: '1.0.0', files: [{ name: '/entry.js' }, { name: '/main.js' }] });
 
 		let response = await chai.request(server).get(`/v1/packages/npm/${name}@1.0.0/entrypoints`);
 
 		expect(response).to.have.status(200);
-		expect(response.body.entrypoints).to.deep.equal({ js: { file: '/entry.min.mjs', guessed: false } });
+		expect(response.body.entrypoints).to.deep.equal({ js: { file: '/entry.min.js', guessed: false } });
 		expect(entries.isDone()).to.be.true;
 		expect(listing.isDone()).to.be.true;
 	});
