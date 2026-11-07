@@ -46,6 +46,12 @@ class PromiseCacheShared {
 		return redis.del(this.getRedisKey(key));
 	}
 
+	/** Seed a missing successful resource without extending its original lifetime. */
+	setIfAbsent (key, value) {
+		let remaining = value.ttlInternalStore - value.age;
+		return remaining > 0 ? this.store({ key, v: value, s: STATUS_RESOLVED }, remaining, { NX: true }) : Promise.resolve();
+	}
+
 	/**
 	 * Read a completed success or error resource without waiting for or starting a refresh.
 	 * @param {string} key
@@ -165,7 +171,7 @@ class PromiseCacheShared {
 	 * @returns {Promise}
 	 * @private
 	 */
-	async store (message, maxAge) {
+	async store (message, maxAge, options = {}) {
 		if (!maxAge) {
 			return;
 		}
@@ -173,7 +179,7 @@ class PromiseCacheShared {
 		let key = this.getRedisKey(message.key);
 		let res = await redis.compress(await PromiseCacheShared.serialize(message));
 
-		await redis.set(key, res, { PX: maxAge });
+		await redis.set(key, res, { PX: maxAge, ...options });
 	}
 
 	/**
@@ -247,6 +253,14 @@ class ScopedPromiseCacheShared {
 
 	getOrExec (key, fn) {
 		return promiseCacheShared.getOrExec(`${this.scope}${key}`, fn);
+	}
+
+	setIfAbsent (key, value) {
+		return promiseCacheShared.setIfAbsent(`${this.scope}${key}`, value);
+	}
+
+	delete (key) {
+		return promiseCacheShared.delete(`${this.scope}${key}`);
 	}
 
 	/**
