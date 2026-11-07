@@ -72,7 +72,7 @@ class GitHubRemoteService extends RemoteService {
 					}
 				}
 
-				if (firstPage.props.lastPage > 50) {
+				if (firstPage.props.lastPage > 25) {
 					remoteResource = await this.listTagsGit(owner, repo, firstPage);
 				}
 			}
