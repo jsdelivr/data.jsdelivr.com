@@ -38,14 +38,15 @@ class GitHubRemoteService extends RemoteService {
 	/**
 	 * @param {string} owner
 	 * @param {string} repo
-	 * @param {string} [prefix]
-	 * @param {GitHubRemoteResource} [firstPage]
-	 * @param {Array<{name: string, key: string}>} [redirects]
+	 * @param {Object} [options]
+	 * @param {string} [options.prefix]
+	 * @param {GitHubRemoteResource} [options.firstPage]
+	 * @param {Array<{name: string, key: string, id: string}>} [options.redirects]
 	 * @returns {Promise<GitHubRemoteResource>}
 	 */
-	async listTags (owner, repo, prefix, firstPage, redirects = []) {
+	async listTags (owner, repo, { prefix, firstPage, redirects = [] } = {}) {
 		let resource = await this.getTagsResource(owner, repo, prefix, firstPage);
-		return this.followRedirect(resource, owner, repo, this.getTagsKey(owner, repo, prefix), redirects, (owner, repo, redirects) => this.listTags(owner, repo, prefix, undefined, redirects));
+		return this.followRedirect(resource, owner, repo, this.getTagsKey(owner, repo, prefix), redirects, (owner, repo, redirects) => this.listTags(owner, repo, { prefix, redirects }));
 	}
 
 	getTagsKey (owner, repo, prefix) {
@@ -169,14 +170,14 @@ class GitHubRemoteService extends RemoteService {
 	 * @param {string} owner
 	 * @param {string} repo
 	 * @param {string} specifier
-	 * @param {Array<{name: string, key: string}>} [redirects]
+	 * @param {Array<{name: string, key: string, id: string}>} [redirects]
 	 * @returns {Promise<GitHubRemoteResource>}
 	 */
 	async listTagsForSpecifier (owner, repo, specifier, redirects = []) {
 		let prefixes = GitHubRemoteService.getTagPrefixes(specifier);
 
 		if (!prefixes) {
-			return this.listTags(owner, repo);
+			return this.listTags(owner, repo, { redirects });
 		}
 
 		let cached = await this.resourceCache.getCached(`/${owner}/${repo}`);
@@ -188,7 +189,7 @@ class GitHubRemoteService extends RemoteService {
 
 		// Prefer Git-backed listings even when stale; literal lookups can bypass stale REST listings.
 		if (cached && (!cached.isStale || cached.props.gitFetchedAt || cached.statusCode !== 200 || semver.validRange(specifier, { includePrerelease: true }) !== null)) {
-			return this.listTags(owner, repo);
+			return this.listTags(owner, repo, { redirects });
 		}
 
 		let resources = [];
@@ -203,13 +204,17 @@ class GitHubRemoteService extends RemoteService {
 
 			// Use the full listing for small repos.
 			if (!firstPage.props.lastPage || firstPage.props.lastPage <= 10) {
-				return this.listTags(owner, repo, undefined, firstPage);
+				return this.listTags(owner, repo, { firstPage, redirects });
 			}
 		}
 
 		try {
 			for (let prefix of prefixes) {
-				let resource = await this.listTags(owner, repo, prefix);
+				let resource = await this.getTagsResource(owner, repo, prefix);
+
+				if (resource.props.redirect) {
+					return await this.followRedirect(resource, owner, repo, this.getTagsKey(owner, repo, prefix), redirects, (owner, repo, redirects) => this.listTagsForSpecifier(owner, repo, specifier, redirects));
+				}
 
 				// An exact normalized tag always wins, regardless of other matching tags.
 				if (resource.data.includes(specifier)) {
@@ -243,6 +248,8 @@ class GitHubRemoteService extends RemoteService {
 	 */
 	requestWithCache (uri, exec) {
 		return super.requestWithCache(uri, async (key, cached) => {
+			let wasRedirect = Boolean(cached?.props.redirect);
+
 			if (cached?.props.redirect) {
 				let { id, source, checkedAt } = cached.props.redirect;
 
@@ -276,51 +283,41 @@ class GitHubRemoteService extends RemoteService {
 				resource = error;
 			}
 
-			if (resource.props.redirect && cached?.statusCode === 200 && cached.parts.length) {
-				let { name, source } = resource.props.redirect;
-				let canonicalKey = uri.startsWith('/') ? `/${name}` : uri.replace(`/repos/${source}/`, `/repos/${name}/`);
-				await this.resourceCache.setIfAbsent(canonicalKey, this.rebaseCachedResource(cached, resource.props.redirect));
+			if (resource.props.redirect && !wasRedirect && !resource.isStale) {
+				let { name } = resource.props.redirect;
+				let [ owner, repo ] = name.split('/');
+				let firstPageKey = `${this.octokit.repos.listTags.endpoint({ owner, repo }).url}?per_page=100`;
+
+				for (let key of [ `/${name}`, firstPageKey ]) {
+					if ((await this.resourceCache.getCached(key))?.statusCode === 404) {
+						await this.resourceCache.delete(key);
+					}
+				}
 			}
 
 			return resource;
 		});
 	}
 
-	/** Clone a transplanted snapshot without retaining pagination through the old name. */
-	rebaseCachedResource (resource, redirect) {
-		let props = { ...resource.props };
-
-		if (props.next) {
-			let next = new URL(props.next);
-			let source = `/repos/${redirect.source}/`;
-			let apiOrigin = new URL(this.octokit.request.endpoint('GET /').url).origin;
-
-			if (next.origin === apiOrigin && next.pathname.slice(0, source.length).toLowerCase() === source.toLowerCase()) {
-				next.pathname = `/repos/${redirect.name}/${next.pathname.slice(source.length)}`;
-				props.next = next.href;
-			}
-		}
-
-		let parts = resource.parts.map(part => this.rebaseCachedResource(part, redirect));
-		let copy = new GitHubRemoteResource({ ...resource, props, parts }, resource.error, resource.isFromCache);
-		copy.age = resource.age;
-		return copy;
-	}
-
 	async getRepositoryRedirect (id, source, cached) {
 		let uri = this.octokit.request.endpoint('GET /repositories/{repository_id}', { repository_id: id }).url;
-		let response = await this.requestConditional(uri, cached);
-		let name = response.props.redirect ? response.props.redirect.name : response.data?.full_name;
+		let metadata = await super.requestWithCache(uri, async (key, metadata) => {
+			let response = await this.requestConditional(uri, metadata || cached);
+			let name = response.props.redirect ? response.props.redirect.name : response.data?.full_name;
 
-		if (typeof name !== 'string' || name.split('/').length !== 2 || name.split('/').some(part => !part)) {
-			throw new GitHubRemoteResource({ statusCode: 502 }, new Error('Invalid GitHub repository name.'));
-		}
+			if (typeof name !== 'string' || name.split('/').length !== 2 || name.split('/').some(part => !part)) {
+				throw new GitHubRemoteResource({ statusCode: 502 }, new Error('Invalid GitHub repository name.'));
+			}
 
-		return new GitHubRemoteResource({
-			statusCode: 301,
-			headers: _.pick(response.headers, 'etag', 'last-modified'),
-			props: { redirect: { id, name, source, checkedAt: cached?.props.redirect.checkedAt ?? Date.now() } },
+			return new GitHubRemoteResource({ statusCode: 200, data: { full_name: name }, headers: _.pick(response.headers, 'etag', 'last-modified'), ttlInternalRevalidate: oneHour });
 		});
+		let redirect = new GitHubRemoteResource({
+			statusCode: 301,
+			headers: metadata.headers,
+			props: { redirect: { id, name: metadata.data.full_name, source, checkedAt: cached?.props.redirect.checkedAt ?? Date.now() } },
+		});
+		redirect.age = metadata.age;
+		return redirect;
 	}
 
 	async followRedirect (resource, owner, repo, key, redirects, follow) {
@@ -328,26 +325,32 @@ class GitHubRemoteService extends RemoteService {
 			return resource;
 		}
 
-		let { name } = resource.props.redirect;
-		let visited = [ ...redirects, { name: `${owner}/${repo}`, key }];
+		let { name, id } = resource.props.redirect;
+		let expectedId = redirects.at(-1)?.id;
+		let conflicting = expectedId !== undefined && expectedId !== id;
+		let visited = [ ...redirects, { name: `${owner}/${repo}`, key, id: expectedId ?? id }];
 
 		if (visited.length > 5) {
 			throw new GitHubRemoteResource({ statusCode: 502 }, new Error('GitHub repository redirect loop.'));
 		}
 
-		let previous = visited.find(entry => entry.name === name);
+		let previous = conflicting ? { name: `${owner}/${repo}`, key } : visited.find(entry => entry.name === name);
 
 		if (previous) {
 			await this.resourceCache.delete(previous.key);
 
-			if (previous.key === `/${name}`) {
-				let [ owner, repo ] = name.split('/');
+			if (previous.key === `/${previous.name}`) {
+				let [ owner, repo ] = previous.name.split('/');
 				let firstPageKey = `${this.octokit.repos.listTags.endpoint({ owner, repo }).url}?per_page=100`;
 
 				if ((await this.resourceCache.getCached(firstPageKey))?.props.redirect) {
 					await this.resourceCache.delete(firstPageKey);
 				}
 			}
+		}
+
+		if (conflicting) {
+			return follow(owner, repo, visited);
 		}
 
 		let markStale = (result) => {

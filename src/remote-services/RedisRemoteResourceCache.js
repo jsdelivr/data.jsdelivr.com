@@ -46,12 +46,6 @@ class PromiseCacheShared {
 		return redis.del(this.getRedisKey(key));
 	}
 
-	/** Seed a missing successful resource without extending its original lifetime. */
-	setIfAbsent (key, value) {
-		let remaining = value.ttlInternalStore - value.age;
-		return remaining > 0 ? this.store({ key, v: value, s: STATUS_RESOLVED }, remaining, { NX: true }) : Promise.resolve();
-	}
-
 	/**
 	 * Read a completed success or error resource without waiting for or starting a refresh.
 	 * @param {string} key
@@ -113,7 +107,9 @@ class PromiseCacheShared {
 		// .finally() behaves differently with some promises.
 		let done = Bluebird.resolve(value).finally(() => {
 			executor.then((v) => {
-				return this.store({ key, v, s: STATUS_RESOLVED }, v.ttlInternalStore).then(() => {
+				// Redirects can be returned by another cache layer without being revalidated.
+				let maxAge = v.ttlInternalStore - (v.props?.redirect ? v.age : 0);
+				return this.store({ key, v, s: STATUS_RESOLVED }, Math.max(0, maxAge)).then(() => {
 					this.pendingL.delete(key);
 				});
 			}).catch((v) => {
@@ -253,10 +249,6 @@ class ScopedPromiseCacheShared {
 
 	getOrExec (key, fn) {
 		return promiseCacheShared.getOrExec(`${this.scope}${key}`, fn);
-	}
-
-	setIfAbsent (key, value) {
-		return promiseCacheShared.setIfAbsent(`${this.scope}${key}`, value);
 	}
 
 	delete (key) {
