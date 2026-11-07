@@ -1,4 +1,77 @@
 {
+	"entrypoint-exports-mjs@1.0.0": {
+		"expected": {
+			"js": {
+				"file": "/entry.min.mjs",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"exports": "/entry.mjs",
+				"main": "/main.js"
+			}
+		}
+	},
+	"entrypoint-exports-js@1.0.0": {
+		"expected": {
+			"js": {
+				"file": "/entry.min.js",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"exports": "/entry.js",
+				"main": "/main.js"
+			},
+			"cdnjs": "/popular.js"
+		}
+	},
+	"entrypoint-exports-css@1.0.0": {
+		"expected": {
+			"css": {
+				"file": "/entry.min.css",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"exports": "/entry.css",
+				"main": "/main.css"
+			}
+		}
+	},
+	"entrypoint-exports-browser-override@1.0.0": {
+		"expected": {
+			"js": {
+				"file": "/browser.min.js",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"browser": "/browser.js",
+				"exports": "/entry.js",
+				"main": "/main.js"
+			}
+		}
+	},
+	"entrypoint-exports-style-override@1.0.0": {
+		"expected": {
+			"css": {
+				"file": "/style.min.css",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"style": "/style.css",
+				"exports": "/entry.css",
+				"main": "/main.css"
+			}
+		}
+	},
 	"entrypoint-just-empty@1.0.0": {
 		"expected": {},
 		"db": {
