@@ -41,7 +41,7 @@ class GitHubRemoteService extends RemoteService {
 	 * @param {Object} [options]
 	 * @param {string} [options.prefix]
 	 * @param {GitHubRemoteResource} [options.firstPage]
-	 * @param {Array<{name: string, key: string, id: string}>} [options.redirects]
+	 * @param {Array<{name: string, key: string, id: string, checkedAt: number}>} [options.redirects]
 	 * @returns {Promise<GitHubRemoteResource>}
 	 */
 	async listTags (owner, repo, { prefix, firstPage, redirects = [] } = {}) {
@@ -77,7 +77,7 @@ class GitHubRemoteService extends RemoteService {
 					firstPage = firstPage || await this.listTagsFirstPage(owner, repo, cached?.parts?.[0]);
 
 					// Join an in-progress first-page refresh rather than caching a stale assembly.
-					if (firstPage.isStale) {
+					if (firstPage.isStale && !firstPage.props.redirect) {
 						firstPage = await this.listTagsFirstPage(owner, repo, cached?.parts?.[0]);
 					}
 				}
@@ -170,7 +170,7 @@ class GitHubRemoteService extends RemoteService {
 	 * @param {string} owner
 	 * @param {string} repo
 	 * @param {string} specifier
-	 * @param {Array<{name: string, key: string, id: string}>} [redirects]
+	 * @param {Array<{name: string, key: string, id: string, checkedAt: number}>} [redirects]
 	 * @returns {Promise<GitHubRemoteResource>}
 	 */
 	async listTagsForSpecifier (owner, repo, specifier, redirects = []) {
@@ -181,15 +181,36 @@ class GitHubRemoteService extends RemoteService {
 		}
 
 		let cached = await this.resourceCache.getCached(`/${owner}/${repo}`);
+		let follow = async (resource, key) => {
+			try {
+				let result = await this.followRedirect(resource, owner, repo, key, redirects, (owner, repo, redirects) => this.listTagsForSpecifier(owner, repo, specifier, redirects));
+
+				// A stale alias alone must not override fresh canonical tag data.
+				if (cached?.statusCode === 200 && cached.age < cached.staleIfError && result.age > result.ttlInternalRevalidate && !result.data.includes(specifier)) {
+					if (cached.data.includes(specifier) || !result.data.some(version => !version.startsWith('v') && semver.satisfies(version, specifier))) {
+						return cached;
+					}
+				}
+
+				return result;
+			} catch (error) {
+				if (cached?.statusCode === 200 && cached.age < cached.staleIfError && !error.forceCacheUpdate) {
+					return cached;
+				}
+
+				throw error;
+			}
+		};
 
 		if (cached?.props.redirect) {
 			let resource = cached.isStale ? await this.getTagsResource(owner, repo) : cached;
-			return this.followRedirect(resource, owner, repo, `/${owner}/${repo}`, redirects, (owner, repo, redirects) => this.listTagsForSpecifier(owner, repo, specifier, redirects));
+			return follow(resource, `/${owner}/${repo}`);
 		}
 
 		// Prefer Git-backed listings even when stale; literal lookups can bypass stale REST listings.
 		if (cached && (!cached.isStale || cached.props.gitFetchedAt || cached.statusCode !== 200 || semver.validRange(specifier, { includePrerelease: true }) !== null)) {
-			return this.listTags(owner, repo, { redirects });
+			let resource = await this.getTagsResource(owner, repo);
+			return follow(resource, `/${owner}/${repo}`);
 		}
 
 		let resources = [];
@@ -199,12 +220,13 @@ class GitHubRemoteService extends RemoteService {
 
 			if (firstPage.props.redirect) {
 				let key = `${this.octokit.repos.listTags.endpoint({ owner, repo }).url}?per_page=100`;
-				return this.followRedirect(firstPage, owner, repo, key, redirects, (owner, repo, redirects) => this.listTagsForSpecifier(owner, repo, specifier, redirects));
+				return follow(firstPage, key);
 			}
 
 			// Use the full listing for small repos.
 			if (!firstPage.props.lastPage || firstPage.props.lastPage <= 10) {
-				return this.listTags(owner, repo, { firstPage, redirects });
+				let resource = await this.getTagsResource(owner, repo, undefined, firstPage);
+				return follow(resource, `/${owner}/${repo}`);
 			}
 		}
 
@@ -213,7 +235,7 @@ class GitHubRemoteService extends RemoteService {
 				let resource = await this.getTagsResource(owner, repo, prefix);
 
 				if (resource.props.redirect) {
-					return await this.followRedirect(resource, owner, repo, this.getTagsKey(owner, repo, prefix), redirects, (owner, repo, redirects) => this.listTagsForSpecifier(owner, repo, specifier, redirects));
+					return await follow(resource, this.getTagsKey(owner, repo, prefix));
 				}
 
 				// An exact normalized tag always wins, regardless of other matching tags.
@@ -238,7 +260,7 @@ class GitHubRemoteService extends RemoteService {
 
 		let data = _(resources).flatMap('data').uniq().value();
 
-		let resource = new GitHubRemoteResource({ statusCode: 200, data, props: { staleRedirect: resources.some(resource => resource.props.staleRedirect) } });
+		let resource = new GitHubRemoteResource({ statusCode: 200, data });
 		resource.age = Math.max(...resources.map(resource => resource.age));
 		return resource;
 	}
@@ -248,17 +270,33 @@ class GitHubRemoteService extends RemoteService {
 	 */
 	requestWithCache (uri, exec) {
 		return super.requestWithCache(uri, async (key, cached) => {
-			let wasRedirect = Boolean(cached?.props.redirect);
+			let previous = cached?.props.redirect;
+			let clearDestination404s = async (resource) => {
+				let { name } = resource.props.redirect;
+
+				if (!resource.isStale && name !== previous?.name) {
+					let [ owner, repo ] = name.split('/');
+					let firstPageKey = `${this.octokit.repos.listTags.endpoint({ owner, repo }).url}?per_page=100`;
+
+					for (let key of [ `/${name}`, firstPageKey ]) {
+						if ((await this.resourceCache.getCached(key))?.statusCode === 404) {
+							await this.resourceCache.delete(key);
+						}
+					}
+				}
+
+				return resource;
+			};
 
 			if (cached?.props.redirect) {
 				let { id, source, checkedAt } = cached.props.redirect;
 
-				if (Date.now() - checkedAt < oneDay) {
+				if (Date.now() - checkedAt < oneHour) {
 					try {
 						let redirect = await this.getRepositoryRedirect(id, source, cached);
 
 						if (redirect.props.redirect.name !== source) {
-							return redirect;
+							return clearDestination404s(redirect);
 						}
 					} catch (error) {
 						if (error.statusCode !== 404) {
@@ -267,35 +305,19 @@ class GitHubRemoteService extends RemoteService {
 					}
 				}
 
-				// Recheck the original name after a day, or when its old ID no longer identifies a redirect.
+				// Recheck the original name independently of hourly ID metadata refreshes.
 				cached = null;
 			}
 
-			let resource;
-
 			try {
-				resource = await exec(key, cached);
+				return await exec(key, cached);
 			} catch (error) {
 				if (!error.props?.redirect) {
 					throw error;
 				}
 
-				resource = error;
+				return clearDestination404s(error);
 			}
-
-			if (resource.props.redirect && !wasRedirect && !resource.isStale) {
-				let { name } = resource.props.redirect;
-				let [ owner, repo ] = name.split('/');
-				let firstPageKey = `${this.octokit.repos.listTags.endpoint({ owner, repo }).url}?per_page=100`;
-
-				for (let key of [ `/${name}`, firstPageKey ]) {
-					if ((await this.resourceCache.getCached(key))?.statusCode === 404) {
-						await this.resourceCache.delete(key);
-					}
-				}
-			}
-
-			return resource;
 		});
 	}
 
@@ -325,12 +347,14 @@ class GitHubRemoteService extends RemoteService {
 			return resource;
 		}
 
-		let { name, id } = resource.props.redirect;
+		let { name, id, checkedAt } = resource.props.redirect;
 		let expectedId = redirects.at(-1)?.id;
 		let conflicting = expectedId !== undefined && expectedId !== id;
-		let visited = [ ...redirects, { name: `${owner}/${repo}`, key, id: expectedId ?? id }];
+		let visited = [ ...redirects, { name: `${owner}/${repo}`, key, id: expectedId ?? id, checkedAt }];
+		// A different check time distinguishes a live conflict from the same cached marker being replayed.
+		let repeatedConflict = conflicting && redirects.some(entry => entry.name === `${owner}/${repo}` && entry.checkedAt !== checkedAt);
 
-		if (visited.length > 5) {
+		if (visited.length > 5 || repeatedConflict) {
 			throw new GitHubRemoteResource({ statusCode: 502 }, new Error('GitHub repository redirect loop.'));
 		}
 

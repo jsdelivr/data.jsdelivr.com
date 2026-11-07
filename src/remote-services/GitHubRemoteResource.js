@@ -5,7 +5,11 @@ const baseTtl = 10 * 60 * 1000;
 
 class GitHubRemoteResource extends RemoteResource {
 	get isStale () {
-		return this.props.staleRedirect || super.isStale;
+		return this.props.staleRedirect || (this.props.redirect && Date.now() - this.props.redirect.checkedAt >= baseTtl * 6) || super.isStale;
+	}
+
+	get staleWhileRevalidate () {
+		return this.props.redirect && Date.now() - this.props.redirect.checkedAt >= baseTtl * 6 ? 0 : super.staleWhileRevalidate;
 	}
 
 	get defaultTtlInternalRevalidate () {

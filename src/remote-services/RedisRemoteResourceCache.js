@@ -167,7 +167,7 @@ class PromiseCacheShared {
 	 * @returns {Promise}
 	 * @private
 	 */
-	async store (message, maxAge, options = {}) {
+	async store (message, maxAge) {
 		if (!maxAge) {
 			return;
 		}
@@ -175,7 +175,7 @@ class PromiseCacheShared {
 		let key = this.getRedisKey(message.key);
 		let res = await redis.compress(await PromiseCacheShared.serialize(message));
 
-		await redis.set(key, res, { PX: maxAge, ...options });
+		await redis.set(key, res, { PX: maxAge });
 	}
 
 	/**

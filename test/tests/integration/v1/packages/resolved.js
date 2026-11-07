@@ -139,15 +139,15 @@ describe('/v1/packages/resolved', () => {
 			expect(current.headers['cache-control']).not.to.match(/^public, max-age=10(?:,|$)/);
 		});
 
-		it('rechecks the original name independently of hourly ID validations', async () => {
+		it('rechecks the original name after an hour even when ID metadata is fresh', async () => {
 			let { name, key } = await warmRename('reused', 7006);
 			let keys = [ key, `https://api.github.com/repos/rename-tests/${name}/tags?per_page=100` ];
 
 			for (let key of keys) {
 				let redisKey = `rrrc/pr/gh${key}`;
 				let entry = await PromiseCacheShared.parse(await redis.decompress(await redis.get(redisKey)));
-				entry.v.props.redirect.checkedAt -= 25 * 60 * 60 * 1000;
-				await redis.set(redisKey, await redis.compress(await PromiseCacheShared.serialize(entry)), { PX: oneMonth - 3 * 60 * 60 * 1000 });
+				entry.v.props.redirect.checkedAt -= 65 * 60 * 1000;
+				await redis.set(redisKey, await redis.compress(await PromiseCacheShared.serialize(entry)), { PX: oneMonth });
 			}
 
 			let upstream = nock('https://api.github.com').get(`/repos/rename-tests/${name}/tags`).query({ per_page: 100 })
@@ -157,6 +157,60 @@ describe('/v1/packages/resolved', () => {
 			expect(response.body.version).to.equal('9.0.0');
 			expect(upstream.isDone()).to.be.true;
 			expect((await cache.getCached(key)).statusCode).to.equal(200);
+			expect((await cache.getCached(`/rename-tests/${name}-current`)).data).to.have.members([ '1.2.3', 'release' ]);
+		});
+
+		it('keeps an expired name mapping stale when its source cannot be checked', async () => {
+			let { name, current, key } = await warmRename('source-check-error', 7034);
+
+			for (let key of [ `/rename-tests/${name}`, `https://api.github.com/repos/rename-tests/${name}/tags?per_page=100` ]) {
+				let redisKey = `rrrc/pr/gh${key}`;
+				let entry = await PromiseCacheShared.parse(await redis.decompress(await redis.get(redisKey)));
+				entry.v.props.redirect.checkedAt -= 65 * 60 * 1000;
+				await redis.set(redisKey, await redis.compress(await PromiseCacheShared.serialize(entry)), { PX: oneMonth });
+			}
+
+			let upstream = nock('https://api.github.com').get(`/repos/rename-tests/${name}/tags`).query({ per_page: 100 }).twice().reply(503);
+
+			for (let attempt = 0; attempt < 2; attempt++) {
+				let response = await chai.request(server).get(`/v1/packages/gh/rename-tests/${name}`);
+				expect(response).to.have.status(200);
+				expect(response.headers['cache-control']).to.match(/^public, max-age=10(?:,|$)/);
+			}
+
+			expect((await cache.getCached(key)).isStale).to.be.true;
+			let target = await chai.request(server).get(`/v1/packages/gh/rename-tests/${current}`);
+			expect(target.headers['cache-control']).not.to.match(/^public, max-age=10(?:,|$)/);
+			expect(upstream.isDone()).to.be.true;
+		});
+
+		it('expires a prefix alias independently after the source name has been revived', async () => {
+			let { name, current, key } = await warmRename('prefix-revival', 7035);
+			let entry = await PromiseCacheShared.parse(await redis.decompress(await redis.get(`rrrc/pr/gh${key}`)));
+			entry.v.props.redirect.checkedAt -= 65 * 60 * 1000;
+			await redis.set(`rrrc/pr/ghhttps://api.github.com/repos/rename-tests/${name}/git/matching-refs/tags%2Frelease`, await redis.compress(await PromiseCacheShared.serialize(entry)), { PX: oneMonth - 15 * 60 * 1000 });
+
+			for (let key of [ `/rename-tests/${name}`, `https://api.github.com/repos/rename-tests/${name}/tags?per_page=100` ]) {
+				await redis.set(`rrrc/pr/gh${key}`, await redis.compress(await PromiseCacheShared.serialize(entry)), { PX: oneMonth });
+			}
+
+			let upstream = nock('https://api.github.com')
+				.get(`/repos/rename-tests/${name}/tags`).query({ per_page: 100 }).reply(200, [{ name: 'replacement' }]);
+			let replacement = await chai.request(server).get(`/v1/packages/gh/rename-tests/${name}`);
+			expect(replacement.body.versions.map(item => item.version)).to.deep.equal([ 'replacement' ]);
+			await redis.pExpire(`rrrc/pr/gh${key}`, oneMonth - 11 * 60 * 1000);
+
+			for (let prefix of [ 'release', 'vrelease' ]) {
+				upstream.get(path => decodeURIComponent(path) === `/repos/rename-tests/${name}/git/matching-refs/tags/${prefix}`).query({ per_page: 100 }).reply(200, []);
+			}
+
+			let response = await chai.request(server).get(`/v1/packages/gh/rename-tests/${name}/resolved?specifier=release`);
+			expect(response).to.have.status(200);
+			expect(response.body.version).to.equal(null);
+			let target = await chai.request(server).get(`/v1/packages/gh/rename-tests/${current}/resolved?specifier=release`);
+			expect(target.body.version).to.equal('release');
+			expect((await cache.getCached(`/rename-tests/${current}`)).data).to.have.members([ '1.2.3', 'release' ]);
+			expect(upstream.isDone()).to.be.true;
 		});
 
 		it('discovers redirects while conditionally refreshing an old listing', async () => {
@@ -334,6 +388,191 @@ describe('/v1/packages/resolved', () => {
 			expect(response).to.have.status(200);
 			expect(response.body.version).to.equal('release');
 			expect(response.headers['cache-control']).to.match(/^public, max-age=10(?:,|$)/);
+			expect(upstream.isDone()).to.be.true;
+		});
+
+		for (let [ paginationRedirect, staleCanonical ] of [ [ false, false ], [ false, true ], [ true, false ] ]) {
+			it(`preserves the specifier when a ${paginationRedirect ? 'later page' : 'full-list refresh'} discovers a rename${staleCanonical ? ' with stale canonical prefixes' : ''}`, async () => {
+				let old = paginationRedirect ? 'range-page-old' : staleCanonical ? 'range-stale-old' : 'range-old';
+				let current = `${old}-current`;
+				let id = paginationRedirect ? 7027 : staleCanonical ? 7033 : 7026;
+				let upstream = nock('https://api.github.com')
+					.get(`/repos/rename-tests/${current}/tags`).query({ per_page: 100 }).reply(200, [{ name: 'v1.2.3' }], {
+						link: `<https://api.github.com/repos/rename-tests/${current}/tags?per_page=100&page=2>; rel="next", <https://api.github.com/repos/rename-tests/${current}/tags?per_page=100&page=11>; rel="last"`,
+					})
+					.get(path => decodeURIComponent(path) === `/repos/rename-tests/${current}/git/matching-refs/tags/1`).query({ per_page: 100 })
+					.reply(200, [{ ref: 'refs/tags/1.2.3' }])
+					.get(path => decodeURIComponent(path) === `/repos/rename-tests/${current}/git/matching-refs/tags/v1`).query({ per_page: 100 }).reply(200, [])
+					.get(`/repos/rename-tests/${old}/tags`).query({ per_page: 100 }).reply(200, [{ name: 'v1.0.0' }], paginationRedirect ? {
+						link: `<https://api.github.com/repos/rename-tests/${old}/tags?per_page=100&page=2>; rel="next", <https://api.github.com/repos/rename-tests/${old}/tags?per_page=100&page=2>; rel="last"`,
+					} : {});
+				await chai.request(server).get(`/v1/packages/gh/rename-tests/${current}/resolved?specifier=^1`);
+
+				if (staleCanonical) {
+					for (let prefix of [ '1', 'v1' ]) {
+						await redis.pExpire(`rrrc/pr/ghhttps://api.github.com/repos/rename-tests/${current}/git/matching-refs/tags%2F${prefix}`, oneMonth - 25 * 60 * 1000);
+						upstream.get(path => decodeURIComponent(path) === `/repos/rename-tests/${current}/git/matching-refs/tags/${prefix}`).query({ per_page: 100 }).reply(503);
+					}
+				}
+
+				if (!paginationRedirect) {
+					await chai.request(server).get(`/v1/packages/gh/rename-tests/${old}`);
+
+					for (let key of [ `/rename-tests/${old}`, `https://api.github.com/repos/rename-tests/${old}/tags?per_page=100` ]) {
+						await redis.pExpire(`rrrc/pr/gh${key}`, oneMonth - 25 * 60 * 1000);
+					}
+				}
+
+				upstream.get(`/repos/rename-tests/${old}/tags`).query(paginationRedirect ? { per_page: 100, page: 2 } : { per_page: 100 })
+					.reply(301, '', { location: `https://api.github.com/repositories/${id}/tags` })
+					.get(`/repositories/${id}`).reply(200, { full_name: `rename-tests/${current}` });
+
+				let response = await chai.request(server).get(`/v1/packages/gh/rename-tests/${old}/resolved?specifier=^1`);
+				expect(response).to.have.status(200);
+				expect(response.body.version).to.equal('1.2.3');
+				expect(upstream.isDone()).to.be.true;
+			});
+		}
+
+		it('uses the source literal when canonical cached misses cannot be revalidated', async () => {
+			let upstream = nock('https://api.github.com')
+				.get('/repos/rename-tests/stale-miss-old/tags').query({ per_page: 100 }).reply(200, [{ name: 'release' }])
+				.get('/repos/rename-tests/stale-miss-current/tags').query({ per_page: 100 }).reply(200, [{ name: 'other' }], {
+					link: '<https://api.github.com/repos/rename-tests/stale-miss-current/tags?per_page=100&page=11>; rel="last"',
+				});
+			await chai.request(server).get('/v1/packages/gh/rename-tests/stale-miss-old');
+
+			for (let prefix of [ 'release', 'vrelease' ]) {
+				upstream.get(path => decodeURIComponent(path) === `/repos/rename-tests/stale-miss-current/git/matching-refs/tags/${prefix}`).query({ per_page: 100 }).reply(200, []);
+			}
+
+			let freshMiss = await chai.request(server).get('/v1/packages/gh/rename-tests/stale-miss-current/resolved?specifier=release');
+			expect(freshMiss.body.version).to.equal(null);
+			await redis.pExpire('rrrc/pr/gh/rename-tests/stale-miss-old', oneMonth - 25 * 60 * 1000);
+
+			upstream.get(path => decodeURIComponent(path) === '/repos/rename-tests/stale-miss-old/git/matching-refs/tags/release').query({ per_page: 100 })
+				.reply(301, '', { location: 'https://api.github.com/repositories/7028/git/matching-refs/tags/release' })
+				.get('/repositories/7028').reply(200, { full_name: 'rename-tests/stale-miss-current' });
+
+			let renamedFreshMiss = await chai.request(server).get('/v1/packages/gh/rename-tests/stale-miss-old/resolved?specifier=release');
+			expect(renamedFreshMiss.body.version).to.equal(null);
+
+			for (let prefix of [ 'release', 'vrelease' ]) {
+				await redis.pExpire(`rrrc/pr/ghhttps://api.github.com/repos/rename-tests/stale-miss-current/git/matching-refs/tags%2F${prefix}`, oneMonth - 25 * 60 * 1000);
+				upstream.get(path => decodeURIComponent(path) === `/repos/rename-tests/stale-miss-current/git/matching-refs/tags/${prefix}`).query({ per_page: 100 }).reply(503);
+			}
+
+			let response = await chai.request(server).get('/v1/packages/gh/rename-tests/stale-miss-old/resolved?specifier=release');
+			expect(response).to.have.status(200);
+			expect(response.body.version).to.equal('release');
+			expect(response.headers['cache-control']).to.match(/^public, max-age=10(?:,|$)/);
+			expect(upstream.isDone()).to.be.true;
+		});
+
+		it('clears destination negatives when a known alias changes its target', async () => {
+			let { name, id, key } = await warmRename('negative-again', 7029);
+			let upstream = nock('https://api.github.com').get('/repos/rename-tests/negative-latest/tags').query({ per_page: 100 }).reply(404);
+			let missing = await chai.request(server).get('/v1/packages/gh/rename-tests/negative-latest');
+			expect(missing).to.have.status(404);
+
+			for (let key of [ `/rename-tests/${name}`, `https://api.github.com/repositories/${id}` ]) {
+				await redis.pExpire(`rrrc/pr/gh${key}`, oneMonth - 3 * 60 * 60 * 1000);
+			}
+
+			upstream.get(`/repositories/${id}`).reply(200, { full_name: 'rename-tests/negative-latest' })
+				.get('/repos/rename-tests/negative-latest/tags').query({ per_page: 100 }).reply(200, [{ name: 'v8.0.0' }]);
+
+			let response = await chai.request(server).get(`/v1/packages/gh/rename-tests/${name}`);
+			expect(response).to.have.status(200);
+			expect(response.body.versions.map(item => item.version)).to.deep.equal([ '8.0.0' ]);
+			expect((await cache.getCached(key)).props.redirect.name).to.equal('rename-tests/negative-latest');
+			expect(upstream.isDone()).to.be.true;
+		});
+
+		it('retains fresh destination negatives when an hourly source check confirms the same target', async () => {
+			let { name, current, id } = await warmRename('unchanged-negative', 7036);
+			await cache.delete(`/rename-tests/${current}`);
+			await cache.delete(`https://api.github.com/repos/rename-tests/${current}/tags?per_page=100`);
+			let upstream = nock('https://api.github.com').get(`/repos/rename-tests/${current}/tags`).query({ per_page: 100 }).reply(404);
+			await chai.request(server).get(`/v1/packages/gh/rename-tests/${current}`);
+
+			for (let key of [ `/rename-tests/${name}`, `https://api.github.com/repos/rename-tests/${name}/tags?per_page=100` ]) {
+				let redisKey = `rrrc/pr/gh${key}`;
+				let entry = await PromiseCacheShared.parse(await redis.decompress(await redis.get(redisKey)));
+				entry.v.props.redirect.checkedAt -= 65 * 60 * 1000;
+				await redis.set(redisKey, await redis.compress(await PromiseCacheShared.serialize(entry)), { PX: oneMonth });
+			}
+
+			upstream.get(`/repos/rename-tests/${name}/tags`).query({ per_page: 100 }).reply(301, '', { location: `https://api.github.com/repositories/${id}/tags` });
+			let response = await chai.request(server).get(`/v1/packages/gh/rename-tests/${name}`);
+			expect(response).to.have.status(404);
+			expect((await cache.getCached(`/rename-tests/${current}`)).statusCode).to.equal(404);
+			expect((await cache.getCached(`https://api.github.com/repos/rename-tests/${current}/tags?per_page=100`)).statusCode).to.equal(404);
+			expect(upstream.isDone()).to.be.true;
+		});
+
+		it('keeps a fresh canonical miss authoritative when only alias validation fails', async () => {
+			let upstream = nock('https://api.github.com')
+				.get('/repos/rename-tests/fresh-miss-old/tags').query({ per_page: 100 }).reply(200, [{ name: 'release' }])
+				.get('/repos/rename-tests/fresh-miss-current/tags').query({ per_page: 100 }).reply(200, [{ name: 'other' }]);
+
+			for (let repo of [ 'fresh-miss-old', 'fresh-miss-current' ]) {
+				await chai.request(server).get(`/v1/packages/gh/rename-tests/${repo}`);
+			}
+
+			await redis.pExpire('rrrc/pr/gh/rename-tests/fresh-miss-old', oneMonth - 25 * 60 * 1000);
+
+			upstream.get(path => decodeURIComponent(path) === '/repos/rename-tests/fresh-miss-old/git/matching-refs/tags/release').query({ per_page: 100 })
+				.reply(301, '', { location: 'https://api.github.com/repositories/7037/git/matching-refs/tags/release' })
+				.get('/repositories/7037').reply(200, { full_name: 'rename-tests/fresh-miss-current' });
+
+			let initial = await chai.request(server).get('/v1/packages/gh/rename-tests/fresh-miss-old/resolved?specifier=release');
+			expect(initial.body.version).to.equal(null);
+			let redisKey = 'rrrc/pr/ghhttps://api.github.com/repos/rename-tests/fresh-miss-old/git/matching-refs/tags%2Frelease';
+			let entry = await PromiseCacheShared.parse(await redis.decompress(await redis.get(redisKey)));
+			entry.v.props.redirect.checkedAt -= 65 * 60 * 1000;
+			await redis.set(redisKey, await redis.compress(await PromiseCacheShared.serialize(entry)), { PX: oneMonth - 15 * 60 * 1000 });
+			upstream.get(path => decodeURIComponent(path) === '/repos/rename-tests/fresh-miss-old/git/matching-refs/tags/release').query({ per_page: 100 }).reply(503);
+			let response = await chai.request(server).get('/v1/packages/gh/rename-tests/fresh-miss-old/resolved?specifier=release');
+			expect(response).to.have.status(200);
+			expect(response.body.version).to.equal(null);
+			expect(response.headers['cache-control']).to.match(/^public, max-age=10(?:,|$)/);
+			expect((await cache.getCached('/rename-tests/fresh-miss-current')).data).to.deep.equal([ 'other' ]);
+			expect(upstream.isDone()).to.be.true;
+		});
+
+		it('keeps target caches correct when a fresh alias still names a revived repository', async () => {
+			let { name, current, key } = await warmRename('target-ownership', 7030);
+			await cache.delete(`/rename-tests/${current}`);
+			await cache.delete(`https://api.github.com/repos/rename-tests/${current}/tags?per_page=100`);
+			let upstream = nock('https://api.github.com')
+				.get(`/repos/rename-tests/${current}/tags`).query({ per_page: 100 }).reply(200, [{ name: 'replacement' }])
+				.get('/repos/rename-tests/ownership-actual/tags').query({ per_page: 100 }).reply(200, [{ name: 'original' }]);
+
+			for (let [ repo, version ] of [ [ name, 'replacement' ], [ current, 'replacement' ], [ 'ownership-actual', 'original' ] ]) {
+				let response = await chai.request(server).get(`/v1/packages/gh/rename-tests/${repo}`);
+				expect(response).to.have.status(200);
+				expect(response.body.versions.map(item => item.version)).to.deep.equal([ version ]);
+			}
+
+			expect((await cache.getCached(`/rename-tests/${current}`)).data).to.deep.equal([ 'replacement' ]);
+			expect((await cache.getCached('/rename-tests/ownership-actual')).data).to.deep.equal([ 'original' ]);
+			expect((await cache.getCached(key)).data).to.equal(undefined);
+			expect(upstream.isDone()).to.be.true;
+		});
+
+		it('stops retrying a live conflicting ID after bypassing its cached alias', async () => {
+			let { name, current } = await warmRename('live-conflict', 7031);
+			await cache.delete(`/rename-tests/${current}`);
+			await cache.delete(`https://api.github.com/repos/rename-tests/${current}/tags?per_page=100`);
+			let upstream = nock('https://api.github.com')
+				.get(`/repos/rename-tests/${current}/tags`).query({ per_page: 100 }).twice().delay(40)
+				.reply(301, '', { location: 'https://api.github.com/repositories/7032/tags' })
+				.get('/repositories/7032').reply(200, { full_name: 'rename-tests/conflict-other' });
+			let service = new GitHubRemoteService({ baseUrl: 'https://api.github.com' }, cache);
+			let failure = await service.listTags('rename-tests', name).catch(error => error);
+			expect(failure.statusCode).to.equal(502);
+			expect(failure.error.message).to.equal('GitHub repository redirect loop.');
 			expect(upstream.isDone()).to.be.true;
 		});
 
