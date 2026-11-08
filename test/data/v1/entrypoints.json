@@ -1,4 +1,35 @@
 {
+	"entrypoint-umd-main@1.0.0": {
+		"expected": { "js": { "file": "/umd.min.js",
+			"guessed": false } },
+		"db": {
+			"entrypoints": { "umd:main": "/umd.js",
+				"unpkg": "/unpkg.js",
+				"exports": "/entry.js",
+				"main": "/main.js" },
+			"cdnjs": "/popular.js"
+		}
+	},
+	"entrypoint-unpkg@1.0.0": {
+		"expected": { "js": { "file": "/unpkg.min.js",
+			"guessed": false } },
+		"db": {
+			"entrypoints": { "umd:main": "/umd.mjs",
+				"unpkg": "/unpkg.js",
+				"exports": "/entry.js",
+				"main": "/main.js" },
+			"cdnjs": "/popular.js"
+		}
+	},
+	"entrypoint-unpkg-style-override@1.0.0": {
+		"expected": { "css": { "file": "/style.min.css",
+			"guessed": false } },
+		"db": {
+			"entrypoints": { "style": "/style.css",
+				"unpkg": "/bundle.css",
+				"exports": "/entry.css" }
+		}
+	},
 	"entrypoint-exports-mjs@1.0.0": {
 		"expected": {
 			"js": {
@@ -61,6 +92,8 @@
 		"db": {
 			"entrypoints": {
 				"browser": "/browser.js",
+				"umd:main": "/umd.js",
+				"unpkg": "/unpkg.js",
 				"exports": "/entry.js",
 				"main": "/main.js"
 			}

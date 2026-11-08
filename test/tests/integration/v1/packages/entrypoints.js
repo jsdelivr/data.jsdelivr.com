@@ -3,23 +3,25 @@ import { randomUUID } from 'node:crypto';
 import testCases from '../../../../data/v1/entrypoints.json' with { type: 'json' };
 
 describe('/v1/packages/entrypoints', () => {
-	it('uses a js export returned by the backend on a cache miss', async () => {
-		let name = `entrypoint-exports-js-${randomUUID()}`;
-		let entries = nock('https://cdn.jsdelivr.net')
-			.get(`/npm/${name}@1.0.0/+private-entrypoints`)
-			.reply(200, { version: '1.0.0', entrypoints: { exports: '/entry.min.js', main: '/main.min.js' } });
+	for (let field of [ 'umd:main', 'unpkg', 'exports' ]) {
+		it(`uses ${field} returned by the backend on a cache miss`, async () => {
+			let name = `entrypoint-bundle-${randomUUID()}`;
+			let entries = nock('https://cdn.jsdelivr.net')
+				.get(`/npm/${name}@1.0.0/+private-entrypoints`)
+				.reply(200, { version: '1.0.0', entrypoints: { [field]: '/entry.min.js', main: '/main.min.js' } });
 
-		let listing = nock('https://cdn.jsdelivr.net')
-			.get(`/npm/${name}@1.0.0/+private-json`)
-			.reply(200, { version: '1.0.0', files: [{ name: '/entry.js' }, { name: '/main.js' }] });
+			let listing = nock('https://cdn.jsdelivr.net')
+				.get(`/npm/${name}@1.0.0/+private-json`)
+				.reply(200, { version: '1.0.0', files: [{ name: '/entry.js' }, { name: '/main.js' }] });
 
-		let response = await chai.request(server).get(`/v1/packages/npm/${name}@1.0.0/entrypoints`);
+			let response = await chai.request(server).get(`/v1/packages/npm/${name}@1.0.0/entrypoints`);
 
-		expect(response).to.have.status(200);
-		expect(response.body.entrypoints).to.deep.equal({ js: { file: '/entry.min.js', guessed: false } });
-		expect(entries.isDone()).to.be.true;
-		expect(listing.isDone()).to.be.true;
-	});
+			expect(response).to.have.status(200);
+			expect(response.body.entrypoints).to.deep.equal({ js: { file: '/entry.min.js', guessed: false } });
+			expect(entries.isDone()).to.be.true;
+			expect(listing.isDone()).to.be.true;
+		});
+	}
 
 	for (let [ packageName, data ] of Object.entries(testCases)) {
 		it(`GET /v1/packages/npm/${packageName}/entrypoints`, () => {

@@ -1,8 +1,8 @@
 import _ from 'lodash';
 
 const PRIMARY_FIELDS = {
-	js: [ 'jsdelivr', 'cdn', 'browser', 'exports' ],
-	css: [ 'jsdelivr', 'cdn', 'browser', 'style', 'exports' ],
+	js: [ 'jsdelivr', 'cdn', 'browser', 'umd:main', 'unpkg', 'exports' ],
+	css: [ 'jsdelivr', 'cdn', 'browser', 'style', 'umd:main', 'unpkg', 'exports' ],
 };
 
 const FALLBACK_FIELDS = {
