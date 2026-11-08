@@ -1,4 +1,119 @@
 {
+	"entrypoint-umd-main@1.0.0": {
+		"expected": { "js": { "file": "/umd.min.js",
+			"guessed": false } },
+		"db": {
+			"entrypoints": { "umd:main": "/umd.js",
+				"unpkg": "/unpkg.js",
+				"exports": "/entry.js",
+				"main": "/main.js" },
+			"cdnjs": "/popular.js"
+		}
+	},
+	"entrypoint-unpkg@1.0.0": {
+		"expected": { "js": { "file": "/unpkg.min.js",
+			"guessed": false } },
+		"db": {
+			"entrypoints": { "umd:main": "/umd.mjs",
+				"unpkg": "/unpkg.js",
+				"exports": "/entry.js",
+				"main": "/main.js" },
+			"cdnjs": "/popular.js"
+		}
+	},
+	"entrypoint-unpkg-style-override@1.0.0": {
+		"expected": { "css": { "file": "/style.min.css",
+			"guessed": false } },
+		"db": {
+			"entrypoints": { "style": "/style.css",
+				"unpkg": "/bundle.css",
+				"exports": "/entry.css" }
+		}
+	},
+	"entrypoint-exports-mjs@1.0.0": {
+		"expected": {
+			"js": {
+				"file": "/main.min.js",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"exports": "/entry.mjs",
+				"main": "/main.js"
+			}
+		}
+	},
+	"entrypoint-exports-mjs-only@1.0.0": {
+		"expected": {},
+		"db": {
+			"entrypoints": {
+				"exports": "/entry.mjs",
+				"main": "/main.mjs"
+			}
+		}
+	},
+	"entrypoint-exports-js@1.0.0": {
+		"expected": {
+			"js": {
+				"file": "/entry.min.js",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"exports": "/entry.js",
+				"main": "/main.js"
+			},
+			"cdnjs": "/popular.js"
+		}
+	},
+	"entrypoint-exports-css@1.0.0": {
+		"expected": {
+			"css": {
+				"file": "/entry.min.css",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"exports": "/entry.css",
+				"main": "/main.css"
+			}
+		}
+	},
+	"entrypoint-exports-browser-override@1.0.0": {
+		"expected": {
+			"js": {
+				"file": "/browser.min.js",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"browser": "/browser.js",
+				"umd:main": "/umd.js",
+				"unpkg": "/unpkg.js",
+				"exports": "/entry.js",
+				"main": "/main.js"
+			}
+		}
+	},
+	"entrypoint-exports-style-override@1.0.0": {
+		"expected": {
+			"css": {
+				"file": "/style.min.css",
+				"guessed": false
+			}
+		},
+		"db": {
+			"entrypoints": {
+				"style": "/style.css",
+				"exports": "/entry.css",
+				"main": "/main.css"
+			}
+		}
+	},
 	"entrypoint-just-empty@1.0.0": {
 		"expected": {},
 		"db": {
