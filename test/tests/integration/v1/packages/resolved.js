@@ -9,6 +9,86 @@ describe('/v1/packages/resolved', () => {
 		setupSnapshots(import.meta.url);
 	});
 
+	describe('GitHub repository casing', () => {
+		let cache = new RedisRemoteResourceCache('pr/gh');
+
+		it('shares full listings across owner and repository casing without changing response names', async () => {
+			let upstream = nock('https://api.github.com').get('/repos/case-tests/listing/tags').query({ per_page: 100 })
+				.reply(200, [{ name: 'v1.2.3' }, { name: 'Release' }]);
+
+			for (let name of [ 'Case-Tests/Listing', 'case-tests/listing', 'CASE-TESTS/LISTING' ]) {
+				let response = await chai.request(server).get(`/v1/packages/gh/${name}`);
+				expect(response).to.have.status(200);
+				expect(response.body.name).to.equal(name);
+				expect(response.body.versions.map(item => item.version)).to.have.members([ '1.2.3', 'Release' ]);
+			}
+
+			expect((await cache.getCached('/case-tests/listing')).statusCode).to.equal(200);
+			expect(await cache.getCached('/Case-Tests/Listing')).to.equal(null);
+			expect(upstream.isDone()).to.be.true;
+		});
+
+		it('shares first-page and prefix caches while keeping literal tags case-sensitive', async () => {
+			let upstream = nock('https://api.github.com')
+				.get('/repos/case-tests/prefix/tags').query({ per_page: 100 }).reply(200, [{ name: 'v1.0.0' }], {
+					link: '<https://api.github.com/repos/case-tests/prefix/tags?per_page=100&page=11>; rel="last"',
+				})
+				.get(path => decodeURIComponent(path) === '/repos/case-tests/prefix/git/matching-refs/tags/Release').query({ per_page: 100 })
+				.reply(200, [{ ref: 'refs/tags/Release' }])
+				.get(path => decodeURIComponent(path) === '/repos/case-tests/prefix/git/matching-refs/tags/release').query({ per_page: 100 })
+				.reply(200, [{ ref: 'refs/tags/release' }]);
+
+			for (let [ name, specifier ] of [ [ 'Case-Tests/Prefix', 'Release' ], [ 'CASE-TESTS/PREFIX', 'Release' ], [ 'case-tests/prefix', 'release' ] ]) {
+				let response = await chai.request(server).get(`/v1/packages/gh/${name}/resolved?specifier=${specifier}`);
+				expect(response).to.have.status(200);
+				expect(response.body.version).to.equal(specifier);
+			}
+
+			expect(upstream.isDone()).to.be.true;
+		});
+
+		it('normalizes ID lookup names and reuses canonical data through legacy mixed-case aliases', async () => {
+			let upstream = nock('https://api.github.com')
+				.get('/repos/case-tests/current/tags').query({ per_page: 100 }).reply(200, [{ name: 'v2.0.0' }])
+				.get('/repos/case-tests/old/tags').query({ per_page: 100 })
+				.reply(301, '', { location: 'https://api.github.com/repositories/8101/tags?per_page=100' })
+				.get('/repositories/8101').reply(200, { full_name: 'Case-Tests/Current' }, { etag: '"case-8101"' });
+
+			for (let name of [ 'case-tests/current', 'Case-Tests/Old' ]) {
+				let response = await chai.request(server).get(`/v1/packages/gh/${name}`);
+				expect(response).to.have.status(200);
+				expect(response.body.versions.map(item => item.version)).to.deep.equal([ '2.0.0' ]);
+			}
+
+			let key = 'rrrc/pr/gh/case-tests/old';
+			let alias = await cache.getCached('/case-tests/old');
+			expect(alias.props.redirect.name).to.equal('case-tests/current');
+			expect(alias.props.redirect.source).to.equal('case-tests/old');
+			let entry = await PromiseCacheShared.parse(await redis.decompress(await redis.get(key)));
+			entry.v.props.redirect.name = 'Case-Tests/Current';
+			entry.v.props.redirect.source = 'Case-Tests/Old';
+			await redis.set(key, await redis.compress(await PromiseCacheShared.serialize(entry)), { PX: alias.ttlInternalStore });
+
+			let response = await chai.request(server).get('/v1/packages/gh/CASE-TESTS/OLD/resolved?specifier=2.0.0');
+			expect(response).to.have.status(200);
+			expect(response.body.version).to.equal('2.0.0');
+			expect(upstream.isDone()).to.be.true;
+		});
+
+		it('does not treat a case-only redirect as a repository rename', async () => {
+			let upstream = nock('https://api.github.com')
+				.get('/repos/case-tests/same/tags').query({ per_page: 100 }).twice()
+				.reply(301, '', { location: 'https://api.github.com/repositories/8102/tags?per_page=100' })
+				.get('/repositories/8102').reply(200, { full_name: 'Case-Tests/Same' })
+				.get('/repositories/8102/tags').query({ per_page: 100 }).reply(200, [{ name: 'v3.0.0' }]);
+			let response = await chai.request(server).get('/v1/packages/gh/case-tests/same');
+			expect(response).to.have.status(200);
+			expect(response.body.versions.map(item => item.version)).to.deep.equal([ '3.0.0' ]);
+			expect((await cache.getCached('/case-tests/same')).props.redirect).to.equal(undefined);
+			expect(upstream.isDone()).to.be.true;
+		});
+	});
+
 	describe('GitHub repository redirects', () => {
 		let cache = new RedisRemoteResourceCache('pr/gh');
 		let oneMonth = 30 * 24 * 60 * 60 * 1000;
@@ -489,7 +569,7 @@ describe('/v1/packages/resolved', () => {
 			expect(upstream.isDone()).to.be.true;
 		});
 
-		it('retains fresh destination negatives when an hourly source check confirms the same target', async () => {
+		it('retains fresh destination negatives when an hourly source check confirms the same target with different casing', async () => {
 			let { name, current, id } = await warmRename('unchanged-negative', 7036);
 			await cache.delete(`/rename-tests/${current}`);
 			await cache.delete(`https://api.github.com/repos/rename-tests/${current}/tags?per_page=100`);
@@ -499,6 +579,7 @@ describe('/v1/packages/resolved', () => {
 			for (let key of [ `/rename-tests/${name}`, `https://api.github.com/repos/rename-tests/${name}/tags?per_page=100` ]) {
 				let redisKey = `rrrc/pr/gh${key}`;
 				let entry = await PromiseCacheShared.parse(await redis.decompress(await redis.get(redisKey)));
+				entry.v.props.redirect.name = entry.v.props.redirect.name.toUpperCase();
 				entry.v.props.redirect.checkedAt -= 65 * 60 * 1000;
 				await redis.set(redisKey, await redis.compress(await PromiseCacheShared.serialize(entry)), { PX: oneMonth });
 			}

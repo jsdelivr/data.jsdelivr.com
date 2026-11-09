@@ -45,6 +45,8 @@ class GitHubRemoteService extends RemoteService {
 	 * @returns {Promise<GitHubRemoteResource>}
 	 */
 	async listTags (owner, repo, { prefix, firstPage, redirects = [] } = {}) {
+		owner = owner.toLowerCase();
+		repo = repo.toLowerCase();
 		let resource = await this.getTagsResource(owner, repo, prefix, firstPage);
 		return this.followRedirect(resource, owner, repo, this.getTagsKey(owner, repo, prefix), redirects, (owner, repo, redirects) => this.listTags(owner, repo, { prefix, redirects }));
 	}
@@ -174,6 +176,8 @@ class GitHubRemoteService extends RemoteService {
 	 * @returns {Promise<GitHubRemoteResource>}
 	 */
 	async listTagsForSpecifier (owner, repo, specifier, redirects = []) {
+		owner = owner.toLowerCase();
+		repo = repo.toLowerCase();
 		let prefixes = GitHubRemoteService.getTagPrefixes(specifier);
 
 		if (!prefixes) {
@@ -274,7 +278,7 @@ class GitHubRemoteService extends RemoteService {
 			let clearDestination404s = async (resource) => {
 				let { name } = resource.props.redirect;
 
-				if (!resource.isStale && name !== previous?.name) {
+				if (!resource.isStale && name !== previous?.name.toLowerCase()) {
 					let [ owner, repo ] = name.split('/');
 					let firstPageKey = `${this.octokit.repos.listTags.endpoint({ owner, repo }).url}?per_page=100`;
 
@@ -290,6 +294,7 @@ class GitHubRemoteService extends RemoteService {
 
 			if (cached?.props.redirect) {
 				let { id, source, checkedAt } = cached.props.redirect;
+				source = source.toLowerCase();
 
 				if (Date.now() - checkedAt < oneHour) {
 					try {
@@ -322,6 +327,7 @@ class GitHubRemoteService extends RemoteService {
 	}
 
 	async getRepositoryRedirect (id, source, cached) {
+		source = source.toLowerCase();
 		let uri = this.octokit.request.endpoint('GET /repositories/{repository_id}', { repository_id: id }).url;
 		let metadata = await super.requestWithCache(uri, async (key, metadata) => {
 			let response = await this.requestConditional(uri, metadata || cached);
@@ -336,7 +342,7 @@ class GitHubRemoteService extends RemoteService {
 		let redirect = new GitHubRemoteResource({
 			statusCode: 301,
 			headers: metadata.headers,
-			props: { redirect: { id, name: metadata.data.full_name, source, checkedAt: cached?.props.redirect.checkedAt ?? Date.now() } },
+			props: { redirect: { id, name: metadata.data.full_name.toLowerCase(), source, checkedAt: cached?.props.redirect.checkedAt ?? Date.now() } },
 		});
 		redirect.age = metadata.age;
 		return redirect;
@@ -348,6 +354,7 @@ class GitHubRemoteService extends RemoteService {
 		}
 
 		let { name, id, checkedAt } = resource.props.redirect;
+		name = name.toLowerCase();
 		let expectedId = redirects.at(-1)?.id;
 		let conflicting = expectedId !== undefined && expectedId !== id;
 		let visited = [ ...redirects, { name: `${owner}/${repo}`, key, id: expectedId ?? id, checkedAt }];
@@ -556,9 +563,10 @@ class GitHubRemoteService extends RemoteService {
 			let id = destination.pathname.match(/^\/repositories\/(\d+)(?:\/|$)/)?.[1];
 
 			if (source && id && original.origin === destination.origin) {
-				let redirect = await this.getRepositoryRedirect(id, decodeURIComponent(source));
+				source = decodeURIComponent(source).toLowerCase();
+				let redirect = await this.getRepositoryRedirect(id, source);
 
-				if (redirect.props.redirect.name !== decodeURIComponent(source)) {
+				if (redirect.props.redirect.name !== source) {
 					throw redirect;
 				}
 			}
