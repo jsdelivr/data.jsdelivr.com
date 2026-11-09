@@ -107,7 +107,9 @@ class PromiseCacheShared {
 		// .finally() behaves differently with some promises.
 		let done = Bluebird.resolve(value).finally(() => {
 			executor.then((v) => {
-				return this.store({ key, v, s: STATUS_RESOLVED }, v.ttlInternalStore).then(() => {
+				// Redirects can be returned by another cache layer without being revalidated.
+				let maxAge = v.ttlInternalStore - (v.props?.redirect ? v.age : 0);
+				return this.store({ key, v, s: STATUS_RESOLVED }, Math.max(0, maxAge)).then(() => {
 					this.pendingL.delete(key);
 				});
 			}).catch((v) => {
@@ -247,6 +249,10 @@ class ScopedPromiseCacheShared {
 
 	getOrExec (key, fn) {
 		return promiseCacheShared.getOrExec(`${this.scope}${key}`, fn);
+	}
+
+	delete (key) {
+		return promiseCacheShared.delete(`${this.scope}${key}`);
 	}
 
 	/**
