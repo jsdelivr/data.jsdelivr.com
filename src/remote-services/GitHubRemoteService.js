@@ -50,13 +50,19 @@ class GitHubRemoteService extends RemoteService {
 	}
 
 	getTagsKey (owner, repo, prefix) {
-		return prefix ? this.octokit.git.listMatchingRefs.endpoint({ owner, repo, ref: `tags/${prefix}` }).url : `/${owner}/${repo}`;
+		return prefix
+			? this.octokit.git.listMatchingRefs.endpoint({ owner: owner.toLowerCase(), repo: repo.toLowerCase(), ref: `tags/${prefix}` }).url
+			: `/${owner.toLowerCase()}/${repo.toLowerCase()}`;
+	}
+
+	getTagsFirstPageKey (owner, repo) {
+		return `${this.octokit.repos.listTags.endpoint({ owner: owner.toLowerCase(), repo: repo.toLowerCase() }).url}?per_page=100`;
 	}
 
 	// Return redirect metadata unchanged so callers can follow it outside the cache callback.
 	getTagsResource (owner, repo, prefix, firstPage) {
 		let key = this.getTagsKey(owner, repo, prefix);
-		let uri = prefix ? key : this.octokit.repos.listTags.endpoint({ owner, repo }).url;
+		let uri = prefix ? this.octokit.git.listMatchingRefs.endpoint({ owner, repo, ref: `tags/${prefix}` }).url : this.octokit.repos.listTags.endpoint({ owner, repo }).url;
 
 		return this.requestWithCache(key, async (key, cached) => {
 			let remoteResource;
@@ -159,7 +165,7 @@ class GitHubRemoteService extends RemoteService {
 	listTagsFirstPage (owner, repo, fallback) {
 		let uri = this.octokit.repos.listTags.endpoint({ owner, repo }).url;
 
-		return this.requestWithCache(`${uri}?per_page=100`, (key, cached) => {
+		return this.requestWithCache(this.getTagsFirstPageKey(owner, repo), (key, cached) => {
 			return this.requestPage(uri, response => response.data.map(tag => tag.name), cached || fallback, { per_page: 100 });
 		});
 	}
@@ -180,7 +186,8 @@ class GitHubRemoteService extends RemoteService {
 			return this.listTags(owner, repo, { redirects });
 		}
 
-		let cached = await this.resourceCache.getCached(`/${owner}/${repo}`);
+		let key = this.getTagsKey(owner, repo);
+		let cached = await this.resourceCache.getCached(key);
 		let follow = async (resource, key) => {
 			try {
 				let result = await this.followRedirect(resource, owner, repo, key, redirects, (owner, repo, redirects) => this.listTagsForSpecifier(owner, repo, specifier, redirects));
@@ -204,13 +211,13 @@ class GitHubRemoteService extends RemoteService {
 
 		if (cached?.props.redirect) {
 			let resource = cached.isStale ? await this.getTagsResource(owner, repo) : cached;
-			return follow(resource, `/${owner}/${repo}`);
+			return follow(resource, key);
 		}
 
 		// Prefer Git-backed listings even when stale; literal lookups can bypass stale REST listings.
 		if (cached && (!cached.isStale || cached.props.gitFetchedAt || cached.statusCode !== 200 || semver.validRange(specifier, { includePrerelease: true }) !== null)) {
 			let resource = await this.getTagsResource(owner, repo);
-			return follow(resource, `/${owner}/${repo}`);
+			return follow(resource, key);
 		}
 
 		let resources = [];
@@ -219,14 +226,13 @@ class GitHubRemoteService extends RemoteService {
 			let firstPage = await this.listTagsFirstPage(owner, repo);
 
 			if (firstPage.props.redirect) {
-				let key = `${this.octokit.repos.listTags.endpoint({ owner, repo }).url}?per_page=100`;
-				return follow(firstPage, key);
+				return follow(firstPage, this.getTagsFirstPageKey(owner, repo));
 			}
 
 			// Use the full listing for small repos.
 			if (!firstPage.props.lastPage || firstPage.props.lastPage <= 10) {
 				let resource = await this.getTagsResource(owner, repo, undefined, firstPage);
-				return follow(resource, `/${owner}/${repo}`);
+				return follow(resource, key);
 			}
 		}
 
@@ -274,11 +280,11 @@ class GitHubRemoteService extends RemoteService {
 			let clearDestination404s = async (resource) => {
 				let { name } = resource.props.redirect;
 
-				if (!resource.isStale && name !== previous?.name) {
+				if (!resource.isStale && name.toLowerCase() !== previous?.name.toLowerCase()) {
 					let [ owner, repo ] = name.split('/');
-					let firstPageKey = `${this.octokit.repos.listTags.endpoint({ owner, repo }).url}?per_page=100`;
+					let firstPageKey = this.getTagsFirstPageKey(owner, repo);
 
-					for (let key of [ `/${name}`, firstPageKey ]) {
+					for (let key of [ this.getTagsKey(owner, repo), firstPageKey ]) {
 						if ((await this.resourceCache.getCached(key))?.statusCode === 404) {
 							await this.resourceCache.delete(key);
 						}
@@ -295,7 +301,7 @@ class GitHubRemoteService extends RemoteService {
 					try {
 						let redirect = await this.getRepositoryRedirect(id, source, cached);
 
-						if (redirect.props.redirect.name !== source) {
+						if (redirect.props.redirect.name.toLowerCase() !== source.toLowerCase()) {
 							return clearDestination404s(redirect);
 						}
 					} catch (error) {
@@ -348,24 +354,25 @@ class GitHubRemoteService extends RemoteService {
 		}
 
 		let { name, id, checkedAt } = resource.props.redirect;
+		let currentName = `${owner}/${repo}`.toLowerCase();
 		let expectedId = redirects.at(-1)?.id;
 		let conflicting = expectedId !== undefined && expectedId !== id;
-		let visited = [ ...redirects, { name: `${owner}/${repo}`, key, id: expectedId ?? id, checkedAt }];
+		let visited = [ ...redirects, { name: currentName, key, id: expectedId ?? id, checkedAt }];
 		// A different check time distinguishes a live conflict from the same cached marker being replayed.
-		let repeatedConflict = conflicting && redirects.some(entry => entry.name === `${owner}/${repo}` && entry.checkedAt !== checkedAt);
+		let repeatedConflict = conflicting && redirects.some(entry => entry.name === currentName && entry.checkedAt !== checkedAt);
 
 		if (visited.length > 5 || repeatedConflict) {
 			throw new GitHubRemoteResource({ statusCode: 502 }, new Error('GitHub repository redirect loop.'));
 		}
 
-		let previous = conflicting ? { name: `${owner}/${repo}`, key } : visited.find(entry => entry.name === name);
+		let previous = conflicting ? { name: currentName, key } : visited.find(entry => entry.name === name.toLowerCase());
 
 		if (previous) {
 			await this.resourceCache.delete(previous.key);
 
-			if (previous.key === `/${previous.name}`) {
+			if (previous.key === this.getTagsKey(...previous.name.split('/'))) {
 				let [ owner, repo ] = previous.name.split('/');
-				let firstPageKey = `${this.octokit.repos.listTags.endpoint({ owner, repo }).url}?per_page=100`;
+				let firstPageKey = this.getTagsFirstPageKey(owner, repo);
 
 				if ((await this.resourceCache.getCached(firstPageKey))?.props.redirect) {
 					await this.resourceCache.delete(firstPageKey);
@@ -556,9 +563,10 @@ class GitHubRemoteService extends RemoteService {
 			let id = destination.pathname.match(/^\/repositories\/(\d+)(?:\/|$)/)?.[1];
 
 			if (source && id && original.origin === destination.origin) {
-				let redirect = await this.getRepositoryRedirect(id, decodeURIComponent(source));
+				source = decodeURIComponent(source);
+				let redirect = await this.getRepositoryRedirect(id, source);
 
-				if (redirect.props.redirect.name !== decodeURIComponent(source)) {
+				if (redirect.props.redirect.name.toLowerCase() !== source.toLowerCase()) {
 					throw redirect;
 				}
 			}
