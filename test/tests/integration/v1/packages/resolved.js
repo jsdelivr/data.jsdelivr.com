@@ -733,7 +733,7 @@ describe('/v1/packages/resolved', () => {
 			let upstream = nock('https://api.github.com').get('/repos/rename-tests/temporary/tags').query({ per_page: 100 })
 				.times(2).reply(302, '', { location: 'https://redirect.example.test/tags?per_page=100' });
 			let destination = nock('https://redirect.example.test').get('/tags').query({ per_page: 100 })
-				.matchHeader('authorization', value => value === undefined).reply(200, [{ name: 'v6.0.0' }]);
+				.matchHeader('authorization', value => value === null).reply(200, [{ name: 'v6.0.0' }]);
 			let service = new GitHubRemoteService({ baseUrl: 'https://api.github.com', auth: 'token harmless-test-token' }, cache);
 			let response = await service.request('/repos/rename-tests/temporary/tags', { per_page: 100 });
 			expect(response.data).to.deep.equal([{ name: 'v6.0.0' }]);
@@ -778,9 +778,9 @@ describe('/v1/packages/resolved', () => {
 				.get('/repos/rename-tests/pages-old/tags').query({ per_page: 100 }).matchHeader('if-none-match', '"rename-page-one"')
 				.reply(301, '', { location: 'https://api.github.com/repositories/7015/tags?per_page=100' })
 				.get('/repositories/7015').reply(200, { full_name: 'rename-tests/pages-new' })
-				.get('/repos/rename-tests/pages-new/tags').query({ per_page: 100 }).matchHeader('if-none-match', value => value === undefined)
+				.get('/repos/rename-tests/pages-new/tags').query({ per_page: 100 }).matchHeader('if-none-match', value => value === null)
 				.reply(200, [{ name: 'v2.0.0' }], { link: '<https://api.github.com/repos/rename-tests/pages-new/tags?per_page=100&page=2>; rel="next"' })
-				.get('/repos/rename-tests/pages-new/tags').query({ per_page: 100, page: 2 }).matchHeader('if-none-match', value => value === undefined)
+				.get('/repos/rename-tests/pages-new/tags').query({ per_page: 100, page: 2 }).matchHeader('if-none-match', value => value === null)
 				.reply(200, [{ name: 'v1.5.0' }]);
 			let response = await chai.request(server).get('/v1/packages/gh/rename-tests/pages-old');
 			expect(response).to.have.status(200);
@@ -1071,8 +1071,8 @@ describe('/v1/packages/resolved', () => {
 					.get(path => decodeURIComponent(path).startsWith(basePath))
 					.query(true)
 					.times(prefixes.length)
-					.reply((path) => {
-						let prefix = decodeURIComponent(path.split('?')[0]).substring(basePath.length);
+					.reply((request) => {
+						let prefix = decodeURIComponent(new URL(request.url).pathname).substring(basePath.length);
 						calls.push(prefix);
 						return [ 200, tags.filter(tag => tag.startsWith(prefix)).sort().map(tag => ({ ref: `refs/tags/${tag}` })), { etag: `"${name}-${prefix}"` }];
 					});
@@ -1100,8 +1100,8 @@ describe('/v1/packages/resolved', () => {
 				.get('/repos/prefix-tests/shared-major/tags').query({ per_page: 100 })
 				.reply(200, [], { link: '<https://api.github.com/repos/prefix-tests/shared-major/tags?per_page=100&page=2>; rel="next", <https://api.github.com/repos/prefix-tests/shared-major/tags?per_page=100&page=11>; rel="last"' })
 				.get(path => decodeURIComponent(path).startsWith(basePath)).query(true).times(2)
-				.reply((path) => {
-					let prefix = decodeURIComponent(path.split('?')[0]).substring(basePath.length);
+				.reply((request) => {
+					let prefix = decodeURIComponent(new URL(request.url).pathname).substring(basePath.length);
 					calls.push(prefix);
 					return [ 200, tags.filter(tag => tag.startsWith(prefix)).map(tag => ({ ref: `refs/tags/${tag}` })) ];
 				});
@@ -1159,7 +1159,7 @@ describe('/v1/packages/resolved', () => {
 					let request = lookup.get(path => decodeURIComponent(path) === `/repos/prefix-tests/${name}/git/matching-refs/tags/${prefix}`).query({ per_page: 100 });
 
 					if (networkError) {
-						request.replyWithError({ code: 'ECONNRESET', message: 'Connection reset' });
+						request.replyWithError(new TypeError('fetch failed'));
 					} else {
 						request.reply(status || 200, names.map(name => ({ ref: `refs/tags/${name}` })), status === 403 ? { 'x-ratelimit-remaining': '0' } : {});
 					}
