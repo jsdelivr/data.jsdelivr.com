@@ -62,9 +62,13 @@ function patchClient (client) {
 
 export function createClient () {
 	let client = createRedisClient({
+		RESP: 3,
+		commandOptions: { timeout: undefined },
+		maintNotifications: 'disabled',
 		database: redisConfig.db,
 		password: redisConfig.password,
 		socket: _.pickBy({
+			keepAliveInitialDelay: 5000,
 			host: redisConfig.host,
 			port: Number(redisConfig.port) || undefined,
 		}),

@@ -60,8 +60,8 @@ export const mochaGlobalSetup = async () => {
 		.persist()
 		.get(path => decodeURIComponent(path).startsWith('/repos/jquery/jquery2/git/matching-refs/tags/'))
 		.query(true)
-		.reply((path) => {
-			let prefix = decodeURIComponent(path.split('?')[0]).substring('/repos/jquery/jquery2/git/matching-refs/tags/'.length);
+		.reply((request) => {
+			let prefix = decodeURIComponent(new URL(request.url).pathname).substring('/repos/jquery/jquery2/git/matching-refs/tags/'.length);
 			return [ 200, upstreamGitHubResponses['/repos/jquery/jquery2/tags'].filter(tag => tag.name.startsWith(prefix)).map(tag => ({ ref: `refs/tags/${tag.name}` })) ];
 		});
 
