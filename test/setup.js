@@ -7,7 +7,7 @@ import upstreamNpmResponses from './data/v1/npm.json' with { type: 'json' };
 import upstreamCdnResponses from './data/v1/cdn.json' with { type: 'json' };
 import upstreamGitHubResponses from './data/v1/github.json' with { type: 'json' };
 
-fakeTimers.install({ now: new Date('2022-07-05T00:00:00Z'), shouldAdvanceTime: true });
+fakeTimers.install({ now: new Date('2022-07-05T00:00:00Z'), toFake: [ 'Date' ], shouldAdvanceTime: true });
 console.log(`Starting with fake time set to ${new Date().toISOString()}`);
 
 await import('../src/lib/startup.js');
