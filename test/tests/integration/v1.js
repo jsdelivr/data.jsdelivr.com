@@ -46,14 +46,13 @@ describe('v1', function () {
 			});
 	});
 
-	it('GET /v1/spec.yaml', () => {
-		return chai.request(server)
-			.get('/v1/spec.yaml')
-			.then((response) => {
-				expect(response).to.have.status(200);
-				expect(response).to.have.header('Content-Type', 'application/yaml');
-				expect(response).to.have.header('Link', '<http://localhost:4454/v1/spec.yaml>; rel="service-desc"; type="application/yaml", <http://localhost:4400/docs/data.jsdelivr.com>; rel="service-doc"; type="text/html"');
-			});
+	it('GET /v1/spec.yaml', async () => {
+		let response = await fetch(`${server}/v1/spec.yaml`);
+		await response.arrayBuffer();
+
+		expect(response.status).to.equal(200);
+		expect(response.headers.get('Content-Type')).to.equal('application/yaml');
+		expect(response.headers.get('Link')).to.equal('<http://localhost:4454/v1/spec.yaml>; rel="service-desc"; type="application/yaml", <http://localhost:4400/docs/data.jsdelivr.com>; rel="service-doc"; type="text/html"');
 	});
 
 	require('./v1/package.js');
