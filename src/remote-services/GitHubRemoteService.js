@@ -127,7 +127,7 @@ class GitHubRemoteService extends RemoteService {
 
 		try {
 			let { stdout } = await execFileAsync('git', [ '-c', 'protocol.version=2', '-c', 'credential.helper=', 'ls-remote', '--tags', '--refs', `https://github.com/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}.git` ], {
-				timeout: 30000,
+				timeout: 120000,
 				killSignal: 'SIGKILL',
 				maxBuffer: 64 * 1024 * 1024,
 				windowsHide: true,
