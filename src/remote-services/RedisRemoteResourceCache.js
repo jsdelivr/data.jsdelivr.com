@@ -34,7 +34,7 @@ class PromiseCacheShared {
 	 */
 	constructor ({ prefix = 'rrrc/' } = {}) {
 		this.prefix = prefix;
-		this.pendingL = new TTL({ ttl: 60 * 1000 });
+		this.pendingL = new TTL({ ttl: 180 * 1000 });
 	}
 
 	/**
